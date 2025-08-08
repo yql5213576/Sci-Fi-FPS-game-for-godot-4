@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdbqc7e20whoh"]
+
+[ext_resource type="Script" uid="uid://dt1gxwgmfrbw6" path="res://assets/audios/walk_audio.gd" id="1_lq72s"]
+[ext_resource type="AudioStream" uid="uid://b78qdkadaeqs5" path="res://assets/Kenney's_assets/audios/Audio/footstep06.ogg" id="2_lq72s"]
+
+[node name="walk_audio" type="Node3D"]
+script = ExtResource("1_lq72s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_lq72s")
+volume_db = -40.0
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

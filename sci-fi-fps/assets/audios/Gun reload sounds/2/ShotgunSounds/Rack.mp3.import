@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2kiaojkf5nqh"
+path="res://.godot/imported/Rack.mp3-270191fb1001cd3fb74eced5e4e38123.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Gun reload sounds/2/ShotgunSounds/Rack.mp3"
+dest_files=["res://.godot/imported/Rack.mp3-270191fb1001cd3fb74eced5e4e38123.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

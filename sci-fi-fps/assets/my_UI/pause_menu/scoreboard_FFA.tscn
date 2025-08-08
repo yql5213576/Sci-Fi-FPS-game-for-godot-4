@@ -1,0 +1,861 @@
+[gd_scene load_steps=16 format=3 uid="uid://ba8bdde7tbbvr"]
+
+[ext_resource type="Script" uid="uid://cem6lw7kjgs2o" path="res://assets/my_UI/pause_menu/scoreboard_ffa.gd" id="1_iohrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pygeg"]
+bg_color = Color(0.151, 0.151, 0.151, 0.448)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iohrg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sveqf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8l00"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugjln"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dsjj7"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ppf6"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_iohrg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_sveqf"]
+resource_name = "end_board_score"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.75, 1.75), Vector2(0, 1.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nsbbi"]
+resource_name = "start_board_score"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.75, 0), Vector2(1.75, 1.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sveqf"]
+_data = {
+&"RESET": SubResource("Animation_iohrg"),
+&"end_board_score": SubResource("Animation_sveqf"),
+&"start_board_score": SubResource("Animation_nsbbi")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iohrg"]
+animation = &"start_board_score"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sveqf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ugjln"]
+states/start_board_score/node = SubResource("AnimationNodeAnimation_iohrg")
+states/start_board_score/position = Vector2(388, 100)
+transitions = ["Start", "start_board_score", SubResource("AnimationNodeStateMachineTransition_sveqf")]
+graph_offset = Vector2(-84, -33)
+
+[node name="scoreboard" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iohrg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.5
+offset_top = -251.0
+offset_right = 389.5
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.75, 1.75)
+pivot_offset = Vector2(389.5, 251)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pygeg")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_iohrg")
+
+[node name="HBoxContainer_b" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sveqf")
+
+[node name="blue_team" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+layout_mode = 2
+text = "Players"
+label_settings = SubResource("LabelSettings_u8l00")
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+custom_minimum_size = Vector2(279.63, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="blue_kills" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+layout_mode = 2
+text = "Kils"
+label_settings = SubResource("LabelSettings_dsjj7")
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+custom_minimum_size = Vector2(292.455, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="blue_die" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_b"]
+layout_mode = 2
+text = "die"
+label_settings = SubResource("LabelSettings_dsjj7")
+
+[node name="player1" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player1"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player2"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator5" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player3"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator6" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player4"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator7" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player5"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator8" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player6"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player7" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator9" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player7"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_1ppf6")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator10" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player8"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator11" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player9"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player10" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator12" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player10"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player11" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator13" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player11"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player12" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator14" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player12"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player13" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator15" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player13"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player14" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator16" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player14"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player15" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator17" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player15"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="player16" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="player_name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "名名名名名名..."
+label_settings = SubResource("LabelSettings_u8l00")
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(219.155, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="kills_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator18" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(280.535, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="die_text" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/player16"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_dsjj7")
+clip_text = true
+
+[node name="VSeparator3" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ugjln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sveqf")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_ugjln")
+anim_player = NodePath("..")

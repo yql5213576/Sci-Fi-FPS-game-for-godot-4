@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceg60jgghi6aw"]
+
+[ext_resource type="Script" uid="uid://chysy5vg85b5" path="res://assets/player/scripts/player_bullet_trail.gd" id="1_lhp56"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1gcm"]
+
+[node name="player_camera_bullet_trail" type="Node3D"]
+script = ExtResource("1_lhp56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_f1gcm")

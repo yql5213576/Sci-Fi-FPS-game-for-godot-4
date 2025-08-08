@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0rl65t35xm6u"]
+
+[resource]
+resource_name = "conc"
+cull_mode = 2
+albedo_color = Color(0.9647, 0.9647, 0.9647, 1)
+metallic = 1.0

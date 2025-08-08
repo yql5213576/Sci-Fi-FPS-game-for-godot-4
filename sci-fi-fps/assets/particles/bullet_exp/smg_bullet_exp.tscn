@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://g100bgffr48j"]
+
+[ext_resource type="Script" uid="uid://c50kf0kkc6g8a" path="res://assets/particles/bullet_exp/smg_bullet_exp.gd" id="1_ga7r4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ga7r4"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 5.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 10.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0hdv8"]
+load_path = "res://.godot/imported/flash04.png-2ecb072bf51325d91c5fb486abbace8e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wqtj"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 4, 4, 1)
+albedo_texture = SubResource("CompressedTexture2D_0hdv8")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_bw6g4"]
+material = SubResource("StandardMaterial3D_4wqtj")
+size = Vector2(0.3, 0.2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_56ee6"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ga7r4"]
+load_path = "res://.godot/imported/explosion03.png-39e5b4d598fdbff24b32e03e5c2fc4d9.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hdv8"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(4, 4, 4, 1)
+albedo_texture = SubResource("CompressedTexture2D_ga7r4")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_4wqtj"]
+material = SubResource("StandardMaterial3D_0hdv8")
+size = Vector2(0.1, 0.1)
+
+[node name="rifle_bullet_exp" type="Node3D"]
+script = ExtResource("1_ga7r4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 128
+emitting = false
+amount = 15
+lifetime = 0.3
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_ga7r4")
+draw_pass_1 = SubResource("QuadMesh_bw6g4")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="GPUParticles3D"]
+layers = 128
+emitting = false
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_56ee6")
+draw_pass_1 = SubResource("QuadMesh_4wqtj")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]
+[connection signal="finished" from="GPUParticles3D/GPUParticles3D2" to="." method="_on_gpu_particles_3d_2_finished"]

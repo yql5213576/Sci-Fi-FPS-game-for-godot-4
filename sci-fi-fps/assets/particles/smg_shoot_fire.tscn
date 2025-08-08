@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://xhmkctlyx684"]
+
+[ext_resource type="Script" uid="uid://b80d1kimoqmk4" path="res://assets/particles/smg_shoot_fire.gd" id="1_itvwc"]
+[ext_resource type="Texture2D" uid="uid://bj1uhe7gd811r" path="res://assets/Kenney's_assets/PNG/White puff/whitePuff02.png" id="1_qxk7s"]
+[ext_resource type="Texture2D" uid="uid://c0o8tk88i1ao4" path="res://assets/Kenney's_assets/PNG/Explosion/explosion05.png" id="2_deq6k"]
+[ext_resource type="Texture2D" uid="uid://by2tbmb1u2d0w" path="res://assets/Kenney's_assets/PNG/Explosion/explosion08.png" id="4_780om"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_deq6k"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = 30.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itvwc"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(8, 3, 8, 1)
+albedo_texture = ExtResource("1_qxk7s")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_780om"]
+material = SubResource("StandardMaterial3D_itvwc")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_780om"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(8, 4, 4, 1)
+albedo_texture = ExtResource("2_deq6k")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_g01nw"]
+material = SubResource("StandardMaterial3D_780om")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g01nw"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mpk4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(4, 4, 4, 1)
+albedo_texture = ExtResource("4_780om")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_iok8o"]
+material = SubResource("StandardMaterial3D_3mpk4")
+size = Vector2(0.05, 0.05)
+
+[node name="smg_shoot_fire" type="Node3D"]
+script = ExtResource("1_itvwc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 5
+emitting = false
+amount = 35
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_deq6k")
+draw_passes = 2
+draw_pass_1 = SubResource("QuadMesh_780om")
+draw_pass_2 = SubResource("QuadMesh_g01nw")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+layers = 5
+emitting = false
+amount = 10
+lifetime = 0.1
+one_shot = true
+speed_scale = 3.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_g01nw")
+draw_pass_1 = SubResource("QuadMesh_iok8o")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]
+[connection signal="finished" from="GPUParticles3D2" to="." method="_on_gpu_particles_3d_2_finished"]

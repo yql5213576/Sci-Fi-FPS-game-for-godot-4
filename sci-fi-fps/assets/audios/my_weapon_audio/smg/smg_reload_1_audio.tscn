@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://jedummixj76c"]
+
+[ext_resource type="Script" uid="uid://bp3ky0a3o2s8i" path="res://assets/audios/my_weapon_audio/smg/smg_reload_1_audio.gd" id="1_7y5ho"]
+[ext_resource type="AudioStream" uid="uid://8b6j7jas7dgr" path="res://assets/audios/my_weapon_audio/smg/smg_reload1.wav" id="1_f2mt0"]
+
+[node name="smg_reload1_audio" type="Node3D"]
+script = ExtResource("1_7y5ho")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_f2mt0")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

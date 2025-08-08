@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=4 uid="uid://ck8eceaqrb0hm"]
+
+[ext_resource type="Texture2D" uid="uid://0g5d4hpg2mf" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Base_color.png" id="1_jglwm"]
+[ext_resource type="Texture2D" uid="uid://b8n5gsy3sem1h" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Metallic.png" id="2_u8wxa"]
+[ext_resource type="Texture2D" uid="uid://bo21qgcfdes3y" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Normal_OpenGL.png" id="3_rfhfp"]
+[ext_resource type="Texture2D" uid="uid://ch8p0v1j4ii84" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Roughness.png" id="4_vahuk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds3cq"]
+resource_name = "color1"
+cull_mode = 2
+albedo_color = Color(0.354834, 0.354834, 0.354834, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ls2lr"]
+_surfaces = [{
+"aabb": AABB(-1.12901, -0.00913264, -1.08386, 2.25802, 0.0182653, 2.16771),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAHAAEACAAAAAIABwAAAAgAAQAJAAIACAACAAkABwAKAAEAAQAKAAkABwALAAoABwAIAAsABgAKAAsABgALAAgAAwAJAAoABgADAAoAAwAEAAkACAAJAAQABQADAAYABgAIAAUABQAEAAMACAAEAAUA"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAwACAAEAAwAEAAIAAAACAAQABQAEAAMAAAAEAAUABQADAAYABgAAAAUABgADAAEAAAAHAAEABgABAAcABgAHAAAA")],
+"name": "color1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("cIOQvxShFTzWu4q/cIOQvxShFbzWu4o/cIOQvxShFbzWu4q/cIOQPxShFbzWu4o/cIOQPxShFbzWu4q/cIOQPxShFTzWu4q/cIOQPxShFTzWu4o/cIOQvxShFTzWu4o/AAAAABShFTzWu4q/AAAAABShFbzWu4q/AAAAABShFbzWu4o/AAAAABShFTzWu4o/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_svhlp"]
+resource_name = "ground_平面"
+_surfaces = [{
+"aabb": AABB(-1.12901, -0.00913264, -1.08386, 2.25802, 0.0182653, 2.16771),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAPwAAAAAAAAA/AAAAAAAAAD8AAIA/AAAAPwAAgD8AAAA/AAAAAAAAAD8AAIA/AAAAPwAAAAAAAAA/AACAPw=="),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAGAALABkAGAAIAAsAGAAZAAkAGAAJAAoADgAaAA0ADgAbABoADAAaABsADAAPABoAEgAcABEAEgAdABwAEAAcAB0AEAATABwAFwAeAB8AFwAVAB4AFAAfAB4AFAAeABYABAAFAAYABAAHAAUA"),
+"lods": [1e-10, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_ds3cq"),
+"name": "color1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("cIOQvxShFTzWu4q/cIOQvxShFbzWu4o/cIOQvxShFbzWu4q/cIOQvxShFTzWu4o/cIOQPxShFTzWu4q/cIOQPxShFbzWu4o/cIOQPxShFTzWu4o/cIOQPxShFbzWu4q/cIOQvxShFTzWu4q/cIOQPxShFbzWu4q/cIOQPxShFTzWu4q/cIOQvxShFbzWu4q/cIOQPxShFTzWu4o/cIOQvxShFbzWu4o/cIOQvxShFTzWu4o/cIOQPxShFbzWu4o/cIOQPxShFbzWu4o/cIOQvxShFbzWu4q/cIOQvxShFbzWu4o/cIOQPxShFbzWu4q/cIOQPxShFTzWu4o/cIOQvxShFTzWu4q/cIOQPxShFTzWu4q/cIOQvxShFTzWu4o/AAAAABShFTzWu4q/AAAAABShFbzWu4q/AAAAABShFbzWu4o/AAAAABShFTzWu4o/AAAAABShFbzWu4q/AAAAABShFbzWu4o/AAAAABShFTzWu4q/AAAAABShFTzWu4o/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7////9/////v////3////+/////f////7////9/////v/////////+//////////7//////////v/////////+//3//f////z//f/9/////P/9//3////8//3//f////z//fwAAAAD/v/9/AAD///8//38AAP///z//fwAAAAD/v/9///8AAP8//3///////7//f///AAD/P/9///////+//////////7//////////v/9//3////8//3//f////z//fwAAAAD/v/9/AAAAAP+//3///wAA/z//f///AAD/Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ls2lr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cokv6"]
+albedo_texture = ExtResource("1_jglwm")
+metallic = 1.0
+metallic_texture = ExtResource("2_u8wxa")
+roughness_texture = ExtResource("4_vahuk")
+normal_enabled = true
+normal_texture = ExtResource("3_rfhfp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qahn"]
+size = Vector3(70.0419, 12.8794, 67.3452)
+
+[node name="ground2" type="StaticBody3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(31.0051, 0, 0, 0, 702.404, 0, 0, 0, 31.0051, 0, -12.7841, 0)
+layers = 2
+mesh = SubResource("ArrayMesh_svhlp")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cokv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00244141, -12.8021, -0.00104237)
+shape = SubResource("BoxShape3D_8qahn")
+debug_color = Color(0.85098, 0, 0.321569, 1)

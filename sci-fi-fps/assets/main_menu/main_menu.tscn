@@ -1,0 +1,2657 @@
+[gd_scene load_steps=80 format=3 uid="uid://coysxwf2c8l5m"]
+
+[ext_resource type="Script" uid="uid://bwlkhj6nr2fmy" path="res://assets/player/scripts/main_menu.gd" id="1_g8ye4"]
+[ext_resource type="Texture2D" uid="uid://cvasyjc38uyq8" path="res://videos/main_menu00000028.png" id="2_a6wql"]
+[ext_resource type="Texture2D" uid="uid://dsgxgl164hko0" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button_main.png" id="3_a6wql"]
+[ext_resource type="Texture2D" uid="uid://b3jikwya7yssr" path="res://assets/my_UI/title.png" id="3_qncuu"]
+[ext_resource type="Texture2D" uid="uid://pg4a67s8q66a" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button_handle_left.png" id="4_qncuu"]
+[ext_resource type="Texture2D" uid="uid://doj5ape0blfm7" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button_handle_right.png" id="5_0yyb1"]
+[ext_resource type="Texture2D" uid="uid://ckiq65wtjuski" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button1_main.png" id="6_pps6l"]
+[ext_resource type="Texture2D" uid="uid://dqwftd4e4pyvk" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button1_press.png" id="7_0hr04"]
+[ext_resource type="Texture2D" uid="uid://ddrrw0qqx1x2o" path="res://assets/my_UI/new_ui_pack/menu_demo/button1/button1_hover.png" id="8_uv6bf"]
+[ext_resource type="Texture2D" uid="uid://mt2lvgfsdi2u" path="res://icon.svg" id="9_a6wql"]
+[ext_resource type="AudioStream" uid="uid://b332f3fdjb1gv" path="res://assets/audios/koertes-ccby-birdsongloop16s.ogg" id="11_0yyb1"]
+[ext_resource type="AudioStream" uid="uid://c7b7glr7wwuq4" path="res://assets/Kenney's_assets/kenney_interface-sounds/Audio/toggle_001.ogg" id="12_0hr04"]
+[ext_resource type="AudioStream" uid="uid://dpxbbvr1eqyq0" path="res://assets/Kenney's_assets/kenney_interface-sounds/Audio/confirmation_001.ogg" id="13_uv6bf"]
+[ext_resource type="AudioStream" uid="uid://c5t7jd6f6qaxe" path="res://assets/Kenney's_assets/kenney_interface-sounds/Audio/drop_001.ogg" id="14_73crt"]
+[ext_resource type="AudioStream" uid="uid://cn0obebiq16g" path="res://assets/Kenney's_assets/kenney_interface-sounds/Audio/switch_001.ogg" id="15_bcsbl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxluc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dlsui"]
+font_size = 46
+
+[sub_resource type="Animation" id="Animation_v1rij"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_dlsui"]
+resource_name = "start"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim/TextureRect_anim_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-59, -324), Vector2(-192.365, -323.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim/TextureRect_anim_L2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-58.635, -161.4), Vector2(-192, -161)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim/TextureRect_anim_L3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-58.635, 1.60001), Vector2(-192, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim/TextureRect_anim_L4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-58.635, 164.6), Vector2(-192, 165)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim/TextureRect_anim_R:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-334, -324), Vector2(-192.365, -323.6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anim/TextureRect_anim_R2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-333.635, -161.4), Vector2(-192, -161)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("anim/TextureRect_anim_R3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-333.635, 1.60001), Vector2(-192, 2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("anim/TextureRect_anim_R4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-333.635, 164.6), Vector2(-192, 165)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("anim/TextureRect_anim:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("anim/TextureRect_anim2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("anim/TextureRect_anim3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("anim/TextureRect_anim4:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("PanelContainer:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("anim:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("anim/TextureRect_anim_L:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("anim/TextureRect_anim_R:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("anim/TextureRect_anim_L2:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("anim/TextureRect_anim_R2:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("anim/TextureRect_anim_L3:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("anim/TextureRect_anim_R3:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("anim/TextureRect_anim_L4:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("anim/TextureRect_anim_R4:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../TextureRect:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1rij"]
+_data = {
+&"RESET": SubResource("Animation_v1rij"),
+&"start": SubResource("Animation_dlsui")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a6wql"]
+animation = &"start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qncuu"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0yyb1"]
+states/start/node = SubResource("AnimationNodeAnimation_a6wql")
+states/start/position = Vector2(365, 115)
+transitions = ["Start", "start", SubResource("AnimationNodeStateMachineTransition_qncuu")]
+graph_offset = Vector2(-34, -17)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym4tv"]
+bg_color = Color(0.176, 0.176, 0.176, 0.447)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6wql"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym4tv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym4tv"]
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pps6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_os4xb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_645iy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_645iy"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os4xb"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykk2x"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.490196, 0.490196, 0.490196, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qymkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6wql"]
+bg_color = Color(0, 0, 0, 0.536)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qncuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yyb1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pps6l"]
+font_size = 45
+outline_size = 10
+outline_color = Color(0, 0.545098, 0.713726, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hr04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv6bf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73crt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcsbl"]
+font_size = 36
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cckol"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na1ar"]
+bg_color = Color(0, 0, 0, 0.442)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_385kf"]
+bg_color = Color(0.0776786, 0.622212, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qncuu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcsbl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yyb1"]
+font_size = 19
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1ar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pps6l"]
+bg_color = Color(0.266575, 0.266575, 0.266575, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_385kf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yyb1"]
+bg_color = Color(0.471237, 0.8373, 0.999579, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8, 0.807843, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv6bf"]
+bg_color = Color(0.00163779, 0.371021, 0.489963, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8, 0.807843, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hr04"]
+bg_color = Color(0.00392157, 0.54902, 0.717647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.8, 0.807843, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onkhq"]
+bg_color = Color(0.187, 0.187, 0.187, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onkhq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_onkhq"]
+font_size = 25
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6wql"]
+font_size = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0rde"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e31i"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gufwa"]
+bg_color = Color(0.724643, 0.724643, 0.724643, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5yn0"]
+bg_color = Color(0.359, 0.359, 0.359, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vx5v3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osd0s"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx4du"]
+bg_color = Color(0.724643, 0.724643, 0.724643, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7s7k"]
+bg_color = Color(0.359, 0.359, 0.359, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osd0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wx4du"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7s7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0kai"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27wo0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qntwa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73crt"]
+bg_color = Color(0, 0.644639, 0.917695, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcsbl"]
+bg_color = Color(0, 0.644639, 0.917695, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vyk5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5c33"]
+bg_color = Color(0.359, 0.359, 0.359, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vah84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22b28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1vo4"]
+
+[node name="main_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8ye4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a6wql")
+expand_mode = 3
+
+[node name="TextureRect_title" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+offset_left = 82.305
+offset_right = 725.305
+offset_bottom = 643.0
+texture = ExtResource("3_qncuu")
+expand_mode = 1
+
+[node name="Control_button_menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -472.0
+offset_top = -324.0
+offset_bottom = 324.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="button_menu" type="Control" parent="Control_button_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="anim" type="Control" parent="Control_button_menu/button_menu"]
+visible = false
+anchors_preset = 0
+
+[node name="TextureRect_anim" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.365
+offset_top = -323.6
+offset_right = 191.635
+offset_bottom = -164.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6wql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_L" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.365
+offset_top = -323.6
+offset_right = 191.635
+offset_bottom = -164.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qncuu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_R" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.365
+offset_top = -323.6
+offset_right = 191.635
+offset_bottom = -164.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0yyb1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim2" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -161.0
+offset_right = 192.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6wql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_L2" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -161.0
+offset_right = 192.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qncuu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_R2" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -161.0
+offset_right = 192.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0yyb1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim3" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 2.0
+offset_right = 192.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6wql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_L3" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 2.0
+offset_right = 192.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qncuu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_R3" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 2.0
+offset_right = 192.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0yyb1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim4" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 165.0
+offset_right = 192.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6wql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_L4" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 165.0
+offset_right = 192.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qncuu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect_anim_R4" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 165.0
+offset_right = 192.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0yyb1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="Control_button_menu/button_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -324.0
+offset_right = 192.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rxluc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_button_menu/button_menu/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureButton_start" type="TextureButton" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 159)
+layout_mode = 2
+texture_normal = ExtResource("6_pps6l")
+texture_pressed = ExtResource("7_0hr04")
+texture_hover = ExtResource("8_uv6bf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="start" type="Label" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_dlsui")
+
+[node name="TextureButton_load" type="TextureButton" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 159)
+layout_mode = 2
+texture_normal = ExtResource("6_pps6l")
+texture_pressed = ExtResource("7_0hr04")
+texture_hover = ExtResource("8_uv6bf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="data" type="Label" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "Data"
+label_settings = SubResource("LabelSettings_dlsui")
+
+[node name="TextureButton_options" type="TextureButton" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 159)
+layout_mode = 2
+texture_normal = ExtResource("6_pps6l")
+texture_pressed = ExtResource("7_0hr04")
+texture_hover = ExtResource("8_uv6bf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="options" type="Label" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_dlsui")
+
+[node name="TextureButton_quit" type="TextureButton" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 159)
+layout_mode = 2
+texture_normal = ExtResource("6_pps6l")
+texture_pressed = ExtResource("7_0hr04")
+texture_hover = ExtResource("8_uv6bf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="quit" type="Label" parent="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_dlsui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control_button_menu/button_menu"]
+process_mode = 3
+active = false
+libraries = {
+&"": SubResource("AnimationLibrary_v1rij")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Control_button_menu/button_menu/AnimationPlayer"]
+process_mode = 3
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_0yyb1")
+anim_player = NodePath("..")
+
+[node name="game_load" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="PanelContainer" type="PanelContainer" parent="game_load"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -77.5
+offset_right = 168.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ym4tv")
+
+[node name="MarginContainer" type="MarginContainer" parent="game_load/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="game_load/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(209.725, 0)
+layout_mode = 2
+texture = ExtResource("9_a6wql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+current_tab = 0
+clip_tabs = false
+
+[node name="Maps" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="PanelContainer_maps" type="PanelContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps"]
+custom_minimum_size = Vector2(0, 100.755)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_blood_strike" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Blood_Strike"
+
+[node name="Button_Forest" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Forest"
+
+[node name="Mode" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="PanelContainer_mode" type="PanelContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode"]
+custom_minimum_size = Vector2(0, 100.755)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Team_Death_Match" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Team Death Match"
+
+[node name="Free_For_All" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Free For All"
+
+[node name="Setting" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="PanelContainer_mode" type="PanelContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting"]
+custom_minimum_size = Vector2(0, 100.755)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox_bot_num" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num"]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="bot_num" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num"]
+layout_mode = 2
+text = "Bot num"
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num"]
+custom_minimum_size = Vector2(45.775, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_bot_num" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num"]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "0"
+
+[node name="HBox_difficulty" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty"]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="difficulty" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty"]
+layout_mode = 2
+text = "Difficulty"
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty"]
+custom_minimum_size = Vector2(42.7, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_difficulty" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty"]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "easy"
+
+[node name="HBox_game_time" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time"]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="game_time" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time"]
+layout_mode = 2
+text = "time(min)"
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time"]
+custom_minimum_size = Vector2(36.835, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_game_time" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time"]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "10"
+
+[node name="HBox_max_kills" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills"]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="max_kills" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills"]
+layout_mode = 2
+text = "max-kill"
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills"]
+custom_minimum_size = Vector2(50.385, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_max_kills" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills"]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "30"
+
+[node name="HSeparator" type="HSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ym4tv")
+
+[node name="VBoxContainer_Metric" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBox_Map" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric"]
+layout_mode = 2
+
+[node name="maps" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map"]
+layout_mode = 2
+text = "Map"
+label_settings = SubResource("LabelSettings_ym4tv")
+
+[node name="VSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pps6l")
+
+[node name="mp" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "Blood Strike"
+label_settings = SubResource("LabelSettings_ym4tv")
+horizontal_alignment = 2
+
+[node name="HBox_Mode" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric"]
+layout_mode = 2
+
+[node name="modes" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode"]
+layout_mode = 2
+text = "Mode"
+label_settings = SubResource("LabelSettings_ym4tv")
+
+[node name="VSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pps6l")
+
+[node name="md" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "Free For All"
+label_settings = SubResource("LabelSettings_ym4tv")
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ym4tv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxEmpty_os4xb")
+
+[node name="start_button" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_645iy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_645iy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os4xb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ykk2x")
+text = "Let's Go!"
+
+[node name="VSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qymkq")
+
+[node name="cancel_button" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_645iy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_645iy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os4xb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ykk2x")
+text = "Cancel"
+
+[node name="quit_verify" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6wql")
+
+[node name="MarginContainer" type="MarginContainer" parent="quit_verify"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quit_verify/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="quit_verify/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8.51)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qncuu")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="quit_verify/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0yyb1")
+
+[node name="Label" type="Label" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Are you sure you want to quit?"
+label_settings = SubResource("LabelSettings_pps6l")
+
+[node name="HSeparator" type="HSeparator" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0yyb1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="quit_verify/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(12.815, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0hr04")
+
+[node name="yes_button" type="Button" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0.545098, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Yes"
+
+[node name="HSeparator" type="HSeparator" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(457, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0hr04")
+
+[node name="no_button" type="Button" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0.545098, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "No"
+
+[node name="HSeparator3" type="HSeparator" parent="quit_verify/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0hr04")
+
+[node name="VSeparator2" type="VSeparator" parent="quit_verify/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16.335)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uv6bf")
+
+[node name="loading_progress_bar" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6wql")
+
+[node name="MarginContainer" type="MarginContainer" parent="loading_progress_bar"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="loading_progress_bar/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8.51)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qncuu")
+
+[node name="loading_text" type="HBoxContainer" parent="loading_progress_bar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer/loading_text"]
+custom_minimum_size = Vector2(342.12, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_73crt")
+
+[node name="Label" type="Label" parent="loading_progress_bar/MarginContainer/VBoxContainer/loading_text"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Loading"
+label_settings = SubResource("LabelSettings_bcsbl")
+
+[node name="VSeparator3" type="VSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 39.04)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cckol")
+
+[node name="loading_ProgressBar" type="HBoxContainer" parent="loading_progress_bar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0yyb1")
+
+[node name="ProgressBar" type="ProgressBar" parent="loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar"]
+custom_minimum_size = Vector2(800, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_na1ar")
+theme_override_styles/fill = SubResource("StyleBoxFlat_385kf")
+
+[node name="HSeparator" type="HSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0yyb1")
+
+[node name="VSeparator2" type="VSeparator" parent="loading_progress_bar/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16.335)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uv6bf")
+
+[node name="user_first_login" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -67.0
+offset_right = 197.5
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qncuu")
+
+[node name="MarginContainer" type="MarginContainer" parent="user_first_login"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="user_first_login/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="user_first_login/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="Input_user_name_alert" type="Label" parent="user_first_login/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Welcome back,please enter your name"
+label_settings = SubResource("LabelSettings_0yyb1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer_line_edit" type="HBoxContainer" parent="user_first_login/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_line_edit"]
+custom_minimum_size = Vector2(119, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="LineEdit" type="LineEdit" parent="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_line_edit"]
+custom_minimum_size = Vector2(153.34, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na1ar")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pps6l")
+placeholder_text = "enter your name"
+alignment = 1
+
+[node name="HBoxContainer_ok" type="HBoxContainer" parent="user_first_login/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="Button_ok" type="Button" parent="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_385kf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0yyb1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uv6bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hr04")
+text = "OK"
+
+[node name="VSeparator2" type="VSeparator" parent="user_first_login/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="change_name" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -67.0
+offset_right = 197.5
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qncuu")
+
+[node name="MarginContainer" type="MarginContainer" parent="change_name"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="change_name/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="change_name/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="Input_user_name_alert" type="Label" parent="change_name/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Welcome back,please enter your name"
+label_settings = SubResource("LabelSettings_0yyb1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer_line_edit" type="HBoxContainer" parent="change_name/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="change_name/MarginContainer/VBoxContainer/HBoxContainer_line_edit"]
+custom_minimum_size = Vector2(119, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="LineEdit" type="LineEdit" parent="change_name/MarginContainer/VBoxContainer/HBoxContainer_line_edit"]
+custom_minimum_size = Vector2(153.34, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na1ar")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pps6l")
+placeholder_text = "enter your name"
+alignment = 1
+
+[node name="HBoxContainer_ok" type="HBoxContainer" parent="change_name/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="change_name/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="Button_ok" type="Button" parent="change_name/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_385kf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0yyb1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uv6bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hr04")
+text = "OK"
+
+[node name="VSeparator2" type="VSeparator" parent="change_name/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="user_career" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="user_career"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = -299.5
+offset_right = 351.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onkhq")
+
+[node name="MarginContainer" type="MarginContainer" parent="user_career/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="player_career_names" type="VBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="user_name" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "User name:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator6" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="user_name2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator2" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="kills" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "Kills:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator5" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="kills2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator3" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="death" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "Death:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator4" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="death2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator4" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="favorite" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "Favorite:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator3" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="favorite2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator5" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="rank" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "Rank:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator2" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="rank2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator6" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+layout_mode = 2
+
+[node name="battles" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "Battles:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="battles2" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+text = "XXXX"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSeparator9" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names"]
+custom_minimum_size = Vector2(0, 49.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HSeparator4" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="ColorRect" type="ColorRect" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8.465, 0)
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="save_data_control" type="VBoxContainer" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator11" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 98.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="alert_text" type="Label" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(230, 75)
+layout_mode = 2
+text = "Alert! 
+Please do not delete data files while the game is runnung!"
+label_settings = SubResource("LabelSettings_a6wql")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VSeparator13" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 98.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="data_folder" type="Button" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0rde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5yn0")
+text = "Data Folder"
+
+[node name="VSeparator9" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 98.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="exit" type="Button" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0rde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5yn0")
+text = "Exit"
+
+[node name="VSeparator12" type="VSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 98.275)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HSeparator2" type="HSeparator" parent="user_career/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="user_options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="user_options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = -299.5
+offset_right = 351.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onkhq")
+
+[node name="MarginContainer" type="MarginContainer" parent="user_options/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="ScrollContainer_career" type="ScrollContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(672.605, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="player_career_names" type="VBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="resolution" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Resolution"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_resolution" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx5v3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "1024-768"
+clip_text = true
+
+[node name="VSeparator11" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="vsync" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "V-sync"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_vsync" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx5v3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+clip_text = true
+
+[node name="VSeparator8" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="anti-aliasing_msaa" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Anti-Aliasing(MSAA)"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_anti_aliasing_msaa" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx5v3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "4x"
+clip_text = true
+
+[node name="VSeparator10" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="anti_aliasing_fxaa" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Anti-Aliasing(FXAA)"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_anti_aliasing_fxaa" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vx5v3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "close"
+clip_text = true
+
+[node name="VSeparator2" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="ssao" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Screen-Space Ambient Occlusion"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_ssao" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_osd0s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator3" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="ssil" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Screen-Space Indirect Lighting"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_ssil" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wx4du")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator4" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="sdfgi" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Signed Distance Field Global Illumination"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_sdfgi" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v7s7k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator5" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="glow" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Glow:"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_glow" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f0kai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator6" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="volumetric_fog" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Volumetric Fog"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_volumetric_fog" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_27wo0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator7" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="grass" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Grass Density"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_grass" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qntwa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "0"
+
+[node name="VSeparator12" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="mouse_sevsitivity" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Mouse Sevsitivity"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="MS_range" type="HSlider" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11"]
+custom_minimum_size = Vector2(136.315, 0)
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_73crt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcsbl")
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.08
+
+[node name="MS_range_Label" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range"]
+layout_mode = 2
+offset_left = -37.43
+offset_top = -3.4
+offset_right = -5.43
+offset_bottom = 18.9333
+text = "0.01"
+
+[node name="VSeparator9" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="crosshair_size" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Crosshair Size"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="CS_range" type="HSlider" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12"]
+custom_minimum_size = Vector2(136.315, 0)
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_73crt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcsbl")
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.13
+
+[node name="CS_range_Label" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range"]
+layout_mode = 2
+offset_left = -37.43
+offset_top = -3.4
+offset_right = -5.43
+offset_bottom = 18.9333
+text = "0.01"
+
+[node name="VSeparator13" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HSeparator4" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="ColorRect" type="ColorRect" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="save_data_control" type="VBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator7" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 61.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="apply_options" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vyk5r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5c33")
+text = "Apply"
+
+[node name="VSeparator11" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 61.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="reset_options" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0rde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5yn0")
+text = "Reset"
+
+[node name="VSeparator9" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 61.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="exit_options" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0rde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5yn0")
+text = "Exit"
+
+[node name="VSeparator12" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(0, 61.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="about_the_game" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control"]
+custom_minimum_size = Vector2(234.05, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vah84")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e31i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gufwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m5yn0")
+text = "About the game"
+
+[node name="about_the_game_menu" type="PanelContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.025
+offset_top = -271.5
+offset_right = -179.025
+offset_bottom = -97.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qncuu")
+
+[node name="MarginContainer" type="MarginContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 33.665)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about1" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Game:  破兵之战"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about2" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Developer: https://strike435.itch.io"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about3" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "3D Art from: myself"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about4" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Audio from: Kenney.nl   opengameart.org"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about5" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "3D Art software: Blender,Substance painter "
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator6" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about6" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "My bilibili: https://b23.tv/afTQuWp"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator7" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="about7" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Engine: Godot 4.4.1.stable"
+label_settings = SubResource("LabelSettings_0yyb1")
+vertical_alignment = 1
+
+[node name="HSeparator8" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(7.59, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_22b28")
+
+[node name="HBoxContainer_line_edit" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40.145)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer_line_edit"]
+custom_minimum_size = Vector2(119, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="HBoxContainer_ok" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bcsbl")
+
+[node name="Button_ok_atg" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer_ok"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_385kf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0yyb1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uv6bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hr04")
+text = "OK"
+
+[node name="VSeparator2" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y1vo4")
+
+[node name="HSeparator2" type="HSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(31.73, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="main_menu_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_0yyb1")
+volume_db = -20.0
+
+[node name="main_menu_button_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_0hr04")
+volume_db = -20.0
+
+[node name="main_menu_button_press_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_uv6bf")
+volume_db = -20.0
+
+[node name="user_manu_button_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_73crt")
+volume_db = -20.0
+
+[node name="user_manu_button_press_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_bcsbl")
+volume_db = -20.0
+
+[connection signal="mouse_entered" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start" to="." method="_on_texture_button_start_mouse_entered"]
+[connection signal="pressed" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start" to="." method="_on_texture_button_start_pressed"]
+[connection signal="mouse_entered" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load" to="." method="_on_texture_button_load_mouse_entered"]
+[connection signal="pressed" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load" to="." method="_on_texture_button_load_pressed"]
+[connection signal="mouse_entered" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options" to="." method="_on_texture_button_options_mouse_entered"]
+[connection signal="pressed" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options" to="." method="_on_texture_button_options_pressed"]
+[connection signal="mouse_entered" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit" to="." method="_on_texture_button_quit_mouse_entered"]
+[connection signal="pressed" from="Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit" to="." method="_on_texture_button_quit_pressed"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike" to="." method="_on_button_blood_strike_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike" to="." method="_on_button_blood_strike_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_Forest" to="." method="_on_button_forest_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_Forest" to="." method="_on_button_forest_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match" to="." method="_on_team_death_match_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match" to="." method="_on_team_death_match_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Free_For_All" to="." method="_on_free_for_all_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Free_For_All" to="." method="_on_free_for_all_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/Button_bot_num" to="." method="_on_button_bot_num_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/Button_bot_num" to="." method="_on_button_bot_num_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/Button_difficulty" to="." method="_on_button_difficulty_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/Button_difficulty" to="." method="_on_button_difficulty_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time" to="." method="_on_button_game_time_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time" to="." method="_on_button_game_time_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills" to="." method="_on_button_max_kills_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills" to="." method="_on_button_max_kills_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cancel_button" to="." method="_on_cancel_button_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cancel_button" to="." method="_on_cancel_button_mouse_entered"]
+[connection signal="button_down" from="quit_verify/MarginContainer/VBoxContainer/HBoxContainer/yes_button" to="." method="_on_yes_button_button_down"]
+[connection signal="mouse_entered" from="quit_verify/MarginContainer/VBoxContainer/HBoxContainer/yes_button" to="." method="_on_yes_button_mouse_entered"]
+[connection signal="button_down" from="quit_verify/MarginContainer/VBoxContainer/HBoxContainer/no_button" to="." method="_on_no_button_button_down"]
+[connection signal="mouse_entered" from="quit_verify/MarginContainer/VBoxContainer/HBoxContainer/no_button" to="." method="_on_no_button_mouse_entered"]
+[connection signal="button_down" from="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_ok/Button_ok" to="." method="_on_button_ok_button_down"]
+[connection signal="mouse_entered" from="user_first_login/MarginContainer/VBoxContainer/HBoxContainer_ok/Button_ok" to="." method="_on_button_ok_mouse_entered"]
+[connection signal="button_down" from="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/data_folder" to="." method="_on_data_folder_button_down"]
+[connection signal="mouse_entered" from="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/data_folder" to="." method="_on_data_folder_mouse_entered"]
+[connection signal="button_down" from="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit" to="." method="_on_exit_button_down"]
+[connection signal="mouse_entered" from="user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/Button_resolution" to="." method="_on_button_resolution_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/Button_resolution" to="." method="_on_button_resolution_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync" to="." method="_on_button_vsync_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync" to="." method="_on_button_vsync_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa" to="." method="_on_button_antialiasingmsaa_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa" to="." method="_on_button_anti_aliasing_msaa_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9/Button_anti_aliasing_fxaa" to="." method="_on_button_antialiasingfxaa_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9/Button_anti_aliasing_fxaa" to="." method="_on_button_anti_aliasing_fxaa_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao" to="." method="_on_button_ssao_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao" to="." method="_on_button_ssao_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil" to="." method="_on_button_ssil_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil" to="." method="_on_button_ssil_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi" to="." method="_on_button_sdfgi_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi" to="." method="_on_button_sdfgi_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow" to="." method="_on_button_glow_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow" to="." method="_on_button_glow_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog" to="." method="_on_button_volumetric_fog_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog" to="." method="_on_button_volumetric_fog_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass" to="." method="_on_button_grass_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass" to="." method="_on_button_grass_mouse_entered"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range" to="." method="_on_ms_range_mouse_entered"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range" to="." method="_on_cs_range_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options" to="." method="_on_apply_options_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options" to="." method="_on_apply_options_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/reset_options" to="." method="_on_reset_options_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/reset_options" to="." method="_on_reset_options_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit_options" to="." method="_on_exit_options_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit_options" to="." method="_on_exit_options_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game" to="." method="_on_about_the_game_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game" to="." method="_on_about_the_game_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer_ok/Button_ok_atg" to="." method="_on_button_ok_atg_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer_ok/Button_ok_atg" to="." method="_on_button_ok_atg_mouse_entered"]

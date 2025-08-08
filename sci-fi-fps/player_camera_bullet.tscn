@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3l16037o6mig"]
+
+[ext_resource type="Script" uid="uid://xyxmsrjw1g1f" path="res://assets/player/scripts/player_camera_bullet.gd" id="1_nkn8v"]
+
+[node name="player_camera_bullet" type="RayCast3D"]
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.855545, 0, 0.213877, 1)
+script = ExtResource("1_nkn8v")
+
+[node name="shotgun_all_ray" type="Marker3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="shotgun_all_ray"]
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D2" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D3" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D4" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(1, 0, 0, 0, 0.997564, 0.0697565, 0, -0.0697565, 0.997564, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D5" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D6" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997569, -0.000439432, -0.0696901, 0.00348733, 0.999042, 0.0436194, 0.0696042, -0.0437564, 0.996615, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D7" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997564, -0.00304273, -0.0696901, 0, 0.999048, -0.0436194, 0.0697565, 0.0435131, 0.996615, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D8" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997564, 0.00304273, 0.0696901, 0, 0.999048, -0.0436194, -0.0697565, 0.0435131, 0.996615, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
+
+[node name="RayCast3D9" type="RayCast3D" parent="shotgun_all_ray"]
+transform = Transform3D(0.997564, -0.00304273, 0.0696901, 0, 0.999048, 0.0436194, -0.0697565, -0.0435131, 0.996615, 0, 0, 0)
+target_position = Vector3(0, 0, 0)
+collision_mask = 41
+collide_with_areas = true
+debug_shape_custom_color = Color(0.798534, 0.508735, 0, 1)
