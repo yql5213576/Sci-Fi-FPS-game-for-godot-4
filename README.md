@@ -1,5 +1,6 @@
 # Sci-Fi-FPS-game-for-godot-4
 
+download need git lfs
 
 ![sci_fps_godot](https://github.com/user-attachments/assets/655b7313-229b-4efd-ba76-1ef5fab00746)
 
