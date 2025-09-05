@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=4 uid="uid://dmy0fbbb3t358"]
+[gd_scene load_steps=20 format=4 uid="uid://dmy0fbbb3t358"]
 
 [ext_resource type="Texture2D" uid="uid://prcpmtogg6go" path="res://assets/player/textures/smg/magazine_Base_color.png" id="1_4ofig"]
 [ext_resource type="Script" uid="uid://5iwn048b71vv" path="res://assets/player/scripts/smg_1_mag_3_rd.gd" id="1_n47l0"]
 [ext_resource type="Texture2D" uid="uid://cvn8r0vrpplcu" path="res://assets/player/textures/smg/magazine_Metallic.png" id="2_n47l0"]
+[ext_resource type="Texture2D" uid="uid://db1xs10cmy2h6" path="res://assets/player/textures/smg/magazine_Height.png" id="3_1habq"]
 [ext_resource type="Texture2D" uid="uid://cxjadq0txf8kl" path="res://assets/player/textures/smg/magazine_Normal_OpenGL.png" id="3_s1lcl"]
 [ext_resource type="Texture2D" uid="uid://dhdeydhgl10p5" path="res://assets/player/textures/smg/magazine_Roughness.png" id="4_tdktf"]
 [ext_resource type="Texture2D" uid="uid://sydkew6p3exc" path="res://assets/player/textures/smg_ammo/smg_ammo_Base_color.png" id="6_iircn"]
 [ext_resource type="Texture2D" uid="uid://csn2my0tygfge" path="res://assets/player/textures/smg_ammo/smg_ammo_Metallic.png" id="7_oicm3"]
 [ext_resource type="Texture2D" uid="uid://dqafad6yjfny" path="res://assets/player/textures/smg_ammo/smg_ammo_Normal_OpenGL.png" id="8_1habq"]
+[ext_resource type="Texture2D" uid="uid://ca24vqc158anw" path="res://assets/player/textures/smg_ammo/smg_ammo_Height.png" id="8_fp5li"]
 [ext_resource type="Texture2D" uid="uid://b58ejcj3nj17" path="res://assets/player/textures/smg_ammo/smg_ammo_Roughness.png" id="9_fp5li"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwry7"]
@@ -57,6 +59,11 @@ metallic_texture = ExtResource("2_n47l0")
 roughness_texture = ExtResource("4_tdktf")
 normal_enabled = true
 normal_texture = ExtResource("3_s1lcl")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_1habq")
+backlight_enabled = true
+backlight_texture = ExtResource("1_4ofig")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j7qc"]
 resource_name = "smg_ammo"
@@ -105,6 +112,11 @@ metallic_texture = ExtResource("7_oicm3")
 roughness_texture = ExtResource("9_fp5li")
 normal_enabled = true
 normal_texture = ExtResource("8_1habq")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_fp5li")
+backlight_enabled = true
+backlight_texture = ExtResource("6_iircn")
 
 [node name="smg1_mag" type="Node3D"]
 script = ExtResource("1_n47l0")

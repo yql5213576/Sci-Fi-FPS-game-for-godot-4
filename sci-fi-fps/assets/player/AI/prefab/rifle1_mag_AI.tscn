@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://cj12akwqtobsw"]
+[gd_scene load_steps=20 format=4 uid="uid://cj12akwqtobsw"]
 
 [ext_resource type="Script" uid="uid://mcom3dlts5sf" path="res://assets/player/scripts/rifle_1_mag_ai.gd" id="1_omc8k"]
 [ext_resource type="Texture2D" uid="uid://bpsa1n5qsvgiy" path="res://assets/player/textures/rifle/magazine_Base_color.png" id="2_rctqs"]
 [ext_resource type="Texture2D" uid="uid://cvdi6it2gkmpa" path="res://assets/player/textures/rifle/magazine_Metallic.png" id="3_0umd3"]
+[ext_resource type="Texture2D" uid="uid://ru57yuevg6is" path="res://assets/player/textures/rifle/magazine_Height.png" id="3_s2y7c"]
 [ext_resource type="Texture2D" uid="uid://cbd7adiw75rl2" path="res://assets/player/textures/rifle/magazine_Normal_OpenGL.png" id="4_s2y7c"]
 [ext_resource type="Texture2D" uid="uid://c6e8n8yb7i3uj" path="res://assets/player/textures/rifle/magazine_Roughness.png" id="5_db66x"]
 [ext_resource type="Texture2D" uid="uid://dfeubj2rvu2ka" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Base_color.png" id="6_c0id2"]
 [ext_resource type="Texture2D" uid="uid://bfbwua6le3pbr" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Metallic.png" id="7_udx4s"]
+[ext_resource type="Texture2D" uid="uid://c4mw50r884ibs" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Height.png" id="8_db66x"]
 [ext_resource type="Texture2D" uid="uid://dqeyit8j7f2i8" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Normal_OpenGL.png" id="8_vvhpx"]
 [ext_resource type="Texture2D" uid="uid://bmqyd6g4mwet4" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Roughness.png" id="9_u2tyd"]
 
@@ -57,6 +59,11 @@ metallic_texture = ExtResource("3_0umd3")
 roughness_texture = ExtResource("5_db66x")
 normal_enabled = true
 normal_texture = ExtResource("4_s2y7c")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_s2y7c")
+backlight_enabled = true
+backlight_texture = ExtResource("2_rctqs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaxnb"]
 resource_name = "ammo_rifle"
@@ -105,6 +112,11 @@ metallic_texture = ExtResource("7_udx4s")
 roughness_texture = ExtResource("9_u2tyd")
 normal_enabled = true
 normal_texture = ExtResource("8_vvhpx")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_db66x")
+backlight_enabled = true
+backlight_texture = ExtResource("6_c0id2")
 
 [node name="rifle1_mag" type="Node3D"]
 script = ExtResource("1_omc8k")

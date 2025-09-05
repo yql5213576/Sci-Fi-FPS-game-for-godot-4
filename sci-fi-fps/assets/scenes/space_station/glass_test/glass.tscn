@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://n32lm5tqij1t"]
+
+[ext_resource type="Texture2D" uid="uid://ta6p5kv1wgji" path="res://space_station/glass_test/无标题.png" id="1_m5jfi"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_r3x7b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glx2p"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_iy64g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi0fr"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_m5jfi")
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m5jfi"]
+
+[node name="glass" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_r3x7b")
+surface_material_override/0 = SubResource("StandardMaterial3D_glx2p")
+
+[node name="glass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54577, 0, 0)
+mesh = SubResource("SphereMesh_iy64g")
+surface_material_override/0 = SubResource("StandardMaterial3D_xi0fr")
+
+[node name="glass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.09537, 0, 0, 0, -8.7438e-09, -3.09537, 0, 0.200035, -1.35303e-07, 0, 0, 2.43321)
+mesh = SubResource("CylinderMesh_m5jfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_xi0fr")

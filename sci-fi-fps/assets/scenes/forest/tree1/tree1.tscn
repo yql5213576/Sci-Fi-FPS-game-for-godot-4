@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://btxm4bk631isv"]
+[gd_scene load_steps=17 format=4 uid="uid://btxm4bk631isv"]
 
 [ext_resource type="Texture2D" uid="uid://b11bpc2dkugke" path="res://assets/scenes/forest/tree1/textures/tree_Base_color.png" id="1_0i0vu"]
 [ext_resource type="Texture2D" uid="uid://crqcrqlw2i7yx" path="res://assets/scenes/forest/tree1/tree1_leaf.png" id="1_lbewv"]
 [ext_resource type="Texture2D" uid="uid://dl8rq8lgyr8fo" path="res://assets/scenes/forest/tree1/textures/tree_Metallic.png" id="2_7xto4"]
+[ext_resource type="Texture2D" uid="uid://clsxbog5ysikm" path="res://assets/scenes/forest/tree1/textures/tree_Height.png" id="2_pweyn"]
 [ext_resource type="Texture2D" uid="uid://bbd8earairqs2" path="res://assets/scenes/forest/tree1/textures/tree_Normal_OpenGL.png" id="3_01pwg"]
 [ext_resource type="Texture2D" uid="uid://dmw6g8f68smkl" path="res://assets/scenes/forest/tree1/textures/tree_Roughness.png" id="4_lflir"]
 [ext_resource type="Texture2D" uid="uid://cwk4bvricios6" path="res://assets/scenes/forest/tree1/textures/leaf_specular.png" id="6_7xto4"]
@@ -54,6 +55,14 @@ metallic_texture = ExtResource("2_7xto4")
 roughness_texture = ExtResource("4_lflir")
 normal_enabled = true
 normal_texture = ExtResource("3_01pwg")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_pweyn")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_0i0vu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maaly"]
 resource_name = "leaf"
@@ -105,6 +114,13 @@ metallic = 0.3
 metallic_specular = 1.0
 normal_enabled = true
 normal_texture = ExtResource("6_7xto4")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_light_affect = 0.1
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_lbewv")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0i0vu"]
 radius = 0.122214

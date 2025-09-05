@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://57jfmsot6bod"]
+[gd_scene load_steps=20 format=4 uid="uid://57jfmsot6bod"]
 
 [ext_resource type="Script" uid="uid://d4lw8efiug4e6" path="res://assets/player/scripts/machine_gun_mag_3_rd.gd" id="1_kdrvr"]
 [ext_resource type="Texture2D" uid="uid://cjx5n71s7qgqf" path="res://assets/player/textures/machine_gun/drum_magazine_Base_color.png" id="2_3ixlb"]
+[ext_resource type="Texture2D" uid="uid://n467t6v4oa3v" path="res://assets/player/textures/machine_gun/drum_magazine_Height.png" id="3_e47jc"]
 [ext_resource type="Texture2D" uid="uid://cw7g72g3hhnvx" path="res://assets/player/textures/machine_gun/drum_magazine_Metallic.png" id="3_ey2w4"]
 [ext_resource type="Texture2D" uid="uid://by7ph816p6fpd" path="res://assets/player/textures/machine_gun/drum_magazine_Normal_OpenGL.png" id="4_e47jc"]
 [ext_resource type="Texture2D" uid="uid://m0jw6a4ooba5" path="res://assets/player/textures/machine_gun/drum_magazine_Roughness.png" id="5_c5io5"]
 [ext_resource type="Texture2D" uid="uid://wqcgm45rwc7g" path="res://assets/player/textures/machine_gun/magazine_switch_Base_color.png" id="6_6vlqq"]
 [ext_resource type="Texture2D" uid="uid://b6dweedyqtx8q" path="res://assets/player/textures/machine_gun/magazine_switch_Metallic.png" id="7_8rp58"]
+[ext_resource type="Texture2D" uid="uid://qdlkgtow3dpx" path="res://assets/player/textures/machine_gun/magazine_switch_Height.png" id="8_c5io5"]
 [ext_resource type="Texture2D" uid="uid://jn6gxbekkeuw" path="res://assets/player/textures/machine_gun/magazine_switch_Normal_OpenGL.png" id="8_wckrr"]
 [ext_resource type="Texture2D" uid="uid://cm1ue7wtc0rl7" path="res://assets/player/textures/machine_gun/magazine_switch_Roughness.png" id="9_dnb1h"]
 
@@ -57,6 +59,11 @@ metallic_texture = ExtResource("3_ey2w4")
 roughness_texture = ExtResource("5_c5io5")
 normal_enabled = true
 normal_texture = ExtResource("4_e47jc")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_e47jc")
+backlight_enabled = true
+backlight_texture = ExtResource("2_3ixlb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fghg"]
 resource_name = "magazine_switch"
@@ -105,6 +112,11 @@ metallic_texture = ExtResource("7_8rp58")
 roughness_texture = ExtResource("9_dnb1h")
 normal_enabled = true
 normal_texture = ExtResource("8_wckrr")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_c5io5")
+backlight_enabled = true
+backlight_texture = ExtResource("6_6vlqq")
 
 [node name="machine_gun_mag_3rd" type="Node3D"]
 script = ExtResource("1_kdrvr")

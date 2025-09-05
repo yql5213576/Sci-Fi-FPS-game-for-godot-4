@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://cnevvsfn5o3ma"]
+[gd_scene load_steps=15 format=4 uid="uid://cnevvsfn5o3ma"]
 
 [ext_resource type="Texture2D" uid="uid://dfeubj2rvu2ka" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Base_color.png" id="1_15n5v"]
 [ext_resource type="Script" uid="uid://dmx7ikd7vnvnk" path="res://assets/player/scripts/rifle_ammos_1_st.gd" id="1_nxe0j"]
 [ext_resource type="Texture2D" uid="uid://bfbwua6le3pbr" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Metallic.png" id="2_nxe0j"]
 [ext_resource type="Texture2D" uid="uid://dqeyit8j7f2i8" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Normal_OpenGL.png" id="3_3n0ln"]
+[ext_resource type="Texture2D" uid="uid://c4mw50r884ibs" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Height.png" id="3_yn8ki"]
 [ext_resource type="Texture2D" uid="uid://bmqyd6g4mwet4" path="res://assets/player/textures/rifle_ammo/ammo_rifle_Roughness.png" id="4_yn8ki"]
 [ext_resource type="Texture2D" uid="uid://c6644jhbn03o4" path="res://assets/Kenney's_assets/PNG/White puff/whitePuff00.png" id="6_3n0ln"]
 
@@ -54,6 +55,11 @@ metallic_texture = ExtResource("2_nxe0j")
 roughness_texture = ExtResource("4_yn8ki")
 normal_enabled = true
 normal_texture = ExtResource("3_3n0ln")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_yn8ki")
+backlight_enabled = true
+backlight_texture = ExtResource("1_15n5v")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6uhjr"]
 gravity = Vector3(0, 0, -5)

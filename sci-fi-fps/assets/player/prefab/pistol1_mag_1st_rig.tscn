@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://1wufk23t12kk"]
+[gd_scene load_steps=12 format=4 uid="uid://1wufk23t12kk"]
 
 [ext_resource type="Script" uid="uid://c5wb5c3s8fi5y" path="res://assets/player/scripts/pistol_1_mag_1_st_rig.gd" id="1_4sx08"]
 [ext_resource type="Texture2D" uid="uid://c7xy0pod8p3n0" path="res://assets/player/textures/pistol/magazine_Base_color.png" id="2_ocuqh"]
 [ext_resource type="Texture2D" uid="uid://d2wbna0sm57xl" path="res://assets/player/textures/pistol/magazine_Metallic.png" id="3_i4dsv"]
+[ext_resource type="Texture2D" uid="uid://bmndxutaejr4c" path="res://assets/player/textures/pistol/magazine_Height.png" id="3_ocuqh"]
 [ext_resource type="Texture2D" uid="uid://ba7epn7j70kp8" path="res://assets/player/textures/pistol/magazine_Normal_OpenGL.png" id="4_elwp0"]
 [ext_resource type="Texture2D" uid="uid://cinqatv6ukfqq" path="res://assets/player/textures/pistol/magazine_Roughness.png" id="5_klkhc"]
 
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("3_i4dsv")
 roughness_texture = ExtResource("5_klkhc")
 normal_enabled = true
 normal_texture = ExtResource("4_elwp0")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_ocuqh")
+backlight_enabled = true
+backlight_texture = ExtResource("2_ocuqh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_knkk5"]
 size = Vector3(0.0519113, 0.18931, 0.123776)

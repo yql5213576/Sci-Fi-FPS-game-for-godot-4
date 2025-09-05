@@ -1,15 +1,19 @@
-[gd_scene load_steps=25 format=4 uid="uid://b4s2kdikrsdvv"]
+[gd_scene load_steps=30 format=4 uid="uid://b4s2kdikrsdvv"]
 
 [ext_resource type="Script" uid="uid://dvu0ighleld4o" path="res://assets/player/scripts/sight_ai.gd" id="1_70rvy"]
 [ext_resource type="Texture2D" uid="uid://dcrcnwwyexdec" path="res://assets/player/textures/sight/sight_main_Base_color.png" id="2_m0ai2"]
+[ext_resource type="Texture2D" uid="uid://dmmtjht2ckhjk" path="res://assets/player/textures/sight/sight_main_Height.png" id="3_8k6an"]
 [ext_resource type="Texture2D" uid="uid://tpi8oumw074s" path="res://assets/player/textures/sight/sight_main_Metallic.png" id="3_k1yms"]
 [ext_resource type="Texture2D" uid="uid://bf78nes338t2d" path="res://assets/player/textures/sight/sight_main_Normal_OpenGL.png" id="4_8k6an"]
 [ext_resource type="Texture2D" uid="uid://mab2l6j56wae" path="res://assets/player/textures/sight/sight_main_Roughness.png" id="5_pu7nr"]
-[ext_resource type="Shader" uid="uid://dg0htrorry0lr" path="res://assets/player/textures/sight/glass_shader.gdshader" id="6_5dxfv"]
+[ext_resource type="Texture2D" uid="uid://ctn1yovxwqaee" path="res://assets/player/textures/sight/sight_m_texture.png" id="6_70rvy"]
 [ext_resource type="Texture2D" uid="uid://7c50gwjk505g" path="res://assets/player/textures/sight/sight2_Base_color.png" id="7_drijw"]
 [ext_resource type="Texture2D" uid="uid://cpyf0ovvhoh5u" path="res://assets/player/textures/sight/sight2_Metallic.png" id="8_elgka"]
 [ext_resource type="Texture2D" uid="uid://bunv7hud6136p" path="res://assets/player/textures/sight/sight2_Normal_OpenGL.png" id="9_bkqcn"]
+[ext_resource type="Texture2D" uid="uid://cbb78vxxbxej2" path="res://assets/player/textures/sight/sight2_Height.png" id="9_pu7nr"]
 [ext_resource type="Texture2D" uid="uid://c5edupm6pqadm" path="res://assets/player/textures/sight/sight2_Roughness.png" id="10_k5lyv"]
+[ext_resource type="Texture2D" uid="uid://c0l02opru6lce" path="res://assets/player/weapons/red_point_texture/red_point1x.png" id="13_pu7nr"]
+[ext_resource type="Texture2D" uid="uid://b8tfp7uu6f38j" path="res://assets/player/weapons/red_point_texture/red_point2x.png" id="14_5dxfv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_830ic"]
 resource_name = "sight_main"
@@ -59,6 +63,11 @@ metallic_texture = ExtResource("3_k1yms")
 roughness_texture = ExtResource("5_pu7nr")
 normal_enabled = true
 normal_texture = ExtResource("4_8k6an")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_8k6an")
+backlight_enabled = true
+backlight_texture = ExtResource("2_m0ai2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02qcc"]
 resource_name = "sight_m"
@@ -101,13 +110,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o7dt7")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i63t8"]
-render_priority = 0
-shader = ExtResource("6_5dxfv")
-shader_parameter/albedo = Color(1, 1, 1, 0)
-shader_parameter/roughness = 0.15
-shader_parameter/normal_strength = 1.0
-shader_parameter/edge_color = Color(0, 0, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bef8i"]
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.5)
+albedo_texture = ExtResource("6_70rvy")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42koe"]
 resource_name = "sight2"
@@ -157,20 +167,33 @@ metallic_texture = ExtResource("8_elgka")
 roughness_texture = ExtResource("10_k5lyv")
 normal_enabled = true
 normal_texture = ExtResource("9_bkqcn")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("9_pu7nr")
+backlight_enabled = true
+backlight_texture = ExtResource("7_drijw")
 
-[sub_resource type="SphereMesh" id="SphereMesh_fwcq2"]
+[sub_resource type="QuadMesh" id="QuadMesh_drijw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqub1"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 16.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elgka"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(5, 5, 5, 1)
+albedo_texture = ExtResource("13_pu7nr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkqcn"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(5, 5, 5, 1)
+albedo_texture = ExtResource("14_5dxfv")
 
 [node name="sight" type="Node3D"]
 script = ExtResource("1_70rvy")
 
 [node name="sight_main" type="MeshInstance3D" parent="."]
 layers = 32
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_dfjqc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgm7y")
@@ -178,19 +201,26 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xgm7y")
 [node name="sight_m" type="MeshInstance3D" parent="sight_main"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51152, -0.312207)
 layers = 32
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_uyds6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_i63t8")
+surface_material_override/0 = SubResource("StandardMaterial3D_bef8i")
 
 [node name="sight_id" type="MeshInstance3D" parent="sight_main"]
 layers = 32
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_seh5y")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pxxfc")
 
-[node name="red_point" type="MeshInstance3D" parent="sight_main"]
-transform = Transform3D(0.0327303, 0, 0, 0, -9.53792e-10, 0.0294573, 0, -0.0218202, -1.28762e-09, 0, 0.51152, -0.312207)
-layers = 32
-mesh = SubResource("SphereMesh_fwcq2")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_yqub1")
+[node name="RP1" type="MeshInstance3D" parent="sight_main"]
+transform = Transform3D(0.0605511, 0, 0, 0, -1.76452e-09, 0.054496, 0, -0.0403674, -2.3821e-09, 0, 0.51152, -0.312207)
+visible = false
+mesh = SubResource("QuadMesh_drijw")
+surface_material_override/0 = SubResource("StandardMaterial3D_elgka")
+
+[node name="RP2" type="MeshInstance3D" parent="sight_main"]
+transform = Transform3D(0.217984, 0, 0, 0, -6.35226e-09, 0.196186, 0, -0.145323, -8.57555e-09, 0, 0.51152, -0.312207)
+visible = false
+mesh = SubResource("QuadMesh_drijw")
+surface_material_override/0 = SubResource("StandardMaterial3D_bkqcn")

@@ -296,49 +296,50 @@ func player_into_scene():
 				player_into_bool=false
 				return
 			
-			if self.player_team=="red":
+		if self.player_team=="red":
+			if player_into_n==0:
 				instance_player(scene_root.ai_red_points_lib_id[0],false)
-				player_into_n=0
+				player_into_n=1
 				player_into_bool=false
 				return
 			if player_into_n==1:
 				instance_ai("blue",2,2,scene_root.ai_blue_points_lib_id[0],false)
-				player_into_n=1
+				player_into_n=2
 				player_into_bool=false
 				return
 			if player_into_n==2:
 				instance_ai("blue",3,3,scene_root.ai_blue_points_lib_id[1],false)
-				player_into_n=2
+				player_into_n=3
 				player_into_bool=false
 				return
 			if player_into_n==3:
 				instance_ai("blue",4,4,scene_root.ai_blue_points_lib_id[2],false)
-				player_into_n=3
+				player_into_n=4
 				player_into_bool=false
 				return
 			if player_into_n==4:
 				instance_ai("blue",5,5,scene_root.ai_blue_points_lib_id[3],false)
-				player_into_n=4
+				player_into_n=5
 				player_into_bool=false
 				return
 			if player_into_n==5:
 				instance_ai("blue",6,6,scene_root.ai_blue_points_lib_id[4],false)
-				player_into_n=5
+				player_into_n=6
 				player_into_bool=false
 				return
 			if player_into_n==6:
 				instance_ai("red",7,7,scene_root.ai_red_points_lib_id[1],false)
-				player_into_n=6
+				player_into_n=7
 				player_into_bool=false
 				return
 			if player_into_n==7:
 				instance_ai("red",8,8,scene_root.ai_red_points_lib_id[2],false)
-				player_into_n=7
+				player_into_n=8
 				player_into_bool=false
 				return
 			if player_into_n==8:
 				instance_ai("red",9,9,scene_root.ai_red_points_lib_id[3],false)
-				player_into_n=8
+				player_into_n=9
 				player_into_bool=false
 				return
 			if player_into_n==9:

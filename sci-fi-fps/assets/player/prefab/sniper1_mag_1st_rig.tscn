@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://c1r3btds0yfad"]
+[gd_scene load_steps=12 format=4 uid="uid://c1r3btds0yfad"]
 
 [ext_resource type="Script" uid="uid://chhqk4rynumhj" path="res://assets/player/scripts/sniper_1_mag_1_st_rig.gd" id="1_u56lo"]
 [ext_resource type="Texture2D" uid="uid://bklldev3ty1p" path="res://assets/player/textures/sniper/magazine_Base_color.png" id="2_t2eq0"]
+[ext_resource type="Texture2D" uid="uid://b3ljebrh3p6je" path="res://assets/player/textures/sniper/magazine_Height.png" id="3_t2eq0"]
 [ext_resource type="Texture2D" uid="uid://de1ntymb4h5n6" path="res://assets/player/textures/sniper/magazine_Metallic.png" id="3_vun70"]
 [ext_resource type="Texture2D" uid="uid://cgjqip1trcoux" path="res://assets/player/textures/sniper/magazine_Normal_OpenGL.png" id="4_pqe16"]
 [ext_resource type="Texture2D" uid="uid://ugcgft0b3kbo" path="res://assets/player/textures/sniper/magazine_Roughness.png" id="5_dr14e"]
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("3_vun70")
 roughness_texture = ExtResource("5_dr14e")
 normal_enabled = true
 normal_texture = ExtResource("4_pqe16")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_t2eq0")
+backlight_enabled = true
+backlight_texture = ExtResource("2_t2eq0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tl84"]
 size = Vector3(0.144222, 0.342659, 0.334564)

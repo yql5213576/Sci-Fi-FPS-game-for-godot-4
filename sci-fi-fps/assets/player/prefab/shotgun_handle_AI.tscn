@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://boyioaidhedvc"]
+[gd_scene load_steps=10 format=4 uid="uid://boyioaidhedvc"]
 
 [ext_resource type="Texture2D" uid="uid://q63mwld70ixx" path="res://assets/player/textures/shotgun/handle_Base_color.png" id="2_igvu8"]
+[ext_resource type="Texture2D" uid="uid://co0f85k7nycon" path="res://assets/player/textures/shotgun/handle_Height.png" id="2_nwppe"]
 [ext_resource type="Texture2D" uid="uid://c26y86vtrg812" path="res://assets/player/textures/shotgun/handle_Metallic.png" id="3_jitae"]
 [ext_resource type="Texture2D" uid="uid://b3m108e1hbmjw" path="res://assets/player/textures/shotgun/handle_Normal_OpenGL.png" id="4_6pa7c"]
 [ext_resource type="Texture2D" uid="uid://by4yhulrd1yet" path="res://assets/player/textures/shotgun/handle_Roughness.png" id="5_t3kyq"]
@@ -52,6 +53,11 @@ metallic_texture = ExtResource("3_jitae")
 roughness_texture = ExtResource("5_t3kyq")
 normal_enabled = true
 normal_texture = ExtResource("4_6pa7c")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_nwppe")
+backlight_enabled = true
+backlight_texture = ExtResource("2_igvu8")
 
 [node name="shotgun_handle_3rd" type="Node3D"]
 

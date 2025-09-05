@@ -7,10 +7,12 @@ extends Control
 @onready var forest_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/forest/forest_team_death_match.tscn"
 @onready var forest_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/forest/forest_free_for_all.tscn"
 
+@onready var space_station_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station/space_station_team_death_match.tscn"
+@onready var space_station_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/space_station/space_station_free_for_all.tscn"
 func _ready() -> void:
-	if FileAccess.file_exists("user://SaveUser.data"):
+	if FileAccess.file_exists("user://SaveUser0.2.data"):
 		UserData.user_data_load()
-	if FileAccess.file_exists("user://SaveOptions.data"):
+	if FileAccess.file_exists("user://SaveOptions0.2.data"):
 		UserData.user_options_load()
 		apply_options()
 	else:
@@ -18,7 +20,7 @@ func _ready() -> void:
 		apply_options()
 	reslution_text_default=str(UserData.reslution_vec_data_default.x)+"-"+str(UserData.reslution_vec_data_default.y)
 	#resolution_button.text=reslution_text_default
-	if UserData.user_name_data==""&&FileAccess.file_exists("user://SaveUser.data")==false:
+	if UserData.user_name_data==""&&FileAccess.file_exists("user://SaveUser0.2.data")==false:
 		$user_first_login.visible=true
 	else:
 		$user_first_login.visible=false
@@ -36,12 +38,14 @@ func _ready() -> void:
 
 @onready var map_texture_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/TextureRect
 
-@onready var blood_strike_map_icon=load("res://assets/scenes/main_game_scenes/blood_strike/blood_strike_icon.png")
-@onready var forest_icon=load("res://assets/scenes/forest/forest_icon.png")
+@onready var blood_strike_map_icon=load("res://assets/scenes/map_icons/blood_strike_icon.png")
+@onready var forest_icon=load("res://assets/scenes/map_icons/forest_icon.png")
+@onready var space_station_icon=load("res://assets/scenes/map_icons/space_station_icon.png")
 
 @onready var loading_ProgressBar=$loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar/ProgressBar
 func _process(delta: float) -> void:
-	user_data_text_control()
+	if $user_options.visible==false:
+		user_data_text_control()
 	#print(DisplayServer.screen_get_size())
 	Input.set_mouse_mode(0)
 	if get_tree().paused==true:
@@ -54,13 +58,17 @@ func _process(delta: float) -> void:
 	Main_Menu_Global.setting_max_kills=button_max_kill_node.text
 	
 	mouse_range_label_node.text=str(mouse_range_node.value)
+
 	crosshair_label_node.text=str(crosshair_node.value)
+	lod_label_node.text=str(lod_node.value)
+	render_resolution_label_node.text=str(render_resolution_node.value)
 	
 	if map_label_text.text=="Blood Strike":
 		map_texture_node.texture=blood_strike_map_icon
 	if map_label_text.text=="Forest":
 		map_texture_node.texture=forest_icon
-	
+	if map_label_text.text=="Space Station":
+		map_texture_node.texture=space_station_icon
 	
 	
 	if game_start_loading==true:
@@ -104,7 +112,24 @@ func _process(delta: float) -> void:
 					var packed_scene=ResourceLoader.load_threaded_get(forest_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
 		
-		
+		if map_label_text.text=="Space Station":
+			if mode_label_text.text=="Team Death Match":
+				var progress=[]
+				ResourceLoader.load_threaded_request(space_station_map_TDM)
+				ResourceLoader.load_threaded_get_status(space_station_map_TDM,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(space_station_map_TDM)
+					get_tree().change_scene_to_packed(packed_scene)
+			if mode_label_text.text=="Free For All":
+				var progress=[]
+				ResourceLoader.load_threaded_request(space_station_map_FFA)
+				ResourceLoader.load_threaded_get_status(space_station_map_FFA,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(space_station_map_FFA)
+					get_tree().change_scene_to_packed(packed_scene)
+					
 #Control_button_menu
 func _on_texture_button_start_pressed() -> void:
 	$main_menu_button_press_audio.play()
@@ -176,6 +201,11 @@ func _on_button_forest_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if $game_load.visible==true:
 		map_label_text.text="Forest"
+
+func _on_button_space_station_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if $game_load.visible==true:
+		map_label_text.text="Space Station"
 #maps
 
 #mode
@@ -360,10 +390,6 @@ func user_data_text_control():
 		anti_aliasing_msaa_button.text="4x"
 	elif UserData.anti_aliasing_msaa_data==Viewport.MSAA_8X:
 		anti_aliasing_msaa_button.text="8x"
-	if UserData.anti_aliasing_fxaa_data==Viewport.SCREEN_SPACE_AA_DISABLED:
-		anti_aliasing_fxaa_button.text="close"
-	elif UserData.anti_aliasing_fxaa_data==Viewport.SCREEN_SPACE_AA_FXAA:
-		anti_aliasing_fxaa_button.text="open"
 	if UserData.ssao_data==true:
 		ssao_button.text="open"
 	else:
@@ -376,6 +402,10 @@ func user_data_text_control():
 		sdfgi_button.text="open"
 	else:
 		sdfgi_button.text="close"
+	if UserData.voxelgi_data==true:
+		voxelgi_button.text="open"
+	else:
+		voxelgi_button.text="close"
 	if UserData.glow_data==true:
 		glow_button.text="open"
 	else:
@@ -386,8 +416,13 @@ func user_data_text_control():
 		volumetric_fog_button.text="close"
 	
 	grass_button.text=str(UserData.grass_density)
-	UserData.mouse_seveitivity_data=mouse_range_node.value
-	UserData.crosshair_data=crosshair_node.value
+	
+	#mouse_range_node.value=UserData.mouse_seveitivity_data
+	#crosshair_node.value=UserData.crosshair_data
+	#lod_node.value=UserData.lod_data
+	#render_resolution_node.value=UserData.render_resolution_data
+	
+	
 #user_career
 
 #options
@@ -395,10 +430,10 @@ func user_data_text_control():
 @onready var resolution_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/Button_resolution
 @onready var vsync_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync
 @onready var anti_aliasing_msaa_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa
-@onready var anti_aliasing_fxaa_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9/Button_anti_aliasing_fxaa
 @onready var ssao_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao
 @onready var ssil_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil
 @onready var sdfgi_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi
+@onready var voxelgi_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/Button_VoxelGI
 @onready var glow_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow
 @onready var volumetric_fog_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog
 @onready var grass_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass
@@ -409,18 +444,26 @@ func user_data_text_control():
 @onready var crosshair_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range
 @onready var crosshair_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range/CS_range_Label
 
+@onready var lod_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range
+@onready var lod_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range/lod_range_Label
+
+@onready var render_resolution_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range
+@onready var render_resolution_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range/render_resolution_range_Label
+
 var reslution_text_default#_ready
 var vsync_default="open"
 var anti_aliasing_msaa_default="4x"
-var anti_aliasing_fxaa_default="close"
 var ssao_default="open"
 var ssil_default="open"
 var sdfgi_default="open"
+var voxelgi_default="open"
 var glow_default="open"
 var volumetric_fog_default="open"
 var grass_default="0"
 var mouse_sevsitivity_default=0.08
 var crosshair_size_default=0.125
+var lod_range_default=1
+var render_resolution_default=1
 func _on_button_resolution_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
@@ -563,19 +606,6 @@ func _on_button_antialiasingmsaa_button_down() -> void:
 			return
 
 
-func _on_button_antialiasingfxaa_button_down() -> void:
-	$user_manu_button_press_audio.play()
-	if about_the_game_menu.visible==false:
-		if anti_aliasing_fxaa_button.text=="close":
-			anti_aliasing_fxaa_button.text="open"
-			UserData.anti_aliasing_fxaa_data==Viewport.SCREEN_SPACE_AA_FXAA
-			return
-		if anti_aliasing_fxaa_button.text=="open":
-			anti_aliasing_fxaa_button.text="close"
-			UserData.anti_aliasing_fxaa_data=Viewport.SCREEN_SPACE_AA_DISABLED
-			return
-
-
 func _on_button_ssao_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
@@ -614,6 +644,17 @@ func _on_button_sdfgi_button_down() -> void:
 			UserData.sdfgi_data=false
 			return
 
+func _on_button_voxel_gi_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if about_the_game_menu.visible==false:
+		if voxelgi_button.text=="close":
+			voxelgi_button.text="open"
+			UserData.voxelgi_data=true
+			return
+		if voxelgi_button.text=="open":
+			voxelgi_button.text="close"
+			UserData.voxelgi_data=false
+			return
 
 func _on_button_glow_button_down() -> void:
 	$user_manu_button_press_audio.play()
@@ -658,6 +699,7 @@ func _on_button_grass_button_down() -> void:
 			return
 @onready var blood_strike_environment=preload("res://assets/scenes/main_game_scenes/blood_strike/blood_strike.tres")
 @onready var forest_environment=preload("res://assets/scenes/forest/terrain/forest_main_scene_environment.tres")
+@onready var space_station_environment=preload("res://assets/scenes/space_station/space_station.tres")
 
 func apply_options():
 	get_viewport().content_scale_size=UserData.reslution_vec_data
@@ -667,25 +709,37 @@ func apply_options():
 	
 	get_viewport().msaa_3d=UserData.anti_aliasing_msaa_data
 	
-	get_viewport().screen_space_aa=UserData.anti_aliasing_fxaa_data
-	
 	blood_strike_environment.set_ssao_enabled(UserData.ssao_data)
 	forest_environment.set_ssao_enabled(UserData.ssao_data)
+	space_station_environment.set_ssao_enabled(UserData.ssao_data)
 	
 	blood_strike_environment.set_ssil_enabled(UserData.ssil_data)
 	forest_environment.set_ssil_enabled(UserData.ssil_data)
+	space_station_environment.set_ssil_enabled(UserData.ssil_data)
 	
 	blood_strike_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	forest_environment.set_sdfgi_enabled(UserData.sdfgi_data)
+	space_station_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	
 	blood_strike_environment.set_glow_enabled(UserData.glow_data)
 	forest_environment.set_glow_enabled(UserData.glow_data)
+	space_station_environment.set_glow_enabled(UserData.glow_data)
 	
 	blood_strike_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	forest_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
+	space_station_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
+	
+	
+	mouse_range_node.value=UserData.mouse_seveitivity_data
+	crosshair_node.value=UserData.crosshair_data
+	lod_node.value=UserData.lod_data
+	render_resolution_node.value=UserData.render_resolution_data
 	
 	UserData.mouse_seveitivity_data=mouse_range_node.value
 	UserData.crosshair_data=crosshair_node.value
+	UserData.lod_data=lod_node.value
+	UserData.render_resolution_data=render_resolution_node.value
+	
 func _on_apply_options_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
@@ -706,9 +760,6 @@ func _on_reset_options_button_down() -> void:
 		anti_aliasing_msaa_button.text=anti_aliasing_msaa_default
 		UserData.anti_aliasing_msaa_data=UserData.anti_aliasing_msaa_data_default
 		
-		anti_aliasing_fxaa_button.text=anti_aliasing_fxaa_default
-		UserData.anti_aliasing_fxaa_data=UserData.anti_aliasing_fxaa_data_default
-		
 		ssao_button.text=ssao_default
 		UserData.ssao_data=UserData.ssao_data_default
 		
@@ -717,6 +768,9 @@ func _on_reset_options_button_down() -> void:
 		
 		sdfgi_button.text=sdfgi_default
 		UserData.sdfgi_data=UserData.sdfgi_data_default
+		
+		voxelgi_button.text=voxelgi_default
+		UserData.voxelgi_data=UserData.voxelgi_data_default
 		
 		glow_button.text=glow_default
 		UserData.glow_data=UserData.glow_data_default
@@ -728,16 +782,23 @@ func _on_reset_options_button_down() -> void:
 		UserData.grass_density=UserData.grass_density_default
 		
 		mouse_range_node.value=mouse_sevsitivity_default
+		UserData.mouse_seveitivity_data=UserData.mouse_seveitivity_data_default
 		
 		crosshair_node.value=crosshair_size_default
-
+		UserData.crosshair_data=UserData.crosshair_data_default
 		
-		UserData.mouse_seveitivity_data=UserData.mouse_seveitivity_data_default
-	
+		lod_node.value=lod_range_default
+		UserData.lod_data=UserData.lod_data_default
+		
+		render_resolution_node.value=render_resolution_default
+		UserData.render_resolution_data=UserData.render_resolution_data_default
+		
+		
 
 func _on_exit_options_button_down() -> void:
-	if FileAccess.file_exists("user://SaveOptions.data"):
+	if FileAccess.file_exists("user://SaveOptions0.2.data"):
 		UserData.user_options_load()
+		apply_options()
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
 		if $user_options.visible==true:
@@ -798,10 +859,11 @@ func _on_button_blood_strike_mouse_entered() -> void:
 func _on_button_forest_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
+func _on_button_space_station_mouse_entered() -> void:
+	$user_manu_button_audio.play()
 
 func _on_team_death_match_mouse_entered() -> void:
 	$user_manu_button_audio.play()
-
 
 func _on_free_for_all_mouse_entered() -> void:
 	$user_manu_button_audio.play()
@@ -863,10 +925,6 @@ func _on_button_anti_aliasing_msaa_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
 
-func _on_button_anti_aliasing_fxaa_mouse_entered() -> void:
-	$user_manu_button_audio.play()
-
-
 func _on_button_ssao_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
@@ -878,7 +936,9 @@ func _on_button_ssil_mouse_entered() -> void:
 func _on_button_sdfgi_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
-
+func _on_button_voxel_gi_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+	
 func _on_button_glow_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
@@ -893,11 +953,23 @@ func _on_button_grass_mouse_entered() -> void:
 
 func _on_ms_range_mouse_entered() -> void:
 	$user_manu_button_audio.play()
-
+func _on_ms_range_mouse_exited() -> void:
+	UserData.mouse_seveitivity_data=mouse_range_node.value
 
 func _on_cs_range_mouse_entered() -> void:
 	$user_manu_button_audio.play()
+func _on_cs_range_mouse_exited() -> void:
+	UserData.crosshair_data=crosshair_node.value
 
+func _on_lod_range_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+func _on_lod_range_mouse_exited() -> void:
+	UserData.lod_data=lod_node.value
+
+func _on_render_resolution_range_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+func _on_render_resolution_range_mouse_exited() -> void:
+	UserData.render_resolution_data=render_resolution_node.value
 
 func _on_apply_options_mouse_entered() -> void:
 	$user_manu_button_audio.play()

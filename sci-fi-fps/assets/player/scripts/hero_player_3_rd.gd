@@ -2780,3 +2780,6 @@ func machine_gun_reload3_audio_event():
 	pass
 func machine_gun_reload4_audio_event():
 	pass
+
+func print_killing_tips(text):
+	$hero_anim_1st_all_weapons.print_killing_tips(text)

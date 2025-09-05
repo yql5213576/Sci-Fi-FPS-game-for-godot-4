@@ -626,6 +626,7 @@ grow_vertical = 2
 script = ExtResource("1_g8ye4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.720954)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -668,10 +669,10 @@ grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="anim" type="Control" parent="Control_button_menu/button_menu"]
-visible = false
 anchors_preset = 0
 
 [node name="TextureRect_anim" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+modulate = Color(1, 1, 1, 0.302385)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -723,6 +724,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect_anim2" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+modulate = Color(1, 1, 1, 0.302385)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -749,7 +751,7 @@ anchor_bottom = 0.5
 offset_left = -192.0
 offset_top = -161.0
 offset_right = 192.0
-offset_bottom = -2.0
+offset_bottom = -2.00024
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_qncuu")
@@ -766,7 +768,7 @@ anchor_bottom = 0.5
 offset_left = -192.0
 offset_top = -161.0
 offset_right = 192.0
-offset_bottom = -2.0
+offset_bottom = -2.00024
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_0yyb1")
@@ -774,6 +776,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect_anim3" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+modulate = Color(1, 1, 1, 0.302385)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -825,6 +828,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect_anim4" type="TextureRect" parent="Control_button_menu/button_menu/anim"]
+modulate = Color(1, 1, 1, 0.302385)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -876,6 +880,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="Control_button_menu/button_menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1047,6 +1052,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(209.725, 0)
 layout_mode = 2
 texture = ExtResource("9_a6wql")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -1081,6 +1087,11 @@ text = "Blood_Strike"
 layout_mode = 2
 size_flags_vertical = 4
 text = "Forest"
+
+[node name="Button_space_station" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Space_Station"
 
 [node name="Mode" type="VBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -2037,33 +2048,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
 text = "4x"
 clip_text = true
 
-[node name="VSeparator10" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
-custom_minimum_size = Vector2(0, 16.78)
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
-layout_mode = 2
-
-[node name="anti_aliasing_fxaa" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9"]
-custom_minimum_size = Vector2(510, 0)
-layout_mode = 2
-text = "Anti-Aliasing(FXAA)"
-label_settings = SubResource("LabelSettings_onkhq")
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-
-[node name="Button_anti_aliasing_fxaa" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9"]
-custom_minimum_size = Vector2(139.61, 0)
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vx5v3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
-theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
-text = "close"
-clip_text = true
-
 [node name="VSeparator2" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
 custom_minimum_size = Vector2(0, 16.78)
 layout_mode = 2
@@ -2134,6 +2118,32 @@ vertical_alignment = 1
 clip_text = true
 
 [node name="Button_sdfgi" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4"]
+custom_minimum_size = Vector2(139.61, 0)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v7s7k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osd0s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx4du")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7s7k")
+text = "open"
+
+[node name="VSeparator14" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="VoxelGI" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Voxel Global Illumination"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button_VoxelGI" type="Button" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13"]
 custom_minimum_size = Vector2(139.61, 0)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v7s7k")
@@ -2289,6 +2299,75 @@ offset_top = -3.4
 offset_right = -5.43
 offset_bottom = 18.9333
 text = "0.01"
+
+[node name="VSeparator15" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="level_of_detail" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Level Of Detail"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="lod_range" type="HSlider" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14"]
+custom_minimum_size = Vector2(136.315, 0)
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_73crt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcsbl")
+max_value = 20.0
+value = 1.0
+rounded = true
+
+[node name="lod_range_Label" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range"]
+layout_mode = 2
+offset_left = -37.43
+offset_top = -3.4
+offset_right = -5.43
+offset_bottom = 18.9333
+text = "1"
+
+[node name="VSeparator16" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+custom_minimum_size = Vector2(0, 16.78)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_onkhq")
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
+layout_mode = 2
+
+[node name="render_resolution" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+text = "Render Resolution"
+label_settings = SubResource("LabelSettings_onkhq")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="render_resolution_range" type="HSlider" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15"]
+custom_minimum_size = Vector2(136.315, 0)
+layout_mode = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_73crt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bcsbl")
+min_value = 0.25
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="render_resolution_range_Label" type="Label" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range"]
+layout_mode = 2
+offset_left = -37.43
+offset_top = -3.4
+offset_right = -5.43
+offset_bottom = 18.9333
+text = "1.00"
 
 [node name="VSeparator13" type="VSeparator" parent="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names"]
 custom_minimum_size = Vector2(0, 16.78)
@@ -2597,6 +2676,8 @@ volume_db = -20.0
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike" to="." method="_on_button_blood_strike_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_Forest" to="." method="_on_button_forest_button_down"]
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_Forest" to="." method="_on_button_forest_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station" to="." method="_on_button_space_station_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station" to="." method="_on_button_space_station_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match" to="." method="_on_team_death_match_button_down"]
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match" to="." method="_on_team_death_match_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Free_For_All" to="." method="_on_free_for_all_button_down"]
@@ -2629,14 +2710,14 @@ volume_db = -20.0
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync" to="." method="_on_button_vsync_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa" to="." method="_on_button_antialiasingmsaa_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa" to="." method="_on_button_anti_aliasing_msaa_mouse_entered"]
-[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9/Button_anti_aliasing_fxaa" to="." method="_on_button_antialiasingfxaa_button_down"]
-[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer9/Button_anti_aliasing_fxaa" to="." method="_on_button_anti_aliasing_fxaa_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao" to="." method="_on_button_ssao_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao" to="." method="_on_button_ssao_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil" to="." method="_on_button_ssil_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil" to="." method="_on_button_ssil_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi" to="." method="_on_button_sdfgi_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi" to="." method="_on_button_sdfgi_mouse_entered"]
+[connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/Button_VoxelGI" to="." method="_on_button_voxel_gi_button_down"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/Button_VoxelGI" to="." method="_on_button_voxel_gi_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow" to="." method="_on_button_glow_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow" to="." method="_on_button_glow_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog" to="." method="_on_button_volumetric_fog_button_down"]
@@ -2644,7 +2725,13 @@ volume_db = -20.0
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass" to="." method="_on_button_grass_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass" to="." method="_on_button_grass_mouse_entered"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range" to="." method="_on_ms_range_mouse_entered"]
+[connection signal="mouse_exited" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range" to="." method="_on_ms_range_mouse_exited"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range" to="." method="_on_cs_range_mouse_entered"]
+[connection signal="mouse_exited" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range" to="." method="_on_cs_range_mouse_exited"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range" to="." method="_on_lod_range_mouse_entered"]
+[connection signal="mouse_exited" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range" to="." method="_on_lod_range_mouse_exited"]
+[connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range" to="." method="_on_render_resolution_range_mouse_entered"]
+[connection signal="mouse_exited" from="user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range" to="." method="_on_render_resolution_range_mouse_exited"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options" to="." method="_on_apply_options_button_down"]
 [connection signal="mouse_entered" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options" to="." method="_on_apply_options_mouse_entered"]
 [connection signal="button_down" from="user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/reset_options" to="." method="_on_reset_options_button_down"]

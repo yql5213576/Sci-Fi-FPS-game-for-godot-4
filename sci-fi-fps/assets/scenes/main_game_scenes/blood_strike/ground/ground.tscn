@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://ck8eceaqrb0hm"]
+[gd_scene load_steps=11 format=4 uid="uid://ck8eceaqrb0hm"]
 
 [ext_resource type="Texture2D" uid="uid://0g5d4hpg2mf" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Base_color.png" id="1_jglwm"]
+[ext_resource type="Texture2D" uid="uid://cjgxemjy8aojw" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Height.png" id="2_jljbm"]
 [ext_resource type="Texture2D" uid="uid://b8n5gsy3sem1h" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Metallic.png" id="2_u8wxa"]
 [ext_resource type="Texture2D" uid="uid://bo21qgcfdes3y" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Normal_OpenGL.png" id="3_rfhfp"]
 [ext_resource type="Texture2D" uid="uid://ch8p0v1j4ii84" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Roughness.png" id="4_vahuk"]
@@ -52,6 +53,13 @@ metallic_texture = ExtResource("2_u8wxa")
 roughness_texture = ExtResource("4_vahuk")
 normal_enabled = true
 normal_texture = ExtResource("3_rfhfp")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_jljbm")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_jglwm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8qahn"]
 size = Vector3(70.0419, 12.8794, 67.3452)

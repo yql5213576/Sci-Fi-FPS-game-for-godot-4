@@ -1,75 +1,94 @@
-[gd_scene load_steps=119 format=4 uid="uid://dkqn5x0a3ksqt"]
+[gd_scene load_steps=141 format=4 uid="uid://dkqn5x0a3ksqt"]
 
 [ext_resource type="Texture2D" uid="uid://nf7rjjku865n" path="res://assets/player/textures/smg/gun_main1_Base_color.png" id="1_g8ssk"]
 [ext_resource type="Script" uid="uid://73yaqol3menc" path="res://assets/player/scripts/smg_3_rd.gd" id="1_md0gu"]
 [ext_resource type="Texture2D" uid="uid://wfuwnpytdqpx" path="res://assets/player/textures/smg/gun_main1_Metallic.png" id="2_egap1"]
+[ext_resource type="Texture2D" uid="uid://7gq6oh33mha" path="res://assets/player/textures/smg/gun_main1_Height.png" id="3_k8cbx"]
 [ext_resource type="Texture2D" uid="uid://1v3vwf8eog64" path="res://assets/player/textures/smg/gun_main1_Normal_OpenGL.png" id="3_md0gu"]
 [ext_resource type="Texture2D" uid="uid://cuqhlp3ahnmei" path="res://assets/player/textures/smg/gun_main1_Roughness.png" id="4_qaxhi"]
 [ext_resource type="Texture2D" uid="uid://c611udc4jymcw" path="res://assets/player/textures/smg/gun_main2_Base_color.png" id="5_at5mn"]
 [ext_resource type="Texture2D" uid="uid://bulb5ixnc0u7x" path="res://assets/player/textures/smg/gun_main2_Metallic.png" id="6_udv7a"]
 [ext_resource type="Texture2D" uid="uid://cxmooqlp4e0f0" path="res://assets/player/textures/smg/gun_main2_Normal_OpenGL.png" id="7_wrayx"]
 [ext_resource type="Texture2D" uid="uid://b3pc7p8mr1v4v" path="res://assets/player/textures/smg/gun_main2_Roughness.png" id="8_fvmxk"]
+[ext_resource type="Texture2D" uid="uid://daxjexs7o5f73" path="res://assets/player/textures/smg/gun_main2_Height.png" id="8_k7yhl"]
 [ext_resource type="Texture2D" uid="uid://c0rd1oyyunrqg" path="res://assets/player/textures/smg/gun_main3_Base_color.png" id="9_i4q5p"]
 [ext_resource type="Texture2D" uid="uid://dkt4j2xanbbyl" path="res://assets/player/textures/smg/gun_main3_Metallic.png" id="10_laeny"]
 [ext_resource type="Texture2D" uid="uid://2bgatuh2ddnv" path="res://assets/player/textures/smg/gun_main3_Normal_OpenGL.png" id="11_4yd66"]
 [ext_resource type="Texture2D" uid="uid://bks2cmxb1ppqu" path="res://assets/player/textures/smg/gun_main3_Roughness.png" id="12_sagmv"]
 [ext_resource type="Texture2D" uid="uid://bijx4ey76cj6b" path="res://assets/player/textures/smg/gun_main4_Base_color.png" id="13_5lekh"]
+[ext_resource type="Texture2D" uid="uid://ceqfwfm6g0304" path="res://assets/player/textures/smg/gun_main3_Height.png" id="13_126ef"]
 [ext_resource type="Texture2D" uid="uid://clqpkc1fialk4" path="res://assets/player/textures/smg/gun_main4_Metallic.png" id="14_k8cbx"]
 [ext_resource type="Texture2D" uid="uid://bwfw5ma1cgdu2" path="res://assets/player/textures/smg/gun_main4_Normal_OpenGL.png" id="15_k7yhl"]
 [ext_resource type="Texture2D" uid="uid://cyakw3li8ak1r" path="res://assets/player/textures/smg/gun_main4_Roughness.png" id="16_126ef"]
 [ext_resource type="Texture2D" uid="uid://bfclp1e1dolk4" path="res://assets/player/textures/smg/gun_main5_Base_color.png" id="17_gbsbj"]
 [ext_resource type="Texture2D" uid="uid://b2drk65afpuuy" path="res://assets/player/textures/smg/gun_main5_Metallic.png" id="18_bu6ki"]
+[ext_resource type="Texture2D" uid="uid://8wlr4w7l6hm5" path="res://assets/player/textures/smg/gun_main4_Height.png" id="18_gbsbj"]
 [ext_resource type="Texture2D" uid="uid://cttgdvey2rvg8" path="res://assets/player/textures/smg/gun_main5_Normal_OpenGL.png" id="19_tfll2"]
 [ext_resource type="Texture2D" uid="uid://bdovxvo2mki5m" path="res://assets/player/textures/smg/gun_main5_Roughness.png" id="20_uvaof"]
 [ext_resource type="Texture2D" uid="uid://dn5ag655vhrxb" path="res://assets/player/textures/smg/gun_main6_Base_color.png" id="21_g1uv2"]
 [ext_resource type="Texture2D" uid="uid://dkaku5tx5uepk" path="res://assets/player/textures/smg/gun_main6_Metallic.png" id="22_yx3oa"]
+[ext_resource type="Texture2D" uid="uid://ba0xn7asmdfss" path="res://assets/player/textures/smg/gun_main5_Height.png" id="23_bu6ki"]
 [ext_resource type="Texture2D" uid="uid://cm2drxovng1le" path="res://assets/player/textures/smg/gun_main6_Normal_OpenGL.png" id="23_ruvuj"]
 [ext_resource type="Texture2D" uid="uid://djesagjvj6i2w" path="res://assets/player/textures/smg/gun_main6_Roughness.png" id="24_yhjl6"]
 [ext_resource type="Texture2D" uid="uid://bkklrmxl0l5w" path="res://assets/player/textures/smg/gun_main7_Base_color.png" id="25_0y1w2"]
 [ext_resource type="Texture2D" uid="uid://cyjqhfefajkcq" path="res://assets/player/textures/smg/gun_main7_Metallic.png" id="26_ui08q"]
 [ext_resource type="Texture2D" uid="uid://bphjb7rey7rj0" path="res://assets/player/textures/smg/gun_main7_Normal_OpenGL.png" id="27_uu52s"]
 [ext_resource type="Texture2D" uid="uid://co2klvbr84hoh" path="res://assets/player/textures/smg/gun_main7_Roughness.png" id="28_fkwtg"]
+[ext_resource type="Texture2D" uid="uid://4mrupmfb68g8" path="res://assets/player/textures/smg/gun_main6_Height.png" id="28_tfll2"]
 [ext_resource type="Texture2D" uid="uid://bvrm2cbiaj0kk" path="res://assets/player/textures/smg/gun_main8_Base_color.png" id="29_5lefr"]
 [ext_resource type="Texture2D" uid="uid://jih30eoea7bc" path="res://assets/player/textures/smg/gun_main8_Metallic.png" id="30_rehb8"]
 [ext_resource type="Texture2D" uid="uid://cmpcw0d5mbj6x" path="res://assets/player/textures/smg/gun_main8_Normal_OpenGL.png" id="31_is4hh"]
 [ext_resource type="Texture2D" uid="uid://dl1r1isyxgbqs" path="res://assets/player/textures/smg/gun_main8_Roughness.png" id="32_qjluk"]
 [ext_resource type="Texture2D" uid="uid://c78pqv0g7ejcg" path="res://assets/player/textures/smg/gun_main9_Base_color.png" id="33_l5try"]
+[ext_resource type="Texture2D" uid="uid://bad5v6oukmjsm" path="res://assets/player/textures/smg/gun_main7_Height.png" id="33_uvaof"]
 [ext_resource type="Texture2D" uid="uid://cbjg12usbbfvk" path="res://assets/player/textures/smg/gun_main9_Metallic.png" id="34_dd4a4"]
 [ext_resource type="Texture2D" uid="uid://dipr7aghpqb7f" path="res://assets/player/textures/smg/gun_main9_Normal_OpenGL.png" id="35_lwekl"]
 [ext_resource type="Texture2D" uid="uid://ddgj2gwmyw51b" path="res://assets/player/textures/smg/gun_main9_Roughness.png" id="36_korda"]
 [ext_resource type="Texture2D" uid="uid://buuf40qhr1ege" path="res://assets/player/textures/smg/gun_main10_Base_color.png" id="37_28c7w"]
 [ext_resource type="Texture2D" uid="uid://cv8chrecheg1v" path="res://assets/player/textures/smg/gun_main10_Metallic.png" id="38_aql2h"]
+[ext_resource type="Texture2D" uid="uid://br678qyjookqo" path="res://assets/player/textures/smg/gun_main8_Height.png" id="38_g1uv2"]
 [ext_resource type="Texture2D" uid="uid://xnogfgk6cv8j" path="res://assets/player/textures/smg/gun_main10_Normal_OpenGL.png" id="39_paudw"]
 [ext_resource type="Texture2D" uid="uid://c38pmsfgatlwp" path="res://assets/player/textures/smg/gun_main10_Roughness.png" id="40_qab1e"]
 [ext_resource type="Texture2D" uid="uid://b826s665ix3kv" path="res://assets/player/textures/smg/gun_main11_Base_color.png" id="41_dao2k"]
 [ext_resource type="Texture2D" uid="uid://clanl4to2qlyc" path="res://assets/player/textures/smg/gun_main11_Metallic.png" id="42_jktao"]
 [ext_resource type="Texture2D" uid="uid://0q3vlwbwji43" path="res://assets/player/textures/smg/gun_main11_Normal_OpenGL.png" id="43_1wmvu"]
+[ext_resource type="Texture2D" uid="uid://bxjrn7cqwf775" path="res://assets/player/textures/smg/gun_main9_Height.png" id="43_yx3oa"]
 [ext_resource type="Texture2D" uid="uid://ddqhwu87pmkwv" path="res://assets/player/textures/smg/gun_main11_Roughness.png" id="44_7n24p"]
 [ext_resource type="Texture2D" uid="uid://dh00fhrphfmi8" path="res://assets/player/textures/smg/trigger_Base_color.png" id="45_pi6sj"]
 [ext_resource type="Texture2D" uid="uid://bijs714ck1kp6" path="res://assets/player/textures/smg/trigger_Metallic.png" id="46_dv6ng"]
 [ext_resource type="Texture2D" uid="uid://d1hh40mn54wbx" path="res://assets/player/textures/smg/trigger_Normal_OpenGL.png" id="47_vc7ec"]
 [ext_resource type="Texture2D" uid="uid://cwcwtpmbpif1e" path="res://assets/player/textures/smg/trigger_Roughness.png" id="48_cfd0y"]
+[ext_resource type="Texture2D" uid="uid://dr3qa2xtkrxhw" path="res://assets/player/textures/smg/gun_main10_Height.png" id="48_ruvuj"]
 [ext_resource type="Texture2D" uid="uid://jy8b1xe68uay" path="res://assets/player/textures/smg/barrel_Base_color.png" id="49_dfrlw"]
 [ext_resource type="Texture2D" uid="uid://v00crdxgpo5f" path="res://assets/player/textures/smg/barrel_Metallic.png" id="50_tjcoj"]
 [ext_resource type="Texture2D" uid="uid://cs80x1qdpyf4d" path="res://assets/player/textures/smg/barrel_Normal_OpenGL.png" id="51_7m43k"]
 [ext_resource type="Texture2D" uid="uid://cn1yq7e8cv5ip" path="res://assets/player/textures/smg/barrel_Roughness.png" id="52_sc2i2"]
 [ext_resource type="Texture2D" uid="uid://prcpmtogg6go" path="res://assets/player/textures/smg/magazine_Base_color.png" id="53_1cdpg"]
+[ext_resource type="Texture2D" uid="uid://ceru2j2l2c1s1" path="res://assets/player/textures/smg/gun_main11_Height.png" id="53_yhjl6"]
 [ext_resource type="Texture2D" uid="uid://cvn8r0vrpplcu" path="res://assets/player/textures/smg/magazine_Metallic.png" id="54_drhod"]
 [ext_resource type="Texture2D" uid="uid://cxjadq0txf8kl" path="res://assets/player/textures/smg/magazine_Normal_OpenGL.png" id="55_l2dtu"]
 [ext_resource type="Texture2D" uid="uid://dhdeydhgl10p5" path="res://assets/player/textures/smg/magazine_Roughness.png" id="56_x71ot"]
 [ext_resource type="Texture2D" uid="uid://b3ir01j58ha01" path="res://assets/player/textures/smg/handle_Base_color.png" id="57_l1815"]
+[ext_resource type="Texture2D" uid="uid://cb48e58okb4iy" path="res://assets/player/textures/smg/trigger_Height.png" id="58_uvaof"]
 [ext_resource type="Texture2D" uid="uid://blrjli4oh6gqt" path="res://assets/player/textures/smg/handle_Metallic.png" id="58_wlnlr"]
 [ext_resource type="Texture2D" uid="uid://cxbtfay6217ua" path="res://assets/player/textures/smg/handle_Normal_OpenGL.png" id="59_58pbe"]
 [ext_resource type="Texture2D" uid="uid://c7aguu3p7voj8" path="res://assets/player/textures/smg/handle_Roughness.png" id="60_d8vtn"]
 [ext_resource type="Texture2D" uid="uid://cwd7fxfay1esn" path="res://assets/player/textures/smg/object2_Base_color.png" id="61_f4x6p"]
 [ext_resource type="Texture2D" uid="uid://qx7g0r2xi0sw" path="res://assets/player/textures/smg/object2_Metallic.png" id="62_ettn0"]
+[ext_resource type="Texture2D" uid="uid://bgfjbi8owh3am" path="res://assets/player/textures/smg/barrel_Height.png" id="63_g1uv2"]
 [ext_resource type="Texture2D" uid="uid://bw66hhdnug4b4" path="res://assets/player/textures/smg/object2_Normal_OpenGL.png" id="63_kcf6g"]
 [ext_resource type="Texture2D" uid="uid://bq42gg1e5vg0f" path="res://assets/player/textures/smg/object2_Roughness.png" id="64_2u08j"]
 [ext_resource type="Texture2D" uid="uid://cslvs80y40pwq" path="res://assets/player/textures/smg/object1_Base_color.png" id="65_snvfs"]
 [ext_resource type="Texture2D" uid="uid://cfjrgf1qg5bbr" path="res://assets/player/textures/smg/object1_Metallic.png" id="66_uoabu"]
 [ext_resource type="Texture2D" uid="uid://c170ghd87v462" path="res://assets/player/textures/smg/object1_Normal_OpenGL.png" id="67_6r1l1"]
 [ext_resource type="Texture2D" uid="uid://bl4tnaywnwwj7" path="res://assets/player/textures/smg/object1_Roughness.png" id="68_6sqfd"]
+[ext_resource type="Texture2D" uid="uid://db1xs10cmy2h6" path="res://assets/player/textures/smg/magazine_Height.png" id="68_yx3oa"]
 [ext_resource type="PackedScene" uid="uid://cir8fqx3k67q4" path="res://assets/player/prefab/sight_3rd.tscn" id="69_egap1"]
+[ext_resource type="Texture2D" uid="uid://cr0g6qa6utfm" path="res://assets/player/textures/smg/handle_Height.png" id="73_ruvuj"]
+[ext_resource type="Texture2D" uid="uid://dcxuk1hpgnstt" path="res://assets/player/textures/smg/object2_Height.png" id="78_yhjl6"]
+[ext_resource type="Texture2D" uid="uid://lempg6vgne2i" path="res://assets/player/textures/smg/object1_Height.png" id="83_0y1w2"]
+[ext_resource type="Texture2D" uid="uid://c0l02opru6lce" path="res://assets/player/weapons/red_point_texture/red_point1x.png" id="88_yx3oa"]
+[ext_resource type="Texture2D" uid="uid://b8tfp7uu6f38j" path="res://assets/player/weapons/red_point_texture/red_point2x.png" id="89_ruvuj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nh3sm"]
 resource_name = "gun_main1"
@@ -418,6 +437,11 @@ metallic_texture = ExtResource("2_egap1")
 roughness_texture = ExtResource("4_qaxhi")
 normal_enabled = true
 normal_texture = ExtResource("3_md0gu")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_k8cbx")
+backlight_enabled = true
+backlight_texture = ExtResource("1_g8ssk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xirta"]
 albedo_texture = ExtResource("5_at5mn")
@@ -426,6 +450,11 @@ metallic_texture = ExtResource("6_udv7a")
 roughness_texture = ExtResource("8_fvmxk")
 normal_enabled = true
 normal_texture = ExtResource("7_wrayx")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_k7yhl")
+backlight_enabled = true
+backlight_texture = ExtResource("5_at5mn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3wkn"]
 albedo_texture = ExtResource("9_i4q5p")
@@ -434,6 +463,11 @@ metallic_texture = ExtResource("10_laeny")
 roughness_texture = ExtResource("12_sagmv")
 normal_enabled = true
 normal_texture = ExtResource("11_4yd66")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("13_126ef")
+backlight_enabled = true
+backlight_texture = ExtResource("9_i4q5p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey6oe"]
 albedo_texture = ExtResource("13_5lekh")
@@ -442,6 +476,11 @@ metallic_texture = ExtResource("14_k8cbx")
 roughness_texture = ExtResource("16_126ef")
 normal_enabled = true
 normal_texture = ExtResource("15_k7yhl")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("18_gbsbj")
+backlight_enabled = true
+backlight_texture = ExtResource("13_5lekh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npfqw"]
 albedo_texture = ExtResource("17_gbsbj")
@@ -450,6 +489,11 @@ metallic_texture = ExtResource("18_bu6ki")
 roughness_texture = ExtResource("20_uvaof")
 normal_enabled = true
 normal_texture = ExtResource("19_tfll2")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("23_bu6ki")
+backlight_enabled = true
+backlight_texture = ExtResource("17_gbsbj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3c7b"]
 albedo_texture = ExtResource("21_g1uv2")
@@ -458,6 +502,11 @@ metallic_texture = ExtResource("22_yx3oa")
 roughness_texture = ExtResource("24_yhjl6")
 normal_enabled = true
 normal_texture = ExtResource("23_ruvuj")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("28_tfll2")
+backlight_enabled = true
+backlight_texture = ExtResource("21_g1uv2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7vsm"]
 albedo_texture = ExtResource("25_0y1w2")
@@ -466,6 +515,11 @@ metallic_texture = ExtResource("26_ui08q")
 roughness_texture = ExtResource("28_fkwtg")
 normal_enabled = true
 normal_texture = ExtResource("27_uu52s")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("33_uvaof")
+backlight_enabled = true
+backlight_texture = ExtResource("25_0y1w2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoto5"]
 albedo_texture = ExtResource("29_5lefr")
@@ -474,6 +528,11 @@ metallic_texture = ExtResource("30_rehb8")
 roughness_texture = ExtResource("32_qjluk")
 normal_enabled = true
 normal_texture = ExtResource("31_is4hh")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("38_g1uv2")
+backlight_enabled = true
+backlight_texture = ExtResource("29_5lefr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2lxk"]
 albedo_texture = ExtResource("33_l5try")
@@ -482,6 +541,11 @@ metallic_texture = ExtResource("34_dd4a4")
 roughness_texture = ExtResource("36_korda")
 normal_enabled = true
 normal_texture = ExtResource("35_lwekl")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("43_yx3oa")
+backlight_enabled = true
+backlight_texture = ExtResource("33_l5try")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrbgc"]
 albedo_texture = ExtResource("37_28c7w")
@@ -490,6 +554,11 @@ metallic_texture = ExtResource("38_aql2h")
 roughness_texture = ExtResource("40_qab1e")
 normal_enabled = true
 normal_texture = ExtResource("39_paudw")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("48_ruvuj")
+backlight_enabled = true
+backlight_texture = ExtResource("37_28c7w")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk3rk"]
 albedo_texture = ExtResource("41_dao2k")
@@ -498,6 +567,11 @@ metallic_texture = ExtResource("42_jktao")
 roughness_texture = ExtResource("44_7n24p")
 normal_enabled = true
 normal_texture = ExtResource("43_1wmvu")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("53_yhjl6")
+backlight_enabled = true
+backlight_texture = ExtResource("41_dao2k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnbum"]
 resource_name = "trigger"
@@ -546,6 +620,11 @@ metallic_texture = ExtResource("46_dv6ng")
 roughness_texture = ExtResource("48_cfd0y")
 normal_enabled = true
 normal_texture = ExtResource("47_vc7ec")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("58_uvaof")
+backlight_enabled = true
+backlight_texture = ExtResource("45_pi6sj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62osd"]
 resource_name = "barrel"
@@ -594,6 +673,11 @@ metallic_texture = ExtResource("50_tjcoj")
 roughness_texture = ExtResource("52_sc2i2")
 normal_enabled = true
 normal_texture = ExtResource("51_7m43k")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("63_g1uv2")
+backlight_enabled = true
+backlight_texture = ExtResource("49_dfrlw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1y8o"]
 resource_name = "magazine"
@@ -642,6 +726,11 @@ metallic_texture = ExtResource("54_drhod")
 roughness_texture = ExtResource("56_x71ot")
 normal_enabled = true
 normal_texture = ExtResource("55_l2dtu")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("68_yx3oa")
+backlight_enabled = true
+backlight_texture = ExtResource("53_1cdpg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqs65"]
 resource_name = "handle"
@@ -690,6 +779,11 @@ metallic_texture = ExtResource("58_wlnlr")
 roughness_texture = ExtResource("60_d8vtn")
 normal_enabled = true
 normal_texture = ExtResource("59_58pbe")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("73_ruvuj")
+backlight_enabled = true
+backlight_texture = ExtResource("57_l1815")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58nxp"]
 resource_name = "object2"
@@ -738,6 +832,11 @@ metallic_texture = ExtResource("62_ettn0")
 roughness_texture = ExtResource("64_2u08j")
 normal_enabled = true
 normal_texture = ExtResource("63_kcf6g")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("78_yhjl6")
+backlight_enabled = true
+backlight_texture = ExtResource("61_f4x6p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2txx4"]
 resource_name = "object1"
@@ -786,6 +885,26 @@ metallic_texture = ExtResource("66_uoabu")
 roughness_texture = ExtResource("68_6sqfd")
 normal_enabled = true
 normal_texture = ExtResource("67_6r1l1")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("83_0y1w2")
+backlight_enabled = true
+backlight_texture = ExtResource("65_snvfs")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yhjl6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y1w2"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(5, 5, 5, 1)
+albedo_texture = ExtResource("88_yx3oa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui08q"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(5, 5, 5, 1)
+albedo_texture = ExtResource("89_ruvuj")
 
 [node name="smg" type="Node3D"]
 script = ExtResource("1_md0gu")
@@ -849,6 +968,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mh107")
 
 [node name="sight" parent="gun_main" instance=ExtResource("69_egap1")]
 transform = Transform3D(0, -1.25772, 0, 0, 0, -1.66003, 1.80951, 0, 0, 1.50617, 4.19131, 0)
+
+[node name="RP1" type="MeshInstance3D" parent="gun_main/sight"]
+transform = Transform3D(0.0605511, 0, 0, 0, -1.76452e-09, 0.054496, 0, -0.0403674, -2.3821e-09, 0, 0.51152, -0.312207)
+visible = false
+mesh = SubResource("QuadMesh_yhjl6")
+surface_material_override/0 = SubResource("StandardMaterial3D_0y1w2")
+
+[node name="RP2" type="MeshInstance3D" parent="gun_main/sight"]
+transform = Transform3D(0.217984, 0, 0, 0, -6.35226e-09, 0.196186, 0, -0.145323, -8.57555e-09, 0, 0.51152, -0.312207)
+mesh = SubResource("QuadMesh_yhjl6")
+surface_material_override/0 = SubResource("StandardMaterial3D_ui08q")
 
 [node name="shoot_point" type="Marker3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.72922, 2.09828, 2.72806e-08)

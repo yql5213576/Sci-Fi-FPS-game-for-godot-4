@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://cxesiuh66eb1q"]
+[gd_scene load_steps=15 format=4 uid="uid://cxesiuh66eb1q"]
 
 [ext_resource type="Script" uid="uid://o5tiw7jw6med" path="res://assets/player/scripts/machine_gun_ammo_1_st.gd" id="1_f7a0y"]
 [ext_resource type="Texture2D" uid="uid://dh0q1qiye8tfj" path="res://assets/player/textures/machine_gun_ammo/ammo_Base_color.png" id="1_jhahw"]
 [ext_resource type="Texture2D" uid="uid://d0uetvw65y84i" path="res://assets/player/textures/machine_gun_ammo/ammo_Metallic.png" id="2_051od"]
+[ext_resource type="Texture2D" uid="uid://bcypo4ltx11jq" path="res://assets/player/textures/machine_gun_ammo/ammo_Height.png" id="3_dw6g4"]
 [ext_resource type="Texture2D" uid="uid://4wnbmqqx76q7" path="res://assets/player/textures/machine_gun_ammo/ammo_Normal_OpenGL.png" id="3_f7a0y"]
 [ext_resource type="Texture2D" uid="uid://dne6dgottxg7w" path="res://assets/player/textures/machine_gun_ammo/ammo_Roughness.png" id="4_dw6g4"]
 [ext_resource type="Texture2D" uid="uid://c6644jhbn03o4" path="res://assets/Kenney's_assets/PNG/White puff/whitePuff00.png" id="6_dw6g4"]
@@ -54,6 +55,11 @@ metallic_texture = ExtResource("2_051od")
 roughness_texture = ExtResource("4_dw6g4")
 normal_enabled = true
 normal_texture = ExtResource("3_f7a0y")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_dw6g4")
+backlight_enabled = true
+backlight_texture = ExtResource("1_jhahw")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6uhjr"]
 gravity = Vector3(0, 0, -5)

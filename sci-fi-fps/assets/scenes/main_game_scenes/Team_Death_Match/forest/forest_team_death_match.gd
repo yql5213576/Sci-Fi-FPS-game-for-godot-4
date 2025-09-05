@@ -41,6 +41,13 @@ func _ready() -> void:
 	#players.append($player/point4/hero_AI)
 	#players.append($player/point5/hero_AI)
 	#players.append($player/point6/hero_AI)
+	#if UserData.voxelgi_data==false:
+		#$VoxelGI.visible=false
+	#if UserData.voxelgi_data==true:
+		#$VoxelGI.visible=true
+	get_tree().root.mesh_lod_threshold=UserData.lod_data
+	get_tree().root.scaling_3d_scale=UserData.render_resolution_data
+	get_tree().root.use_occlusion_culling=true
 @onready var current_map_scene="res://assets/scenes/main_game_scenes/Team_Death_Match/forest/forest_team_death_match.tscn"
 @onready var forest_environment=preload("res://assets/scenes/forest/terrain/forest_main_scene_environment.tres")
 func _physics_process(delta: float) -> void:
@@ -295,6 +302,8 @@ func print_A_kills_B(A,B):
 		players_die_red[players_name_red.find(B.user_name)]+=1
 	
 	print(A.user_name+"    kill    "+B.user_name)
+	if user_player.has_method("print_killing_tips"):
+		user_player.print_killing_tips(A.user_name+"    kill    "+B.user_name)
 	if A.TDM_team=="blue":
 		blue_team_score+=1
 	if A.TDM_team=="red":

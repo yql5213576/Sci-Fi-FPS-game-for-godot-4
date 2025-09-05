@@ -1,11 +1,13 @@
-[gd_scene load_steps=31 format=4 uid="uid://5h54y7a8ygqw"]
+[gd_scene load_steps=33 format=4 uid="uid://5h54y7a8ygqw"]
 
 [ext_resource type="Texture2D" uid="uid://deb6tdxlqk8p8" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Base_color.png" id="1_mudjw"]
 [ext_resource type="Texture2D" uid="uid://cstwtuiahg3sy" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Metallic.png" id="2_jh4xy"]
+[ext_resource type="Texture2D" uid="uid://fkquf1ct1r8e" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Height.png" id="2_uw27m"]
 [ext_resource type="Texture2D" uid="uid://djate85awwxbw" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Normal_OpenGL.png" id="3_vv5a0"]
 [ext_resource type="Texture2D" uid="uid://b8t7ddgk8eut0" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Roughness.png" id="4_8ovlg"]
 [ext_resource type="Texture2D" uid="uid://ifppbywwrjra" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color1_Base_color.png" id="5_ph578"]
 [ext_resource type="Texture2D" uid="uid://ejxwuu156qxx" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color1_Metallic.png" id="6_1rr0l"]
+[ext_resource type="Texture2D" uid="uid://dje8xnbsjqdqc" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color1_Height.png" id="7_dodfp"]
 [ext_resource type="Texture2D" uid="uid://hni66t0vu6ls" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color1_Normal_OpenGL.png" id="7_gw8hx"]
 [ext_resource type="Texture2D" uid="uid://bjejbhi623ox5" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color1_Roughness.png" id="8_286yn"]
 [ext_resource type="Material" uid="uid://bfq6lmeoxwchw" path="res://assets/scenes/main_game_scenes/blood_strike/light.tres" id="9_jh4xy"]
@@ -57,6 +59,13 @@ metallic_texture = ExtResource("2_jh4xy")
 roughness_texture = ExtResource("4_8ovlg")
 normal_enabled = true
 normal_texture = ExtResource("3_vv5a0")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_uw27m")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.2
+backlight_enabled = true
+backlight_texture = ExtResource("1_mudjw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7oa4"]
 
@@ -163,6 +172,13 @@ metallic_texture = ExtResource("6_1rr0l")
 roughness_texture = ExtResource("8_286yn")
 normal_enabled = true
 normal_texture = ExtResource("7_gw8hx")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("7_dodfp")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("5_ph578")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ik51p"]
 _surfaces = [{

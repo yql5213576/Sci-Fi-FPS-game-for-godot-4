@@ -1,18 +1,21 @@
-[gd_scene load_steps=22 format=4 uid="uid://doly22d7erd8f"]
+[gd_scene load_steps=25 format=4 uid="uid://doly22d7erd8f"]
 
 [ext_resource type="Texture2D" uid="uid://7hmbg5hdsmis" path="res://assets/player/textures/sniper/bullet_set1_Base_color.png" id="1_6nxkw"]
 [ext_resource type="Script" uid="uid://cmljidah2yckb" path="res://assets/player/scripts/sniper_1_bullet_set_3_rd.gd" id="1_e2s8x"]
 [ext_resource type="Texture2D" uid="uid://tposb6as2258" path="res://assets/player/textures/sniper/bullet_set1_Metallic.png" id="2_e2s8x"]
+[ext_resource type="Texture2D" uid="uid://bvvp8ub76mlrd" path="res://assets/player/textures/sniper/bullet_set1_Height.png" id="3_0nsvb"]
 [ext_resource type="Texture2D" uid="uid://b01uqku65f701" path="res://assets/player/textures/sniper/bullet_set1_Normal_OpenGL.png" id="3_iak6i"]
 [ext_resource type="Texture2D" uid="uid://o0d8dotbwb4" path="res://assets/player/textures/sniper/bullet_set1_Roughness.png" id="4_085oq"]
 [ext_resource type="Texture2D" uid="uid://bdnu2esl7snx1" path="res://assets/player/textures/sniper/bullet_set2_Base_color.png" id="5_0nsvb"]
 [ext_resource type="Texture2D" uid="uid://dmqq5dgrtu0ua" path="res://assets/player/textures/sniper/bullet_set2_Metallic.png" id="6_k1qtr"]
 [ext_resource type="Texture2D" uid="uid://c4mrtfw4f868g" path="res://assets/player/textures/sniper/bullet_set2_Normal_OpenGL.png" id="7_6334k"]
+[ext_resource type="Texture2D" uid="uid://tcak3kqo16e1" path="res://assets/player/textures/sniper/bullet_set2_Height.png" id="8_k1qtr"]
 [ext_resource type="Texture2D" uid="uid://bksecvicijkep" path="res://assets/player/textures/sniper/bullet_set2_Roughness.png" id="8_x3wxm"]
 [ext_resource type="Texture2D" uid="uid://ch8nwueb65ybo" path="res://assets/player/textures/sniper/bullet_set3_Base_color.png" id="9_bu34e"]
 [ext_resource type="Texture2D" uid="uid://cc6raqlitwpf0" path="res://assets/player/textures/sniper/bullet_set3_Metallic.png" id="10_xgtqx"]
 [ext_resource type="Texture2D" uid="uid://d307ssjl4sdns" path="res://assets/player/textures/sniper/bullet_set3_Normal_OpenGL.png" id="11_0oa8e"]
 [ext_resource type="Texture2D" uid="uid://b8a722b6bf7bg" path="res://assets/player/textures/sniper/bullet_set3_Roughness.png" id="12_urmfb"]
+[ext_resource type="Texture2D" uid="uid://biiqkjgedfung" path="res://assets/player/textures/sniper/bullet_set3_Height.png" id="13_6334k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh448"]
 resource_name = "bullet_set1"
@@ -121,6 +124,11 @@ metallic_texture = ExtResource("2_e2s8x")
 roughness_texture = ExtResource("4_085oq")
 normal_enabled = true
 normal_texture = ExtResource("3_iak6i")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_0nsvb")
+backlight_enabled = true
+backlight_texture = ExtResource("1_6nxkw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x48r4"]
 albedo_texture = ExtResource("5_0nsvb")
@@ -129,6 +137,11 @@ metallic_texture = ExtResource("6_k1qtr")
 roughness_texture = ExtResource("8_x3wxm")
 normal_enabled = true
 normal_texture = ExtResource("7_6334k")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_k1qtr")
+backlight_enabled = true
+backlight_texture = ExtResource("5_0nsvb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj5va"]
 albedo_texture = ExtResource("9_bu34e")
@@ -137,6 +150,11 @@ metallic_texture = ExtResource("10_xgtqx")
 roughness_texture = ExtResource("12_urmfb")
 normal_enabled = true
 normal_texture = ExtResource("11_0oa8e")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("13_6334k")
+backlight_enabled = true
+backlight_texture = ExtResource("9_bu34e")
 
 [node name="sniper1_bullet_set" type="Node3D"]
 script = ExtResource("1_e2s8x")

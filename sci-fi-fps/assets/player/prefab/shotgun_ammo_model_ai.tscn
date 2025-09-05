@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://dip2c7kbwgqlk"]
+[gd_scene load_steps=11 format=4 uid="uid://dip2c7kbwgqlk"]
 
 [ext_resource type="Script" uid="uid://d0wkpxl1ykpj3" path="res://assets/player/prefab/shotgun_ammo_ai.gd" id="1_4156d"]
 [ext_resource type="Texture2D" uid="uid://cbudxactdyj0p" path="res://assets/player/textures/shotgun_ammo/ammo_Base_color.png" id="2_jkg2l"]
 [ext_resource type="Texture2D" uid="uid://2350md3gs2r2" path="res://assets/player/textures/shotgun_ammo/ammo_Metallic.png" id="3_gqumc"]
+[ext_resource type="Texture2D" uid="uid://duwndpsqlchqs" path="res://assets/player/textures/shotgun_ammo/ammo_Height.png" id="3_jkg2l"]
 [ext_resource type="Texture2D" uid="uid://c0qu7hoyed8jr" path="res://assets/player/textures/shotgun_ammo/ammo_Normal_OpenGL.png" id="4_db75t"]
 [ext_resource type="Texture2D" uid="uid://cft7mt2dkbv33" path="res://assets/player/textures/shotgun_ammo/ammo_Roughness.png" id="5_8adha"]
 
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("3_gqumc")
 roughness_texture = ExtResource("5_8adha")
 normal_enabled = true
 normal_texture = ExtResource("4_db75t")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_jkg2l")
+backlight_enabled = true
+backlight_texture = ExtResource("2_jkg2l")
 
 [node name="shotgun_ammo_model_3rd" type="Node3D"]
 script = ExtResource("1_4156d")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://dejuteotuqpx0"]
+[gd_scene load_steps=20 format=4 uid="uid://dejuteotuqpx0"]
 
 [ext_resource type="Script" uid="uid://cn2qkaf3gn2pm" path="res://assets/player/scripts/machine_gun_mag_1_st.gd" id="1_ast52"]
+[ext_resource type="Texture2D" uid="uid://n467t6v4oa3v" path="res://assets/player/textures/machine_gun/drum_magazine_Height.png" id="3_sp2ag"]
+[ext_resource type="Texture2D" uid="uid://qdlkgtow3dpx" path="res://assets/player/textures/machine_gun/magazine_switch_Height.png" id="8_6t4od"]
 [ext_resource type="Texture2D" uid="uid://cjx5n71s7qgqf" path="res://assets/player/textures/machine_gun/drum_magazine_Base_color.png" id="13_82ots"]
 [ext_resource type="Texture2D" uid="uid://cw7g72g3hhnvx" path="res://assets/player/textures/machine_gun/drum_magazine_Metallic.png" id="14_ucdyn"]
 [ext_resource type="Texture2D" uid="uid://by7ph816p6fpd" path="res://assets/player/textures/machine_gun/drum_magazine_Normal_OpenGL.png" id="15_tncrt"]
@@ -57,6 +59,11 @@ metallic_texture = ExtResource("14_ucdyn")
 roughness_texture = ExtResource("16_i2n8p")
 normal_enabled = true
 normal_texture = ExtResource("15_tncrt")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_sp2ag")
+backlight_enabled = true
+backlight_texture = ExtResource("13_82ots")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fghg"]
 resource_name = "magazine_switch"
@@ -105,6 +112,11 @@ metallic_texture = ExtResource("34_68ue4")
 roughness_texture = ExtResource("36_oxwr8")
 normal_enabled = true
 normal_texture = ExtResource("35_1pdog")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_6t4od")
+backlight_enabled = true
+backlight_texture = ExtResource("33_p7x77")
 
 [node name="machine_gun_mag_1st" type="Node3D"]
 script = ExtResource("1_ast52")

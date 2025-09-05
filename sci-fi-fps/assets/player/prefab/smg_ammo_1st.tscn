@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://535dee106w3t"]
+[gd_scene load_steps=15 format=4 uid="uid://535dee106w3t"]
 
 [ext_resource type="Script" uid="uid://bqtt778txp5pk" path="res://assets/player/scripts/smg_ammo_1_st.gd" id="1_ktseo"]
 [ext_resource type="Texture2D" uid="uid://sydkew6p3exc" path="res://assets/player/textures/smg_ammo/smg_ammo_Base_color.png" id="1_l3ldb"]
 [ext_resource type="Texture2D" uid="uid://csn2my0tygfge" path="res://assets/player/textures/smg_ammo/smg_ammo_Metallic.png" id="2_ktseo"]
 [ext_resource type="Texture2D" uid="uid://dqafad6yjfny" path="res://assets/player/textures/smg_ammo/smg_ammo_Normal_OpenGL.png" id="3_cuy1f"]
+[ext_resource type="Texture2D" uid="uid://ca24vqc158anw" path="res://assets/player/textures/smg_ammo/smg_ammo_Height.png" id="3_lyqge"]
 [ext_resource type="Texture2D" uid="uid://b58ejcj3nj17" path="res://assets/player/textures/smg_ammo/smg_ammo_Roughness.png" id="4_lyqge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j7qc"]
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("2_ktseo")
 roughness_texture = ExtResource("4_lyqge")
 normal_enabled = true
 normal_texture = ExtResource("3_cuy1f")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_lyqge")
+backlight_enabled = true
+backlight_texture = ExtResource("1_l3ldb")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l3ldb"]
 gravity = Vector3(0, 0, -5)

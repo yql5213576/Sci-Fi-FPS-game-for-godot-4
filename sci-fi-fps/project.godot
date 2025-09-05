@@ -25,6 +25,7 @@ UserData="*res://user_data/user_data.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -159,3 +160,5 @@ scoreboard={
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+occlusion_culling/use_occlusion_culling=true
+mesh_lod/lod_change/threshold_pixels=4.0

@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://xw6un0h00dc2"]
+[gd_scene load_steps=20 format=4 uid="uid://xw6un0h00dc2"]
 
 [ext_resource type="Script" uid="uid://bi1hhnqjcmfbw" path="res://assets/player/scripts/sniper_1_mag_1_st.gd" id="1_yokcb"]
 [ext_resource type="Texture2D" uid="uid://bklldev3ty1p" path="res://assets/player/textures/sniper/magazine_Base_color.png" id="2_hire4"]
+[ext_resource type="Texture2D" uid="uid://b3ljebrh3p6je" path="res://assets/player/textures/sniper/magazine_Height.png" id="3_hwtrr"]
 [ext_resource type="Texture2D" uid="uid://de1ntymb4h5n6" path="res://assets/player/textures/sniper/magazine_Metallic.png" id="3_rtnfs"]
 [ext_resource type="Texture2D" uid="uid://cgjqip1trcoux" path="res://assets/player/textures/sniper/magazine_Normal_OpenGL.png" id="4_mvsoy"]
 [ext_resource type="Texture2D" uid="uid://ugcgft0b3kbo" path="res://assets/player/textures/sniper/magazine_Roughness.png" id="5_y5wi8"]
 [ext_resource type="Texture2D" uid="uid://cxwa44y5gwg0o" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Base_color.png" id="6_y5wi8"]
 [ext_resource type="Texture2D" uid="uid://ciaghr5qo6m2e" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Metallic.png" id="7_j7i3o"]
+[ext_resource type="Texture2D" uid="uid://crfiokkvst75u" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Height.png" id="8_0pdb0"]
 [ext_resource type="Texture2D" uid="uid://nms6pqqlmtr2" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Normal_OpenGL.png" id="8_hwtrr"]
 [ext_resource type="Texture2D" uid="uid://ciqbysis1rega" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Roughness.png" id="9_0pdb0"]
 
@@ -57,6 +59,11 @@ metallic_texture = ExtResource("3_rtnfs")
 roughness_texture = ExtResource("5_y5wi8")
 normal_enabled = true
 normal_texture = ExtResource("4_mvsoy")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_hwtrr")
+backlight_enabled = true
+backlight_texture = ExtResource("2_hire4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vophv"]
 resource_name = "ammo_sniper"
@@ -105,6 +112,11 @@ metallic_texture = ExtResource("7_j7i3o")
 roughness_texture = ExtResource("9_0pdb0")
 normal_enabled = true
 normal_texture = ExtResource("8_hwtrr")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_0pdb0")
+backlight_enabled = true
+backlight_texture = ExtResource("6_y5wi8")
 
 [node name="sniper1_mag" type="Node3D"]
 script = ExtResource("1_yokcb")

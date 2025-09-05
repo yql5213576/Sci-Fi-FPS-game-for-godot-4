@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://cxmhpig8agntl"]
+[gd_scene load_steps=17 format=4 uid="uid://cxmhpig8agntl"]
 
 [ext_resource type="Texture2D" uid="uid://byovcig76yn74" path="res://assets/scenes/forest/tree2/tree2_ivyleaf.png" id="1_h0oyr"]
 [ext_resource type="Texture2D" uid="uid://ghey0de1k3hn" path="res://assets/scenes/forest/tree2/textures/tree_Base_color.png" id="1_jxnvm"]
+[ext_resource type="Texture2D" uid="uid://b43pvtf3vbbw0" path="res://assets/scenes/forest/tree2/textures/tree_Height.png" id="2_efkvr"]
 [ext_resource type="Texture2D" uid="uid://bmb45yih3es0p" path="res://assets/scenes/forest/tree2/textures/tree_Metallic.png" id="2_lk71l"]
 [ext_resource type="Texture2D" uid="uid://fgbagb7evix7" path="res://assets/scenes/forest/tree2/textures/tree_Normal_OpenGL.png" id="3_lxgpj"]
 [ext_resource type="Texture2D" uid="uid://m8gy0n53fbbq" path="res://assets/scenes/forest/tree2/textures/tree_Roughness.png" id="4_t76ll"]
@@ -54,6 +55,14 @@ metallic_texture = ExtResource("2_lk71l")
 roughness_texture = ExtResource("4_t76ll")
 normal_enabled = true
 normal_texture = ExtResource("3_lxgpj")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_efkvr")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_jxnvm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lurqk"]
 resource_name = "ivyleaf"
@@ -105,6 +114,12 @@ metallic = 0.3
 metallic_specular = 1.0
 normal_enabled = true
 normal_texture = ExtResource("6_lk71l")
+clearcoat_enabled = true
+anisotropy_enabled = true
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_h0oyr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jxnvm"]
 radius = 0.407076

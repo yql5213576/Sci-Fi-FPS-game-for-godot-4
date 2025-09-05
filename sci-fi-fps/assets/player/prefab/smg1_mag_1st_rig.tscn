@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://66vveumwut03"]
+[gd_scene load_steps=12 format=4 uid="uid://66vveumwut03"]
 
 [ext_resource type="Script" uid="uid://ck26qjdqu3p38" path="res://assets/player/scripts/smg_1_mag_1_st_rig.gd" id="1_cbkrf"]
 [ext_resource type="Texture2D" uid="uid://prcpmtogg6go" path="res://assets/player/textures/smg/magazine_Base_color.png" id="2_mo5y2"]
+[ext_resource type="Texture2D" uid="uid://db1xs10cmy2h6" path="res://assets/player/textures/smg/magazine_Height.png" id="3_mo5y2"]
 [ext_resource type="Texture2D" uid="uid://cvn8r0vrpplcu" path="res://assets/player/textures/smg/magazine_Metallic.png" id="3_p1r6d"]
 [ext_resource type="Texture2D" uid="uid://cxjadq0txf8kl" path="res://assets/player/textures/smg/magazine_Normal_OpenGL.png" id="4_ffmph"]
 [ext_resource type="Texture2D" uid="uid://dhdeydhgl10p5" path="res://assets/player/textures/smg/magazine_Roughness.png" id="5_r6s0f"]
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("3_p1r6d")
 roughness_texture = ExtResource("5_r6s0f")
 normal_enabled = true
 normal_texture = ExtResource("4_ffmph")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_mo5y2")
+backlight_enabled = true
+backlight_texture = ExtResource("2_mo5y2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i54d5"]
 size = Vector3(0.267388, 0.308441, 0.0935938)

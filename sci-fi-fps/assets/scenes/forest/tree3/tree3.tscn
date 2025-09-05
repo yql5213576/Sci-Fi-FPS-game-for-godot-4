@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=4 uid="uid://c1k8e5g44ejat"]
+[gd_scene load_steps=18 format=4 uid="uid://c1k8e5g44ejat"]
 
 [ext_resource type="Texture2D" uid="uid://bcaw2jf5tdlpt" path="res://assets/scenes/forest/tree3/textures/tree_Base_color.png" id="1_6thpk"]
 [ext_resource type="Texture2D" uid="uid://cfg1yaefyiasv" path="res://assets/scenes/forest/tree3/tree3_InspiredSamambaiacu.png" id="1_kfuyn"]
 [ext_resource type="Texture2D" uid="uid://1g24ooopoh1j" path="res://assets/scenes/forest/tree3/textures/tree_Metallic.png" id="2_l3cd0"]
+[ext_resource type="Texture2D" uid="uid://6ulbglg37ut0" path="res://assets/scenes/forest/tree3/textures/tree_Height.png" id="2_rrl2w"]
 [ext_resource type="Texture2D" uid="uid://birkdpnoy1m0x" path="res://assets/scenes/forest/tree3/textures/tree_Normal_OpenGL.png" id="3_iju08"]
 [ext_resource type="Texture2D" uid="uid://cgkcqa7m365b3" path="res://assets/scenes/forest/tree3/textures/tree_Roughness.png" id="4_30fnn"]
 [ext_resource type="Texture2D" uid="uid://jyj76pstrtc" path="res://assets/scenes/forest/tree3/textures/InspiredSamambaiacu_specular.png" id="6_l3cd0"]
+[ext_resource type="Texture2D" uid="uid://i28g5l4ked83" path="res://assets/scenes/forest/tree3/textures/InspiredSamambaiacu_specular (3).png" id="7_jk4qn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqwnf"]
 resource_name = "tree"
@@ -54,6 +56,14 @@ metallic_texture = ExtResource("2_l3cd0")
 roughness_texture = ExtResource("4_30fnn")
 normal_enabled = true
 normal_texture = ExtResource("3_iju08")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_rrl2w")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_6thpk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qijdg"]
 resource_name = "InspiredSamambaiacu"
@@ -106,6 +116,14 @@ metallic = 0.3
 metallic_specular = 1.0
 normal_enabled = true
 normal_texture = ExtResource("6_l3cd0")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("7_jk4qn")
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_kfuyn")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6thpk"]
 radius = 0.194077

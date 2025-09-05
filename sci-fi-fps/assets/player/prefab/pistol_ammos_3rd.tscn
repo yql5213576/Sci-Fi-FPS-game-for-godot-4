@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://buar5d1nyncds"]
+[gd_scene load_steps=15 format=4 uid="uid://buar5d1nyncds"]
 
 [ext_resource type="Script" uid="uid://davjv28omx2ph" path="res://assets/player/scripts/pistol_ammos_3_rd.gd" id="1_yyqon"]
 [ext_resource type="Texture2D" uid="uid://hwmr8u7oolaj" path="res://assets/player/textures/pistol_ammo/ammo_pistol_Base_color.png" id="2_ttix1"]
 [ext_resource type="Texture2D" uid="uid://ce7fsrk1i2mmq" path="res://assets/player/textures/pistol_ammo/ammo_pistol_Metallic.png" id="3_hhcx4"]
+[ext_resource type="Texture2D" uid="uid://dosuortkbc8jy" path="res://assets/player/textures/pistol_ammo/ammo_pistol_Height.png" id="3_ttix1"]
 [ext_resource type="Texture2D" uid="uid://0orf8ah12lqy" path="res://assets/player/textures/pistol_ammo/ammo_pistol_Normal_OpenGL.png" id="4_m1y7f"]
 [ext_resource type="Texture2D" uid="uid://cwaygh0m477ca" path="res://assets/player/textures/pistol_ammo/ammo_pistol_Roughness.png" id="5_yt0a4"]
 
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("3_hhcx4")
 roughness_texture = ExtResource("5_yt0a4")
 normal_enabled = true
 normal_texture = ExtResource("4_m1y7f")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_ttix1")
+backlight_enabled = true
+backlight_texture = ExtResource("2_ttix1")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_whyp8"]
 gravity = Vector3(0, 0, -5)

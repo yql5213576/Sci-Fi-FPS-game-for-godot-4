@@ -4,7 +4,8 @@ func weapons_ready(vmp):
 	player_models.append($sight_main)
 	player_models.append($sight_main/sight_m)
 	player_models.append($sight_main/sight_id)
-	player_models.append($sight_main/red_point)
+	player_models.append($sight_main/RP1)
+	player_models.append($sight_main/RP2)
 	
 	if vmp==0:
 		for pm in range(player_models.size()):

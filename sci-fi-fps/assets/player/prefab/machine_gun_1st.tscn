@@ -1,46 +1,56 @@
-[gd_scene load_steps=82 format=4 uid="uid://caxrlhwbo5we4"]
+[gd_scene load_steps=92 format=4 uid="uid://caxrlhwbo5we4"]
 
 [ext_resource type="Script" uid="uid://ct8oe3uvg5d5g" path="res://assets/player/scripts/machine_gun_1_st.gd" id="1_841x4"]
 [ext_resource type="Texture2D" uid="uid://rdivbm44vrk4" path="res://assets/player/textures/machine_gun/gun_body1_Base_color.png" id="1_s4h61"]
 [ext_resource type="Texture2D" uid="uid://dycf5dlv4fyo3" path="res://assets/player/textures/machine_gun/gun_body1_Metallic.png" id="2_841x4"]
 [ext_resource type="Texture2D" uid="uid://h4s684r8pvw7" path="res://assets/player/textures/machine_gun/gun_body1_Normal_OpenGL.png" id="3_ce6a2"]
+[ext_resource type="Texture2D" uid="uid://liwjvv06qdh6" path="res://assets/player/textures/machine_gun/gun_body2_Height.png" id="3_u2qno"]
 [ext_resource type="Texture2D" uid="uid://d3jaecnfwku5w" path="res://assets/player/textures/machine_gun/gun_body1_Roughness.png" id="4_6yfis"]
 [ext_resource type="Texture2D" uid="uid://dd4n5hveatci6" path="res://assets/player/textures/machine_gun/gun_body2_Base_color.png" id="5_cuk4u"]
 [ext_resource type="Texture2D" uid="uid://05j20stiad6j" path="res://assets/player/textures/machine_gun/gun_body2_Metallic.png" id="6_xspgj"]
 [ext_resource type="Texture2D" uid="uid://byhvtsoqv287u" path="res://assets/player/textures/machine_gun/gun_body2_Normal_OpenGL.png" id="7_n1xis"]
 [ext_resource type="Texture2D" uid="uid://v22raxyf3wyt" path="res://assets/player/textures/machine_gun/gun_body2_Roughness.png" id="8_43p4g"]
+[ext_resource type="Texture2D" uid="uid://b6wn5iegb45g7" path="res://assets/player/textures/machine_gun/gun_body1_Height.png" id="8_u0kje"]
 [ext_resource type="Texture2D" uid="uid://bdf3quhlb8221" path="res://assets/player/textures/machine_gun/gun_body3_Base_color.png" id="9_40wha"]
 [ext_resource type="Texture2D" uid="uid://b57mvu4t7f5k6" path="res://assets/player/textures/machine_gun/gun_body3_Metallic.png" id="10_n1ovs"]
 [ext_resource type="Texture2D" uid="uid://cqw7kxbn12als" path="res://assets/player/textures/machine_gun/gun_body3_Normal_OpenGL.png" id="11_dy2s1"]
 [ext_resource type="Texture2D" uid="uid://nlp2t5x3nhdn" path="res://assets/player/textures/machine_gun/gun_body3_Roughness.png" id="12_u2qno"]
+[ext_resource type="Texture2D" uid="uid://bxxqylrlfu6fi" path="res://assets/player/textures/machine_gun/gun_body3_Height.png" id="13_4utjs"]
 [ext_resource type="Texture2D" uid="uid://cjx5n71s7qgqf" path="res://assets/player/textures/machine_gun/drum_magazine_Base_color.png" id="13_u0kje"]
 [ext_resource type="Texture2D" uid="uid://cw7g72g3hhnvx" path="res://assets/player/textures/machine_gun/drum_magazine_Metallic.png" id="14_4utjs"]
 [ext_resource type="Texture2D" uid="uid://by7ph816p6fpd" path="res://assets/player/textures/machine_gun/drum_magazine_Normal_OpenGL.png" id="15_38kmd"]
 [ext_resource type="Texture2D" uid="uid://m0jw6a4ooba5" path="res://assets/player/textures/machine_gun/drum_magazine_Roughness.png" id="16_bqges"]
 [ext_resource type="Texture2D" uid="uid://jx85wm4c8rv8" path="res://assets/player/textures/machine_gun/gun_body4_Base_color.png" id="17_aj67w"]
+[ext_resource type="Texture2D" uid="uid://n467t6v4oa3v" path="res://assets/player/textures/machine_gun/drum_magazine_Height.png" id="18_38kmd"]
 [ext_resource type="Texture2D" uid="uid://pf6wem3j34ay" path="res://assets/player/textures/machine_gun/gun_body4_Metallic.png" id="18_oeklu"]
 [ext_resource type="Texture2D" uid="uid://cl0tn2prq6y0x" path="res://assets/player/textures/machine_gun/gun_body4_Normal_OpenGL.png" id="19_42if7"]
 [ext_resource type="Texture2D" uid="uid://b2khby8bqhflv" path="res://assets/player/textures/machine_gun/gun_body4_Roughness.png" id="20_h35hq"]
 [ext_resource type="Texture2D" uid="uid://ck3hmrik73oc8" path="res://assets/player/textures/machine_gun/barrel_Base_color.png" id="21_owxkd"]
 [ext_resource type="Texture2D" uid="uid://cwo4qodpr7i0b" path="res://assets/player/textures/machine_gun/barrel_Metallic.png" id="22_2yqto"]
+[ext_resource type="Texture2D" uid="uid://qdlkgtow3dpx" path="res://assets/player/textures/machine_gun/magazine_switch_Height.png" id="23_bqges"]
 [ext_resource type="Texture2D" uid="uid://dkjn7dmprt55i" path="res://assets/player/textures/machine_gun/barrel_Normal_OpenGL.png" id="23_f5tcn"]
 [ext_resource type="Texture2D" uid="uid://dvgjrgnmrvb3v" path="res://assets/player/textures/machine_gun/barrel_Roughness.png" id="24_7gfj8"]
 [ext_resource type="Texture2D" uid="uid://oe1afmritqlx" path="res://assets/player/textures/machine_gun/addon_Base_color.png" id="25_bc4ie"]
 [ext_resource type="Texture2D" uid="uid://0y1o2pg7ymlg" path="res://assets/player/textures/machine_gun/addon_Metallic.png" id="26_gu356"]
 [ext_resource type="Texture2D" uid="uid://j2ptwkddhac6" path="res://assets/player/textures/machine_gun/addon_Normal_OpenGL.png" id="27_m4wp3"]
+[ext_resource type="Texture2D" uid="uid://dh4fnubj463cm" path="res://assets/player/textures/machine_gun/gun_body4_Height.png" id="28_aj67w"]
 [ext_resource type="Texture2D" uid="uid://c44ksm6cxne1n" path="res://assets/player/textures/machine_gun/addon_Roughness.png" id="28_ycrou"]
 [ext_resource type="Texture2D" uid="uid://sinryolrvf1g" path="res://assets/player/textures/machine_gun/gun_body5_Base_color.png" id="29_aiaoc"]
 [ext_resource type="Texture2D" uid="uid://dk3yt6ralepbh" path="res://assets/player/textures/machine_gun/gun_body5_Metallic.png" id="30_e7w1r"]
 [ext_resource type="Texture2D" uid="uid://dsfx6nisgd6au" path="res://assets/player/textures/machine_gun/gun_body5_Normal_OpenGL.png" id="31_8hcmn"]
 [ext_resource type="Texture2D" uid="uid://bvjx3pl3knxoq" path="res://assets/player/textures/machine_gun/gun_body5_Roughness.png" id="32_evdtr"]
+[ext_resource type="Texture2D" uid="uid://dqxotnoaa7ldh" path="res://assets/player/textures/machine_gun/barrel_Height.png" id="33_oeklu"]
 [ext_resource type="Texture2D" uid="uid://wqcgm45rwc7g" path="res://assets/player/textures/machine_gun/magazine_switch_Base_color.png" id="33_rgly1"]
 [ext_resource type="Texture2D" uid="uid://b6dweedyqtx8q" path="res://assets/player/textures/machine_gun/magazine_switch_Metallic.png" id="34_vh5ed"]
 [ext_resource type="Texture2D" uid="uid://jn6gxbekkeuw" path="res://assets/player/textures/machine_gun/magazine_switch_Normal_OpenGL.png" id="35_d1786"]
 [ext_resource type="Texture2D" uid="uid://cm1ue7wtc0rl7" path="res://assets/player/textures/machine_gun/magazine_switch_Roughness.png" id="36_7l3s4"]
 [ext_resource type="Texture2D" uid="uid://inl4tr1hrblb" path="res://assets/player/textures/machine_gun/mount_Base_color.png" id="37_b7i7d"]
 [ext_resource type="Texture2D" uid="uid://d3na0of2i525p" path="res://assets/player/textures/machine_gun/mount_Metallic.png" id="38_5lmjo"]
+[ext_resource type="Texture2D" uid="uid://dsgq82u82v7ru" path="res://assets/player/textures/machine_gun/addon_Height.png" id="38_42if7"]
 [ext_resource type="Texture2D" uid="uid://ds3l330q6b8gj" path="res://assets/player/textures/machine_gun/mount_Normal_OpenGL.png" id="39_ntj4u"]
 [ext_resource type="Texture2D" uid="uid://b758exqfg1v5c" path="res://assets/player/textures/machine_gun/mount_Roughness.png" id="40_2qu8q"]
+[ext_resource type="Texture2D" uid="uid://bfctk5bsybxtm" path="res://assets/player/textures/machine_gun/gun_body5_Height.png" id="43_h35hq"]
+[ext_resource type="Texture2D" uid="uid://cge3j3l6x4rky" path="res://assets/player/textures/machine_gun/mount_Height.png" id="48_owxkd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4egr3"]
 resource_name = "gun_body2"
@@ -89,6 +99,11 @@ metallic_texture = ExtResource("6_xspgj")
 roughness_texture = ExtResource("8_43p4g")
 normal_enabled = true
 normal_texture = ExtResource("7_n1xis")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_u2qno")
+backlight_enabled = true
+backlight_texture = ExtResource("5_cuk4u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3e0m"]
 resource_name = "gun_body1"
@@ -137,6 +152,11 @@ metallic_texture = ExtResource("2_841x4")
 roughness_texture = ExtResource("4_6yfis")
 normal_enabled = true
 normal_texture = ExtResource("3_ce6a2")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("8_u0kje")
+backlight_enabled = true
+backlight_texture = ExtResource("1_s4h61")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsd7y"]
 resource_name = "gun_body3"
@@ -185,6 +205,11 @@ metallic_texture = ExtResource("10_n1ovs")
 roughness_texture = ExtResource("12_u2qno")
 normal_enabled = true
 normal_texture = ExtResource("11_dy2s1")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("13_4utjs")
+backlight_enabled = true
+backlight_texture = ExtResource("9_40wha")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6gpt"]
 resource_name = "drum_magazine"
@@ -233,6 +258,11 @@ metallic_texture = ExtResource("14_4utjs")
 roughness_texture = ExtResource("16_bqges")
 normal_enabled = true
 normal_texture = ExtResource("15_38kmd")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("18_38kmd")
+backlight_enabled = true
+backlight_texture = ExtResource("13_u0kje")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fghg"]
 resource_name = "magazine_switch"
@@ -281,6 +311,11 @@ metallic_texture = ExtResource("34_vh5ed")
 roughness_texture = ExtResource("36_7l3s4")
 normal_enabled = true
 normal_texture = ExtResource("35_d1786")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("23_bqges")
+backlight_enabled = true
+backlight_texture = ExtResource("33_rgly1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldqn3"]
 resource_name = "gun_body4"
@@ -329,6 +364,11 @@ metallic_texture = ExtResource("18_oeklu")
 roughness_texture = ExtResource("20_h35hq")
 normal_enabled = true
 normal_texture = ExtResource("19_42if7")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("28_aj67w")
+backlight_enabled = true
+backlight_texture = ExtResource("17_aj67w")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1muws"]
 resource_name = "barrel"
@@ -377,6 +417,11 @@ metallic_texture = ExtResource("22_2yqto")
 roughness_texture = ExtResource("24_7gfj8")
 normal_enabled = true
 normal_texture = ExtResource("23_f5tcn")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("33_oeklu")
+backlight_enabled = true
+backlight_texture = ExtResource("21_owxkd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atpxs"]
 resource_name = "addon"
@@ -425,6 +470,11 @@ metallic_texture = ExtResource("26_gu356")
 roughness_texture = ExtResource("28_ycrou")
 normal_enabled = true
 normal_texture = ExtResource("27_m4wp3")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("38_42if7")
+backlight_enabled = true
+backlight_texture = ExtResource("25_bc4ie")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37jvh"]
 resource_name = "gun_body5"
@@ -473,6 +523,11 @@ metallic_texture = ExtResource("30_e7w1r")
 roughness_texture = ExtResource("32_evdtr")
 normal_enabled = true
 normal_texture = ExtResource("31_8hcmn")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("43_h35hq")
+backlight_enabled = true
+backlight_texture = ExtResource("29_aiaoc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj1c6"]
 resource_name = "mount"
@@ -521,6 +576,11 @@ metallic_texture = ExtResource("38_5lmjo")
 roughness_texture = ExtResource("40_2qu8q")
 normal_enabled = true
 normal_texture = ExtResource("39_ntj4u")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("48_owxkd")
+backlight_enabled = true
+backlight_texture = ExtResource("37_b7i7d")
 
 [node name="machine_gun" type="Node3D"]
 script = ExtResource("1_841x4")

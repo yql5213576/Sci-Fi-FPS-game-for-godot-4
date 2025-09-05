@@ -1,4 +1,4 @@
-[gd_scene load_steps=1067 format=4 uid="uid://ccp2ohvgf5m3e"]
+[gd_scene load_steps=1069 format=4 uid="uid://ccp2ohvgf5m3e"]
 
 [ext_resource type="Script" uid="uid://daaaxudopoo7o" path="res://assets/player/scripts/hero_anim_1_st_all_weapons.gd" id="1_uf275"]
 [ext_resource type="Texture2D" uid="uid://cbf41682s5p8q" path="res://assets/player/textures/player/white/armor_arms_Base_color.png" id="2_ankpn"]
@@ -63,6 +63,7 @@
 [ext_resource type="Animation" uid="uid://b0shmr0kk7mv3" path="res://assets/player/animations/1st_all_weapons/rifle_1st_jump.res" id="42_b07ty"]
 [ext_resource type="Animation" uid="uid://kgnhvtgqixws" path="res://assets/player/animations/1st_all_weapons/rifle_1st_move.res" id="43_kudcu"]
 [ext_resource type="Animation" uid="uid://b62lejxba380y" path="res://assets/player/animations/1st_all_weapons/rifle_1st_reload.res" id="44_cbf0c"]
+[ext_resource type="Texture2D" uid="uid://bcypo4ltx11jq" path="res://assets/player/textures/machine_gun_ammo/ammo_Height.png" id="44_oghxx"]
 [ext_resource type="Animation" uid="uid://b8jverljifon7" path="res://assets/player/animations/1st_all_weapons/rifle_1st_run.res" id="45_euod5"]
 [ext_resource type="Animation" uid="uid://bjb6gstwvm63r" path="res://assets/player/animations/1st_all_weapons/rifle_1st_unequip.res" id="46_04t6a"]
 [ext_resource type="Animation" uid="uid://dq152wpv44t4i" path="res://assets/player/animations/1st_all_weapons/run_smg.res" id="47_283q2"]
@@ -817,6 +818,11 @@ metallic_texture = ExtResource("31_7ovsi")
 roughness_texture = ExtResource("33_8axmh")
 normal_enabled = true
 normal_texture = ExtResource("32_rjhbb")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("44_oghxx")
+backlight_enabled = true
+backlight_texture = ExtResource("30_283q2")
 
 [sub_resource type="Animation" id="Animation_sjs6v"]
 resource_name = "1st_pistol_run_to_idle"
@@ -6867,7 +6873,7 @@ animation = &"sniper_1st_jump"
 animation = &"sniper_1st_run"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xv005"]
-graph_offset = Vector2(-772, -34)
+graph_offset = Vector2(-1519, 76)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_sjs6v")
 nodes/StateMachine/position = Vector2(-1100, -260)
 nodes/Transition_jump/node = SubResource("AnimationNodeTransition_cuall")
@@ -6908,6 +6914,8 @@ nodes/sniper_jump/position = Vector2(-360, 760)
 nodes/sniper_run/node = SubResource("AnimationNodeAnimation_wxmvg")
 nodes/sniper_run/position = Vector2(-940, 680)
 node_connections = [&"Transition_jump", 0, &"rifle_jump", &"Transition_jump", 1, &"pistol_jump", &"Transition_jump", 2, &"smg_jump", &"Transition_jump", 3, &"sniper_jump", &"Transition_jump", 4, &"shotgun_jump", &"Transition_jump", 5, &"machine_gun_jump", &"Transition_run", 0, &"rifle_run", &"Transition_run", 1, &"pistol_run", &"Transition_run", 2, &"smg_run", &"Transition_run", 3, &"sniper_run", &"Transition_run", 4, &"shotgun_run", &"Transition_run", 5, &"machine_gun_run", &"hand_state", 0, &"StateMachine", &"hand_state", 1, &"move", &"jump", 0, &"run", &"jump", 1, &"Transition_jump", &"output", 0, &"jump", &"run", 0, &"hand_state", &"run", 1, &"Transition_run"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oghxx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqhoj"]
 
@@ -13884,7 +13892,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0, -0.999889, 0, 0.999889, 0, 1, 0, -4.37065e-08, 0.0275098, -0.0135428, 0)
+transform = Transform3D(-4.37114e-08, 0, -0.999889, 0, 0.999889, 0, 1, 0, -4.37065e-08, 0.0275097, -0.0135428, 0)
 progress = 0.0332586
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2"]
@@ -13932,7 +13940,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.363351, -0.93151, 0, 0.93151, 0.363351, 1, 1.58826e-08, -4.07176e-08, 0.118694, -0.0591637, 0)
+transform = Transform3D(-4.37114e-08, 0.363351, -0.93151, 0, 0.93151, 0.363351, 1, 1.58826e-08, -4.07176e-08, 0.118694, -0.0591638, 0)
 progress = 0.14428
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6"]
@@ -13944,7 +13952,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.517537, -0.855507, 0, 0.855507, 0.517537, 1, 2.26223e-08, -3.73954e-08, 0.131933, -0.0840114, 0)
+transform = Transform3D(7.54979e-08, 0.517538, -0.855506, 0, 0.855506, 0.517538, 1, -3.9073e-08, 6.45889e-08, 0.131933, -0.0840115, 0)
 progress = 0.169403
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7"]
@@ -13968,7 +13976,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(7.54979e-08, 0.773857, -0.633169, 0, 0.633169, 0.773857, 1, -5.84246e-08, 4.78029e-08, 0.152884, -0.136238, 0)
+transform = Transform3D(-4.37114e-08, 0.773857, -0.633169, 0, 0.633169, 0.773857, 1, 3.38264e-08, -2.76767e-08, 0.152884, -0.136238, 0)
 progress = 0.219172
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9"]
@@ -13980,7 +13988,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.883456, -0.468251, 0, 0.468251, 0.883456, 1, 3.86171e-08, -2.04679e-08, 0.159293, -0.163758, 0)
+transform = Transform3D(-4.37114e-08, 0.883457, -0.46825, 0, 0.46825, 0.883457, 1, 3.86171e-08, -2.04679e-08, 0.159293, -0.163758, 0)
 progress = 0.248123
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10"]
@@ -13992,7 +14000,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.95371, -0.300262, 0, 0.300262, 0.95371, 1, 4.1688e-08, -1.31249e-08, 0.159432, -0.192087, 0)
+transform = Transform3D(5.09483e-08, 0.95371, -0.300263, 2.98023e-08, 0.300263, 0.95371, 1, -5.75384e-08, -1.31249e-08, 0.159432, -0.192087, 0)
 progress = 0.276357
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11"]
@@ -14004,7 +14012,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-1.62921e-07, 0.989623, -0.142716, 0, 0.142716, 0.989623, 1, 1.6123e-07, -2.32514e-08, 0.153252, -0.219283, 0)
+transform = Transform3D(-4.37114e-08, 0.989623, -0.142716, 0, 0.142716, 0.989623, 1, 4.32578e-08, -6.23833e-09, 0.153252, -0.219283, 0)
 progress = 0.301959
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12"]
@@ -14016,7 +14024,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.43179e-08, 0.999648, 0.020066, -6.04483e-08, -0.020066, 0.999648, 1, 4.30892e-08, 6.13163e-08, 0.14256, -0.245327, 0)
+transform = Transform3D(1.31117e-07, 0.999648, 0.020066, -1.75449e-09, -0.020066, 0.999648, 1, -1.31106e-07, -8.77114e-10, 0.142559, -0.245327, 0)
 progress = 0.3278
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13"]
@@ -14028,7 +14036,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.6412e-08, 0.981979, 0.188259, -2.84302e-08, -0.188259, 0.981979, 1, 4.02234e-08, 3.66553e-08, 0.128668, -0.269174, 0)
+transform = Transform3D(-5.06762e-08, 0.981979, 0.188258, -7.33206e-08, -0.188258, 0.981979, 1, 3.59598e-08, 8.15395e-08, 0.128668, -0.269174, 0)
 progress = 0.354598
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14"]
@@ -14040,7 +14048,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-1.74505e-07, 0.923155, 0.384075, -5.80016e-08, -0.384075, 0.923155, 1, 1.38818e-07, 1.20568e-07, 0.111017, -0.291095, 0)
+transform = Transform3D(-5.52956e-08, 0.923156, 0.384073, -5.80013e-08, -0.384073, 0.923156, 1, 2.87697e-08, 7.47818e-08, 0.111018, -0.291095, 0)
 progress = 0.386182
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15"]
@@ -14052,7 +14060,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(1.1348e-07, 0.797956, 0.602496, -5.26789e-08, -0.602496, 0.797956, 1, -1.22291e-07, -2.63359e-08, 0.0864326, -0.304778, 0)
+transform = Transform3D(4.50061e-08, 0.797957, 0.602495, -9.09863e-08, -0.602495, 0.797957, 1, -9.07318e-08, 4.54871e-08, 0.0864327, -0.304778, 0)
 progress = 0.411784
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16"]
@@ -14064,7 +14072,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-9.88113e-08, 0.635011, 0.772342, -1.16635e-07, -0.772342, 0.635011, 1, -2.73358e-08, 1.50381e-07, 0.0592222, -0.31043, 0)
+transform = Transform3D(-5.21847e-08, 0.635012, 0.772341, 1.16635e-07, -0.772341, 0.635012, 1, 1.2322e-07, -3.37601e-08, 0.0592224, -0.31043, 0)
 progress = 0.435711
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17"]
@@ -14190,6 +14198,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="killing_tips" type="PanelContainer" parent="CanvasLayer/screen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -147.0
+offset_right = 256.0
+offset_bottom = 147.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oghxx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/killing_tips"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label4" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label5" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+clip_text = true
 
 [node name="health_panel" type="PanelContainer" parent="CanvasLayer/screen"]
 layout_mode = 1

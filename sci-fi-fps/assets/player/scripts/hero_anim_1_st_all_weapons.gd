@@ -101,6 +101,19 @@ func _ready() -> void:
 	machine_gun_ammos_models.append($Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17)
 
 func _process(delta: float) -> void:
+	if pkt_bool:
+		pkt_timer+=get_process_delta_time()
+	if pkt_timer>5:
+		pkt_bool=false
+		pkt_timer=0
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label.text=""
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label2.text=""
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text=""
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text=""
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text=""
+		
+		
+		
 	$CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d.scale=Vector2(UserData.crosshair_data,UserData.crosshair_data)
 	$CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d.scale=Vector2(UserData.crosshair_data,UserData.crosshair_data)
 	$CanvasLayer/screen/smg_crosshair/smg_crosshair_2d.scale=Vector2(UserData.crosshair_data,UserData.crosshair_data)
@@ -519,3 +532,24 @@ func machine_gun_reload4_audio_event():
 		ma.position=machine_gun_model.global_position
 		ma.rotation_degrees=machine_gun_model.global_rotation_degrees
 		player_master.scene_root.add_child(ma)
+
+var pkt_timer=0
+var pkt_bool=false
+func print_killing_tips(text):
+	pkt_bool=true
+	if $CanvasLayer/screen/killing_tips/VBoxContainer/Label.text=="":
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label.text=text
+	elif $CanvasLayer/screen/killing_tips/VBoxContainer/Label2.text=="":
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label2.text=text
+	elif $CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text=="":
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text=text
+	elif $CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text=="":
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text=text
+	elif $CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text=="":
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text=text
+	else:
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label2.text
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label2.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text
+		$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text=text

@@ -26,6 +26,13 @@ var game_over=false
 var player_ready=false
 func _ready() -> void:
 	game_times=Main_Menu_Global.setting_game_time_i
+	if UserData.voxelgi_data==false:
+		$VoxelGI.visible=false
+	if UserData.voxelgi_data==true:
+		$VoxelGI.visible=true
+	get_tree().root.mesh_lod_threshold=UserData.lod_data
+	get_tree().root.scaling_3d_scale=UserData.render_resolution_data
+	get_tree().root.use_occlusion_culling=true
 	#players.append($player/point1/hero_player)
 	#players.append($player/point2/hero_AI)
 	#players.append($player/point3/hero_AI)
@@ -187,6 +194,8 @@ func print_A_kills_B(A,B):
 	players_kills[players_name.find(A.user_name)]+=1
 	players_die[players_name.find(B.user_name)]+=1
 	print(A.user_name+"    kill    "+B.user_name)
+	if user_player.has_method("print_killing_tips"):
+		user_player.print_killing_tips(A.user_name+"    kill    "+B.user_name)
 	A.player_kill_score_FFA+=1
 	if A.user_name==UserData.user_name_data:
 		UserData.kills_data_n+=1

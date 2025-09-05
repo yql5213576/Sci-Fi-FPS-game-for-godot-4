@@ -13,6 +13,10 @@ func _ready() -> void:
 	player_models.append($gun_main/handle)
 	player_models.append($gun_main/object2)
 	player_models.append($gun_main/object1)
+	player_models.append($gun_main/sight/RP1)
+	player_models.append($gun_main/sight/RP2)
+	player_models.append($gun_main/sight/RP1)
+	player_models.append($gun_main/sight/RP2)
 	if player_master.view_mode_player==0:
 		sight_node.weapons_ready(0)
 		for pm in range(player_models.size()):

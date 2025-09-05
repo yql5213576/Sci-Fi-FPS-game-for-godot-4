@@ -10,5 +10,7 @@ func _ready() -> void:
 	player_models.append($gun_main/handle)
 	player_models.append($gun_main/object2)
 	player_models.append($gun_main/object1)
+	player_models.append($gun_main/sight/RP1)
+	player_models.append($gun_main/sight/RP2)
 	for pm in range(player_models.size()):
 		player_models[pm].set_cast_shadows_setting(0)

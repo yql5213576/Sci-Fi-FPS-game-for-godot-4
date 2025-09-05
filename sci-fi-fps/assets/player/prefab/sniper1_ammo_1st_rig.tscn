@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://b7osxvngws45i"]
+[gd_scene load_steps=12 format=4 uid="uid://b7osxvngws45i"]
 
 [ext_resource type="Texture2D" uid="uid://cxwa44y5gwg0o" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Base_color.png" id="1_cdijd"]
 [ext_resource type="Script" uid="uid://bjbnjaoserkjp" path="res://assets/player/scripts/sniper_1_ammo_1_st_rig.gd" id="1_eg2wi"]
 [ext_resource type="Texture2D" uid="uid://ciaghr5qo6m2e" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Metallic.png" id="2_eg2wi"]
+[ext_resource type="Texture2D" uid="uid://crfiokkvst75u" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Height.png" id="3_d0gll"]
 [ext_resource type="Texture2D" uid="uid://nms6pqqlmtr2" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Normal_OpenGL.png" id="3_h0755"]
 [ext_resource type="Texture2D" uid="uid://ciqbysis1rega" path="res://assets/player/textures/sniper_ammo/ammo_sniper_Roughness.png" id="4_d0gll"]
 
@@ -53,6 +54,11 @@ metallic_texture = ExtResource("2_eg2wi")
 roughness_texture = ExtResource("4_d0gll")
 normal_enabled = true
 normal_texture = ExtResource("3_h0755")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("3_d0gll")
+backlight_enabled = true
+backlight_texture = ExtResource("1_cdijd")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cdijd"]
 height = 0.254395
