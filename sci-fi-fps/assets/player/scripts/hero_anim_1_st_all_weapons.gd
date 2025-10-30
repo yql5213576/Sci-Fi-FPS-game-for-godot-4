@@ -52,7 +52,7 @@ var player_models=[]
 var weapon_change_alert_timer=0
 
 
-
+@onready var grenade_throw_pos_node=$Skeleton/Skeleton3D/grenade_throw_pos
 
 
 
@@ -61,9 +61,15 @@ var weapon_change_alert_timer=0
 @onready var sub_viewport_ui=$SubViewportContainer
 
 
-
-
-
+@onready var grenade_fire_icon=preload("res://assets/my_UI/fire.png")
+@onready var grenade_smoke_icon=preload("res://assets/my_UI/smoke.png")
+@onready var grenade_flash_icon=preload("res://assets/my_UI/flash.png")
+var fire_g_num_color=Color("ff0000")
+var smoke_g_num_color=Color("1a9300")
+var flash_g_num_color=Color("00afff")
+@onready var grenade_texture_ui=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/grenade_type
+@onready var grenade_num_ui=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/num
+@onready var grenade_LS_ui=preload("res://assets/my_UI/grenade_num_ui.tres")
 
 @onready var arms_mod=$Skeleton/Skeleton3D/armor_arms
 @onready var hand_mod=$Skeleton/Skeleton3D/armor_hand
@@ -72,8 +78,13 @@ var weapon_change_alert_timer=0
 
 
 @onready var jump_audio_node=$jump_audio
+
+@onready var sword_trigger=$sword_attack_trigger
 var machine_gun_ammos_models=[]
 func _ready() -> void:
+	$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+	$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+	$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
 	player_models.append($Skeleton/Skeleton3D/armor_arms)
 	player_models.append($Skeleton/Skeleton3D/armor_hand)
 	player_models.append($Skeleton/Skeleton3D/armor_shouder)
@@ -102,6 +113,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if pkt_bool:
+		pkt_timer=0
 		pkt_timer+=get_process_delta_time()
 	if pkt_timer>5:
 		pkt_bool=false
@@ -168,6 +180,16 @@ func _process(delta: float) -> void:
 	if $"..".machine_gun_current_ammos==1:
 		machine_gun_ammos_models[0].visible=false
 	
+	if $"..".using_grenade=="fire":
+		grenade_texture_ui.texture=grenade_fire_icon
+		#grenade_LS_ui.font_color=fire_g_num_color
+	if $"..".using_grenade=="smoke":
+		grenade_texture_ui.texture=grenade_smoke_icon
+		#grenade_LS_ui.font_color=smoke_g_num_color
+	if $"..".using_grenade=="flash":
+		grenade_texture_ui.texture=grenade_flash_icon
+		#grenade_LS_ui.font_color=flash_g_num_color
+	$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/num.text=str($"..".using_grenade_nums)
 	
 func gun_shoot_anim_event():
 	$"..".gun_shoot_anim_event()
@@ -553,3 +575,29 @@ func print_killing_tips(text):
 		$CanvasLayer/screen/killing_tips/VBoxContainer/Label3.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text
 		$CanvasLayer/screen/killing_tips/VBoxContainer/Label4.text=$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text
 		$CanvasLayer/screen/killing_tips/VBoxContainer/Label5.text=text
+
+func grenade_throw_1st_anim_event():
+	$"..".grenade_throw_1st_anim_event()
+	$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+	$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+	$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
+func grenade_throw_1st_anim_event2():
+	if $"..".using_grenade=="fire":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=true
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
+	if $"..".using_grenade=="smoke":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=true
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
+	if $"..".using_grenade=="flash":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=true
+
+@onready var white_screen=$CanvasLayer/screen/white_screen
+
+func sword_attack_anim_event():
+	$"..".sword_attack_anim_event()
+func sword_attack1_anim_event():
+	$"..".sword_attack1_anim_event()

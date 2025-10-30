@@ -903,7 +903,7 @@ albedo_texture = ExtResource("88_yx3oa")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui08q"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(5, 5, 5, 1)
+albedo_color = Color(7, 5, 5, 1)
 albedo_texture = ExtResource("89_ruvuj")
 
 [node name="smg" type="Node3D"]

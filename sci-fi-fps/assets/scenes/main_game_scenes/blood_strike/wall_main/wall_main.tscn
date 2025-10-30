@@ -673,7 +673,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("52_s7vis")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.3
+subsurf_scatter_strength = 0.1
 backlight_enabled = true
 backlight_texture = ExtResource("45_h10qb")
 
@@ -688,7 +688,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("57_igf5n")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.3
+subsurf_scatter_strength = 0.1
 backlight_enabled = true
 backlight_texture = ExtResource("49_1vdff")
 

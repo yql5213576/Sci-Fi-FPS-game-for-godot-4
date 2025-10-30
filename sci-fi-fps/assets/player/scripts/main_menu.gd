@@ -9,6 +9,17 @@ extends Control
 
 @onready var space_station_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station/space_station_team_death_match.tscn"
 @onready var space_station_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/space_station/space_station_free_for_all.tscn"
+
+@onready var space_station_simple_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station_simple/space_station_simple_team_death_match.tscn"
+@onready var space_station_simple_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/space_station_simple/space_station_simple_free_for_all.tscn"
+
+@onready var snow_basin_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/snow_basin/snow_basin_team_death_match.tscn"
+@onready var snow_basin_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/snow_basin/snow_basin_free_for_all.tscn"
+
+@onready var office_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/office/office_team_death_match.tscn"
+@onready var office_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/office/office_free_for_all.tscn"
+
+
 func _ready() -> void:
 	if FileAccess.file_exists("user://SaveUser0.2.data"):
 		UserData.user_data_load()
@@ -41,6 +52,9 @@ func _ready() -> void:
 @onready var blood_strike_map_icon=load("res://assets/scenes/map_icons/blood_strike_icon.png")
 @onready var forest_icon=load("res://assets/scenes/map_icons/forest_icon.png")
 @onready var space_station_icon=load("res://assets/scenes/map_icons/space_station_icon.png")
+@onready var space_station_simple_icon=load("res://assets/scenes/map_icons/space_station_simple_icon.png")
+@onready var snow_basin_icon=load("res://assets/scenes/map_icons/snow_basin_icon.png")
+@onready var office_icon=load("res://assets/scenes/map_icons/office_icon.png")
 
 @onready var loading_ProgressBar=$loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar/ProgressBar
 func _process(delta: float) -> void:
@@ -69,7 +83,12 @@ func _process(delta: float) -> void:
 		map_texture_node.texture=forest_icon
 	if map_label_text.text=="Space Station":
 		map_texture_node.texture=space_station_icon
-	
+	if map_label_text.text=="Space Station Simple":
+		map_texture_node.texture=space_station_simple_icon
+	if map_label_text.text=="Snow Basin":
+		map_texture_node.texture=snow_basin_icon
+	if map_label_text.text=="Office":
+		map_texture_node.texture=office_icon
 	
 	if game_start_loading==true:
 		$Control_button_menu.visible=false
@@ -128,6 +147,60 @@ func _process(delta: float) -> void:
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
 					var packed_scene=ResourceLoader.load_threaded_get(space_station_map_FFA)
+					get_tree().change_scene_to_packed(packed_scene)
+		
+		if map_label_text.text=="Space Station Simple":
+			if mode_label_text.text=="Team Death Match":
+				var progress=[]
+				ResourceLoader.load_threaded_request(space_station_simple_map_TDM)
+				ResourceLoader.load_threaded_get_status(space_station_simple_map_TDM,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(space_station_simple_map_TDM)
+					get_tree().change_scene_to_packed(packed_scene)
+			if mode_label_text.text=="Free For All":
+				var progress=[]
+				ResourceLoader.load_threaded_request(space_station_simple_map_FFA)
+				ResourceLoader.load_threaded_get_status(space_station_simple_map_FFA,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(space_station_simple_map_FFA)
+					get_tree().change_scene_to_packed(packed_scene)
+					
+		if map_label_text.text=="Snow Basin":
+			if mode_label_text.text=="Team Death Match":
+				var progress=[]
+				ResourceLoader.load_threaded_request(snow_basin_map_TDM)
+				ResourceLoader.load_threaded_get_status(snow_basin_map_TDM,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(snow_basin_map_TDM)
+					get_tree().change_scene_to_packed(packed_scene)
+			if mode_label_text.text=="Free For All":
+				var progress=[]
+				ResourceLoader.load_threaded_request(snow_basin_map_FFA)
+				ResourceLoader.load_threaded_get_status(snow_basin_map_FFA,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(snow_basin_map_FFA)
+					get_tree().change_scene_to_packed(packed_scene)
+					
+		if map_label_text.text=="Office":
+			if mode_label_text.text=="Team Death Match":
+				var progress=[]
+				ResourceLoader.load_threaded_request(office_map_TDM)
+				ResourceLoader.load_threaded_get_status(office_map_TDM,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(office_map_TDM)
+					get_tree().change_scene_to_packed(packed_scene)
+			if mode_label_text.text=="Free For All":
+				var progress=[]
+				ResourceLoader.load_threaded_request(office_map_FFA)
+				ResourceLoader.load_threaded_get_status(office_map_FFA,progress)
+				loading_ProgressBar.value=progress[0]*100
+				if progress[0]==1:
+					var packed_scene=ResourceLoader.load_threaded_get(office_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
 					
 #Control_button_menu
@@ -206,6 +279,21 @@ func _on_button_space_station_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if $game_load.visible==true:
 		map_label_text.text="Space Station"
+
+func _on_button_space_station_simple_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if $game_load.visible==true:
+		map_label_text.text="Space Station Simple"
+
+func _on_button_snow_basin_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if $game_load.visible==true:
+		map_label_text.text="Snow Basin"
+
+func _on_button_office_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if $game_load.visible==true:
+		map_label_text.text="Office"
 #maps
 
 #mode
@@ -455,11 +543,11 @@ var vsync_default="open"
 var anti_aliasing_msaa_default="4x"
 var ssao_default="open"
 var ssil_default="open"
-var sdfgi_default="open"
+var sdfgi_default="close"
 var voxelgi_default="open"
 var glow_default="open"
 var volumetric_fog_default="open"
-var grass_default="0"
+var grass_default="2"
 var mouse_sevsitivity_default=0.08
 var crosshair_size_default=0.125
 var lod_range_default=1
@@ -700,6 +788,9 @@ func _on_button_grass_button_down() -> void:
 @onready var blood_strike_environment=preload("res://assets/scenes/main_game_scenes/blood_strike/blood_strike.tres")
 @onready var forest_environment=preload("res://assets/scenes/forest/terrain/forest_main_scene_environment.tres")
 @onready var space_station_environment=preload("res://assets/scenes/space_station/space_station.tres")
+@onready var space_station_simple_environment=preload("res://assets/scenes/space_station/ss_Simplified_version/space_station_simple.tres")
+@onready var snow_basin_environment=preload("res://assets/scenes/snow_basin/snow_basin.tres")
+@onready var office_environment=preload("res://assets/scenes/office/office_main_scene.tres")
 
 func apply_options():
 	get_viewport().content_scale_size=UserData.reslution_vec_data
@@ -712,22 +803,32 @@ func apply_options():
 	blood_strike_environment.set_ssao_enabled(UserData.ssao_data)
 	forest_environment.set_ssao_enabled(UserData.ssao_data)
 	space_station_environment.set_ssao_enabled(UserData.ssao_data)
+	space_station_simple_environment.set_ssao_enabled(UserData.ssao_data)
+	office_environment.set_ssao_enabled(UserData.ssao_data)
 	
 	blood_strike_environment.set_ssil_enabled(UserData.ssil_data)
 	forest_environment.set_ssil_enabled(UserData.ssil_data)
 	space_station_environment.set_ssil_enabled(UserData.ssil_data)
+	space_station_simple_environment.set_ssil_enabled(UserData.ssil_data)
+	office_environment.set_ssil_enabled(UserData.ssil_data)
 	
 	blood_strike_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	forest_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	space_station_environment.set_sdfgi_enabled(UserData.sdfgi_data)
+	space_station_simple_environment.set_sdfgi_enabled(UserData.sdfgi_data)
+	office_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	
 	blood_strike_environment.set_glow_enabled(UserData.glow_data)
 	forest_environment.set_glow_enabled(UserData.glow_data)
 	space_station_environment.set_glow_enabled(UserData.glow_data)
+	space_station_simple_environment.set_glow_enabled(UserData.glow_data)
+	office_environment.set_glow_enabled(UserData.glow_data)
 	
 	blood_strike_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	forest_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	space_station_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
+	space_station_simple_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
+	office_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	
 	
 	mouse_range_node.value=UserData.mouse_seveitivity_data
@@ -860,6 +961,15 @@ func _on_button_forest_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
 func _on_button_space_station_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_space_station_simple_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_snow_basin_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_office_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
 func _on_team_death_match_mouse_entered() -> void:

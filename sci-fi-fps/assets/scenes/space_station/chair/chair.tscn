@@ -99,7 +99,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("2_6i02o")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.2
+subsurf_scatter_strength = 0.1
 backlight_enabled = true
 backlight_texture = ExtResource("1_8adno")
 
@@ -162,7 +162,7 @@ anisotropy = 1.0
 ao_enabled = true
 ao_texture = ExtResource("7_obq3b")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.64
+subsurf_scatter_strength = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hwxrl"]
 _surfaces = [{

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyqdayqgpm0c6"]
+
+[ext_resource type="AudioStream" uid="uid://cs4iclyyplkdr" path="res://assets/audios/剣で斬る1.ogg" id="1_2qfyw"]
+[ext_resource type="Script" uid="uid://c4h3k5l6l0k4x" path="res://assets/audios/sword_kill_enemy_audio.gd" id="2_i11gw"]
+
+[node name="sword_kill_enemy_audio" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_2qfyw")
+autoplay = true
+script = ExtResource("2_i11gw")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,4 +1,7 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://ffeugrv00eca"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ffeugrv00eca"]
+
+[ext_resource type="FontFile" uid="uid://buki0neaxvsrn" path="res://assets/my_UI/fonts/阿里巴巴普惠体/Alibaba-PuHuiTi-Medium.ttf" id="1_cp2m5"]
 
 [resource]
+font = ExtResource("1_cp2m5")
 font_size = 35

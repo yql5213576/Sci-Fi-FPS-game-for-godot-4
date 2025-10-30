@@ -1,0 +1,31 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://dgmawb67tg11u"]
+
+[sub_resource type="Gradient" id="Gradient_vtaif"]
+offsets = PackedFloat32Array(0, 0.4057508, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.26657522, 0.2665752, 0.2665752, 0.5942492, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epa6t"]
+gradient = SubResource("Gradient_vtaif")
+
+[sub_resource type="Curve" id="Curve_vtaif"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.33923304, 0.98481315), 0.0, 0.0, 0, 0, Vector2(0.64896756, 1), 0.0, 0.0, 0, 0, Vector2(0.99115044, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_epa6t"]
+curve = SubResource("Curve_vtaif")
+
+[resource]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+gravity = Vector3(0, 9, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 9.999997
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 9.999997
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 9.999997
+scale_curve = SubResource("CurveTexture_epa6t")
+color = Color(0.4822746, 0.4822746, 0.4822746, 0.569)
+color_ramp = SubResource("GradientTexture1D_epa6t")
+turbulence_enabled = true

@@ -63,7 +63,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("2_uw27m")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.2
+subsurf_scatter_strength = 0.08
 backlight_enabled = true
 backlight_texture = ExtResource("1_mudjw")
 
@@ -177,7 +177,6 @@ ao_enabled = true
 ao_texture = ExtResource("7_dodfp")
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.3
-backlight_enabled = true
 backlight_texture = ExtResource("5_ph578")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ik51p"]

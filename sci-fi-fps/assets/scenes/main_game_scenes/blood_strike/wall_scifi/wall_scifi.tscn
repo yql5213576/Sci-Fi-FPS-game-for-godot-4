@@ -868,7 +868,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_glq7s")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m1qkm"]
-size = Vector3(1.7417, 1.17511, 0.419342)
+size = Vector3(1.6170657, 1.17511, 0.419342)
 
 [node name="wall_scifi" type="StaticBody3D"]
 
@@ -1011,6 +1011,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bdul7")
 surface_material_override/1 = SubResource("StandardMaterial3D_q7wyq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0317078, -0.0871429)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006774962, 0.0317078, -0.0871429)
 shape = SubResource("BoxShape3D_m1qkm")
 debug_color = Color(0.972549, 0, 0.443137, 1)

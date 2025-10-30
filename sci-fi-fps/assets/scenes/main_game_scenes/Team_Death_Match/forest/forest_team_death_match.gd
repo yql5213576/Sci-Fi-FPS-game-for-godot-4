@@ -304,23 +304,36 @@ func print_A_kills_B(A,B):
 	print(A.user_name+"    kill    "+B.user_name)
 	if user_player.has_method("print_killing_tips"):
 		user_player.print_killing_tips(A.user_name+"    kill    "+B.user_name)
-	if A.TDM_team=="blue":
+	if A.TDM_team=="blue"&&B.TDM_team=="red":
 		blue_team_score+=1
-	if A.TDM_team=="red":
+		if A.user_name==UserData.user_name_data:
+			UserData.kills_data_n+=1
+			if first_blood==false:
+				user_player.get_first_blood_event()
+				first_blood=true
+				return
+			if first_blood==true:
+				user_player.kills_anim_event()
+		else:
+			if first_blood==false:
+				first_blood=true
+		if B.user_name==UserData.user_name_data:
+			UserData.death_data_n+=1
+	if A.TDM_team=="red"&&B.TDM_team=="blue":
 		red_team_score+=1
-	if A.user_name==UserData.user_name_data:
-		UserData.kills_data_n+=1
-		if first_blood==false:
-			user_player.get_first_blood_event()
-			first_blood=true
-			return
-		if first_blood==true:
-			user_player.kills_anim_event()
-	else:
-		if first_blood==false:
-			first_blood=true
-	if B.user_name==UserData.user_name_data:
-		UserData.death_data_n+=1
+		if A.user_name==UserData.user_name_data:
+			UserData.kills_data_n+=1
+			if first_blood==false:
+				user_player.get_first_blood_event()
+				first_blood=true
+				return
+			if first_blood==true:
+				user_player.kills_anim_event()
+		else:
+			if first_blood==false:
+				first_blood=true
+		if B.user_name==UserData.user_name_data:
+			UserData.death_data_n+=1
 
 var saturation_event=false
 func scene_saturation_event():

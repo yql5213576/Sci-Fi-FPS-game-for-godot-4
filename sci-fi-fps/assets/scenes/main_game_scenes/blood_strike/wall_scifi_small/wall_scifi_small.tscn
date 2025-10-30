@@ -93,8 +93,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("2_jbbrv")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.15
-backlight_enabled = true
+subsurf_scatter_strength = 0.08
 backlight_texture = ExtResource("1_uigrl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n01xd"]
@@ -194,7 +193,7 @@ clearcoat_enabled = true
 ao_enabled = true
 ao_texture = ExtResource("8_5tuk5")
 subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.1
+subsurf_scatter_strength = 0.06
 backlight_enabled = true
 backlight_texture = ExtResource("5_kcukn")
 
@@ -393,7 +392,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c1m53")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jj7q6"]
-size = Vector3(2.20795, 1.87622, 0.794373)
+size = Vector3(2.0685892, 1.87622, 0.51853955)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ojly"]
 size = Vector3(2.20795, 0.491745, 0.987228)
@@ -457,7 +456,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_tboa5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00839233, -0.0740967, -0.00204468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024180375, -0.0740967, 0.0038070977)
 shape = SubResource("BoxShape3D_jj7q6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

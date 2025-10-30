@@ -1,4 +1,4 @@
-[gd_scene load_steps=1069 format=4 uid="uid://ccp2ohvgf5m3e"]
+[gd_scene load_steps=1163 format=4 uid="uid://ccp2ohvgf5m3e"]
 
 [ext_resource type="Script" uid="uid://daaaxudopoo7o" path="res://assets/player/scripts/hero_anim_1_st_all_weapons.gd" id="1_uf275"]
 [ext_resource type="Texture2D" uid="uid://cbf41682s5p8q" path="res://assets/player/textures/player/white/armor_arms_Base_color.png" id="2_ankpn"]
@@ -68,9 +68,13 @@
 [ext_resource type="Animation" uid="uid://bjb6gstwvm63r" path="res://assets/player/animations/1st_all_weapons/rifle_1st_unequip.res" id="46_04t6a"]
 [ext_resource type="Animation" uid="uid://dq152wpv44t4i" path="res://assets/player/animations/1st_all_weapons/run_smg.res" id="47_283q2"]
 [ext_resource type="Animation" uid="uid://bss0k2ai3xkhu" path="res://assets/player/animations/1st_all_weapons/shoot_aiming_smg.res" id="48_7ovsi"]
+[ext_resource type="PackedScene" uid="uid://doyiskwg81mkt" path="res://assets/player/prefab/grenade_fire_1st.tscn" id="48_jrevv"]
 [ext_resource type="Animation" uid="uid://bl0qcjihbyghd" path="res://assets/player/animations/1st_all_weapons/shoot_idle_smg.res" id="49_rjhbb"]
+[ext_resource type="PackedScene" uid="uid://kun8gk61etlh" path="res://assets/player/prefab/grenade_smoke_1st.tscn" id="49_v6bxe"]
 [ext_resource type="Animation" uid="uid://rg561kjwp13f" path="res://assets/player/animations/1st_all_weapons/sniper_1st_aiming.res" id="50_8axmh"]
+[ext_resource type="PackedScene" uid="uid://8tmii6jb2hxn" path="res://assets/player/prefab/grenade_flash_1st.tscn" id="50_ajb5i"]
 [ext_resource type="Animation" uid="uid://bvxfq4tssv53v" path="res://assets/player/animations/1st_all_weapons/sniper_1st_aiming_shoot.res" id="51_4t6wb"]
+[ext_resource type="PackedScene" uid="uid://bok4x36odcemd" path="res://assets/player/prefab/sword_1st.tscn" id="51_v6bxe"]
 [ext_resource type="Animation" uid="uid://chig4bao51ik6" path="res://assets/player/animations/1st_all_weapons/sniper_1st_equip.res" id="52_w7mr8"]
 [ext_resource type="Animation" uid="uid://dmtf4yrqb774e" path="res://assets/player/animations/1st_all_weapons/sniper_1st_idle.res" id="53_rf4fq"]
 [ext_resource type="Animation" uid="uid://c6ym0yuv743d" path="res://assets/player/animations/1st_all_weapons/sniper_1st_idle_shoot.res" id="54_bhuet"]
@@ -129,17 +133,30 @@
 [ext_resource type="Texture2D" uid="uid://dmtvkh6vi5s5d" path="res://assets/my_UI/new_small_ui_pack/health/health4.png" id="122_p81mk"]
 [ext_resource type="Texture2D" uid="uid://uxe05ttamr7c" path="res://assets/my_UI/new_small_ui_pack/health/health5.png" id="123_72o2f"]
 [ext_resource type="Texture2D" uid="uid://dfjheahugfie8" path="res://assets/my_UI/new_small_ui_pack/health/health6.png" id="124_6y5c8"]
+[ext_resource type="Animation" uid="uid://cmfe1v5478x6j" path="res://assets/player/animations/app/grenade_1st/idle2_grenade_1st.res" id="124_7dj1w"]
+[ext_resource type="Animation" uid="uid://ch4oxjt8yvxg0" path="res://assets/player/animations/app/grenade_1st/idle_grenade_1st.res" id="125_8y7uh"]
 [ext_resource type="Texture2D" uid="uid://7lrg87m7au64" path="res://assets/my_UI/new_small_ui_pack/health/health7.png" id="125_ij8fl"]
 [ext_resource type="Texture2D" uid="uid://bq72ycugix2sj" path="res://assets/my_UI/new_small_ui_pack/health/health8.png" id="126_bgifl"]
+[ext_resource type="Animation" uid="uid://b2rlh6s0my01q" path="res://assets/player/animations/app/grenade_1st/throw1_grenade_1st.res" id="126_huoer"]
+[ext_resource type="Animation" uid="uid://bdfs3caih4lhy" path="res://assets/player/animations/app/grenade_1st/throw2_grenade_1st.res" id="127_jrevv"]
 [ext_resource type="Texture2D" uid="uid://dk0vkml83v6k4" path="res://assets/my_UI/new_small_ui_pack/health/health9.png" id="127_q3faa"]
+[ext_resource type="Animation" uid="uid://dk2thdbmkchh8" path="res://assets/player/animations/app/grenade_1st/throw_grenade_1st.res" id="128_v6bxe"]
 [ext_resource type="Texture2D" uid="uid://ummqgja0adg4" path="res://assets/my_UI/new_small_ui_pack/health/health10.png" id="128_ykq1q"]
+[ext_resource type="Animation" uid="uid://cldhwfo7t7jyk" path="res://assets/player/animations/app/sword_1st/sword_attack2_1st.res" id="129_ajb5i"]
 [ext_resource type="Texture2D" uid="uid://fqovmo6y43na" path="res://assets/my_UI/new_small_ui_pack/health/health11.png" id="129_ocdn6"]
+[ext_resource type="Animation" uid="uid://cyi3xw38lsmh3" path="res://assets/player/animations/app/sword_1st/sword_attack_1st.res" id="130_oppng"]
 [ext_resource type="Texture2D" uid="uid://be6tx5khndxd" path="res://assets/my_UI/new_small_ui_pack/health/health12.png" id="130_ov24y"]
 [ext_resource type="Texture2D" uid="uid://bpqpa804b71ki" path="res://assets/my_UI/new_small_ui_pack/health/health13.png" id="131_o0752"]
+[ext_resource type="Animation" uid="uid://dffxluei7jnbn" path="res://assets/player/animations/app/weapons_ready_1st/machine_1st_ready.res" id="131_odndb"]
+[ext_resource type="Animation" uid="uid://dxwo1uyvyvhog" path="res://assets/player/animations/app/weapons_ready_1st/pistol_1st_ready.res" id="132_m16qa"]
 [ext_resource type="Texture2D" uid="uid://44eixh6pwfxl" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0081.png" id="132_qejly"]
 [ext_resource type="Texture2D" uid="uid://cvpvhgl004gm6" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0082.png" id="133_mgof1"]
+[ext_resource type="Animation" uid="uid://d2645tqevu6yf" path="res://assets/player/animations/app/weapons_ready_1st/rifle_1st_ready.res" id="133_o3fd8"]
+[ext_resource type="Animation" uid="uid://dt1d3nilaasf3" path="res://assets/player/animations/app/weapons_ready_1st/shotgun_1st_ready.res" id="134_c2cc8"]
 [ext_resource type="Texture2D" uid="uid://bd00v542bpvbo" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0083.png" id="134_d0yu2"]
+[ext_resource type="Animation" uid="uid://7iipynqbaeow" path="res://assets/player/animations/app/weapons_ready_1st/smg_1st_ready.res" id="135_cl6l4"]
 [ext_resource type="Texture2D" uid="uid://chybp0dekwqpd" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0084.png" id="135_w8620"]
+[ext_resource type="Animation" uid="uid://bsatxccwbifrh" path="res://assets/player/animations/app/weapons_ready_1st/sniper_1st_ready.res" id="136_cdjca"]
 [ext_resource type="Script" uid="uid://bkct3mhu4mhqp" path="res://assets/audios/move_audio.gd" id="136_el2hh"]
 [ext_resource type="Texture2D" uid="uid://87pdkty6sql" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0085.png" id="136_q32bc"]
 [ext_resource type="Script" uid="uid://c03u80ame1knv" path="res://assets/audios/jump_audio_ins.gd" id="137_pnj6v"]
@@ -150,7 +167,10 @@
 [ext_resource type="Texture2D" uid="uid://cvj125h5532el" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0090.png" id="141_dwywt"]
 [ext_resource type="Texture2D" uid="uid://btbk0dr0b7m8y" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0091.png" id="142_em0sp"]
 [ext_resource type="Texture2D" uid="uid://f02dkagxltde" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0092.png" id="143_1kga8"]
+[ext_resource type="LabelSettings" uid="uid://dddmy7iuscv4" path="res://assets/my_UI/killing_tips.tres" id="144_m16qa"]
+[ext_resource type="Texture2D" uid="uid://dh3d8l3noyu0y" path="res://assets/my_UI/fire.png" id="144_oppng"]
 [ext_resource type="Texture2D" uid="uid://bta1tsbycv1o4" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0093.png" id="144_x2vby"]
+[ext_resource type="LabelSettings" uid="uid://djbay5e2syjt7" path="res://assets/my_UI/grenade_num_ui.tres" id="145_odndb"]
 [ext_resource type="Texture2D" uid="uid://bwvwskeemjs7c" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0094.png" id="145_vpi6d"]
 [ext_resource type="Texture2D" uid="uid://c8hs1ab0axq5h" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0095.png" id="146_mx420"]
 [ext_resource type="Texture2D" uid="uid://rjds20xrn3s" path="res://assets/my_UI/new_small_ui_pack/health/ECG/green/0096.png" id="147_80bsv"]
@@ -400,6 +420,7 @@
 [ext_resource type="Texture2D" uid="uid://dlcpejp6mv8fm" path="res://assets/my_UI/game_result/victory.png" id="429_0kw70"]
 [ext_resource type="Texture2D" uid="uid://ctn7jd5gcuaom" path="res://assets/my_UI/game_result/draw.png" id="430_issbb"]
 [ext_resource type="Texture2D" uid="uid://cyepdeevn4fea" path="res://assets/my_UI/game_result/defeat.png" id="431_88f8a"]
+[ext_resource type="Texture2D" uid="uid://3wn06641grio" path="res://assets/my_UI/white_screen.png" id="457_ajb5i"]
 [ext_resource type="Texture2D" uid="uid://ct82phbjiej3y" path="res://assets/my_UI/new_small_ui_pack/health/cube.png" id="495_e00bh"]
 [ext_resource type="Texture2D" uid="uid://c13r22p5t7f8r" path="res://assets/my_UI/new_small_ui_pack/ammos/ammo4.png" id="496_ekda8"]
 [ext_resource type="Texture2D" uid="uid://4a8kg34he7a8" path="res://assets/my_UI/new_small_ui_pack/ammos/ammo5.png" id="497_a76l4"]
@@ -1313,6 +1334,18 @@ tracks/57/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xv005"]
 length = 0.001
@@ -1703,6 +1736,18 @@ tracks/33/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_283q2"]
@@ -2127,6 +2172,18 @@ tracks/51/path = NodePath("Skeleton/Skeleton3D/left_hand/shotgun_ammo_model_1st:
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -3037,6 +3094,18 @@ tracks/57/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qhegt"]
 resource_name = "run_to_idle_smg"
@@ -3527,6 +3596,18 @@ tracks/57/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7ovsi"]
 resource_name = "shotgun_1st_run_to_idle"
@@ -3950,6 +4031,18 @@ tracks/51/path = NodePath("Skeleton/Skeleton3D/left_hand/shotgun_ammo_model_1st:
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -4397,6 +4490,18 @@ tracks/53/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7pq42"]
 resource_name = "sniper_fire_and_reload_aiming"
@@ -4825,6 +4930,18 @@ tracks/51/keys = {
 "args": [],
 "method": &"sniper_reload_rock_audio_event"
 }]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_cuall"]
@@ -5258,6 +5375,18 @@ tracks/51/keys = {
 "method": &"sniper_reload_rock_audio_event"
 }]
 }
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Skeleton/Skeleton3D/right_hand/sword:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qtw0s"]
 _data = {
@@ -5276,6 +5405,8 @@ _data = {
 &"RESET": SubResource("Animation_xv005"),
 &"aiming_smg": ExtResource("29_usn8m"),
 &"equip_smg": ExtResource("30_0wq4o"),
+&"idle2_grenade_1st": ExtResource("124_7dj1w"),
+&"idle_grenade_1st": ExtResource("125_8y7uh"),
 &"idle_smg": ExtResource("31_ur5wf"),
 &"idle_to_run_smg": ExtResource("32_s1i3j"),
 &"jump_smg": ExtResource("33_sm65t"),
@@ -5287,6 +5418,7 @@ _data = {
 &"machine_1st_idle_to_run": ExtResource("78_cbf0c"),
 &"machine_1st_jump": ExtResource("79_euod5"),
 &"machine_1st_move": ExtResource("80_04t6a"),
+&"machine_1st_ready": ExtResource("131_odndb"),
 &"machine_1st_reloading": ExtResource("81_283q2"),
 &"machine_1st_run": ExtResource("82_7ovsi"),
 &"machine_1st_run_to_idle": SubResource("Animation_283q2"),
@@ -5294,6 +5426,7 @@ _data = {
 &"machine_ammos_set": SubResource("Animation_4jtsi"),
 &"machine_gun_ammos_shoot_path": SubResource("Animation_rjhbb"),
 &"move_smg": ExtResource("34_p7e3i"),
+&"pistol_1st_ready": ExtResource("132_m16qa"),
 &"reload_smg": ExtResource("35_hjdlc"),
 &"rifle_1st_aiming": ExtResource("36_p2u38"),
 &"rifle_1st_aiming_shoot": ExtResource("37_4xnac"),
@@ -5303,6 +5436,7 @@ _data = {
 &"rifle_1st_idle_to_run": ExtResource("41_mgrdj"),
 &"rifle_1st_jump": ExtResource("42_b07ty"),
 &"rifle_1st_move": ExtResource("43_kudcu"),
+&"rifle_1st_ready": ExtResource("133_o3fd8"),
 &"rifle_1st_reload": ExtResource("44_cbf0c"),
 &"rifle_1st_run": ExtResource("45_euod5"),
 &"rifle_1st_run_to_idle": SubResource("Animation_c17kh"),
@@ -5321,6 +5455,7 @@ _data = {
 &"shotgun_1st_idle_to_run": ExtResource("91_ic18m"),
 &"shotgun_1st_jump": ExtResource("92_e5cy1"),
 &"shotgun_1st_move": ExtResource("109_7ovsi"),
+&"shotgun_1st_ready": ExtResource("134_c2cc8"),
 &"shotgun_1st_reload2_1-ammos": ExtResource("93_cj2hh"),
 &"shotgun_1st_reload2_2-ammos": ExtResource("94_185s8"),
 &"shotgun_1st_reload2_3-ammos": ExtResource("95_ndlew"),
@@ -5332,6 +5467,7 @@ _data = {
 &"shotgun_1st_unequip": ExtResource("100_yes1g"),
 &"shotgun_aiming_fire_and_reload1": ExtResource("103_kudcu"),
 &"shotgun_idle_fire_and_reload1": ExtResource("104_cbf0c"),
+&"smg_1st_ready": ExtResource("135_cl6l4"),
 &"sniper_1st_aiming": ExtResource("50_8axmh"),
 &"sniper_1st_aiming_shoot": ExtResource("51_4t6wb"),
 &"sniper_1st_equip": ExtResource("52_w7mr8"),
@@ -5340,6 +5476,7 @@ _data = {
 &"sniper_1st_idle_to_run": ExtResource("55_ejn8g"),
 &"sniper_1st_jump": ExtResource("56_x8vlm"),
 &"sniper_1st_move": ExtResource("57_ic18m"),
+&"sniper_1st_ready": ExtResource("136_cdjca"),
 &"sniper_1st_reload1": ExtResource("58_e5cy1"),
 &"sniper_1st_reload2": ExtResource("59_cj2hh"),
 &"sniper_1st_run": ExtResource("60_185s8"),
@@ -5347,8 +5484,60 @@ _data = {
 &"sniper_1st_unequip": ExtResource("61_ndlew"),
 &"sniper_fire_and_reload_aiming": SubResource("Animation_7pq42"),
 &"sniper_fire_and_reload_idle": SubResource("Animation_cuall"),
+&"sword_attack2_1st": ExtResource("129_ajb5i"),
+&"sword_attack_1st": ExtResource("130_oppng"),
+&"throw1_grenade_1st": ExtResource("126_huoer"),
+&"throw2_grenade_1st": ExtResource("127_jrevv"),
+&"throw_grenade_1st": ExtResource("128_v6bxe"),
 &"unequip_smg": ExtResource("62_nlybr")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o3fd8"]
+animation = &"idle_grenade_1st"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cl6l4"]
+animation = &"throw1_grenade_1st"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xh31j"]
+animation = &"throw2_grenade_1st"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wutr1"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ke2w3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mooho"]
+xfade_time = 0.3
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ee5oy"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g6g27"]
+states/End/position = Vector2(917, 111)
+states/Start/position = Vector2(-177, 111)
+states/idle_grenade_1st/node = SubResource("AnimationNodeAnimation_o3fd8")
+states/idle_grenade_1st/position = Vector2(53, 111)
+states/throw1_grenade_1st/node = SubResource("AnimationNodeAnimation_cl6l4")
+states/throw1_grenade_1st/position = Vector2(312, 125)
+states/throw2_grenade_1st/node = SubResource("AnimationNodeAnimation_xh31j")
+states/throw2_grenade_1st/position = Vector2(610, 118)
+transitions = ["Start", "idle_grenade_1st", SubResource("AnimationNodeStateMachineTransition_wutr1"), "idle_grenade_1st", "throw1_grenade_1st", SubResource("AnimationNodeStateMachineTransition_ke2w3"), "throw1_grenade_1st", "throw2_grenade_1st", SubResource("AnimationNodeStateMachineTransition_mooho"), "throw2_grenade_1st", "End", SubResource("AnimationNodeStateMachineTransition_ee5oy")]
+graph_offset = Vector2(-537, -96)
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_lyegk"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_p1cr1"]
+graph_offset = Vector2(-770, -16.5)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_lyegk")
+nodes/TimeScale/position = Vector2(-20, 140)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_g6g27")
+nodes/StateMachine/position = Vector2(-420, 140)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"StateMachine"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cbb5t"]
 animation = &"machine_1st_aiming"
@@ -5361,7 +5550,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_cbb5t")
 nodes/Animation/position = Vector2(-200, 160)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_fseb4")
 nodes/TimeScale/position = Vector2(60, 140)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gwnox"]
 animation = &"machine_1st_aiming_shoot"
@@ -5374,7 +5563,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_gwnox")
 nodes/Animation/position = Vector2(-340, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_du5n3")
 nodes/TimeScale/position = Vector2(32, 201)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_csafd"]
 animation = &"machine_1st_equip"
@@ -5387,7 +5576,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_csafd")
 nodes/Animation/position = Vector2(-160, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_atfud")
 nodes/TimeScale/position = Vector2(108, 183)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v6bxe"]
+animation = &"machine_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ajb5i"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v6bxe"]
+graph_offset = Vector2(-894, -2)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ajb5i")
+nodes/TimeScale/position = Vector2(38, 185)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_v6bxe")
+nodes/Animation/position = Vector2(-227, 266)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s11ne"]
 animation = &"machine_1st_idle"
@@ -5400,7 +5602,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_s11ne")
 nodes/Animation/position = Vector2(-140, 160)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_5mx4p")
 nodes/TimeScale/position = Vector2(100, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eol6v"]
 animation = &"machine_1st_idle_shoot"
@@ -5413,7 +5615,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_eol6v")
 nodes/Animation/position = Vector2(-260, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_a32o8")
 nodes/TimeScale/position = Vector2(52, 173)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v3h72"]
 animation = &"machine_1st_idle_to_run"
@@ -5426,7 +5628,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_v3h72")
 nodes/Animation/position = Vector2(-220, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_cbb5t")
 nodes/TimeScale/position = Vector2(90, 199)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a32o8"]
 animation = &"machine_1st_reloading"
@@ -5439,7 +5641,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_a32o8")
 nodes/Animation/position = Vector2(-260, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_v3h72")
 nodes/TimeScale/position = Vector2(102, 175)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fseb4"]
 animation = &"machine_1st_run_to_idle"
@@ -5452,7 +5654,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_fseb4")
 nodes/Animation/position = Vector2(-240, 120)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_gwnox")
 nodes/TimeScale/position = Vector2(60, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f8vtr"]
 animation = &"machine_1st_unequip"
@@ -5460,12 +5662,12 @@ animation = &"machine_1st_unequip"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_el2hh"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_185s8"]
-graph_offset = Vector2(-467, -291)
+graph_offset = Vector2(-428, -10)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_f8vtr")
 nodes/Animation/position = Vector2(-180, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_el2hh")
 nodes/TimeScale/position = Vector2(60, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cbf0c"]
 animation = &"1st_pistol_aiming"
@@ -5478,7 +5680,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_cbf0c")
 nodes/Animation/position = Vector2(-112, 179)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_euod5")
 nodes/TimeScale/position = Vector2(60, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_04t6a"]
 animation = &"1st_pistol_aiming_shoot"
@@ -5491,7 +5693,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_04t6a")
 nodes/Animation/position = Vector2(-200, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_283q2")
 nodes/TimeScale/position = Vector2(99, 217)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_in1vt"]
 animation = &"1st_pistol_equip"
@@ -5504,7 +5706,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_in1vt")
 nodes/Animation/position = Vector2(-120, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_mgrdj")
 nodes/TimeScale/position = Vector2(125, 184)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oppng"]
+animation = &"pistol_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_odndb"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ajb5i"]
+graph_offset = Vector2(-699, -330)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_odndb")
+nodes/TimeScale/position = Vector2(-18, 177)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_oppng")
+nodes/Animation/position = Vector2(-228, 231)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mgrdj"]
 animation = &"1st_pistol_idle"
@@ -5517,7 +5732,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_mgrdj")
 nodes/Animation/position = Vector2(-149, 218)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_b07ty")
 nodes/TimeScale/position = Vector2(50, 214)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vmr01"]
 animation = &"1st_pistol_idle_shoot"
@@ -5530,7 +5745,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_vmr01")
 nodes/Animation/position = Vector2(-160, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_703jl")
 nodes/TimeScale/position = Vector2(140, 201)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_703jl"]
 animation = &"1st_pistol_idle_to_run"
@@ -5543,7 +5758,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_703jl")
 nodes/Animation/position = Vector2(-140, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_in1vt")
 nodes/TimeScale/position = Vector2(105, 190)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b07ty"]
 animation = &"1st_pistol_reload"
@@ -5556,7 +5771,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_b07ty")
 nodes/Animation/position = Vector2(-140, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_kudcu")
 nodes/TimeScale/position = Vector2(60, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1y4ht"]
 animation = &"1st_pistol_run_to_idle"
@@ -5569,7 +5784,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_1y4ht")
 nodes/Animation/position = Vector2(-172, 176)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_5wwqd")
 nodes/TimeScale/position = Vector2(64, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kudcu"]
 animation = &"1st_pistol_unequip"
@@ -5582,7 +5797,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_kudcu")
 nodes/Animation/position = Vector2(-200, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_cbf0c")
 nodes/TimeScale/position = Vector2(83, 178)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p7e3i"]
 animation = &"rifle_1st_aiming"
@@ -5595,7 +5810,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_p7e3i")
 nodes/Animation/position = Vector2(-80, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_hjdlc")
 nodes/TimeScale/position = Vector2(120, 180)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p2u38"]
 animation = &"rifle_1st_aiming_shoot"
@@ -5608,7 +5823,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_p2u38")
 nodes/Animation/position = Vector2(-140, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_4xnac")
 nodes/TimeScale/position = Vector2(107, 159)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s1i3j"]
 animation = &"rifle_1st_equip"
@@ -5621,7 +5836,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_s1i3j")
 nodes/Animation/position = Vector2(-71, 170)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sm65t")
 nodes/TimeScale/position = Vector2(134, 138)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m16qa"]
+animation = &"rifle_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_o3fd8"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_oppng"]
+graph_offset = Vector2(-654, -351)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_o3fd8")
+nodes/TimeScale/position = Vector2(111, 227)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_m16qa")
+nodes/Animation/position = Vector2(-121, 242)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sm65t"]
 animation = &"rifle_1st_idle"
@@ -5634,7 +5862,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_sm65t")
 nodes/Animation/position = Vector2(-100, 160)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_p7e3i")
 nodes/TimeScale/position = Vector2(100, 140)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gfpmn"]
 animation = &"rifle_1st_idle_shoot"
@@ -5647,7 +5875,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_gfpmn")
 nodes/Animation/position = Vector2(-160, 80)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rmxlm")
 nodes/TimeScale/position = Vector2(100, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur5wf"]
 animation = &"rifle_1st_idle_to_run"
@@ -5660,7 +5888,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_ur5wf")
 nodes/Animation/position = Vector2(-116, 171)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_s1i3j")
 nodes/TimeScale/position = Vector2(94, 148)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hjdlc"]
 animation = &"rifle_1st_reload"
@@ -5673,7 +5901,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_hjdlc")
 nodes/Animation/position = Vector2(-100, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_p2u38")
 nodes/TimeScale/position = Vector2(100, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lsafu"]
 animation = &"rifle_1st_run_to_idle"
@@ -5686,7 +5914,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_lsafu")
 nodes/Animation/position = Vector2(-170, 117)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_1y4ht")
 nodes/TimeScale/position = Vector2(69, 117)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4xnac"]
 animation = &"rifle_1st_unequip"
@@ -5699,7 +5927,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_4xnac")
 nodes/Animation/position = Vector2(-96, 197)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vmr01")
 nodes/TimeScale/position = Vector2(99, 184)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vn58m"]
 animation = &"shotgun_1st_aiming"
@@ -5712,7 +5940,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_vn58m")
 nodes/Animation/position = Vector2(-200, 260)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_s11ne")
 nodes/TimeScale/position = Vector2(89, 199)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5mx4p"]
 animation = &"shotgun_aiming_fire_and_reload1"
@@ -5725,7 +5953,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_5mx4p")
 nodes/Animation/position = Vector2(-320, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_eol6v")
 nodes/TimeScale/position = Vector2(40, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0dg2y"]
 animation = &"shotgun_1st_equip"
@@ -5738,7 +5966,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_0dg2y")
 nodes/Animation/position = Vector2(-280, 160)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_csafd")
 nodes/TimeScale/position = Vector2(69, 194)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2cc8"]
+animation = &"shotgun_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_cl6l4"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_odndb"]
+graph_offset = Vector2(-730, 25)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_cl6l4")
+nodes/TimeScale/position = Vector2(0, 180)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_c2cc8")
+nodes/Animation/position = Vector2(-320, 200)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_el2hh"]
 animation = &"shotgun_1st_idle"
@@ -5751,7 +5992,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_el2hh")
 nodes/Animation/position = Vector2(-227, 194)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_pnj6v")
 nodes/TimeScale/position = Vector2(-16, 182)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x8vmq"]
 animation = &"shotgun_idle_fire_and_reload1"
@@ -5764,7 +6005,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_x8vmq")
 nodes/Animation/position = Vector2(-300, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_bgk4t")
 nodes/TimeScale/position = Vector2(80, 180)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cs1c6"]
 animation = &"shotgun_1st_idle_to_run"
@@ -5777,7 +6018,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_cs1c6")
 nodes/Animation/position = Vector2(-180, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_qpnks")
 nodes/TimeScale/position = Vector2(131, 206)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pnj6v"]
 animation = &"shotgun_1st_reload2_2-ammos"
@@ -5843,7 +6084,7 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vn58m")
 nodes/TimeScale/position = Vector2(114, 208)
 nodes/Transition/node = SubResource("AnimationNodeTransition_s11ne")
 nodes/Transition/position = Vector2(-100, 280)
-node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"Animation", &"Transition", 1, &"Animation 2", &"Transition", 2, &"Animation 3", &"Transition", 3, &"Animation 4", &"Transition", 4, &"Animation 5", &"Transition", 5, &"Animation 6", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Transition", &"Transition", 0, &"Animation", &"Transition", 1, &"Animation 2", &"Transition", 2, &"Animation 3", &"Transition", 3, &"Animation 4", &"Transition", 4, &"Animation 5", &"Transition", 5, &"Animation 6"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2tts"]
 animation = &"shotgun_1st_run_to_idle"
@@ -5856,7 +6097,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_c2tts")
 nodes/Animation/position = Vector2(-145, 193)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_2l823")
 nodes/TimeScale/position = Vector2(104, 176)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_atfud"]
 animation = &"shotgun_1st_unequip"
@@ -5869,7 +6110,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_atfud")
 nodes/Animation/position = Vector2(-220, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_f8vtr")
 nodes/TimeScale/position = Vector2(57, 179)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4t6wb"]
 animation = &"aiming_smg"
@@ -5882,7 +6123,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_4t6wb")
 nodes/Animation/position = Vector2(-200, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_w7mr8")
 nodes/TimeScale/position = Vector2(20, 120)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7mr8"]
 animation = &"shoot_aiming_smg"
@@ -5895,7 +6136,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_w7mr8")
 nodes/Animation/position = Vector2(-160, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rf4fq")
 nodes/TimeScale/position = Vector2(100, 180)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ovsi"]
 animation = &"equip_smg"
@@ -5908,7 +6149,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_7ovsi")
 nodes/Animation/position = Vector2(-140, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_rjhbb")
 nodes/TimeScale/position = Vector2(102, 204)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cdjca"]
+animation = &"smg_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_xh31j"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_m16qa"]
+graph_offset = Vector2(-452, -204)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_xh31j")
+nodes/TimeScale/position = Vector2(58, 210)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_cdjca")
+nodes/Animation/position = Vector2(-216, 214)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjhbb"]
 animation = &"idle_smg"
@@ -5921,7 +6175,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_rjhbb")
 nodes/Animation/position = Vector2(-160, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_8axmh")
 nodes/TimeScale/position = Vector2(80, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_euod5"]
 animation = &"shoot_idle_smg"
@@ -5934,7 +6188,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_euod5")
 nodes/Animation/position = Vector2(-160, 180)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_04t6a")
 nodes/TimeScale/position = Vector2(100, 180)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_283q2"]
 animation = &"idle_to_run_smg"
@@ -5947,7 +6201,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_283q2")
 nodes/Animation/position = Vector2(-122, 273)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_7ovsi")
 nodes/TimeScale/position = Vector2(118, 209)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rf4fq"]
 animation = &"reload_smg"
@@ -5960,7 +6214,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_rf4fq")
 nodes/Animation/position = Vector2(-80, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_bhuet")
 nodes/TimeScale/position = Vector2(120, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5wwqd"]
 animation = &"run_to_idle_smg"
@@ -5973,7 +6227,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_5wwqd")
 nodes/Animation/position = Vector2(-142, 215)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_yes1g")
 nodes/TimeScale/position = Vector2(74, 164)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8axmh"]
 animation = &"unequip_smg"
@@ -5986,7 +6240,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_8axmh")
 nodes/Animation/position = Vector2(-100, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_4t6wb")
 nodes/TimeScale/position = Vector2(124, 213)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_185s8"]
 animation = &"sniper_1st_aiming"
@@ -5999,7 +6253,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_185s8")
 nodes/Animation/position = Vector2(-160, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ndlew")
 nodes/TimeScale/position = Vector2(116, 180)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ndlew"]
 animation = &"sniper_fire_and_reload_aiming"
@@ -6012,7 +6266,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_ndlew")
 nodes/Animation/position = Vector2(-260, 160)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_nlybr")
 nodes/TimeScale/position = Vector2(80, 160)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x8vlm"]
 animation = &"sniper_1st_equip"
@@ -6025,7 +6279,20 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_x8vlm")
 nodes/Animation/position = Vector2(-120, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ic18m")
 nodes/TimeScale/position = Vector2(114, 202)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ax2ey"]
+animation = &"sniper_1st_ready"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_av4eg"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_o3fd8"]
+graph_offset = Vector2(-484, -214)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_av4eg")
+nodes/TimeScale/position = Vector2(120, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ax2ey")
+nodes/Animation/position = Vector2(-120, 200)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ic18m"]
 animation = &"sniper_1st_idle"
@@ -6038,7 +6305,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_ic18m")
 nodes/Animation/position = Vector2(-72, 211)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_e5cy1")
 nodes/TimeScale/position = Vector2(100, 140)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bhuet"]
 animation = &"sniper_fire_and_reload_idle"
@@ -6051,7 +6318,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_bhuet")
 nodes/Animation/position = Vector2(-200, 220)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_xv005")
 nodes/TimeScale/position = Vector2(127, 205)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ejn8g"]
 animation = &"sniper_1st_idle_to_run"
@@ -6064,7 +6331,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_ejn8g")
 nodes/Animation/position = Vector2(-160, 200)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_x8vlm")
 nodes/TimeScale/position = Vector2(67, 193)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cj2hh"]
 animation = &"sniper_1st_reload2"
@@ -6077,7 +6344,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_cj2hh")
 nodes/Animation/position = Vector2(-100, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_185s8")
 nodes/TimeScale/position = Vector2(140, 140)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nlybr"]
 animation = &"sniper_1st_reload1"
@@ -6090,7 +6357,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_nlybr")
 nodes/Animation/position = Vector2(-220, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_lsafu")
 nodes/TimeScale/position = Vector2(40, 140)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yes1g"]
 animation = &"sniper_1st_run_to_idle"
@@ -6103,7 +6370,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_yes1g")
 nodes/Animation/position = Vector2(-280, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_4jtsi")
 nodes/TimeScale/position = Vector2(41, 155)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e5cy1"]
 animation = &"sniper_1st_unequip"
@@ -6116,10 +6383,45 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_e5cy1")
 nodes/Animation/position = Vector2(-200, 240)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_cj2hh")
 nodes/TimeScale/position = Vector2(74, 211)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ajb5i"]
+animation = &"sword_attack2_1st"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_odndb"]
+animation = &"sword_attack_1st"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_m16qa"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_c2cc8"]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_cl6l4"]
+input_0/name = "sword_attack1"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "sword_attack2"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_c2cc8"]
+graph_offset = Vector2(-814.16003, 57.61499)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_c2cc8")
+nodes/TimeScale/position = Vector2(-200, 100)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_odndb")
+nodes/Animation/position = Vector2(-480, 60)
+nodes/Transition/node = SubResource("AnimationNodeTransition_cl6l4")
+nodes/Transition/position = Vector2(100, 140)
+"nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_m16qa")
+"nodes/TimeScale 2/position" = Vector2(-200, 280)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ajb5i")
+"nodes/Animation 2/position" = Vector2(-480, 300)
+node_connections = [&"output", 0, &"Transition", &"TimeScale", 0, &"Animation", &"Transition", 0, &"TimeScale", &"Transition", 1, &"TimeScale 2", &"TimeScale 2", 0, &"Animation 2"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xv005"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sjs6v"]
 xfade_time = 0.2
@@ -6152,6 +6454,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gfpmn"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rmxlm"]
 
@@ -6186,6 +6489,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p2u38"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4xnac"]
 xfade_time = 0.2
@@ -6217,6 +6521,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7ovsi"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rjhbb"]
 xfade_time = 0.2
@@ -6250,6 +6555,7 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x8vmq"]
+priority = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bgk4t"]
@@ -6315,6 +6621,7 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aa4c8"]
 xfade_time = 0.2
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2secn"]
 xfade_time = 0.2
@@ -6356,6 +6663,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d7xib"]
 switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fie3q"]
 
@@ -6414,6 +6722,7 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h1fin"]
+priority = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hwdra"]
@@ -6468,15 +6777,150 @@ xfade_time = 0.3
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y2oko"]
 xfade_time = 0.3
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v6bxe"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oppng"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m16qa"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c2cc8"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cdjca"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ax2ey"]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ajb5i"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_odndb"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o3fd8"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cl6l4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xh31j"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_av4eg"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ijuv0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1stul"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvyo1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pst85"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qo7cb"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_34ywv"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o324x"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5xlal"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c4fmt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cr4wn"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_purjs"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oms20"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fqnri"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jj0ig"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7slex"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h0xm5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a2xx3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hwc8d"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c8vdo"]
+xfade_time = 0.3
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r0sj6"]
+xfade_time = 0.3
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r67u2"]
+xfade_time = 0.3
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pd67i"]
+xfade_time = 0.3
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wadit"]
+xfade_time = 0.3
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rxek0"]
+xfade_time = 0.3
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sjs6v"]
 states/End/position = Vector2(-91, -614)
 states/Start/position = Vector2(274, -102)
+states/grenade_throw/node = SubResource("AnimationNodeBlendTree_p1cr1")
+states/grenade_throw/position = Vector2(480, 138)
 states/machine_gun_aiming/node = SubResource("AnimationNodeBlendTree_1y4ht")
 states/machine_gun_aiming/position = Vector2(3063, 1452)
 states/machine_gun_aiming_shoot/node = SubResource("AnimationNodeBlendTree_yes1g")
 states/machine_gun_aiming_shoot/position = Vector2(3348, 1452)
 states/machine_gun_equip/node = SubResource("AnimationNodeBlendTree_e5cy1")
 states/machine_gun_equip/position = Vector2(2904, 412)
+states/machine_gun_first_ready/node = SubResource("AnimationNodeBlendTree_v6bxe")
+states/machine_gun_first_ready/position = Vector2(979, -165)
 states/machine_gun_idle/node = SubResource("AnimationNodeBlendTree_cj2hh")
 states/machine_gun_idle/position = Vector2(3063, 1326)
 states/machine_gun_idle_shoot/node = SubResource("AnimationNodeBlendTree_nlybr")
@@ -6495,6 +6939,8 @@ states/pistol_aiming_shoot/node = SubResource("AnimationNodeBlendTree_mgrdj")
 states/pistol_aiming_shoot/position = Vector2(46, 1442)
 states/pistol_equip/node = SubResource("AnimationNodeBlendTree_x0xxv")
 states/pistol_equip/position = Vector2(-396, 412)
+states/pistol_first_ready/node = SubResource("AnimationNodeBlendTree_ajb5i")
+states/pistol_first_ready/position = Vector2(-281, -275)
 states/pistol_idle/node = SubResource("AnimationNodeBlendTree_01aax")
 states/pistol_idle/position = Vector2(-166, 1313)
 states/pistol_idle_shoot/node = SubResource("AnimationNodeBlendTree_b07ty")
@@ -6513,6 +6959,8 @@ states/rifle_aiming_shoot/node = SubResource("AnimationNodeBlendTree_4xnac")
 states/rifle_aiming_shoot/position = Vector2(-766, 1445)
 states/rifle_equip/node = SubResource("AnimationNodeBlendTree_sjs6v")
 states/rifle_equip/position = Vector2(-766, 412)
+states/rifle_first_ready/node = SubResource("AnimationNodeBlendTree_oppng")
+states/rifle_first_ready/position = Vector2(-435, -165)
 states/rifle_idle/node = SubResource("AnimationNodeBlendTree_qhegt")
 states/rifle_idle/position = Vector2(-985, 1313)
 states/rifle_idle_shoot/node = SubResource("AnimationNodeBlendTree_vmr01")
@@ -6531,6 +6979,8 @@ states/shotgun_aiming_shoot/node = SubResource("AnimationNodeBlendTree_w7mr8")
 states/shotgun_aiming_shoot/position = Vector2(2277, 1464)
 states/shotgun_equip/node = SubResource("AnimationNodeBlendTree_rf4fq")
 states/shotgun_equip/position = Vector2(1798, 407)
+states/shotgun_first_ready/node = SubResource("AnimationNodeBlendTree_odndb")
+states/shotgun_first_ready/position = Vector2(770, -275)
 states/shotgun_idle/node = SubResource("AnimationNodeBlendTree_bhuet")
 states/shotgun_idle/position = Vector2(2045, 1338)
 states/shotgun_idle_shoot/node = SubResource("AnimationNodeBlendTree_8axmh")
@@ -6549,6 +6999,8 @@ states/smg_aiming_shoot/node = SubResource("AnimationNodeBlendTree_kudcu")
 states/smg_aiming_shoot/position = Vector2(706, 1435)
 states/smg_equip/node = SubResource("AnimationNodeBlendTree_sgukt")
 states/smg_equip/position = Vector2(284, 412)
+states/smg_first_ready/node = SubResource("AnimationNodeBlendTree_m16qa")
+states/smg_first_ready/position = Vector2(44, -308)
 states/smg_idle/node = SubResource("AnimationNodeBlendTree_dlx6x")
 states/smg_idle/position = Vector2(501, 1326)
 states/smg_idle_shoot/node = SubResource("AnimationNodeBlendTree_cbf0c")
@@ -6567,6 +7019,8 @@ states/sniper_aiming_shoot/node = SubResource("AnimationNodeBlendTree_703jl")
 states/sniper_aiming_shoot/position = Vector2(1239, 1533)
 states/sniper_equip/node = SubResource("AnimationNodeBlendTree_ur5wf")
 states/sniper_equip/position = Vector2(1067, 420)
+states/sniper_first_ready/node = SubResource("AnimationNodeBlendTree_o3fd8")
+states/sniper_first_ready/position = Vector2(462, -308)
 states/sniper_idle/node = SubResource("AnimationNodeBlendTree_s1i3j")
 states/sniper_idle/position = Vector2(1239, 1283)
 states/sniper_idle_shoot/node = SubResource("AnimationNodeBlendTree_in1vt")
@@ -6581,8 +7035,10 @@ states/sniper_run_to_idle/node = SubResource("AnimationNodeBlendTree_283q2")
 states/sniper_run_to_idle/position = Vector2(1336, 1155)
 states/sniper_unequip/node = SubResource("AnimationNodeBlendTree_p2u38")
 states/sniper_unequip/position = Vector2(1061, 736)
-transitions = ["rifle_equip", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_xv005"), "rifle_idle", "rifle_unequip", SubResource("AnimationNodeStateMachineTransition_sjs6v"), "rifle_idle", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_qhegt"), "rifle_aiming", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_c17kh"), "rifle_aiming", "rifle_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_hv7hj"), "rifle_aiming_shoot", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_cuall"), "rifle_idle", "rifle_idle_shoot", SubResource("AnimationNodeStateMachineTransition_7pq42"), "rifle_idle_shoot", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_e4t0l"), "rifle_idle", "rifle_idle_to_run", SubResource("AnimationNodeStateMachineTransition_x0xxv"), "rifle_idle", "rifle_reloading_1", SubResource("AnimationNodeStateMachineTransition_wxmvg"), "rifle_reloading_1", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_8d28x"), "sniper_equip", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_gfpmn"), "sniper_idle", "sniper_unequip", SubResource("AnimationNodeStateMachineTransition_rmxlm"), "sniper_idle", "sniper_idle_to_run", SubResource("AnimationNodeStateMachineTransition_sgukt"), "sniper_idle", "sniper_idle_shoot", SubResource("AnimationNodeStateMachineTransition_p73bh"), "sniper_idle_shoot", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_4pbad"), "sniper_idle", "sniper_reloading_1", SubResource("AnimationNodeStateMachineTransition_kr8p1"), "sniper_reloading_1", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_usn8m"), "sniper_idle", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_0wq4o"), "sniper_aiming", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_ur5wf"), "sniper_idle", "sniper_reloading_2", SubResource("AnimationNodeStateMachineTransition_s1i3j"), "sniper_reloading_2", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_sm65t"), "sniper_aiming", "sniper_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_p7e3i"), "sniper_aiming_shoot", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_hjdlc"), "pistol_equip", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_p2u38"), "pistol_idle", "pistol_unequip", SubResource("AnimationNodeStateMachineTransition_4xnac"), "pistol_idle", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_vmr01"), "pistol_aiming", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_703jl"), "pistol_aiming", "pistol_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_in1vt"), "pistol_aiming_shoot", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_mgrdj"), "pistol_reloading_1", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_b07ty"), "pistol_idle", "pistol_reloading_1", SubResource("AnimationNodeStateMachineTransition_kudcu"), "pistol_idle_shoot", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_cbf0c"), "pistol_idle", "pistol_idle_shoot", SubResource("AnimationNodeStateMachineTransition_euod5"), "pistol_idle", "pistol_idle_to_run", SubResource("AnimationNodeStateMachineTransition_283q2"), "smg_equip", "smg_idle", SubResource("AnimationNodeStateMachineTransition_7ovsi"), "smg_idle", "smg_unequip", SubResource("AnimationNodeStateMachineTransition_rjhbb"), "smg_idle", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_8axmh"), "smg_aiming", "smg_idle", SubResource("AnimationNodeStateMachineTransition_4t6wb"), "smg_idle", "smg_idle_shoot", SubResource("AnimationNodeStateMachineTransition_w7mr8"), "smg_idle_shoot", "smg_idle", SubResource("AnimationNodeStateMachineTransition_rf4fq"), "smg_idle", "smg_idle_to_run", SubResource("AnimationNodeStateMachineTransition_bhuet"), "smg_idle", "smg_reloading_1", SubResource("AnimationNodeStateMachineTransition_x8vlm"), "smg_reloading_1", "smg_idle", SubResource("AnimationNodeStateMachineTransition_ic18m"), "smg_aiming", "smg_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_e5cy1"), "smg_aiming_shoot", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_cj2hh"), "rifle_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_pnj6v"), "rifle_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_x8vmq"), "rifle_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_bgk4t"), "smg_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_cs1c6"), "smg_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_qpnks"), "smg_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_c2tts"), "pistol_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_2l823"), "pistol_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_iasil"), "pistol_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_nmcjv"), "sniper_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_vn58m"), "sniper_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_s11ne"), "sniper_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_5mx4p"), "Start", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_eol6v"), "rifle_idle_to_run", "rifle_run_to_idle", SubResource("AnimationNodeStateMachineTransition_ejn8g"), "rifle_run_to_idle", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_v3h72"), "smg_idle_to_run", "smg_run_to_idle", SubResource("AnimationNodeStateMachineTransition_cbb5t"), "smg_run_to_idle", "smg_idle", SubResource("AnimationNodeStateMachineTransition_fseb4"), "sniper_idle_to_run", "sniper_run_to_idle", SubResource("AnimationNodeStateMachineTransition_gwnox"), "sniper_run_to_idle", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_du5n3"), "pistol_idle_to_run", "pistol_run_to_idle", SubResource("AnimationNodeStateMachineTransition_y3bn6"), "pistol_run_to_idle", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_1way8"), "shotgun_equip", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_aa4c8"), "shotgun_idle", "shotgun_unequip", SubResource("AnimationNodeStateMachineTransition_2secn"), "shotgun_idle", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_wc373"), "shotgun_aiming", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_wikuf"), "shotgun_idle", "shotgun_reloading_1", SubResource("AnimationNodeStateMachineTransition_fwvvb"), "shotgun_reloading_1", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_ut356"), "shotgun_aiming", "shotgun_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_x33rq"), "shotgun_aiming_shoot", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_hu6cx"), "shotgun_idle", "shotgun_idle_to_run", SubResource("AnimationNodeStateMachineTransition_jor7a"), "shotgun_idle_to_run", "shotgun_run_to_idle", SubResource("AnimationNodeStateMachineTransition_28a5f"), "shotgun_run_to_idle", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_vevdv"), "shotgun_idle", "shotgun_idle_shoot", SubResource("AnimationNodeStateMachineTransition_ug261"), "shotgun_idle_shoot", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_dynpg"), "machine_gun_equip", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_d7xib"), "machine_gun_idle", "machine_gun_unequip", SubResource("AnimationNodeStateMachineTransition_fie3q"), "machine_gun_idle", "machine_gun_aiming", SubResource("AnimationNodeStateMachineTransition_lousn"), "machine_gun_aiming", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_fl6co"), "machine_gun_idle", "machine_gun_reloading_1", SubResource("AnimationNodeStateMachineTransition_6e3yx"), "machine_gun_reloading_1", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_wovmc"), "machine_gun_aiming", "machine_gun_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_x752f"), "machine_gun_aiming_shoot", "machine_gun_aiming", SubResource("AnimationNodeStateMachineTransition_eanl6"), "machine_gun_idle", "machine_gun_idle_to_run", SubResource("AnimationNodeStateMachineTransition_81bfn"), "machine_gun_idle_to_run", "machine_gun_run_to_idle", SubResource("AnimationNodeStateMachineTransition_fyq2l"), "machine_gun_run_to_idle", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_kfddh"), "machine_gun_idle", "machine_gun_idle_shoot", SubResource("AnimationNodeStateMachineTransition_60ee7"), "machine_gun_idle_shoot", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_wj4lc"), "shotgun_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_j5ntw"), "machine_gun_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_dsu21"), "shotgun_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_nlubq"), "machine_gun_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_5xduf"), "shotgun_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_gl10g"), "machine_gun_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_quore"), "shotgun_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_am17x"), "machine_gun_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_3rsye"), "machine_gun_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_h1fin"), "sniper_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_hwdra"), "smg_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_fhngt"), "pistol_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_dwypn"), "rifle_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_dn4eu"), "shotgun_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_35trw"), "sniper_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_6alfh"), "smg_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_w3ij6"), "pistol_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_x62kk"), "rifle_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_mat5q"), "Start", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_p7vpn"), "Start", "smg_equip", SubResource("AnimationNodeStateMachineTransition_30uc7"), "Start", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_lwb4v"), "Start", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_sc3p6"), "Start", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_y18be"), "rifle_run_to_idle", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_vpi6d"), "pistol_run_to_idle", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_mx420"), "smg_run_to_idle", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_80bsv"), "sniper_run_to_idle", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_t8li2"), "shotgun_run_to_idle", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_y2oko")]
-graph_offset = Vector2(-1810, 1109)
+states/sword_attack/node = SubResource("AnimationNodeBlendTree_c2cc8")
+states/sword_attack/position = Vector2(1371, 2654)
+transitions = ["rifle_equip", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_xv005"), "rifle_idle", "rifle_unequip", SubResource("AnimationNodeStateMachineTransition_sjs6v"), "rifle_idle", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_qhegt"), "rifle_aiming", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_c17kh"), "rifle_aiming", "rifle_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_hv7hj"), "rifle_aiming_shoot", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_cuall"), "rifle_idle", "rifle_idle_shoot", SubResource("AnimationNodeStateMachineTransition_7pq42"), "rifle_idle_shoot", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_e4t0l"), "rifle_idle", "rifle_idle_to_run", SubResource("AnimationNodeStateMachineTransition_x0xxv"), "rifle_idle", "rifle_reloading_1", SubResource("AnimationNodeStateMachineTransition_wxmvg"), "rifle_reloading_1", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_8d28x"), "sniper_equip", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_gfpmn"), "sniper_idle", "sniper_unequip", SubResource("AnimationNodeStateMachineTransition_rmxlm"), "sniper_idle", "sniper_idle_to_run", SubResource("AnimationNodeStateMachineTransition_sgukt"), "sniper_idle", "sniper_idle_shoot", SubResource("AnimationNodeStateMachineTransition_p73bh"), "sniper_idle_shoot", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_4pbad"), "sniper_idle", "sniper_reloading_1", SubResource("AnimationNodeStateMachineTransition_kr8p1"), "sniper_reloading_1", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_usn8m"), "sniper_idle", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_0wq4o"), "sniper_aiming", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_ur5wf"), "sniper_idle", "sniper_reloading_2", SubResource("AnimationNodeStateMachineTransition_s1i3j"), "sniper_reloading_2", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_sm65t"), "sniper_aiming", "sniper_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_p7e3i"), "sniper_aiming_shoot", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_hjdlc"), "pistol_equip", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_p2u38"), "pistol_idle", "pistol_unequip", SubResource("AnimationNodeStateMachineTransition_4xnac"), "pistol_idle", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_vmr01"), "pistol_aiming", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_703jl"), "pistol_aiming", "pistol_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_in1vt"), "pistol_aiming_shoot", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_mgrdj"), "pistol_reloading_1", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_b07ty"), "pistol_idle", "pistol_reloading_1", SubResource("AnimationNodeStateMachineTransition_kudcu"), "pistol_idle_shoot", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_cbf0c"), "pistol_idle", "pistol_idle_shoot", SubResource("AnimationNodeStateMachineTransition_euod5"), "pistol_idle", "pistol_idle_to_run", SubResource("AnimationNodeStateMachineTransition_283q2"), "smg_equip", "smg_idle", SubResource("AnimationNodeStateMachineTransition_7ovsi"), "smg_idle", "smg_unequip", SubResource("AnimationNodeStateMachineTransition_rjhbb"), "smg_idle", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_8axmh"), "smg_aiming", "smg_idle", SubResource("AnimationNodeStateMachineTransition_4t6wb"), "smg_idle", "smg_idle_shoot", SubResource("AnimationNodeStateMachineTransition_w7mr8"), "smg_idle_shoot", "smg_idle", SubResource("AnimationNodeStateMachineTransition_rf4fq"), "smg_idle", "smg_idle_to_run", SubResource("AnimationNodeStateMachineTransition_bhuet"), "smg_idle", "smg_reloading_1", SubResource("AnimationNodeStateMachineTransition_x8vlm"), "smg_reloading_1", "smg_idle", SubResource("AnimationNodeStateMachineTransition_ic18m"), "smg_aiming", "smg_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_e5cy1"), "smg_aiming_shoot", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_cj2hh"), "rifle_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_pnj6v"), "rifle_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_x8vmq"), "rifle_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_bgk4t"), "smg_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_cs1c6"), "smg_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_qpnks"), "smg_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_c2tts"), "pistol_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_2l823"), "pistol_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_iasil"), "pistol_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_nmcjv"), "sniper_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_vn58m"), "sniper_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_s11ne"), "sniper_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_5mx4p"), "Start", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_eol6v"), "rifle_idle_to_run", "rifle_run_to_idle", SubResource("AnimationNodeStateMachineTransition_ejn8g"), "rifle_run_to_idle", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_v3h72"), "smg_idle_to_run", "smg_run_to_idle", SubResource("AnimationNodeStateMachineTransition_cbb5t"), "smg_run_to_idle", "smg_idle", SubResource("AnimationNodeStateMachineTransition_fseb4"), "sniper_idle_to_run", "sniper_run_to_idle", SubResource("AnimationNodeStateMachineTransition_gwnox"), "sniper_run_to_idle", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_du5n3"), "pistol_idle_to_run", "pistol_run_to_idle", SubResource("AnimationNodeStateMachineTransition_y3bn6"), "pistol_run_to_idle", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_1way8"), "shotgun_equip", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_aa4c8"), "shotgun_idle", "shotgun_unequip", SubResource("AnimationNodeStateMachineTransition_2secn"), "shotgun_idle", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_wc373"), "shotgun_aiming", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_wikuf"), "shotgun_idle", "shotgun_reloading_1", SubResource("AnimationNodeStateMachineTransition_fwvvb"), "shotgun_reloading_1", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_ut356"), "shotgun_aiming", "shotgun_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_x33rq"), "shotgun_aiming_shoot", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_hu6cx"), "shotgun_idle", "shotgun_idle_to_run", SubResource("AnimationNodeStateMachineTransition_jor7a"), "shotgun_idle_to_run", "shotgun_run_to_idle", SubResource("AnimationNodeStateMachineTransition_28a5f"), "shotgun_run_to_idle", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_vevdv"), "shotgun_idle", "shotgun_idle_shoot", SubResource("AnimationNodeStateMachineTransition_ug261"), "shotgun_idle_shoot", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_dynpg"), "machine_gun_equip", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_d7xib"), "machine_gun_idle", "machine_gun_unequip", SubResource("AnimationNodeStateMachineTransition_fie3q"), "machine_gun_idle", "machine_gun_aiming", SubResource("AnimationNodeStateMachineTransition_lousn"), "machine_gun_aiming", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_fl6co"), "machine_gun_idle", "machine_gun_reloading_1", SubResource("AnimationNodeStateMachineTransition_6e3yx"), "machine_gun_reloading_1", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_wovmc"), "machine_gun_aiming", "machine_gun_aiming_shoot", SubResource("AnimationNodeStateMachineTransition_x752f"), "machine_gun_aiming_shoot", "machine_gun_aiming", SubResource("AnimationNodeStateMachineTransition_eanl6"), "machine_gun_idle", "machine_gun_idle_to_run", SubResource("AnimationNodeStateMachineTransition_81bfn"), "machine_gun_idle_to_run", "machine_gun_run_to_idle", SubResource("AnimationNodeStateMachineTransition_fyq2l"), "machine_gun_run_to_idle", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_kfddh"), "machine_gun_idle", "machine_gun_idle_shoot", SubResource("AnimationNodeStateMachineTransition_60ee7"), "machine_gun_idle_shoot", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_wj4lc"), "shotgun_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_j5ntw"), "machine_gun_unequip", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_dsu21"), "shotgun_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_nlubq"), "machine_gun_unequip", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_5xduf"), "shotgun_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_gl10g"), "machine_gun_unequip", "smg_equip", SubResource("AnimationNodeStateMachineTransition_quore"), "shotgun_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_am17x"), "machine_gun_unequip", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_3rsye"), "machine_gun_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_h1fin"), "sniper_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_hwdra"), "smg_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_fhngt"), "pistol_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_dwypn"), "rifle_unequip", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_dn4eu"), "shotgun_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_35trw"), "sniper_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_6alfh"), "smg_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_w3ij6"), "pistol_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_x62kk"), "rifle_unequip", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_mat5q"), "Start", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_p7vpn"), "Start", "smg_equip", SubResource("AnimationNodeStateMachineTransition_30uc7"), "Start", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_lwb4v"), "Start", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_sc3p6"), "Start", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_y18be"), "rifle_run_to_idle", "rifle_aiming", SubResource("AnimationNodeStateMachineTransition_vpi6d"), "pistol_run_to_idle", "pistol_aiming", SubResource("AnimationNodeStateMachineTransition_mx420"), "smg_run_to_idle", "smg_aiming", SubResource("AnimationNodeStateMachineTransition_80bsv"), "sniper_run_to_idle", "sniper_aiming", SubResource("AnimationNodeStateMachineTransition_t8li2"), "shotgun_run_to_idle", "shotgun_aiming", SubResource("AnimationNodeStateMachineTransition_y2oko"), "Start", "rifle_first_ready", SubResource("AnimationNodeStateMachineTransition_v6bxe"), "Start", "pistol_first_ready", SubResource("AnimationNodeStateMachineTransition_oppng"), "Start", "smg_first_ready", SubResource("AnimationNodeStateMachineTransition_m16qa"), "Start", "sniper_first_ready", SubResource("AnimationNodeStateMachineTransition_c2cc8"), "Start", "shotgun_first_ready", SubResource("AnimationNodeStateMachineTransition_cdjca"), "Start", "machine_gun_first_ready", SubResource("AnimationNodeStateMachineTransition_ax2ey"), "rifle_first_ready", "rifle_idle", SubResource("AnimationNodeStateMachineTransition_ajb5i"), "pistol_first_ready", "pistol_idle", SubResource("AnimationNodeStateMachineTransition_odndb"), "smg_first_ready", "smg_idle", SubResource("AnimationNodeStateMachineTransition_o3fd8"), "sniper_first_ready", "sniper_idle", SubResource("AnimationNodeStateMachineTransition_cl6l4"), "shotgun_first_ready", "shotgun_idle", SubResource("AnimationNodeStateMachineTransition_xh31j"), "machine_gun_first_ready", "machine_gun_idle", SubResource("AnimationNodeStateMachineTransition_av4eg"), "rifle_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_ijuv0"), "pistol_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_1stul"), "sniper_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_bvyo1"), "shotgun_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_pst85"), "machine_gun_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_qo7cb"), "sword_attack", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_34ywv"), "sword_attack", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_o324x"), "sword_attack", "smg_equip", SubResource("AnimationNodeStateMachineTransition_5xlal"), "sword_attack", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_c4fmt"), "sword_attack", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_cr4wn"), "sword_attack", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_purjs"), "smg_idle", "sword_attack", SubResource("AnimationNodeStateMachineTransition_oms20"), "grenade_throw", "smg_equip", SubResource("AnimationNodeStateMachineTransition_fqnri"), "grenade_throw", "sniper_equip", SubResource("AnimationNodeStateMachineTransition_jj0ig"), "grenade_throw", "pistol_equip", SubResource("AnimationNodeStateMachineTransition_7slex"), "grenade_throw", "rifle_equip", SubResource("AnimationNodeStateMachineTransition_h0xm5"), "grenade_throw", "shotgun_equip", SubResource("AnimationNodeStateMachineTransition_a2xx3"), "grenade_throw", "machine_gun_equip", SubResource("AnimationNodeStateMachineTransition_hwc8d"), "smg_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_c8vdo"), "pistol_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_r0sj6"), "rifle_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_r67u2"), "sniper_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_pd67i"), "shotgun_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_wadit"), "machine_gun_unequip", "grenade_throw", SubResource("AnimationNodeStateMachineTransition_rxek0")]
+graph_offset = Vector2(411, 2343)
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_cuall"]
 input_0/name = "rifle"
@@ -6698,13 +7154,13 @@ animation = &"sniper_1st_move"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gfpmn"]
 graph_offset = Vector2(-754.8, 170)
+nodes/output/position = Vector2(500, 300)
 nodes/TimeScale_move/node = SubResource("AnimationNodeTimeScale_0dg2y")
 nodes/TimeScale_move/position = Vector2(300, 220)
 nodes/machine_gun_move/node = SubResource("AnimationNodeAnimation_noao7")
 nodes/machine_gun_move/position = Vector2(-500, 860)
 nodes/move/node = SubResource("AnimationNodeTransition_xv005")
 nodes/move/position = Vector2(23, 163)
-nodes/output/position = Vector2(500, 300)
 nodes/pistol_move/node = SubResource("AnimationNodeAnimation_hv7hj")
 nodes/pistol_move/position = Vector2(-500, 220)
 nodes/rifle_move/node = SubResource("AnimationNodeAnimation_cuall")
@@ -6715,7 +7171,7 @@ nodes/smg_move/node = SubResource("AnimationNodeAnimation_7pq42")
 nodes/smg_move/position = Vector2(-500, 380)
 nodes/sniper_move/node = SubResource("AnimationNodeAnimation_8d28x")
 nodes/sniper_move/position = Vector2(-500, 540)
-node_connections = [&"TimeScale_move", 0, &"move", &"move", 0, &"rifle_move", &"move", 1, &"pistol_move", &"move", 2, &"smg_move", &"move", 3, &"sniper_move", &"move", 4, &"shotgun_move", &"move", 5, &"machine_gun_move", &"output", 0, &"TimeScale_move"]
+node_connections = [&"output", 0, &"TimeScale_move", &"TimeScale_move", 0, &"move", &"move", 0, &"rifle_move", &"move", 1, &"pistol_move", &"move", 2, &"smg_move", &"move", 3, &"sniper_move", &"move", 4, &"shotgun_move", &"move", 5, &"machine_gun_move"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4jtsi"]
 animation = &"machine_1st_aiming"
@@ -6873,7 +7329,8 @@ animation = &"sniper_1st_jump"
 animation = &"sniper_1st_run"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xv005"]
-graph_offset = Vector2(-1519, 76)
+graph_offset = Vector2(-1678, -318)
+nodes/output/position = Vector2(520, 240)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_sjs6v")
 nodes/StateMachine/position = Vector2(-1100, -260)
 nodes/Transition_jump/node = SubResource("AnimationNodeTransition_cuall")
@@ -6890,7 +7347,6 @@ nodes/machine_gun_run/node = SubResource("AnimationNodeAnimation_y3bn6")
 nodes/machine_gun_run/position = Vector2(-940, 1000)
 nodes/move/node = SubResource("AnimationNodeBlendSpace1D_s1i3j")
 nodes/move/position = Vector2(-1120, 60)
-nodes/output/position = Vector2(520, 240)
 nodes/pistol_jump/node = SubResource("AnimationNodeAnimation_xv005")
 nodes/pistol_jump/position = Vector2(-360, 440)
 nodes/pistol_run/node = SubResource("AnimationNodeAnimation_e4t0l")
@@ -6913,9 +7369,16 @@ nodes/sniper_jump/node = SubResource("AnimationNodeAnimation_qhegt")
 nodes/sniper_jump/position = Vector2(-360, 760)
 nodes/sniper_run/node = SubResource("AnimationNodeAnimation_wxmvg")
 nodes/sniper_run/position = Vector2(-940, 680)
-node_connections = [&"Transition_jump", 0, &"rifle_jump", &"Transition_jump", 1, &"pistol_jump", &"Transition_jump", 2, &"smg_jump", &"Transition_jump", 3, &"sniper_jump", &"Transition_jump", 4, &"shotgun_jump", &"Transition_jump", 5, &"machine_gun_jump", &"Transition_run", 0, &"rifle_run", &"Transition_run", 1, &"pistol_run", &"Transition_run", 2, &"smg_run", &"Transition_run", 3, &"sniper_run", &"Transition_run", 4, &"shotgun_run", &"Transition_run", 5, &"machine_gun_run", &"hand_state", 0, &"StateMachine", &"hand_state", 1, &"move", &"jump", 0, &"run", &"jump", 1, &"Transition_jump", &"output", 0, &"jump", &"run", 0, &"hand_state", &"run", 1, &"Transition_run"]
+node_connections = [&"output", 0, &"jump", &"Transition_jump", 0, &"rifle_jump", &"Transition_jump", 1, &"pistol_jump", &"Transition_jump", 2, &"smg_jump", &"Transition_jump", 3, &"sniper_jump", &"Transition_jump", 4, &"shotgun_jump", &"Transition_jump", 5, &"machine_gun_jump", &"Transition_run", 0, &"rifle_run", &"Transition_run", 1, &"pistol_run", &"Transition_run", 2, &"smg_run", &"Transition_run", 3, &"sniper_run", &"Transition_run", 4, &"shotgun_run", &"Transition_run", 5, &"machine_gun_run", &"hand_state", 0, &"StateMachine", &"hand_state", 1, &"move", &"jump", 0, &"run", &"jump", 1, &"Transition_jump", &"run", 0, &"hand_state", &"run", 1, &"Transition_run"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_odndb"]
+size = Vector3(1, 1, 3.1347656)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oghxx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odndb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3fd8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqhoj"]
 
@@ -9109,14 +9572,14 @@ font_size = 50
 outline_size = 6
 outline_color = Color(0.157129, 0.582865, 1, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi88y"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qi88y"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi88y"]
 
 [sub_resource type="Animation" id="Animation_331wq"]
 length = 0.001
@@ -9135,43 +9598,43 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("screen/ammos_panel/ammos:modulate")
+tracks/1/path = NodePath("screen/grenade_panel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("screen/ammos_panel:visible")
+tracks/2/path = NodePath("screen/grenade_panel:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("screen/health_panel:visible")
+tracks/3/path = NodePath("screen/rifle_crosshair:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("screen/rifle_crosshair:modulate")
+tracks/4/path = NodePath("screen/pistol_crosshair:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -9183,7 +9646,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("screen/pistol_crosshair:modulate")
+tracks/5/path = NodePath("screen/smg_crosshair:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -9195,7 +9658,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("screen/smg_crosshair:modulate")
+tracks/6/path = NodePath("screen/sniper_crosshair:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -9207,7 +9670,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("screen/sniper_crosshair:modulate")
+tracks/7/path = NodePath("screen/shotgun_crosshair:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -9219,7 +9682,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("screen/shotgun_crosshair:modulate")
+tracks/8/path = NodePath("screen/machine_gun_crosshair:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -9231,7 +9694,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("screen/machine_gun_crosshair:modulate")
+tracks/9/path = NodePath("screen/TDM_UI/game_result/victory:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -9243,226 +9706,34 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("screen/hit_screen:visible")
+tracks/10/path = NodePath("screen/TDM_UI/game_result/draw:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("screen/blood_screen:visible")
+tracks/11/path = NodePath("screen/TDM_UI/game_result/defeat:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("screen/aiming_shoot_hit/hit2/R2/Line_R2:modulate")
+tracks/12/path = NodePath("screen/FAA_UI/game_result/game_over:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("screen/aiming_shoot_hit/hit2/L2/Line_L2:modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("screen/aiming_shoot_hit/hit2/D2/Line_D2:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("screen/aiming_shoot_hit/hit2/U2/Line_U2:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("screen/aiming_shoot_hit/hit2/R2:scale")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("screen/aiming_shoot_hit/hit2/L2:scale")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("screen/aiming_shoot_hit/hit2/D2:scale")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("screen/aiming_shoot_hit/hit2/U2:scale")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("screen/start_icon/start_node_2d:scale")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.405, 0.405)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("screen/start_icon/start_node_2d:modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("screen/start_icon/start_node_2d:visible")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("screen/pause_menu/button_panel:modulate")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("screen/pause_menu/back_ground:modulate")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("screen/TDM_UI/game_result/victory:modulate")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("screen/TDM_UI/game_result/draw:modulate")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("screen/TDM_UI/game_result/defeat:modulate")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("screen/FAA_UI/game_result/game_over:modulate")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -9681,6 +9952,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("screen/grenade_panel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("screen/grenade_panel:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_sfela"]
 resource_name = "ammos_start"
@@ -9704,6 +9999,30 @@ tracks/1/path = NodePath("screen/ammos_panel:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("screen/grenade_panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("screen/grenade_panel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -12875,6 +13194,30 @@ tracks/41/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("screen/grenade_panel:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("screen/grenade_panel:modulate")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_na5tk"]
 _data = {
@@ -12921,7 +13264,7 @@ _data = {
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_4w7fn"]
 filter_enabled = true
-filters = ["screen/ammos_panel/ammos/Ammo2:rotation", "screen/ammos_panel/ammos/Polygon2D1:visible", "screen/ammos_panel/ammos/Polygon2D2:visible", "screen/ammos_panel/ammos/Polygon2D3:visible", "screen/ammos_panel/ammos/Polygon2D4:visible", "screen/ammos_panel/ammos/Polygon2D5:visible", "screen/ammos_panel/ammos:modulate", "screen/ammos_panel:modulate", "screen/ammos_panel:visible"]
+filters = ["screen/ammos_panel/ammos/Ammo2:rotation", "screen/ammos_panel/ammos/Polygon2D1:visible", "screen/ammos_panel/ammos/Polygon2D2:visible", "screen/ammos_panel/ammos/Polygon2D3:visible", "screen/ammos_panel/ammos/Polygon2D4:visible", "screen/ammos_panel/ammos/Polygon2D5:visible", "screen/ammos_panel/ammos:modulate", "screen/ammos_panel:modulate", "screen/ammos_panel:visible", "screen/grenade_panel:modulate", "screen/grenade_panel:visible"]
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ij8fl"]
 
@@ -13079,6 +13422,7 @@ animation = &"machine_gun_crosshair_shoot"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_na5tk"]
 graph_offset = Vector2(-868.049, 79.1704)
+nodes/output/position = Vector2(660, 160)
 nodes/OneShot_hit/node = SubResource("AnimationNodeOneShot_4w7fn")
 nodes/OneShot_hit/position = Vector2(-180, 200)
 nodes/OneShot_shoot/node = SubResource("AnimationNodeOneShot_o0752")
@@ -13089,10 +13433,9 @@ nodes/hit/node = SubResource("AnimationNodeAnimation_ekda8")
 nodes/hit/position = Vector2(-580, 380)
 nodes/idle/node = SubResource("AnimationNodeAnimation_781cu")
 nodes/idle/position = Vector2(-580, 120)
-nodes/output/position = Vector2(660, 160)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_a76l4")
 nodes/shoot/position = Vector2(-280, 580)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_80bsv"]
 animation = &"pause_start"
@@ -13132,6 +13475,7 @@ animation = &"pistol_crosshair_shoot"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_254md"]
 graph_offset = Vector2(-713, -56)
+nodes/output/position = Vector2(540, 220)
 nodes/OneShot_hit/node = SubResource("AnimationNodeOneShot_254md")
 nodes/OneShot_hit/position = Vector2(-160, 200)
 nodes/OneShot_shoot/node = SubResource("AnimationNodeOneShot_ij8fl")
@@ -13142,10 +13486,9 @@ nodes/hit/node = SubResource("AnimationNodeAnimation_bgifl")
 nodes/hit/position = Vector2(-540, 380)
 nodes/idle/node = SubResource("AnimationNodeAnimation_sudth")
 nodes/idle/position = Vector2(-540, 200)
-nodes/output/position = Vector2(540, 220)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_q3faa")
 nodes/shoot/position = Vector2(-160, 560)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_issbb"]
 animation = &"game_result_start"
@@ -13171,6 +13514,7 @@ animation = &"rifle_crosshair_shoot"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_p81mk"]
 graph_offset = Vector2(-537.41, 195.589)
+nodes/output/position = Vector2(820, 140)
 nodes/OneShot_hit/node = SubResource("AnimationNodeOneShot_na5tk")
 nodes/OneShot_hit/position = Vector2(40, 140)
 nodes/OneShot_shoot/node = SubResource("AnimationNodeOneShot_6y5c8")
@@ -13181,10 +13525,9 @@ nodes/hit/node = SubResource("AnimationNodeAnimation_6y5c8")
 nodes/hit/position = Vector2(-240, 320)
 nodes/idle/node = SubResource("AnimationNodeAnimation_a3p3s")
 nodes/idle/position = Vector2(-240, 140)
-nodes/output/position = Vector2(820, 140)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_ij8fl")
 nodes/shoot/position = Vector2(-40, 520)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kqe2n"]
 animation = &"kill_stars_rampage"
@@ -13222,7 +13565,7 @@ nodes/idle/node = SubResource("AnimationNodeAnimation_jlkdq")
 nodes/idle/position = Vector2(-740, 120)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_ykq1q")
 nodes/shoot/position = Vector2(-460, 540)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_72o2f"]
 filter_enabled = true
@@ -13245,6 +13588,7 @@ animation = &"smg_crosshair_shoot"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ij8fl"]
 graph_offset = Vector2(-996, 207)
+nodes/output/position = Vector2(620, 200)
 nodes/OneShot_hit/node = SubResource("AnimationNodeOneShot_72o2f")
 nodes/OneShot_hit/position = Vector2(-120, 180)
 nodes/OneShot_shoot/node = SubResource("AnimationNodeOneShot_bgifl")
@@ -13255,10 +13599,9 @@ nodes/hit/node = SubResource("AnimationNodeAnimation_ocdn6")
 nodes/hit/position = Vector2(-380, 380)
 nodes/idle/node = SubResource("AnimationNodeAnimation_umo7y")
 nodes/idle/position = Vector2(-380, 140)
-nodes/output/position = Vector2(620, 200)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_ov24y")
 nodes/shoot/position = Vector2(-160, 520)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ov24y"]
 filter_enabled = true
@@ -13293,7 +13636,7 @@ nodes/idle/node = SubResource("AnimationNodeAnimation_4grds")
 nodes/idle/position = Vector2(-620, 140)
 nodes/shoot/node = SubResource("AnimationNodeAnimation_e00bh")
 nodes/shoot/position = Vector2(-400, 520)
-node_connections = [&"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"OneShot_hit", 0, &"idle", &"OneShot_hit", 1, &"hit", &"OneShot_shoot", 0, &"OneShot_hit", &"OneShot_shoot", 1, &"shoot", &"TimeScale", 0, &"OneShot_shoot"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_72o2f"]
 animation = &"start_game"
@@ -13305,7 +13648,8 @@ animation = &"kill_stars_triple_kill"
 animation = &"kill_stars_ultra_kill"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6y5c8"]
-graph_offset = Vector2(2085.86, 301.782)
+graph_offset = Vector2(-767, 68)
+nodes/output/position = Vector2(5860, 540)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_4w7fn")
 nodes/Blend2/position = Vector2(-160, 260)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_4w7fn")
@@ -13358,7 +13702,6 @@ nodes/kills/node = SubResource("AnimationNodeTransition_a76l4")
 nodes/kills/position = Vector2(3080, 920)
 nodes/machine_gun_crosshair/node = SubResource("AnimationNodeBlendTree_na5tk")
 nodes/machine_gun_crosshair/position = Vector2(420, 960)
-nodes/output/position = Vector2(5860, 540)
 nodes/p/node = SubResource("AnimationNodeAnimation_80bsv")
 nodes/p/position = Vector2(4560, 860)
 nodes/pause_state/node = SubResource("AnimationNodeTransition_t8li2")
@@ -13385,7 +13728,7 @@ nodes/tk/node = SubResource("AnimationNodeAnimation_jxg7h")
 nodes/tk/position = Vector2(2560, 1180)
 nodes/uk/node = SubResource("AnimationNodeAnimation_cf64w")
 nodes/uk/position = Vector2(2560, 1340)
-node_connections = [&"Blend2", 0, &"health_act", &"Blend2", 1, &"ammos_act", &"TimeScale", 0, &"hit_screen", &"TimeScale 2", 0, &"kills", &"TimeScale 3", 0, &"pause_state", &"TimeScale_ash", 0, &"ash", &"aiming_shoot_hit_crosshair", 0, &"crosshair", &"aiming_shoot_hit_crosshair", 1, &"TimeScale_ash", &"blood_screen", 0, &"aiming_shoot_hit_crosshair", &"blood_screen", 1, &"blood_hurt", &"cross_hair_control", 0, &"rifle_crosshair", &"cross_hair_control", 1, &"pistol_crosshair", &"cross_hair_control", 2, &"smg_crosshair", &"cross_hair_control", 3, &"sniper_crosshair", &"cross_hair_control", 4, &"shotgun_crosshair", &"cross_hair_control", 5, &"machine_gun_crosshair", &"crosshair", 0, &"health_ammo", &"crosshair", 1, &"cross_hair_control", &"game_over", 0, &"kill_star", &"game_over", 1, &"result_anim", &"health_ammo", 0, &"start", &"health_ammo", 1, &"Blend2", &"hit", 0, &"blood_screen", &"hit", 1, &"TimeScale", &"kill_star", 0, &"hit", &"kill_star", 1, &"TimeScale 2", &"kills", 0, &"fb", &"kills", 1, &"fk", &"kills", 2, &"dk", &"kills", 3, &"tk", &"kills", 4, &"uk", &"kills", 5, &"rk", &"kills", 6, &"hs", &"kills", 7, &"hk", &"output", 0, &"pause_ui", &"pause_state", 0, &"p", &"pause_state", 1, &"c", &"pause_ui", 0, &"game_over", &"pause_ui", 1, &"TimeScale 3"]
+node_connections = [&"output", 0, &"pause_ui", &"Blend2", 0, &"health_act", &"Blend2", 1, &"ammos_act", &"TimeScale", 0, &"hit_screen", &"TimeScale 2", 0, &"kills", &"TimeScale 3", 0, &"pause_state", &"TimeScale_ash", 0, &"ash", &"aiming_shoot_hit_crosshair", 0, &"crosshair", &"aiming_shoot_hit_crosshair", 1, &"TimeScale_ash", &"blood_screen", 0, &"aiming_shoot_hit_crosshair", &"blood_screen", 1, &"blood_hurt", &"cross_hair_control", 0, &"rifle_crosshair", &"cross_hair_control", 1, &"pistol_crosshair", &"cross_hair_control", 2, &"smg_crosshair", &"cross_hair_control", 3, &"sniper_crosshair", &"cross_hair_control", 4, &"shotgun_crosshair", &"cross_hair_control", 5, &"machine_gun_crosshair", &"crosshair", 0, &"health_ammo", &"crosshair", 1, &"cross_hair_control", &"game_over", 0, &"kill_star", &"game_over", 1, &"result_anim", &"health_ammo", 0, &"start", &"health_ammo", 1, &"Blend2", &"hit", 0, &"blood_screen", &"hit", 1, &"TimeScale", &"kill_star", 0, &"hit", &"kill_star", 1, &"TimeScale 2", &"kills", 0, &"fb", &"kills", 1, &"fk", &"kills", 2, &"dk", &"kills", 3, &"tk", &"kills", 4, &"uk", &"kills", 5, &"rk", &"kills", 6, &"hs", &"kills", 7, &"hk", &"pause_state", 0, &"p", &"pause_state", 1, &"c", &"pause_ui", 0, &"game_over", &"pause_ui", 1, &"TimeScale 3"]
 
 [node name="hero_anim_1st_all_weapons" type="Node3D"]
 script = ExtResource("1_uf275")
@@ -13441,7 +13784,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(0, 1, 0, -0.999067, 0, 0.0431862, 0.0431862, 0, 0.999067, 0.528434, 1.39514, -0.0713345)
 bones/1/enabled = true
 bones/1/position = Vector3(0.528434, 1.39514, -0.0713345)
-bones/1/rotation = Quaternion(-0.0152722, -0.0152722, -0.706942, 0.706942)
+bones/1/rotation = Quaternion(-0.015272191, -0.015272191, -0.70694184, 0.70694184)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "arm.L"
 bones/2/parent = 1
@@ -13455,35 +13798,35 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.00186491, -0.999067, 0.0431459, 0.999067, -1.32933e-07, -0.0431861, 0.0431458, 0.0431862, 0.998135, 1.78581e-07, 0.671784, -9.31323e-10)
 bones/3/enabled = true
 bones/3/position = Vector3(1.78581e-07, 0.671784, -9.31323e-10)
-bones/3/rotation = Quaternion(0.0305372, 4.08298e-08, 0.706447, 0.707107)
+bones/3/rotation = Quaternion(0.030537216, 4.082976e-08, 0.7064471, 0.7071067)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "connect_thumb.L"
 bones/4/parent = 3
 bones/4/rest = Transform3D(-0.502206, 0.832308, -0.234632, -0.862096, -0.460652, 0.211162, 0.0676683, 0.308323, 0.948872, -5.42495e-08, 1.08854e-07, 1.49012e-08)
 bones/4/enabled = true
 bones/4/position = Vector3(-5.42495e-08, 1.08854e-07, 1.49012e-08)
-bones/4/rotation = Quaternion(-0.0489235, 0.152219, 0.85319, -0.496491)
+bones/4/rotation = Quaternion(-0.04892355, 0.1522187, 0.85318965, -0.49649107)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "thumb1.L"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.927314, 0.372419, 0.0373291, -0.37366, 0.915387, 0.149817, 0.0216243, -0.152876, 0.988009, 2.56114e-09, 0.251043, -8.3819e-09)
 bones/5/enabled = true
 bones/5/position = Vector3(2.56114e-09, 0.251043, -8.3819e-09)
-bones/5/rotation = Quaternion(-0.0773274, 0.004012, -0.190597, 0.97861)
+bones/5/rotation = Quaternion(-0.077327356, 0.0040120007, -0.1905966, 0.9786099)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "thumb2.L"
 bones/6/parent = 5
 bones/6/rest = Transform3D(0.96129, -0.272174, 0.0429218, 0.27049, 0.961841, 0.0411981, -0.052497, -0.0279934, 0.998229, 1.37603e-07, 0.0737447, 2.42144e-08)
 bones/6/enabled = true
 bones/6/position = Vector3(1.37603e-07, 0.0737447, 2.42144e-08)
-bones/6/rotation = Quaternion(-0.0174705, 0.0240927, 0.13702, 0.990121)
+bones/6/rotation = Quaternion(-0.017470464, 0.02409272, 0.13701956, 0.9901212)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "thumb3.L"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.909213, -0.414652, 0.0373488, 0.408439, 0.905765, 0.112988, -0.0806802, -0.0874759, 0.992894, 1.59722e-07, 0.0818015, -2.23517e-08)
 bones/7/enabled = true
 bones/7/position = Vector3(1.59722e-07, 0.0818015, -2.23517e-08)
-bones/7/rotation = Quaternion(-0.0513649, 0.0302425, 0.2109, 0.975689)
+bones/7/rotation = Quaternion(-0.05136487, 0.03024248, 0.2109002, 0.9756886)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "connect_forefinger.L"
 bones/8/parent = 3
@@ -13497,21 +13840,21 @@ bones/9/parent = 8
 bones/9/rest = Transform3D(0.998425, -0.0552804, -0.00957879, 0.0559608, 0.969053, 0.240426, -0.00400849, -0.240583, 0.97062, 7.52043e-08, 0.392374, -1.11759e-08)
 bones/9/enabled = true
 bones/9/position = Vector3(7.52043e-08, 0.392374, -1.11759e-08)
-bones/9/rotation = Quaternion(-0.121194, -0.00140347, 0.028028, 0.992232)
+bones/9/rotation = Quaternion(-0.121193595, -0.0014034742, 0.028028024, 0.99223214)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "forefinger2.L"
 bones/10/parent = 9
 bones/10/rest = Transform3D(0.994339, 0.106255, 0.000259515, -0.106255, 0.994327, 0.00485235, 0.000257543, -0.00485246, 0.999988, 8.88249e-08, 0.126818, -9.31323e-10)
 bones/10/enabled = true
 bones/10/position = Vector3(8.88249e-08, 0.126818, -9.31323e-10)
-bones/10/rotation = Quaternion(-0.00242965, 4.94018e-07, -0.053203, 0.998581)
+bones/10/rotation = Quaternion(-0.0024296525, 4.940183e-07, -0.053202998, 0.99858075)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/name = "forefinger3.L"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.998305, 0.0582037, 7.74434e-05, -0.0582037, 0.998301, 0.00265799, 7.73931e-05, -0.00265799, 0.999996, 1.61934e-07, 0.0994623, -9.31323e-09)
 bones/11/enabled = true
 bones/11/position = Vector3(1.61934e-07, 0.0994623, -9.31323e-09)
-bones/11/rotation = Quaternion(-0.00132956, 1.25382e-08, -0.0291142, 0.999575)
+bones/11/rotation = Quaternion(-0.0013295596, 1.2538163e-08, -0.02911421, 0.9995752)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "connect_middlefinger.L"
 bones/12/parent = 3
@@ -13525,21 +13868,21 @@ bones/13/parent = 12
 bones/13/rest = Transform3D(0.999518, -0.0306002, -0.00521388, 0.0309865, 0.993554, 0.109039, 0.00184364, -0.109148, 0.994024, -7.75326e-08, 0.382416, -1.11759e-08)
 bones/13/enabled = true
 bones/13/position = Vector3(-7.75326e-08, 0.382416, -1.11759e-08)
-bones/13/rotation = Quaternion(-0.054635, -0.00176723, 0.0154216, 0.998386)
+bones/13/rotation = Quaternion(-0.054634966, -0.0017672313, 0.0154215945, 0.9983857)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "middlefinger2.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997225, 0.0744462, 0.000830247, -0.0744175, 0.99705, -0.0188085, -0.00222802, 0.0186945, 0.999823, 3.20142e-08, 0.141158, 0)
 bones/14/enabled = true
 bones/14/position = Vector3(3.20142e-08, 0.141158, 0)
-bones/14/rotation = Quaternion(0.00938267, 0.000765132, -0.0372434, 0.999262)
+bones/14/rotation = Quaternion(0.009382671, 0.0007651319, -0.037243415, 0.99926186)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "middlefinger3.L"
 bones/15/parent = 14
 bones/15/rest = Transform3D(0.999577, -0.0290887, 1.6338e-05, 0.0290887, 0.999576, -0.00111872, 1.62109e-05, 0.00111872, 0.999999, 1.19791e-07, 0.124973, -1.86265e-09)
 bones/15/enabled = true
 bones/15/position = Vector3(1.19791e-07, 0.124973, -1.86265e-09)
-bones/15/rotation = Quaternion(0.000559419, 3.17993e-08, 0.0145459, 0.999894)
+bones/15/rotation = Quaternion(0.0005594189, 3.1799303e-08, 0.01454589, 0.9998941)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "connect_ringfinger.L"
 bones/16/parent = 3
@@ -13553,21 +13896,21 @@ bones/17/parent = 16
 bones/17/rest = Transform3D(0.999226, -0.0393296, 0.00122446, 0.0393377, 0.997727, -0.0547092, 0.000930017, 0.054715, 0.998502, 6.37956e-08, 0.380935, -2.23517e-08)
 bones/17/enabled = true
 bones/17/position = Vector3(6.37956e-08, 0.380935, -2.23517e-08)
-bones/17/rotation = Quaternion(0.0273716, 7.36524e-05, 0.019678, 0.999432)
+bones/17/rotation = Quaternion(0.027371613, 7.365244e-05, 0.019678012, 0.9994316)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "ringfinger2.L"
 bones/18/parent = 17
 bones/18/rest = Transform3D(0.992743, 0.120252, 0.000994362, -0.120207, 0.992543, -0.0202097, -0.0034172, 0.0199435, 0.999795, -3.07336e-08, 0.135959, 1.86265e-09)
 bones/18/enabled = true
 bones/18/position = Vector3(-3.07336e-08, 0.135959, 1.86265e-09)
-bones/18/rotation = Quaternion(0.0100571, 0.00110495, -0.060227, 0.998133)
+bones/18/rotation = Quaternion(0.010057071, 0.0011049549, -0.06022703, 0.9981334)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "ringfinger3.L"
 bones/19/parent = 18
 bones/19/rest = Transform3D(0.999977, -0.00674573, 1.35007e-06, 0.00674573, 0.999977, -0.000320971, 8.15144e-07, 0.000320973, 1, 8.3819e-09, 0.107943, 5.58794e-09)
 bones/19/enabled = true
 bones/19/position = Vector3(8.3819e-09, 0.107943, 5.58794e-09)
-bones/19/rotation = Quaternion(0.000160487, 1.33733e-07, 0.00337289, 0.999994)
+bones/19/rotation = Quaternion(0.000160487, 1.3373288e-07, 0.0033728853, 0.9999943)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "connect_littlefinger.L"
 bones/20/parent = 3
@@ -13581,28 +13924,28 @@ bones/21/parent = 20
 bones/21/rest = Transform3D(0.999754, -0.0196559, 0.0102702, 0.0216932, 0.96298, -0.268698, -0.0046085, 0.268855, 0.96317, 3.35276e-08, 0.393116, 6.70552e-08)
 bones/21/enabled = true
 bones/21/position = Vector3(3.35276e-08, 0.393116, 6.70552e-08)
-bones/21/rotation = Quaternion(0.135651, 0.00375462, 0.0104344, 0.990695)
+bones/21/rotation = Quaternion(0.13565062, 0.0037546179, 0.010434379, 0.9906947)
 bones/21/scale = Vector3(1, 1, 1)
 bones/22/name = "littlefinger2.L"
 bones/22/parent = 21
 bones/22/rest = Transform3D(0.989357, 0.145507, 0.000172438, -0.145472, 0.989095, 0.0230069, 0.00317711, -0.0227871, 0.999735, 2.09548e-07, 0.10325, -2.6077e-08)
 bones/22/enabled = true
 bones/22/position = Vector3(2.09548e-07, 0.10325, -2.6077e-08)
-bones/22/rotation = Quaternion(-0.0114798, -0.000753229, -0.0729438, 0.99727)
+bones/22/rotation = Quaternion(-0.011479837, -0.00075322884, -0.07294383, 0.9972697)
 bones/22/scale = Vector3(1, 1, 1)
 bones/23/name = "littlefinger3.L"
 bones/23/parent = 22
 bones/23/rest = Transform3D(0.997108, 0.0759979, 0.000162786, -0.0759979, 0.997099, 0.00427392, 0.000162495, -0.00427393, 0.999991, 1.57394e-07, 0.0649241, -1.86265e-08)
 bones/23/enabled = true
 bones/23/position = Vector3(1.57394e-07, 0.0649241, -1.86265e-08)
-bones/23/rotation = Quaternion(-0.00213851, 7.28233e-08, -0.0380265, 0.999274)
+bones/23/rotation = Quaternion(-0.0021385134, 7.282332e-08, -0.038026534, 0.9992745)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "shouder.R"
 bones/24/parent = 0
 bones/24/rest = Transform3D(0, -1, 0, -0.0431862, 0, -0.999067, 0.999067, 0, -0.0431862, -0.528434, 1.39514, -0.0713345)
 bones/24/enabled = true
 bones/24/position = Vector3(-0.528434, 1.39514, -0.0713345)
-bones/24/rotation = Quaternion(0.510682, -0.510682, 0.489084, 0.489084)
+bones/24/rotation = Quaternion(0.5106824, -0.51068246, 0.48908433, 0.48908433)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/name = "arm.R"
 bones/25/parent = 24
@@ -13616,7 +13959,7 @@ bones/26/parent = 25
 bones/26/rest = Transform3D(0.0431458, -0.0431862, 0.998135, -0.999067, 0, 0.0431861, -0.00186509, -0.999067, -0.043146, 0, 0.671784, -5.37839e-08)
 bones/26/enabled = true
 bones/26/position = Vector3(0, 0.671784, -5.37839e-08)
-bones/26/rotation = Quaternion(0.521127, -0.5, 0.47794, -0.5)
+bones/26/rotation = Quaternion(0.52112657, -0.50000006, 0.47794047, -0.5)
 bones/26/scale = Vector3(1, 1, 1)
 bones/27/name = "connect_thumb.R"
 bones/27/parent = 26
@@ -13630,21 +13973,21 @@ bones/28/parent = 27
 bones/28/rest = Transform3D(0.824778, -0.072947, -0.560731, 0.278556, 0.915387, 0.290643, 0.492084, -0.395911, 0.775311, -3.72529e-09, 0.251043, 4.65661e-10)
 bones/28/enabled = true
 bones/28/position = Vector3(-3.72529e-09, 0.251043, 4.65661e-10)
-bones/28/rotation = Quaternion(-0.183085, -0.280757, 0.0937361, 0.93748)
+bones/28/rotation = Quaternion(-0.18308488, -0.28075662, 0.09373614, 0.9374802)
 bones/28/scale = Vector3(1, 1, 1)
 bones/29/name = "thumb2.R"
 bones/29/parent = 28
 bones/29/rest = Transform3D(0.960135, 0.259476, 0.103986, -0.247246, 0.961841, -0.117181, -0.130423, 0.0867996, 0.987652, -2.61702e-07, 0.0737448, -2.98023e-08)
 bones/29/enabled = true
 bones/29/position = Vector3(-2.61702e-07, 0.0737448, -2.98023e-08)
-bones/29/rotation = Quaternion(0.0515812, 0.0592755, -0.128136, 0.988639)
+bones/29/rotation = Quaternion(0.05158116, 0.059275523, -0.12813628, 0.98863894)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/name = "thumb3.R"
 bones/30/parent = 29
 bones/30/rest = Transform3D(0.86224, 0.392627, 0.319977, -0.302193, 0.905765, -0.2971, -0.406473, 0.159477, 0.899637, 3.53903e-08, 0.0818012, 9.68575e-08)
 bones/30/enabled = true
 bones/30/position = Vector3(3.53903e-08, 0.0818012, 9.68575e-08)
-bones/30/rotation = Quaternion(0.119204, 0.189663, -0.181405, 0.957555)
+bones/30/rotation = Quaternion(0.11920392, 0.18966278, -0.18140496, 0.9575545)
 bones/30/scale = Vector3(1, 1, 1)
 bones/31/name = "connect_forefinger.R"
 bones/31/parent = 26
@@ -13658,21 +14001,21 @@ bones/32/parent = 31
 bones/32/rest = Transform3D(-0.747045, 0.138023, -0.650287, -0.0338141, 0.969053, 0.244526, 0.663913, 0.204661, -0.719259, -4.84288e-08, 0.392374, -7.45058e-09)
 bones/32/enabled = true
 bones/32/position = Vector3(-4.84288e-08, 0.392374, -7.45058e-09)
-bones/32/rotation = Quaternion(0.0281118, 0.926736, 0.121175, -0.354524)
+bones/32/rotation = Quaternion(0.028111828, 0.92673576, 0.12117455, -0.35452402)
 bones/32/scale = Vector3(1, 1, 1)
 bones/33/name = "forefinger2.R"
 bones/33/parent = 32
 bones/33/rest = Transform3D(0.994339, -0.106255, 0.000260058, 0.106255, 0.994327, -0.00485228, 0.000256996, 0.00485244, 0.999988, -1.09314e-07, 0.126817, -3.72529e-09)
 bones/33/enabled = true
 bones/33/position = Vector3(-1.09314e-07, 0.126817, -3.72529e-09)
-bones/33/rotation = Quaternion(0.00242963, 7.66599e-07, 0.053203, 0.998581)
+bones/33/rotation = Quaternion(0.0024296278, 7.665987e-07, 0.053202994, 0.99858075)
 bones/33/scale = Vector3(1, 1, 1)
 bones/34/name = "forefinger3.R"
 bones/34/parent = 33
 bones/34/rest = Transform3D(0.998305, -0.0582037, 7.66462e-05, 0.0582037, 0.998301, -0.00265802, 7.81908e-05, 0.00265798, 0.999996, 6.22822e-08, 0.0994623, 0)
 bones/34/enabled = true
 bones/34/position = Vector3(6.22822e-08, 0.0994623, 0)
-bones/34/rotation = Quaternion(0.00132957, -3.86281e-07, 0.0291142, 0.999575)
+bones/34/rotation = Quaternion(0.0013295664, -3.8628096e-07, 0.029114211, 0.9995752)
 bones/34/scale = Vector3(1, 1, 1)
 bones/35/name = "connect_middlefinger.R"
 bones/35/parent = 26
@@ -13686,21 +14029,21 @@ bones/36/parent = 35
 bones/36/rest = Transform3D(-0.526767, 0.112286, -0.842561, 0.0462569, 0.993554, 0.103489, 0.84875, 0.0155404, -0.528566, -1.86265e-08, 0.382416, 0)
 bones/36/enabled = true
 bones/36/position = Vector3(-1.86265e-08, 0.382416, 0)
-bones/36/rotation = Quaternion(0.045399, 0.873053, 0.0340842, -0.484309)
+bones/36/rotation = Quaternion(0.04539901, 0.87305313, 0.034084212, -0.4843092)
 bones/36/scale = Vector3(1, 1, 1)
 bones/37/name = "middlefinger2.R"
 bones/37/parent = 36
 bones/37/rest = Transform3D(0.812932, -0.0450696, 0.580612, 0.0727531, 0.99705, -0.0244686, -0.577796, 0.0621326, 0.813813, -1.06171e-07, 0.141158, -7.45058e-08)
 bones/37/enabled = true
 bones/37/position = Vector3(-1.06171e-07, 0.141158, -7.45058e-08)
-bones/37/rotation = Quaternion(0.0227464, 0.304263, 0.0309469, 0.951813)
+bones/37/rotation = Quaternion(0.022746352, 0.3042634, 0.030946905, 0.9518134)
 bones/37/scale = Vector3(1, 1, 1)
 bones/38/name = "middlefinger3.R"
 bones/38/parent = 37
 bones/38/rest = Transform3D(0.999577, 0.0290887, 1.62575e-05, -0.0290887, 0.999576, 0.00111874, 1.6292e-05, -0.00111874, 0.999999, 6.74045e-08, 0.124973, 9.31323e-10)
 bones/38/enabled = true
 bones/38/position = Vector3(6.74045e-08, 0.124973, 9.31323e-10)
-bones/38/rotation = Quaternion(-0.00055943, -8.59973e-09, -0.0145459, 0.999894)
+bones/38/rotation = Quaternion(-0.0005594295, -8.599729e-09, -0.01454589, 0.9998941)
 bones/38/scale = Vector3(1, 1, 1)
 bones/39/name = "connect_ringfinger.R"
 bones/39/parent = 26
@@ -13714,21 +14057,21 @@ bones/40/parent = 39
 bones/40/rest = Transform3D(0.891259, 0.0574539, 0.44984, -0.0671496, 0.997727, 0.00561171, -0.448496, -0.0352081, 0.893091, 7.45058e-09, 0.380935, -3.72529e-08)
 bones/40/enabled = true
 bones/40/position = Vector3(7.45058e-09, 0.380935, -3.72529e-08)
-bones/40/rotation = Quaternion(-0.0104948, 0.230964, -0.0320358, 0.972378)
+bones/40/rotation = Quaternion(-0.010494833, 0.23096384, -0.032035757, 0.9723782)
 bones/40/scale = Vector3(1, 1, 1)
 bones/41/name = "ringfinger2.R"
 bones/41/parent = 40
 bones/41/rest = Transform3D(0.592396, -0.0447211, 0.804405, 0.117745, 0.992543, -0.0315317, -0.796996, 0.113394, 0.593244, 0, 0.135959, -7.45058e-09)
 bones/41/enabled = true
 bones/41/position = Vector3(0, 0.135959, -7.45058e-09)
-bones/41/rotation = Quaternion(0.0406467, 0.449139, 0.0455662, 0.891373)
+bones/41/rotation = Quaternion(0.040646702, 0.44913882, 0.045566227, 0.89137304)
 bones/41/scale = Vector3(1, 1, 1)
 bones/42/name = "ringfinger3.R"
 bones/42/parent = 41
 bones/42/rest = Transform3D(0.999977, 0.00674575, 1.45109e-06, -0.00674575, 0.999977, 0.000320943, 7.13947e-07, -0.000320946, 1, 8.14907e-08, 0.107943, 5.58794e-09)
 bones/42/enabled = true
 bones/42/position = Vector3(8.14907e-08, 0.107943, 5.58794e-09)
-bones/42/rotation = Quaternion(-0.000160473, 1.84287e-07, -0.0033729, 0.999994)
+bones/42/rotation = Quaternion(-0.00016047336, 1.8428719e-07, -0.0033728953, 0.9999943)
 bones/42/scale = Vector3(1, 1, 1)
 bones/43/name = "connect_littlefinger.R"
 bones/43/parent = 26
@@ -13742,21 +14085,21 @@ bones/44/parent = 43
 bones/44/rest = Transform3D(-0.975943, 0.131523, 0.173886, 0.0841455, 0.962981, -0.256103, -0.201132, -0.23531, -0.950881, 4.47035e-08, 0.393116, 4.47035e-08)
 bones/44/enabled = true
 bones/44/position = Vector3(4.47035e-08, 0.393116, 4.47035e-08)
-bones/44/rotation = Quaternion(0.0546755, 0.986129, -0.124581, 0.0950732)
+bones/44/rotation = Quaternion(0.05467548, 0.9861294, -0.12458112, 0.09507322)
 bones/44/scale = Vector3(1, 1, 1)
 bones/45/name = "littlefinger2.R"
 bones/45/parent = 44
 bones/45/rest = Transform3D(0.864034, -0.125301, -0.48759, 0.147135, 0.989095, 0.00655143, 0.481452, -0.0774021, 0.873048, 1.3411e-07, 0.10325, -2.42144e-08)
 bones/45/enabled = true
 bones/45/position = Vector3(1.3411e-07, 0.10325, -2.42144e-08)
-bones/45/rotation = Quaternion(-0.021746, -0.251004, 0.0705674, 0.965165)
+bones/45/rotation = Quaternion(-0.021746038, -0.25100428, 0.07056737, 0.9651654)
 bones/45/scale = Vector3(1, 1, 1)
 bones/46/name = "littlefinger3.R"
 bones/46/parent = 45
 bones/46/rest = Transform3D(0.997108, -0.075998, 0.000162482, 0.075998, 0.997099, -0.00427391, 0.000162797, 0.00427389, 0.999991, -8.3819e-08, 0.0649237, 3.1665e-08)
 bones/46/enabled = true
 bones/46/position = Vector3(-8.3819e-08, 0.0649237, 3.1665e-08)
-bones/46/rotation = Quaternion(0.0021385, -7.87284e-08, 0.0380266, 0.999274)
+bones/46/rotation = Quaternion(0.002138499, -7.8728405e-08, 0.038026586, 0.9992745)
 bones/46/scale = Vector3(1, 1, 1)
 
 [node name="armor_arms" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
@@ -13784,7 +14127,7 @@ skin = SubResource("Skin_2035u")
 surface_material_override/0 = SubResource("StandardMaterial3D_lxpon")
 
 [node name="left_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
-transform = Transform3D(0.999067, -1.19209e-07, -0.0431861, 1.33063e-07, 1, -3.72529e-09, 0.0431861, -3.72529e-09, 0.999067, 1.68395, 1.39514, -0.0713345)
+transform = Transform3D(0.999067, -1.1920929e-07, -0.043186083, 1.3306271e-07, 1, -3.7252903e-09, 0.043186087, -3.7252903e-09, 0.99906707, 1.683955, 1.3951398, -0.07133449)
 bone_name = "hand.L"
 bone_idx = 3
 
@@ -13831,7 +14174,7 @@ script = ExtResource("29_53q61")
 script = ExtResource("30_7w52y")
 
 [node name="right_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
-transform = Transform3D(0.999067, 6.46972e-08, -0.0431862, 8.54488e-08, 1, 7.45058e-08, 0.043186, 1.86265e-08, 0.999067, -1.68395, 1.39514, -0.0713346)
+transform = Transform3D(0.99906707, 6.469723e-08, -0.043186154, 8.5448846e-08, 1.0000001, 7.4505806e-08, 0.043186016, 1.8626451e-08, 0.9990671, -1.683955, 1.39514, -0.07133457)
 bone_name = "hand.R"
 bone_idx = 26
 
@@ -13881,7 +14224,7 @@ transform = Transform3D(15.3741, 1.02304e-06, 1.72361e-07, 3.89202e-07, 6.21306,
 curve = SubResource("Curve3D_283q2")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0, -0.999881, 0, 0.999881, 0, 1, 0, -4.37062e-08, 0, -0.02, 0)
+transform = Transform3D(-4.371139e-08, 0, -0.999881, 0, 0.999881, 0, 1, 0, -4.3706187e-08, 0, -0.02, 0)
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13892,8 +14235,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0, -0.999889, 0, 0.999889, 0, 1, 0, -4.37065e-08, 0.0275097, -0.0135428, 0)
-progress = 0.0332586
+transform = Transform3D(-4.371139e-08, 0, -0.999889, 0, 0.999889, 0, 1, 0, -4.3706535e-08, 0.027509762, -0.013542833, 0)
+progress = 0.033258617
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13904,8 +14247,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.37066e-08, 0.0554172, -0.0089381, 0)
-progress = 0.0576641
+transform = Transform3D(-4.371139e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.370658e-08, 0.0554172, -0.008938098, 0)
+progress = 0.057664134
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D3"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13916,8 +14259,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.37066e-08, 0.0829618, -0.0147759, 0)
-progress = 0.0825482
+transform = Transform3D(-4.371139e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.370658e-08, 0.08296184, -0.014775939, 0)
+progress = 0.082548246
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D4"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13928,7 +14271,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.50049e-08, 0.171034, -0.985122, -7.45058e-09, 0.985122, 0.171034, 1, 1.50371e-08, -4.3061e-08, 0.102849, -0.034845, 0)
+transform = Transform3D(-4.500494e-08, 0.17103443, -0.98512197, -7.450581e-09, 0.98512197, 0.17103443, 1, 1.5037125e-08, -4.3061046e-08, 0.10284948, -0.03484504, 0)
 progress = 0.115089
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D5"]
@@ -13940,8 +14283,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.363351, -0.93151, 0, 0.93151, 0.363351, 1, 1.58826e-08, -4.07176e-08, 0.118694, -0.0591638, 0)
-progress = 0.14428
+transform = Transform3D(-4.371139e-08, 0.36335066, -0.93150973, 0, 0.93150973, 0.36335066, 1, 1.5882561e-08, -4.0717584e-08, 0.11869442, -0.05916374, 0)
+progress = 0.14427997
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13952,8 +14295,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(7.54979e-08, 0.517538, -0.855506, 0, 0.855506, 0.517538, 1, -3.9073e-08, 6.45889e-08, 0.131933, -0.0840115, 0)
-progress = 0.169403
+transform = Transform3D(-4.371139e-08, 0.51753706, -0.8555066, 0, 0.8555066, 0.51753706, 1, 2.2622263e-08, -3.739538e-08, 0.13193269, -0.08401137, 0)
+progress = 0.16940287
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13964,8 +14307,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D8" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.652723, -0.757441, 0, 0.757441, 0.652723, 1, 2.85314e-08, -3.31088e-08, 0.143414, -0.109732, 0)
-progress = 0.193809
+transform = Transform3D(-4.371139e-08, 0.65272266, -0.75744104, 0, 0.75744104, 0.65272266, 1, 2.8531412e-08, -3.3108797e-08, 0.14341351, -0.109732375, 0)
+progress = 0.19380891
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D8"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13976,8 +14319,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.773857, -0.633169, 0, 0.633169, 0.773857, 1, 3.38264e-08, -2.76767e-08, 0.152884, -0.136238, 0)
-progress = 0.219172
+transform = Transform3D(7.54979e-08, 0.773857, -0.63316894, 0, 0.63316894, 0.773857, 1, -5.842458e-08, 4.7802928e-08, 0.15288393, -0.13623819, 0)
+progress = 0.21917205
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -13988,8 +14331,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.883457, -0.46825, 0, 0.46825, 0.883457, 1, 3.86171e-08, -2.04679e-08, 0.159293, -0.163758, 0)
-progress = 0.248123
+transform = Transform3D(-4.371139e-08, 0.8834561, -0.46825138, 0, 0.46825138, 0.8834561, 1, 3.861709e-08, -2.0467917e-08, 0.15929322, -0.1637578, 0)
+progress = 0.2481228
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14000,8 +14343,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(5.09483e-08, 0.95371, -0.300263, 2.98023e-08, 0.300263, 0.95371, 1, -5.75384e-08, -1.31249e-08, 0.159432, -0.192087, 0)
-progress = 0.276357
+transform = Transform3D(-4.371139e-08, 0.9537103, -0.3002617, 0, 0.3002617, 0.9537103, 1, 4.1688004e-08, -1.3124855e-08, 0.15943244, -0.19208737, 0)
+progress = 0.27635714
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14012,8 +14355,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-4.37114e-08, 0.989623, -0.142716, 0, 0.142716, 0.989623, 1, 4.32578e-08, -6.23833e-09, 0.153252, -0.219283, 0)
-progress = 0.301959
+transform = Transform3D(-1.6292068e-07, 0.989623, -0.14271598, 0, 0.14271598, 0.989623, 1, 1.6123006e-07, -2.3251385e-08, 0.15325242, -0.2192829, 0)
+progress = 0.30195907
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14024,8 +14367,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(1.31117e-07, 0.999648, 0.020066, -1.75449e-09, -0.020066, 0.999648, 1, -1.31106e-07, -8.77114e-10, 0.142559, -0.245327, 0)
-progress = 0.3278
+transform = Transform3D(-4.4317858e-08, 0.999648, 0.020066017, -6.0448336e-08, -0.020066017, 0.999648, 1, 4.308923e-08, 6.131634e-08, 0.14255951, -0.24532728, 0)
+progress = 0.3277998
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14036,8 +14379,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-5.06762e-08, 0.981979, 0.188258, -7.33206e-08, -0.188258, 0.981979, 1, 3.59598e-08, 8.15395e-08, 0.128668, -0.269174, 0)
-progress = 0.354598
+transform = Transform3D(-4.6412012e-08, 0.9819788, 0.18825866, -2.8430197e-08, -0.18825866, 0.9819788, 1, 4.0223384e-08, 3.6655315e-08, 0.12866786, -0.26917395, 0)
+progress = 0.35459805
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14048,8 +14391,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-5.52956e-08, 0.923156, 0.384073, -5.80013e-08, -0.384073, 0.923156, 1, 2.87697e-08, 7.47818e-08, 0.111018, -0.291095, 0)
-progress = 0.386182
+transform = Transform3D(-1.7450505e-07, 0.92315495, 0.38407528, -5.800162e-08, -0.38407528, 0.92315495, 1, 1.388182e-07, 1.2056755e-07, 0.11101746, -0.2910953, 0)
+progress = 0.38618222
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14060,8 +14403,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(4.50061e-08, 0.797957, 0.602495, -9.09863e-08, -0.602495, 0.797957, 1, -9.07318e-08, 4.54871e-08, 0.0864327, -0.304778, 0)
-progress = 0.411784
+transform = Transform3D(1.1348015e-07, 0.79795605, 0.60249627, -5.2678864e-08, -0.60249627, 0.79795605, 1, -1.2229098e-07, -2.633595e-08, 0.08643261, -0.30477846, 0)
+progress = 0.4117841
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14072,8 +14415,8 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
 [node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
-transform = Transform3D(-5.21847e-08, 0.635012, 0.772341, 1.16635e-07, -0.772341, 0.635012, 1, 1.2322e-07, -3.37601e-08, 0.0592224, -0.31043, 0)
-progress = 0.435711
+transform = Transform3D(-9.881128e-08, 0.6350106, 0.77234185, -1.1663493e-07, -0.77234185, 0.6350106, 1, -2.7335828e-08, 1.503805e-07, 0.05922222, -0.31043026, 0)
+progress = 0.43571115
 
 [node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17"]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
@@ -14082,6 +14425,24 @@ cast_shadow = 0
 mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
+
+[node name="grenade_fire" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("48_jrevv")]
+transform = Transform3D(-0.33081472, -0.010526583, 0.9436372, 0.9436156, 0.009319052, 0.33091125, -0.01227716, 0.9999011, 0.0068500936, -0.39993876, -0.154173, 0.07622743)
+visible = false
+
+[node name="grenade_smoke" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("49_v6bxe")]
+transform = Transform3D(-0.3308147, -0.010526568, 0.94363713, 0.9436156, 0.009319053, 0.33091125, -0.012277164, 0.9999011, 0.0068500936, -0.39993864, -0.154173, 0.07622731)
+visible = false
+
+[node name="grenade_flash" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("50_ajb5i")]
+transform = Transform3D(-0.3308147, -0.010526568, 0.94363713, 0.9436156, 0.009319053, 0.33091125, -0.012277164, 0.9999011, 0.0068500936, -0.39993864, -0.154173, 0.07622731)
+visible = false
+
+[node name="sword" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("51_v6bxe")]
+transform = Transform3D(-0.9971713, -0.042314373, -0.062119424, -0.04275885, 0.99906826, 0.0058415197, 0.06181425, 0.008481334, -0.99805164, -0.3621695, -0.10742009, 0.07046056)
+
+[node name="grenade_throw_pos" type="Node3D" parent="Skeleton/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.558, 2.1015642)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -14092,9 +14453,11 @@ libraries = {
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeBlendTree_xv005")
 anim_player = NodePath("..")
+parameters/StateMachine/grenade_throw/TimeScale/scale = 1.0
 parameters/StateMachine/machine_gun_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/machine_gun_aiming_shoot/TimeScale/scale = 40.0
 parameters/StateMachine/machine_gun_equip/TimeScale/scale = 2.0
+parameters/StateMachine/machine_gun_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/machine_gun_idle/TimeScale/scale = 0.3
 parameters/StateMachine/machine_gun_idle_shoot/TimeScale/scale = 40.0
 parameters/StateMachine/machine_gun_idle_to_run/TimeScale/scale = 8.0
@@ -14104,6 +14467,7 @@ parameters/StateMachine/machine_gun_unequip/TimeScale/scale = 2.0
 parameters/StateMachine/pistol_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/pistol_aiming_shoot/TimeScale/scale = 35.0
 parameters/StateMachine/pistol_equip/TimeScale/scale = 2.0
+parameters/StateMachine/pistol_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/pistol_idle/TimeScale/scale = 1.0
 parameters/StateMachine/pistol_idle_shoot/TimeScale/scale = 35.0
 parameters/StateMachine/pistol_idle_to_run/TimeScale/scale = 8.0
@@ -14113,6 +14477,7 @@ parameters/StateMachine/pistol_unequip/TimeScale/scale = 2.0
 parameters/StateMachine/rifle_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/rifle_aiming_shoot/TimeScale/scale = 50.0
 parameters/StateMachine/rifle_equip/TimeScale/scale = 2.0
+parameters/StateMachine/rifle_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/rifle_idle/TimeScale/scale = 1.0
 parameters/StateMachine/rifle_idle_shoot/TimeScale/scale = 50.0
 parameters/StateMachine/rifle_idle_to_run/TimeScale/scale = 8.0
@@ -14122,6 +14487,7 @@ parameters/StateMachine/rifle_unequip/TimeScale/scale = 2.0
 parameters/StateMachine/shotgun_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/shotgun_aiming_shoot/TimeScale/scale = 8.0
 parameters/StateMachine/shotgun_equip/TimeScale/scale = 2.0
+parameters/StateMachine/shotgun_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/shotgun_idle/TimeScale/scale = 1.0
 parameters/StateMachine/shotgun_idle_shoot/TimeScale/scale = 8.0
 parameters/StateMachine/shotgun_idle_to_run/TimeScale/scale = 8.0
@@ -14134,6 +14500,7 @@ parameters/StateMachine/shotgun_unequip/TimeScale/scale = 2.0
 parameters/StateMachine/smg_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/smg_aiming_shoot/TimeScale/scale = 60.0
 parameters/StateMachine/smg_equip/TimeScale/scale = 2.0
+parameters/StateMachine/smg_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/smg_idle/TimeScale/scale = 1.0
 parameters/StateMachine/smg_idle_shoot/TimeScale/scale = 60.0
 parameters/StateMachine/smg_idle_to_run/TimeScale/scale = 8.0
@@ -14143,6 +14510,7 @@ parameters/StateMachine/smg_unequip/TimeScale/scale = 2.0
 parameters/StateMachine/sniper_aiming/TimeScale/scale = 1.0
 parameters/StateMachine/sniper_aiming_shoot/TimeScale/scale = 10.0
 parameters/StateMachine/sniper_equip/TimeScale/scale = 2.0
+parameters/StateMachine/sniper_first_ready/TimeScale/scale = 3.0
 parameters/StateMachine/sniper_idle/TimeScale/scale = 1.0
 parameters/StateMachine/sniper_idle_shoot/TimeScale/scale = 10.0
 parameters/StateMachine/sniper_idle_to_run/TimeScale/scale = 8.0
@@ -14150,6 +14518,11 @@ parameters/StateMachine/sniper_reloading_1/TimeScale/scale = 1.5
 parameters/StateMachine/sniper_reloading_2/TimeScale/scale = 1.0
 parameters/StateMachine/sniper_run_to_idle/TimeScale/scale = 8.0
 parameters/StateMachine/sniper_unequip/TimeScale/scale = 2.0
+parameters/StateMachine/sword_attack/TimeScale/scale = 10.0
+parameters/StateMachine/sword_attack/Transition/current_state = "sword_attack1"
+parameters/StateMachine/sword_attack/Transition/transition_request = ""
+parameters/StateMachine/sword_attack/Transition/current_index = 0
+"parameters/StateMachine/sword_attack/TimeScale 2/scale" = 30.0
 parameters/Transition_jump/current_state = "rifle"
 parameters/Transition_jump/transition_request = ""
 parameters/Transition_jump/current_index = 0
@@ -14162,7 +14535,7 @@ parameters/move/blend_position = 0.0
 parameters/move/0/TimeScale_move/scale = 1.0
 parameters/move/0/move/current_state = "rifle"
 parameters/move/0/move/transition_request = ""
-parameters/move/0/move/current_index = 0.0
+parameters/move/0/move/current_index = 0
 parameters/run/blend_amount = 0.0
 
 [node name="camera_idle_pos" type="Marker3D" parent="."]
@@ -14189,6 +14562,15 @@ script = ExtResource("136_el2hh")
 [node name="jump_audio" type="Node3D" parent="."]
 script = ExtResource("137_pnj6v")
 
+[node name="sword_attack_trigger" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.558, 0.493)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sword_attack_trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0673828)
+shape = SubResource("BoxShape3D_odndb")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="screen" type="Control" parent="CanvasLayer"]
@@ -14198,6 +14580,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="white_screen" type="TextureRect" parent="CanvasLayer/screen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("457_ajb5i")
+expand_mode = 1
 
 [node name="killing_tips" type="PanelContainer" parent="CanvasLayer/screen"]
 layout_mode = 1
@@ -14216,32 +14609,77 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
 [node name="Label2" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
 [node name="Label3" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
 [node name="Label4" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
 [node name="Label5" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
+
+[node name="grenade_panel" type="PanelContainer" parent="CanvasLayer/screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_odndb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/grenade_panel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/grenade_panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="grenade_type" type="TextureRect" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(41.15, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("144_oppng")
+expand_mode = 4
+
+[node name="num" type="Label" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+label_settings = ExtResource("145_odndb")
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(13.375, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_o3fd8")
 
 [node name="health_panel" type="PanelContainer" parent="CanvasLayer/screen"]
 layout_mode = 1
@@ -14348,7 +14786,6 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wypt6")
 
 [node name="ammos" type="Node2D" parent="CanvasLayer/screen/ammos_panel"]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(66.0001, 80)
 scale = Vector2(0.099, 0.099)
 
@@ -15186,6 +15623,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_d0yu2")
 
 [node name="start_node_2d" type="Node2D" parent="CanvasLayer/screen/start_icon"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(168, 156)
 scale = Vector2(0.405, 0.405)
 
@@ -15798,6 +16236,7 @@ grow_vertical = 2
 script = ExtResource("415_vpi6d")
 
 [node name="back_ground" type="PanelContainer" parent="CanvasLayer/screen/pause_menu"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -15833,7 +16272,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 [node name="Label_resume" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Resume"
+text = "resume"
 label_settings = ExtResource("416_mx420")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -15846,7 +16285,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 [node name="Label_restart" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Restart"
+text = "restart"
 label_settings = ExtResource("417_80bsv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -15859,7 +16298,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 [node name="Label_change" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Change class"
+text = "change_weapons"
 label_settings = ExtResource("418_t8li2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -15872,7 +16311,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 [node name="Label_quit" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Quit"
+text = "quit"
 label_settings = ExtResource("419_y2oko")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -15885,7 +16324,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 [node name="Label_shutdown" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 1
-text = "Shutdown"
+text = "shutdown"
 label_settings = ExtResource("420_0kw70")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -16288,15 +16727,15 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 [node name="Button_cancel" type="Button" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 70.09)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
 theme_override_font_sizes/font_size = 31
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qi88y")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qi88y")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qi88y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qi88y")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qi88y")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qi88y")
 text = "OK"
 
 [node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
@@ -16345,7 +16784,7 @@ parameters/kills/transition_request = ""
 parameters/kills/current_index = 0
 parameters/machine_gun_crosshair/OneShot_hit/active = false
 parameters/machine_gun_crosshair/OneShot_hit/internal_active = false
-parameters/machine_gun_crosshair/OneShot_hit/request = 14.0
+parameters/machine_gun_crosshair/OneShot_hit/request = 14
 parameters/machine_gun_crosshair/OneShot_shoot/active = false
 parameters/machine_gun_crosshair/OneShot_shoot/internal_active = false
 parameters/machine_gun_crosshair/OneShot_shoot/request = 0
@@ -16357,8 +16796,8 @@ parameters/pause_ui/blend_amount = 1.0
 parameters/pistol_crosshair/OneShot_hit/active = false
 parameters/pistol_crosshair/OneShot_hit/internal_active = false
 parameters/pistol_crosshair/OneShot_hit/request = 0
-parameters/pistol_crosshair/OneShot_shoot/active = 0.0
-parameters/pistol_crosshair/OneShot_shoot/internal_active = 0.0
+parameters/pistol_crosshair/OneShot_shoot/active = false
+parameters/pistol_crosshair/OneShot_shoot/internal_active = false
 parameters/pistol_crosshair/OneShot_shoot/request = 0
 parameters/pistol_crosshair/TimeScale/scale = 10.0
 parameters/rifle_crosshair/OneShot_hit/active = false

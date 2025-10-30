@@ -15,7 +15,7 @@ var control_lock=false
 @onready var animation_tree_node=$AnimationPlayer/AnimationTree
 var hand_state_anim=null
 var hand_state_anim2=null
-
+var first_ready=false
 @onready var hip_bone_pos_node=$Skeleton/Skeleton3D/hip_bone_pos/Area3D
 @onready var spine_bone_pos_node=$Skeleton/Skeleton3D/spine_bone_pos/Area3D
 @onready var leg1_l_bone_pos_node=$Skeleton/Skeleton3D/leg1_L_bone_pos/Area3D
@@ -80,9 +80,10 @@ var hand_state_anim2=null
 @onready var shouder_red_material=preload("res://assets/player/charactor_color_materials/red/shouder_red.tres")
 @onready var skin_body_red_material=preload("res://assets/player/charactor_color_materials/red/skin_body_red.tres")
 
-
+var can_use_sword_list=[0,1]
+var can_use_sword=0
 func _ready() -> void:
-	
+	can_use_sword=can_use_sword_list.pick_random()
 	if charactor_color=="white":
 		$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_white_material)
 		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_white_material)
@@ -222,7 +223,13 @@ func _ready() -> void:
 	
 	# rifle pistol smg sniper shotgun machine_gun
 	using_weapon=["rifle","pistol","smg","sniper","shotgun","machine_gun"].pick_random()
+	
+	if first_ready==false:
+		hand_state_anim.start(using_weapon+"_first_ready")
+	else:
+		hand_state_anim.start(using_weapon+"_equip")
 func _physics_process(delta: float) -> void:
+	
 	if scene_root.game_over==true:
 		control_lock=false
 	if scene_root.game_start&&scene_root.game_over==false:
@@ -232,6 +239,11 @@ func _physics_process(delta: float) -> void:
 	player_navigation_control()
 	player_weapons()
 	player_set_enemy()
+	if can_use_sword==1:
+		ai_sword_attack()
+	player_grenade_attack()
+	player_dazzle()
+	player_blinding()
 	
 	FFA_game_over_kill()
 	player_die_state()
@@ -554,7 +566,13 @@ func player_set_enemy():
 					if animation_tree_node["parameters/run/blend_amount"]<=0.1:
 						if using_weapon_current_ammos>0:
 							if reaction>=reaction_time:
-								can_shoot=true
+								if can_throw==false:
+									if dazzle_state==false:
+										can_shoot=true
+									else:
+										can_shoot=false
+								else:
+									can_shoot=false
 							else:
 								can_shoot=false
 						else:
@@ -566,7 +584,10 @@ func player_set_enemy():
 						if animation_tree_node["parameters/run/blend_amount"]<=0.1:
 							if using_weapon_current_ammos>0:
 								if reaction>=reaction_time:
-									can_shoot=true
+									if can_throw==false:
+										can_shoot=true
+									else:
+										can_shoot=false
 								else:
 									can_shoot=false
 							else:
@@ -730,9 +751,10 @@ func player_die_state():
 			
 		#console
 		if scene_root.has_method("print_A_kills_B"):
-			if print_A_kills_B_lock==true:
-				scene_root.call_deferred("print_A_kills_B",murderer,self)
-				print_A_kills_B_lock=false
+			if murderer!=self:
+				if print_A_kills_B_lock==true:
+					scene_root.call_deferred("print_A_kills_B",murderer,self)
+					print_A_kills_B_lock=false
 var die_time=0
 var die_time_main=5
 var bullets=[]
@@ -752,7 +774,7 @@ func player_respawn():
 			
 				pn.player_point_id=player_point_id
 				pn.charactor_color=charactor_color
-				
+				pn.first_ready=true
 			
 				scene_root.players_points[player_point_id-1].add_child(pn)
 				scene_root.players.append(pn)
@@ -762,6 +784,9 @@ func player_respawn():
 				pn.global_position=scene_root.ai_nav_points[t-1].global_position
 				pn.global_rotation_degrees=scene_root.ai_nav_points[t-1].global_rotation_degrees
 				pn.player_kill_score_FFA=player_kill_score_FFA
+				pn.throw_timer=throw_timer
+				
+				
 				if pn.user_name!=self.user_name:
 					pn.user_name=self.user_name
 				
@@ -794,7 +819,7 @@ func player_respawn():
 					
 					pn.player_point_id=player_point_id
 					pn.charactor_color=charactor_color
-					
+					pn.first_ready=true
 					
 					scene_root.players_points[player_point_id-1].add_child(pn)
 					scene_root.players.append(pn)
@@ -803,6 +828,9 @@ func player_respawn():
 						
 					pn.global_position=scene_root.players_blue_points[t_blue-1].global_position
 					pn.global_rotation_degrees=scene_root.players_blue_points[t_blue-1].global_rotation_degrees
+					pn.throw_timer=throw_timer
+					
+					
 					pn.TDM_team="blue"
 					if pn.user_name!=self.user_name:
 						pn.user_name=self.user_name
@@ -828,7 +856,7 @@ func player_respawn():
 				if(scene_root.ai_red_points_lib[str(t_red)])==true:
 					pn.player_point_id=player_point_id
 					pn.charactor_color=charactor_color
-					
+					pn.first_ready=true
 					
 					scene_root.players_points[player_point_id-1].add_child(pn)
 					scene_root.players.append(pn)
@@ -837,6 +865,9 @@ func player_respawn():
 						
 					pn.global_position=scene_root.players_red_points[t_red-1].global_position
 					pn.global_rotation_degrees=scene_root.players_blue_points[t_red-1].global_rotation_degrees
+					pn.throw_timer=throw_timer
+					
+					
 					pn.TDM_team="red"
 					if pn.user_name!=self.user_name:
 						pn.user_name=self.user_name
@@ -1245,6 +1276,16 @@ func bullet_exp_event(bullet_pos,air_wall_bool):
 			mbea.position=bullet_pos
 			scene_root.add_child(mbea)
 			
+func bullet_hit_water_event(bullet_pos):
+	var wave_scene=preload("res://assets/scenes/snow_basin/water/water_wave_instance.tscn")
+	var ws=wave_scene.instantiate()
+	ws.position=bullet_pos
+	scene_root.add_child(ws)
+	
+	var wave_audio=preload("res://assets/scenes/snow_basin/audio/splash(water-splashes)/splash_audio.tscn")
+	var wa=wave_audio.instantiate()
+	ws.position=bullet_pos
+	scene_root.add_child(wa)
 
 func player_3rd_reloading_anim_event_off():
 	if using_weapon=="rifle":
@@ -1440,3 +1481,189 @@ func FFA_game_over_kill():
 	#print(player_kill_score_FFA)
 	if player_kill_score_FFA>=Main_Menu_Global.setting_max_kills_i:
 		scene_root.kill_score_control(self)
+
+var blinding_state=false#烟雾致盲
+var blinding_state_timer=10
+var dazzle_state=false#闪光致盲
+var dazzle_state_timer=5
+#reaction_time
+#var rifle_distance_range=[30,50]
+#var pistol_distance_range=[30,50]
+#var smg_distance_range=[30,50]
+#var sniper_distance_range=[30,65]
+#var shotgun_distance_range=[20,40]
+#var machine_gun_distance_range=[30,50]
+#var using_weapon_distance_range=[0,0]
+
+func player_blinding():
+	if blinding_state:
+		if bot_diffoculty=="easy":
+			reaction_time=2
+		if bot_diffoculty=="medium":
+			reaction_time=1
+		if bot_diffoculty=="hard":
+			reaction_time=0.2
+			
+		rifle_distance_range[1]=100
+		pistol_distance_range[1]=100
+		smg_distance_range[1]=100
+		sniper_distance_range[1]=130
+		shotgun_distance_range[1]=80
+		machine_gun_distance_range[1]=100
+		
+		blinding_state_timer-=get_physics_process_delta_time()
+		if blinding_state_timer<0:
+			blinding_state=false
+			blinding_state_timer=10
+	else:
+		rifle_distance_range[1]=50
+		pistol_distance_range[1]=50
+		smg_distance_range[1]=50
+		sniper_distance_range[1]=65
+		shotgun_distance_range[1]=40
+		machine_gun_distance_range[1]=50
+		
+		if bot_diffoculty=="easy":
+			reaction_time=1
+		if bot_diffoculty=="medium":
+			reaction_time=0.5
+		if bot_diffoculty=="hard":
+			reaction_time=0.1
+func smoke_my_eyes():
+	blinding_state=true
+
+func player_dazzle():
+	if dazzle_state:
+		dazzle_state_timer-=get_physics_process_delta_time()
+		if dazzle_state_timer<0:
+			dazzle_state=false
+			dazzle_state_timer=5
+	
+func flash_my_eyes():
+	dazzle_state=true
+
+var throw_timer=30
+var throw_random_list=[2,1,0,0,1,2,0,1,2]
+var can_throw=false
+
+var player_grenade_nums_fire=4
+var player_grenade_nums_smoke=4
+var player_grenade_nums_flash=4
+var using_grenade="fire"
+var using_grenade_nums=0
+func player_grenade_attack():
+	throw_timer-=get_physics_process_delta_time()
+	if throw_timer<0:
+		can_throw=true
+	else:
+		can_throw=false
+	if enemy_main!=null:
+		if enemy_main.global_position.distance_to(self.global_position)>15&&enemy_main.global_position.distance_to(self.global_position)<50:
+			if can_throw:
+				if throw_random_list.pick_random()==0:
+					if player_grenade_nums_fire>0:
+						hand_state_anim.travel("grenade_throw")
+						using_grenade="fire"
+						player_grenade_nums_fire-=1
+						throw_timer=30
+				if throw_random_list.pick_random()==1:
+					if player_grenade_nums_smoke>0:
+						hand_state_anim.travel("grenade_throw")
+						using_grenade="smoke"
+						player_grenade_nums_smoke-=1
+						throw_timer=30
+				if throw_random_list.pick_random()==2:
+					if player_grenade_nums_flash>0:
+						hand_state_anim.travel("grenade_throw")
+						using_grenade="flash"
+						player_grenade_nums_flash-=1
+						throw_timer=30
+				
+
+var sword_action_id=[0,1]
+func ai_sword_attack():
+	if can_throw==false&&hand_state_anim.get_current_node()!=("grenade_throw"):
+		if sword_trigger.has_overlapping_bodies():
+			for st in sword_trigger.get_overlapping_bodies():
+				if st!=self:
+					if scene_root.mode=="free_for_all":
+						if hand_state_anim.get_current_node()!="sword_attack":
+							if sword_action_id.pick_random()==0:
+								animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
+							if sword_action_id.pick_random()==1:
+								animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
+							hand_state_anim.travel("sword_attack")
+					if scene_root.mode=="team_death_match":
+						if st.TDM_team!=TDM_team:
+							if hand_state_anim.get_current_node()!="sword_attack":
+								if sword_action_id.pick_random()==0:
+									animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
+								if sword_action_id.pick_random()==1:
+									animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
+								hand_state_anim.travel("sword_attack")
+@onready var grenade_throw_pos_node=$Skeleton/Skeleton3D/spine_bone_pos/grenade_throw_pos
+func ai_throw_grenade_anim_event():
+	if player_die==false&&control_lock:
+		var throw_force=20
+		var grenade_rig=preload("res://assets/player/prefab/grenade_rig.tscn")
+		var gr=grenade_rig.instantiate()
+		gr.scene_root=scene_root
+		gr.position=grenade_throw_pos_node.global_position
+		gr.using_grenade=using_grenade
+		gr.player_master=self
+		if gr is RigidBody3D:
+			gr.apply_impulse(grenade_throw_pos_node.global_transform.basis.z*throw_force)
+			gr.rotation_degrees=grenade_throw_pos_node.global_rotation_degrees
+		scene_root.add_child(gr)
+func ai_grenade_throw_1st_anim_event2():
+	if using_grenade=="fire":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=true
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
+	if using_grenade=="smoke":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=true
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=false
+	if using_grenade=="flash":
+		$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
+		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=true
+
+@onready var sword_trigger=$Skeleton/Skeleton3D/sword_attack_trigger
+func ai_sword_attack_anim_event():
+	var audio_id=[0,1,2]
+	var a_id=audio_id.pick_random()
+	if a_id==0:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[0].autoplay=true
+		sword_trigger.add_child(saa)
+	elif a_id==1:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[1].autoplay=true
+		sword_trigger.add_child(saa)
+	elif a_id==2:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[2].autoplay=true
+		sword_trigger.add_child(saa)
+func ai_sword_attack1_anim_event():
+	if sword_trigger.has_overlapping_bodies():
+		for st in sword_trigger.get_overlapping_bodies():
+			if st!=self:
+				if scene_root.mode=="team_death_match":
+					if st.TDM_team!=TDM_team:
+						st.hit_loss_health_event(100)
+						st.murderer=self
+						var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+						var ska=sword_kill_audio.instantiate()
+						ska.position=sword_trigger.global_position
+						scene_root.add_child(ska)
+				if scene_root.mode=="free_for_all":
+					st.hit_loss_health_event(100)
+					st.murderer=self
+					var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+					var ska=sword_kill_audio.instantiate()
+					ska.position=sword_trigger.global_position
+					scene_root.add_child(ska)

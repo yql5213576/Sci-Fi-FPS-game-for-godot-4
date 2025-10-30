@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=4 uid="uid://bi8cwb6clqqyj"]
+
+[ext_resource type="Texture2D" uid="uid://bvmyma477403s" path="res://assets/scenes/office/book1/book1_Base_color.png" id="1_bre2i"]
+[ext_resource type="Texture2D" uid="uid://dby2jqfctywsl" path="res://assets/scenes/office/book1/book1_Metallic.png" id="2_05lef"]
+[ext_resource type="Texture2D" uid="uid://b1f14eivaiedn" path="res://assets/scenes/office/book1/book1_Normal_OpenGL.png" id="3_6dyo8"]
+[ext_resource type="Texture2D" uid="uid://bqodnylwnfmaj" path="res://assets/scenes/office/book1/book1_Roughness.png" id="4_8qbij"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvamm"]
+resource_name = "book1"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lxijo"]
+_surfaces = [{
+"aabb": AABB(-0.9764144, 0.11324012, -0.56105006, 0.332493, 1.5374223, 2.1370668),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "book1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jmg0y"]
+resource_name = "book1_立方体"
+_surfaces = [{
+"aabb": AABB(-0.9764144, 0.11324012, -0.56105006, 0.332493, 1.5374223, 2.1370668),
+"attribute_data": PackedByteArray("PWkcawAA//8AABxrPWn//wAAAADCFhxrAAAca8IWAAB60hxrPWn//z1pHGt60v//whYAAIQtHGvCFhxrhC0AADzpHGt60v//etIcazzp/////xxrPOn//zzpHGv/////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_mvamm"),
+"name": "book1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP////8AAP//////////////////AAAAAP////8AAAAAAAD/////AAD///////8AAAAA//8AAAAA//////////8AAP+/AAD//////78AAP//AAD/v/////////+/VFWqqlRVqqpUVaqqVFWqqv///3////9/////f////3+qqlRVqqpUVaqqVFWqqlRV/3//f/9//3//f/9//3//f/9//z//f/8//3//P/9//z////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lxijo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwnyk"]
+albedo_texture = ExtResource("1_bre2i")
+metallic = 1.0
+metallic_texture = ExtResource("2_05lef")
+roughness_texture = ExtResource("4_8qbij")
+normal_enabled = true
+normal_texture = ExtResource("3_6dyo8")
+rim_enabled = true
+clearcoat_enabled = true
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.1
+backlight_enabled = true
+backlight_texture = ExtResource("1_bre2i")
+
+[node name="book12" type="Node3D"]
+
+[node name="book1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.43675685, 0, 0, 0, 0.43675685, 0, 0, 0, 0.43675685, 0, 0, 0)
+layers = 2
+mesh = SubResource("ArrayMesh_jmg0y")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_fwnyk")

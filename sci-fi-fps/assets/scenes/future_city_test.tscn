@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbdjlh1d26yo4"]
+[gd_scene load_steps=14 format=3 uid="uid://cbdjlh1d26yo4"]
 
 [ext_resource type="PackedScene" uid="uid://dscm81ws35wtb" path="res://assets/scenes/sketchfab's_test_scenes/future_city/future_city_1.tscn" id="1_7mi0j"]
-[ext_resource type="Script" uid="uid://dd8clyjt0nfsg" path="res://assets/scenes/future_city_test.gd" id="1_ltbh3"]
+[ext_resource type="Script" uid="uid://bukqsu73x57nl" path="res://assets/scenes/future_city_test.gd" id="1_ltbh3"]
 [ext_resource type="PackedScene" uid="uid://7lvhebuxrav1" path="res://assets/player/prefab/hero_player_3rd.tscn" id="2_3eefn"]
 [ext_resource type="Texture2D" uid="uid://ddj61jaro2u28" path="res://assets/polyhaven_assets/autumn_field_puresky_8k.hdr" id="2_a7rbw"]
-[ext_resource type="PackedScene" uid="uid://cy1fypj1ufrf6" path="res://assets/player/AI/prefab/hero_AI.tscn" id="4_gng1n"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3eefn"]
 panorama = ExtResource("2_a7rbw")
@@ -43,6 +42,14 @@ height = 4.96568
 radius = 0.769
 height = 4.966
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gng1n"]
+radius = 0.769425
+height = 4.96568
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ltbh3"]
+radius = 0.769
+height = 4.966
+
 [node name="future_city_test" type="Node3D"]
 script = ExtResource("1_ltbh3")
 
@@ -57,7 +64,7 @@ navigation_mesh = SubResource("NavigationMesh_4mdk6")
 [node name="Sketchfab_Scene" parent="map/NavigationRegion3D" instance=ExtResource("1_7mi0j")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="map"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 74.4228, 13.9807)
+transform = Transform3D(1, 0, 0, 0, 0.70710695, 0.70710695, 0, -0.70710695, 0.70710695, 0, 74.4228, 13.9807)
 light_energy = 2.0
 shadow_enabled = true
 
@@ -67,55 +74,11 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6685, 3.5, -19.7917)
 
 [node name="hero_player" parent="player/point1" instance=ExtResource("2_3eefn")]
+user_name = "test_player"
+charactor_color = "blue"
+TDM_team = "blue"
+player_type = "rifle_man"
 player_point_id = 1
-
-[node name="point2" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6935, 3.5, -156.375)
-
-[node name="hero_AI" parent="player/point2" instance=ExtResource("4_gng1n")]
-player_point_id = 2
-
-[node name="point3" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.711, 3.5, -83.5184)
-
-[node name="hero_AI" parent="player/point3" instance=ExtResource("4_gng1n")]
-player_point_id = 3
-
-[node name="point4" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3291, 3.5, 118.223)
-
-[node name="hero_AI" parent="player/point4" instance=ExtResource("4_gng1n")]
-player_point_id = 4
-
-[node name="point5" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9292, 3.5, 186.339)
-
-[node name="hero_AI" parent="player/point5" instance=ExtResource("4_gng1n")]
-player_point_id = 5
-
-[node name="point6" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -188.304, 3.5, 158.763)
-
-[node name="hero_AI" parent="player/point6" instance=ExtResource("4_gng1n")]
-player_point_id = 6
-
-[node name="point7" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.605, 3.5, 186.476)
-
-[node name="hero_AI" parent="player/point7" instance=ExtResource("4_gng1n")]
-player_point_id = 7
-
-[node name="point8" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.618, 3.5, -39.0925)
-
-[node name="hero_AI" parent="player/point8" instance=ExtResource("4_gng1n")]
-player_point_id = 8
-
-[node name="point9" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.455, 3.5, 21.747)
-
-[node name="hero_AI" parent="player/point9" instance=ExtResource("4_gng1n")]
-player_point_id = 9
 
 [node name="air_wall" type="StaticBody3D" parent="."]
 collision_layer = 8
@@ -345,3 +308,186 @@ shape = SubResource("CapsuleShape3D_ltbh3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/18"]
 mesh = SubResource("CapsuleMesh_uy4bb")
+
+[node name="team_points" type="Node3D" parent="."]
+visible = false
+
+[node name="blue_points" type="Node3D" parent="team_points"]
+
+[node name="1" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.68471, 3.6149812, -12.95076)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/1"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/1"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="2" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.897804, 5.0793667, -12.654688)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/2"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/2"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="3" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.350876, 2.6865177, 29.635414)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/3"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/3"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="4" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.2175, 3.0857325, 13.76538)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/4"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/4"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="5" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.42735, 3.0195327, -4.7679644)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/5"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/5"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="6" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.45257, 3.685563, 10.503824)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/6"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/6"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="7" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.46693, 2.5903358, 0.8673525)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/7"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/7"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="8" type="Area3D" parent="team_points/blue_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.76295, 2.7001896, -7.2700424)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/blue_points/8"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/blue_points/8"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="red_points" type="Node3D" parent="team_points"]
+
+[node name="1" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.87156, 3.2174869, 4.6131897)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/1"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/1"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="2" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.001976, 3.2554657, 4.842993)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/2"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/2"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="3" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.35803, 3.2715116, 5.0404053)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/3"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/3"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="4" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.73053, 3.1733646, 7.489583)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/4"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/4"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="5" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.11064, 3.038837, 7.3201275)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/5"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/5"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="6" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.62756, 3.167408, 11.092313)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/6"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/6"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="7" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.238304, 3.2040877, 16.025986)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/7"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/7"]
+mesh = SubResource("CapsuleMesh_ltbh3")
+
+[node name="8" type="Area3D" parent="team_points/red_points"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.0424, 3.7727935, 14.000134)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="team_points/red_points/8"]
+shape = SubResource("CapsuleShape3D_gng1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="team_points/red_points/8"]
+mesh = SubResource("CapsuleMesh_ltbh3")

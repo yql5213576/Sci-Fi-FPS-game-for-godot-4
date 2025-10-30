@@ -16,6 +16,8 @@ var hand_state_3rd_anim2=null
 var anim_tree_1st=null
 var hand_state_1st_anim=null
 var hand_state_1st_anim2=null
+
+var first_ready=false
 @onready var scene_root=$"../../.."
 
 
@@ -25,6 +27,12 @@ var hand_state_1st_anim2=null
 @onready var sniper_model=$Skeleton/Skeleton3D/right_hand/sniper
 @onready var shotgun_model=$Skeleton/Skeleton3D/right_hand/shotgun
 @onready var machine_gun_model=$Skeleton/Skeleton3D/right_hand/machine_gun
+
+@onready var sword_model=$Skeleton/Skeleton3D/right_hand/sword
+
+@onready var grenade_fire_model=$Skeleton/Skeleton3D/right_hand/grenade_fire
+@onready var grenade_smoke_model=$Skeleton/Skeleton3D/right_hand/grenade_smoke
+@onready var grenade_flash_model=$Skeleton/Skeleton3D/right_hand/grenade_flash
 
 @onready var rifle_mag_model=$Skeleton/Skeleton3D/left_hand/rifle1_mag
 @onready var pistol_mag_model=$Skeleton/Skeleton3D/left_hand/pistol1_mag
@@ -169,6 +177,12 @@ func _ready() -> void:
 	shotgun_model.player_master=self
 	machine_gun_model.player_master=self
 	
+	sword_model.player_master=self
+	
+	grenade_fire_model.player_master=self
+	grenade_smoke_model.player_master=self
+	grenade_flash_model.player_master=self
+	
 	rifle_mag_model.player_master=self
 	pistol_mag_model.player_master=self
 	smg_mag_model.player_master=self
@@ -206,9 +220,16 @@ func _ready() -> void:
 		$hero_anim_1st_all_weapons.camera_main.current=false
 		$SpringArm3D/Camera3D_3rd.current=true
 		$hero_anim_1st_all_weapons.sub_viewport_ui.visible=false
+	
+	if first_ready==false:
+		hand_state_1st_anim.start(using_weapon+"_first_ready")
+		hand_state_3rd_anim.start(using_weapon+"_first_ready")
+	else:
+		hand_state_1st_anim.start(using_weapon+"_equip")
+		hand_state_3rd_anim.start(using_weapon+"_equip")
 func _physics_process(delta: float) -> void:
 	
-	#if Input.is_action_just_pressed("die_test"):
+	
 		#if Engine.time_scale==1:
 			#Engine.time_scale=0.1
 			#AudioServer.playback_speed_scale=0.1
@@ -230,6 +251,9 @@ func _physics_process(delta: float) -> void:
 	player_ui_control()
 	player_die_state()
 	
+	player_idle_state()#prop
+	player_sword_attack()
+	player_grenade_attack()
 	FFA_game_over_kill()
 	game_over_func()
 	
@@ -648,6 +672,22 @@ func player_animation_3rd_model():
 	#------spine_aiming------
 	
 	
+	#------spine_sword_y------
+	if hand_state_3rd_anim.get_current_node()=="sword_attack":
+		anim_tree_3rd["parameters/StateMachine/sword_attack/y1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/y1/blend_amount"],0).lerp(Vector2(arm_rot_y,0),0.3).x
+		anim_tree_3rd["parameters/StateMachine/sword_attack/y2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/y2/blend_amount"],0).lerp(Vector2(arm_rot_y,0),0.3).x
+	else:
+		anim_tree_3rd["parameters/StateMachine/sword_attack/y1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/y1/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+		anim_tree_3rd["parameters/StateMachine/sword_attack/y2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/y2/blend_amount"],0).lerp(Vector2(arm_rot_y,0),0.3).x
+	#------spine_sword_y------
+	
+	#------spine_grenade_y------
+	if hand_state_3rd_anim.get_current_node()=="grenade_throw":
+		anim_tree_3rd["parameters/StateMachine/grenade_throw/y/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/y/blend_amount"],0).lerp(Vector2(arm_rot_y,0),0.3).x
+	else:
+		anim_tree_3rd["parameters/StateMachine/grenade_throw/y/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/y/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+	#------spine_grenade_y------
+	
 	#------spine_idle_x------
 	if is_on_floor():
 		if using_weapon=="rifle":
@@ -883,8 +923,59 @@ func player_animation_3rd_model():
 		anim_tree_3rd["parameters/StateMachine/machine_gun_aiming/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/machine_gun_aiming/x/blend_amount"],0).lerp(Vector2(0,0),0.3).x
 	#------spine_aiming_x------
 	
+	#------spine_sword_x------
+	if hand_state_3rd_anim.get_current_node()=="sword_attack":
+		if d_vec.y>0:
+			if d_vec.x>0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif  d_vec.x<0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(1,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif d_vec.x==0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			
+		elif  d_vec.y<0:
+			if d_vec.x>0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(1,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif d_vec.x<0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif d_vec.x==0:
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+				anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+		elif d_vec.y==0:
+			anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+			anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+	else:
+		anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x1/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+		anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/sword_attack/x2/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+	#------spine_sword_x------
 	
-	
+	#------spine_grenade_x------
+	if hand_state_3rd_anim.get_current_node()=="grenade_throw":
+		if d_vec.y>0:
+			if d_vec.x>0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif  d_vec.x<0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(1,0),0.3).x
+			elif d_vec.x==0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+				
+		elif  d_vec.y<0:
+			if d_vec.x>0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(1,0),0.3).x
+			elif d_vec.x<0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(-1,0),0.3).x
+			elif d_vec.x==0:
+				anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+		elif d_vec.y==0:
+			anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+	else:
+		anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"]=Vector2(anim_tree_3rd["parameters/StateMachine/grenade_throw/x/blend_amount"],0).lerp(Vector2(0,0),0.3).x
+	#------spine_grenade_x------
 	
 	#------weapon_state_control------
 	if using_weapon=="rifle":
@@ -1006,7 +1097,7 @@ var using_weapon_current_max_ammos=0
 var using_weapon_ammos_needed=0
 var using_weapon_spare_ammos=0
 
-var player_type=""
+@export var player_type=""
 var next_res_type=""
 func set_weapon_type(next_type):
 	if next_res_type!=next_type:
@@ -1449,6 +1540,12 @@ func player_die_state():
 		shotgun_model.die_cast_shadows()
 		machine_gun_model.die_cast_shadows()
 		
+		sword_model.die_cast_shadows()
+		
+		grenade_fire_model.die_cast_shadows()
+		grenade_smoke_model.die_cast_shadows()
+		grenade_flash_model.die_cast_shadows()
+		
 		rifle_model.sight_node.die_cast_shadows()
 		smg_model.die_cast_shadows()
 		$Skeleton/Skeleton3D/right_hand/sniper/sniper1_bullet_set.die_cast_shadows()
@@ -1537,9 +1634,10 @@ func player_die_state():
 			pass
 		#console
 		if scene_root.has_method("print_A_kills_B"):
-			if print_A_kills_B_lock==true:
-				scene_root.call_deferred("print_A_kills_B",murderer,self)
-				print_A_kills_B_lock=false
+			if murderer!=self:
+				if print_A_kills_B_lock==true:
+					scene_root.call_deferred("print_A_kills_B",murderer,self)
+					print_A_kills_B_lock=false
 var die_time=0
 var die_time_main=5
 var bullets=[]
@@ -1568,6 +1666,9 @@ func player_respawn():
 						pn.player_type=next_res_type
 					else:
 						pn.player_type=player_type
+				pn.first_ready=true
+				
+				
 				scene_root.players_points[player_point_id-1].add_child(pn)
 				scene_root.players.append(pn)
 				if scene_root.game_start==true:
@@ -1621,7 +1722,9 @@ func player_respawn():
 							pn.player_type=next_res_type
 						else:
 							pn.player_type=player_type
-							
+					pn.first_ready=true
+					
+					
 					scene_root.players_points[player_point_id-1].add_child(pn)
 					scene_root.players.append(pn)
 					if scene_root.game_start==true:
@@ -1635,6 +1738,7 @@ func player_respawn():
 					scene_root.user_player=pn
 					if pn.user_name!=self.user_name:
 						pn.user_name=self.user_name
+					
 					
 					if bullets.size()>0:
 						for b in range(bullets.size()):
@@ -1667,7 +1771,9 @@ func player_respawn():
 							pn.player_type=next_res_type
 						else:
 							pn.player_type=player_type
-							
+					pn.first_ready=true
+					
+					
 					scene_root.players_points[player_point_id-1].add_child(pn)
 					scene_root.players.append(pn)
 					if scene_root.game_start==true:
@@ -1680,6 +1786,7 @@ func player_respawn():
 					scene_root.user_player=pn
 					if pn.user_name!=self.user_name:
 						pn.user_name=self.user_name
+					
 					
 					if bullets.size()>0:
 						for b in range(bullets.size()):
@@ -2485,6 +2592,18 @@ func player_3rd_hit_blood_event(bullet_pos,weapon):
 		var bha=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
+
+func bullet_hit_water_event(bullet_pos):
+	var wave_scene=preload("res://assets/scenes/snow_basin/water/water_wave_instance.tscn")
+	var ws=wave_scene.instantiate()
+	ws.position=bullet_pos
+	scene_root.add_child(ws)
+	
+	var wave_audio=preload("res://assets/scenes/snow_basin/audio/splash(water-splashes)/splash_audio.tscn")
+	var wa=wave_audio.instantiate()
+	ws.position=bullet_pos
+	scene_root.add_child(wa)
+
 var enemy_pos=Vector3()
 
 var murderer=null
@@ -2783,3 +2902,150 @@ func machine_gun_reload4_audio_event():
 
 func print_killing_tips(text):
 	$hero_anim_1st_all_weapons.print_killing_tips(text)
+
+
+var can_throw_grenade=false
+var can_close_combat=false
+func player_idle_state():
+	#print($hero_anim_1st_all_weapons.player_1st_animation_tree["parameters/StateMachine/playback"].get_current_node(),"  ","1st")
+	#print(anim_tree_3rd["parameters/StateMachine/playback"].get_current_node(),"  ","3rd")
+	
+	
+	#print(can_throw_grenade,"  ","can_throw_grenade")
+	#print(can_close_combat,"  ","can_close_combat")
+	if (hand_state_1st_anim.get_current_node()==using_weapon+"_idle"&&hand_state_3rd_anim.get_current_node()==using_weapon+"_idle")&&(hand_state_1st_anim.get_fading_from_node()==""&&hand_state_3rd_anim.get_fading_from_node()==""):
+		can_throw_grenade=true
+		can_close_combat=true
+	else:
+		can_throw_grenade=false
+		can_close_combat=false
+
+func player_sword_attack():
+	var sword_action_id=[0,1]
+	if hand_state_1st_anim.get_current_node()=="sword_attack":
+		if hand_state_3rd_anim.get_current_node()!="sword_attack":
+			hand_state_3rd_anim.travel("sword_attack")
+			
+	if Input.is_action_just_pressed("sword_attack"):
+		if can_close_combat&&control_lock:
+			hand_state_1st_anim.travel("sword_attack")
+			hand_state_3rd_anim.travel("sword_attack")
+			if sword_action_id.pick_random()==0:
+				$hero_anim_1st_all_weapons.player_1st_animation_tree["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
+				anim_tree_3rd["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
+			if sword_action_id.pick_random()==1:
+				$hero_anim_1st_all_weapons.player_1st_animation_tree["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
+				anim_tree_3rd["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
+
+var using_grenade="fire" #fire,smoke,flash
+var using_grenade_id=0
+
+var player_grenade_nums_fire=4
+var player_grenade_nums_smoke=4
+var player_grenade_nums_flash=4
+var using_grenade_nums=0
+func player_grenade_attack():
+	if $hero_anim_1st_all_weapons.sniper_camera.current==false:
+		if hand_state_1st_anim.get_current_node()!="grenade_throw":
+			if Input.is_action_just_pressed("mouse_wheel_up"):
+				if using_grenade_id<2:
+					using_grenade_id+=1
+				else:
+					using_grenade_id=0
+			if Input.is_action_just_pressed("mouse_wheel_down"):
+				if using_grenade_id>0:
+					using_grenade_id-=1
+				else:
+					using_grenade_id=2
+		if using_grenade_id==0:
+			using_grenade="fire"
+			using_grenade_nums=player_grenade_nums_fire
+		elif using_grenade_id==1:
+			using_grenade="smoke"
+			using_grenade_nums=player_grenade_nums_smoke
+		elif using_grenade_id==2:
+			using_grenade="flash"
+			using_grenade_nums=player_grenade_nums_flash
+		
+	if hand_state_1st_anim.get_current_node()=="grenade_throw":
+		if hand_state_3rd_anim.get_current_node()!="grenade_throw":
+			hand_state_3rd_anim.travel("grenade_throw")
+	if Input.is_action_just_released("throw_grenade"):
+		if using_grenade_nums>0:
+			if can_throw_grenade&&control_lock:
+				hand_state_1st_anim.travel("grenade_throw")
+				hand_state_3rd_anim.travel("grenade_throw")
+				if using_grenade=="fire":
+					player_grenade_nums_fire-=1
+				if using_grenade=="smoke":
+					player_grenade_nums_smoke-=1
+				if using_grenade=="flash":
+					player_grenade_nums_flash-=1
+		else:
+			print("no grenade")
+	
+	if flash_my_eyes_bool:
+		flash_timer+=get_physics_process_delta_time()
+	if flash_timer>5:
+		$hero_anim_1st_all_weapons.white_screen.modulate=$hero_anim_1st_all_weapons.white_screen.modulate.lerp(Color("00000000"),0.005)
+
+func grenade_throw_1st_anim_event():
+	if player_die==false&&control_lock:
+		var throw_force=20
+		var grenade_rig=preload("res://assets/player/prefab/grenade_rig.tscn")
+		var gr=grenade_rig.instantiate()
+		gr.scene_root=scene_root
+		gr.position=$hero_anim_1st_all_weapons.grenade_throw_pos_node.global_position
+		gr.using_grenade=using_grenade
+		gr.player_master=self
+		if gr is RigidBody3D:
+			gr.apply_impulse($hero_anim_1st_all_weapons.grenade_throw_pos_node.global_transform.basis.z*throw_force)
+			gr.rotation_degrees=$hero_anim_1st_all_weapons.grenade_throw_pos_node.global_rotation_degrees
+		scene_root.add_child(gr)
+		#$hero_anim_1st_all_weapons.grenade_throw_pos_node
+
+var flash_my_eyes_bool=false
+var flash_timer=0
+func flash_my_eyes():
+	flash_timer=0
+	flash_my_eyes_bool=false
+	$hero_anim_1st_all_weapons.white_screen.modulate=Color("ffffffff")
+	flash_my_eyes_bool=true
+
+func sword_attack_anim_event():
+	var audio_id=[0,1,2]
+	var a_id=audio_id.pick_random()
+	if a_id==0:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[0].autoplay=true
+		$hero_anim_1st_all_weapons.add_child(saa)
+	elif a_id==1:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[1].autoplay=true
+		$hero_anim_1st_all_weapons.add_child(saa)
+	elif a_id==2:
+		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa=sword_attack_audio.instantiate()
+		saa.get_children()[2].autoplay=true
+		$hero_anim_1st_all_weapons.add_child(saa)
+func sword_attack1_anim_event():
+	if $hero_anim_1st_all_weapons.sword_trigger.has_overlapping_bodies():
+		for st in $hero_anim_1st_all_weapons.sword_trigger.get_overlapping_bodies():
+			if st!=self:
+				if scene_root.mode=="team_death_match":
+					if st.TDM_team!=TDM_team:
+						st.hit_loss_health_event(100)
+						st.murderer=self
+						var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+						var ska=sword_kill_audio.instantiate()
+						ska.position=$hero_anim_1st_all_weapons.global_position
+						scene_root.add_child(ska)
+				if scene_root.mode=="free_for_all":
+					st.hit_loss_health_event(100)
+					st.murderer=self
+					var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+					var ska=sword_kill_audio.instantiate()
+					ska.position=$hero_anim_1st_all_weapons.global_position
+					scene_root.add_child(ska)

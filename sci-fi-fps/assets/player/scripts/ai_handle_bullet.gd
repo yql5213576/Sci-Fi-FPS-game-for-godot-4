@@ -153,6 +153,10 @@ var machine_gun_damage=[[21,33,44,57]#"hip"
 
 func bullet_main_func(weapon_type):
 	if weapon_type=="rifle":
+		if self.is_colliding():
+			if self.get_collider().get_collision_layer()==256:
+				player_master.bullet_hit_water_event(get_collision_point())
+				self.queue_free()
 		if player_master!=null:
 			self.add_exception(player_master)
 		target_position.z+=bullet_speed*get_physics_process_delta_time()
@@ -256,6 +260,10 @@ func bullet_main_func(weapon_type):
 				
 				
 	if weapon_type=="pistol":
+		if self.is_colliding():
+			if self.get_collider().get_collision_layer()==256:
+				player_master.bullet_hit_water_event(get_collision_point())
+				self.queue_free()
 		if player_master!=null:
 			self.add_exception(player_master)
 		target_position.z+=bullet_speed*get_physics_process_delta_time()
@@ -356,6 +364,10 @@ func bullet_main_func(weapon_type):
 				for i in range(sub_objects.size()):
 					sub_objects[i].queue_free()
 	if weapon_type=="smg":
+		if self.is_colliding():
+			if self.get_collider().get_collision_layer()==256:
+				player_master.bullet_hit_water_event(get_collision_point())
+				self.queue_free()
 		if player_master!=null:
 			self.add_exception(player_master)
 		target_position.z+=bullet_speed*get_physics_process_delta_time()
@@ -457,6 +469,10 @@ func bullet_main_func(weapon_type):
 				for i in range(sub_objects.size()):
 					sub_objects[i].queue_free()
 	if weapon_type=="sniper":
+		if self.is_colliding():
+			if self.get_collider().get_collision_layer()==256:
+				player_master.bullet_hit_water_event(get_collision_point())
+				self.queue_free()
 		if player_master!=null:
 			self.add_exception(player_master)
 		target_position.z+=bullet_speed*get_physics_process_delta_time()
@@ -581,6 +597,10 @@ func bullet_main_func(weapon_type):
 			
 			
 		if ray1!=null:
+			if ray1.is_colliding():
+				if ray1.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray1.get_collision_point())
+					ray1.queue_free()
 			ray1.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray1.is_colliding():
 				if ray1.get_collider().get_collision_layer()!=8:
@@ -669,6 +689,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray1.get_collision_point(),true)
 					ray1.queue_free()
 		if ray2!=null:
+			if ray2.is_colliding():
+				if ray2.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray2.get_collision_point())
+					ray2.queue_free()
 			ray2.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray2.is_colliding():
 				if ray2.get_collider().get_collision_layer()!=8:
@@ -757,6 +781,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray2.get_collision_point(),true)
 					ray2.queue_free()
 		if ray3!=null:
+			if ray3.is_colliding():
+				if ray3.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray3.get_collision_point())
+					ray3.queue_free()
 			ray3.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray3.is_colliding():
 				if ray3.get_collider().get_collision_layer()!=8:
@@ -845,6 +873,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray3.get_collision_point(),true)
 					ray3.queue_free()
 		if ray4!=null:
+			if ray4.is_colliding():
+				if ray4.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray4.get_collision_point())
+					ray4.queue_free()
 			ray4.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray4.is_colliding():
 				if ray4.get_collider().get_collision_layer()!=8:
@@ -933,6 +965,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray4.get_collision_point(),true)
 					ray4.queue_free()
 		if ray5!=null:
+			if ray5.is_colliding():
+				if ray5.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray5.get_collision_point())
+					ray5.queue_free()
 			ray5.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray5.is_colliding():
 				if ray5.get_collider().get_collision_layer()!=8:
@@ -1021,6 +1057,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray5.get_collision_point(),true)
 					ray5.queue_free()
 		if ray6!=null:
+			if ray6.is_colliding():
+				if ray6.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray6.get_collision_point())
+					ray6.queue_free()
 			ray6.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray6.is_colliding():
 				if ray6.get_collider().get_collision_layer()!=8:
@@ -1109,6 +1149,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray6.get_collision_point(),true)
 					ray6.queue_free()
 		if ray7!=null:
+			if ray7.is_colliding():
+				if ray7.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray7.get_collision_point())
+					ray7.queue_free()
 			ray7.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray7.is_colliding():
 				if ray7.get_collider().get_collision_layer()!=8:
@@ -1197,6 +1241,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray7.get_collision_point(),true)
 					ray7.queue_free()
 		if ray8!=null:
+			if ray8.is_colliding():
+				if ray8.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray8.get_collision_point())
+					ray8.queue_free()
 			ray8.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray8.is_colliding():
 				if ray8.get_collider().get_collision_layer()!=8:
@@ -1285,6 +1333,10 @@ func bullet_main_func(weapon_type):
 					player_master.bullet_exp_event(ray8.get_collision_point(),true)
 					ray8.queue_free()
 		if ray9!=null:
+			if ray9.is_colliding():
+				if ray9.get_collider().get_collision_layer()==256:
+					player_master.bullet_hit_water_event(ray9.get_collision_point())
+					ray9.queue_free()
 			ray9.target_position.z+=bullet_speed*get_physics_process_delta_time()
 			if ray9.is_colliding():
 				if ray9.get_collider().get_collision_layer()!=8:
@@ -1380,6 +1432,10 @@ func bullet_main_func(weapon_type):
 	
 	
 	if weapon_type=="machine_gun":
+		if self.is_colliding():
+			if self.get_collider().get_collision_layer()==256:
+				player_master.bullet_hit_water_event(get_collision_point())
+				self.queue_free()
 		if player_master!=null:
 			self.add_exception(player_master)
 		target_position.z+=bullet_speed*get_physics_process_delta_time()
