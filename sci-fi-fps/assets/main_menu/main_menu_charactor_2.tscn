@@ -1,4 +1,4 @@
-[gd_scene load_steps=376 format=4 uid="uid://8p55dvik4lje"]
+[gd_scene load_steps=377 format=4 uid="uid://8p55dvik4lje"]
 
 [ext_resource type="Texture2D" uid="uid://cuw21p1ko7cd0" path="res://assets/player/textures/rifle/gun_body_Base_color.png" id="1_688y2"]
 [ext_resource type="Texture2D" uid="uid://n8wdbbi8gshd" path="res://assets/player/textures/rifle/gun_body_Height.png" id="2_2dbia"]
@@ -173,6 +173,7 @@
 [ext_resource type="Animation" uid="uid://ltqbjdxtf745" path="res://assets/player/animations/3rd_sniper/sniper_reload2.res" id="170_2xdyr"]
 [ext_resource type="Animation" uid="uid://cfpsn453uihy0" path="res://assets/player/animations/3rd_sniper/sniper_run.res" id="171_xa40c"]
 [ext_resource type="Animation" uid="uid://csqywjtlqfxc" path="res://assets/player/animations/3rd_sniper/sniper_unequip.res" id="172_tj7x2"]
+[ext_resource type="Texture2D" uid="uid://c3qfwdutfc7wk" path="res://assets/menu_arts/menu_bg1.png" id="174_o88bf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2onew"]
 resource_name = "armor_arms"
@@ -2970,6 +2971,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_18g2u")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, -1, 1.9106855e-15, 4.371139e-08, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -2979,6 +2981,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-1, 3.821371e-15, 8.742278e-08, 8.742278e-08, 4.371139e-08, 1, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -2988,6 +2991,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(0.7071067, -3.090862e-08, -0.7071068, -0.7071068, -3.090862e-08, -0.7071067, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -2997,6 +3001,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D5" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-0.7071068, -3.0908616e-08, -0.7071067, -0.7071067, 3.0908623e-08, 0.7071068, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -3006,6 +3011,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D6" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-0.25881907, -4.222196e-08, -0.9659258, -0.9659258, 1.1313341e-08, 0.25881907, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -3015,6 +3021,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D7" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-0.9659258, 1.1313343e-08, 0.25881913, 0.25881913, 4.222196e-08, 0.9659258, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -3024,6 +3031,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D8" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(0.49999988, -3.7855177e-08, -0.8660254, -0.8660254, -2.1855692e-08, -0.49999988, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -3033,6 +3041,7 @@ draw_pass_1 = SubResource("QuadMesh_o16l1")
 
 [node name="GPUParticles3D9" type="GPUParticles3D" parent="hero_player/Skeleton"]
 transform = Transform3D(-0.8660254, -2.185569e-08, -0.49999988, -0.49999988, 3.7855177e-08, 0.8660254, 0, 1, -4.371139e-08, -0.5080214, 1.4804406, 2.1480038)
+visible = false
 amount = 50
 lifetime = 0.16
 speed_scale = 0.3
@@ -3055,6 +3064,10 @@ environment = SubResource("Environment_co87v")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.78260815, 0.086637296, 0.6164564, 0, 0.99026805, -0.1391731, -0.62251467, 0.108918004, 0.77499187, 0.555, 1.535, 3.004)
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.49)
+texture = ExtResource("174_o88bf")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.069957, 1.1629362)

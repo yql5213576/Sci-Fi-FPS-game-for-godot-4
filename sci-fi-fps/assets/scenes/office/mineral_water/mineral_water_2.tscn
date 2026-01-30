@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=4 uid="uid://do3tlfevpxg11"]
+[gd_scene load_steps=33 format=4 uid="uid://do3tlfevpxg11"]
 
+[ext_resource type="Script" uid="uid://uw065ka5mev" path="res://assets/scenes/office/mineral_water/mineral_water_2.gd" id="1_bbjc7"]
 [ext_resource type="Texture2D" uid="uid://c3ialnqufcnw2" path="res://assets/scenes/office/mineral_water/mineral_water_bottle_transparent_Base_color.png" id="1_tjt41"]
 [ext_resource type="Texture2D" uid="uid://by1ac1oy46u0c" path="res://assets/scenes/office/mineral_water/mineral_water_bottle_transparent_Height.png" id="2_812x4"]
 [ext_resource type="Texture2D" uid="uid://dfe6g44nflh5l" path="res://assets/scenes/office/mineral_water/mineral_water_bottle_transparent_Metallic.png" id="3_myrm3"]
@@ -224,6 +225,7 @@ height = 0.79992676
 radius = 0.125
 
 [node name="mineral_water2" type="RigidBody3D"]
+script = ExtResource("1_bbjc7")
 
 [node name="mineral_water" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.14434445, 0, 0, 0, 0.14434445, 0, 0, 0, 0.14434445, 0, 0, 0)

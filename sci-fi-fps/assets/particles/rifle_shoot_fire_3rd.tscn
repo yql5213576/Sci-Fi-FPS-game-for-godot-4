@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://be6oswpa3pi1g"]
+[gd_scene format=3 uid="uid://be6oswpa3pi1g"]
 
 [ext_resource type="Script" uid="uid://boi4l2gckvphj" path="res://assets/particles/rifle_shoot_fire_3_rd.gd" id="1_mtj6a"]
-[ext_resource type="Texture2D" uid="uid://dwytd5e6bmwml" path="res://assets/Kenney's_assets/PNG/Explosion/explosion00.png" id="2_qqkkk"]
+[ext_resource type="Texture2D" uid="uid://cxrwvn06dh41i" path="res://assets/Kenney's_assets/kenney_particle-pack/PNG (Transparent)/fire_02.png" id="2_mtj6a"]
 [ext_resource type="Texture2D" uid="uid://ch47085argn5c" path="res://assets/Kenney's_assets/PNG/Flash/flash00.png" id="3_di4vy"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ioqti"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qqkkk"]
 emission_shape = 1
 emission_sphere_radius = 0.1
 gravity = Vector3(0, 3, 0)
@@ -19,17 +19,17 @@ tangential_accel_max = 5.0
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(4, 4, 4, 1)
-albedo_texture = ExtResource("2_qqkkk")
+albedo_color = Color(18.892157, 9.172958, 6.4966564, 1)
+albedo_texture = ExtResource("2_mtj6a")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 proximity_fade_enabled = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_qdfkh"]
+[sub_resource type="QuadMesh" id="QuadMesh_di4vy"]
 material = SubResource("StandardMaterial3D_fixdd")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bftne"]
 transparency = 1
@@ -42,14 +42,14 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_omnto"]
+[sub_resource type="QuadMesh" id="QuadMesh_x3eq4"]
 material = SubResource("StandardMaterial3D_bftne")
 size = Vector2(0.2, 0.2)
 
-[node name="rifle_shoot_fire" type="Node3D"]
+[node name="rifle_shoot_fire" type="Node3D" unique_id=2138266145]
 script = ExtResource("1_mtj6a")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1125586624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0680019, 0, 0)
 layers = 9
 cast_shadow = 3
@@ -59,9 +59,9 @@ lifetime = 0.1
 one_shot = true
 explosiveness = 1.0
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_ioqti")
+process_material = SubResource("ParticleProcessMaterial_qqkkk")
 draw_passes = 2
-draw_pass_1 = SubResource("QuadMesh_qdfkh")
-draw_pass_2 = SubResource("QuadMesh_omnto")
+draw_pass_1 = SubResource("QuadMesh_di4vy")
+draw_pass_2 = SubResource("QuadMesh_x3eq4")
 
 [connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

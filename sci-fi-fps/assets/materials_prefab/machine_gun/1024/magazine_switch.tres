@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bgrqktqafudqb"]
+
+[ext_resource type="Texture2D" uid="uid://bpypvesn0krlj" path="res://assets/player/textures/machine_gun/low_1024/magazine_switch_Base_color.png" id="1_wm307"]
+[ext_resource type="Texture2D" uid="uid://cqbx88lo3d88s" path="res://assets/player/textures/machine_gun/low_1024/magazine_switch_Metallic.png" id="2_aehop"]
+[ext_resource type="Texture2D" uid="uid://7tcsns1gv2hi" path="res://assets/player/textures/machine_gun/low_1024/magazine_switch_Normal_OpenGL.png" id="3_bq18t"]
+[ext_resource type="Texture2D" uid="uid://4lfplo57h42d" path="res://assets/player/textures/machine_gun/low_1024/magazine_switch_Roughness.png" id="4_e1l7j"]
+
+[resource]
+albedo_texture = ExtResource("1_wm307")
+metallic = 1.0
+metallic_texture = ExtResource("2_aehop")
+roughness_texture = ExtResource("4_e1l7j")
+normal_enabled = true
+normal_texture = ExtResource("3_bq18t")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dfhs6bxhe42ul"]
+
+[ext_resource type="Texture2D" uid="uid://dx1smqoaubqma" path="res://assets/player/textures/sword/low_256/sword_Base_color.png" id="1_x3nfe"]
+[ext_resource type="Texture2D" uid="uid://bejjqaqkkgxuq" path="res://assets/player/textures/sword/low_256/sword_Metallic.png" id="2_wx7cd"]
+[ext_resource type="Texture2D" uid="uid://cqkgjm21mvotm" path="res://assets/player/textures/sword/low_256/sword_Normal_OpenGL.png" id="3_iwjbg"]
+[ext_resource type="Texture2D" uid="uid://cjlvpypdtykr" path="res://assets/player/textures/sword/low_256/sword_Roughness.png" id="4_raxji"]
+
+[resource]
+albedo_color = Color(3.2944162, 3.2944162, 3.2944162, 1)
+albedo_texture = ExtResource("1_x3nfe")
+metallic = 1.0
+metallic_texture = ExtResource("2_wx7cd")
+roughness_texture = ExtResource("4_raxji")
+normal_enabled = true
+normal_texture = ExtResource("3_iwjbg")

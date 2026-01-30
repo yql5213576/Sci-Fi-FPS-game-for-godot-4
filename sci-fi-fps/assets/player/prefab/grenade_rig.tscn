@@ -308,7 +308,7 @@ subsurf_scatter_strength = 0.3
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q6af7"]
 height = 0.614624
-radius = 0.09716797
+radius = 0.49023438
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q6af7"]
 
@@ -375,7 +375,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f27rh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371138e-08, 1, 0, -1, -4.371138e-08, 0, 0, 0, 1, 0.026321411, 0.008773803, 0)
 shape = SubResource("CylinderShape3D_q6af7")
-disabled = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_q6af7")
+disabled = true

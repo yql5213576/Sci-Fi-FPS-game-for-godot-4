@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://6ckrxsvykcyc"]
+
+[ext_resource type="Texture2D" uid="uid://cjefmwkcdo5yg" path="res://assets/scenes/snow_basin/tree1/low_512/Snow_Base_color.png" id="1_dll1x"]
+[ext_resource type="Texture2D" uid="uid://cb0qr1qjps2uv" path="res://assets/scenes/snow_basin/tree1/low_512/Snow_Metallic.png" id="2_nheta"]
+[ext_resource type="Texture2D" uid="uid://bibmadf0hs5l3" path="res://assets/scenes/snow_basin/tree1/low_512/Snow_Normal_OpenGL.png" id="3_sxjrc"]
+[ext_resource type="Texture2D" uid="uid://40wh4kqyx2xx" path="res://assets/scenes/snow_basin/tree1/low_512/Snow_Roughness.png" id="4_vk7ea"]
+
+[resource]
+albedo_texture = ExtResource("1_dll1x")
+metallic = 1.0
+metallic_texture = ExtResource("2_nheta")
+roughness_texture = ExtResource("4_vk7ea")
+normal_enabled = true
+normal_texture = ExtResource("3_sxjrc")
+rim_enabled = true
+anisotropy_enabled = true

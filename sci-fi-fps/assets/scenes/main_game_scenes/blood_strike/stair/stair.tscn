@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://ckxa76vv7fhlm"]
+[gd_scene load_steps=14 format=4 uid="uid://ckxa76vv7fhlm"]
 
 [ext_resource type="Texture2D" uid="uid://dunvmrel5ew0y" path="res://assets/scenes/main_game_scenes/blood_strike/stair/color1_Base_color.png" id="1_62fjp"]
+[ext_resource type="Script" uid="uid://ciiefwtk7oyhg" path="res://assets/scenes/main_game_scenes/blood_strike/stair/stair.gd" id="1_hro4l"]
 [ext_resource type="Texture2D" uid="uid://y2m6xd0gs21r" path="res://assets/scenes/main_game_scenes/blood_strike/stair/color1_Height.png" id="2_27n8r"]
 [ext_resource type="Texture2D" uid="uid://gbxdce3cjq3" path="res://assets/scenes/main_game_scenes/blood_strike/stair/color1_Metallic.png" id="2_qwlkw"]
 [ext_resource type="Texture2D" uid="uid://dux07xnffh14k" path="res://assets/scenes/main_game_scenes/blood_strike/stair/color1_Normal_OpenGL.png" id="3_d3u8q"]
@@ -94,6 +95,7 @@ backlight_texture = ExtResource("1_62fjp")
 points = PackedVector3Array(4.46596, -0.151681, 12.7716, -4.46595, -0.151681, 12.7736, 4.46508, -0.151681, -8.34883, 4.46508, 0.155533, 2.49359, 4.46508, 0.155503, 12.7716, -4.46595, 0.155503, 12.7736, -4.46595, -0.151681, -8.34883, -4.46595, 0.155533, 2.49359)
 
 [node name="stair" type="Node3D"]
+script = ExtResource("1_hro4l")
 
 [node name="stair" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 22.6545, 0, 0, 0, 1, 0, 0, 0)

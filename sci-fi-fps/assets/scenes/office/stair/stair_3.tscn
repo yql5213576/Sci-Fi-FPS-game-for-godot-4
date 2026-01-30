@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=4 uid="uid://r6c00o3p5aaj"]
+[gd_scene load_steps=20 format=4 uid="uid://r6c00o3p5aaj"]
 
-[ext_resource type="Texture2D" uid="uid://diu0tqrtb6q7w" path="res://office/stair/stair_Base_color.png" id="1_hu1yc"]
-[ext_resource type="Texture2D" uid="uid://b6tvwil6dto6h" path="res://office/stair/stair_Height.png" id="2_vtitn"]
-[ext_resource type="Texture2D" uid="uid://810hb5oy4370" path="res://office/stair/stair_Metallic.png" id="3_poonq"]
-[ext_resource type="Texture2D" uid="uid://brv5jge35mul4" path="res://office/stair/stair_Normal_OpenGL.png" id="4_27b7v"]
-[ext_resource type="Texture2D" uid="uid://b2br0sv1bd4ho" path="res://office/stair/stair_Roughness.png" id="5_8wqy5"]
-[ext_resource type="Texture2D" uid="uid://0y1kqxdqqknv" path="res://office/stair/stair2_Base_color.png" id="6_rj0px"]
-[ext_resource type="Texture2D" uid="uid://djvwh8t8i1i3g" path="res://office/stair/stair2_Height.png" id="7_qc73s"]
-[ext_resource type="Texture2D" uid="uid://bym2d00u5iohc" path="res://office/stair/stair2_Metallic.png" id="8_75esk"]
-[ext_resource type="Texture2D" uid="uid://dey1fbnpr1blo" path="res://office/stair/stair2_Normal_OpenGL.png" id="9_51dgr"]
-[ext_resource type="Texture2D" uid="uid://jeo27wivrvut" path="res://office/stair/stair2_Roughness.png" id="10_yy0uf"]
+[ext_resource type="Script" uid="uid://diwdqdxspytev" path="res://assets/scenes/office/stair/stair_3.gd" id="1_0pto3"]
+[ext_resource type="Texture2D" uid="uid://diu0tqrtb6q7w" path="res://assets/scenes/office/stair/stair_Base_color.png" id="1_hu1yc"]
+[ext_resource type="Texture2D" uid="uid://b6tvwil6dto6h" path="res://assets/scenes/office/stair/stair_Height.png" id="2_vtitn"]
+[ext_resource type="Texture2D" uid="uid://810hb5oy4370" path="res://assets/scenes/office/stair/stair_Metallic.png" id="3_poonq"]
+[ext_resource type="Texture2D" uid="uid://brv5jge35mul4" path="res://assets/scenes/office/stair/stair_Normal_OpenGL.png" id="4_27b7v"]
+[ext_resource type="Texture2D" uid="uid://b2br0sv1bd4ho" path="res://assets/scenes/office/stair/stair_Roughness.png" id="5_8wqy5"]
+[ext_resource type="Texture2D" uid="uid://0y1kqxdqqknv" path="res://assets/scenes/office/stair/stair2_Base_color.png" id="6_rj0px"]
+[ext_resource type="Texture2D" uid="uid://djvwh8t8i1i3g" path="res://assets/scenes/office/stair/stair2_Height.png" id="7_qc73s"]
+[ext_resource type="Texture2D" uid="uid://bym2d00u5iohc" path="res://assets/scenes/office/stair/stair2_Metallic.png" id="8_75esk"]
+[ext_resource type="Texture2D" uid="uid://dey1fbnpr1blo" path="res://assets/scenes/office/stair/stair2_Normal_OpenGL.png" id="9_51dgr"]
+[ext_resource type="Texture2D" uid="uid://jeo27wivrvut" path="res://assets/scenes/office/stair/stair2_Roughness.png" id="10_yy0uf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5tk7"]
 resource_name = "stair"
@@ -120,6 +121,7 @@ backlight_enabled = true
 backlight_texture = ExtResource("6_rj0px")
 
 [node name="stair3" type="Node3D"]
+script = ExtResource("1_0pto3")
 
 [node name="stair" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.757168, 0, 0)

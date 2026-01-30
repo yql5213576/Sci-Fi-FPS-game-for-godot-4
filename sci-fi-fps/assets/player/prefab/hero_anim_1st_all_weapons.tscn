@@ -1,4 +1,4 @@
-[gd_scene load_steps=1163 format=4 uid="uid://ccp2ohvgf5m3e"]
+[gd_scene format=4 uid="uid://ccp2ohvgf5m3e"]
 
 [ext_resource type="Script" uid="uid://daaaxudopoo7o" path="res://assets/player/scripts/hero_anim_1_st_all_weapons.gd" id="1_uf275"]
 [ext_resource type="Texture2D" uid="uid://cbf41682s5p8q" path="res://assets/player/textures/player/white/armor_arms_Base_color.png" id="2_ankpn"]
@@ -13730,10 +13730,10 @@ nodes/uk/node = SubResource("AnimationNodeAnimation_cf64w")
 nodes/uk/position = Vector2(2560, 1340)
 node_connections = [&"output", 0, &"pause_ui", &"Blend2", 0, &"health_act", &"Blend2", 1, &"ammos_act", &"TimeScale", 0, &"hit_screen", &"TimeScale 2", 0, &"kills", &"TimeScale 3", 0, &"pause_state", &"TimeScale_ash", 0, &"ash", &"aiming_shoot_hit_crosshair", 0, &"crosshair", &"aiming_shoot_hit_crosshair", 1, &"TimeScale_ash", &"blood_screen", 0, &"aiming_shoot_hit_crosshair", &"blood_screen", 1, &"blood_hurt", &"cross_hair_control", 0, &"rifle_crosshair", &"cross_hair_control", 1, &"pistol_crosshair", &"cross_hair_control", 2, &"smg_crosshair", &"cross_hair_control", 3, &"sniper_crosshair", &"cross_hair_control", 4, &"shotgun_crosshair", &"cross_hair_control", 5, &"machine_gun_crosshair", &"crosshair", 0, &"health_ammo", &"crosshair", 1, &"cross_hair_control", &"game_over", 0, &"kill_star", &"game_over", 1, &"result_anim", &"health_ammo", 0, &"start", &"health_ammo", 1, &"Blend2", &"hit", 0, &"blood_screen", &"hit", 1, &"TimeScale", &"kill_star", 0, &"hit", &"kill_star", 1, &"TimeScale 2", &"kills", 0, &"fb", &"kills", 1, &"fk", &"kills", 2, &"dk", &"kills", 3, &"tk", &"kills", 4, &"uk", &"kills", 5, &"rk", &"kills", 6, &"hs", &"kills", 7, &"hk", &"pause_state", 0, &"p", &"pause_state", 1, &"c", &"pause_ui", 0, &"game_over", &"pause_ui", 1, &"TimeScale 3"]
 
-[node name="hero_anim_1st_all_weapons" type="Node3D"]
+[node name="hero_anim_1st_all_weapons" type="Node3D" unique_id=223237317]
 script = ExtResource("1_uf275")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1241498606]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13741,25 +13741,25 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=483028176]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D_sub" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera3D_sub" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1486368698]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.558, 0.493)
 cull_mask = 5
 current = true
 near = 0.001
 
-[node name="Camera3D_sniper_sub" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera3D_sniper_sub" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=334862393]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.423, 0.89)
 cull_mask = 1
 fov = 30.0
 near = 0.001
 
-[node name="zoom_texture" type="TextureRect" parent="SubViewportContainer/SubViewport/Camera3D_sniper_sub"]
+[node name="zoom_texture" type="TextureRect" parent="SubViewportContainer/SubViewport/Camera3D_sniper_sub" unique_id=107281253]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -13769,9 +13769,9 @@ grow_vertical = 2
 texture = ExtResource("2_sjs6v")
 expand_mode = 5
 
-[node name="Skeleton" type="Node3D" parent="."]
+[node name="Skeleton" type="Node3D" parent="." unique_id=689531297]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Skeleton"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Skeleton" unique_id=2100792250]
 bones/0/name = "spine_1st"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -14102,131 +14102,131 @@ bones/46/position = Vector3(-8.3819e-08, 0.0649237, 3.1665e-08)
 bones/46/rotation = Quaternion(0.002138499, -7.8728405e-08, 0.038026586, 0.9992745)
 bones/46/scale = Vector3(1, 1, 1)
 
-[node name="armor_arms" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_arms" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=861520273]
 layers = 4
 mesh = SubResource("ArrayMesh_qccty")
 skin = SubResource("Skin_2035u")
 surface_material_override/0 = SubResource("StandardMaterial3D_kcx1b")
 
-[node name="armor_hand" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_hand" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=675998738]
 layers = 4
 mesh = SubResource("ArrayMesh_t3yb0")
 skin = SubResource("Skin_2035u")
 surface_material_override/0 = SubResource("StandardMaterial3D_lyvhe")
 
-[node name="armor_shouder" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_shouder" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=2023046687]
 layers = 4
 mesh = SubResource("ArrayMesh_a0kqg")
 skin = SubResource("Skin_2035u")
 surface_material_override/0 = SubResource("StandardMaterial3D_h0kla")
 
-[node name="skin_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="skin_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=315384566]
 layers = 4
 mesh = SubResource("ArrayMesh_p31mk")
 skin = SubResource("Skin_2035u")
 surface_material_override/0 = SubResource("StandardMaterial3D_lxpon")
 
-[node name="left_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="left_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1670915720]
 transform = Transform3D(0.999067, -1.1920929e-07, -0.043186083, 1.3306271e-07, 1, -3.7252903e-09, 0.043186087, -3.7252903e-09, 0.99906707, 1.683955, 1.3951398, -0.07133449)
 bone_name = "hand.L"
 bone_idx = 3
 
-[node name="rifle1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("65_sjs6v")]
+[node name="rifle1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=1128755876 instance=ExtResource("65_sjs6v")]
 transform = Transform3D(-0.0381919, 0.0238946, 0.0841173, 0.0868487, -0.000338839, 0.0395283, 0.010197, 0.0923809, -0.0216122, 0.385034, -0.157729, -0.0541634)
 visible = false
 
-[node name="pistol1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("63_mv0ai")]
+[node name="pistol1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=895615070 instance=ExtResource("63_mv0ai")]
 transform = Transform3D(0.0703834, 0.00658175, 0.00933396, 0.00356037, -0.0680137, 0.021112, 0.010852, -0.0203734, -0.0674642, 0.471338, -0.185022, -0.0354909)
 visible = false
 
-[node name="smg1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("67_c17kh")]
+[node name="smg1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=1661610186 instance=ExtResource("67_c17kh")]
 transform = Transform3D(-0.0594135, -0.0231322, -0.0369791, 0.0448837, -0.0727673, -0.00869883, -0.0479181, -0.0394776, 0.0377023, 0.475206, -0.563917, 0.000969529)
 visible = false
 
-[node name="sniper1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("69_cuall")]
+[node name="sniper1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=677494354 instance=ExtResource("69_cuall")]
 transform = Transform3D(0.029571, 0.0432654, -0.094615, 0.00227028, -0.10551, -0.0462496, -0.0619624, 0.0167822, -0.0468487, 0.275383, -0.492909, -0.0500412)
 visible = false
 
-[node name="machine_gun_mag_1st" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("24_4t6wb")]
+[node name="machine_gun_mag_1st" parent="Skeleton/Skeleton3D/left_hand" unique_id=1672780607 instance=ExtResource("24_4t6wb")]
 transform = Transform3D(-0.168667, -0.021845, -0.0302329, 0.0306246, -6.75619e-05, -0.170776, 0.0267587, -0.137618, 0.00488293, 0.438118, -0.298066, -0.00273252)
 visible = false
 
-[node name="shotgun_ammo_model_1st" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("23_8axmh")]
+[node name="shotgun_ammo_model_1st" parent="Skeleton/Skeleton3D/left_hand" unique_id=364756210 instance=ExtResource("23_8axmh")]
 transform = Transform3D(-0.0137652, -0.0163355, 0.000506577, 0.0138136, -0.0119829, -0.0110535, 0.00873439, -0.00679321, 0.0182797, 0.440214, -0.230301, 0.135892)
 visible = false
 
-[node name="rifle_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="rifle_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=477734813]
 script = ExtResource("25_5n1qg")
 
-[node name="pistol_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="pistol_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=2108603897]
 script = ExtResource("26_oghxx")
 
-[node name="smg_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="smg_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=150140369]
 script = ExtResource("27_6br2r")
 
-[node name="sniper_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="sniper_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=1689536397]
 script = ExtResource("28_1q1le")
 
-[node name="shotgun_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="shotgun_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=1066495428]
 script = ExtResource("29_53q61")
 
-[node name="machine_gun_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="machine_gun_audios" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=336692679]
 script = ExtResource("30_7w52y")
 
-[node name="right_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="right_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1879812954]
 transform = Transform3D(0.99906707, 6.469723e-08, -0.043186154, 8.5448846e-08, 1.0000001, 7.4505806e-08, 0.043186016, 1.8626451e-08, 0.9990671, -1.683955, 1.39514, -0.07133457)
 bone_name = "hand.R"
 bone_idx = 26
 
-[node name="rifle" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("66_qhegt")]
+[node name="rifle" parent="Skeleton/Skeleton3D/right_hand" unique_id=177987051 instance=ExtResource("66_qhegt")]
 transform = Transform3D(-0.013252, 0.00121494, -0.0469401, -0.046401, 0.00713643, 0.0132846, 0.00719666, 0.04825, -0.000782903, -0.432227, -0.16453, -0.0464822)
 visible = false
 
-[node name="pistol" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("64_xv005")]
+[node name="pistol" parent="Skeleton/Skeleton3D/right_hand" unique_id=645879946 instance=ExtResource("64_xv005")]
 transform = Transform3D(-0.014947, 0.0253484, 0.0649484, 0.0697168, 0.00481855, 0.0141637, 0.000646109, 0.0664718, -0.0257942, -0.372641, -0.125799, -0.0319128)
 visible = false
 
-[node name="smg" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("68_hv7hj")]
+[node name="smg" parent="Skeleton/Skeleton3D/right_hand" unique_id=791891243 instance=ExtResource("68_hv7hj")]
 transform = Transform3D(0.0780962, 0.0322064, 0.00835712, 0.0146912, -0.000286882, -0.0521562, -0.0316824, 0.0792546, -0.00358484, -0.447871, -0.166531, 0.178264)
 visible = false
 
-[node name="sniper" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("70_7pq42")]
+[node name="sniper" parent="Skeleton/Skeleton3D/right_hand" unique_id=988931816 instance=ExtResource("70_7pq42")]
 transform = Transform3D(-0.00989752, 0.0660141, 0.184352, 0.1167, 0.00492044, 0.0158779, 0.000427828, 0.185033, -0.0661933, -0.410882, -0.142772, 0.390191)
 
-[node name="sniper1_bullet_set" parent="Skeleton/Skeleton3D/right_hand/sniper" instance=ExtResource("26_xv005")]
+[node name="sniper1_bullet_set" parent="Skeleton/Skeleton3D/right_hand/sniper" unique_id=1499169895 instance=ExtResource("26_xv005")]
 transform = Transform3D(-7.47301e-08, 0.195997, 2.79396e-08, -0.11681, -1.25391e-07, -7.45058e-09, -7.45058e-09, -4.68802e-08, 0.11681, -1.36605, -0.224025, -3.54911)
 
-[node name="ammo_rig_position" type="Marker3D" parent="Skeleton/Skeleton3D/right_hand/sniper"]
+[node name="ammo_rig_position" type="Marker3D" parent="Skeleton/Skeleton3D/right_hand/sniper" unique_id=1715566172]
 transform = Transform3D(-8.53827, 1.84615e-07, -3.13722e-06, 1.8968e-08, 5.0886, -7.71695e-07, 3.23142e-06, -2.89386e-06, -5.08859, -0.0474007, -0.209614, -2.80421)
 
-[node name="shotgun" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("101_mgrdj")]
+[node name="shotgun" parent="Skeleton/Skeleton3D/right_hand" unique_id=1453716818 instance=ExtResource("101_mgrdj")]
 transform = Transform3D(-0.0541549, 0.0133656, 2.55834e-08, 1.36643e-08, -3.55174e-08, 0.0557799, 0.0133656, 0.0541549, 2.19381e-08, -0.393641, -0.134242, 0.1019)
 visible = false
 
-[node name="ammo_anim" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/shotgun"]
+[node name="ammo_anim" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/shotgun" unique_id=1663866604]
 transform = Transform3D(-0.000363269, -0.354659, -0.144787, -0.00251448, -0.144782, 0.354652, -0.383066, 0.00128666, -0.00219058, 5.94153, 2.11199, -0.00211024)
 layers = 4
 mesh = SubResource("ArrayMesh_cj2hh")
 skeleton = NodePath("")
 
-[node name="shotgun_handle_1st" parent="Skeleton/Skeleton3D/right_hand/shotgun" instance=ExtResource("35_ejn8g")]
+[node name="shotgun_handle_1st" parent="Skeleton/Skeleton3D/right_hand/shotgun" unique_id=837045266 instance=ExtResource("35_ejn8g")]
 transform = Transform3D(0.739497, 0, 0, 0, 0.739497, 0, 0, 0, 0.623175, 14.0726, -0.23462, 0)
 
-[node name="ammo_rig_position" type="Marker3D" parent="Skeleton/Skeleton3D/right_hand/shotgun"]
+[node name="ammo_rig_position" type="Marker3D" parent="Skeleton/Skeleton3D/right_hand/shotgun" unique_id=870513379]
 transform = Transform3D(-7.83654e-07, 1.49663e-06, 17.9276, 6.90337e-12, 17.9276, -1.19731e-06, -17.9276, -6.54209e-14, -7.83654e-07, 13.8718, 2.91327, -0.0188472)
 
-[node name="machine_gun" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("102_b07ty")]
+[node name="machine_gun" parent="Skeleton/Skeleton3D/right_hand" unique_id=25823025 instance=ExtResource("102_b07ty")]
 transform = Transform3D(0.00345865, 0.0233277, -0.159022, -0.064938, 0.00457758, -0.00797661, 0.00136051, 0.159186, 0.023533, -0.453282, -0.117614, 0.364329)
 visible = false
 
-[node name="Path3D_machine_gun_ammos" type="Path3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun"]
+[node name="Path3D_machine_gun_ammos" type="Path3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun" unique_id=447944147]
 transform = Transform3D(15.3741, 1.02304e-06, 1.72361e-07, 3.89202e-07, 6.21306, 1.00663e-06, 1.112e-07, 1.79755e-06, 6.21305, 0, 4.76837e-07, 1.49727)
 curve = SubResource("Curve3D_283q2")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1006355855]
 transform = Transform3D(-4.371139e-08, 0, -0.999881, 0, 0.999881, 0, 1, 0, -4.3706187e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D" unique_id=37235177]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14234,11 +14234,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=574857643]
 transform = Transform3D(-4.371139e-08, 0, -0.999889, 0, 0.999889, 0, 1, 0, -4.3706535e-08, 0.027509762, -0.013542833, 0)
 progress = 0.033258617
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2" unique_id=905156393]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14246,11 +14246,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D3" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D3" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1499880231]
 transform = Transform3D(-4.371139e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.370658e-08, 0.0554172, -0.008938098, 0)
 progress = 0.057664134
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D3"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D3" unique_id=1850354809]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14258,11 +14258,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D4" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D4" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1161900356]
 transform = Transform3D(-4.371139e-08, 0, -0.99989, 0, 0.99989, 0, 1, 0, -4.370658e-08, 0.08296184, -0.014775939, 0)
 progress = 0.082548246
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D4"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D4" unique_id=247985639]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14270,11 +14270,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D5" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D5" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=662465623]
 transform = Transform3D(-4.500494e-08, 0.17103443, -0.98512197, -7.450581e-09, 0.98512197, 0.17103443, 1, 1.5037125e-08, -4.3061046e-08, 0.10284948, -0.03484504, 0)
 progress = 0.115089
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D5"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D5" unique_id=1105373192]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14282,11 +14282,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=354365651]
 transform = Transform3D(-4.371139e-08, 0.36335066, -0.93150973, 0, 0.93150973, 0.36335066, 1, 1.5882561e-08, -4.0717584e-08, 0.11869442, -0.05916374, 0)
 progress = 0.14427997
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6" unique_id=346217699]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14294,11 +14294,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1930733351]
 transform = Transform3D(-4.371139e-08, 0.51753706, -0.8555066, 0, 0.8555066, 0.51753706, 1, 2.2622263e-08, -3.739538e-08, 0.13193269, -0.08401137, 0)
 progress = 0.16940287
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7" unique_id=455190564]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14306,11 +14306,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D8" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D8" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1212200842]
 transform = Transform3D(-4.371139e-08, 0.65272266, -0.75744104, 0, 0.75744104, 0.65272266, 1, 2.8531412e-08, -3.3108797e-08, 0.14341351, -0.109732375, 0)
 progress = 0.19380891
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D8"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D8" unique_id=185947891]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14318,11 +14318,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1593102037]
 transform = Transform3D(7.54979e-08, 0.773857, -0.63316894, 0, 0.63316894, 0.773857, 1, -5.842458e-08, 4.7802928e-08, 0.15288393, -0.13623819, 0)
 progress = 0.21917205
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9" unique_id=1919192024]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14330,11 +14330,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=74473118]
 transform = Transform3D(-4.371139e-08, 0.8834561, -0.46825138, 0, 0.46825138, 0.8834561, 1, 3.861709e-08, -2.0467917e-08, 0.15929322, -0.1637578, 0)
 progress = 0.2481228
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10" unique_id=730110491]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14342,11 +14342,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=21449844]
 transform = Transform3D(-4.371139e-08, 0.9537103, -0.3002617, 0, 0.3002617, 0.9537103, 1, 4.1688004e-08, -1.3124855e-08, 0.15943244, -0.19208737, 0)
 progress = 0.27635714
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11" unique_id=1848039487]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14354,11 +14354,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=622756031]
 transform = Transform3D(-1.6292068e-07, 0.989623, -0.14271598, 0, 0.14271598, 0.989623, 1, 1.6123006e-07, -2.3251385e-08, 0.15325242, -0.2192829, 0)
 progress = 0.30195907
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12" unique_id=135682010]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14366,11 +14366,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1542649841]
 transform = Transform3D(-4.4317858e-08, 0.999648, 0.020066017, -6.0448336e-08, -0.020066017, 0.999648, 1, 4.308923e-08, 6.131634e-08, 0.14255951, -0.24532728, 0)
 progress = 0.3277998
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13" unique_id=37449110]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14378,11 +14378,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=878076586]
 transform = Transform3D(-4.6412012e-08, 0.9819788, 0.18825866, -2.8430197e-08, -0.18825866, 0.9819788, 1, 4.0223384e-08, 3.6655315e-08, 0.12866786, -0.26917395, 0)
 progress = 0.35459805
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14" unique_id=102374538]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14390,11 +14390,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=213884981]
 transform = Transform3D(-1.7450505e-07, 0.92315495, 0.38407528, -5.800162e-08, -0.38407528, 0.92315495, 1, 1.388182e-07, 1.2056755e-07, 0.11101746, -0.2910953, 0)
 progress = 0.38618222
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15" unique_id=645912654]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14402,11 +14402,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=34741381]
 transform = Transform3D(1.1348015e-07, 0.79795605, 0.60249627, -5.2678864e-08, -0.60249627, 0.79795605, 1, -1.2229098e-07, -2.633595e-08, 0.08643261, -0.30477846, 0)
 progress = 0.4117841
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16" unique_id=1978901264]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14414,11 +14414,11 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=16018365]
 transform = Transform3D(-9.881128e-08, 0.6350106, 0.77234185, -1.1663493e-07, -0.77234185, 0.6350106, 1, -2.7335828e-08, 1.503805e-07, 0.05922222, -0.31043026, 0)
 progress = 0.43571115
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17" unique_id=1133896406]
 transform = Transform3D(1.06003e-09, -0.0307631, -7.2971e-10, 0.00222446, -1.19805e-09, 0.0140882, -0.0140882, -2.50385e-09, 0.00222446, 0.00666988, 0, 0)
 layers = 4
 cast_shadow = 0
@@ -14426,30 +14426,28 @@ mesh = SubResource("ArrayMesh_f6pyq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="grenade_fire" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("48_jrevv")]
+[node name="grenade_fire" parent="Skeleton/Skeleton3D/right_hand" unique_id=1914120150 instance=ExtResource("48_jrevv")]
 transform = Transform3D(-0.33081472, -0.010526583, 0.9436372, 0.9436156, 0.009319052, 0.33091125, -0.01227716, 0.9999011, 0.0068500936, -0.39993876, -0.154173, 0.07622743)
 visible = false
 
-[node name="grenade_smoke" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("49_v6bxe")]
+[node name="grenade_smoke" parent="Skeleton/Skeleton3D/right_hand" unique_id=1427574983 instance=ExtResource("49_v6bxe")]
 transform = Transform3D(-0.3308147, -0.010526568, 0.94363713, 0.9436156, 0.009319053, 0.33091125, -0.012277164, 0.9999011, 0.0068500936, -0.39993864, -0.154173, 0.07622731)
 visible = false
 
-[node name="grenade_flash" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("50_ajb5i")]
+[node name="grenade_flash" parent="Skeleton/Skeleton3D/right_hand" unique_id=2125070633 instance=ExtResource("50_ajb5i")]
 transform = Transform3D(-0.3308147, -0.010526568, 0.94363713, 0.9436156, 0.009319053, 0.33091125, -0.012277164, 0.9999011, 0.0068500936, -0.39993864, -0.154173, 0.07622731)
 visible = false
 
-[node name="sword" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("51_v6bxe")]
+[node name="sword" parent="Skeleton/Skeleton3D/right_hand" unique_id=645214620 instance=ExtResource("51_v6bxe")]
 transform = Transform3D(-0.9971713, -0.042314373, -0.062119424, -0.04275885, 0.99906826, 0.0058415197, 0.06181425, 0.008481334, -0.99805164, -0.3621695, -0.10742009, 0.07046056)
 
-[node name="grenade_throw_pos" type="Node3D" parent="Skeleton/Skeleton3D"]
+[node name="grenade_throw_pos" type="Node3D" parent="Skeleton/Skeleton3D" unique_id=713891334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.558, 2.1015642)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qtw0s")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266136296]
+libraries/ = SubResource("AnimationLibrary_qtw0s")
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=989613678]
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeBlendTree_xv005")
 anim_player = NodePath("..")
@@ -14538,42 +14536,43 @@ parameters/move/0/move/transition_request = ""
 parameters/move/0/move/current_index = 0
 parameters/run/blend_amount = 0.0
 
-[node name="camera_idle_pos" type="Marker3D" parent="."]
+[node name="camera_idle_pos" type="Marker3D" parent="." unique_id=1619245066]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.558, 0.493)
 
-[node name="Camera3D_main" type="Camera3D" parent="."]
+[node name="Camera3D_main" type="Camera3D" parent="." unique_id=1706212797]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.558, 0.493)
 cull_mask = 1048555
 near = 0.001
 
-[node name="Camera3D_sniper" type="Camera3D" parent="."]
+[node name="Camera3D_sniper" type="Camera3D" parent="." unique_id=916142433]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.423, 0.89)
 cull_mask = 1048555
 fov = 30.0
 near = 0.001
 
-[node name="Camera3D_aiming" type="Camera3D" parent="."]
+[node name="Camera3D_aiming" type="Camera3D" parent="." unique_id=319848736]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.423, 0.888)
 near = 0.001
 
-[node name="move_audio" type="Node3D" parent="."]
+[node name="move_audio" type="Node3D" parent="." unique_id=738996935]
 script = ExtResource("136_el2hh")
 
-[node name="jump_audio" type="Node3D" parent="."]
+[node name="jump_audio" type="Node3D" parent="." unique_id=1734851501]
 script = ExtResource("137_pnj6v")
 
-[node name="sword_attack_trigger" type="Area3D" parent="."]
+[node name="sword_attack_trigger" type="Area3D" parent="." unique_id=424993299]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.558, 0.493)
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="sword_attack_trigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sword_attack_trigger" unique_id=1566194688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0673828)
 shape = SubResource("BoxShape3D_odndb")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1170238523]
 
-[node name="screen" type="Control" parent="CanvasLayer"]
+[node name="screen" type="Control" parent="CanvasLayer" unique_id=222194942]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14581,7 +14580,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="white_screen" type="TextureRect" parent="CanvasLayer/screen"]
+[node name="white_screen" type="TextureRect" parent="CanvasLayer/screen" unique_id=614930114]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -14592,7 +14591,7 @@ grow_vertical = 2
 texture = ExtResource("457_ajb5i")
 expand_mode = 1
 
-[node name="killing_tips" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="killing_tips" type="PanelContainer" parent="CanvasLayer/screen" unique_id=390820432]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -14603,45 +14602,45 @@ offset_bottom = 147.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_oghxx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/killing_tips"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/killing_tips" unique_id=1318967576]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-label_settings = ExtResource("144_m16qa")
-horizontal_alignment = 1
-clip_text = true
-
-[node name="Label2" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer" unique_id=1999121131]
 layout_mode = 2
 size_flags_vertical = 0
 label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer" unique_id=1089577168]
 layout_mode = 2
 size_flags_vertical = 0
 label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
-[node name="Label4" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer" unique_id=1106114038]
 layout_mode = 2
 size_flags_vertical = 0
 label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
-[node name="Label5" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer"]
+[node name="Label4" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer" unique_id=112737629]
 layout_mode = 2
 size_flags_vertical = 0
 label_settings = ExtResource("144_m16qa")
 horizontal_alignment = 1
 clip_text = true
 
-[node name="grenade_panel" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="Label5" type="Label" parent="CanvasLayer/screen/killing_tips/VBoxContainer" unique_id=2113447390]
+layout_mode = 2
+size_flags_vertical = 0
+label_settings = ExtResource("144_m16qa")
+horizontal_alignment = 1
+clip_text = true
+
+[node name="grenade_panel" type="PanelContainer" parent="CanvasLayer/screen" unique_id=560022570]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -14655,14 +14654,14 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_odndb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/grenade_panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/grenade_panel" unique_id=347755510]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/grenade_panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/grenade_panel/VBoxContainer" unique_id=257252302]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="grenade_type" type="TextureRect" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+[node name="grenade_type" type="TextureRect" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer" unique_id=517598702]
 custom_minimum_size = Vector2(41.15, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -14670,18 +14669,18 @@ size_flags_vertical = 4
 texture = ExtResource("144_oppng")
 expand_mode = 4
 
-[node name="num" type="Label" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+[node name="num" type="Label" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer" unique_id=379302626]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "4"
 label_settings = ExtResource("145_odndb")
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer" unique_id=537977686]
 custom_minimum_size = Vector2(13.375, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_o3fd8")
 
-[node name="health_panel" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="health_panel" type="PanelContainer" parent="CanvasLayer/screen" unique_id=1679043070]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -14691,88 +14690,88 @@ offset_right = 244.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dqhoj")
 
-[node name="health" type="Node2D" parent="CanvasLayer/screen/health_panel"]
+[node name="health" type="Node2D" parent="CanvasLayer/screen/health_panel" unique_id=188913720]
 modulate = Color(1, 1, 1, 0.901961)
 position = Vector2(55.05, 75.5)
 scale = Vector2(0.074, 0.074)
 
-[node name="ui1" type="Node2D" parent="CanvasLayer/screen/health_panel/health"]
+[node name="ui1" type="Node2D" parent="CanvasLayer/screen/health_panel/health" unique_id=676878059]
 
-[node name="Health1" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health1" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=1126758581]
 mesh = SubResource("ArrayMesh_4w7fn")
 texture = ExtResource("119_4w7fn")
 
-[node name="Health2" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health2" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=1154151014]
 mesh = SubResource("ArrayMesh_na5tk")
 texture = ExtResource("120_na5tk")
 
-[node name="Health3" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health3" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=1049443871]
 mesh = SubResource("ArrayMesh_254md")
 texture = ExtResource("121_254md")
 
-[node name="Health4" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health4" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=651501777]
 mesh = SubResource("ArrayMesh_p81mk")
 texture = ExtResource("122_p81mk")
 
-[node name="Health5" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health5" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=803747392]
 mesh = SubResource("ArrayMesh_72o2f")
 texture = ExtResource("123_72o2f")
 
-[node name="Health6" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1"]
+[node name="Health6" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui1" unique_id=610382564]
 mesh = SubResource("ArrayMesh_6y5c8")
 texture = ExtResource("124_6y5c8")
 
-[node name="ui2" type="Node2D" parent="CanvasLayer/screen/health_panel/health"]
+[node name="ui2" type="Node2D" parent="CanvasLayer/screen/health_panel/health" unique_id=1636599834]
 position = Vector2(1481, 21)
 
-[node name="Health7" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health7" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=189181883]
 mesh = SubResource("ArrayMesh_ij8fl")
 texture = ExtResource("125_ij8fl")
 
-[node name="Health8" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health8" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=312873616]
 mesh = SubResource("ArrayMesh_bgifl")
 texture = ExtResource("126_bgifl")
 
-[node name="Health9" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health9" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=604214108]
 mesh = SubResource("ArrayMesh_q3faa")
 texture = ExtResource("127_q3faa")
 
-[node name="Health10" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health10" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=1738241415]
 mesh = SubResource("ArrayMesh_ykq1q")
 texture = ExtResource("128_ykq1q")
 
-[node name="Health11" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health11" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=861998636]
 mesh = SubResource("ArrayMesh_ocdn6")
 texture = ExtResource("129_ocdn6")
 
-[node name="Health12" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health12" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=947219533]
 mesh = SubResource("ArrayMesh_ov24y")
 texture = ExtResource("130_ov24y")
 
-[node name="Health13" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Health13" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=1396711963]
 mesh = SubResource("ArrayMesh_o0752")
 texture = ExtResource("131_o0752")
 
-[node name="ECG" type="AnimatedSprite2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="ECG" type="AnimatedSprite2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=1432611626]
 position = Vector2(3.24962, -7.2993)
 scale = Vector2(2.32627, 0.862642)
 sprite_frames = SubResource("SpriteFrames_dqgjj")
 animation = &"yellow"
 speed_scale = 10.0
 
-[node name="Cube" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Cube" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=447763364]
 position = Vector2(-742.64, -7.62)
 scale = Vector2(0.116, 0.597)
 mesh = SubResource("ArrayMesh_e00bh")
 texture = ExtResource("495_e00bh")
 
-[node name="Cube2" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2"]
+[node name="Cube2" type="MeshInstance2D" parent="CanvasLayer/screen/health_panel/health/ui2" unique_id=1789008855]
 position = Vector2(744.36, -7.62)
 scale = Vector2(0.116, 0.597)
 mesh = SubResource("ArrayMesh_ekda8")
 texture = ExtResource("495_e00bh")
 
-[node name="ammos_panel" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="ammos_panel" type="PanelContainer" parent="CanvasLayer/screen" unique_id=1618548435]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -14785,34 +14784,34 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wypt6")
 
-[node name="ammos" type="Node2D" parent="CanvasLayer/screen/ammos_panel"]
+[node name="ammos" type="Node2D" parent="CanvasLayer/screen/ammos_panel" unique_id=78357568]
 position = Vector2(66.0001, 80)
 scale = Vector2(0.099, 0.099)
 
-[node name="board" type="Node2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="board" type="Node2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=198070322]
 position = Vector2(1074, 0)
 
-[node name="Ammo4" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/board"]
+[node name="Ammo4" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/board" unique_id=127398801]
 mesh = SubResource("ArrayMesh_a76l4")
 texture = ExtResource("496_ekda8")
 
-[node name="Ammo5" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/board"]
+[node name="Ammo5" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/board" unique_id=2074665366]
 mesh = SubResource("ArrayMesh_a3p3s")
 texture = ExtResource("497_a76l4")
 
-[node name="Polygon2D7" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5"]
+[node name="Polygon2D7" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5" unique_id=1906671861]
 position = Vector2(-94.8629, -172)
 scale = Vector2(475.137, 137.003)
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="Polygon2D6" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5"]
+[node name="Polygon2D6" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5" unique_id=312924306]
 position = Vector2(-94.8629, -172)
 scale = Vector2(465.634, 129.672)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="ammos" type="Label" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5"]
+[node name="ammos" type="Label" parent="CanvasLayer/screen/ammos_panel/ammos/board/Ammo5" unique_id=2007951019]
 offset_left = -570.0
 offset_top = -309.0
 offset_right = 379.0
@@ -14820,56 +14819,56 @@ offset_bottom = -29.8333
 label_settings = SubResource("LabelSettings_wqa3a")
 horizontal_alignment = 1
 
-[node name="Ammo1" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Ammo1" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=1695368954]
 mesh = SubResource("ArrayMesh_sudth")
 texture = ExtResource("498_a3p3s")
 
-[node name="Ammo2" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Ammo2" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=288050250]
 mesh = SubResource("ArrayMesh_umo7y")
 texture = ExtResource("499_sudth")
 
-[node name="Ammo3" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Ammo3" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=1033054346]
 mesh = SubResource("ArrayMesh_4grds")
 texture = ExtResource("500_umo7y")
 
-[node name="Polygon2D1" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Polygon2D1" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=2043247728]
 visible = false
 position = Vector2(1546, -176)
 scale = Vector2(36.1574, 161.898)
 color = Color(0, 1, 2, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="Polygon2D2" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Polygon2D2" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=512323053]
 visible = false
 position = Vector2(1644.16, -176.102)
 scale = Vector2(36.1574, 161.898)
 color = Color(0, 1, 2, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="Polygon2D3" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Polygon2D3" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=621485162]
 visible = false
 position = Vector2(1742.16, -176.102)
 scale = Vector2(36.1574, 161.898)
 color = Color(0, 1, 2, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="Polygon2D4" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Polygon2D4" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=9110875]
 visible = false
 position = Vector2(1840.16, -176.102)
 scale = Vector2(36.1574, 161.898)
 color = Color(0, 1, 2, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="Polygon2D5" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="Polygon2D5" type="Polygon2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=1812635230]
 visible = false
 position = Vector2(1938.16, -176.102)
 scale = Vector2(36.1574, 161.898)
 color = Color(0, 1, 2, 1)
 polygon = PackedVector2Array(1, -1, 1, 1, -1, 1, -1, -1)
 
-[node name="weapons" type="Node2D" parent="CanvasLayer/screen/ammos_panel/ammos"]
+[node name="weapons" type="Node2D" parent="CanvasLayer/screen/ammos_panel/ammos" unique_id=183906265]
 
-[node name="MachineGunTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="MachineGunTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=1605915387]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(762.59, 151.079)
@@ -14877,7 +14876,7 @@ scale = Vector2(0.335388, 0.335388)
 mesh = SubResource("ArrayMesh_jlkdq")
 texture = ExtResource("501_4grds")
 
-[node name="PistolTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="PistolTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=1320761985]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(741.007, 158.274)
@@ -14885,7 +14884,7 @@ scale = Vector2(0.312002, 0.312002)
 mesh = SubResource("ArrayMesh_781cu")
 texture = ExtResource("502_jlkdq")
 
-[node name="RifleTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="RifleTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=1789292603]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(748.202, 158.274)
@@ -14893,7 +14892,7 @@ scale = Vector2(0.312002, 0.312002)
 mesh = SubResource("ArrayMesh_331wq")
 texture = ExtResource("503_781cu")
 
-[node name="ShotgunTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="ShotgunTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=2105108095]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(762.59, 158.274)
@@ -14901,7 +14900,7 @@ scale = Vector2(0.340773, 0.340773)
 mesh = SubResource("ArrayMesh_sfela")
 texture = ExtResource("504_331wq")
 
-[node name="SmgTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="SmgTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=1735484465]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(748.201, 158.274)
@@ -14909,7 +14908,7 @@ scale = Vector2(0.417314, 0.417314)
 mesh = SubResource("ArrayMesh_3qlkg")
 texture = ExtResource("505_sfela")
 
-[node name="SniperTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons"]
+[node name="SniperTW" type="MeshInstance2D" parent="CanvasLayer/screen/ammos_panel/ammos/weapons" unique_id=330260687]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(741.007, 158.274)
@@ -14917,7 +14916,7 @@ scale = Vector2(0.319594, 0.319594)
 mesh = SubResource("ArrayMesh_3qr3n")
 texture = ExtResource("506_3qlkg")
 
-[node name="rifle_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="rifle_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=345465598]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -14927,24 +14926,24 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="rifle_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair"]
+[node name="rifle_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair" unique_id=1640021688]
 scale = Vector2(0.125, 0.125)
 
-[node name="Line_R" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="Line_R" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=1102882415]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(205, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_x4wqs")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line_L" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="Line_L" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=563078484]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(-205, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_p1cd1")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line_D" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="Line_D" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=1571199754]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(0, 205)
 rotation = 1.5708
@@ -14952,7 +14951,7 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_x5xm4")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line_U" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="Line_U" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=519963902]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(0, -205)
 rotation = 1.5708
@@ -14960,33 +14959,33 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_kqe2n")
 texture = ExtResource("507_4w7fn")
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=1277383248]
 rotation = 0.785398
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit" unique_id=1820023951]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/R2" unique_id=225730257]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_jxg7h")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit" unique_id=615311054]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/L2" unique_id=1415103722]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_cf64w")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit" unique_id=785939014]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/D2" unique_id=1159533525]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -14994,10 +14993,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_124np")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit" unique_id=111496039]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d/hit/U2" unique_id=2136405731]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15005,13 +15004,13 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_5o3u2")
 texture = ExtResource("507_4w7fn")
 
-[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d"]
+[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d" unique_id=1598451041]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(0.0529245, 0.0529245)
 mesh = SubResource("ArrayMesh_tda4m")
 texture = ExtResource("508_na5tk")
 
-[node name="pistol_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="pistol_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=586698375]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15022,49 +15021,49 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="pistol_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair"]
+[node name="pistol_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair" unique_id=635513845]
 position = Vector2(0, 1)
 scale = Vector2(0.125, 0.125)
 
-[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d"]
+[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d" unique_id=736914448]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(1e-05, 1e-05)
 mesh = SubResource("ArrayMesh_d46fw")
 texture = ExtResource("509_254md")
 
-[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d"]
+[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d" unique_id=2015700655]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(1e-05, 1e-05)
 mesh = SubResource("ArrayMesh_n6kem")
 texture = ExtResource("508_na5tk")
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d" unique_id=1525012764]
 rotation = 0.785398
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit" unique_id=901877442]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/R2" unique_id=1789953839]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_iy6yw")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit" unique_id=1600990297]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/L2" unique_id=472938818]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_4fh5k")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit" unique_id=209762948]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/D2" unique_id=469576017]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15072,10 +15071,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_lvm6e")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit" unique_id=2021423218]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d/hit/U2" unique_id=1527253731]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15083,7 +15082,7 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_w0yi8")
 texture = ExtResource("507_4w7fn")
 
-[node name="smg_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="smg_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=915168833]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15094,78 +15093,78 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="smg_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/smg_crosshair"]
+[node name="smg_crosshair_2d" type="Node2D" parent="CanvasLayer/screen/smg_crosshair" unique_id=266977814]
 scale = Vector2(0.125, 0.125)
 
-[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d"]
+[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d" unique_id=436546766]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(0.602765, 0.602765)
 mesh = SubResource("ArrayMesh_bykqo")
 texture = ExtResource("509_254md")
 
-[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d"]
+[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d" unique_id=770889062]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(0.076349, 0.076349)
 mesh = SubResource("ArrayMesh_fecli")
 texture = ExtResource("508_na5tk")
 
-[node name="4_line" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d"]
+[node name="4_line" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d" unique_id=506329274]
 scale = Vector2(0.602765, 0.602765)
 
-[node name="Line" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line"]
+[node name="Line" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line" unique_id=787137582]
 modulate = Color(0, 1, 2, 1)
 rotation = 0.785398
 scale = Vector2(0.345, 0.38)
 mesh = SubResource("ArrayMesh_d2nr3")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line"]
+[node name="Line2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line" unique_id=1265871298]
 modulate = Color(0, 1, 2, 1)
 rotation = 2.35619
 scale = Vector2(0.345, 0.38)
 mesh = SubResource("ArrayMesh_b1h5d")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line3" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line"]
+[node name="Line3" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line" unique_id=905892682]
 modulate = Color(0, 1, 2, 1)
 rotation = -2.35619
 scale = Vector2(0.345, 0.38)
 mesh = SubResource("ArrayMesh_nhvlg")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line4" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line"]
+[node name="Line4" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/4_line" unique_id=605421173]
 modulate = Color(0, 1, 2, 1)
 rotation = -0.785398
 scale = Vector2(0.345, 0.38)
 mesh = SubResource("ArrayMesh_dy0gj")
 texture = ExtResource("507_4w7fn")
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d" unique_id=598399985]
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit" unique_id=1998521324]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/R2" unique_id=1873182896]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_21esu")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit" unique_id=1520822627]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/L2" unique_id=219188674]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_wrcjm")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit" unique_id=1853068076]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/D2" unique_id=499322905]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15173,10 +15172,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_w5mji")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit" unique_id=1438993130]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/smg_crosshair/smg_crosshair_2d/hit/U2" unique_id=50573186]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15184,7 +15183,7 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_v112a")
 texture = ExtResource("507_4w7fn")
 
-[node name="sniper_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="sniper_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=660201896]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15195,34 +15194,34 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair" unique_id=532558295]
 rotation = 0.785398
 scale = Vector2(0.125, 0.125)
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit" unique_id=2077436556]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/R2" unique_id=1533832748]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_y8rf0")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit" unique_id=2007112065]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/L2" unique_id=1120782472]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_mpasj")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit" unique_id=1872737235]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/D2" unique_id=361296410]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15230,10 +15229,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_vubyy")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/sniper_crosshair/hit" unique_id=55369300]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/sniper_crosshair/hit/U2" unique_id=1093973752]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15241,7 +15240,7 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_cmtsu")
 texture = ExtResource("507_4w7fn")
 
-[node name="shotgun_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="shotgun_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=2093417108]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15252,42 +15251,42 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="shot_gun_crosshair" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair"]
+[node name="shot_gun_crosshair" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair" unique_id=1323834255]
 scale = Vector2(0.125, 0.125)
 
-[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair"]
+[node name="SmallRing" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair" unique_id=1104817255]
 modulate = Color(0, 0, 0, 1)
 scale = Vector2(1e-05, 1e-05)
 mesh = SubResource("ArrayMesh_pakge")
 texture = ExtResource("509_254md")
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair" unique_id=1653398116]
 rotation = 0.785398
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit" unique_id=2031020794]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/R2" unique_id=1856403883]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_qlcke")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit" unique_id=102415783]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/L2" unique_id=337849975]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_k28st")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit" unique_id=1119535583]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/D2" unique_id=744400607]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15295,10 +15294,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_tqwsf")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit" unique_id=1625255987]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair/hit/U2" unique_id=629155829]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15306,7 +15305,7 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_supuq")
 texture = ExtResource("507_4w7fn")
 
-[node name="machine_gun_crosshair" type="Control" parent="CanvasLayer/screen"]
+[node name="machine_gun_crosshair" type="Control" parent="CanvasLayer/screen" unique_id=390123331]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15317,66 +15316,66 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="machine_gun_crosshair2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair"]
+[node name="machine_gun_crosshair2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair" unique_id=1886882145]
 scale = Vector2(0.125, 0.125)
 
-[node name="4_line" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2"]
+[node name="4_line" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2" unique_id=531230971]
 scale = Vector2(0.132279, 0.132279)
 
-[node name="Line5" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line"]
+[node name="Line5" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line" unique_id=1711229820]
 modulate = Color(0, 1, 2, 1)
 rotation = 0.785398
 scale = Vector2(1.50006, 1.00004)
 mesh = SubResource("ArrayMesh_oj2bm")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line6" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line"]
+[node name="Line6" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line" unique_id=23126096]
 modulate = Color(0, 1, 2, 1)
 rotation = -0.785398
 scale = Vector2(1.50006, 1.00004)
 mesh = SubResource("ArrayMesh_sl1dc")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line7" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line"]
+[node name="Line7" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line" unique_id=1245944259]
 modulate = Color(0, 1, 2, 1)
 rotation = -2.35619
 scale = Vector2(1.50006, 1.00004)
 mesh = SubResource("ArrayMesh_0nmtw")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line8" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line"]
+[node name="Line8" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/4_line" unique_id=910669912]
 modulate = Color(0, 1, 2, 1)
 rotation = 2.35619
 scale = Vector2(1.50006, 1.00004)
 mesh = SubResource("ArrayMesh_l71hv")
 texture = ExtResource("507_4w7fn")
 
-[node name="hit" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2"]
+[node name="hit" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2" unique_id=662822888]
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit" unique_id=1578150153]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/R2" unique_id=452170478]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_k0ar6")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit" unique_id=777967536]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/L2" unique_id=1816786387]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_v0xjf")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit" unique_id=420528491]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/D2" unique_id=691845923]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15384,10 +15383,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_neb80")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit" unique_id=230442743]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/hit/U2" unique_id=1122524578]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15395,23 +15394,23 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_mcg2k")
 texture = ExtResource("507_4w7fn")
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2"]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2" unique_id=1460991854]
 scale = Vector2(0.440949, 0.440949)
 
-[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D"]
+[node name="Point" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D" unique_id=1689823679]
 modulate = Color(0, 1, 2, 1)
 scale = Vector2(0.135638, 0.135638)
 mesh = SubResource("ArrayMesh_8evpg")
 texture = ExtResource("508_na5tk")
 
-[node name="Line" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D"]
+[node name="Line" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D" unique_id=1411445826]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(0, 421)
 scale = Vector2(0.5, 0.3)
 mesh = SubResource("ArrayMesh_tg7tw")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D"]
+[node name="Line2" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D" unique_id=1457487924]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(-420, 0)
 rotation = 1.5708
@@ -15419,7 +15418,7 @@ scale = Vector2(0.5, 0.3)
 mesh = SubResource("ArrayMesh_my3s4")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line3" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D"]
+[node name="Line3" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D" unique_id=1862151013]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(420, 3.00006)
 rotation = 1.5708
@@ -15427,7 +15426,7 @@ scale = Vector2(0.5, 0.3)
 mesh = SubResource("ArrayMesh_otrvj")
 texture = ExtResource("507_4w7fn")
 
-[node name="Line4" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D"]
+[node name="Line4" type="MeshInstance2D" parent="CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2/Node2D" unique_id=171650072]
 modulate = Color(0, 1, 2, 1)
 position = Vector2(0, -418)
 rotation = -3.14159
@@ -15435,7 +15434,7 @@ scale = Vector2(0.5, 0.3)
 mesh = SubResource("ArrayMesh_x24ln")
 texture = ExtResource("507_4w7fn")
 
-[node name="kill_stars" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="kill_stars" type="PanelContainer" parent="CanvasLayer/screen" unique_id=1388036603]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -15446,59 +15445,59 @@ offset_bottom = 227.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pmiv4")
 
-[node name="kill_ui_anim" type="Node2D" parent="CanvasLayer/screen/kill_stars"]
+[node name="kill_ui_anim" type="Node2D" parent="CanvasLayer/screen/kill_stars" unique_id=625387261]
 position = Vector2(142, 156)
 
-[node name="size" type="Node2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim"]
+[node name="size" type="Node2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim" unique_id=2029899325]
 modulate = Color(0, 0, 0, 1)
 scale = Vector2(1e-05, 1e-05)
 
-[node name="FirstBlood" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="FirstBlood" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=185196288]
 visible = false
 mesh = SubResource("ArrayMesh_ex3cv")
 texture = ExtResource("512_q3ton")
 
-[node name="FirstKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="FirstKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=195831101]
 visible = false
 mesh = SubResource("ArrayMesh_umlq6")
 texture = ExtResource("511_pmiv4")
 
-[node name="DoubleKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="DoubleKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=1364957525]
 visible = false
 mesh = SubResource("ArrayMesh_r427l")
 texture = ExtResource("513_obikx")
 
-[node name="TripleKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="TripleKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=979236500]
 visible = false
 position = Vector2(-5, 14)
 mesh = SubResource("ArrayMesh_pv7jm")
 texture = ExtResource("514_wypt6")
 
-[node name="UltraKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="UltraKill" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=1017836172]
 visible = false
 position = Vector2(3, 5)
 mesh = SubResource("ArrayMesh_v584m")
 texture = ExtResource("515_vyq4g")
 
-[node name="Rampage" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="Rampage" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=1304249338]
 visible = false
 position = Vector2(2, 21)
 mesh = SubResource("ArrayMesh_v0rgd")
 texture = ExtResource("516_3colr")
 
-[node name="HolyShit" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="HolyShit" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=66727880]
 visible = false
 position = Vector2(-2, -6)
 mesh = SubResource("ArrayMesh_4gtfp")
 texture = ExtResource("517_wvh66")
 
-[node name="HeadShot" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size"]
+[node name="HeadShot" type="MeshInstance2D" parent="CanvasLayer/screen/kill_stars/kill_ui_anim/size" unique_id=55040454]
 visible = false
 position = Vector2(-7, -10)
 mesh = SubResource("ArrayMesh_wktac")
 texture = ExtResource("518_301yy")
 
-[node name="start_count" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="start_count" type="PanelContainer" parent="CanvasLayer/screen" unique_id=1974761820]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15509,108 +15508,108 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="start_count_backwards" type="Node2D" parent="CanvasLayer/screen/start_count"]
+[node name="start_count_backwards" type="Node2D" parent="CanvasLayer/screen/start_count" unique_id=495433404]
 scale = Vector2(0.325, 0.325)
 
-[node name="hexagon" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="hexagon" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1219945795]
 modulate = Color(1, 1, 1, 0)
 rotation = 6.28319
 mesh = SubResource("ArrayMesh_j34bk")
 texture = ExtResource("518_p81mk")
 
-[node name="circle" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="circle" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=780150372]
 modulate = Color(1, 1, 1, 0)
 rotation = -6.28319
 mesh = SubResource("ArrayMesh_upx6c")
 texture = ExtResource("519_72o2f")
 
-[node name="triangle_R" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="triangle_R" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=358432195]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(905, 0)
 mesh = SubResource("ArrayMesh_ruohr")
 texture = ExtResource("520_6y5c8")
 
-[node name="triangle_L" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="triangle_L" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=2003455377]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-905, 0)
 rotation = 3.14159
 mesh = SubResource("ArrayMesh_78xgd")
 texture = ExtResource("520_6y5c8")
 
-[node name="triangle_U" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="triangle_U" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=24924298]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -828)
 mesh = SubResource("ArrayMesh_7secq")
 texture = ExtResource("521_ij8fl")
 
-[node name="triangle_D" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="triangle_D" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=280031651]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 828)
 rotation = 3.14159
 mesh = SubResource("ArrayMesh_2a0xl")
 texture = ExtResource("521_ij8fl")
 
-[node name="N1" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N1" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1518410443]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_c1v8t")
 texture = ExtResource("522_bgifl")
 
-[node name="N2" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N2" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1060472243]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_qkok2")
 texture = ExtResource("523_q3faa")
 
-[node name="N3" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N3" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=189303755]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_lv4b0")
 texture = ExtResource("524_ykq1q")
 
-[node name="N4" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N4" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1840281721]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_ogkbh")
 texture = ExtResource("525_ocdn6")
 
-[node name="N5" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N5" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=565430540]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_64pqh")
 texture = ExtResource("526_ov24y")
 
-[node name="N6" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N6" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=2102895659]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_vtftk")
 texture = ExtResource("527_o0752")
 
-[node name="N7" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N7" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=447757791]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_wyjid")
 texture = ExtResource("528_e00bh")
 
-[node name="N8" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N8" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1191179098]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_rg1ew")
 texture = ExtResource("529_ekda8")
 
-[node name="N9" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N9" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1747717202]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_nuprd")
 texture = ExtResource("530_a76l4")
 
-[node name="N10" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards"]
+[node name="N10" type="MeshInstance2D" parent="CanvasLayer/screen/start_count/start_count_backwards" unique_id=1532392459]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3, 16)
 mesh = SubResource("ArrayMesh_2ufor")
 texture = ExtResource("531_a3p3s")
 
-[node name="start_icon" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="start_icon" type="PanelContainer" parent="CanvasLayer/screen" unique_id=354924324]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -15621,16 +15620,16 @@ offset_bottom = 224.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_d0yu2")
 
-[node name="start_node_2d" type="Node2D" parent="CanvasLayer/screen/start_icon"]
+[node name="start_node_2d" type="Node2D" parent="CanvasLayer/screen/start_icon" unique_id=762848520]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(168, 156)
 scale = Vector2(0.405, 0.405)
 
-[node name="Start" type="Sprite2D" parent="CanvasLayer/screen/start_icon/start_node_2d"]
+[node name="Start" type="Sprite2D" parent="CanvasLayer/screen/start_icon/start_node_2d" unique_id=823807126]
 texture = ExtResource("412_mgof1")
 
-[node name="blood_screen" type="TextureRect" parent="CanvasLayer/screen"]
+[node name="blood_screen" type="TextureRect" parent="CanvasLayer/screen" unique_id=1482675848]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -15642,7 +15641,7 @@ grow_vertical = 2
 texture = ExtResource("533_4w7fn")
 expand_mode = 2
 
-[node name="hit_screen" type="TextureRect" parent="CanvasLayer/screen"]
+[node name="hit_screen" type="TextureRect" parent="CanvasLayer/screen" unique_id=732905043]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -15654,7 +15653,7 @@ grow_vertical = 2
 texture = ExtResource("534_na5tk")
 expand_mode = 3
 
-[node name="aiming_shoot_hit" type="Control" parent="CanvasLayer/screen"]
+[node name="aiming_shoot_hit" type="Control" parent="CanvasLayer/screen" unique_id=187580563]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -15668,35 +15667,35 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="hit2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit"]
+[node name="hit2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit" unique_id=1035155224]
 position = Vector2(20, 20)
 rotation = 0.785398
 scale = Vector2(0.125, 0.125)
 
-[node name="R2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2"]
+[node name="R2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2" unique_id=559365440]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/R2"]
+[node name="Line_R2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/R2" unique_id=527214072]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_jxg7h")
 texture = ExtResource("507_4w7fn")
 
-[node name="L2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2"]
+[node name="L2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2" unique_id=1351583926]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/L2"]
+[node name="Line_L2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/L2" unique_id=377403157]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-172, 0)
 scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_cf64w")
 texture = ExtResource("507_4w7fn")
 
-[node name="D2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2"]
+[node name="D2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2" unique_id=1721654018]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/D2"]
+[node name="Line_D2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/D2" unique_id=616499736]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 172)
 rotation = 1.5708
@@ -15704,10 +15703,10 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_124np")
 texture = ExtResource("507_4w7fn")
 
-[node name="U2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2"]
+[node name="U2" type="Node2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2" unique_id=1687062355]
 scale = Vector2(1e-05, 1e-05)
 
-[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/U2"]
+[node name="Line_U2" type="MeshInstance2D" parent="CanvasLayer/screen/aiming_shoot_hit/hit2/U2" unique_id=786499992]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -172)
 rotation = 1.5708
@@ -15715,21 +15714,19 @@ scale = Vector2(0.194574, 0.194574)
 mesh = SubResource("ArrayMesh_5o3u2")
 texture = ExtResource("507_4w7fn")
 
-[node name="alert_change_weapon" type="Label" parent="CanvasLayer/screen"]
+[node name="alert_change_weapon" type="Label" parent="CanvasLayer/screen" unique_id=1633646702]
 visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 129.875
 grow_horizontal = 2
-text = "
-
-Your Weapon will be modified after next respawn"
+text = "Your Weapon will be modified after next respawn"
 label_settings = SubResource("LabelSettings_vpi6d")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TDM_UI" type="Control" parent="CanvasLayer/screen"]
+[node name="TDM_UI" type="Control" parent="CanvasLayer/screen" unique_id=1116972718]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -15738,14 +15735,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="blue_score" type="TextureRect" parent="CanvasLayer/screen/TDM_UI"]
+[node name="blue_score" type="TextureRect" parent="CanvasLayer/screen/TDM_UI" unique_id=621200107]
 layout_mode = 1
 offset_right = 150.0
 offset_bottom = 150.0
 texture = ExtResource("427_80bsv")
 expand_mode = 1
 
-[node name="Label_blue" type="Label" parent="CanvasLayer/screen/TDM_UI/blue_score"]
+[node name="Label_blue" type="Label" parent="CanvasLayer/screen/TDM_UI/blue_score" unique_id=836743365]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
@@ -15754,7 +15751,7 @@ label_settings = SubResource("LabelSettings_y2oko")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="red_score" type="TextureRect" parent="CanvasLayer/screen/TDM_UI"]
+[node name="red_score" type="TextureRect" parent="CanvasLayer/screen/TDM_UI" unique_id=585100771]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -15765,7 +15762,7 @@ grow_horizontal = 0
 texture = ExtResource("428_t8li2")
 expand_mode = 1
 
-[node name="Label_red" type="Label" parent="CanvasLayer/screen/TDM_UI/red_score"]
+[node name="Label_red" type="Label" parent="CanvasLayer/screen/TDM_UI/red_score" unique_id=1836392848]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
@@ -15774,7 +15771,7 @@ label_settings = SubResource("LabelSettings_0kw70")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="game_result" type="Control" parent="CanvasLayer/screen/TDM_UI"]
+[node name="game_result" type="Control" parent="CanvasLayer/screen/TDM_UI" unique_id=793692203]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 15
@@ -15783,7 +15780,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="victory" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result"]
+[node name="victory" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result" unique_id=305876670]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15799,7 +15796,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("429_0kw70")
 
-[node name="draw" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result"]
+[node name="draw" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result" unique_id=1303571186]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15815,7 +15812,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("430_issbb")
 
-[node name="defeat" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result"]
+[node name="defeat" type="TextureRect" parent="CanvasLayer/screen/TDM_UI/game_result" unique_id=1862490535]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15831,7 +15828,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("431_88f8a")
 
-[node name="FAA_UI" type="Control" parent="CanvasLayer/screen"]
+[node name="FAA_UI" type="Control" parent="CanvasLayer/screen" unique_id=992826113]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -15840,14 +15837,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="player_score" type="TextureRect" parent="CanvasLayer/screen/FAA_UI"]
+[node name="player_score" type="TextureRect" parent="CanvasLayer/screen/FAA_UI" unique_id=2050193218]
 layout_mode = 1
 offset_right = 150.0
 offset_bottom = 150.0
 texture = ExtResource("427_80bsv")
 expand_mode = 1
 
-[node name="Label_player" type="Label" parent="CanvasLayer/screen/FAA_UI/player_score"]
+[node name="Label_player" type="Label" parent="CanvasLayer/screen/FAA_UI/player_score" unique_id=1350673693]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
@@ -15856,7 +15853,7 @@ label_settings = SubResource("LabelSettings_y2oko")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="game_result" type="Control" parent="CanvasLayer/screen/FAA_UI"]
+[node name="game_result" type="Control" parent="CanvasLayer/screen/FAA_UI" unique_id=328023793]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 15
@@ -15865,7 +15862,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="game_over" type="TextureRect" parent="CanvasLayer/screen/FAA_UI/game_result"]
+[node name="game_over" type="TextureRect" parent="CanvasLayer/screen/FAA_UI/game_result" unique_id=51609454]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -15881,7 +15878,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("420_issbb")
 
-[node name="game_time" type="Control" parent="CanvasLayer/screen"]
+[node name="game_time" type="Control" parent="CanvasLayer/screen" unique_id=1209060049]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -15889,7 +15886,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="time_label" type="Label" parent="CanvasLayer/screen/game_time"]
+[node name="time_label" type="Label" parent="CanvasLayer/screen/game_time" unique_id=2080323753]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -15906,7 +15903,7 @@ label_settings = SubResource("LabelSettings_issbb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="weapons_change_class_1" type="PanelContainer" parent="CanvasLayer/screen"]
+[node name="weapons_change_class_1" type="PanelContainer" parent="CanvasLayer/screen" unique_id=1308583055]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -15916,25 +15913,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b0obc")
 
-[node name="back_ground_wp" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1"]
+[node name="back_ground_wp" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1" unique_id=1565693409]
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c7wlu")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/weapons_change_class_1"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/weapons_change_class_1" unique_id=1358570089]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer" unique_id=1513506402]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VSeparator7" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator7" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1747746006]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class1" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="class1" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1466192308]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -15942,56 +15939,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1" unique_id=1538412607]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=2009724891]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="rifle" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="rifle" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=231211076]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("421_issbb")
 expand_mode = 1
 
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1621611297]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1556387830]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1852047156]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class1" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="class1" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=163397250]
 layout_mode = 2
 text = "Class1"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator10" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator10" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1100086871]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1156010566]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class2" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="class2" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1854959351]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -15999,56 +15996,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2" unique_id=210831905]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=416087]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="smg" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="smg" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1042724223]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("423_d3d3e")
 expand_mode = 1
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=606560768]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=123992564]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1031279784]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class2" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="class2" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1703226720]
 layout_mode = 2
 text = "Class2"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator9" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator9" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=170038033]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1332817030]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class3" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="class3" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=159374775]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16056,56 +16053,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3" unique_id=740073332]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=370282954]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="shotgun" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="shotgun" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1533549105]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("424_qlwhw")
 expand_mode = 1
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=452440102]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1847187567]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=510260318]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class3" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="class3" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=709997110]
 layout_mode = 2
 text = "Class3"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1065048783]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=601087086]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class4" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="class4" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1110887117]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16113,56 +16110,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4" unique_id=1413012948]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=2074411538]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="sniper" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="sniper" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=977455774]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("425_m1xxj")
 expand_mode = 1
 
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1025422530]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1790144994]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1961671505]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class4" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="class4" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=689049877]
 layout_mode = 2
 text = "Class4"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=973757912]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1450654125]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class5" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="class5" type="PanelContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=2134684215]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16170,61 +16167,61 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5" unique_id=1919333048]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1132338378]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="machine_gun" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="machine_gun" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1614890385]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("426_y5p8a")
 expand_mode = 1
 
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1601420414]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1959807706]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=2092706553]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class5" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="class5" type="Label" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1907555376]
 layout_mode = 2
 text = "Class5"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=407884682]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=1989676603]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer"]
+[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/weapons_change_class_1/MarginContainer/VBoxContainer" unique_id=788831313]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="pause_menu" type="Control" parent="CanvasLayer/screen"]
+[node name="pause_menu" type="Control" parent="CanvasLayer/screen" unique_id=944719427]
 process_mode = 2
 visible = false
 layout_mode = 1
@@ -16235,7 +16232,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("415_vpi6d")
 
-[node name="back_ground" type="PanelContainer" parent="CanvasLayer/screen/pause_menu"]
+[node name="back_ground" type="PanelContainer" parent="CanvasLayer/screen/pause_menu" unique_id=1821220350]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -16245,7 +16242,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c7wlu")
 
-[node name="button_panel" type="PanelContainer" parent="CanvasLayer/screen/pause_menu"]
+[node name="button_panel" type="PanelContainer" parent="CanvasLayer/screen/pause_menu" unique_id=1559147285]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -16261,75 +16258,75 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_c7wlu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/button_panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/button_panel" unique_id=1235198427]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=965680754]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 
-[node name="Label_resume" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="Label_resume" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=1637288044]
 layout_mode = 2
 mouse_filter = 1
-text = "resume"
+text = "返回游戏"
 label_settings = ExtResource("416_mx420")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=1521223431]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 
-[node name="Label_restart" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="Label_restart" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=373543953]
 layout_mode = 2
 mouse_filter = 1
-text = "restart"
+text = "重新开始"
 label_settings = ExtResource("417_80bsv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=1228321386]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 
-[node name="Label_change" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="Label_change" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=2039371086]
 layout_mode = 2
 mouse_filter = 1
-text = "change_weapons"
+text = "修改武器"
 label_settings = ExtResource("418_t8li2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=1079083028]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 
-[node name="Label_quit" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="Label_quit" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=1222284241]
 layout_mode = 2
 mouse_filter = 1
-text = "quit"
+text = "退到主菜单"
 label_settings = ExtResource("419_y2oko")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=178365813]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
 
-[node name="Label_shutdown" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer"]
+[node name="Label_shutdown" type="Label" parent="CanvasLayer/screen/pause_menu/button_panel/VBoxContainer" unique_id=613679849]
 layout_mode = 2
 mouse_filter = 1
-text = "shutdown"
+text = "关闭游戏"
 label_settings = ExtResource("420_0kw70")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="quit_alert" type="PanelContainer" parent="CanvasLayer/screen/pause_menu"]
+[node name="quit_alert" type="PanelContainer" parent="CanvasLayer/screen/pause_menu" unique_id=1110442844]
 visible = false
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
@@ -16346,18 +16343,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wn31l")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/pause_menu/quit_alert"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/pause_menu/quit_alert" unique_id=1510625924]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer" unique_id=1681359913]
 layout_mode = 2
 
-[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer" unique_id=241289948]
 custom_minimum_size = Vector2(0, 8.235)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
 
-[node name="alert_label" type="Label" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer"]
+[node name="alert_label" type="Label" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer" unique_id=128051663]
 custom_minimum_size = Vector2(0, 122.67)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16366,44 +16363,44 @@ label_settings = SubResource("LabelSettings_b0obc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer" unique_id=2069849197]
 custom_minimum_size = Vector2(0, 62)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer" unique_id=527568947]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1340963070]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
 
-[node name="yes" type="Button" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="yes" type="Button" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1889528187]
 custom_minimum_size = Vector2(94.54, 72.805)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Yes"
 
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer" unique_id=910349186]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
 
-[node name="no" type="Button" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="no" type="Button" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1714139479]
 custom_minimum_size = Vector2(94.54, 72.805)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "No"
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/quit_alert/MarginContainer/VBoxContainer/HBoxContainer" unique_id=759975799]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
 
-[node name="weapons_change_class2" type="PanelContainer" parent="CanvasLayer/screen/pause_menu"]
+[node name="weapons_change_class2" type="PanelContainer" parent="CanvasLayer/screen/pause_menu" unique_id=1054130944]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -16413,25 +16410,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b0obc")
 
-[node name="back_ground_wp" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2"]
+[node name="back_ground_wp" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2" unique_id=1437898152]
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c7wlu")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2" unique_id=787428600]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer" unique_id=1730601474]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VSeparator7" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator7" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=1640414330]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class1" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="class1" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=563315272]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16439,56 +16436,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1" unique_id=676312571]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=653811848]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="rifle" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="rifle" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=2145830953]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("421_issbb")
 expand_mode = 1
 
-[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1873419525]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=289225389]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1929947702]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class1" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="class1" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=1978845350]
 layout_mode = 2
 text = "Class1"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator10" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+[node name="HSeparator10" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class1/HBoxContainer" unique_id=284922981]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=538482932]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class2" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="class2" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=864165397]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16496,56 +16493,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2" unique_id=89448051]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1544358852]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="smg" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="smg" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=568404309]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("423_d3d3e")
 expand_mode = 1
 
-[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=194961499]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=957293414]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1516822835]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class2" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="class2" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=492862242]
 layout_mode = 2
 text = "Class2"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator9" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+[node name="HSeparator9" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class2/HBoxContainer2" unique_id=1608258411]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=951419154]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class3" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="class3" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=549413554]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16553,56 +16550,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3" unique_id=616458588]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=791477753]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="shotgun" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="shotgun" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1729335980]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("424_qlwhw")
 expand_mode = 1
 
-[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1790046982]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=2123590220]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=482198208]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class3" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="class3" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1360698119]
 layout_mode = 2
 text = "Class3"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class3/HBoxContainer3" unique_id=1517941958]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=1072069169]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class4" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="class4" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=1438110197]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16610,56 +16607,56 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4" unique_id=24147492]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1143169073]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="sniper" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="sniper" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=2102282948]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("425_m1xxj")
 expand_mode = 1
 
-[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator5" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=871251059]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1230642481]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=1168202302]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class4" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="class4" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=225656695]
 layout_mode = 2
 text = "Class4"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class4/HBoxContainer4" unique_id=193717195]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator4" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=742321274]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="class5" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="class5" type="PanelContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=1695937280]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -16667,64 +16664,64 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5" unique_id=996906589]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=2077354686]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="machine_gun" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="machine_gun" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1280919050]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("426_y5p8a")
 expand_mode = 1
 
-[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator6" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1571045122]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="pistol" type="TextureRect" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=787600787]
 custom_minimum_size = Vector2(143.38, 78)
 layout_mode = 2
 texture = ExtResource("422_88f8a")
 expand_mode = 1
 
-[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator7" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1995854568]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="class5" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="class5" type="Label" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=660670121]
 layout_mode = 2
 text = "Class5"
 label_settings = SubResource("LabelSettings_qi88y")
 
-[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+[node name="HSeparator8" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/class5/HBoxContainer5" unique_id=1065492685]
 custom_minimum_size = Vector2(40.98, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
 
-[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator5" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=766745009]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=763176607]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1334116900]
 custom_minimum_size = Vector2(228.07, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="Button_cancel" type="Button" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Button_cancel" type="Button" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1979190987]
 custom_minimum_size = Vector2(150, 70.09)
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -16738,18 +16735,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qi88y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qi88y")
 text = "OK"
 
-[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer"]
+[node name="VSeparator6" type="VSeparator" parent="CanvasLayer/screen/pause_menu/weapons_change_class2/MarginContainer/VBoxContainer" unique_id=373273159]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
 
-[node name="AnimationPlayer_ui" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer_ui" type="AnimationPlayer" parent="CanvasLayer" unique_id=893322145]
 process_mode = 3
-libraries = {
-&"": SubResource("AnimationLibrary_na5tk")
-}
+libraries/ = SubResource("AnimationLibrary_na5tk")
 
-[node name="AnimationTree_ui" type="AnimationTree" parent="CanvasLayer/AnimationPlayer_ui"]
+[node name="AnimationTree_ui" type="AnimationTree" parent="CanvasLayer/AnimationPlayer_ui" unique_id=1357722478]
 process_mode = 3
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeBlendTree_6y5c8")

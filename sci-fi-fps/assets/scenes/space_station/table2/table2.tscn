@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://cdfe0bi84abci"]
+[gd_scene format=4 uid="uid://cdfe0bi84abci"]
 
+[ext_resource type="Script" uid="uid://ofsjs371h1ac" path="res://assets/scenes/space_station/table2/table_2.gd" id="1_0o60b"]
 [ext_resource type="Texture2D" uid="uid://djysecfvct0yq" path="res://assets/scenes/space_station/table2/table_Base_color.png" id="1_pvg7v"]
 [ext_resource type="Texture2D" uid="uid://d0wnlhc78fkp6" path="res://assets/scenes/space_station/table2/table_Metallic.png" id="2_hspuf"]
 [ext_resource type="Texture2D" uid="uid://dyfd5ej5au8a1" path="res://assets/scenes/space_station/table2/table_Height.png" id="2_mt0lo"]
@@ -200,16 +201,17 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ynca8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1ynp"]
-albedo_color = Color(0, 2, 2, 1)
+albedo_color = Color(0, 1.353256, 1.353256, 1)
 emission_enabled = true
-emission = Color(0, 2, 2, 1)
+emission = Color(0, 1.353256, 1.353256, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gy7jf"]
 size = Vector3(5.91998, 2.47552, 3.41467)
 
-[node name="table2" type="StaticBody3D"]
+[node name="table2" type="StaticBody3D" unique_id=1642909984]
+script = ExtResource("1_0o60b")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=256755089]
 transform = Transform3D(2.72943, 0, 0, 0, 0.0825101, 0, 0, 0, 1.55786, 0, 2.14118, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_xfdns")
@@ -218,13 +220,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x2ybo")
 surface_material_override/1 = SubResource("StandardMaterial3D_5a052")
 surface_material_override/2 = SubResource("StandardMaterial3D_srpdy")
 
-[node name="light" type="MeshInstance3D" parent="."]
+[node name="light" type="MeshInstance3D" parent="." unique_id=1509079254]
 transform = Transform3D(2.72943, 0, 0, 0, 0.0825101, 0, 0, 0, 1.55786, 0, 2.14118, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_hk2s5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_n1ynp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1669774392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00106812, 1.41544, -0.000671387)
 shape = SubResource("BoxShape3D_gy7jf")

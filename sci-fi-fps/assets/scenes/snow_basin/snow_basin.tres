@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dlk8u12yxr7h2"]
+[gd_resource type="Environment" format=3 uid="uid://dlk8u12yxr7h2"]
 
 [ext_resource type="Texture2D" uid="uid://dssh3istcogwu" path="res://assets/scenes/snow_basin/sky/kloofendal_48d_partly_cloudy_puresky_4k.hdr" id="1_h72xa"]
 

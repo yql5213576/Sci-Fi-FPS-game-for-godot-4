@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=4 uid="uid://c10dkqnex1x4"]
+[gd_scene format=4 uid="uid://c10dkqnex1x4"]
 
 [ext_resource type="Texture2D" uid="uid://1qc2f2lrqvje" path="res://assets/scenes/space_station/levitation_globe/lg_Base_color.png" id="1_6kiud"]
+[ext_resource type="Script" uid="uid://bu62j8xs47gwg" path="res://assets/scenes/space_station/levitation_globe/levitation_globe.gd" id="1_mnlrt"]
 [ext_resource type="Texture2D" uid="uid://rdtuhr0ncmm7" path="res://assets/scenes/space_station/levitation_globe/lg_Metallic.png" id="2_ix0qp"]
 [ext_resource type="Texture2D" uid="uid://bfkrepxghou7o" path="res://assets/scenes/space_station/levitation_globe/lg_Height.png" id="2_x7a25"]
 [ext_resource type="Texture2D" uid="uid://cvgyxvkk5g14p" path="res://assets/scenes/space_station/levitation_globe/lg_Normal_OpenGL.png" id="3_x7a25"]
 [ext_resource type="Texture2D" uid="uid://cyr0o57ri7noo" path="res://assets/scenes/space_station/levitation_globe/lg_Roughness.png" id="4_8lew3"]
+[ext_resource type="Texture2D" uid="uid://clddq7hmetgpy" path="res://assets/Kenney's_assets/kenney_particle-pack/PNG (Transparent)/star_01.png" id="6_xffel"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mo836"]
 resource_name = "lg"
@@ -91,15 +93,18 @@ backlight_enabled = true
 backlight_texture = ExtResource("1_6kiud")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drihv"]
-albedo_color = Color(0, 2, 2, 1)
+albedo_color = Color(0, 1.353256, 1.353256, 1)
 emission_enabled = true
-emission = Color(0, 2, 2, 1)
+emission = Color(0, 1.353256, 1.353256, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytyqn"]
-albedo_color = Color(0, 0.4, 1, 1)
-emission_enabled = true
-emission = Color(0, 0.4, 1, 1)
-emission_energy_multiplier = 5.0
+transparency = 1
+albedo_color = Color(0, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("6_xffel")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6wpds"]
 emission_shape = 1
@@ -110,24 +115,23 @@ linear_accel_max = 15.0
 tangential_accel_min = -2.23517e-06
 tangential_accel_max = 10.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_1lii3"]
-radius = 0.05
-height = 0.1
+[sub_resource type="QuadMesh" id="QuadMesh_mnlrt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7722r"]
 radius = 1.76203
 height = 5.462
 
-[node name="levitation_globe" type="StaticBody3D"]
+[node name="levitation_globe" type="StaticBody3D" unique_id=1179382212]
+script = ExtResource("1_mnlrt")
 
-[node name="lg" type="MeshInstance3D" parent="."]
+[node name="lg" type="MeshInstance3D" parent="." unique_id=268069337]
 layers = 2
 mesh = SubResource("ArrayMesh_fkieb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_x5elo")
 surface_material_override/1 = SubResource("StandardMaterial3D_drihv")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=915064751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.364033, 0)
 layers = 2
 material_override = SubResource("StandardMaterial3D_ytyqn")
@@ -135,8 +139,8 @@ amount = 15
 lifetime = 0.35
 speed_scale = 0.6
 process_material = SubResource("ParticleProcessMaterial_6wpds")
-draw_pass_1 = SubResource("SphereMesh_1lii3")
+draw_pass_1 = SubResource("QuadMesh_mnlrt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1353835969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0552269, 0)
 shape = SubResource("CapsuleShape3D_7722r")

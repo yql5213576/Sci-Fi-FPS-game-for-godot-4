@@ -1,12 +1,12 @@
 extends Node3D
 
-@onready var particle_node_main1=$GPUParticles3D
-@onready var particle_node_main2=$GPUParticles3D2
-var one=false
-var two=false
-var shoot_point_pos=null
-var pos=Vector3()
-var rot=Vector3()
+@onready var particle_node_main1:Node=$GPUParticles3D
+@onready var particle_node_main2:Node=$GPUParticles3D2
+var one:bool=false
+var two:bool=false
+var shoot_point_pos:Node=null
+var pos:Vector3=Vector3()
+var rot:Vector3=Vector3()
 func _on_gpu_particles_3d_finished() -> void:
 	one=true
 

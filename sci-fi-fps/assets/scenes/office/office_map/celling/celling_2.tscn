@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://cbgabdijgmmiw"]
+[gd_scene load_steps=11 format=4 uid="uid://cbgabdijgmmiw"]
 
-[ext_resource type="Texture2D" uid="uid://lemg6q67c7r4" path="res://office/office_map/celling/celling_Base_color.png" id="1_dbmvt"]
-[ext_resource type="Texture2D" uid="uid://c40xmyxbiarxu" path="res://office/office_map/celling/celling_Height.png" id="2_dpua2"]
-[ext_resource type="Texture2D" uid="uid://d2wfkgolkx5hd" path="res://office/office_map/celling/celling_Metallic.png" id="3_5f1ap"]
-[ext_resource type="Texture2D" uid="uid://cjbj3vi2fwt8o" path="res://office/office_map/celling/celling_Normal_OpenGL.png" id="4_42y5l"]
-[ext_resource type="Texture2D" uid="uid://c7mljhgfpqtb4" path="res://office/office_map/celling/celling_Roughness.png" id="5_5coml"]
+[ext_resource type="Texture2D" uid="uid://lemg6q67c7r4" path="res://assets/scenes/office/office_map/celling/celling_Base_color.png" id="1_dbmvt"]
+[ext_resource type="Script" uid="uid://cdiijqxjqvrty" path="res://assets/scenes/office/office_map/celling/celling_2.gd" id="1_wh3a1"]
+[ext_resource type="Texture2D" uid="uid://c40xmyxbiarxu" path="res://assets/scenes/office/office_map/celling/celling_Height.png" id="2_dpua2"]
+[ext_resource type="Texture2D" uid="uid://d2wfkgolkx5hd" path="res://assets/scenes/office/office_map/celling/celling_Metallic.png" id="3_5f1ap"]
+[ext_resource type="Texture2D" uid="uid://cjbj3vi2fwt8o" path="res://assets/scenes/office/office_map/celling/celling_Normal_OpenGL.png" id="4_42y5l"]
+[ext_resource type="Texture2D" uid="uid://c7mljhgfpqtb4" path="res://assets/scenes/office/office_map/celling/celling_Roughness.png" id="5_5coml"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10yky"]
 resource_name = "celling"
@@ -59,6 +60,7 @@ subsurf_scatter_strength = 0.3
 backlight_enabled = true
 
 [node name="celling2" type="Node3D"]
+script = ExtResource("1_wh3a1")
 
 [node name="celling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.653663, -0.27350938, -3.5469894)

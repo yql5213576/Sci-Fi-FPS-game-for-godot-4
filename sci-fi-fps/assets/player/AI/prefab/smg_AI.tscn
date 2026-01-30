@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=4 uid="uid://dxsrvlpjg43gy"]
+[gd_scene format=4 uid="uid://dxsrvlpjg43gy"]
 
 [ext_resource type="Script" uid="uid://4bvd378mlvo7" path="res://assets/player/scripts/smg_ai.gd" id="1_3vv4w"]
 [ext_resource type="Texture2D" uid="uid://nf7rjjku865n" path="res://assets/player/textures/smg/gun_main1_Base_color.png" id="2_4jw0a"]
@@ -900,16 +900,16 @@ shading_mode = 0
 albedo_color = Color(5, 5, 5, 1)
 albedo_texture = ExtResource("88_k800q")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skgaw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soomu"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(7, 5, 5, 1)
+albedo_color = Color(7.9112988, 1.3967156, 0, 1)
 albedo_texture = ExtResource("89_8lgf6")
 
-[node name="smg" type="Node3D"]
+[node name="smg" type="Node3D" unique_id=841865747]
 script = ExtResource("1_3vv4w")
 
-[node name="gun_main" type="MeshInstance3D" parent="."]
+[node name="gun_main" type="MeshInstance3D" parent="." unique_id=1976626966]
 layers = 32
 lod_bias = 0.1
 mesh = SubResource("ArrayMesh_4d3c2")
@@ -926,7 +926,7 @@ surface_material_override/8 = SubResource("StandardMaterial3D_h2lxk")
 surface_material_override/9 = SubResource("StandardMaterial3D_wrbgc")
 surface_material_override/10 = SubResource("StandardMaterial3D_xk3rk")
 
-[node name="trigger" type="MeshInstance3D" parent="gun_main"]
+[node name="trigger" type="MeshInstance3D" parent="gun_main" unique_id=1773352264]
 transform = Transform3D(0.134138, 0, 0, 0, 0.134138, 0, 0, 0, 0.21675, -0.410983, 0.26672, 0)
 layers = 32
 lod_bias = 0.1
@@ -934,7 +934,7 @@ mesh = SubResource("ArrayMesh_vbt03")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_v6oy2")
 
-[node name="barrel" type="MeshInstance3D" parent="gun_main"]
+[node name="barrel" type="MeshInstance3D" parent="gun_main" unique_id=151134061]
 transform = Transform3D(9.59775e-08, 0.536745, 3.19924e-08, -0.536745, 9.59775e-08, 5.7207e-15, 0, -5.16958e-08, 0.86731, -6.45123, 2.09828, 0)
 layers = 32
 lod_bias = 0.1
@@ -942,14 +942,14 @@ mesh = SubResource("ArrayMesh_isjwx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1jkm6")
 
-[node name="magazine" type="MeshInstance3D" parent="gun_main"]
+[node name="magazine" type="MeshInstance3D" parent="gun_main" unique_id=153451886]
 layers = 32
 lod_bias = 0.1
 mesh = SubResource("ArrayMesh_7gqde")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_c6545")
 
-[node name="handle" type="MeshInstance3D" parent="gun_main"]
+[node name="handle" type="MeshInstance3D" parent="gun_main" unique_id=168605979]
 transform = Transform3D(0.196452, 0, 0, 0, 0.196452, 0, 0, 0, 0.279096, -4.56849, -0.743136, 0)
 layers = 32
 lod_bias = 0.1
@@ -957,7 +957,7 @@ mesh = SubResource("ArrayMesh_3fha8")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_w55dg")
 
-[node name="object2" type="MeshInstance3D" parent="gun_main"]
+[node name="object2" type="MeshInstance3D" parent="gun_main" unique_id=1957781407]
 transform = Transform3D(1.33338, 0, 0, 0, 0.410032, 0, 0, 0, 0.292046, -4.7136, 1.4279, 2.02329)
 layers = 32
 lod_bias = 0.1
@@ -965,7 +965,7 @@ mesh = SubResource("ArrayMesh_3cb35")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_dog1j")
 
-[node name="object1" type="MeshInstance3D" parent="gun_main"]
+[node name="object1" type="MeshInstance3D" parent="gun_main" unique_id=1371136584]
 transform = Transform3D(0.242307, 0, 0, 0, 0, 0.242307, 0, -0.191145, 0, -1.16563, 1.28948, 1.02325)
 layers = 32
 lod_bias = 0.1
@@ -973,19 +973,19 @@ mesh = SubResource("ArrayMesh_qcuw2")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_mh107")
 
-[node name="sight" parent="gun_main" instance=ExtResource("69_ghojq")]
+[node name="sight" parent="gun_main" unique_id=1960273457 instance=ExtResource("69_ghojq")]
 transform = Transform3D(0, -1.25772, 0, 0, 0, -1.66003, 1.80951, 0, 0, 1.50617, 4.19131, 0)
 
-[node name="RP1" type="MeshInstance3D" parent="gun_main/sight"]
+[node name="RP1" type="MeshInstance3D" parent="gun_main/sight" unique_id=3643488]
 transform = Transform3D(0.0605511, 0, 0, 0, -1.76452e-09, 0.054496, 0, -0.0403674, -2.3821e-09, 0, 0.51152, -0.312207)
 visible = false
 mesh = SubResource("QuadMesh_4ocna")
 surface_material_override/0 = SubResource("StandardMaterial3D_fo3kb")
 
-[node name="RP2" type="MeshInstance3D" parent="gun_main/sight"]
+[node name="RP2" type="MeshInstance3D" parent="gun_main/sight" unique_id=673660064]
 transform = Transform3D(0.217984, 0, 0, 0, -6.35226e-09, 0.196186, 0, -0.145323, -8.57555e-09, 0, 0.51152, -0.312207)
 mesh = SubResource("QuadMesh_4ocna")
-surface_material_override/0 = SubResource("StandardMaterial3D_skgaw")
+surface_material_override/0 = SubResource("StandardMaterial3D_soomu")
 
-[node name="shoot_point" type="Marker3D" parent="."]
+[node name="shoot_point" type="Marker3D" parent="." unique_id=76078555]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.72922, 2.09828, 2.72806e-08)

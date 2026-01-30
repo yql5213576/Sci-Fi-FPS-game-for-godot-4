@@ -1,17 +1,17 @@
 extends Node3D
-var scene_root=null
-var player_master=null
+var scene_root:Node=null
+var player_master:Node=null
 func _ready() -> void: 
 	$fire_sm.restart()
 	
-var a=false
+var a:bool=false
 func _on_fire_sm_finished() -> void:
 	a=true
 
-var b=false
+var b:bool=false
 func _on_exp_audio_finished() -> void:
 	b=true
-var flash_ready=false
+var flash_ready:bool=false
 func _physics_process(delta: float) -> void:
 	if flash_ready==false:
 		if $Area3D.has_overlapping_bodies():
@@ -19,8 +19,8 @@ func _physics_process(delta: float) -> void:
 				if flash.has_method("flash_my_eyes"):
 					flash.flash_my_eyes()
 					
-		var flash_audio_scene=preload("res://assets/audios/flash_audio.tscn").duplicate()
-		var fa=flash_audio_scene.instantiate()
+		var flash_audio_scene:Resource=preload("res://assets/audios/flash_audio.tscn").duplicate()
+		var fa:Node=flash_audio_scene.instantiate()
 		fa.position=self.global_position
 		scene_root.add_child(fa)
 		flash_ready=true

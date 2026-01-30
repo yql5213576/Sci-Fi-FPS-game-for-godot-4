@@ -1,86 +1,86 @@
 extends Node3D
-@onready var player_master=$".."
-var player_models=[]
+@onready var player_master:Node=$".."
+var player_models:Array[Node]=[]
 
-@onready var right_hand=$Skeleton/Skeleton3D/right_hand
-@onready var scene_root=$"..".scene_root
+@onready var right_hand:Node=$Skeleton/Skeleton3D/right_hand
+@onready var scene_root:Node=$"..".scene_root
 
-@onready var camera_main=$Camera3D_main
-@onready var camera_idle_pos_node=$camera_idle_pos
-@onready var camera_aiming_pos_node=$Camera3D_aiming
-@onready var sniper_camera=$Camera3D_sniper
+@onready var camera_main:Node=$Camera3D_main
+@onready var camera_idle_pos_node:Node=$camera_idle_pos
+@onready var camera_aiming_pos_node:Node=$Camera3D_aiming
+@onready var sniper_camera:Node=$Camera3D_sniper
 
-@onready var sub_camera_main=$SubViewportContainer/SubViewport/Camera3D_sub
-@onready var sub_sniper_camera_main=$SubViewportContainer/SubViewport/Camera3D_sniper_sub
+@onready var sub_camera_main:Node=$SubViewportContainer/SubViewport/Camera3D_sub
+@onready var sub_sniper_camera_main:Node=$SubViewportContainer/SubViewport/Camera3D_sniper_sub
 
-@onready var player_1st_animation_tree=$AnimationPlayer/AnimationTree
-
-
-@onready var rifle_model=$Skeleton/Skeleton3D/right_hand/rifle
-@onready var pistol_model=$Skeleton/Skeleton3D/right_hand/pistol
-@onready var smg_model=$Skeleton/Skeleton3D/right_hand/smg
-@onready var sniper_model=$Skeleton/Skeleton3D/right_hand/sniper
-@onready var shotgun_model=$Skeleton/Skeleton3D/right_hand/shotgun
-@onready var machine_gun_model=$Skeleton/Skeleton3D/right_hand/machine_gun
-
-@onready var rifle_mag_model=$Skeleton/Skeleton3D/left_hand/rifle1_mag
-@onready var pistol_mag_model=$Skeleton/Skeleton3D/left_hand/pistol1_mag
-@onready var smg_mag_model=$Skeleton/Skeleton3D/left_hand/smg1_mag
-@onready var sniper_mag_model=$Skeleton/Skeleton3D/left_hand/sniper1_mag
-@onready var shotgun_mag_model=$Skeleton/Skeleton3D/left_hand/shotgun_ammo_model_1st
-@onready var machine_gun_mag_model=$Skeleton/Skeleton3D/left_hand/machine_gun_mag_1st
-
-@onready var sniper_zoom_ui=$SubViewportContainer/SubViewport/Camera3D_sniper_sub/zoom_texture
-@onready var weapon_change_ui=$CanvasLayer/screen/weapons_change_class_1
+@onready var player_1st_animation_tree:Node=$AnimationPlayer/AnimationTree
 
 
-@onready var TDM_ui=$CanvasLayer/screen/TDM_UI
-@onready var blue_score_node_ui=$CanvasLayer/screen/TDM_UI/blue_score/Label_blue
-@onready var red_score_node_ui=$CanvasLayer/screen/TDM_UI/red_score/Label_red
+@onready var rifle_model:Node=$Skeleton/Skeleton3D/right_hand/rifle
+@onready var pistol_model:Node=$Skeleton/Skeleton3D/right_hand/pistol
+@onready var smg_model:Node=$Skeleton/Skeleton3D/right_hand/smg
+@onready var sniper_model:Node=$Skeleton/Skeleton3D/right_hand/sniper
+@onready var shotgun_model:Node=$Skeleton/Skeleton3D/right_hand/shotgun
+@onready var machine_gun_model:Node=$Skeleton/Skeleton3D/right_hand/machine_gun
 
-@onready var FFA_ui=$CanvasLayer/screen/FAA_UI
-@onready var player_score_node_ui=$CanvasLayer/screen/FAA_UI/player_score/Label_player
+@onready var rifle_mag_model:Node=$Skeleton/Skeleton3D/left_hand/rifle1_mag
+@onready var pistol_mag_model:Node=$Skeleton/Skeleton3D/left_hand/pistol1_mag
+@onready var smg_mag_model:Node=$Skeleton/Skeleton3D/left_hand/smg1_mag
+@onready var sniper_mag_model:Node=$Skeleton/Skeleton3D/left_hand/sniper1_mag
+@onready var shotgun_mag_model:Node=$Skeleton/Skeleton3D/left_hand/shotgun_ammo_model_1st
+@onready var machine_gun_mag_model:Node=$Skeleton/Skeleton3D/left_hand/machine_gun_mag_1st
 
-@onready var game_time_ui=$CanvasLayer/screen/game_time/time_label
-
-@onready var victory_icon=$CanvasLayer/screen/TDM_UI/game_result/victory
-@onready var draw_icon=$CanvasLayer/screen/TDM_UI/game_result/draw
-@onready var defeat_icon=$CanvasLayer/screen/TDM_UI/game_result/defeat
-@onready var game_over_icon=$CanvasLayer/screen/FAA_UI/game_result/game_over
-
-
-var weapon_change_alert_timer=0
-
-
-@onready var grenade_throw_pos_node=$Skeleton/Skeleton3D/grenade_throw_pos
+@onready var sniper_zoom_ui:Node=$SubViewportContainer/SubViewport/Camera3D_sniper_sub/zoom_texture
+@onready var weapon_change_ui:Node=$CanvasLayer/screen/weapons_change_class_1
 
 
+@onready var TDM_ui:Node=$CanvasLayer/screen/TDM_UI
+@onready var blue_score_node_ui:Node=$CanvasLayer/screen/TDM_UI/blue_score/Label_blue
+@onready var red_score_node_ui:Node=$CanvasLayer/screen/TDM_UI/red_score/Label_red
+
+@onready var FFA_ui:Node=$CanvasLayer/screen/FAA_UI
+@onready var player_score_node_ui:Node=$CanvasLayer/screen/FAA_UI/player_score/Label_player
+
+@onready var game_time_ui:Node=$CanvasLayer/screen/game_time/time_label
+
+@onready var victory_icon:Node=$CanvasLayer/screen/TDM_UI/game_result/victory
+@onready var draw_icon:Node=$CanvasLayer/screen/TDM_UI/game_result/draw
+@onready var defeat_icon:Node=$CanvasLayer/screen/TDM_UI/game_result/defeat
+@onready var game_over_icon:Node=$CanvasLayer/screen/FAA_UI/game_result/game_over
+
+
+var weapon_change_alert_timer:int=0
+
+
+@onready var grenade_throw_pos_node:Node=$Skeleton/Skeleton3D/grenade_throw_pos
 
 
 
-@onready var sub_viewport_ui=$SubViewportContainer
 
 
-@onready var grenade_fire_icon=preload("res://assets/my_UI/fire.png")
-@onready var grenade_smoke_icon=preload("res://assets/my_UI/smoke.png")
-@onready var grenade_flash_icon=preload("res://assets/my_UI/flash.png")
-var fire_g_num_color=Color("ff0000")
-var smoke_g_num_color=Color("1a9300")
-var flash_g_num_color=Color("00afff")
-@onready var grenade_texture_ui=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/grenade_type
-@onready var grenade_num_ui=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/num
-@onready var grenade_LS_ui=preload("res://assets/my_UI/grenade_num_ui.tres")
-
-@onready var arms_mod=$Skeleton/Skeleton3D/armor_arms
-@onready var hand_mod=$Skeleton/Skeleton3D/armor_hand
-@onready var shouder_mod=$Skeleton/Skeleton3D/armor_shouder
-@onready var body_mod=$Skeleton/Skeleton3D/skin_body
+@onready var sub_viewport_ui:Node=$SubViewportContainer
 
 
-@onready var jump_audio_node=$jump_audio
+@onready var grenade_fire_icon:Resource=preload("res://assets/my_UI/fire.png")
+@onready var grenade_smoke_icon:Resource=preload("res://assets/my_UI/smoke.png")
+@onready var grenade_flash_icon:Resource=preload("res://assets/my_UI/flash.png")
+var fire_g_num_color:Color=Color("ff0000")
+var smoke_g_num_color:Color=Color("1a9300")
+var flash_g_num_color:Color=Color("00afff")
+@onready var grenade_texture_ui:Node=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/grenade_type
+@onready var grenade_num_ui:Node=$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/num
+@onready var grenade_LS_ui:Resource=preload("res://assets/my_UI/grenade_num_ui.tres")
 
-@onready var sword_trigger=$sword_attack_trigger
-var machine_gun_ammos_models=[]
+@onready var arms_mod:Node=$Skeleton/Skeleton3D/armor_arms
+@onready var hand_mod:Node=$Skeleton/Skeleton3D/armor_hand
+@onready var shouder_mod:Node=$Skeleton/Skeleton3D/armor_shouder
+@onready var body_mod:Node=$Skeleton/Skeleton3D/skin_body
+
+
+@onready var jump_audio_node:Node=$jump_audio
+
+@onready var sword_trigger:Node=$sword_attack_trigger
+var machine_gun_ammos_models:Array[Node]=[]
 func _ready() -> void:
 	$Skeleton/Skeleton3D/right_hand/grenade_fire.visible=false
 	$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
@@ -110,6 +110,7 @@ func _ready() -> void:
 	machine_gun_ammos_models.append($Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15)
 	machine_gun_ammos_models.append($Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16)
 	machine_gun_ammos_models.append($Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17)
+
 
 func _process(delta: float) -> void:
 	if pkt_bool:
@@ -191,6 +192,22 @@ func _process(delta: float) -> void:
 		#grenade_LS_ui.font_color=flash_g_num_color
 	$CanvasLayer/screen/grenade_panel/VBoxContainer/HBoxContainer/num.text=str($"..".using_grenade_nums)
 	
+	if UserData.language_data=="chinese":
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_resume.text="返回游戏"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_restart.text="重新开始"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_change.text="修改武器"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_quit.text="退到主菜单"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_shutdown.text="关闭游戏"
+		
+		$CanvasLayer/screen/alert_change_weapon.text="\n\n你将在下次重生后更换武器"
+	if UserData.language_data=="english":
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_resume.text="resume"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_restart.text="restart"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_change.text="change weapons"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_quit.text="quit"
+		$CanvasLayer/screen/pause_menu/button_panel/VBoxContainer/Label_shutdown.text="shutdown"
+		$CanvasLayer/screen/alert_change_weapon.text="\n\nYour Weapon will be modified after next respawn"
+	
 func gun_shoot_anim_event():
 	$"..".gun_shoot_anim_event()
 	#$Skeleton/Skeleton3D/right_hand/sniper/ammo_rig_position/ammo_sniper_anim_model.visible=true
@@ -228,15 +245,15 @@ func reloading1_anim_event_end():#handle
 	if $"..".using_weapon=="sniper":
 		#$Skeleton/Skeleton3D/right_hand/sniper/ammo_rig_position/ammo_sniper_anim_model.visible=false
 		#$Skeleton/Skeleton3D/right_hand/sniper/ammo_rig_position/ammo_sniper_anim_model.set_layer_mask_value(7,false)
-		var sniper_ammo_rig_1st=preload("res://assets/player/prefab/sniper1_ammo_1st_rig.tscn")
-		var sar=sniper_ammo_rig_1st.instantiate()
+		var sniper_ammo_rig_1st:Resource=preload("res://assets/player/prefab/sniper1_ammo_1st_rig.tscn")
+		var sar:Node=sniper_ammo_rig_1st.instantiate()
 		sar.global_transform=$Skeleton/Skeleton3D/right_hand/sniper/ammo_rig_position.global_transform
 		$"..".scene_root.add_child(sar)
 		sar.apply_impulse($Skeleton/Skeleton3D/right_hand/sniper/ammo_rig_position.get_global_transform().basis.x.normalized()*10)
 
 	if $"..".using_weapon=="shotgun":
-		var shotgun_ammo_rig_1st=preload("res://assets/player/prefab/shotgun_ammo_1st_rig.tscn")
-		var str=shotgun_ammo_rig_1st.instantiate()
+		var shotgun_ammo_rig_1st:Resource=preload("res://assets/player/prefab/shotgun_ammo_1st_rig.tscn")
+		var str:Node=shotgun_ammo_rig_1st.instantiate()
 		str.global_transform=$Skeleton/Skeleton3D/right_hand/shotgun/ammo_rig_position.global_transform
 		$"..".scene_root.add_child(str)
 		str.apply_impulse($Skeleton/Skeleton3D/right_hand/shotgun/ammo_rig_position.get_global_transform().basis.y.normalized()*-10)
@@ -245,32 +262,32 @@ func reloading1_anim_event_end():#handle
 func reloading2_anim_event_start():#mag
 	if $"..".using_weapon=="rifle"&&player_master.player_die==false:
 		rifle_model.mag_model_node.visible=false
-		var rifle_mag_rig_1st=preload("res://assets/player/prefab/rifle1_mag_1st_rig.tscn")
-		var rmrig=rifle_mag_rig_1st.instantiate()
+		var rifle_mag_rig_1st:Resource=preload("res://assets/player/prefab/rifle1_mag_1st_rig.tscn")
+		var rmrig:Node=rifle_mag_rig_1st.instantiate()
 		rmrig.transform=rifle_model.mag_model_node.global_transform
 		$"..".scene_root.add_child(rmrig)
 		
 	if $"..".using_weapon=="pistol"&&player_master.player_die==false:
 		pistol_model.mag_model_node.visible=false
 		
-		var pistol_mag_rig_1st=preload("res://assets/player/prefab/pistol1_mag_1st_rig.tscn")
-		var pmrig=pistol_mag_rig_1st.instantiate()
+		var pistol_mag_rig_1st:Resource=preload("res://assets/player/prefab/pistol1_mag_1st_rig.tscn")
+		var pmrig:Node=pistol_mag_rig_1st.instantiate()
 		pmrig.transform=pistol_model.mag_model_node.global_transform
 		$"..".scene_root.add_child(pmrig)
 		
 	if $"..".using_weapon=="smg"&&player_master.player_die==false:
 		smg_model.mag_model_node.visible=false
 		
-		var smg_mag_rig_1st=preload("res://assets/player/prefab/smg1_mag_1st_rig.tscn")
-		var smrig=smg_mag_rig_1st.instantiate()
+		var smg_mag_rig_1st:Resource=preload("res://assets/player/prefab/smg1_mag_1st_rig.tscn")
+		var smrig:Node=smg_mag_rig_1st.instantiate()
 		smrig.transform=smg_model.mag_model_node.global_transform
 		$"..".scene_root.add_child(smrig)
 		
 	if $"..".using_weapon=="sniper"&&player_master.player_die==false:
 		sniper_model.mag_model_node.visible=false
 		
-		var sniper_mag_rig_1st=preload("res://assets/player/prefab/sniper1_mag_1st_rig.tscn")
-		var ssmrig=sniper_mag_rig_1st.instantiate()
+		var sniper_mag_rig_1st:Resource=preload("res://assets/player/prefab/sniper1_mag_1st_rig.tscn")
+		var ssmrig:Node=sniper_mag_rig_1st.instantiate()
 		ssmrig.transform=sniper_model.mag_model_node.global_transform
 		$"..".scene_root.add_child(ssmrig)
 		
@@ -320,27 +337,27 @@ func reloading2_anim_event_end():#mag
 func reloading_ammos_anim_event():
 	$"..".reloading_ammos_anim_event()
 
-@onready var ui_animation_tree=$CanvasLayer/AnimationPlayer_ui/AnimationTree_ui
-@onready var ammos_ui=$CanvasLayer/screen/ammos_panel/ammos/board/Ammo5/ammos
-@onready var health_ui=$CanvasLayer/screen/health_panel/health
+@onready var ui_animation_tree:Node=$CanvasLayer/AnimationPlayer_ui/AnimationTree_ui
+@onready var ammos_ui:Node=$CanvasLayer/screen/ammos_panel/ammos/board/Ammo5/ammos
+@onready var health_ui:Node=$CanvasLayer/screen/health_panel/health
 
-@onready var ECG_anim=$CanvasLayer/screen/health_panel/health/ui2/ECG
+@onready var ECG_anim:Node=$CanvasLayer/screen/health_panel/health/ui2/ECG
 
-@onready var rifle_crosshair_visible=$CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d
-@onready var pistol_crosshair_visible=$CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d
-@onready var smg_crosshair_visible=$CanvasLayer/screen/smg_crosshair/smg_crosshair_2d
-@onready var shotgun_crosshair_visible=$CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair
-@onready var machine_gun_crosshair_visible=$CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2
-@onready var aiming_shoot_hit_crosshair=$CanvasLayer/screen/aiming_shoot_hit/hit2
+@onready var rifle_crosshair_visible:Node=$CanvasLayer/screen/rifle_crosshair/rifle_crosshair_2d
+@onready var pistol_crosshair_visible:Node=$CanvasLayer/screen/pistol_crosshair/pistol_crosshair_2d
+@onready var smg_crosshair_visible:Node=$CanvasLayer/screen/smg_crosshair/smg_crosshair_2d
+@onready var shotgun_crosshair_visible:Node=$CanvasLayer/screen/shotgun_crosshair/shot_gun_crosshair
+@onready var machine_gun_crosshair_visible:Node=$CanvasLayer/screen/machine_gun_crosshair/machine_gun_crosshair2
+@onready var aiming_shoot_hit_crosshair:Node=$CanvasLayer/screen/aiming_shoot_hit/hit2
 
-@onready var rifle_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/RifleTW
-@onready var pistol_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/PistolTW
-@onready var smg_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/SmgTW
-@onready var sniper_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/SniperTW
-@onready var shotgun_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/ShotgunTW
-@onready var machine_gun_weapon_icon=$CanvasLayer/screen/ammos_panel/ammos/weapons/MachineGunTW
+@onready var rifle_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/RifleTW
+@onready var pistol_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/PistolTW
+@onready var smg_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/SmgTW
+@onready var sniper_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/SniperTW
+@onready var shotgun_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/ShotgunTW
+@onready var machine_gun_weapon_icon:Node=$CanvasLayer/screen/ammos_panel/ammos/weapons/MachineGunTW
 
-@onready var pause_menu_ui=$CanvasLayer/screen/pause_menu
+@onready var pause_menu_ui:Node=$CanvasLayer/screen/pause_menu
 func start_game_ui_event():
 	ui_animation_tree["parameters/health_ammo/transition_request"]="step2"
 	
@@ -451,112 +468,112 @@ func _on_class_5_gui_input(event: InputEvent) -> void:
 
 func rifle_reload1_audio_event():
 	if player_master.player_die==false:
-		var rifle_1_audio=preload("res://assets/audios/my_weapon_audio/rifle/rifle_reload_1_audio.tscn")
-		var rfa=rifle_1_audio.instantiate()
+		var rifle_1_audio:Resource=preload("res://assets/audios/my_weapon_audio/rifle/rifle_reload_1_audio.tscn")
+		var rfa:Node=rifle_1_audio.instantiate()
 		rfa.position=rifle_model.global_position
 		rfa.rotation_degrees=rifle_model.global_rotation_degrees
 		player_master.scene_root.add_child(rfa)
 func rifle_reload2_audio_event():
 	if player_master.player_die==false:
-		var rifle_2_audio=preload("res://assets/audios/my_weapon_audio/rifle/rifle_reload_2_audio.tscn")
-		var rfa=rifle_2_audio.instantiate()
+		var rifle_2_audio:Resource=preload("res://assets/audios/my_weapon_audio/rifle/rifle_reload_2_audio.tscn")
+		var rfa:Node=rifle_2_audio.instantiate()
 		rfa.position=rifle_model.global_position
 		rfa.rotation_degrees=rifle_model.global_rotation_degrees
 		player_master.scene_root.add_child(rfa)
 func pistol_reload1_audio_event():
 	if player_master.player_die==false:
-		var pistol_1_audio=preload("res://assets/audios/my_weapon_audio/pistol/pistol_reload_1_audio.tscn")
-		var pa=pistol_1_audio.instantiate()
+		var pistol_1_audio:Resource=preload("res://assets/audios/my_weapon_audio/pistol/pistol_reload_1_audio.tscn")
+		var pa:Node=pistol_1_audio.instantiate()
 		pa.position=pistol_model.global_position
 		pa.rotation_degrees=pistol_model.global_rotation_degrees
 		player_master.scene_root.add_child(pa)
 func pistol_reload2_audio_event():
 	if player_master.player_die==false:
-		var pistol_2_audio=preload("res://assets/audios/my_weapon_audio/pistol/pistol_reload_2_audio.tscn")
-		var pa=pistol_2_audio.instantiate()
+		var pistol_2_audio:Resource=preload("res://assets/audios/my_weapon_audio/pistol/pistol_reload_2_audio.tscn")
+		var pa:Node=pistol_2_audio.instantiate()
 		pa.position=pistol_model.global_position
 		pa.rotation_degrees=pistol_model.global_rotation_degrees
 		player_master.scene_root.add_child(pa)
 func smg_reload1_audio_event():
 	if player_master.player_die==false:
-		var smg_1_audio=preload("res://assets/audios/my_weapon_audio/smg/smg_reload_1_audio.tscn")
-		var sa=smg_1_audio.instantiate()
+		var smg_1_audio:Resource=preload("res://assets/audios/my_weapon_audio/smg/smg_reload_1_audio.tscn")
+		var sa:Node=smg_1_audio.instantiate()
 		sa.position=smg_model.global_position
 		sa.rotation_degrees=smg_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func smg_reload2_audio_event():
 	if player_master.player_die==false:
-		var smg_2_audio=preload("res://assets/audios/my_weapon_audio/smg/smg_reload_2_audio.tscn")
-		var sa=smg_2_audio.instantiate()
+		var smg_2_audio:Resource=preload("res://assets/audios/my_weapon_audio/smg/smg_reload_2_audio.tscn")
+		var sa:Node=smg_2_audio.instantiate()
 		sa.position=smg_model.global_position
 		sa.rotation_degrees=smg_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func sniper_reload1_audio_event():
 	if player_master.player_die==false:
-		var sniper_1_audio=preload("res://assets/audios/my_weapon_audio/sniper/sniper_reload_1_audio.tscn")
-		var sa=sniper_1_audio.instantiate()
+		var sniper_1_audio:Resource=preload("res://assets/audios/my_weapon_audio/sniper/sniper_reload_1_audio.tscn")
+		var sa:Node=sniper_1_audio.instantiate()
 		sa.position=sniper_model.global_position
 		sa.rotation_degrees=sniper_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func sniper_reload2_audio_event():
 	if player_master.player_die==false:
-		var sniper_2_audio=preload("res://assets/audios/my_weapon_audio/sniper/sniper_reload_2_audio.tscn")
-		var sa=sniper_2_audio.instantiate()
+		var sniper_2_audio:Resource=preload("res://assets/audios/my_weapon_audio/sniper/sniper_reload_2_audio.tscn")
+		var sa:Node=sniper_2_audio.instantiate()
 		sa.position=sniper_model.global_position
 		sa.rotation_degrees=sniper_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func sniper_reload_rock_audio_event():
 	if player_master.player_die==false:
-		var sniper_rock_audio=preload("res://assets/audios/my_weapon_audio/sniper/sniper_rock_audio.tscn")
-		var sa=sniper_rock_audio.instantiate()
+		var sniper_rock_audio:Resource=preload("res://assets/audios/my_weapon_audio/sniper/sniper_rock_audio.tscn")
+		var sa:Node=sniper_rock_audio.instantiate()
 		sa.position=sniper_model.global_position
 		sa.rotation_degrees=sniper_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func shotgun_reload_rock_audio_event():
 	if player_master.player_die==false:
-		var shotgun_rock_audio=preload("res://assets/audios/my_weapon_audio/shotgun/shotgun_reload_rock_audio.tscn")
-		var sa=shotgun_rock_audio.instantiate()
+		var shotgun_rock_audio:Resource=preload("res://assets/audios/my_weapon_audio/shotgun/shotgun_reload_rock_audio.tscn")
+		var sa:Node=shotgun_rock_audio.instantiate()
 		sa.position=shotgun_model.global_position
 		sa.rotation_degrees=shotgun_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func shotgun_reload_audio_event():
 	if player_master.player_die==false:
-		var shotgun_rock_audio=preload("res://assets/audios/my_weapon_audio/shotgun/shotgun_reloading_ammo_audio.tscn")
-		var sa=shotgun_rock_audio.instantiate()
+		var shotgun_rock_audio:Resource=preload("res://assets/audios/my_weapon_audio/shotgun/shotgun_reloading_ammo_audio.tscn")
+		var sa:Node=shotgun_rock_audio.instantiate()
 		sa.position=shotgun_model.global_position
 		sa.rotation_degrees=shotgun_model.global_rotation_degrees
 		player_master.scene_root.add_child(sa)
 func machine_gun_reload1_audio_event():
 	if player_master.player_die==false:
-		var machine_gun_1_audio=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_1_audio.tscn")
-		var ma=machine_gun_1_audio.instantiate()
+		var machine_gun_1_audio:Resource=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_1_audio.tscn")
+		var ma:Node=machine_gun_1_audio.instantiate()
 		ma.position=machine_gun_model.global_position
 		ma.rotation_degrees=machine_gun_model.global_rotation_degrees
 		player_master.scene_root.add_child(ma)
 func machine_gun_reload2_audio_event():
 	if player_master.player_die==false:
-		var machine_gun_2_audio=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_2_audio.tscn")
-		var ma=machine_gun_2_audio.instantiate()
+		var machine_gun_2_audio:Resource=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_2_audio.tscn")
+		var ma:Node=machine_gun_2_audio.instantiate()
 		ma.position=machine_gun_model.global_position
 		ma.rotation_degrees=machine_gun_model.global_rotation_degrees
 		player_master.scene_root.add_child(ma)
 func machine_gun_reload3_audio_event():
 	if player_master.player_die==false:
-		var machine_gun_3_audio=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_3_audio.tscn")
-		var ma=machine_gun_3_audio.instantiate()
+		var machine_gun_3_audio:Resource=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_3_audio.tscn")
+		var ma:Node=machine_gun_3_audio.instantiate()
 		ma.position=machine_gun_model.global_position
 		ma.rotation_degrees=machine_gun_model.global_rotation_degrees
 		player_master.scene_root.add_child(ma)
 func machine_gun_reload4_audio_event():
 	if player_master.player_die==false:
-		var machine_gun_4_audio=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_4_audio.tscn")
-		var ma=machine_gun_4_audio.instantiate()
+		var machine_gun_4_audio:Resource=preload("res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_4_audio.tscn")
+		var ma:Node=machine_gun_4_audio.instantiate()
 		ma.position=machine_gun_model.global_position
 		ma.rotation_degrees=machine_gun_model.global_rotation_degrees
 		player_master.scene_root.add_child(ma)
 
-var pkt_timer=0
-var pkt_bool=false
+var pkt_timer:int=0
+var pkt_bool:bool=false
 func print_killing_tips(text):
 	pkt_bool=true
 	if $CanvasLayer/screen/killing_tips/VBoxContainer/Label.text=="":
@@ -595,7 +612,7 @@ func grenade_throw_1st_anim_event2():
 		$Skeleton/Skeleton3D/right_hand/grenade_smoke.visible=false
 		$Skeleton/Skeleton3D/right_hand/grenade_flash.visible=true
 
-@onready var white_screen=$CanvasLayer/screen/white_screen
+@onready var white_screen:Node=$CanvasLayer/screen/white_screen
 
 func sword_attack_anim_event():
 	$"..".sword_attack_anim_event()

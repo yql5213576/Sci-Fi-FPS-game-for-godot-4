@@ -16,7 +16,6 @@ metallic_texture = ExtResource("4_n1ybe")
 roughness_texture = ExtResource("5_ce1rx")
 normal_enabled = true
 normal_texture = ExtResource("3_miike")
-bent_normal_enabled = true
 bent_normal_texture = ExtResource("3_miike")
 rim_enabled = true
 clearcoat_enabled = true

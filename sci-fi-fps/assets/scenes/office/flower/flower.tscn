@@ -1,5 +1,6 @@
-[gd_scene load_steps=68 format=4 uid="uid://sp5x80fparo7"]
+[gd_scene load_steps=69 format=4 uid="uid://sp5x80fparo7"]
 
+[ext_resource type="Script" uid="uid://deqcb8virup8n" path="res://assets/scenes/office/flower/flower.gd" id="1_boclo"]
 [ext_resource type="Texture2D" uid="uid://dyyme5thscbrt" path="res://assets/scenes/office/flower/tree_Base_color.png" id="1_cyn8b"]
 [ext_resource type="Texture2D" uid="uid://c31a57e5xdr5s" path="res://assets/scenes/office/flower/tree_Metallic.png" id="2_h1rp5"]
 [ext_resource type="Texture2D" uid="uid://punri4etq7fy" path="res://assets/scenes/office/flower/tree_Normal_OpenGL.png" id="3_uvv3p"]
@@ -332,6 +333,7 @@ points = PackedVector3Array(0.15498176, -0.20536147, 0.25187314, 0.24805477, 0.0
 points = PackedVector3Array(0.20151827, 0.39958805, -0.16696906, -0.007896014, 0.05056426, -0.050630074, -0.007896014, 0.05056426, -0.027368654, 0.20151827, 0.19022843, -0.050630074, 0.03865644, 0.09713037, -0.16696906, 0.15494531, 0.39958805, -0.12041433, 0.20151827, 0.21349442, -0.004091285, -0.007896014, 0.12039635, -0.027368654, -0.007896014, 0.12039635, -0.1436917, 0.13169985, 0.21349442, -0.004091285, 0.015390463, 0.05056426, -0.027368654, 0.015390463, 0.14369649, -0.16696906, 0.20151827, 0.3762879, -0.16696906, 0.20151827, 0.39958805, -0.12041433, 0.15494531, 0.39958805, -0.1436917, 0.1782318, 0.16692829, -0.004091285, 0.061922416, 0.12039635, -0.16696906, -0.007896014, 0.0738644, -0.1436917, 0.1782318, 0.16692829, -0.050630074, 0.015390463, 0.05056426, -0.050630074, 0.1782318, 0.39958805, -0.16696906, 0.13169985, 0.35298777, -0.09715292)
 
 [node name="flower" type="StaticBody3D"]
+script = ExtResource("1_boclo")
 
 [node name="tree" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.7378137, -0.13187802, 0, 0.13187802, 2.7378137, 0, 0, 0, 2.740988, -0.007813579, 2.5141397, -0.091130294)

@@ -56,7 +56,7 @@ backlight_enabled = true
 backlight_texture = ExtResource("1_0notq")
 
 [sub_resource type="Gradient" id="Gradient_3vumr"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1.8247963, 1.8247963, 1.8247963, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6mm3g"]
 gradient = SubResource("Gradient_3vumr")
@@ -67,7 +67,7 @@ particle_flag_rotate_y = true
 emission_shape = 1
 emission_sphere_radius = 0.05
 gravity = Vector3(0, 9.8, 0)
-color = Color(1, 1, 1, 0.5803922)
+color = Color(1.8247963, 1.8247963, 1.8247963, 0.5803922)
 color_ramp = SubResource("GradientTexture1D_6mm3g")
 turbulence_enabled = true
 collision_mode = 1
@@ -100,6 +100,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0notq")
 [node name="smoke" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07342133, 0)
 layers = 2
-amount = 300
+amount = 100
+lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_0notq")
 draw_pass_1 = SubResource("QuadMesh_3ks13")

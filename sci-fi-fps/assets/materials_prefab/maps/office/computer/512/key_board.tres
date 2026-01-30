@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://djkpeswk7r8tu"]
+
+[ext_resource type="Texture2D" uid="uid://mjjc7s4tlp2o" path="res://assets/scenes/office/computer/low_512/key_board_Base_color.png" id="1_gsdpe"]
+[ext_resource type="Texture2D" uid="uid://by75wpqcko4xv" path="res://assets/scenes/office/computer/low_512/key_board_Metallic.png" id="2_nckke"]
+[ext_resource type="Texture2D" uid="uid://dil0rkwc1ecx" path="res://assets/scenes/office/computer/low_512/key_board_Normal_OpenGL.png" id="3_7r52i"]
+[ext_resource type="Texture2D" uid="uid://cyr84dboj77u6" path="res://assets/scenes/office/computer/low_512/key_board_Roughness.png" id="4_gicnq"]
+
+[resource]
+albedo_texture = ExtResource("1_gsdpe")
+metallic = 1.0
+metallic_texture = ExtResource("2_nckke")
+roughness_texture = ExtResource("4_gicnq")
+normal_enabled = true
+normal_texture = ExtResource("3_7r52i")
+clearcoat_enabled = true

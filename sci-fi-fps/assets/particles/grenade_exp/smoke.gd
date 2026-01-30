@@ -2,36 +2,36 @@ extends Node3D
 #var smoke_amount=0
 #var smoke_min_amount=0
 #var smoke_max_amount=100
-var smoke_tag=""
-var scene_root=null
-var player_master=null
-var smoke_size=0.005
-var smoke_min_size=0.005
-var smoke_max_size=15
+var smoke_tag:String=""
+var scene_root:Node=null
+var player_master:Node=null
+var smoke_size:float=0.005
+var smoke_min_size:float=0.005
+var smoke_max_size:float=15
 
-var smoke_speed=0.1
-var smoke_min_speed=0.1
-var smoke_max_speed=2
+var smoke_speed:float=0.1
+var smoke_min_speed:float=0.1
+var smoke_max_speed:float=2
 
-var smoke_life_time=0.1
-var smoke_min_life_time=0.1
-var smoke_max_life_time=2
+var smoke_life_time:float=0.1
+var smoke_min_life_time:float=0.1
+var smoke_max_life_time:float=2
 
-var smoke_spawn_radius=0
-var smoke_min_spawn_radius=0
-var smoke_max_spawn_radius=10
+var smoke_spawn_radius:float=0
+var smoke_min_spawn_radius:float=0
+var smoke_max_spawn_radius:float=10
 
-var trigger_size_max=Vector3(7.365,7.365,7.365)
-var trigger_size_min=Vector3(1,1,1)
+var trigger_size_max:Vector3=Vector3(7.365,7.365,7.365)
+var trigger_size_min:Vector3=Vector3(1,1,1)
 
-var model_file=preload("res://assets/particles/grenade_exp/smoke_model.tres").duplicate()
-var particle_material_file=preload("res://assets/particles/grenade_exp/smoke_pm.tres").duplicate()
-var timer=0
+var model_file:Resource=preload("res://assets/particles/grenade_exp/smoke_model.tres").duplicate()
+var particle_material_file:Resource=preload("res://assets/particles/grenade_exp/smoke_pm.tres").duplicate()
+var timer:float=0
 
-var g_mod=null
-@onready var particle_node=$GPUParticles3D
-@onready var area_col_node=$Area3D/CollisionShape3D
-@onready var area_node=$Area3D
+var g_mod:Node=null
+@onready var particle_node:Node=$GPUParticles3D
+@onready var area_col_node:Node=$Area3D/CollisionShape3D
+@onready var area_node:Node=$Area3D
 func _ready() -> void: 
 	particle_node.emitting=true
 	particle_node.draw_pass_1=model_file

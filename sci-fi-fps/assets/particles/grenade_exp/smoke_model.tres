@@ -1,4 +1,4 @@
-[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://bjq7rlkfjsd8w"]
+[gd_resource type="QuadMesh" format=3 uid="uid://bjq7rlkfjsd8w"]
 
 [ext_resource type="Texture2D" uid="uid://k7pfu6xqjapt" path="res://assets/Kenney's_assets/PNG/Black smoke/blackSmoke01.png" id="1_tret0"]
 

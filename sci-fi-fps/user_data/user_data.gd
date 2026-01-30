@@ -1,55 +1,61 @@
 extends Node
-var user_name_data=""
-var kills_data=""
-var kills_data_n=0
-var death_data=""
-var death_data_n=0
+var user_name_data:String=""
+var kills_data:String=""
+var kills_data_n:int=0
+var death_data:String=""
+var death_data_n:int=0
 
-var favorite_data=""
-var favorite_list=[]
-var favorite_wp_name_list=["rifle","smg","sniper","shotgun","machine_gun"]
-var favorite_data_rifle=0
-var favorite_data_smg=0
-var favorite_data_sniper=0
-var favorite_data_shotgun=0
-var favorite_data_machine_gun=0
-
-
-var rank_data=""
-var rank_data_n=0
-var battles_data=""
-var battles_data_n=0
-
-var reslution_vec_data=DisplayServer.screen_get_size()
-var vsync_data=DisplayServer.VSYNC_ENABLED
-var anti_aliasing_msaa_data=Viewport.MSAA_4X
-var ssao_data=true
-var ssil_data=true
-var sdfgi_data=false
-var voxelgi_data=true
-var glow_data=true
-var volumetric_fog_data=true
-var mouse_seveitivity_data=0.08
-var crosshair_data=0.125
-var grass_density=0
-var lod_data=1
-var render_resolution_data=1
+var favorite_data:String=""
+var favorite_list:Array[int]=[]
+var favorite_wp_name_list:Array[String]=["rifle","smg","sniper","shotgun","machine_gun"]
+var favorite_data_rifle:int=0
+var favorite_data_smg:int=0
+var favorite_data_sniper:int=0
+var favorite_data_shotgun:int=0
+var favorite_data_machine_gun:int=0
 
 
-var reslution_vec_data_default=DisplayServer.screen_get_size()
-var vsync_data_default=DisplayServer.VSYNC_ENABLED
-var anti_aliasing_msaa_data_default=Viewport.MSAA_4X
-var ssao_data_default=true
-var ssil_data_default=true
-var sdfgi_data_default=false
-var voxelgi_data_default=true
-var glow_data_default=true
-var volumetric_fog_data_default=true
-var mouse_seveitivity_data_default=0.08
-var crosshair_data_default=0.125
-var grass_density_default=2
-var lod_data_default=1
-var render_resolution_data_default=1.00
+var rank_data:String=""
+var rank_data_n:int=0
+var battles_data:String=""
+var battles_data_n:int=0
+
+var reslution_vec_data:Vector2i=DisplayServer.screen_get_size()
+var vsync_data:DisplayServer.VSyncMode=DisplayServer.VSYNC_ENABLED
+var anti_aliasing_msaa_data:Viewport.MSAA=Viewport.MSAA_4X
+var ssao_data:bool=true
+var ssil_data:bool=true
+var sdfgi_data:bool=false
+var ssr_data:bool=true
+var voxelgi_data:bool=true
+var glow_data:bool=true
+var volumetric_fog_data:bool=true
+var mouse_seveitivity_data:float=0.08
+var crosshair_data:float=0.125
+var grass_density:int=0
+var lod_data:float=1
+var render_resolution_data:float=1
+var language_data:String="chinese"
+var texture_size_data:int=1024
+
+
+var reslution_vec_data_default:Vector2i=DisplayServer.screen_get_size()
+var vsync_data_default:DisplayServer.VSyncMode=DisplayServer.VSYNC_ENABLED
+var anti_aliasing_msaa_data_default:Viewport.MSAA=Viewport.MSAA_4X
+var ssao_data_default:bool=true
+var ssil_data_default:bool=true
+var sdfgi_data_default:bool=false
+var ssr_data_default:bool=false
+var voxelgi_data_default:bool=true
+var glow_data_default:bool=true
+var volumetric_fog_data_default:bool=true
+var mouse_seveitivity_data_default:float=0.08
+var crosshair_data_default:float=0.125
+var grass_density_default:int=2
+var lod_data_default:float=1
+var render_resolution_data_default:float=1.00
+var language_data_default:String="chinese"
+var texture_size_data_default:int=1024
 
 
 func _ready() -> void:
@@ -69,7 +75,7 @@ func _process(delta: float) -> void:
 
 
 func user_data_save():
-	var file_user_rank=FileAccess.open("user://SaveUser0.2.data",FileAccess.WRITE)
+	var file_user_rank:FileAccess=FileAccess.open("user://SaveUser0.3.data",FileAccess.WRITE)
 	file_user_rank.store_var(user_name_data)
 	file_user_rank.store_var(kills_data)
 	file_user_rank.store_var(kills_data_n)
@@ -89,7 +95,7 @@ func user_data_save():
 	file_user_rank.store_var(battles_data_n)
 	file_user_rank.close()
 func user_data_load():
-	var file_user_rank=FileAccess.open("user://SaveUser0.2.data",FileAccess.READ)
+	var file_user_rank:FileAccess=FileAccess.open("user://SaveUser0.3.data",FileAccess.READ)
 	user_name_data=file_user_rank.get_var()
 	kills_data=file_user_rank.get_var()
 	kills_data_n=file_user_rank.get_var()
@@ -110,13 +116,14 @@ func user_data_load():
 	file_user_rank.close()
 
 func user_options_save():
-	var file_user_options=FileAccess.open("user://SaveOptions0.2.data",FileAccess.WRITE)
+	var file_user_options:FileAccess=FileAccess.open("user://SaveOptions0.4.data",FileAccess.WRITE)
 	file_user_options.store_var(reslution_vec_data)
 	file_user_options.store_var(vsync_data)
 	file_user_options.store_var(anti_aliasing_msaa_data)
 	file_user_options.store_var(ssao_data)
 	file_user_options.store_var(ssil_data)
 	file_user_options.store_var(sdfgi_data)
+	file_user_options.store_var(ssr_data)
 	file_user_options.store_var(glow_data)
 	file_user_options.store_var(volumetric_fog_data)
 	file_user_options.store_var(mouse_seveitivity_data)
@@ -125,15 +132,18 @@ func user_options_save():
 	file_user_options.store_var(voxelgi_data)
 	file_user_options.store_var(lod_data)
 	file_user_options.store_var(render_resolution_data)
+	file_user_options.store_var(language_data)
+	file_user_options.store_var(texture_size_data)
 	file_user_options.close()
 func user_options_load():
-	var file_user_options=FileAccess.open("user://SaveOptions0.2.data",FileAccess.READ)
+	var file_user_options:FileAccess=FileAccess.open("user://SaveOptions0.4.data",FileAccess.READ)
 	reslution_vec_data=file_user_options.get_var()
 	vsync_data=file_user_options.get_var()
 	anti_aliasing_msaa_data=file_user_options.get_var()
 	ssao_data=file_user_options.get_var()
 	ssil_data=file_user_options.get_var()
 	sdfgi_data=file_user_options.get_var()
+	ssr_data=file_user_options.get_var()
 	glow_data=file_user_options.get_var()
 	volumetric_fog_data=file_user_options.get_var()
 	mouse_seveitivity_data=file_user_options.get_var()
@@ -142,4 +152,6 @@ func user_options_load():
 	voxelgi_data=file_user_options.get_var()
 	lod_data=file_user_options.get_var()
 	render_resolution_data=file_user_options.get_var()
+	language_data=file_user_options.get_var()
+	texture_size_data=file_user_options.get_var()
 	file_user_options.close()

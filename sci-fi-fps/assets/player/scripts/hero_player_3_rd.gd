@@ -1,162 +1,181 @@
 extends CharacterBody3D
 @export_enum("1st","3rd") var view_mode_player: int
-var control_lock=false
-var player_models=[]
-var using_weapon="rifle"
-@export var player_health=100
+var control_lock:bool=false
+var player_models:Array[Node]=[]
+var using_weapon:String="rifle"
+@export var player_health:int=100
 @export var user_name:String
 @export var charactor_color:String
 @export var TDM_team:String
-var player_die=false
-var game_pause=false
-@onready var anim_tree_3rd=$AnimationPlayer/AnimationTree
-var hand_state_3rd_anim=null
-var hand_state_3rd_anim2=null
+var player_die:bool=false
+var game_pause:bool=false
+@onready var anim_tree_3rd:Node=$AnimationPlayer/AnimationTree
+var hand_state_3rd_anim:AnimationNodeStateMachinePlayback=null
+var hand_state_3rd_anim2:AnimationNodeStateMachinePlayback=null
 
-var anim_tree_1st=null
-var hand_state_1st_anim=null
-var hand_state_1st_anim2=null
+var anim_tree_1st:Node=null
+var hand_state_1st_anim:AnimationNodeStateMachinePlayback=null
+var hand_state_1st_anim2:AnimationNodeStateMachinePlayback=null
 
-var first_ready=false
-@onready var scene_root=$"../../.."
-
-
-@onready var rifle_model=$Skeleton/Skeleton3D/right_hand/rifle
-@onready var pistol_model=$Skeleton/Skeleton3D/right_hand/pistol
-@onready var smg_model=$Skeleton/Skeleton3D/right_hand/smg
-@onready var sniper_model=$Skeleton/Skeleton3D/right_hand/sniper
-@onready var shotgun_model=$Skeleton/Skeleton3D/right_hand/shotgun
-@onready var machine_gun_model=$Skeleton/Skeleton3D/right_hand/machine_gun
-
-@onready var sword_model=$Skeleton/Skeleton3D/right_hand/sword
-
-@onready var grenade_fire_model=$Skeleton/Skeleton3D/right_hand/grenade_fire
-@onready var grenade_smoke_model=$Skeleton/Skeleton3D/right_hand/grenade_smoke
-@onready var grenade_flash_model=$Skeleton/Skeleton3D/right_hand/grenade_flash
-
-@onready var rifle_mag_model=$Skeleton/Skeleton3D/left_hand/rifle1_mag
-@onready var pistol_mag_model=$Skeleton/Skeleton3D/left_hand/pistol1_mag
-@onready var smg_mag_model=$Skeleton/Skeleton3D/left_hand/smg1_mag
-@onready var sniper_mag_model=$Skeleton/Skeleton3D/left_hand/sniper1_mag
-@onready var shotgun_mag_model=$Skeleton/Skeleton3D/thumb_left/shotgun_ammo_model_3rd
-@onready var machine_gun_mag_model=$Skeleton/Skeleton3D/left_hand/machine_gun_mag_3rd
+var first_ready:bool=false
+@onready var scene_root:Node=$"../../.."
 
 
-@onready var arms_white_material=preload("res://assets/player/charactor_color_materials/white/arms_white.tres")
-@onready var body1_white_material=preload("res://assets/player/charactor_color_materials/white/body1_white.tres")
-@onready var body1_2_white_material=preload("res://assets/player/charactor_color_materials/white/body1-2_white.tres")
-@onready var body2_white_material=preload("res://assets/player/charactor_color_materials/white/body2_white.tres")
-@onready var hand_white_material=preload("res://assets/player/charactor_color_materials/white/hand_white.tres")
-@onready var head1_white_material=preload("res://assets/player/charactor_color_materials/white/head_1_white.tres")
-@onready var head2_white_material=preload("res://assets/player/charactor_color_materials/white/head_2_white.tres")
-@onready var head3_white_material=preload("res://assets/player/charactor_color_materials/white/head_3_white.tres")
-@onready var hip_white_material=preload("res://assets/player/charactor_color_materials/white/hip_white.tres")
-@onready var leg_down_white_material=preload("res://assets/player/charactor_color_materials/white/leg_down_white.tres")
-@onready var leg_up_white_material=preload("res://assets/player/charactor_color_materials/white/leg_up_white.tres")
-@onready var shoes_white_material=preload("res://assets/player/charactor_color_materials/white/shoes_white.tres")
-@onready var shouder_white_material=preload("res://assets/player/charactor_color_materials/white/shouder_white.tres")
-@onready var skin_body_white_material=preload("res://assets/player/charactor_color_materials/white/skin_body_white.tres")
+@onready var rifle_model:Node=$Skeleton/Skeleton3D/right_hand/rifle
+@onready var pistol_model:Node=$Skeleton/Skeleton3D/right_hand/pistol
+@onready var smg_model:Node=$Skeleton/Skeleton3D/right_hand/smg
+@onready var sniper_model:Node=$Skeleton/Skeleton3D/right_hand/sniper
+@onready var shotgun_model:Node=$Skeleton/Skeleton3D/right_hand/shotgun
+@onready var machine_gun_model:Node=$Skeleton/Skeleton3D/right_hand/machine_gun
+
+@onready var sword_model:Node=$Skeleton/Skeleton3D/right_hand/sword
+
+@onready var grenade_fire_model:Node=$Skeleton/Skeleton3D/right_hand/grenade_fire
+@onready var grenade_smoke_model:Node=$Skeleton/Skeleton3D/right_hand/grenade_smoke
+@onready var grenade_flash_model:Node=$Skeleton/Skeleton3D/right_hand/grenade_flash
+
+@onready var rifle_mag_model:Node=$Skeleton/Skeleton3D/left_hand/rifle1_mag
+@onready var pistol_mag_model:Node=$Skeleton/Skeleton3D/left_hand/pistol1_mag
+@onready var smg_mag_model:Node=$Skeleton/Skeleton3D/left_hand/smg1_mag
+@onready var sniper_mag_model:Node=$Skeleton/Skeleton3D/left_hand/sniper1_mag
+@onready var shotgun_mag_model:Node=$Skeleton/Skeleton3D/thumb_left/shotgun_ammo_model_3rd
+@onready var machine_gun_mag_model:Node=$Skeleton/Skeleton3D/left_hand/machine_gun_mag_3rd
 
 
-@onready var arms_blue_material=preload("res://assets/player/charactor_color_materials/blue/arms_blue.tres")
-@onready var body1_blue_material=preload("res://assets/player/charactor_color_materials/blue/body1_blue.tres")
-@onready var body1_2_blue_material=preload("res://assets/player/charactor_color_materials/blue/blue_1-2_blue.tres")
-@onready var body2_blue_material=preload("res://assets/player/charactor_color_materials/blue/body2_blue.tres")
-@onready var hand_blue_material=preload("res://assets/player/charactor_color_materials/blue/hand_blue.tres")
-@onready var head1_blue_material=preload("res://assets/player/charactor_color_materials/blue/head_1_blue.tres")
-@onready var head2_blue_material=preload("res://assets/player/charactor_color_materials/blue/head_2_blue.tres")
-@onready var head3_blue_material=preload("res://assets/player/charactor_color_materials/blue/head_3_blue.tres")
-@onready var hip_blue_material=preload("res://assets/player/charactor_color_materials/blue/hip_blue.tres")
-@onready var leg_down_blue_material=preload("res://assets/player/charactor_color_materials/blue/leg_down_blue.tres")
-@onready var leg_up_blue_material=preload("res://assets/player/charactor_color_materials/blue/leg_up_blue.tres")
-@onready var shoes_blue_material=preload("res://assets/player/charactor_color_materials/blue/shoes_blue.tres")
-@onready var shouder_blue_material=preload("res://assets/player/charactor_color_materials/blue/shouder_blue.tres")
-@onready var skin_body_blue_material=preload("res://assets/player/charactor_color_materials/blue/skin_body_bluetres.tres")
+@onready var arms_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/arms.tres")
+@onready var body1_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/body1-1.tres")
+@onready var body1_2_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/body1-2.tres")
+@onready var body2_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/body2.tres")
+@onready var hand_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/hand.tres")
+@onready var head1_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/head1.tres")
+@onready var head2_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/head2.tres")
+@onready var head3_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/head3.tres")
+@onready var hip_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/hip.tres")
+@onready var leg_down_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/leg_down.tres")
+@onready var leg_up_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/leg_up.tres")
+@onready var shoes_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/shoes.tres")
+@onready var shouder_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/shouder.tres")
+@onready var skin_body_white_256_material:Resource=preload("res://assets/materials_prefab/hero/256/white/skin_body.tres")
+@onready var arms_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/arms.tres")
+@onready var body1_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/body1-1.tres")
+@onready var body1_2_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/body1-2.tres")
+@onready var body2_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/body2.tres")
+@onready var hand_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/hand.tres")
+@onready var head1_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/head1.tres")
+@onready var head2_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/head2.tres")
+@onready var head3_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/head3.tres")
+@onready var hip_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/hip.tres")
+@onready var leg_down_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/leg_down.tres")
+@onready var leg_up_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/leg_up.tres")
+@onready var shoes_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/shoes.tres")
+@onready var shouder_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/shouder.tres")
+@onready var skin_body_white_512_material:Resource=preload("res://assets/materials_prefab/hero/512/white/skin_body.tres")
+@onready var arms_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/arms.tres")
+@onready var body1_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/body1-1.tres")
+@onready var body1_2_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/body1-2.tres")
+@onready var body2_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/body2.tres")
+@onready var hand_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/hand.tres")
+@onready var head1_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/head1.tres")
+@onready var head2_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/head2.tres")
+@onready var head3_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/head3.tres")
+@onready var hip_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/hip.tres")
+@onready var leg_down_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/leg_down.tres")
+@onready var leg_up_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/leg_up.tres")
+@onready var shoes_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/shoes.tres")
+@onready var shouder_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/shouder.tres")
+@onready var skin_body_white_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/white/skin_body.tres")
 
 
-@onready var arms_red_material=preload("res://assets/player/charactor_color_materials/red/arms_red.tres")
-@onready var body1_red_material=preload("res://assets/player/charactor_color_materials/red/body1_red.tres")
-@onready var body1_2_red_material=preload("res://assets/player/charactor_color_materials/red/body1-2_red.tres")
-@onready var body2_red_material=preload("res://assets/player/charactor_color_materials/red/body2_red.tres")
-@onready var hand_red_material=preload("res://assets/player/charactor_color_materials/red/hand_red.tres")
-@onready var head1_red_material=preload("res://assets/player/charactor_color_materials/red/head_1_red.tres")
-@onready var head2_red_material=preload("res://assets/player/charactor_color_materials/red/head_2_red.tres")
-@onready var head3_red_material=preload("res://assets/player/charactor_color_materials/red/head_3_red.tres")
-@onready var hip_red_material=preload("res://assets/player/charactor_color_materials/red/hip_red.tres")
-@onready var leg_down_red_material=preload("res://assets/player/charactor_color_materials/red/leg_down_red.tres")
-@onready var leg_up_red_material=preload("res://assets/player/charactor_color_materials/red/leg_up_red.tres")
-@onready var shoes_red_material=preload("res://assets/player/charactor_color_materials/red/shoes_red.tres")
-@onready var shouder_red_material=preload("res://assets/player/charactor_color_materials/red/shouder_red.tres")
-@onready var skin_body_red_material=preload("res://assets/player/charactor_color_materials/red/skin_body_red.tres")
+@onready var arms_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/arms.tres")
+@onready var body1_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/body1-1.tres")
+@onready var body1_2_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/body1-2.tres")
+@onready var body2_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/body2.tres")
+@onready var hand_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/hand.tres")
+@onready var head1_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/head1.tres")
+@onready var head2_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/head2.tres")
+@onready var head3_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/head3.tres")
+@onready var hip_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/hip.tres")
+@onready var leg_down_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/leg_down.tres")
+@onready var leg_up_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/leg_up.tres")
+@onready var shoes_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/shoes.tres")
+@onready var shouder_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/shouder.tres")
+@onready var skin_body_blue_256_material:Resource=preload("res://assets/materials_prefab/hero/256/blue/skin_body.tres")
+@onready var arms_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/arms.tres")
+@onready var body1_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/body1-1.tres")
+@onready var body1_2_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/body1-2.tres")
+@onready var body2_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/body2.tres")
+@onready var hand_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/hand.tres")
+@onready var head1_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/head1.tres")
+@onready var head2_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/head2.tres")
+@onready var head3_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/head3.tres")
+@onready var hip_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/hip.tres")
+@onready var leg_down_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/leg_down.tres")
+@onready var leg_up_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/leg_up.tres")
+@onready var shoes_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/shoes.tres")
+@onready var shouder_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/shouder.tres")
+@onready var skin_body_blue_512_material:Resource=preload("res://assets/materials_prefab/hero/512/blue/skin_body.tres")
+@onready var arms_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/arms.tres")
+@onready var body1_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/body1-1.tres")
+@onready var body1_2_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/body1-2.tres")
+@onready var body2_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/body2.tres")
+@onready var hand_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/hand.tres")
+@onready var head1_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/head1.tres")
+@onready var head2_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/head2.tres")
+@onready var head3_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/head3.tres")
+@onready var hip_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/hip.tres")
+@onready var leg_down_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/leg_down.tres")
+@onready var leg_up_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/leg_up.tres")
+@onready var shoes_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/shoes.tres")
+@onready var shouder_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/shouder.tres")
+@onready var skin_body_blue_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/blue/skin_body.tres")
 
 
+@onready var arms_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/arms.tres")
+@onready var body1_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/body1-1.tres")
+@onready var body1_2_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/body1-2.tres")
+@onready var body2_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/body2.tres")
+@onready var hand_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/hand.tres")
+@onready var head1_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/head1.tres")
+@onready var head2_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/head2.tres")
+@onready var head3_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/head3.tres")
+@onready var hip_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/hip.tres")
+@onready var leg_down_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/leg_down.tres")
+@onready var leg_up_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/leg_up.tres")
+@onready var shoes_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/shoes.tres")
+@onready var shouder_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/shouder.tres")
+@onready var skin_body_red_256_material:Resource=preload("res://assets/materials_prefab/hero/256/red/skin_body.tres")
+@onready var arms_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/arms.tres")
+@onready var body1_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/body1-1.tres")
+@onready var body1_2_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/body1-2.tres")
+@onready var body2_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/body2.tres")
+@onready var hand_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/hand.tres")
+@onready var head1_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/head1.tres")
+@onready var head2_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/head2.tres")
+@onready var head3_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/head3.tres")
+@onready var hip_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/hip.tres")
+@onready var leg_down_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/leg_down.tres")
+@onready var leg_up_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/leg_up.tres")
+@onready var shoes_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/shoes.tres")
+@onready var shouder_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/shouder.tres")
+@onready var skin_body_red_512_material:Resource=preload("res://assets/materials_prefab/hero/512/red/skin_body.tres")
+@onready var arms_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/arms.tres")
+@onready var body1_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/body1-1.tres")
+@onready var body1_2_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/body1-2.tres")
+@onready var body2_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/body2.tres")
+@onready var hand_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/hand.tres")
+@onready var head1_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/head1.tres")
+@onready var head2_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/head2.tres")
+@onready var head3_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/head3.tres")
+@onready var hip_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/hip.tres")
+@onready var leg_down_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/leg_down.tres")
+@onready var leg_up_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/leg_up.tres")
+@onready var shoes_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/shoes.tres")
+@onready var shouder_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/shouder.tres")
+@onready var skin_body_red_1024_material:Resource=preload("res://assets/materials_prefab/hero/1024/red/skin_body.tres")
+
+var model_into_scene:bool=false
 func _ready() -> void:
 	mouse_speed_main=UserData.mouse_seveitivity_data
-	if charactor_color=="white":
-		$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_white_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_white_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_white_material)
-		$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_white_material)
-		$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_white_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_white_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_white_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_white_material)
-		$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_white_material)
-		$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_white_material)
-		$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_white_material)
-		$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_white_material)
-		$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_white_material)
-		$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_white_material)
-		
-		
-		$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_white_material)
-		$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_white_material)
-		$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_white_material)
-		$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_white_material)
-	if charactor_color=="blue":
-		$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_blue_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_blue_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_blue_material)
-		$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_blue_material)
-		$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_blue_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_blue_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_blue_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_blue_material)
-		$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_blue_material)
-		$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_blue_material)
-		$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_blue_material)
-		$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_blue_material)
-		$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_blue_material)
-		$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_blue_material)
-		
-		
-		$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_blue_material)
-		$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_blue_material)
-		$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_blue_material)
-		$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_blue_material)
-	if charactor_color=="red":
-		$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_red_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_red_material)
-		$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_red_material)
-		$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_red_material)
-		$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_red_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_red_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_red_material)
-		$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_red_material)
-		$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_red_material)
-		$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_red_material)
-		$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_red_material)
-		$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_red_material)
-		$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_red_material)
-		$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_red_material)
-		
-		
-		$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_red_material)
-		$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_red_material)
-		$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_red_material)
-		$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_red_material)
-		
-	
 	#using_weapon=["rifle","pistol","smg","sniper","shotgun","machine_gun"].pick_random()
 	if player_type=="rifle_man":
 		using_weapon="rifle"
@@ -228,7 +247,200 @@ func _ready() -> void:
 		hand_state_1st_anim.start(using_weapon+"_equip")
 		hand_state_3rd_anim.start(using_weapon+"_equip")
 func _physics_process(delta: float) -> void:
-	
+	if model_into_scene==false:
+		if charactor_color=="white":
+			if UserData.texture_size_data==256:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_white_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_white_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_white_256_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_white_256_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_white_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_white_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_white_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_white_256_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_white_256_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_white_256_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_white_256_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_white_256_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_white_256_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_white_256_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_white_256_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_white_256_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_white_256_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_white_256_material)
+			if UserData.texture_size_data==512:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_white_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_white_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_white_512_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_white_512_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_white_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_white_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_white_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_white_512_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_white_512_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_white_512_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_white_512_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_white_512_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_white_512_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_white_512_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_white_512_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_white_512_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_white_512_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_white_512_material)
+			if UserData.texture_size_data==1024:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_white_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_white_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_white_1024_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_white_1024_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_white_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_white_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_white_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_white_1024_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_white_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_white_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_white_1024_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_white_1024_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_white_1024_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_white_1024_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_white_1024_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_white_1024_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_white_1024_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_white_1024_material)
+		if charactor_color=="blue":
+			if UserData.texture_size_data==256:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_blue_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_blue_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_blue_256_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_blue_256_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_blue_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_blue_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_blue_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_blue_256_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_blue_256_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_blue_256_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_blue_256_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_blue_256_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_blue_256_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_blue_256_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_blue_256_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_blue_256_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_blue_256_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_blue_256_material)
+			if UserData.texture_size_data==512:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_blue_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_blue_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_blue_512_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_blue_512_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_blue_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_blue_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_blue_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_blue_512_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_blue_512_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_blue_512_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_blue_512_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_blue_512_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_blue_512_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_blue_512_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_blue_512_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_blue_512_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_blue_512_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_blue_512_material)
+			if UserData.texture_size_data==1024:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_blue_1024_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_blue_1024_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_blue_1024_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_blue_1024_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_blue_1024_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_blue_1024_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_blue_1024_material)
+		if charactor_color=="red":
+			if UserData.texture_size_data==256:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_red_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_red_256_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_red_256_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_red_256_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_red_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_red_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_red_256_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_red_256_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_red_256_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_red_256_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_red_256_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_red_256_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_red_256_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_red_256_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_red_256_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_red_256_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_red_256_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_red_256_material)
+			if UserData.texture_size_data==512:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_red_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_red_512_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_red_512_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_red_512_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_red_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_red_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_red_512_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_red_512_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_red_512_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_red_512_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_red_512_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_red_512_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_red_512_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_red_512_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_red_512_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_red_512_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_red_512_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_red_512_material)
+			if UserData.texture_size_data==1024:
+				$Skeleton/Skeleton3D/armor_arms.set_surface_override_material(0,arms_red_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(0,body1_red_1024_material)
+				$Skeleton/Skeleton3D/armor_body.set_surface_override_material(1,body1_2_red_1024_material)
+				$Skeleton/Skeleton3D/armor_body_2.set_surface_override_material(0,body2_red_1024_material)
+				$Skeleton/Skeleton3D/armor_hand.set_surface_override_material(0,hand_red_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(0,head1_red_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(1,head2_red_1024_material)
+				$Skeleton/Skeleton3D/armor_head.set_surface_override_material(2,head3_red_1024_material)
+				$Skeleton/Skeleton3D/armor_hip.set_surface_override_material(0,hip_red_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_down.set_surface_override_material(0,leg_down_red_1024_material)
+				$Skeleton/Skeleton3D/armor_leg_up.set_surface_override_material(0,leg_up_red_1024_material)
+				$Skeleton/Skeleton3D/armor_shoes.set_surface_override_material(0,shoes_red_1024_material)
+				$Skeleton/Skeleton3D/armor_shouder.set_surface_override_material(0,shouder_red_1024_material)
+				$Skeleton/Skeleton3D/skin_body.set_surface_override_material(0,skin_body_red_1024_material)
+				
+				
+				$hero_anim_1st_all_weapons.arms_mod.set_surface_override_material(0,arms_red_1024_material)
+				$hero_anim_1st_all_weapons.hand_mod.set_surface_override_material(0,hand_red_1024_material)
+				$hero_anim_1st_all_weapons.shouder_mod.set_surface_override_material(0,shouder_red_1024_material)
+				$hero_anim_1st_all_weapons.body_mod.set_surface_override_material(0,skin_body_red_1024_material)
+		model_into_scene=true
 	
 		#if Engine.time_scale==1:
 			#Engine.time_scale=0.1
@@ -259,22 +471,22 @@ func _physics_process(delta: float) -> void:
 	
 #-------------------鼠标旋转-------------------------
 
-var mouse_speed=0
+var mouse_speed:float=0
 
-var mouse_speed_main=0.08
-var mouse_speed_max=0
-var mouse_speed_min=0
-var mouse_speed_wheel_num=0
+var mouse_speed_main:float=0.08
+var mouse_speed_max:float=0
+var mouse_speed_min:float=0
+var mouse_speed_wheel_num:float=0
 
-var sniper_fov_main=30
-var sniper_fov_max=75
-var sniper_fov_min=10
-var sniper_fov_wheel_num=5
+var sniper_fov_main:float=30
+var sniper_fov_max:float=75
+var sniper_fov_min:float=10
+var sniper_fov_wheel_num:float=5
 
-var sniper_min_speed=0
-var sniper_max_speed=0
+var sniper_min_speed:float=0
+var sniper_max_speed:float=0
 #(75-10)/13
-var wheel_n=13
+var wheel_n:float=13
 func _input(event: InputEvent) -> void:
 	if control_lock&&Input.is_action_pressed("change_weapon_class")==false:
 		mouse_speed_max=(sniper_fov_max*mouse_speed_main)/sniper_fov_main
@@ -321,10 +533,10 @@ func _input(event: InputEvent) -> void:
 		
 	
 #-------------------鼠标旋转-------------------------
-var player_state=""
-var player_start=false
+var player_state:String=""
+var player_start:bool=false
 
-var sniper_aiming=false
+var sniper_aiming:bool=false
 func player_state_control():
 	if player_health>0:
 		if not self.is_on_floor():
@@ -389,21 +601,21 @@ func player_state_control():
 				pass
 			else:
 				sniper_aiming=false
-var vel_x=Vector3()
-var vel_z=Vector3()
-var vel=Vector3()
+var vel_x:Vector3=Vector3()
+var vel_z:Vector3=Vector3()
+var vel:Vector3=Vector3()
 
-var move_speed=5
-var move_speed_main=5
-var walk_speed=2.5
-var run_speed=15
-var jump_height=8
-var jump_speed=8
-var jump_to_ground=false
-var run_to_idle_time_1st=1.25
-var run_to_idle_time_3rd=1.25
+var move_speed:float=5
+var move_speed_main:float=5
+var walk_speed:float=2.5
+var run_speed:float=15
+var jump_height:float=8
+var jump_speed:float=8
+var jump_to_ground:bool=false
+var run_to_idle_time_1st:float=1.25
+var run_to_idle_time_3rd:float=1.25
 
-var start_collision=false
+var start_collision:bool=false
 func player_move():
 	if scene_root.game_over:
 		anim_tree_3rd["parameters/move/blend_position"]=anim_tree_3rd["parameters/move/blend_position"].lerp(Vector2(0,0),0.3)
@@ -448,8 +660,8 @@ func player_move():
 				move_speed=walk_speed
 			if player_state=="jump":
 				move_speed=jump_speed
-			if hand_state_1st_anim.get_current_node()==(using_weapon+"_reloading_1"):
-				move_speed=walk_speed
+			#if hand_state_1st_anim.get_current_node()==(using_weapon+"_reloading_1"):
+				#move_speed=walk_speed
 			if player_state=="idle_fire"|| player_state=="aiming_fire":
 				move_speed=walk_speed
 			if hand_state_1st_anim.get_current_node()==using_weapon+"_idle_to_run":
@@ -614,7 +826,7 @@ func player_animation():
 			if hand_state_1st_anim.get_current_node()!=(using_weapon+"_reloading_1"):
 				hand_state_1st_anim.travel(using_weapon+"_reloading_1")
 
-var arm_rot_y=Vector3()
+var arm_rot_y:float
 func player_animation_3rd_model():
 	arm_rot_y=$hero_anim_1st_all_weapons.rotation_degrees.x/70
 	#------spine_idle------
@@ -1057,48 +1269,48 @@ func player_animation_3rd_model():
 	
 	
 
-var full_automatic_weapon=false
-var semi_automatic_weapon=false
-var semi_automatic_weapon_shot=false
+var full_automatic_weapon:bool=false
+var semi_automatic_weapon:bool=false
+var semi_automatic_weapon_shot:bool=false
 
 
-var rifle_current_ammos=30
-var rifle_current_max_ammos=30
-var rifle_ammos_needed=0
-var rifle_spare_ammos=360
+var rifle_current_ammos:int=30
+var rifle_current_max_ammos:int=30
+var rifle_ammos_needed:int=0
+var rifle_spare_ammos:int=360
 
-var pistol_current_ammos=12
-var pistol_current_max_ammos=12
-var pistol_ammos_needed=0
-var pistol_spare_ammos=120
+var pistol_current_ammos:int=12
+var pistol_current_max_ammos:int=12
+var pistol_ammos_needed:int=0
+var pistol_spare_ammos:int=120
 
-var smg_current_ammos=60
-var smg_current_max_ammos=60
-var smg_ammos_needed=0
-var smg_spare_ammos=1200
+var smg_current_ammos:int=60
+var smg_current_max_ammos:int=60
+var smg_ammos_needed:int=0
+var smg_spare_ammos:int=1200
 
-var sniper_current_ammos=4
-var sniper_current_max_ammos=4
-var sniper_ammos_needed=0
-var sniper_spare_ammos=32
+var sniper_current_ammos:int=4
+var sniper_current_max_ammos:int=4
+var sniper_ammos_needed:int=0
+var sniper_spare_ammos:int=32
 
-var shotgun_current_ammos=6
-var shotgun_current_max_ammos=6
-var shotgun_ammos_needed=0
-var shotgun_spare_ammos=120
+var shotgun_current_ammos:int=6
+var shotgun_current_max_ammos:int=6
+var shotgun_ammos_needed:int=0
+var shotgun_spare_ammos:int=120
 
-var machine_gun_current_ammos=100
-var machine_gun_current_max_ammos=100
-var machine_gun_ammos_needed=0
-var machine_gun_spare_ammos=1200
+var machine_gun_current_ammos:int=100
+var machine_gun_current_max_ammos:int=100
+var machine_gun_ammos_needed:int=0
+var machine_gun_spare_ammos:int=1200
 
-var using_weapon_current_ammos=0
-var using_weapon_current_max_ammos=0
-var using_weapon_ammos_needed=0
-var using_weapon_spare_ammos=0
+var using_weapon_current_ammos:int=0
+var using_weapon_current_max_ammos:int=0
+var using_weapon_ammos_needed:int=0
+var using_weapon_spare_ammos:int=0
 
-@export var player_type=""
-var next_res_type=""
+@export var player_type:String=""
+var next_res_type:String=""
 func set_weapon_type(next_type):
 	if next_res_type!=next_type:
 		next_res_type=next_type
@@ -1492,7 +1704,7 @@ func player_weapons():
 #@onready var yellow_health_ui=preload("res://assets/my_UI/yellow.png")
 #@onready var health_label_ui_res=preload("res://assets/my_UI/player_1st_health_label_settings_res.tres")
 
-var print_A_kills_B_lock=true
+var print_A_kills_B_lock:bool=true
 func player_die_state():
 	if player_health>0:
 		#$hero_anim_1st_all_weapons.health_label_ui.text=str(player_health)
@@ -1638,10 +1850,10 @@ func player_die_state():
 				if print_A_kills_B_lock==true:
 					scene_root.call_deferred("print_A_kills_B",murderer,self)
 					print_A_kills_B_lock=false
-var die_time=0
-var die_time_main=5
-var bullets=[]
-var respawn_act=true
+var die_time:float=0
+var die_time_main:float=5
+var bullets:Array[Node]=[]
+var respawn_act:bool=true
 @export var player_point_id:int
 func player_respawn():
 	#$hero_anim_1st_all_weapons.blood_screen_ui.visible=false
@@ -1650,9 +1862,9 @@ func player_respawn():
 	$hero_anim_1st_all_weapons.ui_animation_tree["parameters/blood_screen/blend_amount"]=0
 	if respawn_act:
 		if scene_root.mode=="free_for_all":
-			var player_new=load("res://assets/player/prefab/hero_player_3rd.tscn")
-			var t=scene_root.ai_nav_points_lib_id.pick_random()
-			var pn=player_new.instantiate()
+			var player_new:Resource=load("res://assets/player/prefab/hero_player_3rd.tscn")
+			var t:int=scene_root.ai_nav_points_lib_id.pick_random()
+			var pn:Node=player_new.instantiate()
 			if(scene_root.ai_nav_points_lib[str(t)])==true:
 				
 			
@@ -1705,10 +1917,10 @@ func player_respawn():
 				t=scene_root.ai_nav_points_lib_id.pick_random()
 				return
 		if scene_root.mode=="team_death_match":
-			var t_blue=scene_root.ai_blue_points_lib_id.pick_random()
-			var t_red=scene_root.ai_red_points_lib_id.pick_random()
-			var player_new=load("res://assets/player/prefab/hero_player_3rd.tscn")
-			var pn=player_new.instantiate()
+			var t_blue:int=scene_root.ai_blue_points_lib_id.pick_random()
+			var t_red:int=scene_root.ai_red_points_lib_id.pick_random()
+			var player_new:Resource=load("res://assets/player/prefab/hero_player_3rd.tscn")
+			var pn:Node=player_new.instantiate()
 			if self.TDM_team=="blue":
 				if(scene_root.ai_blue_points_lib[str(t_blue)])==true:
 					
@@ -1806,14 +2018,14 @@ func player_respawn():
 				else:
 					t_red=scene_root.ai_red_points_lib_id.pick_random()
 					return
-var k_up=0
-var k_down=0
-var k_left=0
-var k_right=0
+var k_up:int=0
+var k_down:int=0
+var k_left:int=0
+var k_right:int=0
 var d_vec=Vector2()
-var k_run=0
-var m_left=0
-var m_right=0
+var k_run:int=0
+var m_left:int=0
+var m_right:int=0
 func player_input():
 	if control_lock:
 		if Input.is_action_pressed("move_forward"):
@@ -1855,18 +2067,18 @@ func player_input():
 		m_left=0
 		m_right=0
 
-var rifle_bullet_speed=200
-var pistol_bullet_speed=200
-var smg_bullet_speed=200
-var sniper_bullet_speed=300
-var shotgun_bullet_speed=200
-var machine_gun_bullet_speed=200
+var rifle_bullet_speed:float=200
+var pistol_bullet_speed:float=200
+var smg_bullet_speed:float=200
+var sniper_bullet_speed:float=300
+var shotgun_bullet_speed:float=200
+var machine_gun_bullet_speed:float=200
 func gun_shoot_anim_event():
 	if using_weapon=="rifle":
 		rifle_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=rifle_bullet_speed
@@ -1877,8 +2089,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -1886,8 +2098,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var rifle_bullet_mesh=preload("res://assets/player/prefab/rifle_ammos_1st.tscn")
-		var rbm=rifle_bullet_mesh.instantiate()
+		var rifle_bullet_mesh:Resource=preload("res://assets/player/prefab/rifle_ammos_1st.tscn")
+		var rbm:Node=rifle_bullet_mesh.instantiate()
 		rbm.position=$hero_anim_1st_all_weapons.rifle_model.shoot_point_node.global_position
 		rbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		rbm.speed=rifle_bullet_speed
@@ -1897,8 +2109,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var rifle_fire=preload("res://assets/particles/rifle_shoot_fire.tscn")
-		var rf=rifle_fire.instantiate()
+		var rifle_fire:Resource=preload("res://assets/particles/rifle_shoot_fire.tscn")
+		var rf:Node=rifle_fire.instantiate()
 		rf.position=$hero_anim_1st_all_weapons.rifle_model.shoot_point_node.global_position
 		rf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		rf.pos=$hero_anim_1st_all_weapons.rifle_model.shoot_point_node.global_position
@@ -1908,8 +2120,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var rifle_fire_3rd=preload("res://assets/particles/rifle_shoot_fire_3rd.tscn")
-		var rf_3rd=rifle_fire_3rd.instantiate()
+		var rifle_fire_3rd:Resource=preload("res://assets/particles/rifle_shoot_fire_3rd.tscn")
+		var rf_3rd:Node=rifle_fire_3rd.instantiate()
 		rf_3rd.position=rifle_model.shoot_point_node.global_position
 		rf_3rd.rotation_degrees=rifle_model.shoot_point_node.global_rotation_degrees
 		rf_3rd.pos=rifle_model.shoot_point_node.global_position
@@ -1919,8 +2131,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var rifle_fire_audio=preload("res://assets/audios/rifle_shoot_audio.tscn")
-		var rfa=rifle_fire_audio.instantiate()
+		var rifle_fire_audio:Resource=preload("res://assets/audios/rifle_shoot_audio.tscn")
+		var rfa:Node=rifle_fire_audio.instantiate()
 		rfa.position=$hero_anim_1st_all_weapons.rifle_model.shoot_point_node.global_position
 		rfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(rfa)
@@ -1931,8 +2143,8 @@ func gun_shoot_anim_event():
 	if using_weapon=="pistol":
 		pistol_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=pistol_bullet_speed
@@ -1943,8 +2155,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -1952,8 +2164,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var pistol_bullet_mesh=preload("res://assets/player/prefab/pistol_ammos_1st.tscn")
-		var pbm=pistol_bullet_mesh.instantiate()
+		var pistol_bullet_mesh:Resource=preload("res://assets/player/prefab/pistol_ammos_1st.tscn")
+		var pbm:Node=pistol_bullet_mesh.instantiate()
 		pbm.position=$hero_anim_1st_all_weapons.pistol_model.shoot_point_node.global_position
 		pbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pbm.speed=pistol_bullet_speed
@@ -1963,8 +2175,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var pistol_fire=preload("res://assets/particles/pistol_shoot_fire.tscn")
-		var pf=pistol_fire.instantiate()
+		var pistol_fire:Resource=preload("res://assets/particles/pistol_shoot_fire.tscn")
+		var pf:Node=pistol_fire.instantiate()
 		pf.position=$hero_anim_1st_all_weapons.pistol_model.shoot_point_node.global_position
 		pf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pf.pos=$hero_anim_1st_all_weapons.pistol_model.shoot_point_node.global_position
@@ -1974,8 +2186,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var pistol_fire_3rd=preload("res://assets/particles/pistol_shoot_fire_3rd.tscn")
-		var pf_3rd=pistol_fire_3rd.instantiate()
+		var pistol_fire_3rd:Resource=preload("res://assets/particles/pistol_shoot_fire_3rd.tscn")
+		var pf_3rd:Node=pistol_fire_3rd.instantiate()
 		pf_3rd.position=pistol_model.shoot_point_node.global_position
 		pf_3rd.rotation_degrees=pistol_model.shoot_point_node.global_rotation_degrees
 		pf_3rd.pos=pistol_model.shoot_point_node.global_position
@@ -1985,8 +2197,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var pistol_fire_audio=preload("res://assets/audios/pistol_shoot_audio.tscn")
-		var pfa=pistol_fire_audio.instantiate()
+		var pistol_fire_audio:Resource=preload("res://assets/audios/pistol_shoot_audio.tscn")
+		var pfa:Node=pistol_fire_audio.instantiate()
 		pfa.position=$hero_anim_1st_all_weapons.pistol_model.shoot_point_node.global_position
 		pfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(pfa)
@@ -1994,8 +2206,8 @@ func gun_shoot_anim_event():
 	if using_weapon=="smg":
 		smg_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=smg_bullet_speed
@@ -2006,8 +2218,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -2015,8 +2227,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var smg_bullet_mesh=preload("res://assets/player/prefab/smg_ammo_1st.tscn")
-		var sbm=smg_bullet_mesh.instantiate()
+		var smg_bullet_mesh:Resource=preload("res://assets/player/prefab/smg_ammo_1st.tscn")
+		var sbm:Node=smg_bullet_mesh.instantiate()
 		sbm.position=$hero_anim_1st_all_weapons.smg_model.shoot_point_node.global_position
 		sbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		sbm.speed=smg_bullet_speed
@@ -2026,8 +2238,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var smg_fire=preload("res://assets/particles/smg_shoot_fire.tscn")
-		var sf=smg_fire.instantiate()
+		var smg_fire:Resource=preload("res://assets/particles/smg_shoot_fire.tscn")
+		var sf:Node=smg_fire.instantiate()
 		sf.position=$hero_anim_1st_all_weapons.smg_model.shoot_point_node.global_position
 		sf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		sf.pos=$hero_anim_1st_all_weapons.smg_model.shoot_point_node.global_position
@@ -2037,8 +2249,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var smg_fire_3rd=preload("res://assets/particles/smg_shoot_fire_3rd.tscn")
-		var sf_3rd=smg_fire_3rd.instantiate()
+		var smg_fire_3rd:Resource=preload("res://assets/particles/smg_shoot_fire_3rd.tscn")
+		var sf_3rd:Node=smg_fire_3rd.instantiate()
 		sf_3rd.position=smg_model.shoot_point_node.global_position
 		sf_3rd.rotation_degrees=smg_model.shoot_point_node.global_rotation_degrees
 		sf_3rd.pos=smg_model.shoot_point_node.global_position
@@ -2048,8 +2260,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var smg_fire_audio=preload("res://assets/audios/smg_shoot_audio.tscn")
-		var sfa=smg_fire_audio.instantiate()
+		var smg_fire_audio:Resource=preload("res://assets/audios/smg_shoot_audio.tscn")
+		var sfa:Node=smg_fire_audio.instantiate()
 		sfa.position=$hero_anim_1st_all_weapons.smg_model.shoot_point_node.global_position
 		sfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(sfa)
@@ -2057,8 +2269,8 @@ func gun_shoot_anim_event():
 	if using_weapon=="sniper":
 		sniper_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=sniper_bullet_speed
@@ -2069,8 +2281,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -2078,8 +2290,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var sniper_bullet_mesh=preload("res://assets/player/prefab/sniper_ammo_1st.tscn")
-		var ssbm=sniper_bullet_mesh.instantiate()
+		var sniper_bullet_mesh:Resource=preload("res://assets/player/prefab/sniper_ammo_1st.tscn")
+		var ssbm:Node=sniper_bullet_mesh.instantiate()
 		ssbm.position=$hero_anim_1st_all_weapons.sniper_model.shoot_point_node.global_position
 		ssbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		ssbm.speed=sniper_bullet_speed
@@ -2089,8 +2301,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var sniper_fire=preload("res://assets/particles/sniper_shoot_fire.tscn")
-		var ssf=sniper_fire.instantiate()
+		var sniper_fire:Resource=preload("res://assets/particles/sniper_shoot_fire.tscn")
+		var ssf:Node=sniper_fire.instantiate()
 		ssf.position=$hero_anim_1st_all_weapons.sniper_model.shoot_point_node.global_position
 		ssf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		ssf.pos=$hero_anim_1st_all_weapons.sniper_model.shoot_point_node.global_position
@@ -2100,8 +2312,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var sniper_fire_3rd=preload("res://assets/particles/sniper_shoot_fire_3rd.tscn")
-		var ssf_3rd=sniper_fire_3rd.instantiate()
+		var sniper_fire_3rd:Resource=preload("res://assets/particles/sniper_shoot_fire_3rd.tscn")
+		var ssf_3rd:Node=sniper_fire_3rd.instantiate()
 		ssf_3rd.position=sniper_model.shoot_point_node.global_position
 		ssf_3rd.rotation_degrees=sniper_model.shoot_point_node.global_rotation_degrees
 		ssf_3rd.pos=sniper_model.shoot_point_node.global_position
@@ -2111,8 +2323,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var sniper_fire_audio=preload("res://assets/audios/sniper_shoot_audio.tscn")
-		var ssfa=sniper_fire_audio.instantiate()
+		var sniper_fire_audio:Resource=preload("res://assets/audios/sniper_shoot_audio.tscn")
+		var ssfa:Node=sniper_fire_audio.instantiate()
 		ssfa.position=$hero_anim_1st_all_weapons.sniper_model.shoot_point_node.global_position
 		ssfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(ssfa)
@@ -2121,8 +2333,8 @@ func gun_shoot_anim_event():
 	if using_weapon=="shotgun":
 		shotgun_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=shotgun_bullet_speed
@@ -2133,8 +2345,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -2142,8 +2354,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var shotgun_bullet_mesh=preload("res://assets/player/prefab/shotgun_ammos_1_st.tscn")
-		var stbm=shotgun_bullet_mesh.instantiate()
+		var shotgun_bullet_mesh:Resource=preload("res://assets/player/prefab/shotgun_ammos_1_st.tscn")
+		var stbm:Node=shotgun_bullet_mesh.instantiate()
 		stbm.position=$hero_anim_1st_all_weapons.shotgun_model.shoot_point_node.global_position
 		stbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		#stbm.speed=shotgun_bullet_speed
@@ -2153,8 +2365,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var shotgun_fire=preload("res://assets/particles/shotgun_shoot_fire.tscn")
-		var stf=shotgun_fire.instantiate()
+		var shotgun_fire:Resource=preload("res://assets/particles/shotgun_shoot_fire.tscn")
+		var stf:Node=shotgun_fire.instantiate()
 		stf.position=$hero_anim_1st_all_weapons.shotgun_model.shoot_point_node.global_position
 		stf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		stf.pos=$hero_anim_1st_all_weapons.shotgun_model.shoot_point_node.global_position
@@ -2164,8 +2376,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var shotgun_fire_3rd=preload("res://assets/particles/shotgun_shoot_fire_3rd.tscn")
-		var stf_3rd=shotgun_fire_3rd.instantiate()
+		var shotgun_fire_3rd:Resource=preload("res://assets/particles/shotgun_shoot_fire_3rd.tscn")
+		var stf_3rd:Node=shotgun_fire_3rd.instantiate()
 		stf_3rd.position=shotgun_model.shoot_point_node.global_position
 		stf_3rd.rotation_degrees=shotgun_model.shoot_point_node.global_rotation_degrees
 		stf_3rd.pos=shotgun_model.shoot_point_node.global_position
@@ -2175,8 +2387,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var shotgun_fire_audio=preload("res://assets/audios/shotgun_shoot_audio.tscn")
-		var stfa=shotgun_fire_audio.instantiate()
+		var shotgun_fire_audio:Resource=preload("res://assets/audios/shotgun_shoot_audio.tscn")
+		var stfa:Node=shotgun_fire_audio.instantiate()
 		stfa.position=$hero_anim_1st_all_weapons.shotgun_model.shoot_point_node.global_position
 		stfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(stfa)
@@ -2185,8 +2397,8 @@ func gun_shoot_anim_event():
 	if using_weapon=="machine_gun":
 		machine_gun_current_ammos-=1
 		#camera_bullet
-		var player_camera_bullet=preload("res://player_camera_bullet.tscn")
-		var pcb=player_camera_bullet.instantiate()
+		var player_camera_bullet:Resource=preload("res://player_camera_bullet.tscn")
+		var pcb:Node=player_camera_bullet.instantiate()
 		pcb.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pcb.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.bullet_speed=machine_gun_bullet_speed
@@ -2197,8 +2409,8 @@ func gun_shoot_anim_event():
 		#camera_bullet
 		
 		#bullet_trail
-		var player_bullet_trail=preload("res://player_bullet_trail.tscn")
-		var pbt=player_bullet_trail.instantiate()
+		var player_bullet_trail:Resource=preload("res://player_bullet_trail.tscn")
+		var pbt:Node=player_bullet_trail.instantiate()
 		pbt.position=$hero_anim_1st_all_weapons.camera_main.global_position
 		pbt.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		pcb.sub_objects.append(pbt)
@@ -2206,8 +2418,8 @@ func gun_shoot_anim_event():
 		#bullet_trail
 		
 		#shoot_bullet_mesh
-		var machine_gun_bullet_mesh=preload("res://assets/player/prefab/machine_gun_ammo_1st.tscn")
-		var mbm=machine_gun_bullet_mesh.instantiate()
+		var machine_gun_bullet_mesh:Resource=preload("res://assets/player/prefab/machine_gun_ammo_1st.tscn")
+		var mbm:Node=machine_gun_bullet_mesh.instantiate()
 		mbm.position=$hero_anim_1st_all_weapons.machine_gun_model.shoot_point_node.global_position
 		mbm.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		mbm.speed=sniper_bullet_speed
@@ -2217,8 +2429,8 @@ func gun_shoot_anim_event():
 		#shoot_bullet_mesh
 		
 		#shoot_point_fire
-		var machine_gun_fire=preload("res://assets/particles/machine_gun_shoot_fire.tscn")
-		var mf=machine_gun_fire.instantiate()
+		var machine_gun_fire:Resource=preload("res://assets/particles/machine_gun_shoot_fire.tscn")
+		var mf:Node=machine_gun_fire.instantiate()
 		mf.position=$hero_anim_1st_all_weapons.machine_gun_model.shoot_point_node.global_position
 		mf.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		mf.pos=$hero_anim_1st_all_weapons.machine_gun_model.shoot_point_node.global_position
@@ -2228,8 +2440,8 @@ func gun_shoot_anim_event():
 		#shoot_point_fire
 		
 		#shoot_point_fire_3rd
-		var machine_gun_fire_3rd=preload("res://assets/particles/machine_gun_shoot_fire_3rd.tscn")
-		var mf_3rd=machine_gun_fire_3rd.instantiate()
+		var machine_gun_fire_3rd:Resource=preload("res://assets/particles/machine_gun_shoot_fire_3rd.tscn")
+		var mf_3rd:Node=machine_gun_fire_3rd.instantiate()
 		mf_3rd.position=machine_gun_model.shoot_point_node.global_position
 		mf_3rd.rotation_degrees=machine_gun_model.shoot_point_node.global_rotation_degrees
 		mf_3rd.pos=machine_gun_model.shoot_point_node.global_position
@@ -2239,37 +2451,37 @@ func gun_shoot_anim_event():
 		#shoot_point_fire_3rd
 		
 		#shoot_fire_audio
-		var machine_gun_fire_audio=preload("res://assets/audios/machine_gun_shoot_audio.tscn")
-		var mfa=machine_gun_fire_audio.instantiate()
+		var machine_gun_fire_audio:Resource=preload("res://assets/audios/machine_gun_shoot_audio.tscn")
+		var mfa:Node=machine_gun_fire_audio.instantiate()
 		mfa.position=$hero_anim_1st_all_weapons.machine_gun_model.shoot_point_node.global_position
 		mfa.rotation_degrees=$hero_anim_1st_all_weapons.global_rotation_degrees
 		scene_root.add_child(mfa)
 		#shoot_fire_audio
 
 
-var force_rifle=5
-var force_rot_rifle=Vector3()
-var force_M_pos_rifle=Vector3()
+var force_rifle:float=5
+var force_rot_rifle:Vector3=Vector3()
+var force_M_pos_rifle:Vector3=Vector3()
 
-var force_pistol=8
-var force_rot_pistol=Vector3()
-var force_M_pos_pistol=Vector3()
+var force_pistol:float=8
+var force_rot_pistol:Vector3=Vector3()
+var force_M_pos_pistol:Vector3=Vector3()
 
-var force_smg=7
-var force_rot_smg=Vector3()
-var force_M_pos_smg=Vector3()
+var force_smg:float=7
+var force_rot_smg:Vector3=Vector3()
+var force_M_pos_smg:Vector3=Vector3()
 
-var force_sniper=30
-var force_rot_sniper=Vector3()
-var force_M_pos_sniper=Vector3()
+var force_sniper:float=30
+var force_rot_sniper:Vector3=Vector3()
+var force_M_pos_sniper:Vector3=Vector3()
 
-var force_shotgun=25
-var force_rot_shotgun=Vector3()
-var force_M_pos_shotgun=Vector3()
+var force_shotgun:float=25
+var force_rot_shotgun:Vector3=Vector3()
+var force_M_pos_shotgun:Vector3=Vector3()
 
-var force_machine_gun=8
-var force_rot_machine_gun=Vector3()
-var force_M_pos_machine_gun=Vector3()
+var force_machine_gun:float=8
+var force_rot_machine_gun:Vector3=Vector3()
+var force_M_pos_machine_gun:Vector3=Vector3()
 func recoil_idle_force_on():
 	if using_weapon=="rifle":
 		force_M_pos_rifle=$hero_anim_1st_all_weapons.rotation_degrees
@@ -2382,65 +2594,65 @@ func recoil_force_off():
 func bullet_exp_event(bullet_pos,air_wall_bool):
 	if air_wall_bool==false:
 		if using_weapon=="rifle":
-			var rifle_bullet_exp=preload("res://assets/particles/bullet_exp/rifle_bullet_exp.tscn")
-			var rbe=rifle_bullet_exp.instantiate()
+			var rifle_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/rifle_bullet_exp.tscn")
+			var rbe:Node=rifle_bullet_exp.instantiate()
 			rbe.position=bullet_pos
 			scene_root.add_child(rbe)
 			
-			var rifle_bullet_exp_audio=preload("res://assets/audios/rifle_bullet_exp_audio.tscn")
-			var rbea=rifle_bullet_exp_audio.instantiate()
+			var rifle_bullet_exp_audio:Resource=preload("res://assets/audios/rifle_bullet_exp_audio.tscn")
+			var rbea:Node=rifle_bullet_exp_audio.instantiate()
 			rbea.position=bullet_pos
 			scene_root.add_child(rbea)
 		if using_weapon=="pistol":
-			var pistol_bullet_exp=preload("res://assets/particles/bullet_exp/pistol_bullet_exp.tscn")
-			var pbe=pistol_bullet_exp.instantiate()
+			var pistol_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/pistol_bullet_exp.tscn")
+			var pbe:Node=pistol_bullet_exp.instantiate()
 			pbe.position=bullet_pos
 			scene_root.add_child(pbe)
 			
-			var pistol_bullet_exp_audio=preload("res://assets/audios/pistol_bullet_exp_audio.tscn")
-			var pbea=pistol_bullet_exp_audio.instantiate()
+			var pistol_bullet_exp_audio:Resource=preload("res://assets/audios/pistol_bullet_exp_audio.tscn")
+			var pbea:Node=pistol_bullet_exp_audio.instantiate()
 			pbea.position=bullet_pos
 			scene_root.add_child(pbea)
 		if using_weapon=="smg":
-			var smg_bullet_exp=preload("res://assets/particles/bullet_exp/smg_bullet_exp.tscn")
-			var sbe=smg_bullet_exp.instantiate()
+			var smg_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/smg_bullet_exp.tscn")
+			var sbe:Node=smg_bullet_exp.instantiate()
 			sbe.position=bullet_pos
 			scene_root.add_child(sbe)
 			
-			var smg_bullet_exp_audio=preload("res://assets/audios/smg_bullet_exp_audio.tscn")
-			var sbea=smg_bullet_exp_audio.instantiate()
+			var smg_bullet_exp_audio:Resource=preload("res://assets/audios/smg_bullet_exp_audio.tscn")
+			var sbea:Node=smg_bullet_exp_audio.instantiate()
 			sbea.position=bullet_pos
 			scene_root.add_child(sbea)
 		if using_weapon=="sniper":
-			var sniper_bullet_exp=preload("res://assets/particles/bullet_exp/sniper_bullet_exp.tscn")
-			var ssbe=sniper_bullet_exp.instantiate()
+			var sniper_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/sniper_bullet_exp.tscn")
+			var ssbe:Node=sniper_bullet_exp.instantiate()
 			ssbe.position=bullet_pos
 			scene_root.add_child(ssbe)
 			
-			var sniper_bullet_exp_audio=preload("res://assets/audios/sniper_bullet_exp_audio.tscn")
-			var ssbea=sniper_bullet_exp_audio.instantiate()
+			var sniper_bullet_exp_audio:Resource=preload("res://assets/audios/sniper_bullet_exp_audio.tscn")
+			var ssbea:Node=sniper_bullet_exp_audio.instantiate()
 			ssbea.position=bullet_pos
 			scene_root.add_child(ssbea)
 		
 		if using_weapon=="shotgun":
-			var shotgun_bullet_exp=preload("res://assets/particles/bullet_exp/shotgun_bullet_exp.tscn")
-			var stbe=shotgun_bullet_exp.instantiate()
+			var shotgun_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/shotgun_bullet_exp.tscn")
+			var stbe:Node=shotgun_bullet_exp.instantiate()
 			stbe.position=bullet_pos
 			scene_root.add_child(stbe)
 			
-			var shotgun_bullet_exp_audio=preload("res://assets/audios/shotgun_bullet_exp_audio.tscn")
-			var stbea=shotgun_bullet_exp_audio.instantiate()
+			var shotgun_bullet_exp_audio:Resource=preload("res://assets/audios/shotgun_bullet_exp_audio.tscn")
+			var stbea:Node=shotgun_bullet_exp_audio.instantiate()
 			stbea.position=bullet_pos
 			scene_root.add_child(stbea)
 		
 		if using_weapon=="machine_gun":
-			var machine_gun_bullet_exp=preload("res://assets/particles/bullet_exp/machine_gun_bullet_exp.tscn")
-			var mbe=machine_gun_bullet_exp.instantiate()
+			var machine_gun_bullet_exp:Resource=preload("res://assets/particles/bullet_exp/machine_gun_bullet_exp.tscn")
+			var mbe:Node=machine_gun_bullet_exp.instantiate()
 			mbe.position=bullet_pos
 			scene_root.add_child(mbe)
 			
-			var machine_gun_bullet_exp_audio=preload("res://assets/audios/machine_gun_bullet_exp_audio.tscn")
-			var mbea=machine_gun_bullet_exp_audio.instantiate()
+			var machine_gun_bullet_exp_audio:Resource=preload("res://assets/audios/machine_gun_bullet_exp_audio.tscn")
+			var mbea:Node=machine_gun_bullet_exp_audio.instantiate()
 			mbea.position=bullet_pos
 			scene_root.add_child(mbea)
 			
@@ -2515,98 +2727,98 @@ func player_3rd_reloading_anim_event_on():
 	if using_weapon=="machine_gun":
 		machine_gun_model.weapon_mag_3rd.visible=true
 
-@onready var hip_bone_pos_node=$Skeleton/Skeleton3D/hip_bone_pos/Area3D
-@onready var spine_bone_pos_node=$Skeleton/Skeleton3D/spine_bone_pos/Area3D
-@onready var leg1_l_bone_pos_node=$Skeleton/Skeleton3D/leg1_L_bone_pos/Area3D
-@onready var leg2_l_bone_pos_node=$Skeleton/Skeleton3D/leg2_L_bone_pos/Area3D
-@onready var foot_l_bone_pos_node=$Skeleton/Skeleton3D/foot_L_bone_pos/Area3D
-@onready var leg1_r_bone_pos_node=$Skeleton/Skeleton3D/leg1_R_bone_pos/Area3D
-@onready var leg2_r_bone_pos_node=$Skeleton/Skeleton3D/leg2_R_bone_pos/Area3D
-@onready var foot_r_bone_pos_node=$Skeleton/Skeleton3D/foot_R_bone_pos/Area3D
-@onready var head_bone_pos_node=$Skeleton/Skeleton3D/head_bone_pos/Area3D
-@onready var shouder_l_bone_pos_node=$Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D
-@onready var arm_l_bone_pos_node=$Skeleton/Skeleton3D/arm_L_bone_pos/Area3D
-@onready var hand_l_bone_pos_node=$Skeleton/Skeleton3D/hand_L_bone_pos/Area3D
-@onready var shouder_r_bone_pos_node=$Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D
-@onready var arm_r_bone_pos_node=$Skeleton/Skeleton3D/arm_R_bone_pos/Area3D
-@onready var hand_r_bone_pos_node=$Skeleton/Skeleton3D/hand_R_bone_pos/Area3D
+@onready var hip_bone_pos_node:Node=$Skeleton/Skeleton3D/hip_bone_pos/Area3D
+@onready var spine_bone_pos_node:Node=$Skeleton/Skeleton3D/spine_bone_pos/Area3D
+@onready var leg1_l_bone_pos_node:Node=$Skeleton/Skeleton3D/leg1_L_bone_pos/Area3D
+@onready var leg2_l_bone_pos_node:Node=$Skeleton/Skeleton3D/leg2_L_bone_pos/Area3D
+@onready var foot_l_bone_pos_node:Node=$Skeleton/Skeleton3D/foot_L_bone_pos/Area3D
+@onready var leg1_r_bone_pos_node:Node=$Skeleton/Skeleton3D/leg1_R_bone_pos/Area3D
+@onready var leg2_r_bone_pos_node:Node=$Skeleton/Skeleton3D/leg2_R_bone_pos/Area3D
+@onready var foot_r_bone_pos_node:Node=$Skeleton/Skeleton3D/foot_R_bone_pos/Area3D
+@onready var head_bone_pos_node:Node=$Skeleton/Skeleton3D/head_bone_pos/Area3D
+@onready var shouder_l_bone_pos_node:Node=$Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D
+@onready var arm_l_bone_pos_node:Node=$Skeleton/Skeleton3D/arm_L_bone_pos/Area3D
+@onready var hand_l_bone_pos_node:Node=$Skeleton/Skeleton3D/hand_L_bone_pos/Area3D
+@onready var shouder_r_bone_pos_node:Node=$Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D
+@onready var arm_r_bone_pos_node:Node=$Skeleton/Skeleton3D/arm_R_bone_pos/Area3D
+@onready var hand_r_bone_pos_node:Node=$Skeleton/Skeleton3D/hand_R_bone_pos/Area3D
 func player_3rd_hit_blood_event(bullet_pos,weapon):
 	crosshair_hit_anim_event()
 	if weapon=="rifle":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/rifle_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/rifle_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 	if weapon=="pistol":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/pistol_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/pistol_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 	if weapon=="smg":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/smg_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/smg_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 	if weapon=="sniper":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/sniper_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/sniper_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 	if weapon=="shotgun":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/shotgun_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/shotgun_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 	if weapon=="machine_gun":
-		var blood_scene=preload("res://assets/particles/player_blood.tscn")
-		var bs=blood_scene.instantiate()
+		var blood_scene:Resource=preload("res://assets/particles/player_blood.tscn")
+		var bs:Node=blood_scene.instantiate()
 		bs.position=bullet_pos
 		scene_root.add_child(bs)
 		
-		var blood_hit_audio=preload("res://assets/audios/machine_gun_blood_audio.tscn")
-		var bha=blood_hit_audio.instantiate()
+		var blood_hit_audio:Resource=preload("res://assets/audios/machine_gun_blood_audio.tscn")
+		var bha:Node=blood_hit_audio.instantiate()
 		bha.position=bullet_pos
 		scene_root.add_child(bha)
 
 func bullet_hit_water_event(bullet_pos):
-	var wave_scene=preload("res://assets/scenes/snow_basin/water/water_wave_instance.tscn")
-	var ws=wave_scene.instantiate()
+	var wave_scene:Resource=preload("res://assets/scenes/snow_basin/water/water_wave_instance.tscn")
+	var ws:Node=wave_scene.instantiate()
 	ws.position=bullet_pos
 	scene_root.add_child(ws)
 	
-	var wave_audio=preload("res://assets/scenes/snow_basin/audio/splash(water-splashes)/splash_audio.tscn")
-	var wa=wave_audio.instantiate()
+	var wave_audio:Resource=preload("res://assets/scenes/snow_basin/audio/splash(water-splashes)/splash_audio.tscn")
+	var wa:Node=wave_audio.instantiate()
 	ws.position=bullet_pos
 	scene_root.add_child(wa)
 
-var enemy_pos=Vector3()
+var enemy_pos:Vector3=Vector3()
 
-var murderer=null
+var murderer:Node=null
 func hit_loss_health_event(weapon_damage):
 	player_health-=weapon_damage
 	hit_from_enemy_bullet_anim_event()
@@ -2787,11 +2999,11 @@ func get_first_blood_event():
 	$hero_anim_1st_all_weapons.ui_animation_tree["parameters/kill_star/request"]=AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 	kills_event_id+=1
 	return
-var kills_event_timer=0
-var kills_event_start=false
-var kills_event_id=0
+var kills_event_timer:float=0
+var kills_event_start:bool=false
+var kills_event_id:int=0
 
-var kills_event_time_interval=3
+var kills_event_time_interval:float=3
 func kills_anim_event():
 	kills_event_start=true
 	kills_event_timer=0
@@ -2827,7 +3039,7 @@ func kills_anim_event():
 		kills_event_id+=1
 		return
 
-var GOF_bool=false
+var GOF_bool:bool=false
 func game_over_func():
 	if scene_root.game_over==true:
 		if scene_root.mode=="team_death_match":
@@ -2864,7 +3076,7 @@ func game_over_func():
 				GOF_bool=true
 
 
-var player_kill_score_FFA=0
+var player_kill_score_FFA:int=0
 func FFA_game_over_kill():
 	if player_kill_score_FFA>=Main_Menu_Global.setting_max_kills_i:
 		scene_root.kill_score_control(self)
@@ -2904,8 +3116,8 @@ func print_killing_tips(text):
 	$hero_anim_1st_all_weapons.print_killing_tips(text)
 
 
-var can_throw_grenade=false
-var can_close_combat=false
+var can_throw_grenade:bool=false
+var can_close_combat:bool=false
 func player_idle_state():
 	#print($hero_anim_1st_all_weapons.player_1st_animation_tree["parameters/StateMachine/playback"].get_current_node(),"  ","1st")
 	#print(anim_tree_3rd["parameters/StateMachine/playback"].get_current_node(),"  ","3rd")
@@ -2921,7 +3133,7 @@ func player_idle_state():
 		can_close_combat=false
 
 func player_sword_attack():
-	var sword_action_id=[0,1]
+	var sword_action_id:Array[int]=[0,1]
 	if hand_state_1st_anim.get_current_node()=="sword_attack":
 		if hand_state_3rd_anim.get_current_node()!="sword_attack":
 			hand_state_3rd_anim.travel("sword_attack")
@@ -2937,13 +3149,13 @@ func player_sword_attack():
 				$hero_anim_1st_all_weapons.player_1st_animation_tree["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
 				anim_tree_3rd["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
 
-var using_grenade="fire" #fire,smoke,flash
-var using_grenade_id=0
+var using_grenade:String="fire" #fire,smoke,flash
+var using_grenade_id:int=0
 
-var player_grenade_nums_fire=4
-var player_grenade_nums_smoke=4
-var player_grenade_nums_flash=4
-var using_grenade_nums=0
+var player_grenade_nums_fire:int=4
+var player_grenade_nums_smoke:int=4
+var player_grenade_nums_flash:int=4
+var using_grenade_nums:int=0
 func player_grenade_attack():
 	if $hero_anim_1st_all_weapons.sniper_camera.current==false:
 		if hand_state_1st_anim.get_current_node()!="grenade_throw":
@@ -2991,9 +3203,9 @@ func player_grenade_attack():
 
 func grenade_throw_1st_anim_event():
 	if player_die==false&&control_lock:
-		var throw_force=20
-		var grenade_rig=preload("res://assets/player/prefab/grenade_rig.tscn")
-		var gr=grenade_rig.instantiate()
+		var throw_force:float=20
+		var grenade_rig:Resource=preload("res://assets/player/prefab/grenade_rig.tscn")
+		var gr:Node=grenade_rig.instantiate()
 		gr.scene_root=scene_root
 		gr.position=$hero_anim_1st_all_weapons.grenade_throw_pos_node.global_position
 		gr.using_grenade=using_grenade
@@ -3004,8 +3216,8 @@ func grenade_throw_1st_anim_event():
 		scene_root.add_child(gr)
 		#$hero_anim_1st_all_weapons.grenade_throw_pos_node
 
-var flash_my_eyes_bool=false
-var flash_timer=0
+var flash_my_eyes_bool:bool=false
+var flash_timer:float=0
 func flash_my_eyes():
 	flash_timer=0
 	flash_my_eyes_bool=false
@@ -3013,21 +3225,21 @@ func flash_my_eyes():
 	flash_my_eyes_bool=true
 
 func sword_attack_anim_event():
-	var audio_id=[0,1,2]
-	var a_id=audio_id.pick_random()
+	var audio_id:Array[int]=[0,1,2]
+	var a_id:int=audio_id.pick_random()
 	if a_id==0:
-		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
-		var saa=sword_attack_audio.instantiate()
+		var sword_attack_audio:Resource=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa:Node=sword_attack_audio.instantiate()
 		saa.get_children()[0].autoplay=true
 		$hero_anim_1st_all_weapons.add_child(saa)
 	elif a_id==1:
-		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
-		var saa=sword_attack_audio.instantiate()
+		var sword_attack_audio:Resource=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa:Node=sword_attack_audio.instantiate()
 		saa.get_children()[1].autoplay=true
 		$hero_anim_1st_all_weapons.add_child(saa)
 	elif a_id==2:
-		var sword_attack_audio=preload("res://assets/audios/sword_attack_audio.tscn")
-		var saa=sword_attack_audio.instantiate()
+		var sword_attack_audio:Resource=preload("res://assets/audios/sword_attack_audio.tscn")
+		var saa:Node=sword_attack_audio.instantiate()
 		saa.get_children()[2].autoplay=true
 		$hero_anim_1st_all_weapons.add_child(saa)
 func sword_attack1_anim_event():
@@ -3038,14 +3250,14 @@ func sword_attack1_anim_event():
 					if st.TDM_team!=TDM_team:
 						st.hit_loss_health_event(100)
 						st.murderer=self
-						var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
-						var ska=sword_kill_audio.instantiate()
+						var sword_kill_audio:Resource=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+						var ska:Node=sword_kill_audio.instantiate()
 						ska.position=$hero_anim_1st_all_weapons.global_position
 						scene_root.add_child(ska)
 				if scene_root.mode=="free_for_all":
 					st.hit_loss_health_event(100)
 					st.murderer=self
-					var sword_kill_audio=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
-					var ska=sword_kill_audio.instantiate()
+					var sword_kill_audio:Resource=preload("res://assets/audios/sword_kill_enemy_audio.tscn")
+					var ska:Node=sword_kill_audio.instantiate()
 					ska.position=$hero_anim_1st_all_weapons.global_position
 					scene_root.add_child(ska)

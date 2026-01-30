@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://ck8eceaqrb0hm"]
+[gd_scene load_steps=12 format=4 uid="uid://ck8eceaqrb0hm"]
 
+[ext_resource type="Script" uid="uid://dmiuorjlhdnje" path="res://assets/scenes/main_game_scenes/blood_strike/ground/ground.gd" id="1_8qmg8"]
 [ext_resource type="Texture2D" uid="uid://0g5d4hpg2mf" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Base_color.png" id="1_jglwm"]
 [ext_resource type="Texture2D" uid="uid://cjgxemjy8aojw" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Height.png" id="2_jljbm"]
 [ext_resource type="Texture2D" uid="uid://b8n5gsy3sem1h" path="res://assets/scenes/main_game_scenes/blood_strike/ground/color1_Metallic.png" id="2_u8wxa"]
@@ -65,6 +66,7 @@ backlight_texture = ExtResource("1_jglwm")
 size = Vector3(70.0419, 12.8794, 67.3452)
 
 [node name="ground2" type="StaticBody3D"]
+script = ExtResource("1_8qmg8")
 
 [node name="ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(31.0051, 0, 0, 0, 702.404, 0, 0, 0, 31.0051, 0, -12.7841, 0)

@@ -1,11 +1,11 @@
 extends Node3D
-@onready var scene_root=$".."
-var player_team=""
-var user_name="我是个傻逼"
-var current_player_type=""
+@onready var scene_root:Node=$".."
+var player_team:String=""
+var user_name:String="我是个傻逼"
+var current_player_type:String=""
 
-var player_into_bool=false
-var player_into_n=0
+var player_into_bool:bool=false
+var player_into_n:int=0
 func _ready() -> void:
 	team_select_node.visible=false
 func player_into_scene():
@@ -783,8 +783,8 @@ func player_into_scene():
 			
 func instance_player(t_pos):
 	if scene_root.mode=="team_death_match":
-		var player_new=preload("res://assets/player/prefab/hero_player_3rd.tscn")
-		var pn=player_new.instantiate()
+		var player_new:Resource=preload("res://assets/player/prefab/hero_player_3rd.tscn")
+		var pn:Node=player_new.instantiate()
 		if self.player_team=="blue":
 			if(scene_root.ai_blue_points_lib[str(t_pos)])==true:
 				pn.charactor_color="blue"
@@ -821,8 +821,8 @@ func instance_player(t_pos):
 				
 func instance_ai(color,point_id,bot_id,t_pos):
 	if scene_root.mode=="team_death_match":
-		var player_new=preload("res://assets/player/AI/prefab/hero_AI.tscn")
-		var pn=player_new.instantiate()
+		var player_new:Resource=preload("res://assets/player/AI/prefab/hero_AI.tscn")
+		var pn:Node=player_new.instantiate()
 		if color=="blue":
 			if(scene_root.ai_blue_points_lib[str(t_pos)])==true:
 				pn.player_point_id=point_id
@@ -850,7 +850,7 @@ func instance_ai(color,point_id,bot_id,t_pos):
 				return
 				
 		
-@onready var team_select_node=$CanvasLayer/weapons_change_class/MarginContainer/VBoxContainer/HBoxContainer_team
+@onready var team_select_node:Node=$CanvasLayer/weapons_change_class/MarginContainer/VBoxContainer/HBoxContainer_team
 func _on_class_1_gui_input(event: InputEvent) -> void:
 	if $CanvasLayer.visible==true:
 		if $CanvasLayer/weapons_change_class.visible==true:
@@ -895,7 +895,7 @@ func _on_class_5_gui_input(event: InputEvent) -> void:
 						MOUSE_BUTTON_LEFT:
 							current_player_type="machine_gun_man"
 							team_select_node.visible=true
-var player_into_timer=0
+var player_into_timer:float=0
 func _physics_process(delta: float) -> void:
 	#print(player_into_n)
 	if player_into_bool==true:
@@ -962,11 +962,11 @@ func _physics_process(delta: float) -> void:
 		$CanvasLayer/weapons_change_class/MarginContainer/VBoxContainer/class5.modulate=Color(0,0.7,0.9)
 
 #weapon_class
-var class1_enter_bool=false
-var class2_enter_bool=false
-var class3_enter_bool=false
-var class4_enter_bool=false
-var class5_enter_bool=false
+var class1_enter_bool:bool=false
+var class2_enter_bool:bool=false
+var class3_enter_bool:bool=false
+var class4_enter_bool:bool=false
+var class5_enter_bool:bool=false
 func _on_class_1_mouse_entered() -> void:
 	if $CanvasLayer.visible==true:
 		$CanvasLayer/weapons_change_class/MarginContainer/VBoxContainer/class1.modulate=Color(0,0.7,0.9)

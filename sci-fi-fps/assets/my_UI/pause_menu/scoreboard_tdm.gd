@@ -1,23 +1,23 @@
 extends Control
 
-var players_nodes_main_nodes_blue=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_name_blue=[]
-var players_name_ui_nodes_blue=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_kills_blue=[]
-var players_kills_ui_nodes_blue=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_die_blue=[]
-var players_die_ui_nodes_blue=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_nodes_main_nodes_blue:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_name_blue:Array[String]=[]
+var players_name_ui_nodes_blue:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_kills_blue:Array[int]=[]
+var players_kills_ui_nodes_blue:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_die_blue:Array[int]=[]
+var players_die_ui_nodes_blue:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 
 
-var players_nodes_main_nodes_red=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_name_red=[]
-var players_name_ui_nodes_red=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_kills_red=[]
-var players_kills_ui_nodes_red=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_die_red=[]
-var players_die_ui_nodes_red=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_nodes_main_nodes_red:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_name_red:Array[String]=[]
+var players_name_ui_nodes_red:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_kills_red:Array[int]=[]
+var players_kills_ui_nodes_red:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_die_red:Array[int]=[]
+var players_die_ui_nodes_red:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 
-var end_timer=0
+var end_timer:float=0
 func _ready() -> void:
 	visible=true
 	players_name_blue=ScoreBoardTDMGlobal.players_name_blue
@@ -336,17 +336,17 @@ func set_score_board():
 	
 	blue_score_ui.text=str(ScoreBoardTDMGlobal.blue_team_score)
 	red_score_ui.text=str(ScoreBoardTDMGlobal.red_team_score)
-@onready var main_menu_scene="res://assets/main_menu/main_menu.tscn"
+@onready var main_menu_scene:String="res://assets/main_menu/main_menu.tscn"
 
-@onready var blue_score_ui=$PanelContainer/MarginContainer/VBoxContainer/blue_score
-@onready var red_score_ui=$PanelContainer/MarginContainer/VBoxContainer/red_score
+@onready var blue_score_ui:Node=$PanelContainer/MarginContainer/VBoxContainer/blue_score
+@onready var red_score_ui:Node=$PanelContainer/MarginContainer/VBoxContainer/red_score
 func _physics_process(delta: float) -> void:
 	end_timer+=delta
 	if end_timer>=10:
 		UserData.user_data_save()
-		var progress=[]
+		var progress:Array[float]=[]
 		ResourceLoader.load_threaded_request(main_menu_scene)
 		ResourceLoader.load_threaded_get_status(main_menu_scene,progress)
 		if progress[0]==1:
-			var packed_scene=ResourceLoader.load_threaded_get(main_menu_scene)
+			var packed_scene:Resource=ResourceLoader.load_threaded_get(main_menu_scene)
 			get_tree().change_scene_to_packed(packed_scene)

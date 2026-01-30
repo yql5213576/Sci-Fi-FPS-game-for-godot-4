@@ -1,14 +1,14 @@
 extends Node3D
 
-var over=false
-var timer=0
-var num=0
-var water_height=10
+var over:bool=false
+var timer:float=0
+var num:int=0
+var water_height:float=10
 
-var wave_timer=0
-var wave_over=false
-var wwism1=preload("res://assets/scenes/snow_basin/water/water_wave_instance_process_material(1).tres").duplicate()
-var wwism2=preload("res://assets/scenes/snow_basin/water/water_wave_instance_process_material(2).tres").duplicate()
+var wave_timer:float=0
+var wave_over:bool=false
+var wwism1:Resource=preload("res://assets/scenes/snow_basin/water/water_wave_instance_process_material(1).tres").duplicate()
+var wwism2:Resource=preload("res://assets/scenes/snow_basin/water/water_wave_instance_process_material(2).tres").duplicate()
 func _ready() -> void:
 	$water_smoke/GPUParticles3D.process_material=wwism1
 	$water_smoke/GPUParticles3D2.process_material=wwism2

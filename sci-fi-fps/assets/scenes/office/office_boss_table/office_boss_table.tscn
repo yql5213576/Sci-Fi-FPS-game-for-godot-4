@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://vgr4e6cc87k7"]
+[gd_scene load_steps=34 format=4 uid="uid://vgr4e6cc87k7"]
 
 [ext_resource type="Texture2D" uid="uid://c1g3m2ygae5qi" path="res://assets/scenes/office/office_boss_table/table_Base_color.png" id="1_b1p41"]
+[ext_resource type="Script" uid="uid://cbgqe8s6e2rdj" path="res://assets/scenes/office/office_boss_table/office_boss_table.gd" id="1_i32nw"]
 [ext_resource type="Texture2D" uid="uid://owe7ws28ojo6" path="res://assets/scenes/office/office_boss_table/table_Height.png" id="2_da73h"]
 [ext_resource type="Texture2D" uid="uid://bhpyy0ds415sq" path="res://assets/scenes/office/office_boss_table/table_Metallic.png" id="3_1ui0n"]
 [ext_resource type="Texture2D" uid="uid://q7ysq3je0y7j" path="res://assets/scenes/office/office_boss_table/table_Normal_OpenGL.png" id="4_jjh22"]
@@ -198,6 +199,7 @@ size = Vector3(3.1240578, 0.9614258, 0.17931366)
 size = Vector3(3.6539326, 0.12365723, 1.2379761)
 
 [node name="office_boss_table" type="StaticBody3D"]
+script = ExtResource("1_i32nw")
 
 [node name="table" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.8222417, 0, 0, 0, 0.06846432, 0, 0, 0, 0.6139127, 0.08185114, 0.8397843, 0.3815375)

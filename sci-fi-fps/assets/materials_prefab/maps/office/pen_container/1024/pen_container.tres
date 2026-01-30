@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ctpqhyn5eg2y1"]
+
+[ext_resource type="Texture2D" uid="uid://dtgw1ymhuonp7" path="res://assets/scenes/office/pen_container/low_1024/pen_container_Base_color.png" id="1_6kg8e"]
+[ext_resource type="Texture2D" uid="uid://cwndfkjiedg17" path="res://assets/scenes/office/pen_container/low_1024/pen_container_Metallic.png" id="2_hfarl"]
+[ext_resource type="Texture2D" uid="uid://dniyxikx0ldye" path="res://assets/scenes/office/pen_container/low_1024/pen_container_Normal_OpenGL.png" id="3_k5gur"]
+[ext_resource type="Texture2D" uid="uid://b4muob7envp86" path="res://assets/scenes/office/pen_container/low_1024/pen_container_Roughness.png" id="4_akrji"]
+
+[resource]
+albedo_texture = ExtResource("1_6kg8e")
+metallic = 1.0
+metallic_texture = ExtResource("2_hfarl")
+roughness_texture = ExtResource("4_akrji")
+normal_enabled = true
+normal_texture = ExtResource("3_k5gur")
+rim_enabled = true
+clearcoat_enabled = true

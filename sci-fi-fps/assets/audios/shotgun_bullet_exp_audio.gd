@@ -1,5 +1,5 @@
 extends Node3D
-var del_id=0
+var del_id:int=0
 func _on_glass_finished() -> void:
 	del_id=1
 

@@ -1,18 +1,18 @@
 extends Node3D
-@onready var ai_nav_points=$ai_nav_points.get_children()
-var ai_nav_points_lib_id=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
-var ai_nav_points_lib={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true,10:true,11:true,12:true,13:true,14:true,15:true,16:true,17:true,18:true}
-var players=[]
-@onready var players_points=$player.get_children()
-var ai_lib_size=18
-@onready var user_player=$player/point1/hero_player
+@onready var ai_nav_points:Array[Node]=$ai_nav_points.get_children()
+var ai_nav_points_lib_id:Array[int]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+var ai_nav_points_lib:Dictionary={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true,10:true,11:true,12:true,13:true,14:true,15:true,16:true,17:true,18:true}
+var players:Array[Node]=[]
+@onready var players_points:Array[Node]=$player.get_children()
+var ai_lib_size:int=18
+@onready var user_player:Node=$player/point1/hero_player
 
 
-var game_start=false
+var game_start:bool=false
 
 
 
-var first_blood=false
+var first_blood:bool=false
 
 
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=60 format=4 uid="uid://habgf6nr1f61"]
+[gd_scene load_steps=61 format=4 uid="uid://habgf6nr1f61"]
 
+[ext_resource type="Script" uid="uid://x8vcbhp175wh" path="res://assets/scenes/office/chair2/chair_2.gd" id="1_75sjg"]
 [ext_resource type="Texture2D" uid="uid://ceb6d36sjpptn" path="res://assets/scenes/office/chair2/sofa_Base_color.png" id="1_vtivr"]
 [ext_resource type="Texture2D" uid="uid://bugoti2ovblhc" path="res://assets/scenes/office/chair2/sofa_Height.png" id="2_y4cgd"]
 [ext_resource type="Texture2D" uid="uid://f5chkju0uohw" path="res://assets/scenes/office/chair2/sofa_Metallic.png" id="3_xgrev"]
@@ -313,6 +314,7 @@ points = PackedVector3Array(-8.069417, -1.5078336, -6.305227, -6.10344, -4.45535
 points = PackedVector3Array(-31.65085, -3.472849, 2.538495, -22.806551, 0.45698935, -4.339058, -22.806551, -2.4899564, -4.339058, -24.77349, -3.472849, 4.5046644, -28.701307, 2.4233513, 5.487749, -27.71957, 0.45698935, -7.2869654, -24.77349, -3.472849, -7.2869654, -31.65085, 2.4233513, 1.556757, -23.79002, 2.4233513, 2.538495, -23.79002, 1.4398818, -7.2869654, -31.65085, -3.472849, -0.40941244, -28.701307, -3.472849, 5.487749, -30.667381, 2.4233513, -1.3911505, -22.806551, -2.4899564, -8.27005, -27.71957, -2.4899564, -7.2869654, -26.737831, 2.4233513, 5.487749, -23.79002, -3.472849, 2.538495, -30.667381, 1.4398818, 4.5046644, -23.79002, 1.4398818, 3.5215797, -22.806551, 0.45698935, -8.27005, -22.806551, -3.472849, -7.2869654, -23.79002, 2.4233513, -0.40941244, -26.737831, 1.4398818, -7.2869654, -31.65085, 0.45698935, -0.40941244, -30.667381, -3.472849, 4.5046644, -24.77349, -2.4899564, -8.27005, -26.737831, 2.4233513, -2.3715417, -26.737831, -3.472849, 5.487749, -31.65085, 2.4233513, 2.538495, -24.77349, 0.45698935, -8.27005, -24.77349, 1.4398818, 4.5046644)
 
 [node name="chair2" type="StaticBody3D"]
+script = ExtResource("1_75sjg")
 
 [node name="sofa" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.3834944, 0, 0, 0, 1, 0, 0, 0, 1.2842987, 0, 0, 0)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=4 uid="uid://br428fexrp4gc"]
+[gd_scene load_steps=48 format=4 uid="uid://br428fexrp4gc"]
 
 [ext_resource type="Texture2D" uid="uid://dpy3v5tbuabjy" path="res://assets/scenes/office/chair/chair3_Base_color.png" id="1_2n3b0"]
+[ext_resource type="Script" uid="uid://c0b3vxepdbuv4" path="res://assets/scenes/office/chair/chair_2.gd" id="1_ret68"]
 [ext_resource type="Texture2D" uid="uid://10ty6od1qono" path="res://assets/scenes/office/chair/chair3_Height.png" id="2_acaug"]
 [ext_resource type="Texture2D" uid="uid://qeslvlqalp4e" path="res://assets/scenes/office/chair/chair3_Metallic.png" id="3_qav8f"]
 [ext_resource type="Texture2D" uid="uid://blhl7i4mwk2lb" path="res://assets/scenes/office/chair/chair3_Normal_OpenGL.png" id="4_m88nb"]
@@ -269,6 +270,7 @@ points = PackedVector3Array(-0.38698733, 4.038727, -1.1208928, -1.1236731, 2.156
 points = PackedVector3Array(-0.7144033, -0.54477465, 1.1707858, -1.2054789, 0.6007321, 0.7613077, -1.2054789, -1.1178164, 1.1707858, -1.2054789, 0.7645682, -0.54784286, -0.87817526, 0.6007321, -0.46602094, -1.2054789, -1.1178164, -0.46602094, -0.72698534, -1.1495936, -0.42617992, -0.87817526, 0.6007321, 0.7613077, -0.68996006, -0.4874754, -0.54342, -0.7335478, -1.1233411, 1.1037852, -1.2054789, -0.0540355, 1.0889639, -0.7144033, -0.46304893, -0.6298491, -1.2054789, -1.0360907, -0.54784286, -0.9599411, 0.7645682, -0.54784286, -0.9599411, 0.19152638, 1.0069578, -1.2054789, 0.68265015, 0.43402004, -1.2054789, -0.38113087, 1.1707858, -0.9599411, 0.7645682, -0.22055525, -0.7361219, -0.9636996, -0.5465862, -0.7963133, -0.46304893, -0.6298491, -1.2054789, 0.518814, 0.8433139, -0.87817526, -0.38113087, 1.1707858, -0.73576266, -0.8902805, 1.1709062, -1.2054789, 0.7645682, -0.22055525, -0.9599411, 0.518814, 0.8433139, -1.2054789, 0.19152638, 1.0069578, -0.87817526, 0.27344444, 0.9251358)
 
 [node name="chair2" type="StaticBody3D"]
+script = ExtResource("1_ret68")
 
 [node name="chair_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5827404, 0, 0, 0, 1.3718044, 0, 0, 0, 1.5827404, 0, 0.18797278, 0)

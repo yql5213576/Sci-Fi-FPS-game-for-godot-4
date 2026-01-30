@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=4 uid="uid://fxcnrnotq62"]
+[gd_scene load_steps=35 format=4 uid="uid://fxcnrnotq62"]
 
+[ext_resource type="Script" uid="uid://fy0bqbqa2wca" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi_small/wall_scifi_small.gd" id="1_5tuk5"]
 [ext_resource type="Texture2D" uid="uid://ckb6t3cufce68" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi_small/wall_color1_Base_color.png" id="1_uigrl"]
 [ext_resource type="Texture2D" uid="uid://c5qqv1qppd2ej" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi_small/wall_color1_Height.png" id="2_jbbrv"]
 [ext_resource type="Texture2D" uid="uid://dr6p7g6gdfp3y" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi_small/wall_color1_Metallic.png" id="2_rfcxt"]
@@ -401,6 +402,7 @@ size = Vector3(2.20795, 0.491745, 0.987228)
 size = Vector3(1.61345, 0.32655, 1.42894)
 
 [node name="wall_scifi_small" type="StaticBody3D"]
+script = ExtResource("1_5tuk5")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.244802, 0, 0, 0, 0.244802, 0, 0, 0, 0.244802, 0, 0, 0)

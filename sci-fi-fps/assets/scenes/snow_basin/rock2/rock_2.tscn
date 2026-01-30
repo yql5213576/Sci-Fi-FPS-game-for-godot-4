@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://dfs04cmtofm0t"]
+[gd_scene load_steps=21 format=4 uid="uid://dfs04cmtofm0t"]
 
 [ext_resource type="Texture2D" uid="uid://mv3lhao48jh3" path="res://assets/scenes/snow_basin/rock2/rock_Base_color.png" id="1_glcou"]
+[ext_resource type="Script" uid="uid://bery4ghymtyui" path="res://assets/scenes/snow_basin/rock2/rock_2.gd" id="1_goomy"]
 [ext_resource type="Texture2D" uid="uid://qtrahcwembys" path="res://assets/scenes/snow_basin/rock2/rock_Height.png" id="2_dpo6n"]
 [ext_resource type="Texture2D" uid="uid://bxkd7nqylso8o" path="res://assets/scenes/snow_basin/rock2/rock_Metallic.png" id="3_2w46s"]
 [ext_resource type="Texture2D" uid="uid://bn56ssftcbtmy" path="res://assets/scenes/snow_basin/rock2/rock_Normal_OpenGL.png" id="4_dwpyc"]
@@ -126,6 +127,7 @@ radius = 0.76171875
 height = 2.400879
 
 [node name="rock2" type="Node3D"]
+script = ExtResource("1_goomy")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 layers = 2

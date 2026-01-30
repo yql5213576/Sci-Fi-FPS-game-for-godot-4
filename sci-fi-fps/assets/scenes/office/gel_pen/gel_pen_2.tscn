@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://5whxanfflcb6"]
+[gd_scene load_steps=26 format=4 uid="uid://5whxanfflcb6"]
 
+[ext_resource type="Script" uid="uid://ca03pmb004jpa" path="res://assets/scenes/office/gel_pen/gel_pen_2.gd" id="1_3xwwo"]
 [ext_resource type="Texture2D" uid="uid://dxumgkuukty5d" path="res://assets/scenes/office/gel_pen/gel_pen_transparent_Base_color.png" id="1_fo0gp"]
 [ext_resource type="Texture2D" uid="uid://18e81fs64f0w" path="res://assets/scenes/office/gel_pen/gel_pen_transparent_Height.png" id="2_28ae2"]
 [ext_resource type="Texture2D" uid="uid://dcbvwt3cht3dm" path="res://assets/scenes/office/gel_pen/gel_pen_transparent_Metallic.png" id="3_yf6jg"]
@@ -169,6 +170,7 @@ height = 0.5524597
 radius = 0.028320313
 
 [node name="gel_pen2" type="StaticBody3D"]
+script = ExtResource("1_3xwwo")
 
 [node name="gel_pen" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.015172839, 0, 0, 0, -0.015172839, 0, 0, 0, -0.015172839, 0, 0, 0)

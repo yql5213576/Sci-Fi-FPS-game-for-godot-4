@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b1w2pfqnum38d"]
+
+[ext_resource type="Texture2D" uid="uid://c8vyy5ytgp1mg" path="res://assets/scenes/office/computer/low_512/head_Base_color.png" id="1_j6cfh"]
+[ext_resource type="Texture2D" uid="uid://d1bukg7rwhv1m" path="res://assets/scenes/office/computer/low_512/head_Metallic.png" id="2_awyov"]
+[ext_resource type="Texture2D" uid="uid://dniqofaafh2j" path="res://assets/scenes/office/computer/low_512/head_Normal_OpenGL.png" id="3_mlqpg"]
+[ext_resource type="Texture2D" uid="uid://d0p2nrop4fqwv" path="res://assets/scenes/office/computer/low_512/head_Roughness.png" id="4_n26br"]
+
+[resource]
+albedo_texture = ExtResource("1_j6cfh")
+metallic = 1.0
+metallic_texture = ExtResource("2_awyov")
+roughness_texture = ExtResource("4_n26br")
+normal_enabled = true
+normal_texture = ExtResource("3_mlqpg")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bba2d7g4clbjt"]
+
+[ext_resource type="Texture2D" uid="uid://b803ilnxbiv31" path="res://assets/player/textures/smg/low_1024/barrel_Base_color.png" id="1_r4yhw"]
+[ext_resource type="Texture2D" uid="uid://blyp44rsktw86" path="res://assets/player/textures/smg/low_1024/barrel_Metallic.png" id="2_m2ujq"]
+[ext_resource type="Texture2D" uid="uid://d0tafco17870q" path="res://assets/player/textures/smg/low_1024/barrel_Normal_OpenGL.png" id="3_xp3jw"]
+[ext_resource type="Texture2D" uid="uid://dikutrcmdxd4m" path="res://assets/player/textures/smg/low_1024/barrel_Roughness.png" id="4_18ywq"]
+
+[resource]
+albedo_texture = ExtResource("1_r4yhw")
+metallic = 1.0
+metallic_texture = ExtResource("2_m2ujq")
+roughness_texture = ExtResource("4_18ywq")
+normal_enabled = true
+normal_texture = ExtResource("3_xp3jw")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cwm8ucbuohw44"]
+
+[ext_resource type="Texture2D" uid="uid://b0mopsbobge7r" path="res://assets/scenes/office/book1/low_512/book1_Base_color.png" id="1_b0fry"]
+[ext_resource type="Texture2D" uid="uid://dbrag6i5n1rib" path="res://assets/scenes/office/book1/low_512/book1_Metallic.png" id="2_324y5"]
+[ext_resource type="Texture2D" uid="uid://d1uocp34ltb3e" path="res://assets/scenes/office/book1/low_512/book1_Normal_OpenGL.png" id="3_duwd5"]
+[ext_resource type="Texture2D" uid="uid://dovw7enrmsw45" path="res://assets/scenes/office/book1/low_512/book1_Roughness.png" id="4_3w45b"]
+
+[resource]
+albedo_texture = ExtResource("1_b0fry")
+metallic = 1.0
+metallic_texture = ExtResource("2_324y5")
+roughness_texture = ExtResource("4_3w45b")
+normal_enabled = true
+normal_texture = ExtResource("3_duwd5")
+clearcoat_enabled = true

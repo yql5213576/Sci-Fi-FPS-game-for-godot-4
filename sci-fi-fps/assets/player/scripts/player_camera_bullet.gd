@@ -1,20 +1,20 @@
 extends RayCast3D
-var bullet_speed=0
-var sub_objects=[]
-var player_master=null
-var weapon_type=null
+var bullet_speed:float=0
+var sub_objects:Array[Node]=[]
+var player_master:Node=null
+var weapon_type:String=""
 
 
-@onready var ray1=$shotgun_all_ray/RayCast3D
-@onready var ray2=$shotgun_all_ray/RayCast3D2
-@onready var ray3=$shotgun_all_ray/RayCast3D3
-@onready var ray4=$shotgun_all_ray/RayCast3D4
-@onready var ray5=$shotgun_all_ray/RayCast3D5
-@onready var ray6=$shotgun_all_ray/RayCast3D6
-@onready var ray7=$shotgun_all_ray/RayCast3D7
-@onready var ray8=$shotgun_all_ray/RayCast3D8
-@onready var ray9=$shotgun_all_ray/RayCast3D9
-var rays=[]
+@onready var ray1:Node=$shotgun_all_ray/RayCast3D
+@onready var ray2:Node=$shotgun_all_ray/RayCast3D2
+@onready var ray3:Node=$shotgun_all_ray/RayCast3D3
+@onready var ray4:Node=$shotgun_all_ray/RayCast3D4
+@onready var ray5:Node=$shotgun_all_ray/RayCast3D5
+@onready var ray6:Node=$shotgun_all_ray/RayCast3D6
+@onready var ray7:Node=$shotgun_all_ray/RayCast3D7
+@onready var ray8:Node=$shotgun_all_ray/RayCast3D8
+@onready var ray9:Node=$shotgun_all_ray/RayCast3D9
+var rays:Array[Node]=[]
 func _ready() -> void:
 	rays.append(self)
 	rays.append($shotgun_all_ray/RayCast3D)
@@ -46,16 +46,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if player_master!=null:
 		bullet_main_func(weapon_type)
-var rifle_shoot_player_distance=10
-var pistol_shoot_player_distance=10
-var smg_shoot_player_distance=10
-var sniper_shoot_player_distance=20
-var shotgun_shoot_player_distance=10
-var machine_gun_shoot_player_distance=10
+var rifle_shoot_player_distance:float=10
+var pistol_shoot_player_distance:float=10
+var smg_shoot_player_distance:float=10
+var sniper_shoot_player_distance:float=20
+var shotgun_shoot_player_distance:float=10
+var machine_gun_shoot_player_distance:float=10
 
 
 
-var rifle_damage=[[21,33,44,57]#"hip"
+var rifle_damage:Array[Array]=[[21,33,44,57]#"hip"
 ,[23,35,45]# "spine"
 ,[6,8,12,18,20]#"leg1_L"
 ,[6,8,12,18,20]#"leg2_L"
@@ -71,7 +71,7 @@ var rifle_damage=[[21,33,44,57]#"hip"
 ,[6,8,12,18,20]#"arm_R"
 ,[3,7,11,15]]#"hand_R"
 
-var pistol_damage=[[21,33,44,57]#"hip"
+var pistol_damage:Array[Array]=[[21,33,44,57]#"hip"
 ,[23,35,45]# "spine"
 ,[6,8,12,18,20]#"leg1_L"
 ,[6,8,12,18,20]#"leg2_L"
@@ -87,7 +87,7 @@ var pistol_damage=[[21,33,44,57]#"hip"
 ,[6,8,12,18,20]#"arm_R"
 ,[3,7,11,15]]#"hand_R"
 
-var smg_damage=[[8,15,27,35]#"hip"
+var smg_damage:Array[Array]=[[8,15,27,35]#"hip"
 ,[9,14,27]# "spine"
 ,[5,8,12,18,20]#"leg1_L"
 ,[5,8,11,18,20]#"leg2_L"
@@ -103,7 +103,7 @@ var smg_damage=[[8,15,27,35]#"hip"
 ,[6,8,12,18,20]#"arm_R"
 ,[3,7,11,15]]#"hand_R"
 
-var sniper_damage=[[40,50,60,70]#"hip"
+var sniper_damage:Array[Array]=[[40,50,60,70]#"hip"
 ,[90,100,74]# "spine"
 ,[20,30,40,50,60]#"leg1_L"
 ,[20,30,40,50,60]#"leg2_L"
@@ -119,7 +119,7 @@ var sniper_damage=[[40,50,60,70]#"hip"
 ,[20,30,40,50,60]#"arm_R"
 ,[23,47,31,55]]#"hand_R"
 
-var shotgun_damage=[[21,33,44,57]#"hip"
+var shotgun_damage:Array[Array]=[[21,33,44,57]#"hip"
 ,[23,35,45]# "spine"
 ,[6,8,12,18,20]#"leg1_L"
 ,[6,8,12,18,20]#"leg2_L"
@@ -135,7 +135,7 @@ var shotgun_damage=[[21,33,44,57]#"hip"
 ,[6,8,12,18,20]#"arm_R"
 ,[3,7,11,15]]#"hand_R"
 
-var machine_gun_damage=[[21,33,44,57]#"hip"
+var machine_gun_damage:Array[Array]=[[21,33,44,57]#"hip"
 ,[23,35,45]# "spine"
 ,[6,8,12,18,20]#"leg1_L"
 ,[6,8,12,18,20]#"leg2_L"

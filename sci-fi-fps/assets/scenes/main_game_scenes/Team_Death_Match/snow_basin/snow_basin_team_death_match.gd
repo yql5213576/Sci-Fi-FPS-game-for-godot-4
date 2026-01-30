@@ -1,37 +1,37 @@
 extends Node3D
 #autoload
-var bot_num=0
+var bot_num:int=0
 
-var blue_bot_num=0
-var red_bot_num=0
+var blue_bot_num:int=0
+var red_bot_num:int=0
 
-var bot_difficulty=""
+var bot_difficulty:String=""
 #autoload
 
-@onready var ai_nav_points=$ai_nav_points.get_children()
-var ai_nav_points_lib_id=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
-var ai_nav_points_lib={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true,10:true,11:true,12:true,13:true,14:true,15:true,16:true,17:true,18:true,19:true,20:true,21:true,22:true,23:true,24:true,25:true,26:true}
-var players=[]
+@onready var ai_nav_points:Array[Node]=$ai_nav_points.get_children()
+var ai_nav_points_lib_id:Array[int]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+var ai_nav_points_lib:Dictionary={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true,9:true,10:true,11:true,12:true,13:true,14:true,15:true,16:true,17:true,18:true,19:true,20:true,21:true,22:true,23:true,24:true,25:true,26:true}
+var players:Array[Node]=[]
 
-var ai_blue_points_lib_id=[1,2,3,4,5,6,7,8]
-var ai_blue_points_lib={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true}
+var ai_blue_points_lib_id:Array[int]=[1,2,3,4,5,6,7,8]
+var ai_blue_points_lib:Dictionary={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true}
 
-var ai_red_points_lib_id=[1,2,3,4,5,6,7,8]
-var ai_red_points_lib={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true}
+var ai_red_points_lib_id:Array[int]=[1,2,3,4,5,6,7,8]
+var ai_red_points_lib:Dictionary={1:true,2:true,3:true,4:true,5:true,6:true,7:true,8:true}
 
-@onready var players_points=$player.get_children()
-@onready var players_blue_points=$team_points/blue_points.get_children()
-@onready var players_red_points=$team_points/red_points.get_children()
-var ai_lib_size=26
-var user_player=null
+@onready var players_points:Array[Node]=$player.get_children()
+@onready var players_blue_points:Array[Node]=$team_points/blue_points.get_children()
+@onready var players_red_points:Array[Node]=$team_points/red_points.get_children()
+var ai_lib_size:int=26
+var user_player:Node=null
 
-var mode="team_death_match"
-var first_blood=false
-var game_start=false
+var mode:String="team_death_match"
+var first_blood:bool=false
+var game_start:bool=false
 
-var game_over=false
+var game_over:bool=false
 
-var player_ready=false
+var player_ready:bool=false
 func _ready() -> void:
 	game_times=Main_Menu_Global.setting_game_time_i
 	#players.append($player/point1/hero_player)
@@ -43,8 +43,8 @@ func _ready() -> void:
 	get_tree().root.mesh_lod_threshold=UserData.lod_data
 	get_tree().root.scaling_3d_scale=UserData.render_resolution_data
 	get_tree().root.use_occlusion_culling=true
-@onready var current_map_scene="res://assets/scenes/main_game_scenes/Team_Death_Match/snow_basin/snow_basin_team_death_match.tscn"
-@onready var snow_basin_environment=preload("res://assets/scenes/snow_basin/snow_basin.tres")
+@onready var current_map_scene:String="res://assets/scenes/main_game_scenes/Team_Death_Match/snow_basin/snow_basin_team_death_match.tscn"
+@onready var snow_basin_environment:Resource=preload("res://assets/scenes/snow_basin/snow_basin.tres")
 func _physics_process(delta: float) -> void:
 	
 	if game_over==true:
@@ -279,8 +279,8 @@ func area_collision_ai_nav_points():
 		ai_red_points_lib['8']=true
 
 
-var blue_team_score=0
-var red_team_score=0
+var blue_team_score:int=0
+var red_team_score:int=0
 var win_team:String
 
 
@@ -330,15 +330,15 @@ func print_A_kills_B(A,B):
 		if B.user_name==UserData.user_name_data:
 			UserData.death_data_n+=1
 
-var saturation_event=false
+var saturation_event:bool=false
 func scene_saturation_event():
 	saturation_event=true
 
-var game_times=0
-var game_timer=1
-var game_time_min=[0,0]
-var game_time_sec=[0,0]
-var time_start=false
+var game_times:float=0
+var game_timer:float=1
+var game_time_min:Array[int]=[0,0]
+var game_time_sec:Array[int]=[0,0]
+var time_start:bool=false
 #0,5,10,30,60
 func game_time_control():
 	if time_start==false:
@@ -405,18 +405,18 @@ func game_result():
 
 
 #---scoreboard----
-var players_name_blue=[]
-var players_kills_blue=[]
-var players_die_blue=[]
+var players_name_blue:Array[String]=[]
+var players_kills_blue:Array[int]=[]
+var players_die_blue:Array[int]=[]
 
-var players_name_red=[]
-var players_kills_red=[]
-var players_die_red=[]
+var players_name_red:Array[String]=[]
+var players_kills_red:Array[int]=[]
+var players_die_red:Array[int]=[]
 
-var score_board_ready=false
-@onready var score_board_scene="res://assets/my_UI/pause_menu/scoreboard_TDM.tscn"
-var game_end_timer=0
-var resault_bool=false
+var score_board_ready:bool=false
+@onready var score_board_scene:String="res://assets/my_UI/pause_menu/scoreboard_TDM.tscn"
+var game_end_timer:float=0
+var resault_bool:bool=false
 func score_board_control():
 	if score_board_ready==true:
 		if players_name_blue.size()>0:
@@ -442,11 +442,11 @@ func score_board_control():
 			resault_bool=true
 		game_end_timer+=get_physics_process_delta_time()
 		if game_end_timer>=5:
-			var progress=[]
+			var progress:Array[float]=[]
 			ResourceLoader.load_threaded_request(score_board_scene)
 			ResourceLoader.load_threaded_get_status(score_board_scene,progress)
 			if progress[0]==1:
-				var packed_scene=ResourceLoader.load_threaded_get(score_board_scene)
+				var packed_scene:Resource=ResourceLoader.load_threaded_get(score_board_scene)
 				ScoreBoardTDMGlobal.players_name_blue=players_name_blue
 				ScoreBoardTDMGlobal.players_kills_blue=players_kills_blue
 				ScoreBoardTDMGlobal.players_die_blue=players_die_blue

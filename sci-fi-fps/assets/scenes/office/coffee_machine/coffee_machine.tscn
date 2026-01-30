@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=4 uid="uid://cgg4d2d5tdnyd"]
+[gd_scene load_steps=37 format=4 uid="uid://cgg4d2d5tdnyd"]
 
+[ext_resource type="Script" uid="uid://m1ypi5xo8ui2" path="res://assets/scenes/office/coffee_machine/coffee_machine.gd" id="1_rudf7"]
 [ext_resource type="Texture2D" uid="uid://by8pt5vpkptp1" path="res://assets/scenes/office/coffee_machine/coffee_machine1_Base_color.png" id="1_vcg1l"]
 [ext_resource type="Texture2D" uid="uid://b24ggdnquplvt" path="res://assets/scenes/office/coffee_machine/coffee_machine1_Height.png" id="2_d6kiw"]
 [ext_resource type="Texture2D" uid="uid://crbpi7jecw08f" path="res://assets/scenes/office/coffee_machine/coffee_machine1_Metallic.png" id="3_1hf0w"]
@@ -236,6 +237,7 @@ backlight_texture = ExtResource("16_pewst")
 size = Vector3(0.7030029, 0.9411621, 0.956604)
 
 [node name="coffee_machine" type="StaticBody3D"]
+script = ExtResource("1_rudf7")
 
 [node name="coffee_machine1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.34884098, 0, 0, 0, 0.46409795, 0, 0, 0, 0.46409795, 0.0007703304, 0.05185473, 0)

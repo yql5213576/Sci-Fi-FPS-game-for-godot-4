@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://doydqhm8fi8rw"]
+[gd_scene load_steps=20 format=4 uid="uid://doydqhm8fi8rw"]
 
 [ext_resource type="Texture2D" uid="uid://b87elbiu6dbpp" path="res://assets/scenes/main_game_scenes/blood_strike/light_cube/color1_Base_color.png" id="1_18w4l"]
+[ext_resource type="Script" uid="uid://cc27707utko17" path="res://assets/scenes/main_game_scenes/blood_strike/light_cube/light_cube.gd" id="1_l5a5o"]
 [ext_resource type="Texture2D" uid="uid://d26i7maxbht56" path="res://assets/scenes/main_game_scenes/blood_strike/light_cube/color1_Metallic.png" id="2_5kkg8"]
 [ext_resource type="Texture2D" uid="uid://gndm1b2q7jhh" path="res://assets/scenes/main_game_scenes/blood_strike/light_cube/color1_Height.png" id="2_cv8fi"]
 [ext_resource type="Texture2D" uid="uid://belmcd8s88dg7" path="res://assets/scenes/main_game_scenes/blood_strike/light_cube/color1_Normal_OpenGL.png" id="3_0opky"]
@@ -143,6 +144,7 @@ backlight_enabled = true
 backlight_texture = ExtResource("5_8qugl")
 
 [node name="light_cube" type="Node3D"]
+script = ExtResource("1_l5a5o")
 
 [node name="light_cube_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.479531, 0, 0, 0, 1, 0, 0, 0)

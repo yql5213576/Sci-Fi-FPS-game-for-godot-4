@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://dey5f3od1pd7b"]
+[gd_scene load_steps=28 format=4 uid="uid://dey5f3od1pd7b"]
 
 [ext_resource type="Texture2D" uid="uid://cujyttrm5al02" path="res://assets/scenes/space_station/sofa/sofa_Base_color.png" id="1_ijjgr"]
+[ext_resource type="Script" uid="uid://bsc3qug1xtlxx" path="res://assets/scenes/space_station/sofa/sofa.gd" id="1_okvx3"]
 [ext_resource type="Texture2D" uid="uid://dcvfyq8dvimco" path="res://assets/scenes/space_station/sofa/sofa_Height.png" id="2_udkj1"]
 [ext_resource type="Texture2D" uid="uid://txcsbis255qc" path="res://assets/scenes/space_station/sofa/sofa_Metallic.png" id="2_ys3fc"]
 [ext_resource type="Texture2D" uid="uid://xucmuvbjl1tg" path="res://assets/scenes/space_station/sofa/sofa_Normal_OpenGL.png" id="3_7abh3"]
@@ -198,6 +199,7 @@ backlight_texture = ExtResource("9_m53xv")
 size = Vector3(6.58942, 3.30069, 3.43701)
 
 [node name="sofa2" type="StaticBody3D"]
+script = ExtResource("1_okvx3")
 
 [node name="sofa" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.438135, 0, 0, 0, 0.758657, 0, 0, 0, 0.758657, 0.351953, 1.51341, -1.45783)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=33 format=4 uid="uid://d2knbdxi6ts1b"]
+[gd_scene load_steps=34 format=4 uid="uid://d2knbdxi6ts1b"]
 
+[ext_resource type="Script" uid="uid://cbsxnyfn3fbyo" path="res://assets/scenes/space_station/chair2/chair_2.gd" id="1_1dqdp"]
 [ext_resource type="Texture2D" uid="uid://cxn5oy7itnoek" path="res://assets/scenes/space_station/chair2/chair1_Base_color.png" id="1_ovvtb"]
 [ext_resource type="Texture2D" uid="uid://b6437h63nld0s" path="res://assets/scenes/space_station/chair2/chair1_Height.png" id="2_5dhju"]
 [ext_resource type="Texture2D" uid="uid://b6c6sssvblknb" path="res://assets/scenes/space_station/chair2/chair1_Metallic.png" id="2_m5etj"]
@@ -218,6 +219,7 @@ normal_texture = ExtResource("15_jp1my")
 size = Vector3(2.2984, 2.0481, 2.30676)
 
 [node name="chair22" type="StaticBody3D"]
+script = ExtResource("1_1dqdp")
 
 [node name="chair1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.634483, 0, 0, 0, 0.0827578, 0, 0, 0, 0.634483, 0, 0, 0)

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://tot77pbm5734"]
+
+[ext_resource type="Texture2D" uid="uid://v1tkkhfy8y2e" path="res://assets/player/textures/smg/low_256/gun_main7_Base_color.png" id="1_347p0"]
+[ext_resource type="Texture2D" uid="uid://3yixcdj8letf" path="res://assets/player/textures/smg/low_256/gun_main7_Metallic.png" id="2_g3rmq"]
+[ext_resource type="Texture2D" uid="uid://blxqixqa8wih0" path="res://assets/player/textures/smg/low_256/gun_main7_Normal_OpenGL.png" id="3_255us"]
+[ext_resource type="Texture2D" uid="uid://dq1mwmlyjwi0e" path="res://assets/player/textures/smg/low_256/gun_main7_Roughness.png" id="4_u5sen"]
+
+[resource]
+albedo_texture = ExtResource("1_347p0")
+metallic = 1.0
+metallic_texture = ExtResource("2_g3rmq")
+roughness_texture = ExtResource("4_u5sen")
+normal_enabled = true
+normal_texture = ExtResource("3_255us")
+clearcoat_enabled = true

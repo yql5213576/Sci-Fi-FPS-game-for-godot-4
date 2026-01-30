@@ -1,8 +1,8 @@
 extends Node3D
-@onready var particle_node_main=$GPUParticles3D
-var shoot_point_pos=null
-var pos=Vector3()
-var rot=Vector3()
+@onready var particle_node_main:Node=$GPUParticles3D
+var shoot_point_pos:Node=null
+var pos:Vector3=Vector3()
+var rot:Vector3=Vector3()
 func _ready() -> void:
 	particle_node_main.restart()
 

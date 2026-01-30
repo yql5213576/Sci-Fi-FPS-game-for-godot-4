@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd60ym11glk2j"]
+[gd_scene format=3 uid="uid://cd60ym11glk2j"]
 
 [ext_resource type="Script" uid="uid://da7ht2t6ou451" path="res://assets/player/scripts/pistol_shoot_fire_ai.gd" id="1_c4f2k"]
 [ext_resource type="Texture2D" uid="uid://c0o8tk88i1ao4" path="res://assets/Kenney's_assets/PNG/Explosion/explosion05.png" id="2_p7jnr"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tgsh2"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c4f2k"]
 emission_shape = 1
 emission_sphere_radius = 0.05
 gravity = Vector3(0, 0, 0)
 radial_accel_min = -2.23517e-06
 radial_accel_max = 15.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h577g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7jnr"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
@@ -21,14 +21,14 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_fvinu"]
-material = SubResource("StandardMaterial3D_h577g")
+[sub_resource type="QuadMesh" id="QuadMesh_v6rks"]
+material = SubResource("StandardMaterial3D_p7jnr")
 size = Vector2(0.2, 0.2)
 
-[node name="pistol_shoot_fire_ai" type="Node3D"]
+[node name="pistol_shoot_fire_ai" type="Node3D" unique_id=322217431]
 script = ExtResource("1_c4f2k")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=145822012]
 layers = 32
 emitting = false
 amount = 20
@@ -37,7 +37,7 @@ one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_tgsh2")
-draw_pass_1 = SubResource("QuadMesh_fvinu")
+process_material = SubResource("ParticleProcessMaterial_c4f2k")
+draw_pass_1 = SubResource("QuadMesh_v6rks")
 
 [connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

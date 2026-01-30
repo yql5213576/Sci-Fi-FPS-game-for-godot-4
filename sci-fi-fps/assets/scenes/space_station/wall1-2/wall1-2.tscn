@@ -1,5 +1,6 @@
-[gd_scene load_steps=62 format=4 uid="uid://c7o7pv3tdw021"]
+[gd_scene format=4 uid="uid://c7o7pv3tdw021"]
 
+[ext_resource type="Script" uid="uid://vh1wfraeg7kd" path="res://assets/scenes/space_station/wall1-2/wall_1_2.gd" id="1_276yf"]
 [ext_resource type="Texture2D" uid="uid://dd1wyh1gga82a" path="res://assets/scenes/space_station/wall1-2/wall1-1_Base_color.png" id="1_v3hoq"]
 [ext_resource type="Texture2D" uid="uid://dkfojtlpq0m3m" path="res://assets/scenes/space_station/wall1-2/wall1-1_Height.png" id="2_bigbs"]
 [ext_resource type="Texture2D" uid="uid://dkbs5j0gsuqy" path="res://assets/scenes/space_station/wall1-2/wall1-1_Metallic.png" id="2_c2wmi"]
@@ -486,16 +487,17 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sa63g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdvx1"]
-albedo_color = Color(3, 3, 3, 1)
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_k36xx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4iqhn"]
 size = Vector3(16.6042, 10.3849, 2.63232)
 
-[node name="wall1-2" type="StaticBody3D"]
+[node name="wall1-2" type="StaticBody3D" unique_id=53488516]
+script = ExtResource("1_276yf")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1430861013]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, 6.88552, -1.42056, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_rpe3l")
@@ -503,7 +505,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_wvu7q")
 surface_material_override/1 = SubResource("StandardMaterial3D_37tpw")
 
-[node name="Cube_005" type="MeshInstance3D" parent="."]
+[node name="Cube_005" type="MeshInstance3D" parent="." unique_id=165870547]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, -0.456843, 2.80613, -0.312049)
 layers = 2
 mesh = SubResource("ArrayMesh_sw2tp")
@@ -511,28 +513,28 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_aejdw")
 surface_material_override/1 = SubResource("StandardMaterial3D_1y37f")
 
-[node name="pipeline_001" type="MeshInstance3D" parent="."]
+[node name="pipeline_001" type="MeshInstance3D" parent="." unique_id=733879094]
 transform = Transform3D(1.2293e-07, 6.50504, 4.91278e-08, -0.34077, 2.42822e-06, -0.0450794, -0.0450794, -6.16591e-07, 0.34077, 0, 6.33225, 0.0252908)
 layers = 2
 mesh = SubResource("ArrayMesh_a4wmb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpu6o")
 
-[node name="pipeline_002" type="MeshInstance3D" parent="."]
+[node name="pipeline_002" type="MeshInstance3D" parent="." unique_id=1670323060]
 transform = Transform3D(1.2293e-07, 6.50504, 4.91278e-08, -0.34077, 2.42822e-06, -0.0450794, -0.0450794, -6.16591e-07, 0.34077, 0, 5.28644, -0.317844)
 layers = 2
 mesh = SubResource("ArrayMesh_o715v")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpu6o")
 
-[node name="pipeline" type="MeshInstance3D" parent="."]
+[node name="pipeline" type="MeshInstance3D" parent="." unique_id=1278033572]
 transform = Transform3D(1.52454e-08, 0.127888, 2.14339e-08, -0.102743, -5.15093e-10, 0.0761522, 0.0761522, -2.62977e-08, 0.102743, -6.30433, 5.88911, -0.14808)
 layers = 2
 mesh = SubResource("ArrayMesh_mnwx7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpu6o")
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=1484914742]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, -0.456843, 2.80613, -0.312049)
 layers = 2
 mesh = SubResource("ArrayMesh_eupsr")
@@ -540,7 +542,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_j0oej")
 surface_material_override/1 = SubResource("StandardMaterial3D_p5b4x")
 
-[node name="Cube_002" type="MeshInstance3D" parent="."]
+[node name="Cube_002" type="MeshInstance3D" parent="." unique_id=1336410898]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, -6.7349, 2.80613, -0.312049)
 layers = 2
 mesh = SubResource("ArrayMesh_ohdfb")
@@ -548,31 +550,31 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_j0oej")
 surface_material_override/1 = SubResource("StandardMaterial3D_p5b4x")
 
-[node name="ViewportQuad" type="MeshInstance3D" parent="."]
+[node name="ViewportQuad" type="MeshInstance3D" parent="." unique_id=1678448529]
 transform = Transform3D(4.49704, 0, 0, 0, 2.31434, 0, 0, 0, 0.835382, 2.73171, 1.81478, -0.252266)
 layers = 2
 material_override = SubResource("StandardMaterial3D_mdvx1")
 mesh = SubResource("QuadMesh_k36xx")
 script = ExtResource("25_mdvx1")
 
-[node name="ViewportQuad2" type="MeshInstance3D" parent="."]
+[node name="ViewportQuad2" type="MeshInstance3D" parent="." unique_id=161134094]
 transform = Transform3D(3.50886, 0, 0, 0, 2.22976, 0, 0, 0, 0.835382, -4.31109, 1.80984, -0.252266)
 layers = 2
 material_override = SubResource("StandardMaterial3D_mdvx1")
 mesh = SubResource("QuadMesh_k36xx")
 script = ExtResource("25_mdvx1")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=303223294]
 size = Vector2i(1280, 768)
 render_target_update_mode = 4
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" unique_id=1170483311]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("25_k36xx")
 autoplay = true
 loop = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1156122321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460815, 2.68085, -0.106689)
 shape = SubResource("BoxShape3D_4iqhn")

@@ -1,16 +1,16 @@
 extends Control
 
-var players_nodes_main_nodes=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_nodes_main_nodes:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 
-var players_name=[]
-var players_name_ui_nodes=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_kills=[]
-var players_kills_ui_nodes=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
-var players_die=[]
-var players_die_ui_nodes=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_name:Array[String]=[]
+var players_name_ui_nodes:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_kills:Array[int]=[]
+var players_kills_ui_nodes:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+var players_die:Array[int]=[]
+var players_die_ui_nodes:Array[Node]=[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 
 
-var end_timer=0
+var end_timer:float=0
 func _ready() -> void:
 	visible=true
 	players_name=ScoreBoardFFAGlobal.players_name
@@ -443,14 +443,14 @@ func set_score_board():
 		players_kills_ui_nodes[15].text=str(players_kills[15])
 		players_die_ui_nodes[15].text=str(players_die[15])
 
-@onready var main_menu_scene="res://assets/main_menu/main_menu.tscn"
+@onready var main_menu_scene:String="res://assets/main_menu/main_menu.tscn"
 func _physics_process(delta: float) -> void:
 	end_timer+=delta
 	if end_timer>=10:
 		UserData.user_data_save()
-		var progress=[]
+		var progress:Array[float]=[]
 		ResourceLoader.load_threaded_request(main_menu_scene)
 		ResourceLoader.load_threaded_get_status(main_menu_scene,progress)
 		if progress[0]==1:
-			var packed_scene=ResourceLoader.load_threaded_get(main_menu_scene)
+			var packed_scene:Resource=ResourceLoader.load_threaded_get(main_menu_scene)
 			get_tree().change_scene_to_packed(packed_scene)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://vb12infntgcp"]
+[gd_scene format=3 uid="uid://vb12infntgcp"]
 
 [ext_resource type="Script" uid="uid://cx5oqftycb3p7" path="res://assets/particles/pistol_shoot_fire.gd" id="1_vxmyn"]
 [ext_resource type="Texture2D" uid="uid://c0o8tk88i1ao4" path="res://assets/Kenney's_assets/PNG/Explosion/explosion05.png" id="2_vxmyn"]
@@ -25,10 +25,10 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_h577g")
 size = Vector2(0.2, 0.2)
 
-[node name="pistol_shoot_fire" type="Node3D"]
+[node name="pistol_shoot_fire" type="Node3D" unique_id=900231416]
 script = ExtResource("1_vxmyn")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1179119601]
 layers = 5
 emitting = false
 amount = 20

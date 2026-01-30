@@ -1,6 +1,7 @@
-[gd_scene load_steps=68 format=4 uid="uid://cxmr4ydg0xuqw"]
+[gd_scene load_steps=69 format=4 uid="uid://cxmr4ydg0xuqw"]
 
 [ext_resource type="Texture2D" uid="uid://b83qtosyjpmp" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi/wall_color1_Base_color.png" id="1_36k85"]
+[ext_resource type="Script" uid="uid://nl8w7yr4xqsy" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi/wall_scifi.gd" id="1_66jmh"]
 [ext_resource type="Texture2D" uid="uid://6k622hsord8t" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi/wall_color1_Height.png" id="2_lgjrs"]
 [ext_resource type="Texture2D" uid="uid://ce25i3g46vc5t" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi/wall_color1_Metallic.png" id="2_pp1bi"]
 [ext_resource type="Texture2D" uid="uid://f037s74ll1jg" path="res://assets/scenes/main_game_scenes/blood_strike/wall_scifi/wall_color1_Normal_OpenGL.png" id="3_0xsf4"]
@@ -871,6 +872,7 @@ shadow_mesh = SubResource("ArrayMesh_glq7s")
 size = Vector3(1.6170657, 1.17511, 0.419342)
 
 [node name="wall_scifi" type="StaticBody3D"]
+script = ExtResource("1_66jmh")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.142922, 0, 0, -0.0875659)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drlp8x443l1xb"]
+[gd_scene format=3 uid="uid://drlp8x443l1xb"]
 
 [ext_resource type="Script" uid="uid://dobk2luanlgpf" path="res://assets/particles/machine_gun_shoot_fire.gd" id="1_yblkr"]
 [ext_resource type="Texture2D" uid="uid://dwytd5e6bmwml" path="res://assets/Kenney's_assets/PNG/Explosion/explosion00.png" id="2_vn04j"]
@@ -19,7 +19,7 @@ tangential_accel_max = 5.0
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(4, 4, 4, 1)
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
 albedo_texture = ExtResource("2_vn04j")
 billboard_mode = 3
 particles_anim_h_frames = 1
@@ -29,7 +29,7 @@ proximity_fade_enabled = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_qdfkh"]
 material = SubResource("StandardMaterial3D_fixdd")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bftne"]
 transparency = 1
@@ -44,12 +44,12 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_omnto"]
 material = SubResource("StandardMaterial3D_bftne")
-size = Vector2(0.2, 0.2)
+size = Vector2(0.3, 0.3)
 
-[node name="machine_gun_shoot_fire" type="Node3D"]
+[node name="machine_gun_shoot_fire" type="Node3D" unique_id=1770574912]
 script = ExtResource("1_yblkr")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1999111330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0680019, 0, 0)
 layers = 5
 emitting = false

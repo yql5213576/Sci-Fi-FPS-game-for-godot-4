@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://dlmygep8dl0ie"]
+[gd_scene format=4 uid="uid://dlmygep8dl0ie"]
 
 [ext_resource type="Texture2D" uid="uid://x4cwssoavjne" path="res://assets/scenes/space_station/table/table1_Base_color.png" id="1_drihv"]
+[ext_resource type="Script" uid="uid://dqnsbvodwhtia" path="res://assets/scenes/space_station/table/table.gd" id="1_lopaq"]
 [ext_resource type="Texture2D" uid="uid://bij8vtwlh5ump" path="res://assets/scenes/space_station/table/table1_Metallic.png" id="2_h2ln4"]
 [ext_resource type="Texture2D" uid="uid://ns5ta36kckkl" path="res://assets/scenes/space_station/table/table1_Height.png" id="2_yi62l"]
 [ext_resource type="Texture2D" uid="uid://c4si5yum1m4a2" path="res://assets/scenes/space_station/table/table1_Normal_OpenGL.png" id="3_yi62l"]
@@ -263,9 +264,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iq7rb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drihv"]
-albedo_color = Color(0, 2, 2, 1)
+albedo_color = Color(0, 1, 1, 1)
 emission_enabled = true
-emission = Color(0, 2, 2, 1)
+emission = Color(0, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wg4tk"]
 _surfaces = [{
@@ -341,23 +342,24 @@ size = Vector3(4.95972, 0.679443, 2.76514)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lopaq"]
 size = Vector3(4.13989, 1.15039, 2.22681)
 
-[node name="table2" type="StaticBody3D"]
+[node name="table2" type="StaticBody3D" unique_id=729943452]
+script = ExtResource("1_lopaq")
 
-[node name="table_002" type="MeshInstance3D" parent="."]
+[node name="table_002" type="MeshInstance3D" parent="." unique_id=1735986574]
 transform = Transform3D(2.31149, 0, 0, 0, 0.267331, 0, 0, 0, 1.20303, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_xlmu5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_h7rsj")
 
-[node name="table" type="MeshInstance3D" parent="."]
+[node name="table" type="MeshInstance3D" parent="." unique_id=1599258421]
 transform = Transform3D(2.31149, 0, 0, 0, 0.267331, 0, 0, 0, 1.20303, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_dbsip")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6xwfd")
 
-[node name="table_003" type="MeshInstance3D" parent="."]
+[node name="table_003" type="MeshInstance3D" parent="." unique_id=1368557444]
 transform = Transform3D(1.94876, 0, 0, 0, 0.22538, 0, 0, 0, 1.01424, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_a3gki")
@@ -365,38 +367,38 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_h7rsj")
 surface_material_override/1 = SubResource("StandardMaterial3D_6xwfd")
 
-[node name="table_004" type="MeshInstance3D" parent="."]
+[node name="table_004" type="MeshInstance3D" parent="." unique_id=194940022]
 transform = Transform3D(2.23784, 0, 0, 0, 0.267331, 0, 0, 0, 1.12813, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_im8bc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6xwfd")
 
-[node name="light" type="MeshInstance3D" parent="."]
+[node name="light" type="MeshInstance3D" parent="." unique_id=2074070739]
 transform = Transform3D(2.23784, 0, 0, 0, 0.267331, 0, 0, 0, 1.12813, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_h4y23")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_drihv")
 
-[node name="light2" type="MeshInstance3D" parent="."]
+[node name="light2" type="MeshInstance3D" parent="." unique_id=1634245244]
 transform = Transform3D(1.94876, 0, 0, 0, 0.22538, 0, 0, 0, 1.01424, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_ie08x")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_drihv")
 
-[node name="light3" type="MeshInstance3D" parent="."]
+[node name="light3" type="MeshInstance3D" parent="." unique_id=1431364622]
 transform = Transform3D(1.94876, 0, 0, 0, 0.22538, 0, 0, 0, 1.01424, 0, 0, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_7gp1c")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_drihv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1215261044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020752, 0.043335, -0.00317383)
 shape = SubResource("BoxShape3D_1mux3")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1606018301]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.77104, -0.00158691)
 shape = SubResource("BoxShape3D_lopaq")

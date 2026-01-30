@@ -1,29 +1,23 @@
 extends Control
 
 
-@onready var blood_strike_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/blood_strike/blood_strike_team_death_match.tscn"
-@onready var blood_strike_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/blood_strike/blood_strike_free_for_all.tscn"
+@onready var blood_strike_map_TDM:String="res://assets/scenes/main_game_scenes/Team_Death_Match/blood_strike/blood_strike_team_death_match.tscn"
+@onready var blood_strike_map_FFA:String="res://assets/scenes/main_game_scenes/Free_For_All/blood_strike/blood_strike_free_for_all.tscn"
 
-@onready var forest_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/forest/forest_team_death_match.tscn"
-@onready var forest_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/forest/forest_free_for_all.tscn"
+@onready var space_station_simple_map_TDM:String="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station_simple/space_station_simple_team_death_match.tscn"
+@onready var space_station_simple_map_FFA:String="res://assets/scenes/main_game_scenes/Free_For_All/space_station_simple/space_station_simple_free_for_all.tscn"
 
-@onready var space_station_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station/space_station_team_death_match.tscn"
-@onready var space_station_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/space_station/space_station_free_for_all.tscn"
+@onready var snow_basin_map_TDM:String="res://assets/scenes/main_game_scenes/Team_Death_Match/snow_basin/snow_basin_team_death_match.tscn"
+@onready var snow_basin_map_FFA:String="res://assets/scenes/main_game_scenes/Free_For_All/snow_basin/snow_basin_free_for_all.tscn"
 
-@onready var space_station_simple_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/space_station_simple/space_station_simple_team_death_match.tscn"
-@onready var space_station_simple_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/space_station_simple/space_station_simple_free_for_all.tscn"
-
-@onready var snow_basin_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/snow_basin/snow_basin_team_death_match.tscn"
-@onready var snow_basin_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/snow_basin/snow_basin_free_for_all.tscn"
-
-@onready var office_map_TDM="res://assets/scenes/main_game_scenes/Team_Death_Match/office/office_team_death_match.tscn"
-@onready var office_map_FFA="res://assets/scenes/main_game_scenes/Free_For_All/office/office_free_for_all.tscn"
+@onready var office_map_TDM:String="res://assets/scenes/main_game_scenes/Team_Death_Match/office/office_team_death_match.tscn"
+@onready var office_map_FFA:String="res://assets/scenes/main_game_scenes/Free_For_All/office/office_free_for_all.tscn"
 
 
 func _ready() -> void:
-	if FileAccess.file_exists("user://SaveUser0.2.data"):
+	if FileAccess.file_exists("user://SaveUser0.3.data"):
 		UserData.user_data_load()
-	if FileAccess.file_exists("user://SaveOptions0.2.data"):
+	if FileAccess.file_exists("user://SaveOptions0.4.data"):
 		UserData.user_options_load()
 		apply_options()
 	else:
@@ -31,7 +25,7 @@ func _ready() -> void:
 		apply_options()
 	reslution_text_default=str(UserData.reslution_vec_data_default.x)+"-"+str(UserData.reslution_vec_data_default.y)
 	#resolution_button.text=reslution_text_default
-	if UserData.user_name_data==""&&FileAccess.file_exists("user://SaveUser0.2.data")==false:
+	if UserData.user_name_data==""&&FileAccess.file_exists("user://SaveUser0.3.data")==false:
 		$user_first_login.visible=true
 	else:
 		$user_first_login.visible=false
@@ -47,16 +41,14 @@ func _ready() -> void:
 	
 
 
-@onready var map_texture_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/TextureRect
+@onready var map_texture_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/TextureRect
 
-@onready var blood_strike_map_icon=load("res://assets/scenes/map_icons/blood_strike_icon.png")
-@onready var forest_icon=load("res://assets/scenes/map_icons/forest_icon.png")
-@onready var space_station_icon=load("res://assets/scenes/map_icons/space_station_icon.png")
-@onready var space_station_simple_icon=load("res://assets/scenes/map_icons/space_station_simple_icon.png")
-@onready var snow_basin_icon=load("res://assets/scenes/map_icons/snow_basin_icon.png")
-@onready var office_icon=load("res://assets/scenes/map_icons/office_icon.png")
+@onready var blood_strike_map_icon:Resource=load("res://assets/scenes/map_icons/blood_strike_icon.png")
+@onready var space_station_simple_icon:Resource=load("res://assets/scenes/map_icons/space_station_simple_icon.png")
+@onready var snow_basin_icon:Resource=load("res://assets/scenes/map_icons/snow_basin_icon.png")
+@onready var office_icon:Resource=load("res://assets/scenes/map_icons/office_icon.png")
 
-@onready var loading_ProgressBar=$loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar/ProgressBar
+@onready var loading_ProgressBar:Node=$loading_progress_bar/MarginContainer/VBoxContainer/loading_ProgressBar/ProgressBar
 func _process(delta: float) -> void:
 	if $user_options.visible==false:
 		user_data_text_control()
@@ -79,10 +71,6 @@ func _process(delta: float) -> void:
 	
 	if map_label_text.text=="Blood Strike":
 		map_texture_node.texture=blood_strike_map_icon
-	if map_label_text.text=="Forest":
-		map_texture_node.texture=forest_icon
-	if map_label_text.text=="Space Station":
-		map_texture_node.texture=space_station_icon
 	if map_label_text.text=="Space Station Simple":
 		map_texture_node.texture=space_station_simple_icon
 	if map_label_text.text=="Snow Basin":
@@ -97,110 +85,75 @@ func _process(delta: float) -> void:
 		$loading_progress_bar.visible=true
 		if map_label_text.text=="Blood Strike":
 			if mode_label_text.text=="Team Death Match":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(blood_strike_map_TDM)
 				ResourceLoader.load_threaded_get_status(blood_strike_map_TDM,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(blood_strike_map_TDM)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(blood_strike_map_TDM)
 					get_tree().change_scene_to_packed(packed_scene)
 			if mode_label_text.text=="Free For All":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(blood_strike_map_FFA)
 				ResourceLoader.load_threaded_get_status(blood_strike_map_FFA,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(blood_strike_map_FFA)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(blood_strike_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
-		
-		if map_label_text.text=="Forest":
-			if mode_label_text.text=="Team Death Match":
-				var progress=[]
-				ResourceLoader.load_threaded_request(forest_map_TDM)
-				ResourceLoader.load_threaded_get_status(forest_map_TDM,progress)
-				loading_ProgressBar.value=progress[0]*100
-				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(forest_map_TDM)
-					get_tree().change_scene_to_packed(packed_scene)
-			if mode_label_text.text=="Free For All":
-				var progress=[]
-				ResourceLoader.load_threaded_request(forest_map_FFA)
-				ResourceLoader.load_threaded_get_status(forest_map_FFA,progress)
-				loading_ProgressBar.value=progress[0]*100
-				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(forest_map_FFA)
-					get_tree().change_scene_to_packed(packed_scene)
-		
-		if map_label_text.text=="Space Station":
-			if mode_label_text.text=="Team Death Match":
-				var progress=[]
-				ResourceLoader.load_threaded_request(space_station_map_TDM)
-				ResourceLoader.load_threaded_get_status(space_station_map_TDM,progress)
-				loading_ProgressBar.value=progress[0]*100
-				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(space_station_map_TDM)
-					get_tree().change_scene_to_packed(packed_scene)
-			if mode_label_text.text=="Free For All":
-				var progress=[]
-				ResourceLoader.load_threaded_request(space_station_map_FFA)
-				ResourceLoader.load_threaded_get_status(space_station_map_FFA,progress)
-				loading_ProgressBar.value=progress[0]*100
-				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(space_station_map_FFA)
-					get_tree().change_scene_to_packed(packed_scene)
-		
+
+
 		if map_label_text.text=="Space Station Simple":
 			if mode_label_text.text=="Team Death Match":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(space_station_simple_map_TDM)
 				ResourceLoader.load_threaded_get_status(space_station_simple_map_TDM,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(space_station_simple_map_TDM)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(space_station_simple_map_TDM)
 					get_tree().change_scene_to_packed(packed_scene)
 			if mode_label_text.text=="Free For All":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(space_station_simple_map_FFA)
 				ResourceLoader.load_threaded_get_status(space_station_simple_map_FFA,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(space_station_simple_map_FFA)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(space_station_simple_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
 					
 		if map_label_text.text=="Snow Basin":
 			if mode_label_text.text=="Team Death Match":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(snow_basin_map_TDM)
 				ResourceLoader.load_threaded_get_status(snow_basin_map_TDM,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(snow_basin_map_TDM)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(snow_basin_map_TDM)
 					get_tree().change_scene_to_packed(packed_scene)
 			if mode_label_text.text=="Free For All":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(snow_basin_map_FFA)
 				ResourceLoader.load_threaded_get_status(snow_basin_map_FFA,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(snow_basin_map_FFA)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(snow_basin_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
 					
 		if map_label_text.text=="Office":
 			if mode_label_text.text=="Team Death Match":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(office_map_TDM)
 				ResourceLoader.load_threaded_get_status(office_map_TDM,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(office_map_TDM)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(office_map_TDM)
 					get_tree().change_scene_to_packed(packed_scene)
 			if mode_label_text.text=="Free For All":
-				var progress=[]
+				var progress:Array[float]=[]
 				ResourceLoader.load_threaded_request(office_map_FFA)
 				ResourceLoader.load_threaded_get_status(office_map_FFA,progress)
 				loading_ProgressBar.value=progress[0]*100
 				if progress[0]==1:
-					var packed_scene=ResourceLoader.load_threaded_get(office_map_FFA)
+					var packed_scene:Resource=ResourceLoader.load_threaded_get(office_map_FFA)
 					get_tree().change_scene_to_packed(packed_scene)
 					
 #Control_button_menu
@@ -252,8 +205,8 @@ func _on_no_button_button_down() -> void:
 
 
 
-@onready var map_label_text=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/mp
-@onready var mode_label_text=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/md
+@onready var map_label_text:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/mp
+@onready var mode_label_text:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/md
 
 
 
@@ -270,15 +223,6 @@ func _on_button_blood_strike_button_down() -> void:
 	if $game_load.visible==true:
 		map_label_text.text="Blood Strike"
 
-func _on_button_forest_button_down() -> void:
-	$user_manu_button_press_audio.play()
-	if $game_load.visible==true:
-		map_label_text.text="Forest"
-
-func _on_button_space_station_button_down() -> void:
-	$user_manu_button_press_audio.play()
-	if $game_load.visible==true:
-		map_label_text.text="Space Station"
 
 func _on_button_space_station_simple_button_down() -> void:
 	$user_manu_button_press_audio.play()
@@ -310,10 +254,10 @@ func _on_free_for_all_button_down() -> void:
 #mode
 
 #setting
-@onready var button_bot_num_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/Button_bot_num
-@onready var button_difficulty_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/Button_difficulty
-@onready var button_game_time_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time
-@onready var button_max_kill_node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills
+@onready var button_bot_num_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/Button_bot_num
+@onready var button_difficulty_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/Button_difficulty
+@onready var button_game_time_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time
+@onready var button_max_kill_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills
 func _on_button_bot_num_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if $game_load.visible==true:
@@ -413,7 +357,7 @@ func _on_button_max_kills_button_down() -> void:#10,30,60,100,150,200,250,300
 
 #setting
 
-var game_start_loading=false
+var game_start_loading:bool=false
 #game_start
 func _on_start_button_button_down() -> void:
 	$user_manu_button_press_audio.play()
@@ -426,8 +370,8 @@ func _on_start_button_button_down() -> void:
 
 #user_career
 #user_name
-@onready var name_line_edit=$user_first_login/MarginContainer/VBoxContainer/HBoxContainer_line_edit/LineEdit
-@onready var user_data=$user_career
+@onready var name_line_edit:Node=$user_first_login/MarginContainer/VBoxContainer/HBoxContainer_line_edit/LineEdit
+@onready var user_data:Node=$user_career
 
 
 
@@ -439,12 +383,12 @@ func _on_button_ok_button_down() -> void:
 			UserData.user_data_save()
 			$user_first_login.visible=false
 
-@onready var user_name_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name2
-@onready var kills_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills2
-@onready var death_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death2
-@onready var favorite_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite2
-@onready var rank_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank2
-@onready var battles_text_label=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles2
+@onready var user_name_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name2
+@onready var kills_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills2
+@onready var death_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death2
+@onready var favorite_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite2
+@onready var rank_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank2
+@onready var battles_text_label:Node=$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles2
 
 
 func _on_data_folder_button_down() -> void:
@@ -502,9 +446,262 @@ func user_data_text_control():
 		volumetric_fog_button.text="open"
 	else:
 		volumetric_fog_button.text="close"
+	if UserData.ssr_data==true:
+		ssr_button.text="open"
+	else:
+		ssr_button.text="close"
+	#language
 	
+	language_button.text=UserData.language_data
+	if UserData.language_data=="chinese":
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_cn.visible=true
+		$user_first_login/MarginContainer/VBoxContainer/Input_user_name_alert_cn.visible=true
+		$change_name/MarginContainer/VBoxContainer/Input_user_name_alert_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/resolution_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/vsync_cn.visible=true
+		$"user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/anti-aliasing_msaa_cn".visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/ssao_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/ssil_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/sdfgi_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer18/ssr_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/VoxelGI_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/glow_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/volumetric_fog_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/grass_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/mouse_sevsitivity_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/crosshair_size_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/level_of_detail_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer16/language_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer17/texture_size_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer/about1_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2/about2_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3/about3_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4/about4_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5/about5_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6/about6_cn.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7/about7_cn.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start/start_cn.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load/data_cn.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options/options_cn.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit/quit_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/modes_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/maps_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/bot_num_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_cn.visible=true
+		
+		
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_en.visible=false
+		$user_first_login/MarginContainer/VBoxContainer/Input_user_name_alert_en.visible=false
+		$change_name/MarginContainer/VBoxContainer/Input_user_name_alert_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/resolution_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/vsync_en.visible=false
+		$"user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/anti-aliasing_msaa_en".visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/ssao_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/ssil_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/sdfgi_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer18/ssr_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/VoxelGI_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/glow_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/volumetric_fog_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/grass_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/mouse_sevsitivity_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/crosshair_size_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/level_of_detail_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer16/language_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer17/texture_size_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer/about1_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2/about2_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3/about3_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4/about4_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5/about5_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6/about6_en.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7/about7_en.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start/start_en.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load/data_en.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options/options_en.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit/quit_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/modes_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/maps_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/bot_num_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_en.visible=false
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/HSeparator.custom_minimum_size.x=40.515
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/HSeparator.custom_minimum_size.x=24.135
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/HSeparator.custom_minimum_size.x=13.95
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/HSeparator.custom_minimum_size.x=25.65
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike.text="血战回廊"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station_simple.text="太空站"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_snow_basin.text="冰雪盆地"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_office.text="办公室"
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match.text="团队竞赛"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Free_For_All.text="个人战斗"
+		
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options.text="应用"
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/reset_options.text="重置"
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit_options.text="关闭"
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button.text="战斗开始"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cancel_button.text="取消"
+		
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer/yes_button.text="是"
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer/no_button.text="否"
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles_cn.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/alert_text_cn.visible=true
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/data_folder.text="存档文件"
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit.text="关闭"
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles_en.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/alert_text_en.visible=false
+		
+	if UserData.language_data=="english":
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_cn.visible=false
+		$user_first_login/MarginContainer/VBoxContainer/Input_user_name_alert_cn.visible=false
+		$change_name/MarginContainer/VBoxContainer/Input_user_name_alert_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/resolution_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/vsync_cn.visible=false
+		$"user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/anti-aliasing_msaa_cn".visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/ssao_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/ssil_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/sdfgi_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer18/ssr_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/VoxelGI_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/glow_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/volumetric_fog_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/grass_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/mouse_sevsitivity_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/crosshair_size_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/level_of_detail_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer16/language_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer17/texture_size_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer/about1_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2/about2_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3/about3_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4/about4_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5/about5_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6/about6_cn.visible=false
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7/about7_cn.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start/start_cn.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load/data_cn.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options/options_cn.visible=false
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit/quit_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/modes_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/maps_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/bot_num_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_cn.visible=false
+		
+		
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_en.visible=true
+		$user_first_login/MarginContainer/VBoxContainer/Input_user_name_alert_en.visible=true
+		$change_name/MarginContainer/VBoxContainer/Input_user_name_alert_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/resolution_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/vsync_en.visible=true
+		$"user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/anti-aliasing_msaa_en".visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/ssao_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/ssil_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/sdfgi_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer18/ssr_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/VoxelGI_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/glow_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/volumetric_fog_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/grass_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/mouse_sevsitivity_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/crosshair_size_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/level_of_detail_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer16/language_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer17/texture_size_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer/about1_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer2/about2_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer3/about3_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer4/about4_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer5/about5_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer6/about6_en.visible=true
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu/MarginContainer/VBoxContainer/HBoxContainer7/about7_en.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_start/start_en.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_load/data_en.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_options/options_en.visible=true
+		$Control_button_menu/button_menu/PanelContainer/VBoxContainer/TextureButton_quit/quit_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Mode/modes_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Map/maps_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/bot_num_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_en.visible=true
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/HSeparator.custom_minimum_size.x=33.225
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/HSeparator.custom_minimum_size.x=30.845
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/HSeparator.custom_minimum_size.x=24.98
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/HSeparator.custom_minimum_size.x=32.23
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike.text="blood strike"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station_simple.text="space station"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_snow_basin.text="snow basin"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_office.text="office"
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Team_Death_Match.text="Team death match"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Mode/PanelContainer_mode/ScrollContainer/VBoxContainer/Free_For_All.text="Free for all"
+		
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/apply_options.text="apply"
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/reset_options.text="reset"
+		$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit_options.text="exit"
+		
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button.text="Let's Go!"
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cancel_button.text="Cancel"
+		
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer/yes_button.text="Yes"
+		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer/no_button.text="No"
+		
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles_cn.visible=false
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/alert_text_cn.visible=false
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/data_folder.text="Data Folder"
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/exit.text="Exit"
+		
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer/user_name_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer2/kills_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer3/death_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer4/favorite_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer5/rank_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/player_career_names/HBoxContainer6/battles_en.visible=true
+		$user_career/PanelContainer/MarginContainer/HBoxContainer/save_data_control/alert_text_en.visible=true
+	#language
 	grass_button.text=str(UserData.grass_density)
 	
+	if UserData.texture_size_data==256:
+		texture_size_button.text="256-256"
+	elif UserData.texture_size_data==512:
+		texture_size_button.text="512-512"
+	elif UserData.texture_size_data==1024:
+		texture_size_button.text="1024-1024"
 	#mouse_range_node.value=UserData.mouse_seveitivity_data
 	#crosshair_node.value=UserData.crosshair_data
 	#lod_node.value=UserData.lod_data
@@ -515,43 +712,50 @@ func user_data_text_control():
 
 #options
 
-@onready var resolution_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/Button_resolution
-@onready var vsync_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync
-@onready var anti_aliasing_msaa_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa
-@onready var ssao_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao
-@onready var ssil_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil
-@onready var sdfgi_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi
-@onready var voxelgi_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/Button_VoxelGI
-@onready var glow_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow
-@onready var volumetric_fog_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog
-@onready var grass_button=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass
+@onready var resolution_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer/Button_resolution
+@onready var vsync_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer10/Button_vsync
+@onready var anti_aliasing_msaa_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer8/Button_anti_aliasing_msaa
+@onready var ssao_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer2/Button_ssao
+@onready var ssil_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer3/Button_ssil
+@onready var sdfgi_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer4/Button_sdfgi
+@onready var ssr_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer18/Button_ssr
+@onready var voxelgi_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer13/Button_VoxelGI
+@onready var glow_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer5/Button_glow
+@onready var volumetric_fog_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer6/Button_volumetric_fog
+@onready var grass_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer7/Button_grass
+@onready var language_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer16/Button_language
 
-@onready var mouse_range_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range
-@onready var mouse_range_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range/MS_range_Label
+@onready var mouse_range_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range
+@onready var mouse_range_label_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer11/MS_range/MS_range_Label
 
-@onready var crosshair_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range
-@onready var crosshair_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range/CS_range_Label
+@onready var crosshair_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range
+@onready var crosshair_label_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer12/CS_range/CS_range_Label
 
-@onready var lod_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range
-@onready var lod_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range/lod_range_Label
+@onready var lod_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range
+@onready var lod_label_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer14/lod_range/lod_range_Label
 
-@onready var render_resolution_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range
-@onready var render_resolution_label_node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range/render_resolution_range_Label
+@onready var render_resolution_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range
+@onready var render_resolution_label_node:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer15/render_resolution_range/render_resolution_range_Label
 
-var reslution_text_default#_ready
-var vsync_default="open"
-var anti_aliasing_msaa_default="4x"
-var ssao_default="open"
-var ssil_default="open"
-var sdfgi_default="close"
-var voxelgi_default="open"
-var glow_default="open"
-var volumetric_fog_default="open"
-var grass_default="2"
-var mouse_sevsitivity_default=0.08
-var crosshair_size_default=0.125
-var lod_range_default=1
-var render_resolution_default=1
+@onready var texture_size_button:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/ScrollContainer_career/player_career_names/HBoxContainer17/Button_texture_size
+
+var reslution_text_default:String#_ready
+var vsync_default:String="open"
+var anti_aliasing_msaa_default:String="4x"
+var ssao_default:String="open"
+var ssil_default:String="open"
+var sdfgi_default:String="close"
+var ssr_default:String="close"
+var voxelgi_default:String="open"
+var glow_default:String="open"
+var volumetric_fog_default:String="open"
+var grass_default:String="2"
+var mouse_sevsitivity_default:float=0.08
+var crosshair_size_default:float=0.125
+var lod_range_default:float=1
+var render_resolution_default:float=1
+var language_default:String="chinese"
+var texture_size_default:int=1024
 func _on_button_resolution_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
@@ -732,6 +936,18 @@ func _on_button_sdfgi_button_down() -> void:
 			UserData.sdfgi_data=false
 			return
 
+func _on_button_ssr_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if about_the_game_menu.visible==false:
+		if ssr_button.text=="close":
+			ssr_button.text="open"
+			UserData.ssr_data=true
+			return
+		if ssr_button.text=="open":
+			ssr_button.text="close"
+			UserData.ssr_data=false
+			return
+
 func _on_button_voxel_gi_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if about_the_game_menu.visible==false:
@@ -785,12 +1001,41 @@ func _on_button_grass_button_down() -> void:
 			grass_button.text="0"
 			UserData.grass_density=0
 			return
-@onready var blood_strike_environment=preload("res://assets/scenes/main_game_scenes/blood_strike/blood_strike.tres")
-@onready var forest_environment=preload("res://assets/scenes/forest/terrain/forest_main_scene_environment.tres")
-@onready var space_station_environment=preload("res://assets/scenes/space_station/space_station.tres")
-@onready var space_station_simple_environment=preload("res://assets/scenes/space_station/ss_Simplified_version/space_station_simple.tres")
-@onready var snow_basin_environment=preload("res://assets/scenes/snow_basin/snow_basin.tres")
-@onready var office_environment=preload("res://assets/scenes/office/office_main_scene.tres")
+	
+	
+func _on_button_language_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if about_the_game_menu.visible==false:
+		if language_button.text=="chinese":
+			language_button.text="english"
+			UserData.language_data="english"
+			return
+		if language_button.text=="english":
+			language_button.text="chinese"
+			UserData.language_data="chinese"
+			return
+
+
+func _on_button_texture_size_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if about_the_game_menu.visible==false:
+		if texture_size_button.text=="256-256":
+			texture_size_button.text="512-512"
+			UserData.texture_size_data=512
+			return
+		if texture_size_button.text=="512-512":
+			texture_size_button.text="1024-1024"
+			UserData.texture_size_data=1024
+			return
+		if texture_size_button.text=="1024-1024":
+			texture_size_button.text="256-256"
+			UserData.texture_size_data=256
+			return
+
+@onready var blood_strike_environment:Resource=preload("res://assets/scenes/main_game_scenes/blood_strike/blood_strike.tres")
+@onready var space_station_simple_environment:Resource=preload("res://assets/scenes/space_station/ss_Simplified_version/space_station_simple.tres")
+@onready var snow_basin_environment:Resource=preload("res://assets/scenes/snow_basin/snow_basin.tres")
+@onready var office_environment:Resource=preload("res://assets/scenes/office/office_main_scene.tres")
 
 func apply_options():
 	get_viewport().content_scale_size=UserData.reslution_vec_data
@@ -801,33 +1046,33 @@ func apply_options():
 	get_viewport().msaa_3d=UserData.anti_aliasing_msaa_data
 	
 	blood_strike_environment.set_ssao_enabled(UserData.ssao_data)
-	forest_environment.set_ssao_enabled(UserData.ssao_data)
-	space_station_environment.set_ssao_enabled(UserData.ssao_data)
 	space_station_simple_environment.set_ssao_enabled(UserData.ssao_data)
+	snow_basin_environment.set_ssao_enabled(UserData.ssao_data)
 	office_environment.set_ssao_enabled(UserData.ssao_data)
 	
 	blood_strike_environment.set_ssil_enabled(UserData.ssil_data)
-	forest_environment.set_ssil_enabled(UserData.ssil_data)
-	space_station_environment.set_ssil_enabled(UserData.ssil_data)
 	space_station_simple_environment.set_ssil_enabled(UserData.ssil_data)
+	snow_basin_environment.set_ssil_enabled(UserData.ssil_data)
 	office_environment.set_ssil_enabled(UserData.ssil_data)
 	
 	blood_strike_environment.set_sdfgi_enabled(UserData.sdfgi_data)
-	forest_environment.set_sdfgi_enabled(UserData.sdfgi_data)
-	space_station_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	space_station_simple_environment.set_sdfgi_enabled(UserData.sdfgi_data)
+	snow_basin_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	office_environment.set_sdfgi_enabled(UserData.sdfgi_data)
 	
+	blood_strike_environment.set_ssr_enabled(UserData.ssr_data)
+	space_station_simple_environment.set_ssr_enabled(UserData.ssr_data)
+	snow_basin_environment.set_ssr_enabled(UserData.ssr_data)
+	office_environment.set_ssr_enabled(UserData.ssr_data)
+	
 	blood_strike_environment.set_glow_enabled(UserData.glow_data)
-	forest_environment.set_glow_enabled(UserData.glow_data)
-	space_station_environment.set_glow_enabled(UserData.glow_data)
 	space_station_simple_environment.set_glow_enabled(UserData.glow_data)
+	snow_basin_environment.set_glow_enabled(UserData.glow_data)
 	office_environment.set_glow_enabled(UserData.glow_data)
 	
 	blood_strike_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
-	forest_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
-	space_station_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	space_station_simple_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
+	snow_basin_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	office_environment.set_volumetric_fog_enabled(UserData.volumetric_fog_data)
 	
 	
@@ -870,6 +1115,9 @@ func _on_reset_options_button_down() -> void:
 		sdfgi_button.text=sdfgi_default
 		UserData.sdfgi_data=UserData.sdfgi_data_default
 		
+		ssr_button.text=ssr_default
+		UserData.ssr_data=UserData.ssr_data_default
+		
 		voxelgi_button.text=voxelgi_default
 		UserData.voxelgi_data=UserData.voxelgi_data_default
 		
@@ -894,10 +1142,13 @@ func _on_reset_options_button_down() -> void:
 		render_resolution_node.value=render_resolution_default
 		UserData.render_resolution_data=UserData.render_resolution_data_default
 		
+		language_button.text=language_default
+		UserData.language_data=UserData.language_data_default
 		
-
+		texture_size_button.text=str(texture_size_default)+"-"+str(texture_size_default)
+		UserData.texture_size_data=UserData.texture_size_data_default
 func _on_exit_options_button_down() -> void:
-	if FileAccess.file_exists("user://SaveOptions0.2.data"):
+	if FileAccess.file_exists("user://SaveOptions0.4.data"):
 		UserData.user_options_load()
 		apply_options()
 	$user_manu_button_press_audio.play()
@@ -905,25 +1156,25 @@ func _on_exit_options_button_down() -> void:
 		if $user_options.visible==true:
 			$user_options.visible=false
 #options
-var kills_data=""
-var kills_data_n=0
-var death_data=""
-var death_data_n=0
+var kills_data:String=""
+var kills_data_n:int=0
+var death_data:String=""
+var death_data_n:int=0
 
-var favorite_data=""
-var favorite_data_rifle=0
-var favorite_data_pistol=0
-var favorite_data_smg=0
-var favorite_data_sniper=0
-var favorite_data_shotgun=0
-var favorite_data_machine_gun=0
+var favorite_data:String=""
+var favorite_data_rifle:int=0
+var favorite_data_pistol:int=0
+var favorite_data_smg:int=0
+var favorite_data_sniper:int=0
+var favorite_data_shotgun:int=0
+var favorite_data_machine_gun:int=0
 
-var rank_data=""
-var rank_data_n=0
-var battles_data=""
-var battles_data_n=0
+var rank_data:String=""
+var rank_data_n:int=0
+var battles_data:String=""
+var battles_data_n:int=0
 
-@onready var about_the_game_menu=$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu
+@onready var about_the_game_menu:Node=$user_options/PanelContainer/MarginContainer/HBoxContainer/save_data_control/about_the_game/about_the_game_menu
 func _on_button_ok_atg_button_down() -> void:
 	$main_menu_button_press_audio.play()
 	if about_the_game_menu.visible==true:
@@ -956,12 +1207,6 @@ func _on_texture_button_quit_mouse_entered() -> void:
 func _on_button_blood_strike_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
-
-func _on_button_forest_mouse_entered() -> void:
-	$user_manu_button_audio.play()
-
-func _on_button_space_station_mouse_entered() -> void:
-	$user_manu_button_audio.play()
 
 func _on_button_space_station_simple_mouse_entered() -> void:
 	$user_manu_button_audio.play()
@@ -1098,4 +1343,14 @@ func _on_button_ok_atg_mouse_entered() -> void:
 
 
 func _on_about_the_game_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_language_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+
+func _on_button_texture_size_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_ssr_mouse_entered() -> void:
 	$user_manu_button_audio.play()

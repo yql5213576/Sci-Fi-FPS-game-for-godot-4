@@ -1,7 +1,7 @@
 extends MeshInstance3D
 
-@onready var water_texture_1=$Decal
-@onready var water_texture_2=$Decal2
+@onready var water_texture_1:Node=$Decal
+@onready var water_texture_2:Node=$Decal2
 
 func _physics_process(delta: float) -> void:
 	water_texture_1.position.z+=0.03*delta

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://djl8b55hyney2"]
+
+[ext_resource type="Texture2D" uid="uid://bpbu02ldoxah6" path="res://assets/scenes/office/door/low_1024/door_lock_Base_color.png" id="1_jwuc5"]
+[ext_resource type="Texture2D" uid="uid://dyvrdni87n334" path="res://assets/scenes/office/door/low_1024/door_lock_Metallic.png" id="2_raqod"]
+[ext_resource type="Texture2D" uid="uid://qshdgf6svjml" path="res://assets/scenes/office/door/low_1024/door_lock_Normal_OpenGL.png" id="3_8fmjj"]
+[ext_resource type="Texture2D" uid="uid://ddh2j6bbxn7pv" path="res://assets/scenes/office/door/low_1024/door_lock_Roughness.png" id="4_0g01s"]
+
+[resource]
+albedo_texture = ExtResource("1_jwuc5")
+metallic = 1.0
+metallic_texture = ExtResource("2_raqod")
+roughness_texture = ExtResource("4_0g01s")
+normal_enabled = true
+normal_texture = ExtResource("3_8fmjj")
+clearcoat_enabled = true

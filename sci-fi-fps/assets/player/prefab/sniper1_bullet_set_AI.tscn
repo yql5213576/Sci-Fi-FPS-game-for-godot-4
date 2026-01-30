@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=4 uid="uid://b8ugxxfiwa64r"]
+[gd_scene load_steps=25 format=4 uid="uid://b8ugxxfiwa64r"]
 
+[ext_resource type="Script" uid="uid://c0lrokc48ylqn" path="res://assets/player/prefab/sniper_1_bullet_set_ai.gd" id="1_1q43o"]
 [ext_resource type="Texture2D" uid="uid://bvvp8ub76mlrd" path="res://assets/player/textures/sniper/bullet_set1_Height.png" id="2_n42ot"]
 [ext_resource type="Texture2D" uid="uid://7hmbg5hdsmis" path="res://assets/player/textures/sniper/bullet_set1_Base_color.png" id="2_ohuql"]
 [ext_resource type="Texture2D" uid="uid://tposb6as2258" path="res://assets/player/textures/sniper/bullet_set1_Metallic.png" id="3_n42ot"]
@@ -156,6 +157,7 @@ backlight_enabled = true
 backlight_texture = ExtResource("10_0trgh")
 
 [node name="sniper1_bullet_set" type="Node3D"]
+script = ExtResource("1_1q43o")
 
 [node name="bullet_set" type="MeshInstance3D" parent="."]
 layers = 32

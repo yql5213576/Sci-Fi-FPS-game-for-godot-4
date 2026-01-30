@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://dvrf6pr2dl0li"]
+[gd_scene load_steps=21 format=4 uid="uid://dvrf6pr2dl0li"]
 
+[ext_resource type="Script" uid="uid://dl3e6oirq10cs" path="res://assets/scenes/office/table1/table_2.gd" id="1_4kotg"]
 [ext_resource type="Texture2D" uid="uid://cy88cvwv6gp47" path="res://assets/scenes/office/table1/table_white_Base_color.png" id="1_jgvyf"]
 [ext_resource type="Texture2D" uid="uid://bgfoydytof136" path="res://assets/scenes/office/table1/table_white_Height.png" id="2_5dmf5"]
 [ext_resource type="Texture2D" uid="uid://b4r3d4wdov8eo" path="res://assets/scenes/office/table1/table_white_Metallic.png" id="3_cybd2"]
@@ -144,6 +145,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_051wf")
 
 [node name="table2" type="StaticBody3D"]
+script = ExtResource("1_4kotg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0021972656, 0.03036499, 0.0032958984)

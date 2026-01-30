@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://1lkn04xpiq3h"]
+[gd_scene load_steps=27 format=4 uid="uid://1lkn04xpiq3h"]
 
 [ext_resource type="Texture2D" uid="uid://bhh6xns847bv" path="res://assets/scenes/snow_basin/tree2/tree2_leaf.png" id="1_ecak0"]
+[ext_resource type="Script" uid="uid://ck4c65frudd5t" path="res://assets/scenes/snow_basin/tree2/tree_2.gd" id="1_mwr2f"]
 [ext_resource type="Texture2D" uid="uid://8ntwfh4pl13r" path="res://assets/scenes/snow_basin/tree2/tree_Base_color.png" id="1_pqqdt"]
 [ext_resource type="Texture2D" uid="uid://cvjkcn82nrh5v" path="res://assets/scenes/snow_basin/tree2/tree_Metallic.png" id="2_0838j"]
 [ext_resource type="Texture2D" uid="uid://d37ad51rs3r6n" path="res://assets/scenes/snow_basin/tree2/tree_Normal_OpenGL.png" id="3_nvgoc"]
@@ -183,6 +184,7 @@ radius = 0.5439453
 height = 3.619629
 
 [node name="tree2" type="Node3D"]
+script = ExtResource("1_mwr2f")
 
 [node name="tree" type="MeshInstance3D" parent="."]
 layers = 2

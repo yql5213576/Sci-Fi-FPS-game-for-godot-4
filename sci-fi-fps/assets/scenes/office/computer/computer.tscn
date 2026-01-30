@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://dtxo2p3ryfaiu"]
+[gd_scene load_steps=28 format=4 uid="uid://dtxo2p3ryfaiu"]
 
+[ext_resource type="Script" uid="uid://cbb1hj8yeen5d" path="res://assets/scenes/office/computer/computer.gd" id="1_afmyo"]
 [ext_resource type="Texture2D" uid="uid://cwa0x0n205at6" path="res://assets/scenes/office/computer/computer_Key_board_texture.png" id="1_hlpng"]
 [ext_resource type="Texture2D" uid="uid://pcxq7xditcnh" path="res://assets/scenes/office/computer/key_board_Base_color.png" id="2_t5vtb"]
 [ext_resource type="Texture2D" uid="uid://cd64ao56djsjk" path="res://assets/scenes/office/computer/key_board_Height.png" id="3_f8613"]
@@ -191,6 +192,7 @@ backlight_texture = ExtResource("10_x2qxj")
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="computer" type="Node3D"]
+script = ExtResource("1_afmyo")
 
 [node name="keyboard" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3.1811943, 0, 7.9859734e-07, 0, 0.2403522, 0, -1.0365648e-06, 0, -2.4508777, 0, 0, 0.91398704)

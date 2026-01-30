@@ -1,6 +1,7 @@
-[gd_scene load_steps=45 format=4 uid="uid://dkj3sv5lo4ehy"]
+[gd_scene load_steps=46 format=4 uid="uid://dkj3sv5lo4ehy"]
 
 [ext_resource type="Texture2D" uid="uid://ddtr8cp66h83o" path="res://assets/scenes/space_station/flowerpot/flowerpot_leaf_texture.png" id="1_6pm1b"]
+[ext_resource type="Script" uid="uid://bevh4droa4s1y" path="res://assets/scenes/space_station/flowerpot/flowerpot.gd" id="1_dqp28"]
 [ext_resource type="Texture2D" uid="uid://dcccmgar6d18v" path="res://assets/scenes/space_station/flowerpot/tree_Base_color.png" id="1_vidna"]
 [ext_resource type="Texture2D" uid="uid://30pfi8i77iq8" path="res://assets/scenes/space_station/flowerpot/tree_Metallic.png" id="2_8ydtx"]
 [ext_resource type="Texture2D" uid="uid://dsbtj0j167ee1" path="res://assets/scenes/space_station/flowerpot/tree_Height.png" id="2_074c3"]
@@ -311,6 +312,7 @@ subsurf_scatter_strength = 1.0
 size = Vector3(8.92133, 2.08344, 2.89832)
 
 [node name="flowerpot2" type="StaticBody3D"]
+script = ExtResource("1_dqp28")
 
 [node name="tree" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.6505, 0, 0, 0, 0.6505, 0, 0, 0, 0.6505, -1.42747, 0.462349, 0)

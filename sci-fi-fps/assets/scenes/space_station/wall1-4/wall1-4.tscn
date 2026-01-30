@@ -1,15 +1,12 @@
-[gd_scene load_steps=43 format=4 uid="uid://ptb6ujjvyss8"]
+[gd_scene format=4 uid="uid://ptb6ujjvyss8"]
 
 [ext_resource type="Texture2D" uid="uid://dqh5aiarofspg" path="res://assets/scenes/space_station/wall1-4/wall1-1_Base_color.png" id="1_be3kg"]
+[ext_resource type="Script" uid="uid://iysgo8wjt8xt" path="res://assets/scenes/space_station/wall1-4/wall_1_4.gd" id="1_mwgvr"]
 [ext_resource type="Texture2D" uid="uid://daswg12828xf8" path="res://assets/scenes/space_station/wall1-4/wall1-1_Height.png" id="2_848ko"]
 [ext_resource type="Texture2D" uid="uid://cafmfs5br2pii" path="res://assets/scenes/space_station/wall1-4/wall1-1_Metallic.png" id="2_uf485"]
 [ext_resource type="Texture2D" uid="uid://clxodds3a1uon" path="res://assets/scenes/space_station/wall1-4/wall1-1_Normal_OpenGL.png" id="3_dvkx6"]
 [ext_resource type="Texture2D" uid="uid://bdxvhddqwo64d" path="res://assets/scenes/space_station/wall1-4/wall1-1_Roughness.png" id="4_866dc"]
-[ext_resource type="Texture2D" uid="uid://ctgt561lr0wxh" path="res://assets/scenes/space_station/wall1-3/wall1-2_Base_color.png" id="5_wdn60"]
-[ext_resource type="Texture2D" uid="uid://bogh6kqu3k2mv" path="res://assets/scenes/space_station/wall1-3/wall1-2_Metallic.png" id="6_6gwra"]
 [ext_resource type="Texture2D" uid="uid://big635vi24b4w" path="res://assets/scenes/space_station/wall1-4/wall1-2_Height.png" id="7_4g5va"]
-[ext_resource type="Texture2D" uid="uid://cfgar060406ad" path="res://assets/scenes/space_station/wall1-3/wall1-2_Normal_OpenGL.png" id="7_xii00"]
-[ext_resource type="Texture2D" uid="uid://bl28c33ammtcy" path="res://assets/scenes/space_station/wall1-3/wall1-2_Roughness.png" id="8_lihco"]
 [ext_resource type="Texture2D" uid="uid://jexns3otcd3i" path="res://assets/scenes/space_station/wall1-4/wall1-3_Base_color.png" id="9_2wu04"]
 [ext_resource type="Texture2D" uid="uid://btt33y8llq34x" path="res://assets/scenes/space_station/wall1-4/wall1-3_Metallic.png" id="10_48wuk"]
 [ext_resource type="Texture2D" uid="uid://lts5qrnwbhuj" path="res://assets/scenes/space_station/wall1-4/wall1-3_Normal_OpenGL.png" id="11_848ko"]
@@ -108,16 +105,10 @@ backlight_enabled = true
 backlight_texture = ExtResource("1_be3kg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gke0"]
-albedo_texture = ExtResource("5_wdn60")
+albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
-metallic_texture = ExtResource("6_6gwra")
-roughness_texture = ExtResource("8_lihco")
 normal_enabled = true
-normal_texture = ExtResource("7_xii00")
 clearcoat_enabled = true
-ao_enabled = true
-ao_texture = ExtResource("7_4g5va")
-subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalcc"]
@@ -235,9 +226,9 @@ backlight_enabled = true
 backlight_texture = ExtResource("9_2wu04")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yql3"]
-albedo_color = Color(3, 3, 3, 1)
 emission_enabled = true
-emission = Color(3, 3, 3, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boksy"]
 albedo_texture = ExtResource("13_vpk1n")
@@ -301,9 +292,10 @@ subsurf_scatter_strength = 0.52
 [sub_resource type="BoxShape3D" id="BoxShape3D_8f601"]
 size = Vector3(16.5595, 10.3314, 2.60815)
 
-[node name="wall1-4" type="StaticBody3D"]
+[node name="wall1-4" type="StaticBody3D" unique_id=991233595]
+script = ExtResource("1_mwgvr")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=166828549]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, 6.88552, -1.42056, 0)
 layers = 2
 mesh = SubResource("ArrayMesh_ebn8e")
@@ -311,7 +303,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_jmhq5")
 surface_material_override/1 = SubResource("StandardMaterial3D_2gke0")
 
-[node name="Cube_005" type="MeshInstance3D" parent="."]
+[node name="Cube_005" type="MeshInstance3D" parent="." unique_id=1254680637]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, -0.456843, 2.80613, -0.312049)
 layers = 2
 mesh = SubResource("ArrayMesh_yvhg2")
@@ -320,13 +312,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t8brf")
 surface_material_override/1 = SubResource("StandardMaterial3D_3yql3")
 surface_material_override/2 = SubResource("StandardMaterial3D_boksy")
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=2118290226]
 transform = Transform3D(0.886852, 0, 0, 0, 0.704315, 0, 0, 0, 0.835382, -0.444702, 2.45064, -0.318165)
 layers = 2
 mesh = SubResource("ArrayMesh_n3yex")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ns5cp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7408975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452728, 2.69351, -0.0975342)
 shape = SubResource("BoxShape3D_8f601")

@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="sci-fi-FPS"
 run/main_scene="uid://51dbsptmmkk3"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b5t0v1i8hsm5n"
 config/windows_native_icon="res://icon_game.ico"
 
@@ -31,7 +35,7 @@ window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/movie_file="D:/my_working/godot/4.5/project_4.5/sci-fi-fps/main_menu.png"
+movie_writer/movie_file="D:/my_working/godot/4.5.1/project4.5.1/sci-fi-fps/videos/main_menu.png"
 
 [gui]
 

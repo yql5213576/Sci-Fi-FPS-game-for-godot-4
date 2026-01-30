@@ -1,6 +1,6 @@
 extends Camera3D
-var movespeed=10
-var mouse_speed=0.1
+var movespeed:float=10
+var mouse_speed:float=0.1
 func _input(event: InputEvent) -> void:
 	Input.set_mouse_mode(2)
 	if event is InputEventMouseMotion:

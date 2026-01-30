@@ -1,7 +1,7 @@
 extends Node3D
-var speed=10
-var trail=null
-var timer=0
+var speed:float=10
+var trail:Node=null
+var timer:float=0
 
 func _physics_process(delta: float) -> void:
 	timer+=delta

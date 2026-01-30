@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dulleyismuvcq"]
+[gd_scene load_steps=11 format=4 uid="uid://dulleyismuvcq"]
 
-[ext_resource type="Texture2D" uid="uid://cjcqdr8y218b6" path="res://office/office_map/wall/wall_Base_color.png" id="1_4k52x"]
-[ext_resource type="Texture2D" uid="uid://ll70og1hda2p" path="res://office/office_map/wall/wall_Height.png" id="2_j4ah6"]
-[ext_resource type="Texture2D" uid="uid://bugcfn2hrrp41" path="res://office/office_map/wall/wall_Metallic.png" id="3_dtb83"]
-[ext_resource type="Texture2D" uid="uid://b6jaf00grrajc" path="res://office/office_map/wall/wall_Normal_OpenGL.png" id="4_pecuj"]
-[ext_resource type="Texture2D" uid="uid://df61s1bkso5pr" path="res://office/office_map/wall/wall_Roughness.png" id="5_sv5p5"]
+[ext_resource type="Texture2D" uid="uid://cjcqdr8y218b6" path="res://assets/scenes/office/office_map/wall/wall_Base_color.png" id="1_4k52x"]
+[ext_resource type="Script" uid="uid://bqttx3cjfjp07" path="res://assets/scenes/office/office_map/wall/wall.gd" id="1_f71ui"]
+[ext_resource type="Texture2D" uid="uid://ll70og1hda2p" path="res://assets/scenes/office/office_map/wall/wall_Height.png" id="2_j4ah6"]
+[ext_resource type="Texture2D" uid="uid://bugcfn2hrrp41" path="res://assets/scenes/office/office_map/wall/wall_Metallic.png" id="3_dtb83"]
+[ext_resource type="Texture2D" uid="uid://b6jaf00grrajc" path="res://assets/scenes/office/office_map/wall/wall_Normal_OpenGL.png" id="4_pecuj"]
+[ext_resource type="Texture2D" uid="uid://df61s1bkso5pr" path="res://assets/scenes/office/office_map/wall/wall_Roughness.png" id="5_sv5p5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25ct1"]
 resource_name = "wall"
@@ -82,6 +83,7 @@ subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.3
 
 [node name="wall" type="Node3D"]
+script = ExtResource("1_f71ui")
 
 [node name="wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.653663, 0, -3.5469894)

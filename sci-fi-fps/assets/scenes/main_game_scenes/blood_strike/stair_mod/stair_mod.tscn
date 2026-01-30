@@ -1,5 +1,6 @@
-[gd_scene load_steps=33 format=4 uid="uid://5h54y7a8ygqw"]
+[gd_scene load_steps=34 format=4 uid="uid://5h54y7a8ygqw"]
 
+[ext_resource type="Script" uid="uid://vg1831uyt61d" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/stair_mod.gd" id="1_dodfp"]
 [ext_resource type="Texture2D" uid="uid://deb6tdxlqk8p8" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Base_color.png" id="1_mudjw"]
 [ext_resource type="Texture2D" uid="uid://cstwtuiahg3sy" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Metallic.png" id="2_jh4xy"]
 [ext_resource type="Texture2D" uid="uid://fkquf1ct1r8e" path="res://assets/scenes/main_game_scenes/blood_strike/stair_mod/color2_Height.png" id="2_uw27m"]
@@ -393,6 +394,7 @@ shadow_mesh = SubResource("ArrayMesh_egdjd")
 size = Vector3(2.58307, 2.36401, 0.826172)
 
 [node name="stair_mod" type="StaticBody3D"]
+script = ExtResource("1_dodfp")
 
 [node name="立方体" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.36709, 0, 0, 0, 0.36709, 0, 0, 0, 0.225746, 0, 0, 0)

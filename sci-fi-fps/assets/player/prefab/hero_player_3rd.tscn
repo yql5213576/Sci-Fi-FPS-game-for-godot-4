@@ -1,4 +1,4 @@
-[gd_scene load_steps=758 format=4 uid="uid://7lvhebuxrav1"]
+[gd_scene format=4 uid="uid://7lvhebuxrav1"]
 
 [ext_resource type="Script" uid="uid://bidk5lu8gc52r" path="res://assets/player/scripts/hero_player_3_rd.gd" id="1_uqttq"]
 [ext_resource type="Material" uid="uid://d32p3ay2xyww2" path="res://assets/player/charactor_color_materials/white/arms_white.tres" id="2_ap0ru"]
@@ -4038,15 +4038,15 @@ node_connections = [&"output", 0, &"jump", &"TimeScale_move", 0, &"move", &"Tran
 radius = 0.769425
 height = 4.96568
 
-[node name="hero_player" type="CharacterBody3D"]
+[node name="hero_player" type="CharacterBody3D" unique_id=1568011247]
 collision_layer = 2
 collision_mask = 9
 safe_margin = 0.05
 script = ExtResource("1_uqttq")
 
-[node name="Skeleton" type="Node3D" parent="."]
+[node name="Skeleton" type="Node3D" parent="." unique_id=1880483998]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Skeleton"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Skeleton" unique_id=920466097]
 bones/0/name = "hip"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0.429603, 0.0269771)
@@ -4482,32 +4482,32 @@ bones/61/position = Vector3(6.00703e-08, 0.35333, -9.31323e-09)
 bones/61/rotation = Quaternion(0.05281341, -0.017221866, 0.4102372, 0.9102855)
 bones/61/scale = Vector3(1, 1, 1)
 
-[node name="armor_arms" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_arms" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=377550196]
 layers = 8
 mesh = SubResource("ArrayMesh_lcl84")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("2_ap0ru")
 
-[node name="armor_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=1512968550]
 layers = 8
 mesh = SubResource("ArrayMesh_v1rlg")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("3_vr272")
 surface_material_override/1 = ExtResource("4_nr4xt")
 
-[node name="armor_body_2" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_body_2" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=101050578]
 layers = 8
 mesh = SubResource("ArrayMesh_7ls21")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("5_umone")
 
-[node name="armor_hand" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_hand" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=510940277]
 layers = 8
 mesh = SubResource("ArrayMesh_ythc4")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("6_wbkds")
 
-[node name="armor_head" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_head" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=677255549]
 layers = 8
 mesh = SubResource("ArrayMesh_ppykx")
 skin = SubResource("Skin_og5w8")
@@ -4515,284 +4515,287 @@ surface_material_override/0 = ExtResource("7_qdhuh")
 surface_material_override/1 = ExtResource("8_s332g")
 surface_material_override/2 = ExtResource("9_4xc8o")
 
-[node name="armor_hip" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_hip" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=297814522]
 layers = 8
 mesh = SubResource("ArrayMesh_8gcy2")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("10_swi38")
 
-[node name="armor_leg_down" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_leg_down" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=757014845]
 layers = 8
 mesh = SubResource("ArrayMesh_mpj7b")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("11_feo5u")
 
-[node name="armor_leg_up" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_leg_up" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=2103744589]
 layers = 8
 mesh = SubResource("ArrayMesh_lul66")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("12_1yciy")
 
-[node name="armor_shoes" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_shoes" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=445020136]
 layers = 8
 mesh = SubResource("ArrayMesh_6r4ff")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("13_dnf70")
 
-[node name="armor_shouder" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="armor_shouder" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=953362406]
 layers = 8
 mesh = SubResource("ArrayMesh_ojcab")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("14_03mjg")
 
-[node name="skin_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D"]
+[node name="skin_body" type="MeshInstance3D" parent="Skeleton/Skeleton3D" unique_id=1658647225]
 layers = 8
 mesh = SubResource("ArrayMesh_0g7vp")
 skin = SubResource("Skin_og5w8")
 surface_material_override/0 = ExtResource("15_5w8mf")
 
-[node name="left_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="left_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=2114600912]
 transform = Transform3D(0.999067, 8.753039e-08, -0.043186653, -7.485505e-08, 1.0000001, 6.7055225e-08, 0.043186642, -7.0780516e-08, 0.999067, 1.683955, 1.3951358, -0.07133381)
 bone_name = "hand.L"
 bone_idx = 7
 
-[node name="rifle1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("58_uranq")]
+[node name="rifle1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=634635373 instance=ExtResource("58_uranq")]
 transform = Transform3D(-0.0901648, 0.0116548, 0.0289774, 0.0310808, 0.0247408, 0.0867588, 0.00308351, 0.0914181, -0.0271741, 0.378588, -0.189339, -0.0302903)
 visible = false
 
-[node name="pistol1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("59_umpjb")]
+[node name="pistol1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=1064348223 instance=ExtResource("59_umpjb")]
 transform = Transform3D(0.0707431, 0.0020684, 0.00868296, -0.000468392, -0.0684073, 0.0201117, 0.00891362, -0.0200106, -0.0678556, 0.418084, -0.178914, -0.0509803)
 visible = false
 
-[node name="smg1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("60_jfe0d")]
+[node name="smg1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=188057149 instance=ExtResource("60_jfe0d")]
 transform = Transform3D(-0.0214531, 0.0123623, -0.0506774, 0.00676725, -0.0840464, -0.00894942, -0.0825389, -0.010104, 0.0124381, 0.537755, -0.551312, 0.177009)
 visible = false
 
-[node name="sniper1_mag" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("61_c1ehp")]
+[node name="sniper1_mag" parent="Skeleton/Skeleton3D/left_hand" unique_id=1623026291 instance=ExtResource("61_c1ehp")]
 transform = Transform3D(0.0637635, -0.0259551, -0.0341355, -0.0236593, -0.0946437, -0.0524635, -0.00966376, 0.0604544, -0.0967893, 0.232864, -0.492741, -0.102664)
 visible = false
 
-[node name="machine_gun_mag_3rd" parent="Skeleton/Skeleton3D/left_hand" instance=ExtResource("63_hkas1")]
+[node name="machine_gun_mag_3rd" parent="Skeleton/Skeleton3D/left_hand" unique_id=182009288 instance=ExtResource("63_hkas1")]
 transform = Transform3D(-0.152842, -0.031075, 0.0724204, -0.0527142, -0.0570901, -0.149233, 0.0629529, -0.123251, 0.0508657, 0.470084, -0.280967, 0.0752077)
 visible = false
 
-[node name="gun_audio" type="Node3D" parent="Skeleton/Skeleton3D/left_hand"]
+[node name="gun_audio" type="Node3D" parent="Skeleton/Skeleton3D/left_hand" unique_id=715361724]
 
-[node name="right_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="right_hand" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1320347700]
 transform = Transform3D(0.9990671, -1.1962404e-06, -0.043186884, 1.2805685e-06, 1.0000002, -1.1920929e-07, 0.043186873, 5.9604645e-08, 0.9990672, -1.6839542, 1.3951337, -0.07133552)
 bone_name = "hand.R"
 bone_idx = 31
 
-[node name="rifle" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("58_fvf8k")]
+[node name="rifle" parent="Skeleton/Skeleton3D/right_hand" unique_id=40625347 instance=ExtResource("58_fvf8k")]
 transform = Transform3D(-0.0246706, -0.0124027, -0.0402241, -0.0420708, 0.00877318, 0.0230981, 0.00136122, 0.0463643, -0.0151309, -0.34671, -0.140968, -0.0240752)
 visible = false
 
-[node name="pistol" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("59_2elun")]
+[node name="pistol" parent="Skeleton/Skeleton3D/right_hand" unique_id=494469081 instance=ExtResource("59_2elun")]
 transform = Transform3D(-0.014947, 0.0253484, 0.0649485, 0.0697168, 0.0048185, 0.0141638, 0.000646171, 0.0664718, -0.0257942, -0.372642, -0.125798, -0.0319126)
 visible = false
 
-[node name="smg" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("60_n8j4y")]
+[node name="smg" parent="Skeleton/Skeleton3D/right_hand" unique_id=141928252 instance=ExtResource("60_n8j4y")]
 transform = Transform3D(0.0792311, 0.026591, 0.0113111, 0.0176282, 0.0049157, -0.0517178, -0.0270256, 0.0811632, -0.000573475, -0.444561, -0.155967, 0.157835)
 visible = false
 
-[node name="sniper" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("61_ygj7e")]
+[node name="sniper" parent="Skeleton/Skeleton3D/right_hand" unique_id=153829832 instance=ExtResource("61_ygj7e")]
 transform = Transform3D(0.0594874, 0.0389596, 0.164737, 0.100683, -0.0107562, -0.0998171, -0.00641977, 0.192317, -0.0389553, -0.464638, -0.0552716, 0.403666)
 visible = false
 
-[node name="sniper1_bullet_set" parent="Skeleton/Skeleton3D/right_hand/sniper" instance=ExtResource("66_umpjb")]
+[node name="sniper1_bullet_set" parent="Skeleton/Skeleton3D/right_hand/sniper" unique_id=1539193959 instance=ExtResource("66_umpjb")]
 transform = Transform3D(-7.47301e-08, 0.195997, 2.79396e-08, -0.11681, -1.25391e-07, -8.81889e-09, -8.81887e-09, -4.68802e-08, 0.11681, -1.36605, -0.224025, -3.54911)
 
-[node name="shotgun" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("68_leg1j")]
+[node name="shotgun" parent="Skeleton/Skeleton3D/right_hand" unique_id=1626469892 instance=ExtResource("68_leg1j")]
 transform = Transform3D(-0.0467697, 0.011031, 0.028325, 0.0283343, -0.00300054, 0.0479537, 0.011007, 0.0545959, -0.00308753, -0.424769, -0.0887467, 0.109716)
 
-[node name="shotgun_handle_3rd" parent="Skeleton/Skeleton3D/right_hand/shotgun" instance=ExtResource("69_8dfb7")]
+[node name="shotgun_handle_3rd" parent="Skeleton/Skeleton3D/right_hand/shotgun" unique_id=1275119312 instance=ExtResource("69_8dfb7")]
 transform = Transform3D(0.739497, 0, 0, 0, 0.739497, 0, 0, 0, 0.623175, 14.0726, -0.23462, 0)
 
-[node name="machine_gun" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("67_b25qh")]
+[node name="machine_gun" parent="Skeleton/Skeleton3D/right_hand" unique_id=641943296 instance=ExtResource("67_b25qh")]
 transform = Transform3D(-0.0330294, 0.0318297, -0.134953, -0.0559182, -0.00865797, 0.0817581, 0.00360033, 0.157535, 0.0317604, -0.439956, -0.0733877, 0.376148)
 
-[node name="Path3D_machine_gun_ammos" type="Path3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun"]
+[node name="Path3D_machine_gun_ammos" type="Path3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun" unique_id=711136906]
 transform = Transform3D(15.3741, 0, 0, 0, 6.21306, 0, 0, 0, 6.21305, 0, 4.76837e-07, 1.49727)
 visible = false
 curve = SubResource("Curve3D_b25qh")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=875930633]
 transform = Transform3D(-4.371139e-08, 0, -0.99998295, 0, 0.99998295, 0, 1, 0, -4.3710642e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D" unique_id=1621218064]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_7s2wa")
 
-[node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D2" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=345909156]
 transform = Transform3D(-4.371139e-08, 0, -0.99997896, 0, 0.99997896, 0, 1, 0, -4.3710468e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D2" unique_id=832934251]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D3" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D3" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1414244417]
 transform = Transform3D(-4.371139e-08, 0, -0.99998, 0, 0.99998, 0, 1, 0, -4.3710514e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D3"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D3" unique_id=1404175932]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D4" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D4" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=345676199]
 transform = Transform3D(-4.371139e-08, 0, -0.99997896, 0, 0.99997896, 0, 1, 0, -4.3710468e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D4"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D4" unique_id=476288439]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D5" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D5" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1548613066]
 transform = Transform3D(-4.371139e-08, 0, -0.99996156, 0, 0.99996156, 0, 1, 0, -4.3709708e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D5"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D5" unique_id=2063432783]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D6" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=740741493]
 transform = Transform3D(-4.371139e-08, 0, -0.99996865, 0, 0.99996865, 0, 1, 0, -4.3710017e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D6" unique_id=619598643]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D7" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1031979029]
 transform = Transform3D(-4.371139e-08, 0, -0.9999689, 0, 0.9999689, 0, 1, 0, -4.3710028e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D7" unique_id=1611917788]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D8" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D8" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1920947043]
 transform = Transform3D(-4.371139e-08, 0, -0.99997234, 0, 0.99997234, 0, 1, 0, -4.371018e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D8"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D8" unique_id=1262219753]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D9" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=911364905]
 transform = Transform3D(-4.371139e-08, 0, -0.99997365, 0, 0.99997365, 0, 1, 0, -4.3710237e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D9" unique_id=1810881709]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D10" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1256053109]
 transform = Transform3D(-4.371139e-08, 0, -0.9999695, 0, 0.9999695, 0, 1, 0, -4.3710056e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D10" unique_id=1945913676]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D11" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=154509111]
 transform = Transform3D(-4.371139e-08, 0, -0.9999657, 0, 0.9999657, 0, 1, 0, -4.370989e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D11" unique_id=1616115073]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D12" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=1056888072]
 transform = Transform3D(-4.371139e-08, 0, -0.9999658, 0, 0.9999658, 0, 1, 0, -4.3709893e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D12" unique_id=231446023]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D13" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=564904459]
 transform = Transform3D(-4.371139e-08, 0, -0.9999661, 0, 0.9999661, 0, 1, 0, -4.3709907e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D13" unique_id=262410064]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D14" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=912990932]
 transform = Transform3D(-4.371139e-08, 0, -0.9999677, 0, 0.9999677, 0, 1, 0, -4.3709978e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D14" unique_id=1214092721]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D15" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=694903396]
 transform = Transform3D(-4.371139e-08, 0, -0.99997044, 0, 0.99997044, 0, 1, 0, -4.3710095e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D15" unique_id=1889034004]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D16" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=15463054]
 transform = Transform3D(-4.371139e-08, 0, -0.9999727, 0, 0.9999727, 0, 1, 0, -4.3710195e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D16" unique_id=851133608]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos"]
+[node name="PathFollow3D17" type="PathFollow3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos" unique_id=193424540]
 transform = Transform3D(-4.371139e-08, 0, -0.99997336, 0, 0.99997336, 0, 1, 0, -4.3710223e-08, 0, -0.02, 0)
 
-[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17"]
+[node name="ammo" type="MeshInstance3D" parent="Skeleton/Skeleton3D/right_hand/machine_gun/Path3D_machine_gun_ammos/PathFollow3D17" unique_id=215056228]
 transform = Transform3D(5.97524e-10, -0.0307631, -7.29707e-10, 0.00222446, -1.35363e-09, 0.0140882, -0.0140882, -1.51849e-09, 0.00222446, 0.00666988, 0, 0)
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_f6pyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr4xt")
 
-[node name="sword" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("34_v8aif")]
+[node name="sword" parent="Skeleton/Skeleton3D/right_hand" unique_id=381728225 instance=ExtResource("34_v8aif")]
 transform = Transform3D(-0.97167075, -0.23235986, -0.04318598, -0.23257661, 0.97257787, 2.5331974e-07, 0.042001814, 0.010044336, -0.9990668, -0.34513593, -0.12625581, 0.051410437)
 
-[node name="grenade_fire" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("186_ywp8n")]
+[node name="grenade_fire" parent="Skeleton/Skeleton3D/right_hand" unique_id=771883354 instance=ExtResource("186_ywp8n")]
 transform = Transform3D(-0.70397836, -0.05469901, 0.708112, 0.7023465, 0.09444599, 0.7055418, -0.10547083, 0.9940259, -0.028070092, -0.39768156, -0.15442431, 0.094215035)
+visible = false
 
-[node name="grenade_smoke" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("36_n4e1e")]
+[node name="grenade_smoke" parent="Skeleton/Skeleton3D/right_hand" unique_id=991212296 instance=ExtResource("36_n4e1e")]
 transform = Transform3D(-0.7039783, -0.05469902, 0.708112, 0.70234656, 0.09444597, 0.7055418, -0.105470836, 0.99402595, -0.028070092, -0.3976815, -0.15442431, 0.094215035)
+visible = false
 
-[node name="grenade_flash" parent="Skeleton/Skeleton3D/right_hand" instance=ExtResource("37_hkas1")]
+[node name="grenade_flash" parent="Skeleton/Skeleton3D/right_hand" unique_id=743199127 instance=ExtResource("37_hkas1")]
 transform = Transform3D(-0.7039783, -0.05469902, 0.708112, 0.70234656, 0.09444597, 0.7055418, -0.105470836, 0.99402595, -0.028070092, -0.3976815, -0.15442431, 0.094215035)
+visible = false
 
-[node name="thumb_left" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="thumb_left" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=33739703]
 transform = Transform3D(-0.18527964, 0.9768517, -0.10692121, -0.9804054, -0.19116066, -0.04757235, -0.066910245, 0.09601193, 0.9931288, 1.9990399, 1.1749796, 0.04298553)
 bone_name = "thumb3.L"
 bone_idx = 11
 
-[node name="shotgun_ammo_model_3rd" parent="Skeleton/Skeleton3D/thumb_left" instance=ExtResource("62_n4e1e")]
+[node name="shotgun_ammo_model_3rd" parent="Skeleton/Skeleton3D/thumb_left" unique_id=1458481178 instance=ExtResource("62_n4e1e")]
 transform = Transform3D(-0.0036807, 0.0210463, -0.000303699, -0.0210439, -0.00368589, -0.000387727, -0.000434282, 0.000232314, 0.0213622, -0.085068, 0.07735, 0.00196248)
 visible = false
 
-[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="Skeleton/Skeleton3D"]
+[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="Skeleton/Skeleton3D" unique_id=1543522763]
 
-[node name="Physical Bone hip" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone hip" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=889257962]
 transform = Transform3D(1, 0, -4.7683716e-07, -2.842171e-14, -1, -5.9604645e-08, -4.7683716e-07, 5.9604645e-08, -1, 2.6077032e-08, 0.429603, 0.0269773)
 collision_layer = 16
 joint_type = 3
@@ -4806,16 +4809,16 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hip"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hip" unique_id=1882535267]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_n4e1e")
 
-[node name="Physical Bone spine" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.0018576718, 0.030431425, -0.99953514, -0.9999983, -0.00039241643, 0.001846585, -0.0003360398, 0.9995368, 0.0304321, -2.310497e-05, 0.8383459, 0.013446349)
+[node name="Physical Bone spine" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1145967851]
+transform = Transform3D(-0.0018576718, 0.030431425, -0.99953514, -0.9999983, -0.00039241643, 0.001846585, -0.0003360398, 0.9995368, 0.0304321, -2.306603e-05, 0.8383459, 0.013446349)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40873754, 0.013685582, -0.0003661035)
-body_offset = Transform3D(-0.0018576637, 0.030431187, -0.99953514, -0.99943733, -0.03353296, 0.0008365596, -0.03349191, 0.99897426, 0.030476354, -2.3104978e-05, 0.40896675, 2.901256e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40873754, 0.013685581, -0.00036606457)
+body_offset = Transform3D(-0.0018576637, 0.030431187, -0.99953514, -0.99943733, -0.03353296, 0.0008365596, -0.03349191, 0.99897426, 0.030476354, -2.3066037e-05, 0.40896675, 2.901256e-05)
 bone_name = "spine"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4824,17 +4827,17 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone spine"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone spine" unique_id=1600740360]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_hkas1")
 
-[node name="Physical Bone shouder_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.00043910745, 6.3766485e-05, -0.99999994, -0.99909425, 0.04254978, -0.00043599654, 0.042549748, 0.99909437, 8.2392646e-05, 0.77843404, 1.3171921, -0.07133229)
+[node name="Physical Bone shouder_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=144156481]
+transform = Transform3D(0.0004397305, 6.392225e-05, -0.99999994, -0.99909425, 0.04254978, -0.0004366124, 0.042549748, 0.99909437, 8.2574785e-05, 0.77843404, 1.3171921, -0.07133229)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(-3.619972e-06, 0, 0.999992, 0, 0.999996, 0, -0.999995, 0, -3.6199613e-06, -0.0779833, 0.0032984011, 0.24996608)
+joint_offset = Transform3D(-3.619972e-06, 0, 0.999992, 0, 0.999996, 0, -0.999995, 0, -3.6199613e-06, -0.077983454, 0.0032983623, 0.24996604)
 joint_rotation = Vector3(0, 1.5708, 0)
-body_offset = Transform3D(0.9999995, 0.0006370768, 0.00043937954, 0.0004393349, 6.432542e-05, -0.99999994, -0.0006370954, 0.99999976, 6.403601e-05, 0.07787132, 0.25000012, -0.0033640899)
+body_offset = Transform3D(0.9999995, 0.0006370768, 0.0004400027, 0.00043995795, 6.448118e-05, -0.99999994, -0.0006370954, 0.99999976, 6.419138e-05, 0.07787132, 0.25000012, -0.0033640899)
 bone_name = "shouder.L"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4843,16 +4846,16 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone shouder_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone shouder_L" unique_id=1943304348]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_l30vp")
 
-[node name="Physical Bone arm_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(1.6670243e-05, 0.00033706008, -0.99999994, -0.9990988, 0.042446304, -2.348265e-06, 0.042446297, 0.9990987, 0.0003374639, 1.501343, 1.1907568, -0.064863764)
+[node name="Physical Bone arm_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1914258178]
+transform = Transform3D(1.6709184e-05, 0.00033768313, -0.99999994, -0.9990988, 0.042446304, -2.3607251e-06, 0.042446297, 0.9990987, 0.00033808802, 1.501343, 1.1907568, -0.064863764)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20447789, 0.0020456791, 0.48916927)
-body_offset = Transform3D(0.9999996, 0.0007406473, 1.7154758e-05, 1.6900909e-05, 0.00033761887, -0.99999994, -0.0007406473, 0.99999964, 0.00033759678, 0.2044679, 0.48917198, -0.0023622662)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2044779, 0.0020453744, 0.48916927)
+body_offset = Transform3D(0.9999996, 0.0007406473, 1.719416e-05, 1.693985e-05, 0.00033824192, -0.99999994, -0.0007406473, 0.99999964, 0.00033821978, 0.2044679, 0.48917198, -0.0023622662)
 bone_name = "arm.L"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4861,16 +4864,16 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_L" unique_id=239372731]
 transform = Transform3D(1, 1.04077e-11, 0, 0, 0, 1, 1.04166e-11, -1, 5.68434e-14, -0.0637483, 1.09431e-08, 0.0202923)
 shape = SubResource("CapsuleShape3D_mmmfg")
 
-[node name="Physical Bone hand_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.9991012, -0.002175371, -0.042332664, 0.0021942996, 0.99999756, 0.00040067954, 0.042331684, -0.0004932099, 0.99910355, 1.6835749, 1.3954294, -0.071365386)
+[node name="Physical Bone hand_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1927637828]
+transform = Transform3D(0.9991012, -0.00218036, -0.042332664, 0.002199284, 0.99999756, 0.0004004683, 0.042331684, -0.00049320987, 0.99910355, 1.6835749, 1.3954294, -0.071365386)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00038033462, -0.000294454, 1.5347608e-05)
-body_offset = Transform3D(0.9999972, -0.0021947254, 0.0008547716, 0.0021943739, 0.99999744, 0.00040061245, -0.0008556396, -0.0003987283, 0.9999996, -0.0003809929, 0.00029361248, -1.513958e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00038033316, -0.00029445588, 1.534767e-05)
+body_offset = Transform3D(0.9999972, -0.0021997099, 0.0008547716, 0.0021993583, 0.99999744, 0.00040040133, -0.0008556396, -0.0003985128, 0.9999996, -0.0003809929, 0.00029361248, -1.513958e-05)
 bone_name = "hand.L"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4879,17 +4882,17 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_L" unique_id=1198888411]
 transform = Transform3D(-0.000792712, -0.981665, 0.190614, -0.00824002, 0.190614, 0.981631, -0.999966, -0.000792518, -0.00824004, 0.35731, -0.0784835, -0.0154462)
 shape = SubResource("CapsuleShape3D_7j0tm")
 
-[node name="Physical Bone shouder_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.0008862055, 0.0023870482, 0.9999968, -0.04537023, -0.99896735, 0.0024247982, 0.99896985, -0.045372233, -0.00077698944, -0.7708875, 1.3952607, -0.07181363)
+[node name="Physical Bone shouder_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1502089266]
+transform = Transform3D(0.0008849594, 0.0023870482, 0.9999968, -0.04537023, -0.99896735, 0.0024247416, 0.99896985, -0.04537223, -0.0007757446, -0.7708875, 1.3952607, -0.07181363)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(0.999999, 0, 0, 0, -4.37113e-08, -0.999996, 0, 0.999998, -4.3711214e-08, 0.0006990781, 0.0006821235, 0.24245185)
+joint_offset = Transform3D(0.999999, 0, 0, 0, -4.37113e-08, -0.999996, 0, 0.999998, -4.3711214e-08, 0.0006987759, 0.0006821234, 0.24245185)
 joint_rotation = Vector3(1.5707964, 0, 0)
-body_offset = Transform3D(0.999997, -0.0021886788, -0.00088170957, -0.0008869401, -0.0023857052, -0.99999666, 0.0021865703, 0.99999464, -0.0023875397, -0.0004838109, 0.24245328, -0.000104784966)
+body_offset = Transform3D(0.999997, -0.002188675, -0.00088046346, -0.000885694, -0.0023857052, -0.99999666, 0.0021865703, 0.99999464, -0.002387537, -0.0004838109, 0.24245328, -0.000104784966)
 bone_name = "shouder.R"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4898,16 +4901,16 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone shouder_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone shouder_R" unique_id=1451447124]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_6jjoh")
 
-[node name="Physical Bone arm_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.00040644067, -0.00029612656, 0.9999999, -0.042327438, -0.9991038, -0.00031306475, 0.9991037, -0.04232756, 0.00039354208, -1.347547, 1.3952246, -0.07123685)
+[node name="Physical Bone arm_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=745327834]
+transform = Transform3D(-0.00040706372, -0.0002967496, 0.9999999, -0.042327438, -0.9991038, -0.00031371362, 0.9991037, -0.04232756, 0.00039413825, -1.347547, 1.3952246, -0.07123685)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00023055584, -5.347625e-06, 0.3353758)
-body_offset = Transform3D(0.9999993, 0.0008594692, 0.0004059521, 0.00040568726, 0.00029747505, -0.99999976, -0.0008595921, 0.99999934, 0.000297226, 9.441376e-05, 0.3353758, -9.453297e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00023076481, -5.5565833e-06, 0.3353758)
+body_offset = Transform3D(0.9999993, 0.0008594692, 0.00040657574, 0.0004063103, 0.0002980981, -0.99999976, -0.0008595921, 0.99999934, 0.00029784854, 9.441376e-05, 0.3353758, -9.453297e-05)
 bone_name = "arm.R"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4916,16 +4919,16 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_R" unique_id=150850836]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.88178e-16, 3.71925e-15, 0.0315857)
 shape = SubResource("CapsuleShape3D_r3saq")
 
-[node name="Physical Bone hand_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.99907964, -0.00038627852, -0.042891588, 0.0004055259, 0.9999999, 0.00044004538, 0.04289141, -0.00045703407, 0.99907964, -1.6844023, 1.3949689, -0.07130346)
+[node name="Physical Bone hand_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1596733648]
+transform = Transform3D(0.99907964, -0.00038754859, -0.042891588, 0.00040677201, 0.9999999, 0.0004394604, 0.04289141, -0.00045650304, 0.99907964, -1.6844023, 1.3949689, -0.07130346)
 collision_layer = 16
 joint_type = 3
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00044640148, 0.00016470857, -5.1182185e-05)
-body_offset = Transform3D(0.99999964, -0.00040446332, 0.00029555708, 0.00040424516, 0.99999964, 0.00044016415, -0.00029572845, -0.00044003665, 0.9999996, -0.00044631958, -0.00016486645, 5.1386654e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004464017, 0.00016470799, -5.118228e-05)
+body_offset = Transform3D(0.99999964, -0.00040570926, 0.00029555708, 0.00040549127, 0.99999964, 0.00043957913, -0.00029572845, -0.00043945125, 0.9999996, -0.00044631958, -0.00016486645, 5.1386654e-05)
 bone_name = "hand.R"
 joint_constraints/angular_limit_enabled = true
 joint_constraints/angular_limit_upper = 30.0
@@ -4934,11 +4937,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R" unique_id=956756774]
 transform = Transform3D(-0.00112735, -0.973922, -0.226881, 0.00980743, -0.226881, 0.973873, -0.999951, -0.00112723, 0.00980745, -0.257006, -0.0285581, 0.0111097)
 shape = SubResource("CapsuleShape3D_mwlk5")
 
-[node name="Physical Bone leg1_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone leg1_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=472607118]
 transform = Transform3D(0.041227445, 0.99913394, -0.005629167, -0.1019335, 0.009810528, 0.9947429, 0.99393654, -0.04043691, 0.10224969, 0.2307879, -0.632812, -0.04639005)
 collision_layer = 16
 joint_type = 3
@@ -4952,11 +4955,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg1_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg1_L" unique_id=1842997528]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_8k433")
 
-[node name="Physical Bone leg2_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone leg2_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=252394522]
 transform = Transform3D(0.029079547, 0.999219, -0.026755739, 0.02506293, 0.026029779, 0.999347, 0.99926287, -0.029731134, -0.02428642, 0.24533944, -1.5506837, -0.084696256)
 collision_layer = 16
 joint_type = 3
@@ -4970,11 +4973,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg2_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg2_L" unique_id=1018757760]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.03727e-10, 9.004e-11, 0.0929733)
 shape = SubResource("CapsuleShape3D_4a1ef")
 
-[node name="Physical Bone ankle_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone ankle_L" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=871003014]
 transform = Transform3D(0.025617367, 0.99637663, -0.08110129, 0.58799154, 0.05059224, 0.80728334, 0.8084613, -0.06836735, -0.584565, 0.27141187, -2.1326625, 0.0853063)
 collision_layer = 16
 joint_type = 3
@@ -4988,11 +4991,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone ankle_L"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone ankle_L" unique_id=1548140691]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_dobyn")
 
-[node name="Physical Bone leg1_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone leg1_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1402223506]
 transform = Transform3D(0.04123542, -0.9991331, 0.005708805, 0.1015849, 0.00987645, 0.9947779, -0.9939719, -0.040440153, 0.10190411, -0.23083831, -0.63277125, -0.046376355)
 collision_layer = 16
 joint_type = 3
@@ -5006,11 +5009,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg1_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg1_R" unique_id=1287710024]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_m5aqi")
 
-[node name="Physical Bone leg2_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone leg2_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1694550355]
 transform = Transform3D(0.029095035, -0.99921703, 0.026812328, -0.025008941, 0.026087604, 0.99934685, -0.99926376, -0.029746579, -0.024230339, -0.24531561, -1.5507044, -0.08465902)
 collision_layer = 16
 joint_type = 3
@@ -5024,11 +5027,11 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg2_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone leg2_R" unique_id=476138469]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.74623e-10, -6.54836e-11, 0.093183)
 shape = SubResource("CapsuleShape3D_3cej1")
 
-[node name="Physical Bone ankle_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D"]
+[node name="Physical Bone ankle_R" type="PhysicalBone3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D" unique_id=1517888613]
 transform = Transform3D(0.025615765, -0.99637675, 0.08110013, -0.5880007, 0.050591458, 0.8072767, -0.8084547, -0.06836594, -0.58457434, -0.27140144, -2.132719, 0.08533253)
 collision_layer = 16
 joint_type = 3
@@ -5042,259 +5045,272 @@ joint_constraints/angular_limit_bias = 0.3
 joint_constraints/angular_limit_softness = 0.9
 joint_constraints/angular_limit_relaxation = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone ankle_R"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone ankle_R" unique_id=223852074]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_0xkdr")
 
-[node name="hip_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="hip_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=985667836]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0.429603, 0.0269771)
 bone_name = "hip"
 bone_idx = 0
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hip_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hip_bone_pos" unique_id=416877685]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "hip"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hip_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hip_bone_pos/Area3D" unique_id=843141008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00106812, 0.250885, 0.0427246)
 shape = SubResource("BoxShape3D_7j0tm")
 
-[node name="spine_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="spine_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=660776991]
 transform = Transform3D(1, 2.3980817e-14, 2.3841808e-07, -7.90504e-09, 0.9994502, 0.03315611, -2.38287e-07, -0.03315611, 0.9994502, 0, 0.429603, 0.0269771)
 bone_name = "spine"
 bone_idx = 1
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/spine_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/spine_bone_pos" unique_id=444877870]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "spine"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/spine_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/spine_bone_pos/Area3D" unique_id=2040915105]
 transform = Transform3D(1, 0, -1.9611e-11, 0, 1, 0, 0, 0, 1, 0.00156403, 0.869828, -0.0478669)
 shape = SubResource("BoxShape3D_n4e1e")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/spine_bone_pos/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/spine_bone_pos/Area3D" unique_id=1822152743]
 transform = Transform3D(1, 0, -5.85487e-12, 0, 1, 0, 0, 0, 1, -0.00177001, 0.0975342, -0.00292969)
 shape = SubResource("BoxShape3D_hkas1")
 
-[node name="camera_forward_end" type="Node3D" parent="Skeleton/Skeleton3D/spine_bone_pos"]
+[node name="camera_forward_end" type="Node3D" parent="Skeleton/Skeleton3D/spine_bone_pos" unique_id=1315201466]
 transform = Transform3D(-1, -6.464896e-08, 3.80258e-07, 1.8846464e-08, 0.97648686, 0.21557818, -3.8525366e-07, 0.21557818, -0.97648686, -1.8976309e-05, -9.519232, 50.208244)
 
-[node name="camera_forward_begin" type="Node3D" parent="Skeleton/Skeleton3D/spine_bone_pos"]
+[node name="camera_forward_begin" type="Node3D" parent="Skeleton/Skeleton3D/spine_bone_pos" unique_id=40285750]
 transform = Transform3D(-1, -5.1397805e-08, 3.2023533e-07, 1.8846466e-08, 0.9764867, 0.21557814, -3.2378577e-07, 0.21557814, -0.9764867, -1.8705222e-07, 1.391995, 0.7845541)
 
-[node name="leg1_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="leg1_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1274488454]
 transform = Transform3D(0.041232854, 0.0056444407, 0.9991336, -0.10151171, -0.994786, 0.009809107, 0.99397945, -0.1018282, -0.04044492, 0.22809754, -0.1545032, 0.0025754254)
 bone_name = "leg1.L"
 bone_idx = 53
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg1_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg1_L_bone_pos" unique_id=2054879743]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "leg1_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg1_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg1_L_bone_pos/Area3D" unique_id=1045792391]
 transform = Transform3D(0.999995, 6.25849e-07, 0, 8.74698e-06, 1.00001, 0, 1.86265e-08, 6.01169e-07, 1, -0.000976345, 0.39612, -0.000244051)
 shape = SubResource("BoxShape3D_l30vp")
 
-[node name="leg2_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="leg2_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=408272092]
 transform = Transform3D(0.029061057, 0.026770938, 0.99921906, 0.025032317, -0.9993473, 0.02604632, 0.9992642, 0.024255838, -0.029712256, 0.23352502, -1.1110506, -0.095338605)
 bone_name = "leg2.L"
 bone_idx = 54
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg2_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg2_L_bone_pos" unique_id=2041805187]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "leg2_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg2_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg2_L_bone_pos/Area3D" unique_id=195066660]
 transform = Transform3D(0.999965, -1.69501e-07, -3.35276e-07, -1.47149e-06, 1, -2.45753e-07, 4.28408e-07, 9.83535e-07, 0.999979, 0.00915549, 0.399078, 0.0120539)
 shape = SubResource("BoxShape3D_mmmfg")
 
-[node name="foot_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="foot_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1899236236]
 transform = Transform3D(0.025604945, 0.08111369, 0.9963759, 0.5880255, -0.8072578, 0.050606675, 0.808437, 0.5845987, -0.06836674, 0.25707284, -1.9900805, -0.07400307)
 bone_name = "ankle.L"
 bone_idx = 55
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/foot_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/foot_L_bone_pos" unique_id=800800607]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "foot_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/foot_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/foot_L_bone_pos/Area3D" unique_id=1451542947]
 transform = Transform3D(0.594823, 0.803857, -2.83122e-07, -0.803857, 0.594822, 3.76254e-07, 3.49246e-10, 4.69387e-07, 1, -0.0181155, 0.274689, -0.0173949)
 shape = SubResource("BoxShape3D_6jjoh")
 
-[node name="leg1_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="leg1_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=970422582]
 transform = Transform3D(0.041232854, -0.0056444407, -0.9991336, 0.10151171, -0.994786, 0.009809107, -0.99397945, -0.1018282, -0.04044492, -0.22809754, -0.1545032, 0.0025754254)
 bone_name = "leg1.R"
 bone_idx = 58
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg1_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg1_R_bone_pos" unique_id=363021144]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "leg1_R"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg1_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg1_R_bone_pos/Area3D" unique_id=1013518257]
 transform = Transform3D(1, 6.82477e-06, -2.98059e-08, -6.82477e-06, 1, -5.08499e-07, 2.98025e-08, 5.08499e-07, 1, -0.00164818, 0.391787, 0.0104371)
 shape = SubResource("BoxShape3D_r3saq")
 
-[node name="leg2_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="leg2_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1847963654]
 transform = Transform3D(0.029061057, -0.026770938, -0.99921906, -0.025032317, -0.9993473, 0.02604632, -0.9992642, 0.024255838, -0.029712256, -0.23352502, -1.1110506, -0.095338605)
 bone_name = "leg2.R"
 bone_idx = 59
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg2_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/leg2_R_bone_pos" unique_id=1300006254]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "leg2_R"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg2_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/leg2_R_bone_pos/Area3D" unique_id=982460139]
 transform = Transform3D(1, -1.59821e-06, 5.04798e-07, 1.59821e-06, 1, -9.83535e-07, -5.04796e-07, 9.83536e-07, 1, -0.00936925, 0.396531, 0.00250345)
 shape = SubResource("BoxShape3D_mwlk5")
 
-[node name="foot_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="foot_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=944114893]
 transform = Transform3D(0.025604945, -0.08111369, -0.9963759, -0.5880255, -0.8072578, 0.050606675, -0.808437, 0.5845987, -0.06836674, -0.25707284, -1.9900805, -0.07400307)
 bone_name = "ankle.R"
 bone_idx = 60
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/foot_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/foot_R_bone_pos" unique_id=1642257730]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "foot_R"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/foot_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/foot_R_bone_pos/Area3D" unique_id=45866260]
 transform = Transform3D(0.798636, 0.601815, 2.83122e-07, -0.601815, 0.798635, 3.76254e-07, -3.42727e-07, -1.62981e-08, 1, 0.0163846, 0.28097, -0.00454697)
 shape = SubResource("BoxShape3D_8k433")
 
-[node name="head_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="head_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=802303567]
 transform = Transform3D(1, -2.9132252e-13, 2.3841818e-07, 7.918604e-08, 0.9432338, -0.33212972, -2.2488398e-07, 0.33212972, 0.9432338, 3.696105e-14, 1.6848515, -0.021717817)
 bone_name = "head"
 bone_idx = 3
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/head_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/head_bone_pos" unique_id=431989436]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "head"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/head_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/head_bone_pos/Area3D" unique_id=1090673266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88178e-16, 0.39435, 0.0612415)
 shape = SubResource("SphereShape3D_n4e1e")
 
-[node name="shouder_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="shouder_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=396570823]
 transform = Transform3D(-2.2782478e-07, 1, -5.5879354e-07, -0.9990671, -2.0768493e-07, 0.04318627, 0.043186266, 5.5879354e-07, 0.999067, 0.528434, 1.3951361, -0.07133445)
 bone_name = "shouder.L"
 bone_idx = 5
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos" unique_id=1087310178]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "shouder_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D" unique_id=936341581]
 transform = Transform3D(1.00001, -2.03384e-10, -5.84871e-07, 1.67342e-10, 1, 6.53699e-12, 1.69128e-06, 3.10934e-11, 1.00001, 0.0266736, 0.0236819, -0.00689713)
 shape = SubResource("BoxShape3D_4a1ef")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_L_bone_pos/Area3D" unique_id=1625537324]
 transform = Transform3D(1.00001, -1.33769e-10, -5.84871e-07, 1.24482e-10, 1, 6.53699e-12, 1.69128e-06, 1.84741e-11, 1.00001, 0.0216082, 0.298599, 0.00695807)
 shape = SubResource("BoxShape3D_dobyn")
 
-[node name="arm_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="arm_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=228845891]
 transform = Transform3D(-2.3108136e-07, 1, -5.586528e-07, -0.9990671, -2.1094456e-07, 0.04318627, 0.043186266, 5.5879354e-07, 0.999067, 1.012171, 1.395136, -0.07133418)
 bone_name = "arm.L"
 bone_idx = 6
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/arm_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/arm_L_bone_pos" unique_id=2081819146]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "arm_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/arm_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/arm_L_bone_pos/Area3D" unique_id=271147425]
 transform = Transform3D(1.00001, -1.33433e-10, -5.84871e-07, 4.99032e-11, 1, 2.27374e-12, 1.69128e-06, -1.32445e-11, 1.00001, 0.0186169, 0.362549, 0.00756833)
 shape = SubResource("BoxShape3D_m5aqi")
 
-[node name="hand_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="hand_L_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=772975579]
 transform = Transform3D(0.999067, 8.753039e-08, -0.043186653, -7.485505e-08, 1.0000001, 6.7055225e-08, 0.043186642, -7.0780516e-08, 0.999067, 1.683955, 1.3951358, -0.07133381)
 bone_name = "hand.L"
 bone_idx = 7
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hand_L_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hand_L_bone_pos" unique_id=1906814751]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "hand_L"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hand_L_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hand_L_bone_pos/Area3D" unique_id=449357286]
 transform = Transform3D(0.993485, 0.113967, -4.17233e-07, -0.113968, 0.993485, -6.11067e-13, 1.99676e-06, 2.23983e-07, 1, 0.392455, -0.0341381, -0.00830029)
 shape = SubResource("BoxShape3D_3cej1")
 
-[node name="shouder_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="shouder_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1916796157]
 transform = Transform3D(-7.376075e-07, -1.0000001, 1.3411045e-06, -0.04318583, -1.4081597e-06, -0.99906725, 0.99906725, -7.8976154e-07, -0.04318583, -0.52843416, 1.3951354, -0.0713346)
 bone_name = "shouder.R"
 bone_idx = 29
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos" unique_id=909113531]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "shouder_R"
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D" unique_id=1162599264]
 transform = Transform3D(1.00001, 2.80238e-11, -1.43051e-06, -3.67208e-11, 1, 9.99947e-11, 1.43051e-06, -8.8356e-11, 1.00001, 0.00756845, 0.331727, 0.0195004)
 shape = SubResource("BoxShape3D_0xkdr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/shouder_R_bone_pos/Area3D" unique_id=783440285]
 transform = Transform3D(1.00001, 2.75122e-11, -1.43051e-06, -2.78533e-12, 1, 9.9881e-11, 1.43051e-06, -8.33218e-11, 1.00001, -0.00207508, 0.0473028, 0.00271666)
 shape = SubResource("BoxShape3D_s4tdc")
 
-[node name="arm_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="arm_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=1411913504]
 transform = Transform3D(-7.521724e-07, -1.0000001, 1.349192e-06, -0.043186255, -1.4156103e-06, -0.99906725, 0.99906725, -8.046627e-07, -0.043186255, -1.0121713, 1.3951347, -0.07133499)
 bone_name = "arm.R"
 bone_idx = 30
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/arm_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/arm_R_bone_pos" unique_id=215001924]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "arm_R"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/arm_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/arm_R_bone_pos/Area3D" unique_id=263521565]
 transform = Transform3D(1, -2.21696e-12, -6.85475e-07, 2.21696e-12, 1, -3.55283e-14, 6.85475e-07, 3.55268e-14, 1, -0.00475948, 0.309754, 0.0112308)
 shape = SubResource("BoxShape3D_wdbh7")
 
-[node name="hand_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D"]
+[node name="hand_R_bone_pos" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" unique_id=927616760]
 transform = Transform3D(0.9990671, -1.1962404e-06, -0.043186884, 1.2805685e-06, 1.0000002, -1.1920929e-07, 0.043186873, 5.9604645e-08, 0.9990672, -1.6839542, 1.3951337, -0.07133552)
 bone_name = "hand.R"
 bone_idx = 31
 
-[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hand_R_bone_pos"]
+[node name="Area3D" type="Area3D" parent="Skeleton/Skeleton3D/hand_R_bone_pos" unique_id=2039767337]
 collision_layer = 32
 collision_mask = 0
+monitoring = false
 script = ExtResource("76_hkas1")
 body_pos = "hand_R"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hand_R_bone_pos/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/hand_R_bone_pos/Area3D" unique_id=1778200762]
 transform = Transform3D(0.991036, -0.133592, 8.66316e-08, 0.133592, 0.991036, -1.96476e-07, -5.96074e-08, 2.06288e-07, 1, -0.262368, -0.0330621, 0.017579)
 shape = SubResource("BoxShape3D_x3plw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wyd56")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=823718758]
+libraries/ = SubResource("AnimationLibrary_wyd56")
 
-[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" unique_id=593176973]
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeBlendTree_umpjb")
 anim_player = NodePath("..")
@@ -5399,19 +5415,19 @@ parameters/jump/blend_amount = 0.0
 parameters/move/blend_position = Vector2(0, 0)
 parameters/run/blend_amount = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=214032328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0354214, 0.0209408)
 shape = SubResource("CapsuleShape3D_n05pl")
 
-[node name="recoil_force_handle" type="Marker3D" parent="."]
+[node name="recoil_force_handle" type="Marker3D" parent="." unique_id=268992931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
-[node name="hero_anim_1st_all_weapons" parent="." instance=ExtResource("136_uranq")]
+[node name="hero_anim_1st_all_weapons" parent="." unique_id=1903309118 instance=ExtResource("136_uranq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1356296337]
 transform = Transform3D(0.914402, 0.0556105, 0.400969, -3.72529e-09, 0.990519, -0.137375, -0.404806, 0.125616, 0.905733, 0, 1.26925, 0)
 spring_length = -7.12
 
-[node name="Camera3D_3rd" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D_3rd" type="Camera3D" parent="SpringArm3D" unique_id=354898405]
 transform = Transform3D(-0.914403, -3.72529e-09, 0.404806, -0.0556105, 0.990519, -0.125616, -0.400969, -0.137375, -0.905733, 0.0156953, -0.00994825, -6.99257)

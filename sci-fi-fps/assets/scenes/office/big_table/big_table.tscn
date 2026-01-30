@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://rgldvw4xq6pv"]
+[gd_scene load_steps=30 format=4 uid="uid://rgldvw4xq6pv"]
 
+[ext_resource type="Script" uid="uid://bws6exbu506jj" path="res://assets/scenes/office/big_table/big_table.gd" id="1_q18oa"]
 [ext_resource type="Texture2D" uid="uid://crjkbk52w0qvj" path="res://assets/scenes/office/big_table/table_wood_Base_color.png" id="1_r3om0"]
 [ext_resource type="Texture2D" uid="uid://dcnqldbdlpv1j" path="res://assets/scenes/office/big_table/table_wood_Height.png" id="2_ww0cq"]
 [ext_resource type="Texture2D" uid="uid://bftcacp3fptoa" path="res://assets/scenes/office/big_table/table_wood_Metallic.png" id="3_bnlkf"]
@@ -152,6 +153,7 @@ size = Vector3(28.255615, 1.8846085, 1.5096706)
 size = Vector3(28.761475, 1.8846085, 1.5096706)
 
 [node name="big_table" type="StaticBody3D"]
+script = ExtResource("1_q18oa")
 
 [node name="table_wood" type="MeshInstance3D" parent="."]
 transform = Transform3D(42.08202, 0, 0, 0, 1.1983166, 0, 0, 0, 12.944303, 0, 6.3458157, 10.158205)

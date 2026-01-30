@@ -1,5 +1,6 @@
-[gd_scene load_steps=57 format=4 uid="uid://dsx0pymd30m6u"]
+[gd_scene load_steps=58 format=4 uid="uid://dsx0pymd30m6u"]
 
+[ext_resource type="Script" uid="uid://dcv0ku1t6q7dn" path="res://assets/scenes/space_station/bed/bed.gd" id="1_8wv4d"]
 [ext_resource type="Texture2D" uid="uid://kmjeclpp0epl" path="res://assets/scenes/space_station/bed/bed_main_Base_color.png" id="1_sal43"]
 [ext_resource type="Texture2D" uid="uid://colq0l4q3at0k" path="res://assets/scenes/space_station/bed/bed_main_Metallic.png" id="2_uk0yd"]
 [ext_resource type="Texture2D" uid="uid://ch1hx0ubqfrc4" path="res://assets/scenes/space_station/bed/bed_main_Height.png" id="2_uumec"]
@@ -407,6 +408,7 @@ size = Vector3(5.82953, 2.31152, 2.78857)
 size = Vector3(6.95258, 1.83069, 9.14661)
 
 [node name="bed" type="StaticBody3D"]
+script = ExtResource("1_8wv4d")
 
 [node name="bad" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.62204, 0, 0, 0, 0.470369, 0, 0, 0, 3.67735, 0, 0, 2.84122)

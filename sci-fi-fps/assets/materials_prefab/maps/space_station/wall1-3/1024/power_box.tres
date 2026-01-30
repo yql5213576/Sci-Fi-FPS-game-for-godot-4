@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b80xg6p3pk48t"]
+
+[ext_resource type="Texture2D" uid="uid://d3yjabu2sb5by" path="res://assets/scenes/space_station/wall1-3/low_1024/power_box_Base_color.png" id="1_i0fw0"]
+[ext_resource type="Texture2D" uid="uid://d1tp38lu7kweu" path="res://assets/scenes/space_station/wall1-3/low_1024/power_box_Metallic.png" id="2_1rr3b"]
+[ext_resource type="Texture2D" uid="uid://iphbt0xoccko" path="res://assets/scenes/space_station/wall1-3/low_1024/power_box_Normal_OpenGL.png" id="3_nclhm"]
+[ext_resource type="Texture2D" uid="uid://ts3ghoos1xpe" path="res://assets/scenes/space_station/wall1-3/low_1024/power_box_Roughness.png" id="4_yjpsf"]
+
+[resource]
+albedo_texture = ExtResource("1_i0fw0")
+metallic = 1.0
+metallic_texture = ExtResource("2_1rr3b")
+roughness_texture = ExtResource("4_yjpsf")
+normal_enabled = true
+normal_texture = ExtResource("3_nclhm")
+clearcoat_enabled = true

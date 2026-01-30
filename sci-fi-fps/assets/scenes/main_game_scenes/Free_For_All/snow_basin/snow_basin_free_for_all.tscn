@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dit8cdkhyqge2"]
+[gd_scene format=3 uid="uid://dit8cdkhyqge2"]
 
 [ext_resource type="Script" uid="uid://bpvq44nby82jr" path="res://assets/scenes/main_game_scenes/Free_For_All/snow_basin/snow_basin_free_for_all.gd" id="1_3lw5p"]
 [ext_resource type="Environment" uid="uid://dlk8u12yxr7h2" path="res://assets/scenes/snow_basin/snow_basin.tres" id="2_2ceyp"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bdwwmh0g7mfgm" path="res://assets/scenes/snow_basin/audio/winter.ogg" id="11_wkucf"]
 [ext_resource type="Texture2D" uid="uid://br7g6lqpulksi" path="res://assets/scenes/snow_basin/main_map/snow_flower.png" id="12_ysv8i"]
 [ext_resource type="PackedScene" uid="uid://dgvrmi8onvrpv" path="res://assets/scenes/snow_basin/ice/ice_1.tscn" id="14_bnbpp"]
+[ext_resource type="PackedScene" uid="uid://cwmo4urebvnum" path="res://assets/scenes/all_first_load_object.tscn" id="15_qqw6j"]
 [ext_resource type="AudioStream" uid="uid://yv8fx8yyd0tm" path="res://assets/scenes/snow_basin/audio/fantacy_ice.ogg" id="15_rqxgi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_micbn"]
@@ -58,451 +59,451 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_25dk7")
 size = Vector2(0.385, 0.375)
 
-[node name="main_map_snow_basin" type="Node3D"]
+[node name="main_map_snow_basin" type="Node3D" unique_id=618041398]
 script = ExtResource("1_3lw5p")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2115015187]
 environment = ExtResource("2_2ceyp")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=231576179]
 navigation_mesh = SubResource("NavigationMesh_micbn")
 
-[node name="snow_basin" parent="NavigationRegion3D" instance=ExtResource("3_e77al")]
+[node name="snow_basin" parent="NavigationRegion3D" unique_id=1014646240 instance=ExtResource("3_e77al")]
 
-[node name="tree" type="Node3D" parent="NavigationRegion3D"]
+[node name="tree" type="Node3D" parent="NavigationRegion3D" unique_id=1340447235]
 
-[node name="tree_big" parent="NavigationRegion3D/tree" instance=ExtResource("4_ititi")]
+[node name="tree_big" parent="NavigationRegion3D/tree" unique_id=1227600038 instance=ExtResource("4_ititi")]
 transform = Transform3D(4, 0, 0, 0, 3.9610727, -0.5566925, 0, 0.5566925, 3.9610727, 1.3895795, 1.3519752, -3.9979107)
 
-[node name="tree1" parent="NavigationRegion3D/tree" instance=ExtResource("5_mu76f")]
+[node name="tree1" parent="NavigationRegion3D/tree" unique_id=181964281 instance=ExtResource("5_mu76f")]
 transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, 18.638361, 1.7424188, 20.985327)
 
-[node name="tree8" parent="NavigationRegion3D/tree" instance=ExtResource("5_mu76f")]
+[node name="tree8" parent="NavigationRegion3D/tree" unique_id=221531655 instance=ExtResource("5_mu76f")]
 transform = Transform3D(2.1605093, -0.66317374, 0, 0.66317374, 2.1605093, 0, 0, 0, 2.26, 22.029804, 1.2163868, -0.32742214)
 
-[node name="tree5" parent="NavigationRegion3D/tree" instance=ExtResource("5_mu76f")]
+[node name="tree5" parent="NavigationRegion3D/tree" unique_id=757669713 instance=ExtResource("5_mu76f")]
 transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -2.2013226, 1.1520189, 23.232342)
 
-[node name="tree6" parent="NavigationRegion3D/tree" instance=ExtResource("5_mu76f")]
+[node name="tree6" parent="NavigationRegion3D/tree" unique_id=110385029 instance=ExtResource("5_mu76f")]
 transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -14.958509, 0.60789627, 24.240112)
 
-[node name="tree2" parent="NavigationRegion3D/tree" instance=ExtResource("6_duxuo")]
+[node name="tree2" parent="NavigationRegion3D/tree" unique_id=228639150 instance=ExtResource("6_duxuo")]
 transform = Transform3D(1.82, 0, 0, 0, 1.82, 0, 0, 0, 1.82, 2.5596838, 2.8097649, -21.649748)
 
-[node name="tree7" parent="NavigationRegion3D/tree" instance=ExtResource("6_duxuo")]
+[node name="tree7" parent="NavigationRegion3D/tree" unique_id=1139666060 instance=ExtResource("6_duxuo")]
 transform = Transform3D(1.8078176, 0.21022686, 0, -0.21022686, 1.8078176, 0, 0, 0, 1.8199999, -20.921944, 4.745028, -1.6311321)
 
-[node name="tree3" parent="NavigationRegion3D/tree" instance=ExtResource("6_duxuo")]
+[node name="tree3" parent="NavigationRegion3D/tree" unique_id=584774126 instance=ExtResource("6_duxuo")]
 transform = Transform3D(1.82, 0, 0, 0, 1.82, 0, 0, 0, 1.82, -15.603641, -1.0089078, -21.649748)
 
-[node name="tree4" parent="NavigationRegion3D/tree" instance=ExtResource("6_duxuo")]
+[node name="tree4" parent="NavigationRegion3D/tree" unique_id=1607558180 instance=ExtResource("6_duxuo")]
 transform = Transform3D(1.82, 0, 0, 0, 1.82, 0, 0, 0, 1.82, 15.454004, -0.11899042, -21.649748)
 
-[node name="rock" type="Node3D" parent="NavigationRegion3D"]
+[node name="rock" type="Node3D" parent="NavigationRegion3D" unique_id=826961368]
 
-[node name="rock1" parent="NavigationRegion3D/rock" instance=ExtResource("7_5bjwu")]
+[node name="rock1" parent="NavigationRegion3D/rock" unique_id=1092525501 instance=ExtResource("7_5bjwu")]
 transform = Transform3D(0.1894942, -0.14404513, -0.97125834, 0.37315738, 0.9255263, -0.064459056, 0.9082101, -0.3502176, 0.22913332, 16.212164, -4.16363, 14.849639)
 
-[node name="rock2" parent="NavigationRegion3D/rock" instance=ExtResource("8_iokbr")]
+[node name="rock2" parent="NavigationRegion3D/rock" unique_id=1997501767 instance=ExtResource("8_iokbr")]
 transform = Transform3D(0.99576825, 0.04219331, -0.08164288, -0.010068104, 0.9331142, 0.35943958, 0.091348045, -0.35709643, 0.92959017, -14.434461, -4.4127607, 15.547586)
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D" unique_id=1219873836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.825, -3.85, 3.25)
 radius = 3.3
 affect_navigation_mesh = true
 
-[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="NavigationRegion3D" unique_id=408317030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.005, -3.85, 2.23)
 radius = 3.3
 affect_navigation_mesh = true
 
-[node name="player" type="Node3D" parent="."]
+[node name="player" type="Node3D" parent="." unique_id=1517991278]
 
-[node name="point1" type="Node3D" parent="player"]
+[node name="point1" type="Node3D" parent="player" unique_id=144131231]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.405001, -2.4597082, -12.95076)
 
-[node name="point2" type="Node3D" parent="player"]
+[node name="point2" type="Node3D" parent="player" unique_id=1398075317]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.075357, -2.36236, -12.654688)
 
-[node name="point3" type="Node3D" parent="player"]
+[node name="point3" type="Node3D" parent="player" unique_id=1863510427]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.071164, -2.3304384, -10.053806)
 
-[node name="point4" type="Node3D" parent="player"]
+[node name="point4" type="Node3D" parent="player" unique_id=588787118]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.951653, -2.0368028, -7.2210474)
 
-[node name="point5" type="Node3D" parent="player"]
+[node name="point5" type="Node3D" parent="player" unique_id=2122956636]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.602556, -2.1896958, -4.7679644)
 
-[node name="point6" type="Node3D" parent="player"]
+[node name="point6" type="Node3D" parent="player" unique_id=1628063455]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.540544, -2.3472652, -1.6290888)
 
-[node name="point7" type="Node3D" parent="player"]
+[node name="point7" type="Node3D" parent="player" unique_id=442035309]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.18722, -2.0110283, 0.8673525)
 
-[node name="point8" type="Node3D" parent="player"]
+[node name="point8" type="Node3D" parent="player" unique_id=497311385]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.8386135, -1.9296467, -7.2700424)
 
-[node name="point9" type="Node3D" parent="player"]
+[node name="point9" type="Node3D" parent="player" unique_id=577961184]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -15.756299, -2.2303905, -13.583908)
 
-[node name="point10" type="Node3D" parent="player"]
+[node name="point10" type="Node3D" parent="player" unique_id=152635313]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12.886717, -2.1924117, -13.354105)
 
-[node name="point11" type="Node3D" parent="player"]
+[node name="point11" type="Node3D" parent="player" unique_id=1483633400]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10.242773, -2.1763659, -13.1566925)
 
-[node name="point12" type="Node3D" parent="player"]
+[node name="point12" type="Node3D" parent="player" unique_id=2054073890]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14.6152725, -2.2745128, -10.707515)
 
-[node name="point13" type="Node3D" parent="player"]
+[node name="point13" type="Node3D" parent="player" unique_id=1567207448]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11.995382, -2.4090405, -10.87697)
 
-[node name="point14" type="Node3D" parent="player"]
+[node name="point14" type="Node3D" parent="player" unique_id=2127480682]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14.512304, -2.2804694, -7.104785)
 
-[node name="point15" type="Node3D" parent="player"]
+[node name="point15" type="Node3D" parent="player" unique_id=1110882154]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13.123045, -2.2437897, -2.1711113)
 
-[node name="point16" type="Node3D" parent="player"]
+[node name="point16" type="Node3D" parent="player" unique_id=490843619]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -15.927138, -1.6750839, -4.1969633)
 
-[node name="air_wall" type="StaticBody3D" parent="."]
+[node name="air_wall" type="StaticBody3D" parent="." unique_id=499649344]
 collision_layer = 8
 collision_mask = 6
 
-[node name="CollisionShape3D_L" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_L" type="CollisionShape3D" parent="air_wall" unique_id=201441197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -490.172, 160.177, -0.732407)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="CollisionShape3D_F" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_F" type="CollisionShape3D" parent="air_wall" unique_id=164289939]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -490.172, 160.177, -534.324)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="CollisionShape3D_B" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_B" type="CollisionShape3D" parent="air_wall" unique_id=239847599]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -490.172, 160.177, 534.142)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="CollisionShape3D_R" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_R" type="CollisionShape3D" parent="air_wall" unique_id=1777480313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 526.987, 160.177, -0.732407)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="CollisionShape3D_U" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_U" type="CollisionShape3D" parent="air_wall" unique_id=218633542]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 20.3315, 665.55, -0.732407)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="CollisionShape3D_D" type="CollisionShape3D" parent="air_wall"]
+[node name="CollisionShape3D_D" type="CollisionShape3D" parent="air_wall" unique_id=1366273632]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 20.3315, -341.348, -0.732407)
 shape = SubResource("BoxShape3D_8mri8")
 
-[node name="ai_nav_points" type="Node3D" parent="."]
+[node name="ai_nav_points" type="Node3D" parent="." unique_id=441909728]
 visible = false
 
-[node name="1" type="Area3D" parent="ai_nav_points"]
+[node name="1" type="Area3D" parent="ai_nav_points" unique_id=52609756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.774398, -2.3549185, -11.816763)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/1" unique_id=1979519803]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/1" unique_id=1942052903]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="2" type="Area3D" parent="ai_nav_points"]
+[node name="2" type="Area3D" parent="ai_nav_points" unique_id=822912002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.280848, -2.1448834, -1.4150214)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/2" unique_id=1488789674]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/2" unique_id=730655935]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="3" type="Area3D" parent="ai_nav_points"]
+[node name="3" type="Area3D" parent="ai_nav_points" unique_id=1167512591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.852778, -2.3870974, 9.492744)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/3" unique_id=2090268140]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/3" unique_id=696841518]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="4" type="Area3D" parent="ai_nav_points"]
+[node name="4" type="Area3D" parent="ai_nav_points" unique_id=705741628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.523445, -2.7935464, 7.7428875)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/4" unique_id=94616108]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/4" unique_id=983836514]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="5" type="Area3D" parent="ai_nav_points"]
+[node name="5" type="Area3D" parent="ai_nav_points" unique_id=1568616868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3567996, -3.5129628, 6.8507752)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/5" unique_id=1614058906]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/5" unique_id=270799881]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="6" type="Area3D" parent="ai_nav_points"]
+[node name="6" type="Area3D" parent="ai_nav_points" unique_id=1789885812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8296804, -4.3257327, 14.251243)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/6" unique_id=2033597457]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/6" unique_id=1494552424]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="7" type="Area3D" parent="ai_nav_points"]
+[node name="7" type="Area3D" parent="ai_nav_points" unique_id=1302927779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3017154, -3.1306186, 6.8863497)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/7" unique_id=832807592]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/7"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/7" unique_id=2007709476]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="8" type="Area3D" parent="ai_nav_points"]
+[node name="8" type="Area3D" parent="ai_nav_points" unique_id=2098202642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.553876, -3.3545177, 14.491174)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/8" unique_id=1265787512]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/8"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/8" unique_id=1879018002]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="9" type="Area3D" parent="ai_nav_points"]
+[node name="9" type="Area3D" parent="ai_nav_points" unique_id=1289253223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.565659, -2.4617147, 8.704338)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/9" unique_id=515222930]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/9"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/9" unique_id=901645354]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="10" type="Area3D" parent="ai_nav_points"]
+[node name="10" type="Area3D" parent="ai_nav_points" unique_id=1360994586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.051239, -2.1578865, 11.102361)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/10"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/10" unique_id=71601521]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/10"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/10" unique_id=1246719083]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="11" type="Area3D" parent="ai_nav_points"]
+[node name="11" type="Area3D" parent="ai_nav_points" unique_id=1357915943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.191879, -2.1272383, -3.32727)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/11"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/11" unique_id=527781]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/11"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/11" unique_id=476368190]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="12" type="Area3D" parent="ai_nav_points"]
+[node name="12" type="Area3D" parent="ai_nav_points" unique_id=1614507160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.39604, -2.0009434, 4.4591923)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/12"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/12" unique_id=1520631478]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/12"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/12" unique_id=121535415]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="13" type="Area3D" parent="ai_nav_points"]
+[node name="13" type="Area3D" parent="ai_nav_points" unique_id=94063085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.30488, -2.351327, -10.705704)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/13"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/13" unique_id=990165554]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/13"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/13" unique_id=1158876242]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="14" type="Area3D" parent="ai_nav_points"]
+[node name="14" type="Area3D" parent="ai_nav_points" unique_id=1708372797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.84605, -2.4071634, -11.68535)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/14"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/14" unique_id=1341110998]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/14"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/14" unique_id=1182505225]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="15" type="Area3D" parent="ai_nav_points"]
+[node name="15" type="Area3D" parent="ai_nav_points" unique_id=1917283844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.310697, -2.2949352, -12.669207)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/15"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/15" unique_id=857983059]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/15"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/15" unique_id=1023865415]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="16" type="Area3D" parent="ai_nav_points"]
+[node name="16" type="Area3D" parent="ai_nav_points" unique_id=592144492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.940662, -2.5855398, 14.043072)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/16"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/16" unique_id=208192672]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/16"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/16" unique_id=1035384555]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="17" type="Area3D" parent="ai_nav_points"]
+[node name="17" type="Area3D" parent="ai_nav_points" unique_id=746216306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.412842, -2.4391127, 5.2645583)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/17"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/17" unique_id=361879842]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/17"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/17" unique_id=575199983]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="18" type="Area3D" parent="ai_nav_points"]
+[node name="18" type="Area3D" parent="ai_nav_points" unique_id=315460862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.146382, -2.0281405, -7.0976963)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/18"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/18" unique_id=527319432]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/18"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/18" unique_id=1560030155]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="19" type="Area3D" parent="ai_nav_points"]
+[node name="19" type="Area3D" parent="ai_nav_points" unique_id=835388523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3304, -2.124776, 2.8112054)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/19"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/19" unique_id=451592843]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/19"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/19" unique_id=1832004285]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="20" type="Area3D" parent="ai_nav_points"]
+[node name="20" type="Area3D" parent="ai_nav_points" unique_id=1942085056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.144299, -2.5034547, 8.996563)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/20"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/20" unique_id=1393857715]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/20"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/20" unique_id=441815607]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="21" type="Area3D" parent="ai_nav_points"]
+[node name="21" type="Area3D" parent="ai_nav_points" unique_id=809506462]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.166338, -2.8271446, 10.856968)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/21"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/21" unique_id=406669453]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/21"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/21" unique_id=164644927]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="22" type="Area3D" parent="ai_nav_points"]
+[node name="22" type="Area3D" parent="ai_nav_points" unique_id=992574808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3329587, -2.494944, 9.192929)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/22"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/22" unique_id=409361709]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/22"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/22" unique_id=234018673]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="23" type="Area3D" parent="ai_nav_points"]
+[node name="23" type="Area3D" parent="ai_nav_points" unique_id=883808047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.572713, -2.6795263, 12.876948)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/23"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/23" unique_id=344159021]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/23"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/23" unique_id=1247847427]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="24" type="Area3D" parent="ai_nav_points"]
+[node name="24" type="Area3D" parent="ai_nav_points" unique_id=1352740669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.004318, -2.2783432, 0.6255374)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/24"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/24" unique_id=1278407514]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/24"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/24" unique_id=1343421326]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="25" type="Area3D" parent="ai_nav_points"]
+[node name="25" type="Area3D" parent="ai_nav_points" unique_id=337435853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04402542, -4.242232, 8.83481)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/25"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/25" unique_id=423427885]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/25"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/25" unique_id=1225231912]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="26" type="Area3D" parent="ai_nav_points"]
+[node name="26" type="Area3D" parent="ai_nav_points" unique_id=388938386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7441771, -4.936431, 13.427717)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/26"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_nav_points/26" unique_id=1063557869]
 shape = SubResource("CapsuleShape3D_micbn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/26"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ai_nav_points/26" unique_id=1641776037]
 mesh = SubResource("CapsuleMesh_1r3mc")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1725385505]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 20.255404, 0)
 light_energy = 0.5
 shadow_enabled = true
 
-[node name="hero_player_start_charactor" parent="." instance=ExtResource("9_2ceyp")]
+[node name="hero_player_start_charactor" parent="." unique_id=281217181 instance=ExtResource("9_2ceyp")]
 transform = Transform3D(-0.515038, 0.36902004, -0.7736666, -3.763648e-08, 0.90258527, 0.43051112, 0.85716736, 0.22172962, -0.46486568, 16.402, -2.5, 16.231)
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=523042200]
 occluder = ExtResource("10_yu2kq")
 
-[node name="snow" type="Node3D" parent="."]
+[node name="snow" type="Node3D" parent="." unique_id=1682121266]
 
-[node name="environment_audio" type="AudioStreamPlayer3D" parent="snow"]
+[node name="environment_audio" type="AudioStreamPlayer3D" parent="snow" unique_id=1909384571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
 stream = ExtResource("11_wkucf")
 unit_size = 100.0
 autoplay = true
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="snow"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="snow" unique_id=579339081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 160.60364, 0)
 layers = 2
 amount = 1000
@@ -512,9 +513,12 @@ visibility_aabb = AABB(-124.675, -184.58, -106.925, 245.155, 266.785, 219.295)
 process_material = SubResource("ParticleProcessMaterial_25dk7")
 draw_pass_1 = SubResource("QuadMesh_uuub5")
 
-[node name="ice1" parent="." instance=ExtResource("14_bnbpp")]
+[node name="ice1" parent="." unique_id=959940909 instance=ExtResource("14_bnbpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5373895, 3.6328883, 10.4412365)
 
-[node name="ice_audio" type="AudioStreamPlayer3D" parent="ice1"]
+[node name="ice_audio" type="AudioStreamPlayer3D" parent="ice1" unique_id=547459045]
 stream = ExtResource("15_rqxgi")
 autoplay = true
+
+[node name="all_first_load_object" parent="." unique_id=865608490 instance=ExtResource("15_qqw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1000, 0)

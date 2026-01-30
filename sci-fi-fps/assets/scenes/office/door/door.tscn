@@ -1,8 +1,9 @@
-[gd_scene load_steps=44 format=4 uid="uid://1qdan86bbjmb"]
+[gd_scene load_steps=45 format=4 uid="uid://1qdan86bbjmb"]
 
 [ext_resource type="Texture2D" uid="uid://qt4yr5wiwhy" path="res://assets/scenes/office/door/door_case_Base_color.png" id="1_1xrie"]
 [ext_resource type="Texture2D" uid="uid://dih5dmmkct1jb" path="res://assets/scenes/office/door/door_surface_Base_color.png" id="1_cu4bt"]
 [ext_resource type="Texture2D" uid="uid://c8o5utpgdw1oj" path="res://assets/scenes/office/door/door_handle_Base_color.png" id="1_h6fwg"]
+[ext_resource type="Script" uid="uid://b4k3h3dgeidvk" path="res://assets/scenes/office/door/door.gd" id="1_ovqds"]
 [ext_resource type="Texture2D" uid="uid://bjlkbn6ll0n70" path="res://assets/scenes/office/door/door_surface_Height.png" id="2_6we2e"]
 [ext_resource type="Texture2D" uid="uid://brwjs3trgpd6k" path="res://assets/scenes/office/door/door_case_Height.png" id="2_l3dur"]
 [ext_resource type="Texture2D" uid="uid://dws2xekjb73o8" path="res://assets/scenes/office/door/door_handle_Height.png" id="2_p0pou"]
@@ -344,6 +345,7 @@ backlight_enabled = true
 backlight_texture = ExtResource("1_1xrie")
 
 [node name="door" type="Node3D"]
+script = ExtResource("1_ovqds")
 
 [node name="door_surface" type="MeshInstance3D" parent="."]
 layers = 2

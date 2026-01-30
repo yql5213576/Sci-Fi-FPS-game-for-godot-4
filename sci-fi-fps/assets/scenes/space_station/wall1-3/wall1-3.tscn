@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=4 uid="uid://dys2iur2hi2mi"]
+[gd_scene load_steps=61 format=4 uid="uid://dys2iur2hi2mi"]
 
 [ext_resource type="Texture2D" uid="uid://cemdrbpwqvqmc" path="res://assets/scenes/space_station/wall1-3/wall1-1_Base_color.png" id="1_sfa52"]
+[ext_resource type="Script" uid="uid://k0v35defssmt" path="res://assets/scenes/space_station/wall1-3/wall_1_3.gd" id="1_xexbk"]
 [ext_resource type="Texture2D" uid="uid://c16tfg71i74uv" path="res://assets/scenes/space_station/wall1-3/wall1-1_Metallic.png" id="2_b5ods"]
 [ext_resource type="Texture2D" uid="uid://bmdkmx1sbngy1" path="res://assets/scenes/space_station/wall1-3/wall1-1_Height.png" id="2_jxxkh"]
 [ext_resource type="Texture2D" uid="uid://b3kxl3e8ndjxc" path="res://assets/scenes/space_station/wall1-3/wall1-1_Normal_OpenGL.png" id="3_xmouk"]
@@ -475,6 +476,7 @@ shadow_mesh = SubResource("ArrayMesh_xpulw")
 size = Vector3(16.5198, 10.407, 2.64771)
 
 [node name="wall1-3" type="StaticBody3D"]
+script = ExtResource("1_xexbk")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.886852, 0, 0, 0, 1.06395, 0, 0, 0, 0.835382, 6.88552, -1.42056, 0)

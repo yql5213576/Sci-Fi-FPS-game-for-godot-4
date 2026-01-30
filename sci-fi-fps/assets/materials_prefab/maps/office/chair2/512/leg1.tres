@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://us3huncttnjv"]
+
+[ext_resource type="Texture2D" uid="uid://bshhhv5ye3pgf" path="res://assets/scenes/office/chair2/low_512/leg1_Base_color.png" id="1_as3jf"]
+[ext_resource type="Texture2D" uid="uid://dwjkotuebx83l" path="res://assets/scenes/office/chair2/low_512/leg1_Metallic.png" id="2_88boh"]
+[ext_resource type="Texture2D" uid="uid://dd206cpr6fbd0" path="res://assets/scenes/office/chair2/low_512/leg1_Normal_OpenGL.png" id="3_kr4m8"]
+[ext_resource type="Texture2D" uid="uid://b52b6x24xromi" path="res://assets/scenes/office/chair2/low_512/leg1_Roughness.png" id="4_klp8x"]
+
+[resource]
+albedo_texture = ExtResource("1_as3jf")
+metallic = 1.0
+metallic_texture = ExtResource("2_88boh")
+roughness_texture = ExtResource("4_klp8x")
+normal_enabled = true
+normal_texture = ExtResource("3_kr4m8")
+clearcoat_enabled = true

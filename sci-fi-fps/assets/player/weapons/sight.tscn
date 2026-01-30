@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://bt6i4uuyil0i1"]
+[gd_scene load_steps=22 format=4 uid="uid://bt6i4uuyil0i1"]
 
 [ext_resource type="Texture2D" uid="uid://dcrcnwwyexdec" path="res://assets/player/textures/sight/sight_main_Base_color.png" id="1_nnjq0"]
 [ext_resource type="Texture2D" uid="uid://tpi8oumw074s" path="res://assets/player/textures/sight/sight_main_Metallic.png" id="2_i63t8"]
 [ext_resource type="Texture2D" uid="uid://bf78nes338t2d" path="res://assets/player/textures/sight/sight_main_Normal_OpenGL.png" id="3_fwcq2"]
 [ext_resource type="Texture2D" uid="uid://mab2l6j56wae" path="res://assets/player/textures/sight/sight_main_Roughness.png" id="4_yqub1"]
-[ext_resource type="Shader" path="res://assets/player/textures/sight/glass_shader.gdshader" id="5_nnjq0"]
 [ext_resource type="Texture2D" uid="uid://7c50gwjk505g" path="res://assets/player/textures/sight/sight2_Base_color.png" id="6_i028v"]
 [ext_resource type="Texture2D" uid="uid://cpyf0ovvhoh5u" path="res://assets/player/textures/sight/sight2_Metallic.png" id="7_vpjyx"]
 [ext_resource type="Texture2D" uid="uid://bunv7hud6136p" path="res://assets/player/textures/sight/sight2_Normal_OpenGL.png" id="8_lt8cn"]
@@ -100,13 +99,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o7dt7")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i63t8"]
-render_priority = 0
-shader = ExtResource("5_nnjq0")
-shader_parameter/albedo = Color(1, 1, 1, 0)
-shader_parameter/roughness = 0.15
-shader_parameter/normal_strength = 1.0
-shader_parameter/edge_color = Color(0, 0, 0, 1)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yqub1"]
+load_path = "res://.godot/imported/sight_m_texture.png-8c35214c1336e4ec7647914de3b47f6a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i028v"]
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.5)
+albedo_texture = SubResource("CompressedTexture2D_yqub1")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42koe"]
 resource_name = "sight2"
@@ -157,14 +160,6 @@ roughness_texture = ExtResource("9_53l7x")
 normal_enabled = true
 normal_texture = ExtResource("8_lt8cn")
 
-[sub_resource type="SphereMesh" id="SphereMesh_fwcq2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqub1"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 16.0
-
 [node name="sight" type="Node3D"]
 
 [node name="sight_main" type="MeshInstance3D" parent="."]
@@ -177,16 +172,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xgm7y")
 transform = Transform3D(0.276931, 0, 0, 0, 0, -0.410519, 0, 0.31103, 0, 0, 0.666267, -0.225432)
 mesh = SubResource("ArrayMesh_uyds6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_i63t8")
+surface_material_override/0 = SubResource("StandardMaterial3D_i028v")
 
 [node name="sight_id" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.276931, 0, 0, 0, 0, -0.410519, 0, 0.31103, 0, 0, 0.5381, -0.38453)
 mesh = SubResource("ArrayMesh_seh5y")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pxxfc")
-
-[node name="red_point" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0165647, 0, 0, 0, 0.0165647, 0, 0, 0, 0.0165647, 0, 0.666267, -0.225432)
-mesh = SubResource("SphereMesh_fwcq2")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_yqub1")

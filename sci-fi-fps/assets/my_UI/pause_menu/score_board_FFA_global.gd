@@ -1,4 +1,4 @@
 extends Node
-var players_name=[]
-var players_kills=[]
-var players_die=[]
+var players_name:Array[String]=[]
+var players_kills:Array[int]=[]
+var players_die:Array[int]=[]

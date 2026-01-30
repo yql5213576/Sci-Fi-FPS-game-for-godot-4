@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://bj65jjpntwo0w"]
+[gd_scene format=4 uid="uid://bj65jjpntwo0w"]
 
 [ext_resource type="Texture2D" uid="uid://byjmcsdqce65r" path="res://assets/scenes/space_station/chair/chair_main_Base_color.png" id="1_8adno"]
+[ext_resource type="Script" uid="uid://lxasw0hygsa" path="res://assets/scenes/space_station/chair/chair.gd" id="1_bu8qd"]
 [ext_resource type="Texture2D" uid="uid://7lehue20qpfr" path="res://assets/scenes/space_station/chair/chair_main_Height.png" id="2_6i02o"]
 [ext_resource type="Texture2D" uid="uid://c347tcvqe5ntn" path="res://assets/scenes/space_station/chair/chair_main_Metallic.png" id="2_thwci"]
 [ext_resource type="Texture2D" uid="uid://dlod1174wvq40" path="res://assets/scenes/space_station/chair/chair_main_Normal_OpenGL.png" id="3_8tagm"]
@@ -107,7 +108,6 @@ backlight_texture = ExtResource("1_8adno")
 albedo_color = Color(0.5, 2, 2, 1)
 emission_enabled = true
 emission = Color(0, 2, 2, 1)
-emission_energy_multiplier = 4.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usfw4"]
 resource_name = "chair_cushion"
@@ -256,9 +256,10 @@ subsurf_scatter_strength = 0.32
 [sub_resource type="BoxShape3D" id="BoxShape3D_r38m0"]
 size = Vector3(1.38672, 2.39746, 1.66394)
 
-[node name="chair" type="StaticBody3D"]
+[node name="chair" type="StaticBody3D" unique_id=1619156918]
+script = ExtResource("1_bu8qd")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=448731644]
 transform = Transform3D(0.678382, 0, 0, 0, 0.135472, 0, 0, 0, 0.678382, 0, -0.502093, -1.31394)
 layers = 2
 mesh = SubResource("ArrayMesh_rovg0")
@@ -266,27 +267,27 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ve1gf")
 surface_material_override/1 = SubResource("StandardMaterial3D_k670f")
 
-[node name="Cube_001" type="MeshInstance3D" parent="."]
+[node name="Cube_001" type="MeshInstance3D" parent="." unique_id=1314973556]
 transform = Transform3D(0.658439, 0, 0, 0, 0.135472, 0, 0, 0, 0.678382, 0, -0.502093, -1.31394)
 layers = 2
 mesh = SubResource("ArrayMesh_cpb2k")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_u3i7v")
 
-[node name="Cube_002" type="MeshInstance3D" parent="."]
+[node name="Cube_002" type="MeshInstance3D" parent="." unique_id=675182625]
 transform = Transform3D(0.303827, 0, 0, 0, 0.135472, 0, 0, 0, 0.678382, 0.474185, -0.502093, -1.31394)
 layers = 2
 mesh = SubResource("ArrayMesh_jo5qo")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ve1gf")
 
-[node name="Cube_003" type="MeshInstance3D" parent="."]
+[node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1540572113]
 transform = Transform3D(0.303827, 0, 0, 0, 0.135472, 0, 0, 0, 0.678382, 0.474185, -0.502093, -1.31394)
 layers = 2
 mesh = SubResource("ArrayMesh_xgc7u")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_okvla")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=868569524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00390625, -0.297363, -1.14655)
 shape = SubResource("BoxShape3D_r38m0")

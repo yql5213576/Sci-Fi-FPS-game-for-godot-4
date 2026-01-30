@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cqbqqcufxyuc0"]
+
+[ext_resource type="Texture2D" uid="uid://dw0al8p4ytyb7" path="res://assets/scenes/office/big_table/low_256/leg_Base_color.png" id="1_tbac8"]
+[ext_resource type="Texture2D" uid="uid://ctfrbfs6g1kvv" path="res://assets/scenes/office/big_table/low_256/leg_Metallic.png" id="2_w8xm7"]
+[ext_resource type="Texture2D" uid="uid://c25virclif835" path="res://assets/scenes/office/big_table/low_256/leg_Normal_OpenGL.png" id="3_0qesd"]
+[ext_resource type="Texture2D" uid="uid://cayqbmaa3mv0q" path="res://assets/scenes/office/big_table/low_256/leg_Roughness.png" id="4_th14y"]
+
+[resource]
+albedo_texture = ExtResource("1_tbac8")
+metallic = 1.0
+metallic_texture = ExtResource("2_w8xm7")
+roughness_texture = ExtResource("4_th14y")
+normal_enabled = true
+normal_texture = ExtResource("3_0qesd")
+clearcoat_enabled = true

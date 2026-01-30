@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://cryocovdligfx"]
+[gd_scene load_steps=16 format=4 uid="uid://cryocovdligfx"]
 
 [ext_resource type="Texture2D" uid="uid://pvm2dp0bwc6w" path="res://assets/scenes/space_station/light2/cube_Base_color.png" id="1_1d8i1"]
+[ext_resource type="Script" uid="uid://ckpxef33ointw" path="res://assets/scenes/space_station/light2/light_2.gd" id="1_fnwed"]
 [ext_resource type="Texture2D" uid="uid://c41x8g33roujs" path="res://assets/scenes/space_station/light2/cube_Height.png" id="2_ago6u"]
 [ext_resource type="Texture2D" uid="uid://cms81o8dbn2s" path="res://assets/scenes/space_station/light2/cube_Metallic.png" id="2_yv00d"]
 [ext_resource type="Texture2D" uid="uid://bdrxvmwopi04v" path="res://assets/scenes/space_station/light2/cube_Normal_OpenGL.png" id="3_ago6u"]
@@ -113,6 +114,7 @@ emission_energy_multiplier = 10.0
 size = Vector3(5.43353, 0.795654, 3.3634)
 
 [node name="light2" type="StaticBody3D"]
+script = ExtResource("1_fnwed")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.69372, 0, 0, 0, 0.687761, 0, 0, 0, 1.67461, 0, 0, 0)

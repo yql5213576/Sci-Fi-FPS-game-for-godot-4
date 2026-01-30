@@ -1,5 +1,5 @@
 extends Node3D
-var end=0
+var end:int=0
 func _ready() -> void:
 	$GPUParticles3D.restart()
 	$GPUParticles3D/GPUParticles3D2.restart()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://byh0ms4ebotjm"]
+[gd_scene load_steps=13 format=4 uid="uid://byh0ms4ebotjm"]
 
+[ext_resource type="Script" uid="uid://1tqcwyiglo0" path="res://assets/scenes/office/cup/cup_2.gd" id="1_5q45d"]
 [ext_resource type="Texture2D" uid="uid://dtg7wj65bjvfy" path="res://assets/scenes/office/cup/cup_Base_color.png" id="1_tfsvm"]
 [ext_resource type="Texture2D" uid="uid://dgejg7fatkogx" path="res://assets/scenes/office/cup/cup_Height.png" id="2_u3sqy"]
 [ext_resource type="Texture2D" uid="uid://dyukcgtl5g6oe" path="res://assets/scenes/office/cup/cup_Metallic.png" id="3_e0btw"]
@@ -67,6 +68,7 @@ backlight_texture = ExtResource("1_tfsvm")
 size = Vector3(0.35443115, 0.18701172, 0.27807617)
 
 [node name="cup2" type="StaticBody3D"]
+script = ExtResource("1_5q45d")
 
 [node name="cup" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1996375, 0, 0, 0, 0.1996375, 0, 0, 0, 0.1996375, 0.07472733, 0, 0)

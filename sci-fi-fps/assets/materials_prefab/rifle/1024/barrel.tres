@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c8qxpm8p58em2"]
+
+[ext_resource type="Texture2D" uid="uid://cw7yvq3erichn" path="res://assets/player/textures/rifle/low_1024/barrel_Base_color.png" id="1_jcoqb"]
+[ext_resource type="Texture2D" uid="uid://cl7m006mw7m77" path="res://assets/player/textures/rifle/low_1024/barrel_Metallic.png" id="2_04xhf"]
+[ext_resource type="Texture2D" uid="uid://clbrghuoe1mhj" path="res://assets/player/textures/rifle/low_1024/barrel_Normal_OpenGL.png" id="3_4yj75"]
+[ext_resource type="Texture2D" uid="uid://dnwj4nl61qdhd" path="res://assets/player/textures/rifle/low_1024/barrel_Roughness.png" id="4_275kl"]
+
+[resource]
+albedo_texture = ExtResource("1_jcoqb")
+metallic = 1.0
+metallic_texture = ExtResource("2_04xhf")
+roughness_texture = ExtResource("4_275kl")
+normal_enabled = true
+normal_texture = ExtResource("3_4yj75")
+clearcoat_enabled = true

@@ -1,5 +1,6 @@
-[gd_scene load_steps=143 format=4 uid="uid://bqd7u22bmy8rg"]
+[gd_scene load_steps=144 format=4 uid="uid://bqd7u22bmy8rg"]
 
+[ext_resource type="Script" uid="uid://d3lpfgr83pn2x" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/wall_main.gd" id="1_qnh11"]
 [ext_resource type="Texture2D" uid="uid://rx2scjge6vi2" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/color9_Base_color.png" id="1_rt424"]
 [ext_resource type="Texture2D" uid="uid://cd6g3numvak5h" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/color9_Metallic.png" id="2_giljv"]
 [ext_resource type="Texture2D" uid="uid://b8honypxrhepb" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/color9_Height.png" id="2_idspj"]
@@ -1211,6 +1212,7 @@ size = Vector3(14.1152, 15.8356, 13.6379)
 size = Vector3(14.1152, 15.8356, 13.6379)
 
 [node name="wall_main" type="StaticBody3D"]
+script = ExtResource("1_qnh11")
 
 [node name="立方体_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 22.6545, 0, 0, 0, 1, 0, -0.896632, -0.0141888)

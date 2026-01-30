@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bb20bjjpp7si7"]
+[gd_scene load_steps=12 format=4 uid="uid://bb20bjjpp7si7"]
 
 [ext_resource type="Texture2D" uid="uid://dr7dqq43phhrr" path="res://assets/scenes/office/pen_container/pen_container_Base_color.png" id="1_8tt5h"]
+[ext_resource type="Script" uid="uid://cnqwlhejw2wd0" path="res://assets/scenes/office/pen_container/pen_container_2.gd" id="1_lyf1l"]
 [ext_resource type="Texture2D" uid="uid://bxfumbr3j80t1" path="res://assets/scenes/office/pen_container/pen_container_Height.png" id="2_lki5f"]
 [ext_resource type="Texture2D" uid="uid://bpof8i4um6yfl" path="res://assets/scenes/office/pen_container/pen_container_Metallic.png" id="3_spsln"]
 [ext_resource type="Texture2D" uid="uid://bbt8oyebvr41a" path="res://assets/scenes/office/pen_container/pen_container_Normal_OpenGL.png" id="4_mvmfl"]
@@ -64,6 +65,7 @@ backlight_texture = ExtResource("1_8tt5h")
 size = Vector3(0.26586914, 0.34204102, 0.26324463)
 
 [node name="pen_container2" type="StaticBody3D"]
+script = ExtResource("1_lyf1l")
 
 [node name="pen_container" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1299921, 0, 0, 0, 0.1299921, 0, 0, 0, 0.1299921, 0, 0, 0)

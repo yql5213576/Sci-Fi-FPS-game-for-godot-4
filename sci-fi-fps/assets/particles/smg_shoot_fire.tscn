@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xhmkctlyx684"]
+[gd_scene format=3 uid="uid://xhmkctlyx684"]
 
 [ext_resource type="Script" uid="uid://b80d1kimoqmk4" path="res://assets/particles/smg_shoot_fire.gd" id="1_itvwc"]
 [ext_resource type="Texture2D" uid="uid://bj1uhe7gd811r" path="res://assets/Kenney's_assets/PNG/White puff/whitePuff02.png" id="1_qxk7s"]
@@ -17,7 +17,7 @@ radial_accel_max = 30.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itvwc"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(8, 3, 8, 1)
+albedo_color = Color(18.892157, 7.1305175, 18.892157, 1)
 albedo_texture = ExtResource("1_qxk7s")
 billboard_mode = 3
 particles_anim_h_frames = 1
@@ -52,7 +52,7 @@ radial_accel_max = 20.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mpk4"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(4, 4, 4, 1)
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
 albedo_texture = ExtResource("4_780om")
 billboard_mode = 3
 particles_anim_h_frames = 1
@@ -63,14 +63,14 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_3mpk4")
 size = Vector2(0.05, 0.05)
 
-[node name="smg_shoot_fire" type="Node3D"]
+[node name="smg_shoot_fire" type="Node3D" unique_id=973857269]
 script = ExtResource("1_itvwc")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2075674308]
 layers = 5
 emitting = false
 amount = 35
-lifetime = 0.1
+lifetime = 0.09999999999999999
 one_shot = true
 explosiveness = 1.0
 local_coords = true
@@ -79,7 +79,7 @@ draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_780om")
 draw_pass_2 = SubResource("QuadMesh_g01nw")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=2018665886]
 layers = 5
 emitting = false
 amount = 10

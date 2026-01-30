@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cdiiv4qhvlkst"]
+
+[ext_resource type="Texture2D" uid="uid://do22xijog1j0v" path="res://assets/player/textures/player/blue/low_512/armor_hand_Base_color.png" id="1_1mcat"]
+[ext_resource type="Texture2D" uid="uid://d2ktmmdh3rwjn" path="res://assets/player/textures/player/blue/low_512/armor_hand_Metallic.png" id="2_ssjng"]
+[ext_resource type="Texture2D" uid="uid://c5nohkyc85n6b" path="res://assets/player/textures/player/blue/low_512/armor_hand_Normal_OpenGL.png" id="3_spm5w"]
+[ext_resource type="Texture2D" uid="uid://deshssdh1qd47" path="res://assets/player/textures/player/blue/low_512/armor_hand_Roughness.png" id="4_7xcvp"]
+
+[resource]
+albedo_texture = ExtResource("1_1mcat")
+metallic = 1.0
+metallic_texture = ExtResource("2_ssjng")
+roughness_texture = ExtResource("4_7xcvp")
+normal_enabled = true
+normal_texture = ExtResource("3_spm5w")
+clearcoat_enabled = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://c46wujqaml7es"]
+[gd_scene load_steps=28 format=4 uid="uid://c46wujqaml7es"]
 
 [ext_resource type="Texture2D" uid="uid://321op03gn87d" path="res://assets/scenes/space_station/table3/table.001_Base_color.png" id="1_0oaoj"]
 [ext_resource type="Texture2D" uid="uid://efv4ae4t82ij" path="res://assets/scenes/space_station/table3/table3_table3_scifi.png" id="1_7jfw3"]
+[ext_resource type="Script" uid="uid://dwog08pxht2m0" path="res://assets/scenes/space_station/table3/table_3.gd" id="1_f7bhj"]
 [ext_resource type="Texture2D" uid="uid://boim766r2kik6" path="res://assets/scenes/space_station/table3/table.001_Metallic.png" id="2_4g02r"]
 [ext_resource type="Texture2D" uid="uid://da0ai4dsyrrch" path="res://assets/scenes/space_station/table3/table.001_Height.png" id="2_g5nsn"]
 [ext_resource type="Texture2D" uid="uid://bclinew4rnvni" path="res://assets/scenes/space_station/table3/table.001_Normal_OpenGL.png" id="3_g5nsn"]
@@ -213,6 +214,7 @@ backlight_texture = ExtResource("1_7jfw3")
 size = Vector3(4.90869, 2.24738, 4.09625)
 
 [node name="table3" type="StaticBody3D"]
+script = ExtResource("1_f7bhj")
 
 [node name="table_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.257807, 0, 0, 0, 0.257807, 0, 0, 0, 0.257807, 0, 0, 0)

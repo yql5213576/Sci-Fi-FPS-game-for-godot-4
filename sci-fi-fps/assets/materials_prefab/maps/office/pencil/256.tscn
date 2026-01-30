@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=4 uid="uid://cov2viibeikwq"]
+
+[ext_resource type="Material" uid="uid://b10dswjku248x" path="res://assets/materials_prefab/maps/office/pencil/256/pencel_0.tres" id="1_h5ipg"]
+[ext_resource type="Material" uid="uid://ba3gvsa3qewjc" path="res://assets/materials_prefab/maps/office/pencil/256/pencel_1.tres" id="2_7yspo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1eg4i"]
+resource_name = "pencil"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sjb4"]
+resource_name = "pencil_wood"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_77m4e"]
+_surfaces = [{
+"aabb": AABB(-0.86602336, -4.67531, -1.0000001, 1.732051, 6.9397297, 2.0000002),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABAADAAEAAgADAAUABgAEAAAABgAHAAQACAAHAAYABQADAAkABQAJAAoABAALAAMACwAEAAcAAwALAAkACAALAAcACgAJAAsACgALAAgA"),
+"name": "pencil",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//////8/AAD+/wAA/78AAP//////vwAA/38AAP7/AAD+/wAA/z8AAP9//////wAA/3///wAAAAD/fwAAAAAAAAAA////PwAAAAAAAP+/AAAAAP///78AAAAAAAD/PwAA")
+}, {
+"aabb": AABB(-0.86602336, 2.2644196, -1.0000001, 1.732051, 1.4816377, 2.0000002),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAABAAMABQAAAAIABQACAAYABwAFAAYACAACAAEABAAIAAEAAgAJAAYABwAGAAkACAAJAAIABwAJAAoACQAIAAoABAAKAAgABwAKAAsABAALAAoA"),
+"name": "pencil_wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP//AAAga///booAAP9////elAAAAAAAAP+/AAAAAAAA/z8AAP//AAD/vwAA3ZT//26KAAD//wAA/z8AACBr//+QdQAA3ZT//5B1AAD/f///IGsAAP9/AAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h730m"]
+resource_name = "pencil_柱体_008"
+_surfaces = [{
+"aabb": AABB(-0.86602336, -4.67531, -1.0000001, 1.732051, 6.9397297, 2.0000002),
+"attribute_data": PackedByteArray("UlkB1KZvAACmbw3OUlnzBaZvDc5PnAAAT5wNzqZvAABPnA3OpLLzBaSyAdRPnAAAAAAB1FQWAABUFg3OAADzBVQWDc79QgAA/UINzlQWAAD//8HwUdkKw///R9KkssHwUdn//6SyR9L9Qg3OUlnzBVJZAdT9QgAA"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcAFwAUABgAFQAXABkAGgAbABwAGgAdABsA"),
+"material": SubResource("StandardMaterial3D_1eg4i"),
+"name": "pencil",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("//////8/TPr+/wAA/79M+v//////v0z6/v8AAP8/TPr//////7////9/AAD+/////3/////////+/wAA/7////9//////zX4AAAAAP+/NfgAAP///781+P9/AAD+/zX4AAD///+/TPoAAAAA/z9M+gAA////P0z6AAAAAP+/TPoAAP///z////9/AAAAAP///3///wAA//8AAAAA/z///wAAAAD/P4zi/v8AAP8/jOL/fwAAAACM4v9/AAD+/4ziAAAAAP+/jOL+/wAA/7+M4v9///8AAOn9/v8AAP8/6f3//////z/p/f9/AAAAAOn9DQb5PA0G+TwNBvk8DQb5PAyb/38Mm/9/DJv/fwyb/3+BZaCCgWWggoFloIKBZaCC8fkFw/H5BcPx+QXD8fkFw///DJv//wyb//8Mm///DJtTY1VOU2NVTlNjVU5TY1VOU2NVTlNjVU6e3bR2nt20dp7dtHae3bR2")
+}, {
+"aabb": AABB(-0.86602336, 2.2644196, -1.0000001, 1.732051, 1.4816377, 2.0000002),
+"attribute_data": PackedByteArray("T5wNzkON//+fiQb/pLIB1FQWDc5gJf//AAAB1AQpBv9Bv47A8rgauUG/lrukso7A8rgKw6Sylrumbw3On4kG/1eCBv9PnA3OUlkB1FeCBv+zfv//pm8NzlQWDc5NMAb/BCkG//1CDc5SWQHUTTAG//1CDc7xM///"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACQAIAAsACwAIAAwACQALAA0ADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
+"material": SubResource("StandardMaterial3D_5sjb4"),
+"name": "pencil_wood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("/38AAP//wvwga///borC/P9////elML8AAAAAP+/wvwAAAAA/z8S7SBr//9uihLtAAAAAP+/Eu0ga///kHUS7d2U//+QdUrKIGv//5B1Ssr/f///IGtKyv9////elErK3ZT//26KSsoga///bopKyv//AAD/vzz7/3///96UPPvdlP//boo8+/9/AAD//zz7//8AAP8/5fjdlP//borl+N2U//+QdeX4//8AAP+/5fgAAAAA/z8a7v9///8gaxruIGv//5B1Gu7/fwAAAAAa7v//AAD/PwHs/3///yBrAez/fwAAAAAB7N2U//+QdQHsVGv/lVRr/5VUa/+VVGv/lVr4oT1a+KE9WvihPVr4oT2y3Wc7st1nO7LdZzuy3Wc7st1nO7PdZzvelsKT3pbCk96WwpPelsKTd7Vnkne1Z5J3tWeSd7Vnkgb6PWAG+j1gBvo9YAb6PWCo48t7qOPLe6jjy3uo48t7")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_77m4e")
+
+[node name="pencil2" type="Node3D"]
+
+[node name="pencil" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.014621329, 0, 0, 0, 0.06201207, 0, 0, 0, 0.014621329, 0, 0, 0)
+layers = 2
+mesh = SubResource("ArrayMesh_h730m")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_h5ipg")
+surface_material_override/1 = ExtResource("2_7yspo")

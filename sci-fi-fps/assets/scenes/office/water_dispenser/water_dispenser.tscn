@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=4 uid="uid://bdi7cbpvsu5xa"]
+[gd_scene load_steps=39 format=4 uid="uid://bdi7cbpvsu5xa"]
 
 [ext_resource type="Texture2D" uid="uid://bvn7rbf0udaux" path="res://assets/scenes/office/water_dispenser/white_Base_color.png" id="1_h06mr"]
 [ext_resource type="Texture2D" uid="uid://dqnggi0ylb6q1" path="res://assets/scenes/office/water_dispenser/water_Base_color.png" id="1_hif1x"]
 [ext_resource type="Texture2D" uid="uid://b7aa2ibitbpgl" path="res://assets/scenes/office/water_dispenser/switch_Base_color.png" id="1_tlm84"]
+[ext_resource type="Script" uid="uid://cx2g632a15li3" path="res://assets/scenes/office/water_dispenser/water_dispenser.gd" id="1_wro1t"]
 [ext_resource type="Texture2D" uid="uid://b8l0cth2sa6kb" path="res://assets/scenes/office/water_dispenser/white_Height.png" id="2_52w4e"]
 [ext_resource type="Texture2D" uid="uid://cnqpvenwg5d1v" path="res://assets/scenes/office/water_dispenser/water_Metallic.png" id="2_vsgbv"]
 [ext_resource type="Texture2D" uid="uid://bs5v3qfkxhkms" path="res://assets/scenes/office/water_dispenser/switch_Metallic.png" id="3_08lae"]
@@ -268,6 +269,7 @@ height = 1.6118164
 radius = 0.6586914
 
 [node name="water_dispenser" type="StaticBody3D"]
+script = ExtResource("1_wro1t")
 
 [node name="wd" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.67669535, 0, 0, 0, 0.79154867, 0, 0, 0, 0.48682538, 0, -2.4115157, 0)

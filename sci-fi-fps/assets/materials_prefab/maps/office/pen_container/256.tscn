@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=4 uid="uid://buf1vur2887mi"]
+
+[ext_resource type="Material" uid="uid://bqs31768l0j1k" path="res://assets/materials_prefab/maps/office/pen_container/256/pen_container.tres" id="1_kjkyk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en4b5"]
+resource_name = "pen_container"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nxmtq"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2.5785885, 2),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcACAACAAEACQAGAAIACQACAAgACgAHAAYACgAGAAkACwABAAcACwAHAAoACAABAAsACgAMAAsACAANAAkACQAOAAoACgAOAAwACQANAA4ACwAMAA8ACwAPAAgADgAPAAwACAAPAA0ADgANAA8A"),
+"name": "pen_container",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAAjsb//wAAAAAAAAAAAAD//wAA//8AAP//AAAAAAAA//+Oxv//AAD/////AAAAANIP98nL8AAALPD3ycvwAAAs8JX8Mw8AANIPlfwzDwAA0g/6KDMPAAAs8Pooy/AAACzw+igzDwAA0g/6KMvwAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l6chl"]
+resource_name = "pen_container_立方体_004"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2.5785885, 2),
+"attribute_data": PackedByteArray("AADEo21F//8AAE3rbUXEo21FxKPbiv//bUX//9uKxKMAAIlHbUUSjwAAxKNtRYlH24r+D0nQh1fbiodXSdD+D21FAAAAAIlHAAAAAG1FiUdtRcSjnIKHV5yCh5FtRYdXkYaXEduKh1eRhh1TbUWHV9uKLQ24SR1TuEmXEW1FLQ3MvxJlbvvEo8y/xKNu+xJltMdNwf////+0x/////9NwduK//+0x8KztMf//9uKwrOcgoeRzL+HV8y/xKOcgodX"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGgAZABsAGAAcABkAGgAbAB0AHgAcABgAHQAbAB8AHgAfABwAHQAfAB4AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_en4b5"),
+"name": "pen_container",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP////8AAP//AAD//wAAjsb/////AAAAAAAA//8AAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAP////+Oxv//////////AAD/////AAD///////8AAP////8AAI7G////////jsb/////AAAAAP////8AAAAAAAD/////AAD///////8AAAAA//8AAAAA/////9IPlfwzD///0g/6KMvw///SD/fJy/D//9IP+igzD///0g/3ycvw//8AAP//AAD//9IPlfwzD////////wAA//8AAI7G/////yzwlfwzD///LPD3ycvw/////47G/////yzw+igzD1TV0g/6KMvwVNXSD/ooMw9U1Szw+ijL8FTV0g/3ycvw//8s8Pooy/D//yzw98nL8P//0g/6KMvw//8s8JX8Mw///9IP+igzD///0g+V/DMP//8s8PooMw///yzw98nL8P//LPD6KDMP//8s8JX8Mw///yzw+ijL8P///z//f/8//3//P/9//z//f////3////9/////f////3//v/9//7//f/+//3//v/9//3//f/9//3//f/9//3//f/9//z//f/8//3//P/9//z//v/9//7//f/+//3//v/9//3/stv9/7Lb/f+y2/3/stv9/7Lb/f+y2/3/stv9/7Laqqqqqqqqqqqqqqqqqqqqq/z//v/8//7//P/+//z//v/9//3//f/9//3//f/9//3//P/9//z//f/8//3//P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nxmtq")
+
+[node name="pen_container2" type="Node3D"]
+
+[node name="pen_container" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1299921, 0, 0, 0, 0.1299921, 0, 0, 0, 0.1299921, 0, 0, 0)
+layers = 2
+mesh = SubResource("ArrayMesh_l6chl")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_kjkyk")
