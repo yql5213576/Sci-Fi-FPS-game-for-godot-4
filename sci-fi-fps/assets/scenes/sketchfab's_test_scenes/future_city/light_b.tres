@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bu1grbhawqsw"]
-
-[resource]
-resource_name = "light_b"
-cull_mode = 2
-albedo_color = Color(0.240247, 0.400662, 0.358931, 1)
-metallic = 1.0
-roughness = 0.211009
