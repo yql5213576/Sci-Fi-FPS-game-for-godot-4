@@ -62,6 +62,8 @@ func _process(delta: float) -> void:
 	Main_Menu_Global.setting_difficulty=button_difficulty_node.text
 	Main_Menu_Global.setting_game_time=button_game_time_node.text
 	Main_Menu_Global.setting_max_kills=button_max_kill_node.text
+	Main_Menu_Global.setting_ai_grenade=button_ai_grenade_node.text
+	Main_Menu_Global.setting_ai_sword=button_ai_sword_node.text
 	
 	mouse_range_label_node.text=str(mouse_range_node.value)
 
@@ -258,6 +260,8 @@ func _on_free_for_all_button_down() -> void:
 @onready var button_difficulty_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/Button_difficulty
 @onready var button_game_time_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time
 @onready var button_max_kill_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills
+@onready var button_ai_grenade_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/Button_ai_grenade
+@onready var button_ai_sword_node:Node=$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/Button_ai_sword
 func _on_button_bot_num_button_down() -> void:
 	$user_manu_button_press_audio.play()
 	if $game_load.visible==true:
@@ -328,7 +332,7 @@ func _on_button_game_time_button_down() -> void:#0,5,10,30,60
 
 
 func _on_button_max_kills_button_down() -> void:#10,30,60,100,150,200,250,300
-	$user_manu_button_press_audio.play()
+	
 	if $game_load.visible==true:
 		if button_max_kill_node.text=="10":
 			button_max_kill_node.text="30"
@@ -354,6 +358,23 @@ func _on_button_max_kills_button_down() -> void:#10,30,60,100,150,200,250,300
 		if button_max_kill_node.text=="300":
 			button_max_kill_node.text="10"
 			return
+
+func _on_button_ai_grenade_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if button_ai_grenade_node.text=="open":
+		button_ai_grenade_node.text="close"
+	elif button_ai_grenade_node.text=="close":
+		button_ai_grenade_node.text="open"
+
+
+func _on_button_ai_sword_button_down() -> void:
+	$user_manu_button_press_audio.play()
+	if button_ai_sword_node.text=="open":
+		button_ai_sword_node.text="close"
+	elif button_ai_sword_node.text=="close":
+		button_ai_sword_node.text="open"
+	
+
 
 #setting
 
@@ -491,6 +512,8 @@ func user_data_text_control():
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_cn.visible=true
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_cn.visible=true
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/ai_grenade_cn.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/ai_sword_cn.visible=true
 		
 		
 		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_en.visible=false
@@ -530,11 +553,16 @@ func user_data_text_control():
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_en.visible=false
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_en.visible=false
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/ai_grenade_en.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/ai_sword_en.visible=false
 		
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/HSeparator.custom_minimum_size.x=40.515
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/HSeparator.custom_minimum_size.x=24.135
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/HSeparator.custom_minimum_size.x=13.95
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/HSeparator.custom_minimum_size.x=25.65
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/HSeparator.custom_minimum_size.x=46.87
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/HSeparator.custom_minimum_size.x=46.81
+		
 		
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike.text="血战回廊"
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station_simple.text="太空站"
@@ -611,6 +639,8 @@ func user_data_text_control():
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_cn.visible=false
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_cn.visible=false
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/ai_grenade_cn.visible=false
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/ai_sword_cn.visible=false
 		
 		
 		$quit_verify/MarginContainer/VBoxContainer/HBoxContainer2/Label_en.visible=true
@@ -650,11 +680,16 @@ func user_data_text_control():
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/difficulty_en.visible=true
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/game_time_en.visible=true
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/max_kills_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/ai_grenade_en.visible=true
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/ai_sword_en.visible=true
+		
 		
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_bot_num/HSeparator.custom_minimum_size.x=33.225
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_difficulty/HSeparator.custom_minimum_size.x=30.845
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/HSeparator.custom_minimum_size.x=24.98
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/HSeparator.custom_minimum_size.x=32.23
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/HSeparator.custom_minimum_size.x=18.815
+		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/HSeparator.custom_minimum_size.x=34.495
 		
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_blood_strike.text="blood strike"
 		$game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Maps/PanelContainer_maps/ScrollContainer/VBoxContainer/Button_space_station_simple.text="space station"
@@ -1239,6 +1274,11 @@ func _on_button_game_time_mouse_entered() -> void:
 func _on_button_max_kills_mouse_entered() -> void:
 	$user_manu_button_audio.play()
 
+func _on_button_ai_grenade_mouse_entered() -> void:
+	$user_manu_button_audio.play()
+
+func _on_button_ai_sword_mouse_entered() -> void:
+	$user_manu_button_audio.play()
 
 func _on_cancel_button_mouse_entered() -> void:
 	$user_manu_button_audio.play()

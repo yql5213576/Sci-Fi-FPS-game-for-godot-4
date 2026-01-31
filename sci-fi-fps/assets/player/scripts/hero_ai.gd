@@ -1747,50 +1747,55 @@ func player_grenade_attack():
 		can_throw=true
 	else:
 		can_throw=false
-	if enemy_main!=null:
-		if enemy_main.global_position.distance_to(self.global_position)>15&&enemy_main.global_position.distance_to(self.global_position)<50:
-			if can_throw:
-				if throw_random_list.pick_random()==0:
-					if player_grenade_nums_fire>0:
-						hand_state_anim.travel("grenade_throw")
-						using_grenade="fire"
-						player_grenade_nums_fire-=1
-						throw_timer=30
-				if throw_random_list.pick_random()==1:
-					if player_grenade_nums_smoke>0:
-						hand_state_anim.travel("grenade_throw")
-						using_grenade="smoke"
-						player_grenade_nums_smoke-=1
-						throw_timer=30
-				if throw_random_list.pick_random()==2:
-					if player_grenade_nums_flash>0:
-						hand_state_anim.travel("grenade_throw")
-						using_grenade="flash"
-						player_grenade_nums_flash-=1
-						throw_timer=30
+	if Main_Menu_Global.setting_ai_grenade=="open":
+		if enemy_main!=null:
+			if enemy_main.global_position.distance_to(self.global_position)>15&&enemy_main.global_position.distance_to(self.global_position)<50:
+				if can_throw:
+					if throw_random_list.pick_random()==0:
+						if player_grenade_nums_fire>0:
+							hand_state_anim.travel("grenade_throw")
+							using_grenade="fire"
+							player_grenade_nums_fire-=1
+							throw_timer=30
+					if throw_random_list.pick_random()==1:
+						if player_grenade_nums_smoke>0:
+							hand_state_anim.travel("grenade_throw")
+							using_grenade="smoke"
+							player_grenade_nums_smoke-=1
+							throw_timer=30
+					if throw_random_list.pick_random()==2:
+						if player_grenade_nums_flash>0:
+							hand_state_anim.travel("grenade_throw")
+							using_grenade="flash"
+							player_grenade_nums_flash-=1
+							throw_timer=30
+	else:
+		can_throw=false
 				
 
 var sword_action_id:Array[int]=[0,1]
 func ai_sword_attack():
-	if can_throw==false&&hand_state_anim.get_current_node()!=("grenade_throw"):
-		if sword_trigger.has_overlapping_bodies():
-			for st in sword_trigger.get_overlapping_bodies():
-				if st!=self:
-					if scene_root.mode=="free_for_all":
-						if hand_state_anim.get_current_node()!="sword_attack":
-							if sword_action_id.pick_random()==0:
-								animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
-							if sword_action_id.pick_random()==1:
-								animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
-							hand_state_anim.travel("sword_attack")
-					if scene_root.mode=="team_death_match":
-						if st.TDM_team!=TDM_team:
+	if Main_Menu_Global.setting_ai_sword=="open":
+		if can_throw==false&&hand_state_anim.get_current_node()!=("grenade_throw"):
+			if sword_trigger.has_overlapping_bodies():
+				for st in sword_trigger.get_overlapping_bodies():
+					if st!=self:
+						if scene_root.mode=="free_for_all":
 							if hand_state_anim.get_current_node()!="sword_attack":
 								if sword_action_id.pick_random()==0:
 									animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
 								if sword_action_id.pick_random()==1:
 									animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
 								hand_state_anim.travel("sword_attack")
+						if scene_root.mode=="team_death_match":
+							if st.TDM_team!=TDM_team:
+								if hand_state_anim.get_current_node()!="sword_attack":
+									if sword_action_id.pick_random()==0:
+										animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack1"
+									if sword_action_id.pick_random()==1:
+										animation_tree_node["parameters/StateMachine/sword_attack/Transition/transition_request"]="sword_attack2"
+									hand_state_anim.travel("sword_attack")
+									
 @onready var grenade_throw_pos_node:Node=$Skeleton/Skeleton3D/spine_bone_pos/grenade_throw_pos
 func ai_throw_grenade_anim_event():
 	if player_die==false&&control_lock:

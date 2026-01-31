@@ -454,3 +454,12 @@ func _physics_process(delta: float) -> void:
 		if progress[0]==1:
 			var packed_scene:Resource=ResourceLoader.load_threaded_get(main_menu_scene)
 			get_tree().change_scene_to_packed(packed_scene)
+
+	if Input.is_action_just_pressed("mouse_wheel_up"):
+		if scale.x>=0.1:
+			scale.x+=0.05
+			scale.y+=0.05
+	if Input.is_action_just_pressed("mouse_wheel_down"):
+		if scale.x<=1:
+			scale.x-=0.05
+			scale.y-=0.05

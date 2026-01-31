@@ -889,7 +889,7 @@ anchor_bottom = 0.5
 offset_left = -192.0
 offset_top = 165.0
 offset_right = 192.0
-offset_bottom = 324.0017
+offset_bottom = 324.00168
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_qncuu")
@@ -906,7 +906,7 @@ anchor_bottom = 0.5
 offset_left = -192.0
 offset_top = 165.0
 offset_right = 192.0
-offset_bottom = 324.0017
+offset_bottom = 324.00168
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_0yyb1")
@@ -1335,17 +1335,17 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
 
 [node name="max_kills_en" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills" unique_id=1461642555]
+visible = false
 layout_mode = 2
 text = "max kills"
 
 [node name="max_kills_cn" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills" unique_id=152851650]
-visible = false
 layout_mode = 2
 text = "目标杀敌数"
 label_settings = SubResource("LabelSettings_f0kai")
 
 [node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills" unique_id=669421036]
-custom_minimum_size = Vector2(32.23, 0)
+custom_minimum_size = Vector2(25.65, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
 
@@ -1353,6 +1353,62 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
 custom_minimum_size = Vector2(68, 0)
 layout_mode = 2
 text = "30"
+
+[node name="HBox_ai_grenade" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer" unique_id=749296493]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade" unique_id=789691038]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="ai_grenade_en" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade" unique_id=1461782793]
+visible = false
+layout_mode = 2
+text = "ai grenade"
+
+[node name="ai_grenade_cn" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade" unique_id=1853250883]
+layout_mode = 2
+text = "bot手雷"
+label_settings = SubResource("LabelSettings_f0kai")
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade" unique_id=380096829]
+custom_minimum_size = Vector2(46.87, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_ai_grenade" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade" unique_id=766404065]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "open"
+
+[node name="HBox_ai_sword" type="HBoxContainer" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer" unique_id=301587684]
+layout_mode = 2
+
+[node name="HSeparator2" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword" unique_id=922450760]
+custom_minimum_size = Vector2(5.745, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="ai_sword_en" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword" unique_id=543931040]
+visible = false
+layout_mode = 2
+text = "ai sword"
+
+[node name="ai_sword_cn" type="Label" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword" unique_id=165780380]
+layout_mode = 2
+text = "bot近战"
+label_settings = SubResource("LabelSettings_f0kai")
+
+[node name="HSeparator" type="VSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword" unique_id=1519419330]
+custom_minimum_size = Vector2(46.81, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a6wql")
+
+[node name="Button_ai_sword" type="Button" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword" unique_id=774250713]
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 2
+text = "open"
 
 [node name="HSeparator" type="HSeparator" parent="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=268957882]
 layout_mode = 2
@@ -3232,6 +3288,10 @@ volume_db = -20.0
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_game_time/Button_game_time" to="." method="_on_button_game_time_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills" to="." method="_on_button_max_kills_button_down"]
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_max_kills/Button_max_kills" to="." method="_on_button_max_kills_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/Button_ai_grenade" to="." method="_on_button_ai_grenade_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_grenade/Button_ai_grenade" to="." method="_on_button_ai_grenade_mouse_entered"]
+[connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/Button_ai_sword" to="." method="_on_button_ai_sword_button_down"]
+[connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TabContainer/Setting/PanelContainer_mode/ScrollContainer/VBoxContainer/HBox_ai_sword/Button_ai_sword" to="." method="_on_button_ai_sword_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_button_down"]
 [connection signal="mouse_entered" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_button_mouse_entered"]
 [connection signal="button_down" from="game_load/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/cancel_button" to="." method="_on_cancel_button_button_down"]

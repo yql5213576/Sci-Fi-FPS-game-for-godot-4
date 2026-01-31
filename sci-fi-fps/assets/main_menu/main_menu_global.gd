@@ -14,6 +14,12 @@ var setting_game_time_i:int
 var setting_max_kills:String
 var setting_max_kills_i:int
 
+var setting_ai_grenade:String
+var setting_ai_grenade_b:bool
+
+var setting_ai_sword:String
+var setting_ai_sword_b:bool
+
 var user_name:String=""
 var bot_names:Array[String]=["bot1","bot2","bot3","bot4","bot5","bot6","bot7","bot8","bot9","bot10","bot11","bot12","bot13","bot14","bot15"]
 func _physics_process(delta: float) -> void:
@@ -21,3 +27,11 @@ func _physics_process(delta: float) -> void:
 	setting_game_time_i=int(setting_game_time)
 	setting_max_kills_i=int(setting_max_kills)
 	
+	if setting_ai_grenade=="open":
+		setting_ai_grenade_b=true
+	if setting_ai_grenade=="close":
+		setting_ai_grenade_b=false
+	if setting_ai_sword=="open":
+		setting_ai_sword_b=true
+	if setting_ai_sword=="close":
+		setting_ai_sword_b=false
