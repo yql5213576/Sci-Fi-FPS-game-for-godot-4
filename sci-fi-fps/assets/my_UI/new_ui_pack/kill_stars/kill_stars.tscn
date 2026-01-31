@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://b67ke4bbi872h"]
+
+[ext_resource type="Texture2D" uid="uid://cqa8hjp4m48l0" path="res://kill_stars/first kill.png" id="1_nrs65"]
+[ext_resource type="Texture2D" uid="uid://dx5vwcyip3xkw" path="res://kill_stars/double kill.png" id="2_irkps"]
+[ext_resource type="Texture2D" uid="uid://ismwtgvj5jvl" path="res://kill_stars/triple kill.png" id="3_ea4w7"]
+[ext_resource type="Texture2D" uid="uid://bnfoc27j657oc" path="res://kill_stars/ultra kill.png" id="4_k4vxo"]
+[ext_resource type="Texture2D" uid="uid://deg885fiep0o1" path="res://kill_stars/Rampage.png" id="5_d2fjt"]
+[ext_resource type="Texture2D" uid="uid://ccq7amqd0kfrb" path="res://kill_stars/first_blood.png" id="6_5ivkt"]
+[ext_resource type="Texture2D" uid="uid://08j8b2xmiyao" path="res://kill_stars/head shot.png" id="7_idgml"]
+[ext_resource type="Texture2D" uid="uid://bio1rtf85h1hg" path="res://kill_stars/holy_shit.png" id="8_irkps"]
+
+[node name="kill_stars" type="Node2D"]
+
+[node name="FirstKill" type="Sprite2D" parent="."]
+position = Vector2(1038, -1108)
+texture = ExtResource("1_nrs65")
+
+[node name="DoubleKill" type="Sprite2D" parent="."]
+position = Vector2(1884, -1092)
+texture = ExtResource("2_irkps")
+
+[node name="TripleKill" type="Sprite2D" parent="."]
+position = Vector2(2745, -1079)
+texture = ExtResource("3_ea4w7")
+
+[node name="UltraKill" type="Sprite2D" parent="."]
+position = Vector2(3618, -1075)
+texture = ExtResource("4_k4vxo")
+
+[node name="Rampage" type="Sprite2D" parent="."]
+position = Vector2(4476, -1059)
+texture = ExtResource("5_d2fjt")
+
+[node name="FirstBlood" type="Sprite2D" parent="."]
+position = Vector2(1147, -1900)
+texture = ExtResource("6_5ivkt")
+
+[node name="HeadShot" type="Sprite2D" parent="."]
+position = Vector2(2003, -1892)
+texture = ExtResource("7_idgml")
+
+[node name="HolyShit" type="Sprite2D" parent="."]
+position = Vector2(3020, -1909)
+texture = ExtResource("8_irkps")

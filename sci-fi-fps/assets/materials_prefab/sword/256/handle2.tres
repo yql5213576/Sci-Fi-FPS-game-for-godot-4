@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bhnktu1be88t7"]
+
+[ext_resource type="Texture2D" uid="uid://c7xyr6o8uxssr" path="res://assets/player/textures/sword/low_256/hanele2_Base_color.png" id="1_k0wx0"]
+[ext_resource type="Texture2D" uid="uid://d31pq83qk61ob" path="res://assets/player/textures/sword/low_256/hanele2_Metallic.png" id="2_nfqyg"]
+[ext_resource type="Texture2D" uid="uid://okkrr842aiws" path="res://assets/player/textures/sword/low_256/hanele2_Normal_OpenGL.png" id="3_4mks1"]
+[ext_resource type="Texture2D" uid="uid://bggvqcohnm0cj" path="res://assets/player/textures/sword/low_256/hanele2_Roughness.png" id="4_p14cc"]
+
+[resource]
+albedo_texture = ExtResource("1_k0wx0")
+metallic = 1.0
+metallic_texture = ExtResource("2_nfqyg")
+roughness_texture = ExtResource("4_p14cc")
+normal_enabled = true
+normal_texture = ExtResource("3_4mks1")
+clearcoat_enabled = true

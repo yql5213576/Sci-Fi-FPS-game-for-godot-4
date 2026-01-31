@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b68cejyps8477"]
+
+[ext_resource type="Script" uid="uid://b7l8oopbaw75g" path="res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload_2_audio.gd" id="1_adnqi"]
+[ext_resource type="AudioStream" uid="uid://tucwolqik47u" path="res://assets/audios/my_weapon_audio/machine_gun/machine_gun_reload2.wav" id="1_v22bc"]
+
+[node name="machine_gun_reload2_audio" type="Node3D"]
+script = ExtResource("1_adnqi")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_v22bc")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

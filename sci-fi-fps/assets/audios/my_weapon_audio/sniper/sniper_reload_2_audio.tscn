@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1cdgjiv2npt0"]
+
+[ext_resource type="Script" uid="uid://cwre3pg5i1r5l" path="res://assets/audios/my_weapon_audio/sniper/sniper_reload_2_audio.gd" id="1_66mfl"]
+[ext_resource type="AudioStream" uid="uid://djl36gjqqujgx" path="res://assets/audios/my_weapon_audio/sniper/sniper_reload2.wav" id="1_vb2ji"]
+
+[node name="sniper_reload2_audio" type="Node3D"]
+script = ExtResource("1_66mfl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_vb2ji")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

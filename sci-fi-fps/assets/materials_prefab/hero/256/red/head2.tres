@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bt7q4bk1ktcna"]
+
+[ext_resource type="Texture2D" uid="uid://b0q3rojl33bpw" path="res://assets/player/textures/player/red/low_256/armor_eye1_Base_color.png" id="1_jkd1c"]
+[ext_resource type="Texture2D" uid="uid://bj04pafbbetr8" path="res://assets/player/textures/player/red/low_256/armor_eye1_Metallic.png" id="2_m3qqs"]
+[ext_resource type="Texture2D" uid="uid://4c468o1yi1er" path="res://assets/player/textures/player/red/low_256/armor_eye1_Normal_OpenGL.png" id="3_igf2t"]
+[ext_resource type="Texture2D" uid="uid://dsf7vbxbhio0y" path="res://assets/player/textures/player/red/low_256/armor_eye1_Roughness.png" id="4_i443a"]
+
+[resource]
+albedo_texture = ExtResource("1_jkd1c")
+metallic = 1.0
+metallic_texture = ExtResource("2_m3qqs")
+roughness_texture = ExtResource("4_i443a")
+normal_enabled = true
+normal_texture = ExtResource("3_igf2t")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bkecp17nbxrny"]
+
+[ext_resource type="Texture2D" uid="uid://d3wummd1jsppa" path="res://assets/player/textures/rifle/low_512/gun_body1-1_Base_color.png" id="1_ndg0c"]
+[ext_resource type="Texture2D" uid="uid://dpnr4c0fehywm" path="res://assets/player/textures/rifle/low_512/gun_body1-1_Metallic.png" id="2_qb5em"]
+[ext_resource type="Texture2D" uid="uid://cvbrhc1fnbv67" path="res://assets/player/textures/rifle/low_512/gun_body1-1_Normal_OpenGL.png" id="3_iovr3"]
+[ext_resource type="Texture2D" uid="uid://bfk87odahejgm" path="res://assets/player/textures/rifle/low_512/gun_body1-1_Roughness.png" id="4_7bqwd"]
+
+[resource]
+albedo_texture = ExtResource("1_ndg0c")
+metallic = 1.0
+metallic_texture = ExtResource("2_qb5em")
+roughness_texture = ExtResource("4_7bqwd")
+normal_enabled = true
+normal_texture = ExtResource("3_iovr3")
+clearcoat_enabled = true

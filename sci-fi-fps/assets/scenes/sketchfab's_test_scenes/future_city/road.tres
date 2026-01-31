@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cliqvc6nf7aeb"]
+
+[resource]
+resource_name = "road"
+cull_mode = 2
+albedo_color = Color(0.365252, 0.365252, 0.365252, 1)
+metallic = 1.0

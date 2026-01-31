@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br5wbrbt6ixkd"
+path="res://.godot/imported/4 Shell Reload.mp3-5d9a0158cfbd140a1e40d1173e40fd32.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Gun reload sounds/2/ShotgunSounds/4 Shell Reload.mp3"
+dest_files=["res://.godot/imported/4 Shell Reload.mp3-5d9a0158cfbd140a1e40d1173e40fd32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

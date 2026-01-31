@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://vpc2eg5ujfh5"]
+
+[ext_resource type="Texture2D" uid="uid://ccq7amqd0kfrb" path="res://assets/my_UI/new_ui_pack/kill_stars/first_blood.png" id="1_0n3e6"]
+[ext_resource type="Texture2D" uid="uid://cqa8hjp4m48l0" path="res://assets/my_UI/new_ui_pack/kill_stars/first kill.png" id="2_ckgry"]
+[ext_resource type="Texture2D" uid="uid://dx5vwcyip3xkw" path="res://assets/my_UI/new_ui_pack/kill_stars/double kill.png" id="3_ml1n1"]
+[ext_resource type="Texture2D" uid="uid://ismwtgvj5jvl" path="res://assets/my_UI/new_ui_pack/kill_stars/triple kill.png" id="4_dbx7o"]
+[ext_resource type="Texture2D" uid="uid://bnfoc27j657oc" path="res://assets/my_UI/new_ui_pack/kill_stars/ultra kill.png" id="5_d3ki0"]
+[ext_resource type="Texture2D" uid="uid://deg885fiep0o1" path="res://assets/my_UI/new_ui_pack/kill_stars/Rampage.png" id="6_lwlce"]
+[ext_resource type="Texture2D" uid="uid://bio1rtf85h1hg" path="res://assets/my_UI/new_ui_pack/kill_stars/holy_shit.png" id="7_33al5"]
+[ext_resource type="Texture2D" uid="uid://08j8b2xmiyao" path="res://assets/my_UI/new_ui_pack/kill_stars/head shot.png" id="8_gxfku"]
+
+[sub_resource type="Animation" id="Animation_ckgry"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("size:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("size:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0n3e6"]
+resource_name = "show_kill_star"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("size:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("size:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.355, 0.355)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml1n1"]
+_data = {
+&"RESET": SubResource("Animation_ckgry"),
+&"show_kill_star": SubResource("Animation_0n3e6")
+}
+
+[node name="kill_ui_anim" type="Node2D"]
+
+[node name="size" type="Node2D" parent="."]
+
+[node name="FirstBlood" type="Sprite2D" parent="size"]
+visible = false
+texture = ExtResource("1_0n3e6")
+
+[node name="FirstKill" type="Sprite2D" parent="size"]
+visible = false
+texture = ExtResource("2_ckgry")
+
+[node name="DoubleKill" type="Sprite2D" parent="size"]
+visible = false
+texture = ExtResource("3_ml1n1")
+
+[node name="TripleKill" type="Sprite2D" parent="size"]
+visible = false
+position = Vector2(-5, 14)
+texture = ExtResource("4_dbx7o")
+
+[node name="UltraKill" type="Sprite2D" parent="size"]
+visible = false
+position = Vector2(3, 5)
+texture = ExtResource("5_d3ki0")
+
+[node name="Rampage" type="Sprite2D" parent="size"]
+visible = false
+position = Vector2(2, 21)
+texture = ExtResource("6_lwlce")
+
+[node name="HolyShit" type="Sprite2D" parent="size"]
+visible = false
+position = Vector2(-2, -6)
+texture = ExtResource("7_33al5")
+
+[node name="HeadShot" type="Sprite2D" parent="size"]
+visible = false
+position = Vector2(-7, -10)
+texture = ExtResource("8_gxfku")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ml1n1")
+}
+speed_scale = 2.0

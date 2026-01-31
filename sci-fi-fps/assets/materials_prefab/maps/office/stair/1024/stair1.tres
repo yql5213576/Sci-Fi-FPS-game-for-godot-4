@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://di1ubf7g3ras6"]
+
+[ext_resource type="Texture2D" uid="uid://dvp3j7p1ph4ck" path="res://assets/scenes/office/stair/low_1024/stair_Base_color.png" id="1_nx5wh"]
+[ext_resource type="Texture2D" uid="uid://dirmp41261kjc" path="res://assets/scenes/office/stair/low_1024/stair_Metallic.png" id="2_868sr"]
+[ext_resource type="Texture2D" uid="uid://cn1hj1y3rw53o" path="res://assets/scenes/office/stair/low_1024/stair_Normal_OpenGL.png" id="3_641sk"]
+[ext_resource type="Texture2D" uid="uid://c880401e1gt0f" path="res://assets/scenes/office/stair/low_1024/stair_Roughness.png" id="4_nuehy"]
+
+[resource]
+albedo_texture = ExtResource("1_nx5wh")
+metallic = 1.0
+metallic_texture = ExtResource("2_868sr")
+roughness_texture = ExtResource("4_nuehy")
+normal_enabled = true
+normal_texture = ExtResource("3_641sk")
+clearcoat_enabled = true

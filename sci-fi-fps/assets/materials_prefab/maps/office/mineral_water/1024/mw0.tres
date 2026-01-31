@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bbyp2e5ulndf8"]
+
+[ext_resource type="Texture2D" uid="uid://bic566snu552l" path="res://assets/scenes/office/mineral_water/low_1024/mineral_water_bottle_transparent_Base_color.png" id="1_ym5am"]
+[ext_resource type="Texture2D" uid="uid://dkxhchdws0dai" path="res://assets/scenes/office/mineral_water/low_1024/mineral_water_bottle_transparent_Metallic.png" id="2_pnj1l"]
+[ext_resource type="Texture2D" uid="uid://k24e8m7hvvsn" path="res://assets/scenes/office/mineral_water/low_1024/mineral_water_bottle_transparent_Normal_OpenGL.png" id="3_s72bi"]
+[ext_resource type="Texture2D" uid="uid://bdqhr8unumj2g" path="res://assets/scenes/office/mineral_water/low_1024/mineral_water_bottle_transparent_Roughness.png" id="4_h187m"]
+
+[resource]
+transparency = 4
+albedo_color = Color(0.6431373, 0.827451, 1, 0.48235294)
+albedo_texture = ExtResource("1_ym5am")
+metallic = 1.0
+metallic_texture = ExtResource("2_pnj1l")
+roughness_texture = ExtResource("4_h187m")
+normal_enabled = true
+normal_texture = ExtResource("3_s72bi")
+rim_enabled = true
+clearcoat_enabled = true

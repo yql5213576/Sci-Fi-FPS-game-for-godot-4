@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bkunnx8v2r5fa"]
+
+[ext_resource type="Texture2D" uid="uid://jodwq17vwvxa" path="res://assets/player/textures/grenade/smoke/low_512/body_Base_color.png" id="1_g45pt"]
+[ext_resource type="Texture2D" uid="uid://c5nnjrd1b465q" path="res://assets/player/textures/grenade/smoke/low_512/body_Metallic.png" id="2_oqwk7"]
+[ext_resource type="Texture2D" uid="uid://hqgivrtqweiy" path="res://assets/player/textures/grenade/smoke/low_512/body_Normal_OpenGL.png" id="3_ru514"]
+[ext_resource type="Texture2D" uid="uid://cfresw4cv8x6r" path="res://assets/player/textures/grenade/smoke/low_512/body_Roughness.png" id="4_7rs0d"]
+
+[resource]
+albedo_texture = ExtResource("1_g45pt")
+metallic = 1.0
+metallic_texture = ExtResource("2_oqwk7")
+roughness_texture = ExtResource("4_7rs0d")
+normal_enabled = true
+normal_texture = ExtResource("3_ru514")
+clearcoat_enabled = true

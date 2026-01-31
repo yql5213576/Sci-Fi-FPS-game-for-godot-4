@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dhtjns0bv7w8j"]
+
+[ext_resource type="Texture2D" uid="uid://udjcbh2jx3my" path="res://assets/player/textures/player/white/low_512/armor_shoes_Base_color.png" id="1_u2jja"]
+[ext_resource type="Texture2D" uid="uid://bxkyecuw7lx6k" path="res://assets/player/textures/player/white/low_512/armor_shoes_Metallic.png" id="2_78qky"]
+[ext_resource type="Texture2D" uid="uid://chcq8c3h6b8u7" path="res://assets/player/textures/player/white/low_512/armor_shoes_Normal_OpenGL.png" id="3_oeu8o"]
+[ext_resource type="Texture2D" uid="uid://jw8ndb32t7dr" path="res://assets/player/textures/player/white/low_512/armor_shoes_Roughness.png" id="4_xrm6q"]
+
+[resource]
+albedo_texture = ExtResource("1_u2jja")
+metallic = 1.0
+metallic_texture = ExtResource("2_78qky")
+roughness_texture = ExtResource("4_xrm6q")
+normal_enabled = true
+normal_texture = ExtResource("3_oeu8o")
+clearcoat_enabled = true

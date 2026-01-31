@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dikcr2lsj2rs6"]
+
+[ext_resource type="Texture2D" uid="uid://cnoof0fsiwk6o" path="res://assets/scenes/office/office_map/celling/low_256/celling_Metallic.png" id="2_b0v3c"]
+[ext_resource type="Texture2D" uid="uid://6drjcl23dj0k" path="res://assets/scenes/office/office_map/celling/low_256/celling_Roughness.png" id="4_7qbpg"]
+
+[resource]
+metallic = 1.0
+metallic_texture = ExtResource("2_b0v3c")
+roughness_texture = ExtResource("4_7qbpg")
+normal_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bsh75i63586eo"]
+
+[ext_resource type="Texture2D" uid="uid://botnhmappirvu" path="res://assets/player/textures/smg/low_1024/trigger_Base_color.png" id="1_cyfdx"]
+[ext_resource type="Texture2D" uid="uid://ddvw1viqbcys2" path="res://assets/player/textures/smg/low_1024/trigger_Metallic.png" id="2_q2yie"]
+[ext_resource type="Texture2D" uid="uid://ba6gwg2euhv0k" path="res://assets/player/textures/smg/low_1024/trigger_Normal_OpenGL.png" id="3_77qam"]
+[ext_resource type="Texture2D" uid="uid://1d5ysr78xdoo" path="res://assets/player/textures/smg/low_1024/trigger_Roughness.png" id="4_ovdqr"]
+
+[resource]
+albedo_texture = ExtResource("1_cyfdx")
+metallic = 1.0
+metallic_texture = ExtResource("2_q2yie")
+roughness_texture = ExtResource("4_ovdqr")
+normal_enabled = true
+normal_texture = ExtResource("3_77qam")
+clearcoat_enabled = true

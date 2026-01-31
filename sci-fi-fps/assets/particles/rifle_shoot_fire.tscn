@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://fs5jbi6wlxxn"]
+
+[ext_resource type="Script" uid="uid://klegvigsx54n" path="res://assets/particles/rifle_shoot_fire.gd" id="1_4uj0y"]
+[ext_resource type="Texture2D" uid="uid://cxrwvn06dh41i" path="res://assets/Kenney's_assets/kenney_particle-pack/PNG (Transparent)/fire_02.png" id="2_046yy"]
+[ext_resource type="Texture2D" uid="uid://ch47085argn5c" path="res://assets/Kenney's_assets/PNG/Flash/flash00.png" id="3_046yy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ioqti"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 3, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 20.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 50.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fixdd"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(18.892157, 9.172958, 6.4966564, 1)
+albedo_texture = ExtResource("2_046yy")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qdfkh"]
+material = SubResource("StandardMaterial3D_fixdd")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bftne"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(4, 1, 1, 1)
+albedo_texture = ExtResource("3_046yy")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_omnto"]
+material = SubResource("StandardMaterial3D_bftne")
+size = Vector2(0.2, 0.2)
+
+[node name="rifle_shoot_fire" type="Node3D" unique_id=988746264]
+script = ExtResource("1_4uj0y")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2005888226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0680019, 0, 0)
+layers = 5
+emitting = false
+amount = 35
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ioqti")
+draw_passes = 2
+draw_pass_1 = SubResource("QuadMesh_qdfkh")
+draw_pass_2 = SubResource("QuadMesh_omnto")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

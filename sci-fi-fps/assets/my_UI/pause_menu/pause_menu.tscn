@@ -1,0 +1,793 @@
+[gd_scene load_steps=35 format=3 uid="uid://csiwc7i35gpns"]
+
+[ext_resource type="Script" uid="uid://qtfvv4c6s68k" path="res://assets/my_UI/pause_menu/pause_menu.gd" id="1_5hbt6"]
+[ext_resource type="LabelSettings" uid="uid://ffeugrv00eca" path="res://assets/my_UI/pause_menu/label_assets/resume_label_settings.tres" id="2_wn31l"]
+[ext_resource type="LabelSettings" uid="uid://ba161fq8lfvnj" path="res://assets/my_UI/pause_menu/label_assets/restart_label_settings.tres" id="3_b0obc"]
+[ext_resource type="LabelSettings" uid="uid://bi7v2b8pra21l" path="res://assets/my_UI/pause_menu/label_assets/change_class_label_settings.tres" id="4_cux0y"]
+[ext_resource type="LabelSettings" uid="uid://vm528oylj2mb" path="res://assets/my_UI/pause_menu/label_assets/quit_label_settings.tres" id="5_teyq6"]
+[ext_resource type="LabelSettings" uid="uid://dvatx7kp15y3y" path="res://assets/my_UI/pause_menu/label_assets/shutdown_label_settings.tres" id="6_p6csp"]
+[ext_resource type="Texture2D" uid="uid://dwx1pqfnmp3vx" path="res://assets/my_UI/new_ui_pack/weapons_ui/rifle_t_w.png" id="7_1nv8k"]
+[ext_resource type="Texture2D" uid="uid://m42750j3yqm2" path="res://assets/my_UI/new_ui_pack/weapons_ui/pistol_t_w.png" id="8_ja1mc"]
+[ext_resource type="Texture2D" uid="uid://e23tf386u2v4" path="res://assets/my_UI/new_ui_pack/weapons_ui/smg_t_w.png" id="8_qi88y"]
+[ext_resource type="Texture2D" uid="uid://bp4rqny8v48rq" path="res://assets/my_UI/new_ui_pack/weapons_ui/shotgun_t_w.png" id="9_ja1mc"]
+[ext_resource type="Texture2D" uid="uid://dolbrxcox5pu8" path="res://assets/my_UI/new_ui_pack/weapons_ui/sniper_t_w.png" id="10_2oqmc"]
+[ext_resource type="Texture2D" uid="uid://bpi2nyw7x4jxs" path="res://assets/my_UI/new_ui_pack/weapons_ui/machine_gun_t_w.png" id="11_sp6kg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7wlu"]
+bg_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7wlu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hbt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn31l"]
+bg_color = Color(0.314316, 0.314316, 0.314316, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn31l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b0obc"]
+font_size = 50
+outline_size = 6
+outline_color = Color(0.157129, 0.582865, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0obc"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ja1mc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cux0y"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oqmc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qi88y"]
+font_size = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi88y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qi88y"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Animation" id="Animation_b0obc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back_ground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button_panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit_alert:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("quit_alert:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("weapons_change_class:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cux0y"]
+resource_name = "psuse_continue"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back_ground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button_panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wn31l"]
+resource_name = "start_pause"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("back_ground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("button_panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_teyq6"]
+_data = {
+&"RESET": SubResource("Animation_b0obc"),
+&"psuse_continue": SubResource("Animation_cux0y"),
+&"start_pause": SubResource("Animation_wn31l")
+}
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_wn31l"]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_b0obc"]
+input_0/name = "pause"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "continue"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cux0y"]
+animation = &"psuse_continue"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_teyq6"]
+animation = &"start_pause"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_p6csp"]
+graph_offset = Vector2(-478.364, 5.28925)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_wn31l")
+nodes/TimeScale/position = Vector2(420, 140)
+nodes/Transition/node = SubResource("AnimationNodeTransition_b0obc")
+nodes/Transition/position = Vector2(120, 140)
+nodes/continue/node = SubResource("AnimationNodeAnimation_cux0y")
+nodes/continue/position = Vector2(-200, 300)
+nodes/output/position = Vector2(860, 120)
+nodes/pause/node = SubResource("AnimationNodeAnimation_teyq6")
+nodes/pause/position = Vector2(-200, 60)
+node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"pause", &"Transition", 1, &"continue", &"output", 0, &"TimeScale"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hbt6")
+
+[node name="back_ground" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c7wlu")
+
+[node name="button_panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -206.0
+offset_right = 89.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_c7wlu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="button_panel"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="button_panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
+
+[node name="Label_resume" type="Label" parent="button_panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Resume"
+label_settings = ExtResource("2_wn31l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="button_panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
+
+[node name="Label_restart" type="Label" parent="button_panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Restart"
+label_settings = ExtResource("3_b0obc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="button_panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
+
+[node name="Label_change" type="Label" parent="button_panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Change class"
+label_settings = ExtResource("4_cux0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator5" type="VSeparator" parent="button_panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
+
+[node name="Label_quit" type="Label" parent="button_panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Quit"
+label_settings = ExtResource("5_teyq6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator6" type="VSeparator" parent="button_panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5hbt6")
+
+[node name="Label_shutdown" type="Label" parent="button_panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Shutdown"
+label_settings = ExtResource("6_p6csp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit_alert" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -150.0
+offset_right = 252.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wn31l")
+
+[node name="MarginContainer" type="MarginContainer" parent="quit_alert"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quit_alert/MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="quit_alert/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8.235)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
+
+[node name="alert_label" type="Label" parent="quit_alert/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 122.67)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Are you sure exit?"
+label_settings = SubResource("LabelSettings_b0obc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="quit_alert/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="quit_alert/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
+
+[node name="yes" type="Button" parent="quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(94.54, 72.805)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Yes"
+
+[node name="HSeparator2" type="HSeparator" parent="quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
+
+[node name="no" type="Button" parent="quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(94.54, 72.805)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "No"
+
+[node name="HSeparator3" type="HSeparator" parent="quit_alert/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn31l")
+
+[node name="weapons_change_class" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b0obc")
+
+[node name="back_ground_wp" type="PanelContainer" parent="weapons_change_class"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c7wlu")
+
+[node name="MarginContainer" type="MarginContainer" parent="weapons_change_class"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="weapons_change_class/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VSeparator7" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="class1" type="PanelContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer/class1"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="rifle" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("7_1nv8k")
+expand_mode = 1
+
+[node name="HSeparator2" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="pistol" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator3" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="class1" type="Label" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+layout_mode = 2
+text = "Class1"
+label_settings = SubResource("LabelSettings_qi88y")
+
+[node name="HSeparator10" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class1/HBoxContainer"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="VSeparator" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="class2" type="PanelContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer/class2"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="smg" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_qi88y")
+expand_mode = 1
+
+[node name="HSeparator3" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="pistol" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator4" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="class2" type="Label" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+layout_mode = 2
+text = "Class2"
+label_settings = SubResource("LabelSettings_qi88y")
+
+[node name="HSeparator9" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class2/HBoxContainer2"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="VSeparator2" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="class3" type="PanelContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer/class3"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="shotgun" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("9_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator4" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="pistol" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator5" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="class3" type="Label" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+layout_mode = 2
+text = "Class3"
+label_settings = SubResource("LabelSettings_qi88y")
+
+[node name="HSeparator8" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class3/HBoxContainer3"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="VSeparator3" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="class4" type="PanelContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer/class4"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="sniper" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("10_2oqmc")
+expand_mode = 1
+
+[node name="HSeparator5" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="pistol" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator6" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="class4" type="Label" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+layout_mode = 2
+text = "Class4"
+label_settings = SubResource("LabelSettings_qi88y")
+
+[node name="HSeparator7" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class4/HBoxContainer4"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="VSeparator4" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="class5" type="PanelContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_cux0y")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer/class5"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="machine_gun" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("11_sp6kg")
+expand_mode = 1
+
+[node name="HSeparator6" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="pistol" type="TextureRect" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(143.38, 78)
+layout_mode = 2
+texture = ExtResource("8_ja1mc")
+expand_mode = 1
+
+[node name="HSeparator7" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="class5" type="Label" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+layout_mode = 2
+text = "Class5"
+label_settings = SubResource("LabelSettings_qi88y")
+
+[node name="HSeparator8" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/class5/HBoxContainer5"]
+custom_minimum_size = Vector2(40.98, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2oqmc")
+
+[node name="VSeparator5" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(228.07, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="Button_cancel" type="Button" parent="weapons_change_class/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 70.09)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.156863, 0.584314, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qi88y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qi88y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qi88y")
+text = "Cancel"
+
+[node name="VSeparator6" type="VSeparator" parent="weapons_change_class/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ja1mc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_teyq6")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_p6csp")
+anim_player = NodePath("..")
+parameters/TimeScale/scale = 3.0
+parameters/Transition/current_state = "pause"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 0
+
+[connection signal="gui_input" from="button_panel/VBoxContainer/Label_resume" to="." method="_on_label_resume_gui_input"]
+[connection signal="mouse_entered" from="button_panel/VBoxContainer/Label_resume" to="." method="_on_label_resume_mouse_entered"]
+[connection signal="mouse_exited" from="button_panel/VBoxContainer/Label_resume" to="." method="_on_label_resume_mouse_exited"]
+[connection signal="gui_input" from="button_panel/VBoxContainer/Label_restart" to="." method="_on_label_restart_gui_input"]
+[connection signal="mouse_entered" from="button_panel/VBoxContainer/Label_restart" to="." method="_on_label_restart_mouse_entered"]
+[connection signal="mouse_exited" from="button_panel/VBoxContainer/Label_restart" to="." method="_on_label_restart_mouse_exited"]
+[connection signal="gui_input" from="button_panel/VBoxContainer/Label_change" to="." method="_on_label_change_gui_input"]
+[connection signal="mouse_entered" from="button_panel/VBoxContainer/Label_change" to="." method="_on_label_change_mouse_entered"]
+[connection signal="mouse_exited" from="button_panel/VBoxContainer/Label_change" to="." method="_on_label_change_mouse_exited"]
+[connection signal="gui_input" from="button_panel/VBoxContainer/Label_quit" to="." method="_on_label_quit_gui_input"]
+[connection signal="mouse_entered" from="button_panel/VBoxContainer/Label_quit" to="." method="_on_label_quit_mouse_entered"]
+[connection signal="mouse_exited" from="button_panel/VBoxContainer/Label_quit" to="." method="_on_label_quit_mouse_exited"]
+[connection signal="gui_input" from="button_panel/VBoxContainer/Label_shutdown" to="." method="_on_label_shutdown_gui_input"]
+[connection signal="mouse_entered" from="button_panel/VBoxContainer/Label_shutdown" to="." method="_on_label_shutdown_mouse_entered"]
+[connection signal="mouse_exited" from="button_panel/VBoxContainer/Label_shutdown" to="." method="_on_label_shutdown_mouse_exited"]
+[connection signal="gui_input" from="weapons_change_class/MarginContainer/VBoxContainer/class1" to="." method="_on_class_1_gui_input"]
+[connection signal="mouse_entered" from="weapons_change_class/MarginContainer/VBoxContainer/class1" to="." method="_on_class_1_mouse_entered"]
+[connection signal="mouse_exited" from="weapons_change_class/MarginContainer/VBoxContainer/class1" to="." method="_on_class_1_mouse_exited"]
+[connection signal="gui_input" from="weapons_change_class/MarginContainer/VBoxContainer/class2" to="." method="_on_class_2_gui_input"]
+[connection signal="mouse_entered" from="weapons_change_class/MarginContainer/VBoxContainer/class2" to="." method="_on_class_2_mouse_entered"]
+[connection signal="mouse_exited" from="weapons_change_class/MarginContainer/VBoxContainer/class2" to="." method="_on_class_2_mouse_exited"]
+[connection signal="gui_input" from="weapons_change_class/MarginContainer/VBoxContainer/class3" to="." method="_on_class_3_gui_input"]
+[connection signal="mouse_entered" from="weapons_change_class/MarginContainer/VBoxContainer/class3" to="." method="_on_class_3_mouse_entered"]
+[connection signal="mouse_exited" from="weapons_change_class/MarginContainer/VBoxContainer/class3" to="." method="_on_class_3_mouse_exited"]
+[connection signal="gui_input" from="weapons_change_class/MarginContainer/VBoxContainer/class4" to="." method="_on_class_4_gui_input"]
+[connection signal="mouse_entered" from="weapons_change_class/MarginContainer/VBoxContainer/class4" to="." method="_on_class_4_mouse_entered"]
+[connection signal="mouse_exited" from="weapons_change_class/MarginContainer/VBoxContainer/class4" to="." method="_on_class_4_mouse_exited"]
+[connection signal="gui_input" from="weapons_change_class/MarginContainer/VBoxContainer/class5" to="." method="_on_class_5_gui_input"]
+[connection signal="mouse_entered" from="weapons_change_class/MarginContainer/VBoxContainer/class5" to="." method="_on_class_5_mouse_entered"]
+[connection signal="mouse_exited" from="weapons_change_class/MarginContainer/VBoxContainer/class5" to="." method="_on_class_5_mouse_exited"]
+[connection signal="button_down" from="weapons_change_class/MarginContainer/VBoxContainer/HBoxContainer/Button_cancel" to="." method="_on_button__wp_cancel_button_down"]

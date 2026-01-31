@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b10dswjku248x"]
+
+[ext_resource type="Texture2D" uid="uid://psro1teall55" path="res://assets/scenes/office/pencil/low_256/pencil_Base_color.png" id="1_2t318"]
+[ext_resource type="Texture2D" uid="uid://dvw8coc3l02jq" path="res://assets/scenes/office/pencil/low_256/pencil_Metallic.png" id="2_f6cvf"]
+[ext_resource type="Texture2D" uid="uid://g2x224kadvrw" path="res://assets/scenes/office/pencil/low_256/pencil_Normal_OpenGL.png" id="3_7nghl"]
+[ext_resource type="Texture2D" uid="uid://c7im86qjbdnet" path="res://assets/scenes/office/pencil/low_256/pencil_Roughness.png" id="4_i4ckb"]
+
+[resource]
+albedo_texture = ExtResource("1_2t318")
+metallic = 1.0
+metallic_texture = ExtResource("2_f6cvf")
+roughness_texture = ExtResource("4_i4ckb")
+normal_enabled = true
+normal_texture = ExtResource("3_7nghl")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d33vh1nhal0j0"]
+
+[ext_resource type="Script" uid="uid://cthofamkqt3yt" path="res://assets/particles/pistol_shoot_fire_3_rd.gd" id="1_5d7af"]
+[ext_resource type="Texture2D" uid="uid://c0o8tk88i1ao4" path="res://assets/Kenney's_assets/PNG/Explosion/explosion05.png" id="2_70bhk"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5d7af"]
+emission_shape = 1
+emission_sphere_radius = 0.05
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 15.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h577g"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(5, 5, 5, 1)
+albedo_texture = ExtResource("2_70bhk")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_70bhk"]
+material = SubResource("StandardMaterial3D_h577g")
+size = Vector2(0.2, 0.2)
+
+[node name="pistol_shoot_fire" type="Node3D" unique_id=1598080104]
+script = ExtResource("1_5d7af")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1928243166]
+layers = 9
+cast_shadow = 3
+emitting = false
+amount = 20
+lifetime = 0.1
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_5d7af")
+draw_pass_1 = SubResource("QuadMesh_70bhk")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

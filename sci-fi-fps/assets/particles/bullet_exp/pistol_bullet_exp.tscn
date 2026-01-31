@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://bse28r0c12oo7"]
+
+[ext_resource type="Script" uid="uid://cshd24xwtpgig" path="res://assets/particles/bullet_exp/pistol_bullet_exp.gd" id="1_jpr54"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rkroo"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 5.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 10.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpr54"]
+load_path = "res://.godot/imported/flash04.png-2ecb072bf51325d91c5fb486abbace8e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnof7"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 4, 4, 1)
+albedo_texture = SubResource("CompressedTexture2D_jpr54")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_d85k0"]
+material = SubResource("StandardMaterial3D_wnof7")
+size = Vector2(0.3, 0.2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0bybu"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h32nu"]
+load_path = "res://.godot/imported/explosion03.png-39e5b4d598fdbff24b32e03e5c2fc4d9.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j16vq"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(4, 4, 4, 1)
+albedo_texture = SubResource("CompressedTexture2D_h32nu")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_seogr"]
+material = SubResource("StandardMaterial3D_j16vq")
+size = Vector2(0.1, 0.1)
+
+[node name="rifle_bullet_exp" type="Node3D"]
+script = ExtResource("1_jpr54")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 128
+emitting = false
+amount = 15
+lifetime = 0.3
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_rkroo")
+draw_pass_1 = SubResource("QuadMesh_d85k0")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="GPUParticles3D"]
+layers = 128
+emitting = false
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource("ParticleProcessMaterial_0bybu")
+draw_pass_1 = SubResource("QuadMesh_seogr")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]
+[connection signal="finished" from="GPUParticles3D/GPUParticles3D2" to="." method="_on_gpu_particles_3d_2_finished"]

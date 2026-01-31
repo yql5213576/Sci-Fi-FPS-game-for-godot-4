@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dm3m2j4snij52"]
+
+[ext_resource type="Texture2D" uid="uid://geuc78eav2a0" path="res://assets/scenes/office/coffee_machine/low_512/coffee_machine1_Base_color.png" id="1_ra2ke"]
+[ext_resource type="Texture2D" uid="uid://bca71m8x4v2rn" path="res://assets/scenes/office/coffee_machine/low_512/coffee_machine1_Metallic.png" id="2_7lguv"]
+[ext_resource type="Texture2D" uid="uid://liusp7l1wggw" path="res://assets/scenes/office/coffee_machine/low_512/coffee_machine1_Normal_OpenGL.png" id="3_mukq2"]
+[ext_resource type="Texture2D" uid="uid://dd7jf4hgic0l2" path="res://assets/scenes/office/coffee_machine/low_512/coffee_machine1_Roughness.png" id="4_wbpin"]
+
+[resource]
+albedo_texture = ExtResource("1_ra2ke")
+metallic = 1.0
+metallic_texture = ExtResource("2_7lguv")
+roughness_texture = ExtResource("4_wbpin")
+normal_enabled = true
+normal_texture = ExtResource("3_mukq2")
+clearcoat_enabled = true

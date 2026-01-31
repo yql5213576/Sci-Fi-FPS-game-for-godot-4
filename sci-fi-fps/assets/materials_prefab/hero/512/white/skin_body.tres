@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://15xxyoo4cm8f"]
+
+[ext_resource type="Texture2D" uid="uid://c0deoqa3uubme" path="res://assets/player/textures/player/white/low_512/skin_body_Base_color.png" id="1_f1xyj"]
+[ext_resource type="Texture2D" uid="uid://bkehtjj2rs4id" path="res://assets/player/textures/player/white/low_512/skin_body_Metallic.png" id="2_wc3b3"]
+[ext_resource type="Texture2D" uid="uid://qeyvlmsijjlm" path="res://assets/player/textures/player/white/low_512/skin_body_Normal_OpenGL.png" id="3_nm5ch"]
+[ext_resource type="Texture2D" uid="uid://uu2wwliukbvm" path="res://assets/player/textures/player/white/low_512/skin_body_Roughness.png" id="4_e111h"]
+
+[resource]
+albedo_texture = ExtResource("1_f1xyj")
+metallic = 1.0
+metallic_texture = ExtResource("2_wc3b3")
+roughness_texture = ExtResource("4_e111h")
+normal_enabled = true
+normal_texture = ExtResource("3_nm5ch")
+clearcoat_enabled = true

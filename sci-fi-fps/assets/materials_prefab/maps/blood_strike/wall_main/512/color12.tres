@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://jmp0rv2e58hu"]
+
+[ext_resource type="Texture2D" uid="uid://r7i712nu6a6y" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/low_512/color12_Base_color.png" id="1_ebk8p"]
+[ext_resource type="Texture2D" uid="uid://c60updaoju12t" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/low_512/color12_Metallic.png" id="2_utig5"]
+[ext_resource type="Texture2D" uid="uid://bqur4ccgicpgp" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/low_512/color12_Normal_OpenGL.png" id="3_qc1uc"]
+[ext_resource type="Texture2D" uid="uid://btgveydesd3df" path="res://assets/scenes/main_game_scenes/blood_strike/wall_main/low_512/color12_Roughness.png" id="4_r3uvm"]
+
+[resource]
+albedo_texture = ExtResource("1_ebk8p")
+metallic = 1.0
+metallic_texture = ExtResource("2_utig5")
+roughness_texture = ExtResource("4_r3uvm")
+normal_enabled = true
+normal_texture = ExtResource("3_qc1uc")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://brugjdnc0kyub"]
+
+[ext_resource type="Texture2D" uid="uid://44isf77femna" path="res://assets/scenes/space_station/chair2/low_512/chair3_Base_color.png" id="1_3b20h"]
+[ext_resource type="Texture2D" uid="uid://chutbitnl8im7" path="res://assets/scenes/space_station/chair2/low_512/chair3_Metallic.png" id="2_hvuom"]
+[ext_resource type="Texture2D" uid="uid://cstjdbccqva7b" path="res://assets/scenes/space_station/chair2/low_512/chair3_Normal_OpenGL.png" id="3_165tp"]
+[ext_resource type="Texture2D" uid="uid://7sety7ctecoi" path="res://assets/scenes/space_station/chair2/low_512/chair3_Roughness.png" id="4_4wfkx"]
+
+[resource]
+albedo_texture = ExtResource("1_3b20h")
+metallic = 1.0
+metallic_texture = ExtResource("2_hvuom")
+roughness_texture = ExtResource("4_4wfkx")
+normal_enabled = true
+normal_texture = ExtResource("3_165tp")
+anisotropy_enabled = true

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ddb0l7l88qfaa"]
+
+[ext_resource type="Texture2D" uid="uid://c8oirxy386yav" path="res://assets/scenes/office/chair2/low_1024/sofa_Base_color.png" id="1_iino3"]
+[ext_resource type="Texture2D" uid="uid://c861jchce7b5b" path="res://assets/scenes/office/chair2/low_1024/sofa_Metallic.png" id="2_qur8k"]
+[ext_resource type="Texture2D" uid="uid://dfldfphn1uka6" path="res://assets/scenes/office/chair2/low_1024/sofa_Normal_OpenGL.png" id="3_ghar5"]
+[ext_resource type="Texture2D" uid="uid://lfymnf262xh4" path="res://assets/scenes/office/chair2/low_1024/sofa_Roughness.png" id="4_p822f"]
+
+[resource]
+albedo_texture = ExtResource("1_iino3")
+metallic = 1.0
+metallic_texture = ExtResource("2_qur8k")
+roughness_texture = ExtResource("4_p822f")
+normal_enabled = true
+normal_texture = ExtResource("3_ghar5")
+rim_enabled = true
+anisotropy_enabled = true
