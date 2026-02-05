@@ -1,0 +1,216 @@
+[gd_scene load_steps=29 format=3 uid="uid://dpoisxus35rkv"]
+
+[ext_resource type="Script" uid="uid://c2dxl2p1athy5" path="res://assets/particles/grenade_exp/grenade_exp.gd" id="1_gotp0"]
+[ext_resource type="Texture2D" uid="uid://cy31ubb82hpvv" path="res://assets/Kenney's_assets/PNG/Explosion/explosion02.png" id="1_w8n5c"]
+[ext_resource type="AudioStream" uid="uid://b17f3nm0utgq4" path="res://assets/audios/爆発2.ogg" id="3_kbqbi"]
+
+[sub_resource type="Gradient" id="Gradient_w8n5c"]
+offsets = PackedFloat32Array(0.36102235, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gotp0"]
+gradient = SubResource("Gradient_w8n5c")
+
+[sub_resource type="Curve" id="Curve_w8n5c"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24483775, 1), 0.0, 0.0, 0, 0, Vector2(0.7492626, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_gotp0"]
+curve = SubResource("Curve_w8n5c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n5cyh"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+gravity = Vector3(0, 9, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 35.929996
+scale_curve = SubResource("CurveTexture_gotp0")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_gotp0")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0dil1"]
+load_path = "res://.godot/imported/blackSmoke00.png-6016b13629d004f4f22eaf48cc91df93.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_roe3w"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gmwu1"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km1n8"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.60800004)
+albedo_texture = SubResource("CompressedTexture2D_0dil1")
+emission_energy_multiplier = 10.0
+emission_texture = SubResource("CompressedTexture2D_gmwu1")
+subsurf_scatter_strength = 0.3
+backlight_texture = SubResource("CompressedTexture2D_roe3w")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gmw7f"]
+material = SubResource("StandardMaterial3D_km1n8")
+size = Vector2(8, 8)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gotp0"]
+emission_shape = 1
+emission_sphere_radius = 3.0
+gravity = Vector3(0, 5, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 19.999998
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 7.9999976
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kbqbi"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puk5o"]
+transparency = 1
+albedo_color = Color(4.954765, 4.954765, 4.954765, 0.60800004)
+albedo_texture = ExtResource("1_w8n5c")
+emission_enabled = true
+emission_energy_multiplier = 10.0
+emission_texture = ExtResource("1_w8n5c")
+subsurf_scatter_strength = 0.3
+backlight_texture = SubResource("CompressedTexture2D_kbqbi")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_wrqnm"]
+material = SubResource("StandardMaterial3D_puk5o")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_kbqbi"]
+offsets = PackedFloat32Array(0, 0.50479233, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_puk5o"]
+gradient = SubResource("Gradient_kbqbi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_puk5o"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 4.9999976
+color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+color_ramp = SubResource("GradientTexture1D_puk5o")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5svhq"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jh6yk"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fdoa7"]
+load_path = "res://.godot/imported/explosion00.png-76fb8c32b8e9fbc992c2c11a7d6dbc85.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0qys"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(10.5787325, 10.5787325, 10.5787325, 0.51900005)
+albedo_texture = SubResource("CompressedTexture2D_5svhq")
+emission_enabled = true
+emission_energy_multiplier = 10.0
+emission_texture = SubResource("CompressedTexture2D_fdoa7")
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = SubResource("CompressedTexture2D_jh6yk")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_1g37y"]
+material = SubResource("StandardMaterial3D_y0qys")
+size = Vector2(7, 7)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kbqbi"]
+radius = 2.6378899
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_puk5o"]
+radius = 5.011121
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wrqnm"]
+radius = 8.38611
+
+[node name="grenade_exp" type="Node3D"]
+script = ExtResource("1_gotp0")
+
+[node name="smoke2" type="GPUParticles3D" parent="."]
+layers = 128
+sorting_offset = 1.0
+emitting = false
+amount = 30
+one_shot = true
+speed_scale = 2.0
+visibility_aabb = AABB(-7.63, -7.85, -6.075, 15.875, 30.445, 12.975)
+process_material = SubResource("ParticleProcessMaterial_n5cyh")
+draw_pass_1 = SubResource("QuadMesh_gmw7f")
+
+[node name="fire_sm" type="GPUParticles3D" parent="."]
+layers = 128
+sorting_offset = 1.0
+gi_lightmap_texel_scale = 0.01
+emitting = false
+amount = 20
+lifetime = 1.2
+one_shot = true
+speed_scale = 3.45
+explosiveness = 1.0
+visibility_aabb = AABB(-12.605, -7.85, -12.64, 26.405, 30.445, 24.8)
+process_material = SubResource("ParticleProcessMaterial_gotp0")
+draw_pass_1 = SubResource("QuadMesh_wrqnm")
+
+[node name="fire2" type="GPUParticles3D" parent="."]
+layers = 128
+emitting = false
+amount = 40
+lifetime = 1.5
+one_shot = true
+speed_scale = 4.0
+explosiveness = 1.0
+visibility_aabb = AABB(-9.23, -7.85, -8.365, 19.52, 30.445, 16.47)
+process_material = SubResource("ParticleProcessMaterial_puk5o")
+draw_pass_1 = SubResource("QuadMesh_1g37y")
+
+[node name="exp_audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_kbqbi")
+volume_db = 2.0
+autoplay = true
+
+[node name="Area3D1" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D1"]
+shape = SubResource("SphereShape3D_kbqbi")
+
+[node name="Area3D2" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("SphereShape3D_puk5o")
+
+[node name="Area3D3" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+shape = SubResource("SphereShape3D_wrqnm")
+
+[connection signal="finished" from="smoke2" to="." method="_on_smoke_2_finished"]
+[connection signal="finished" from="fire_sm" to="." method="_on_fire_sm_finished"]
+[connection signal="finished" from="fire2" to="." method="_on_fire_2_finished"]
+[connection signal="finished" from="exp_audio" to="." method="_on_exp_audio_finished"]
+[connection signal="body_entered" from="Area3D1" to="." method="_on_area_3d_1_body_entered"]
+[connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]
+[connection signal="body_entered" from="Area3D3" to="." method="_on_area_3d_3_body_entered"]

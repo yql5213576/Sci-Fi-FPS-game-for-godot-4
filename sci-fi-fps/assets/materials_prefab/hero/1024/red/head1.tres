@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://60tqaf5ecjvu"]
+
+[ext_resource type="Texture2D" uid="uid://r03bqpl7mxms" path="res://assets/player/textures/player/red/low_1024/head_main_Base_color.png" id="1_1x4in"]
+[ext_resource type="Texture2D" uid="uid://d1jcq7oqnw2bu" path="res://assets/player/textures/player/red/low_1024/head_main_Metallic.png" id="2_0cwq0"]
+[ext_resource type="Texture2D" uid="uid://il3271ccqi4o" path="res://assets/player/textures/player/red/low_1024/head_main_Normal_OpenGL.png" id="3_ye37p"]
+[ext_resource type="Texture2D" uid="uid://bsigb2tvuyuf0" path="res://assets/player/textures/player/red/low_1024/head_main_Roughness.png" id="4_yw7h8"]
+
+[resource]
+albedo_texture = ExtResource("1_1x4in")
+metallic = 1.0
+metallic_texture = ExtResource("2_0cwq0")
+roughness_texture = ExtResource("4_yw7h8")
+normal_enabled = true
+normal_texture = ExtResource("3_ye37p")
+clearcoat_enabled = true

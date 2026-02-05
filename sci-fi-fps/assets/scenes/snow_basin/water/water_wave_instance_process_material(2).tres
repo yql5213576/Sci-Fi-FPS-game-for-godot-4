@@ -1,0 +1,19 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://skdev2ibobsd"]
+
+[sub_resource type="Gradient" id="Gradient_pyj5e"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l54xx"]
+gradient = SubResource("Gradient_pyj5e")
+
+[resource]
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 10, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 49.999996
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 9.799997
+color = Color(1, 1, 1, 0)
+color_ramp = SubResource("GradientTexture1D_l54xx")
+collision_mode = 2

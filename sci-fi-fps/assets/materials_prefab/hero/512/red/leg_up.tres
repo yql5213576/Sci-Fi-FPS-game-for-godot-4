@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c8lxq2ug3xrwc"]
+
+[ext_resource type="Texture2D" uid="uid://d1tpjgnwkkn3p" path="res://assets/player/textures/player/red/low_512/armor_leg_up_Base_color.png" id="1_7jb5v"]
+[ext_resource type="Texture2D" uid="uid://dkv3lnvjqhjto" path="res://assets/player/textures/player/red/low_512/armor_leg_up_Metallic.png" id="2_3mqlj"]
+[ext_resource type="Texture2D" uid="uid://c6dhymrkhi341" path="res://assets/player/textures/player/red/low_512/armor_leg_up_Normal_OpenGL.png" id="3_jpa0o"]
+[ext_resource type="Texture2D" uid="uid://bxqcrehg1oldk" path="res://assets/player/textures/player/red/low_512/armor_leg_up_Roughness.png" id="4_ch2qu"]
+
+[resource]
+albedo_texture = ExtResource("1_7jb5v")
+metallic = 1.0
+metallic_texture = ExtResource("2_3mqlj")
+roughness_texture = ExtResource("4_ch2qu")
+normal_enabled = true
+normal_texture = ExtResource("3_jpa0o")
+clearcoat_enabled = true

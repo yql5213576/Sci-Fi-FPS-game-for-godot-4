@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dob53x2g48jjg"
+path="res://.godot/imported/shotguncock.wav-891da29121e67af6d5fee025c4dac559.sample"
+
+[deps]
+
+source_file="res://assets/audios/Gun reload sounds/1/shotguncock.wav"
+dest_files=["res://.godot/imported/shotguncock.wav-891da29121e67af6d5fee025c4dac559.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

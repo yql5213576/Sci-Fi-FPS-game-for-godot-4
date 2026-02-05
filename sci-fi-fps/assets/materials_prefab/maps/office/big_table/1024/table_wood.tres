@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dusulw5ylls8b"]
+
+[ext_resource type="Texture2D" uid="uid://bi21l8tubjmf8" path="res://assets/scenes/office/big_table/low_1024/table_wood_Base_color.png" id="1_2tyn8"]
+[ext_resource type="Texture2D" uid="uid://bwvs0safoetwg" path="res://assets/scenes/office/big_table/low_1024/table_wood_Metallic.png" id="2_rig1d"]
+[ext_resource type="Texture2D" uid="uid://ckpdmblidlcoc" path="res://assets/scenes/office/big_table/low_1024/table_wood_Normal_OpenGL.png" id="3_2mupn"]
+[ext_resource type="Texture2D" uid="uid://dpnqkrn5scygt" path="res://assets/scenes/office/big_table/low_1024/table_wood_Roughness.png" id="4_nqbt0"]
+
+[resource]
+albedo_texture = ExtResource("1_2tyn8")
+metallic = 1.0
+metallic_texture = ExtResource("2_rig1d")
+roughness_texture = ExtResource("4_nqbt0")
+normal_enabled = true
+normal_texture = ExtResource("3_2mupn")
+clearcoat_enabled = true

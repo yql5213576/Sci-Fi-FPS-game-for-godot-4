@@ -1,0 +1,26 @@
+[gd_resource type="Environment" format=3 uid="uid://cbbgheartl87v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_teogu"]
+load_path = "res://.godot/imported/qwantani_night_puresky_8k.hdr-cb0d8c6bec0e7ba0967f738d206d2c42.bptc.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wur0s"]
+panorama = SubResource("CompressedTexture2D_teogu")
+energy_multiplier = 0.05
+
+[sub_resource type="Sky" id="Sky_rbm0v"]
+sky_material = SubResource("PanoramaSkyMaterial_wur0s")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_rbm0v")
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_length = 25.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dw4xrj4jbucgk"]
+
+[ext_resource type="Texture2D" uid="uid://5s7p2xfcei37" path="res://assets/scenes/space_station/flowerpot/low_1024/soil_Base_color.png" id="1_jmrwy"]
+[ext_resource type="Texture2D" uid="uid://baw82nsbe6dpa" path="res://assets/scenes/space_station/flowerpot/low_1024/soil_Metallic.png" id="2_836xk"]
+[ext_resource type="Texture2D" uid="uid://db1nkq2tvhx1q" path="res://assets/scenes/space_station/flowerpot/low_1024/soil_Normal_OpenGL.png" id="3_fd88n"]
+[ext_resource type="Texture2D" uid="uid://bykmg2c5p6jn8" path="res://assets/scenes/space_station/flowerpot/low_1024/soil_Roughness.png" id="4_yxumf"]
+
+[resource]
+albedo_texture = ExtResource("1_jmrwy")
+metallic = 1.0
+metallic_texture = ExtResource("2_836xk")
+roughness_texture = ExtResource("4_yxumf")
+normal_enabled = true
+normal_texture = ExtResource("3_fd88n")
+rim_enabled = true
+anisotropy_enabled = true

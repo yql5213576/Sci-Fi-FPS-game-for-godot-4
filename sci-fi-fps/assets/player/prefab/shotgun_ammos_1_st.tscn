@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd8u32g53h5pg"]
+
+[ext_resource type="Script" uid="uid://xj4e7s51vqgv" path="res://assets/player/scripts/shotgun_ammos_1_st.gd" id="1_2c01v"]
+[ext_resource type="Texture2D" uid="uid://c6644jhbn03o4" path="res://assets/Kenney's_assets/PNG/White puff/whitePuff00.png" id="2_hj2so"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcdvw"]
+shading_mode = 0
+albedo_color = Color(4, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2c01v"]
+material = SubResource("StandardMaterial3D_pcdvw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xiww3"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, 0, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp4g5"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.061)
+albedo_texture = ExtResource("2_hj2so")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_vyien"]
+material = SubResource("StandardMaterial3D_gp4g5")
+
+[node name="shotgun_ammos_1st" type="Node3D"]
+script = ExtResource("1_2c01v")
+
+[node name="ammo_center" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ammo_center"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_rd" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, -9.1325e-05, -0.0026152, 0, 0.0499696, -0.00174497, 0.0026168, 0.00174258, 0.049901, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="ammo_rd"]
+transform = Transform3D(19.9726, 1.09139e-07, 1.04672, -0.0365299, 19.9878, 0.697031, -1.04608, -0.697989, 19.9604, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_ru" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, 9.1325e-05, -0.0026152, 0, 0.0499696, 0.00174497, 0.0026168, -0.00174258, 0.049901, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="ammo_ru"]
+transform = Transform3D(19.9726, -1.08388e-07, 1.04672, 0.0365299, 19.9878, -0.697031, -1.04608, 0.697988, 19.9604, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_ld" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, 9.1325e-05, 0.0026152, 0, 0.0499696, -0.00174497, -0.0026168, 0.00174258, 0.049901, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="ammo_ld"]
+transform = Transform3D(19.9726, -1.06814e-07, -1.04672, 0.0365299, 19.9878, 0.697031, 1.04608, -0.697988, 19.9604, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_lu" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, -9.1325e-05, 0.0026152, 0, 0.0499696, 0.00174497, -0.0026168, -0.00174258, 0.049901, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="ammo_lu"]
+transform = Transform3D(19.9726, 1.13039e-07, -1.04672, -0.0365299, 19.9878, -0.697031, 1.04608, 0.697988, 19.9604, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_left" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, 0, 0.0026168, 0, 0.05, 0, -0.0026168, 0, 0.0499315, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D6" type="GPUParticles3D" parent="ammo_left"]
+transform = Transform3D(19.9726, 7.50897e-10, -1.04672, 4.65661e-09, 20, 0, 1.04672, 7.46474e-08, 19.9726, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_right" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499315, 0, -0.0026168, 0, 0.05, 0, 0.0026168, 0, 0.0499315, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D7" type="GPUParticles3D" parent="ammo_right"]
+transform = Transform3D(19.9726, 8.54956e-09, 1.04672, 4.65661e-09, 20, 0, -1.04672, 7.416e-08, 19.9726, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_up" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.0499315, 0.0026168, 0, -0.0026168, 0.0499315, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D8" type="GPUParticles3D" parent="ammo_up"]
+transform = Transform3D(20, 4.65661e-09, 1.49012e-07, 7.50898e-10, 19.9726, -1.04672, 7.46474e-08, 1.04672, 19.9726, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")
+
+[node name="ammo_down" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.0499315, -0.0026168, 0, 0.0026168, 0.0499315, 0, 0, 0)
+layers = 64
+mesh = SubResource("SphereMesh_2c01v")
+
+[node name="GPUParticles3D9" type="GPUParticles3D" parent="ammo_down"]
+transform = Transform3D(20, 4.65661e-09, 1.49012e-07, 8.54956e-09, 19.9726, 1.04672, 7.41599e-08, -1.04672, 19.9726, 0, 0, 0)
+layers = 64
+process_material = SubResource("ParticleProcessMaterial_xiww3")
+draw_pass_1 = SubResource("QuadMesh_vyien")

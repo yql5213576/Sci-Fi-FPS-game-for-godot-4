@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bymoonaqktcss"]
+
+[ext_resource type="Texture2D" uid="uid://evyyuffq84r8" path="res://assets/player/textures/pistol/low_1024/gun_main9_Base_color.png" id="1_uomu5"]
+[ext_resource type="Texture2D" uid="uid://cj7nra7yfol3g" path="res://assets/player/textures/pistol/low_1024/gun_main9_Metallic.png" id="2_cdlro"]
+[ext_resource type="Texture2D" uid="uid://nde6rjvyfn3a" path="res://assets/player/textures/pistol/low_1024/gun_main9_Normal_OpenGL.png" id="3_q031b"]
+[ext_resource type="Texture2D" uid="uid://ct2xbc4jma12b" path="res://assets/player/textures/pistol/low_1024/gun_main9_Roughness.png" id="4_fct5h"]
+
+[resource]
+albedo_texture = ExtResource("1_uomu5")
+metallic = 1.0
+metallic_texture = ExtResource("2_cdlro")
+roughness_texture = ExtResource("4_fct5h")
+normal_enabled = true
+normal_texture = ExtResource("3_q031b")
+clearcoat_enabled = true

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://fowbr7wx5h5v"]
+
+[ext_resource type="Script" uid="uid://cm8p5kqkvnahh" path="res://assets/particles/player_blood.gd" id="1_qijb7"]
+[ext_resource type="Texture2D" uid="uid://xkxlu82pv1yb" path="res://assets/my_UI/blood.png" id="2_byaix"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6gu2o"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -4.6
+linear_accel_max = 20.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 10.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byaix"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_byaix")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_6gu2o"]
+material = SubResource("StandardMaterial3D_byaix")
+size = Vector2(0.5, 0.5)
+
+[node name="player_blood" type="Node3D" unique_id=460784726]
+script = ExtResource("1_qijb7")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=724734888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00738525, 0, 0.00402832)
+layers = 128
+emitting = false
+amount = 50
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_6gu2o")
+draw_pass_1 = SubResource("QuadMesh_6gu2o")
+
+[connection signal="finished" from="GPUParticles3D" to="." method="_on_gpu_particles_3d_finished"]

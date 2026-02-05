@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxaltuahi76b"]
+
+[ext_resource type="PackedScene" uid="uid://dvrf6pr2dl0li" path="res://assets/scenes/office/table1/table_2.tscn" id="1_dd3b7"]
+[ext_resource type="PackedScene" uid="uid://bi8cwb6clqqyj" path="res://assets/scenes/office/book1/book_1.tscn" id="2_15hjv"]
+[ext_resource type="PackedScene" uid="uid://cgg4d2d5tdnyd" path="res://assets/scenes/office/coffee_machine/coffee_machine.tscn" id="3_50v38"]
+[ext_resource type="PackedScene" uid="uid://byh0ms4ebotjm" path="res://assets/scenes/office/cup/cup_2.tscn" id="4_k4156"]
+[ext_resource type="PackedScene" uid="uid://bb20bjjpp7si7" path="res://assets/scenes/office/pen_container/pen_container_2.tscn" id="5_aasci"]
+[ext_resource type="PackedScene" uid="uid://cvna4hacme1vi" path="res://assets/scenes/office/pencil/pencil_2.tscn" id="6_0kwuj"]
+[ext_resource type="PackedScene" uid="uid://5whxanfflcb6" path="res://assets/scenes/office/gel_pen/gel_pen_2.tscn" id="7_2mube"]
+[ext_resource type="PackedScene" uid="uid://do3tlfevpxg11" path="res://assets/scenes/office/mineral_water/mineral_water_2.tscn" id="8_6aaya"]
+
+[node name="bookcase1" type="Node3D"]
+
+[node name="table2" parent="." instance=ExtResource("1_dd3b7")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="book1" parent="." instance=ExtResource("2_15hjv")]
+
+[node name="book2" parent="." instance=ExtResource("2_15hjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885676, 0, 0)
+
+[node name="book3" parent="." instance=ExtResource("2_15hjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42172426, 0, 0)
+
+[node name="coffee_machine" parent="." instance=ExtResource("3_50v38")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 1.7560911, 1.61222, 0)
+
+[node name="cup2" parent="." instance=ExtResource("4_k4156")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7540827, 1.4423783, 0.09204727)
+
+[node name="pen_container" parent="." instance=ExtResource("5_aasci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5638384, 1.3227679, 0)
+
+[node name="pencil2" parent="." instance=ExtResource("6_0kwuj")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -1.5980619, 1.54551, -0.07717505)
+
+[node name="gel_pen2" parent="." instance=ExtResource("7_2mube")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5415512, 1.4682416, 0)
+
+[node name="mineral_water2" parent="." instance=ExtResource("8_6aaya")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.954108, 1.2600439, 0.000436)

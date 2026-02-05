@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dwnmncmthtl3l"]
+
+[ext_resource type="Texture2D" uid="uid://dno2alneicvm4" path="res://assets/scenes/office/chair/low_256/chair1_Base_color.png" id="1_ss1yi"]
+[ext_resource type="Texture2D" uid="uid://coi0r50o0aq1x" path="res://assets/scenes/office/chair/low_256/chair1_Metallic.png" id="2_mpkxq"]
+[ext_resource type="Texture2D" uid="uid://c50p4e8dsffon" path="res://assets/scenes/office/chair/low_256/chair1_Normal_OpenGL.png" id="3_c88ll"]
+[ext_resource type="Texture2D" uid="uid://bai1yavmbc5hr" path="res://assets/scenes/office/chair/low_256/chair1_Roughness.png" id="4_ghivc"]
+
+[resource]
+albedo_texture = ExtResource("1_ss1yi")
+metallic = 1.0
+metallic_texture = ExtResource("2_mpkxq")
+roughness_texture = ExtResource("4_ghivc")
+normal_enabled = true
+normal_texture = ExtResource("3_c88ll")
+rim_enabled = true

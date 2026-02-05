@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dsdp36daq2dg2"]
+
+[ext_resource type="Texture2D" uid="uid://bbhpgfrlvh534" path="res://assets/scenes/office/door/low_256/door_handle_Base_color.png" id="1_d44xr"]
+[ext_resource type="Texture2D" uid="uid://4bqmc75xdeum" path="res://assets/scenes/office/door/low_256/door_handle_Metallic.png" id="2_m1db3"]
+[ext_resource type="Texture2D" uid="uid://dr8lolq3g7tam" path="res://assets/scenes/office/door/low_256/door_handle_Normal_OpenGL.png" id="3_7kupg"]
+[ext_resource type="Texture2D" uid="uid://bd3xf3eyruckn" path="res://assets/scenes/office/door/low_256/door_handle_Roughness.png" id="4_nu2xv"]
+
+[resource]
+albedo_texture = ExtResource("1_d44xr")
+metallic = 1.0
+metallic_texture = ExtResource("2_m1db3")
+roughness_texture = ExtResource("4_nu2xv")
+normal_enabled = true
+normal_texture = ExtResource("3_7kupg")
+clearcoat_enabled = true

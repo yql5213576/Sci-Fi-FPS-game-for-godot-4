@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://duesbcbakd8da"]
+
+[ext_resource type="Texture2D" uid="uid://cauv5o2dxyp4u" path="res://assets/scenes/office/water_dispenser/low_256/blue_Base_color.png" id="1_frt4k"]
+[ext_resource type="Texture2D" uid="uid://or5on06f1q73" path="res://assets/scenes/office/water_dispenser/low_256/blue_Metallic.png" id="2_fhvr0"]
+[ext_resource type="Texture2D" uid="uid://b2jwl4fck0rt2" path="res://assets/scenes/office/water_dispenser/low_256/blue_Normal_OpenGL.png" id="3_ovk0n"]
+[ext_resource type="Texture2D" uid="uid://6v131m3q40c4" path="res://assets/scenes/office/water_dispenser/low_256/blue_Roughness.png" id="4_ruaw6"]
+
+[resource]
+albedo_texture = ExtResource("1_frt4k")
+metallic = 1.0
+metallic_texture = ExtResource("2_fhvr0")
+roughness_texture = ExtResource("4_ruaw6")
+normal_enabled = true
+normal_texture = ExtResource("3_ovk0n")
+clearcoat_enabled = true

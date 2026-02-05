@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b720ndjperegh"]
+
+[ext_resource type="Texture2D" uid="uid://cu0w5q3blxfnf" path="res://assets/player/textures/smg_ammo/low_256/smg_ammo_Base_color.png" id="1_o1t6k"]
+[ext_resource type="Texture2D" uid="uid://bnsg25yl76yy6" path="res://assets/player/textures/smg_ammo/low_256/smg_ammo_Metallic.png" id="2_ngda5"]
+[ext_resource type="Texture2D" uid="uid://bmvm3pth4p7j8" path="res://assets/player/textures/smg_ammo/low_256/smg_ammo_Normal_OpenGL.png" id="3_fnr4a"]
+[ext_resource type="Texture2D" uid="uid://c2po10ps5nd3o" path="res://assets/player/textures/smg_ammo/low_256/smg_ammo_Roughness.png" id="4_tw51f"]
+
+[resource]
+albedo_texture = ExtResource("1_o1t6k")
+metallic = 1.0
+metallic_texture = ExtResource("2_ngda5")
+roughness_texture = ExtResource("4_tw51f")
+normal_enabled = true
+normal_texture = ExtResource("3_fnr4a")
+clearcoat_enabled = true

@@ -1,0 +1,204 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://h8ujvriy0goq"
+path="res://.godot/imported/future_city_1.glb-0a8462ac845c900e7a18177ea26c7cc8.scn"
+
+[deps]
+
+source_file="res://assets/scenes/sketchfab's_test_scenes/future_city/future_city_1.glb"
+dest_files=["res://.godot/imported/future_city_1.glb-0a8462ac845c900e7a18177ea26c7cc8.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"01_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/01_-_Default.tres"
+},
+"01_-_Default_0": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/01_-_Default_0.tres"
+},
+"02_-_Default_b": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/02_-_Default_b.tres"
+},
+"03_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/03_-_Default.tres"
+},
+"05_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/05_-_Default.tres"
+},
+"07_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/07_-_Default.tres"
+},
+"11_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/11_-_Default.tres"
+},
+"11_-_Defaulth": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/11_-_Defaulth.tres"
+},
+"14_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/14_-_Default.tres"
+},
+"19_-_Defaultds": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/19_-_Defaultds.tres"
+},
+"1_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/1_-_Default.tres"
+},
+"8_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/8_-_Default.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material.002.tres"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material.007.tres"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material.008.tres"
+},
+"Material.009": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material.009.tres"
+},
+"Material.010": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material.010.tres"
+},
+"Material_16": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/Material_16.tres"
+},
+"amber": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/amber.tres"
+},
+"conc": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/conc.tres"
+},
+"conc1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/conc1.tres"
+},
+"conc1_0": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/conc1_0.tres"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/glass.tres"
+},
+"glass_2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/glass_2.tres"
+},
+"glass_3": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/glass_3.tres"
+},
+"glass_4a": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/glass_4a.tres"
+},
+"glass_4c": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/glass_4c.tres"
+},
+"green": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/green.tres"
+},
+"greenmarkings": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/greenmarkings.tres"
+},
+"led_light": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/led_light.tres"
+},
+"led_light_3": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/led_light_3.tres"
+},
+"light1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/light1.tres"
+},
+"light_7698": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/light_7698.tres"
+},
+"light_a1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/light_a1.tres"
+},
+"light_b": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/light_b.tres"
+},
+"material": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/material.tres"
+},
+"material_0": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/material_0.tres"
+},
+"metal_chr": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/metal_chr.tres"
+},
+"red1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/red1.tres"
+},
+"road": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/road.tres"
+},
+"sign2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/sketchfab's_test_scenes/future_city/sign2.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

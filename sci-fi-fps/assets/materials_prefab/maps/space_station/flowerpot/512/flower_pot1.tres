@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bo4c828ok106h"]
+
+[ext_resource type="Texture2D" uid="uid://y51h3vpn2fxx" path="res://assets/scenes/space_station/flowerpot/low_512/flowerpot1_Base_color.png" id="1_g8awi"]
+[ext_resource type="Texture2D" uid="uid://ivof1aj5ch" path="res://assets/scenes/space_station/flowerpot/low_512/flowerpot1_Metallic.png" id="2_y2jn2"]
+[ext_resource type="Texture2D" uid="uid://dxrqqoro5holy" path="res://assets/scenes/space_station/flowerpot/low_512/flowerpot1_Normal_OpenGL.png" id="3_jw5cs"]
+[ext_resource type="Texture2D" uid="uid://c7gfxjj5kmdan" path="res://assets/scenes/space_station/flowerpot/low_512/flowerpot1_Roughness.png" id="4_um510"]
+
+[resource]
+albedo_texture = ExtResource("1_g8awi")
+metallic = 1.0
+metallic_texture = ExtResource("2_y2jn2")
+roughness_texture = ExtResource("4_um510")
+normal_enabled = true
+normal_texture = ExtResource("3_jw5cs")
+clearcoat_enabled = true

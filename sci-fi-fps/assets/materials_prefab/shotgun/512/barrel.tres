@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bjnh1wprcw6f4"]
+
+[ext_resource type="Texture2D" uid="uid://bpdybttahycsm" path="res://assets/player/textures/shotgun/low_512/barrel_Base_color.png" id="1_re7bp"]
+[ext_resource type="Texture2D" uid="uid://dlkcn4bhmq72p" path="res://assets/player/textures/shotgun/low_512/barrel_Metallic.png" id="2_dwpo6"]
+[ext_resource type="Texture2D" uid="uid://brnm1057dkift" path="res://assets/player/textures/shotgun/low_512/barrel_Normal_OpenGL.png" id="3_2oxiw"]
+[ext_resource type="Texture2D" uid="uid://bnj86mk6xwc4i" path="res://assets/player/textures/shotgun/low_512/barrel_Roughness.png" id="4_xs2il"]
+
+[resource]
+albedo_texture = ExtResource("1_re7bp")
+metallic = 1.0
+metallic_texture = ExtResource("2_dwpo6")
+roughness_texture = ExtResource("4_xs2il")
+normal_enabled = true
+normal_texture = ExtResource("3_2oxiw")

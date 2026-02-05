@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://6bcm5uhw8ppi"]
+
+[ext_resource type="Texture2D" uid="uid://dd2kgr8wecf3f" path="res://assets/player/textures/shotgun/low_512/gun_body6_Base_color.png" id="1_fhq8r"]
+[ext_resource type="Texture2D" uid="uid://d23is7smrdusd" path="res://assets/player/textures/shotgun/low_512/gun_body6_Metallic.png" id="2_h4a6r"]
+[ext_resource type="Texture2D" uid="uid://bcy0g3igwio2k" path="res://assets/player/textures/shotgun/low_512/gun_body6_Normal_OpenGL.png" id="3_0x74j"]
+[ext_resource type="Texture2D" uid="uid://dw04p05ypnact" path="res://assets/player/textures/shotgun/low_512/gun_body6_Roughness.png" id="4_ffepi"]
+
+[resource]
+albedo_texture = ExtResource("1_fhq8r")
+metallic = 1.0
+metallic_texture = ExtResource("2_h4a6r")
+roughness_texture = ExtResource("4_ffepi")
+normal_enabled = true
+normal_texture = ExtResource("3_0x74j")
+clearcoat_enabled = true

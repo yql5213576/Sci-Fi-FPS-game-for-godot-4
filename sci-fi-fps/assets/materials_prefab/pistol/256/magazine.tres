@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://gltbw52xrsdv"]
+
+[ext_resource type="Texture2D" uid="uid://8f7lbawcef3" path="res://assets/player/textures/pistol/low_256/magazine_Base_color.png" id="1_d2s30"]
+[ext_resource type="Texture2D" uid="uid://bnan0ridldoex" path="res://assets/player/textures/pistol/low_256/magazine_Metallic.png" id="2_8ij6r"]
+[ext_resource type="Texture2D" uid="uid://dlaomjawboihg" path="res://assets/player/textures/pistol/low_256/magazine_Normal_OpenGL.png" id="3_dec6c"]
+[ext_resource type="Texture2D" uid="uid://xwb3wsf7oegt" path="res://assets/player/textures/pistol/low_256/magazine_Roughness.png" id="4_negcg"]
+
+[resource]
+albedo_texture = ExtResource("1_d2s30")
+metallic = 1.0
+metallic_texture = ExtResource("2_8ij6r")
+roughness_texture = ExtResource("4_negcg")
+normal_enabled = true
+normal_texture = ExtResource("3_dec6c")
+clearcoat_enabled = true

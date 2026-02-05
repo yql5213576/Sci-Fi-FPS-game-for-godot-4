@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b60gcsqhqqukd"]
+
+[ext_resource type="Texture2D" uid="uid://dhlg31q7d6wm1" path="res://assets/player/textures/player/white/head_main_Base_color.png" id="1_5wsh3"]
+[ext_resource type="Texture2D" uid="uid://drmwfaxtvyoye" path="res://assets/player/textures/player/white/head_main_Height.png" id="2_cfj35"]
+[ext_resource type="Texture2D" uid="uid://cs2sxiqnnh6sg" path="res://assets/player/textures/player/white/head_main_Metallic.png" id="2_iyxgy"]
+[ext_resource type="Texture2D" uid="uid://bt0psfb51fyl2" path="res://assets/player/textures/player/white/head_main_Normal_OpenGL.png" id="3_cfj35"]
+[ext_resource type="Texture2D" uid="uid://c5pg1qvcg3xgr" path="res://assets/player/textures/player/white/head_main_Roughness.png" id="4_fotj6"]
+
+[resource]
+albedo_texture = ExtResource("1_5wsh3")
+metallic = 1.0
+metallic_texture = ExtResource("2_iyxgy")
+roughness_texture = ExtResource("4_fotj6")
+normal_enabled = true
+normal_texture = ExtResource("3_cfj35")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_cfj35")
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_5wsh3")

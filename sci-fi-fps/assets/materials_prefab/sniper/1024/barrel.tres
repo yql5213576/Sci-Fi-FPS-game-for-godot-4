@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ddr16ptjq8s0l"]
+
+[ext_resource type="Texture2D" uid="uid://dljyf5n8kgwjx" path="res://assets/player/textures/sniper/low_1024/barrel_Base_color.png" id="1_wpsdb"]
+[ext_resource type="Texture2D" uid="uid://digwa04qanbgh" path="res://assets/player/textures/sniper/low_1024/barrel_Metallic.png" id="2_b65r5"]
+[ext_resource type="Texture2D" uid="uid://b0dr0whwjhsuh" path="res://assets/player/textures/sniper/low_1024/barrel_Normal_OpenGL.png" id="3_3cjc1"]
+[ext_resource type="Texture2D" uid="uid://dayi34b8dnyte" path="res://assets/player/textures/sniper/low_1024/barrel_Roughness.png" id="4_enaqh"]
+
+[resource]
+albedo_texture = ExtResource("1_wpsdb")
+metallic = 1.0
+metallic_texture = ExtResource("2_b65r5")
+roughness_texture = ExtResource("4_enaqh")
+normal_enabled = true
+normal_texture = ExtResource("3_3cjc1")
+clearcoat_enabled = true

@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cstaeb2mrac5f"]
+
+[ext_resource type="Texture2D" uid="uid://jlunsi858g3o" path="res://assets/scenes/space_station/flowerpot/low_1024/tree_Base_color.png" id="1_g0vp8"]
+[ext_resource type="Texture2D" uid="uid://eccbkxxwrxsl" path="res://assets/scenes/space_station/flowerpot/low_1024/tree_Metallic.png" id="2_xvqud"]
+[ext_resource type="Texture2D" uid="uid://dyo16k6munfgx" path="res://assets/scenes/space_station/flowerpot/low_1024/tree_Normal_OpenGL.png" id="3_c3vka"]
+[ext_resource type="Texture2D" uid="uid://18absvudrhb0" path="res://assets/scenes/space_station/flowerpot/low_1024/tree_Roughness.png" id="4_jijet"]
+
+[resource]
+albedo_texture = ExtResource("1_g0vp8")
+metallic = 1.0
+metallic_texture = ExtResource("2_xvqud")
+roughness_texture = ExtResource("4_jijet")
+normal_enabled = true
+normal_texture = ExtResource("3_c3vka")
+rim_enabled = true
+anisotropy_enabled = true

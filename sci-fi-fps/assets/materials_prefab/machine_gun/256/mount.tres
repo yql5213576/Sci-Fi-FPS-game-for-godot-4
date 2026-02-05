@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cxvrneavlrtln"]
+
+[ext_resource type="Texture2D" uid="uid://xgg1ik73cxxt" path="res://assets/player/textures/machine_gun/low_256/mount_Base_color.png" id="1_7ktmu"]
+[ext_resource type="Texture2D" uid="uid://cqr586e1wmwrx" path="res://assets/player/textures/machine_gun/low_256/mount_Metallic.png" id="2_bwugb"]
+[ext_resource type="Texture2D" uid="uid://jdw8pplfep0j" path="res://assets/player/textures/machine_gun/low_256/mount_Normal_OpenGL.png" id="3_kaard"]
+[ext_resource type="Texture2D" uid="uid://bwpp2s4l1q0s5" path="res://assets/player/textures/machine_gun/low_256/mount_Roughness.png" id="4_csnpa"]
+
+[resource]
+albedo_texture = ExtResource("1_7ktmu")
+metallic = 1.0
+metallic_texture = ExtResource("2_bwugb")
+roughness_texture = ExtResource("4_csnpa")
+normal_enabled = true
+normal_texture = ExtResource("3_kaard")
+clearcoat_enabled = true

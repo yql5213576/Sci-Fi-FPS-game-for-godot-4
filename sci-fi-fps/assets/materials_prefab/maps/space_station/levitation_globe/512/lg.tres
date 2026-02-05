@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cjbvcxxp3edei"]
+
+[ext_resource type="Texture2D" uid="uid://bxsdh0nx2pe4d" path="res://assets/scenes/space_station/levitation_globe/low_512/lg_Base_color.png" id="1_fpnwq"]
+[ext_resource type="Texture2D" uid="uid://dyp5x851f4mme" path="res://assets/scenes/space_station/levitation_globe/low_512/lg_Metallic.png" id="2_oanlw"]
+[ext_resource type="Texture2D" uid="uid://bylsotw7jklnu" path="res://assets/scenes/space_station/levitation_globe/low_512/lg_Normal_OpenGL.png" id="3_11n7a"]
+[ext_resource type="Texture2D" uid="uid://cxtw6leutrutu" path="res://assets/scenes/space_station/levitation_globe/low_512/lg_Roughness.png" id="4_rkgdr"]
+
+[resource]
+albedo_texture = ExtResource("1_fpnwq")
+metallic = 1.0
+metallic_texture = ExtResource("2_oanlw")
+roughness_texture = ExtResource("4_rkgdr")
+normal_enabled = true
+normal_texture = ExtResource("3_11n7a")
+clearcoat_enabled = true

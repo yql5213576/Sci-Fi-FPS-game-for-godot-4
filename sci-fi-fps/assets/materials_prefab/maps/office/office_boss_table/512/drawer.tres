@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://5n3nnd5t2s0g"]
+
+[ext_resource type="Texture2D" uid="uid://bbx52me48xfl3" path="res://assets/scenes/office/office_boss_table/low_512/drawer_Base_color.png" id="1_7yrcq"]
+[ext_resource type="Texture2D" uid="uid://d27htu3y3yhai" path="res://assets/scenes/office/office_boss_table/low_512/drawer_Metallic.png" id="2_luqsi"]
+[ext_resource type="Texture2D" uid="uid://b5ahtdeud4kyv" path="res://assets/scenes/office/office_boss_table/low_512/drawer_Normal_OpenGL.png" id="3_5nnao"]
+[ext_resource type="Texture2D" uid="uid://bwkkjpmmvdt1x" path="res://assets/scenes/office/office_boss_table/low_512/drawer_Roughness.png" id="4_g5geb"]
+
+[resource]
+albedo_texture = ExtResource("1_7yrcq")
+metallic = 1.0
+metallic_texture = ExtResource("2_luqsi")
+roughness_texture = ExtResource("4_g5geb")
+normal_enabled = true
+normal_texture = ExtResource("3_5nnao")
+clearcoat_enabled = true

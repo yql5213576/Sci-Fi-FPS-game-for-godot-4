@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://d1bx6a1o125fw"]
+
+[ext_resource type="Texture2D" uid="uid://b7hx338g1eamp" path="res://assets/player/textures/player/blue/armor_shouder_Base_color.png" id="1_mi4wy"]
+[ext_resource type="Texture2D" uid="uid://dgyd7ck0cnl0f" path="res://assets/player/textures/player/blue/armor_shouder_Metallic.png" id="2_iu6v1"]
+[ext_resource type="Texture2D" uid="uid://d2yknyx2md36p" path="res://assets/player/textures/player/blue/armor_shouder_Height.png" id="2_y12an"]
+[ext_resource type="Texture2D" uid="uid://bh0augmrqardf" path="res://assets/player/textures/player/blue/armor_shouder_Normal_OpenGL.png" id="3_y12an"]
+[ext_resource type="Texture2D" uid="uid://dkpmqenufxgcg" path="res://assets/player/textures/player/blue/armor_shouder_Roughness.png" id="4_pgf4q"]
+
+[resource]
+albedo_texture = ExtResource("1_mi4wy")
+metallic = 1.0
+metallic_texture = ExtResource("2_iu6v1")
+roughness_texture = ExtResource("4_pgf4q")
+normal_enabled = true
+normal_texture = ExtResource("3_y12an")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_y12an")
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_mi4wy")

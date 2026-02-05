@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://rf8cvy2tv6wa"]
+
+[ext_resource type="Texture2D" uid="uid://jflci6lr2mfa" path="res://assets/scenes/office/big_table/low_1024/leg_Base_color.png" id="1_uffmb"]
+[ext_resource type="Texture2D" uid="uid://bxciavrmlw2vb" path="res://assets/scenes/office/big_table/low_1024/leg_Metallic.png" id="2_wy63o"]
+[ext_resource type="Texture2D" uid="uid://cxjdhcnk6skm8" path="res://assets/scenes/office/big_table/low_1024/leg_Normal_OpenGL.png" id="3_ub2fx"]
+[ext_resource type="Texture2D" uid="uid://cjnbxk0uoeg70" path="res://assets/scenes/office/big_table/low_1024/leg_Roughness.png" id="4_mqgbc"]
+
+[resource]
+albedo_texture = ExtResource("1_uffmb")
+metallic = 1.0
+metallic_texture = ExtResource("2_wy63o")
+roughness_texture = ExtResource("4_mqgbc")
+normal_enabled = true
+normal_texture = ExtResource("3_ub2fx")

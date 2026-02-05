@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bhnkjufo76dga"]
+
+[ext_resource type="Texture2D" uid="uid://blaa20r4xkdtl" path="res://assets/scenes/space_station/sofa/low_512/sofa3_Base_color.png" id="1_uda4r"]
+[ext_resource type="Texture2D" uid="uid://bqp8tur2qsuse" path="res://assets/scenes/space_station/sofa/low_512/sofa3_Metallic.png" id="2_asxr7"]
+[ext_resource type="Texture2D" uid="uid://dcctbbecw3awh" path="res://assets/scenes/space_station/sofa/low_512/sofa3_Normal_OpenGL.png" id="3_a1aq2"]
+[ext_resource type="Texture2D" uid="uid://bh5sjkhh1xxc4" path="res://assets/scenes/space_station/sofa/low_512/sofa3_Roughness.png" id="4_gu7aw"]
+
+[resource]
+albedo_texture = ExtResource("1_uda4r")
+metallic = 1.0
+metallic_texture = ExtResource("2_asxr7")
+roughness_texture = ExtResource("4_gu7aw")
+normal_enabled = true
+normal_texture = ExtResource("3_a1aq2")
+rim_enabled = true
+clearcoat_enabled = true

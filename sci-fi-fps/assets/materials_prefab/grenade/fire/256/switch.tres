@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bm0g22uw4xtpm"]
+
+[ext_resource type="Texture2D" uid="uid://cx7ielmdlpnr2" path="res://assets/player/textures/grenade/fire/low_256/switch_Base_color.png" id="1_txq4j"]
+[ext_resource type="Texture2D" uid="uid://beor8p6g8v5l6" path="res://assets/player/textures/grenade/fire/low_256/switch_Metallic.png" id="2_8tfqo"]
+[ext_resource type="Texture2D" uid="uid://dawfw2oyakn2a" path="res://assets/player/textures/grenade/fire/low_256/switch_Normal_OpenGL.png" id="3_ogiuh"]
+[ext_resource type="Texture2D" uid="uid://bdv1glhjjjwxj" path="res://assets/player/textures/grenade/fire/low_256/switch_Roughness.png" id="4_x0krm"]
+
+[resource]
+albedo_texture = ExtResource("1_txq4j")
+metallic = 1.0
+metallic_texture = ExtResource("2_8tfqo")
+roughness_texture = ExtResource("4_x0krm")
+normal_enabled = true
+normal_texture = ExtResource("3_ogiuh")
+clearcoat_enabled = true

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dlj1e6a6vvd8c"]
+
+[ext_resource type="Texture2D" uid="uid://dfnec3il1ctjy" path="res://assets/player/textures/player/white/low_1024/armor_shouder_Base_color.png" id="1_8avp6"]
+[ext_resource type="Texture2D" uid="uid://dtvt3u16rml8c" path="res://assets/player/textures/player/white/low_1024/armor_shouder_Metallic.png" id="2_7qogg"]
+[ext_resource type="Texture2D" uid="uid://c8ehj75s3v4bg" path="res://assets/player/textures/player/white/low_1024/armor_shouder_Normal_OpenGL.png" id="3_30t81"]
+[ext_resource type="Texture2D" uid="uid://dihbgj4qgiguu" path="res://assets/player/textures/player/white/low_1024/armor_shouder_Roughness.png" id="4_aqxoq"]
+
+[resource]
+albedo_texture = ExtResource("1_8avp6")
+metallic = 1.0
+metallic_texture = ExtResource("2_7qogg")
+roughness_texture = ExtResource("4_aqxoq")
+normal_enabled = true
+normal_texture = ExtResource("3_30t81")
+clearcoat_enabled = true

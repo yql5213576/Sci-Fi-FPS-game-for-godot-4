@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b5h5ywki4dhis"]
+
+[ext_resource type="Texture2D" uid="uid://b7dr8h1ckw4sw" path="res://assets/scenes/office/flower/low_256/tree_Base_color.png" id="1_4ggyq"]
+[ext_resource type="Texture2D" uid="uid://dgryfdkwelnex" path="res://assets/scenes/office/flower/low_256/tree_Metallic.png" id="2_610en"]
+[ext_resource type="Texture2D" uid="uid://dpkh51qvd4nf8" path="res://assets/scenes/office/flower/low_256/tree_Normal_OpenGL.png" id="3_f07uj"]
+[ext_resource type="Texture2D" uid="uid://dbps56ltl477u" path="res://assets/scenes/office/flower/low_256/tree_Roughness.png" id="4_dsluv"]
+
+[resource]
+albedo_texture = ExtResource("1_4ggyq")
+metallic = 1.0
+metallic_texture = ExtResource("2_610en")
+roughness_texture = ExtResource("4_dsluv")
+normal_enabled = true
+normal_texture = ExtResource("3_f07uj")
+rim_enabled = true
+clearcoat_enabled = true
+anisotropy_enabled = true

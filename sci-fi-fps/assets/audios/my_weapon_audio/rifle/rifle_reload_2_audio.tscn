@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://56pnpegcdm8k"]
+
+[ext_resource type="AudioStream" uid="uid://bsaltytjw1pwg" path="res://assets/audios/my_weapon_audio/rifle/rifle_reload2.wav" id="1_fwuao"]
+[ext_resource type="Script" uid="uid://chafmrb58erqr" path="res://assets/audios/my_weapon_audio/rifle/rifle_reload_2_audio.gd" id="1_n1pmy"]
+
+[node name="rifle_reload2_audio" type="Node3D"]
+script = ExtResource("1_n1pmy")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_fwuao")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

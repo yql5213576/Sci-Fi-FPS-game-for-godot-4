@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://c3grvlshskb2s"]
+
+[ext_resource type="Texture2D" uid="uid://cfqr62fgvgw6h" path="res://assets/player/textures/player/white/armor_hand_Base_color.png" id="1_8sdw0"]
+[ext_resource type="Texture2D" uid="uid://da5hr22c085l" path="res://assets/player/textures/player/white/armor_hand_Height.png" id="2_8jw8f"]
+[ext_resource type="Texture2D" uid="uid://dugi580polfhm" path="res://assets/player/textures/player/white/armor_hand_Metallic.png" id="2_nhyk5"]
+[ext_resource type="Texture2D" uid="uid://bwb20he67q1ej" path="res://assets/player/textures/player/white/armor_hand_Normal_OpenGL.png" id="3_8jw8f"]
+[ext_resource type="Texture2D" uid="uid://can7uah0sdyhr" path="res://assets/player/textures/player/white/armor_hand_Roughness.png" id="4_78pey"]
+
+[resource]
+albedo_texture = ExtResource("1_8sdw0")
+metallic = 1.0
+metallic_texture = ExtResource("2_nhyk5")
+roughness_texture = ExtResource("4_78pey")
+normal_enabled = true
+normal_texture = ExtResource("3_8jw8f")
+clearcoat_enabled = true
+ao_enabled = true
+ao_texture = ExtResource("2_8jw8f")
+subsurf_scatter_strength = 0.3
+backlight_enabled = true
+backlight_texture = ExtResource("1_8sdw0")

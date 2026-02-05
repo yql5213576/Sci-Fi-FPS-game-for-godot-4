@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://qmva4pn0cb3p"]
+
+[ext_resource type="Texture2D" uid="uid://mt2lvgfsdi2u" path="res://icon.svg" id="1_645iy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym4tv"]
+bg_color = Color(0.176, 0.176, 0.176, 0.447)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym4tv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym4tv"]
+font_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifnqt"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br4mj"]
+bg_color = Color(0, 0.48482, 0.82964, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_os4xb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_645iy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_645iy"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os4xb"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykk2x"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.490196, 0.490196, 0.490196, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qymkq"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -77.5
+offset_right = 168.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ym4tv")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_645iy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer_title" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_title"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Give me a sample text"
+
+[node name="sub_title" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_title"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 7
+text = "subtitle Text"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ym4tv")
+
+[node name="VBoxContainer_Metric" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBox_Metric" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric"]
+layout_mode = 2
+text = "Metric 1"
+label_settings = SubResource("LabelSettings_ym4tv")
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ifnqt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_br4mj")
+value = 31.48
+show_percentage = false
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "31.4%"
+label_settings = SubResource("LabelSettings_ym4tv")
+horizontal_alignment = 2
+
+[node name="HBox_Metric2" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric2"]
+layout_mode = 2
+text = "Metric 2"
+label_settings = SubResource("LabelSettings_ym4tv")
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric2"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ifnqt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_br4mj")
+value = 31.48
+show_percentage = false
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer_Metric/HBox_Metric2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "31.4%"
+label_settings = SubResource("LabelSettings_ym4tv")
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ym4tv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxEmpty_os4xb")
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_645iy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_645iy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os4xb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ykk2x")
+text = "Let's Go!"
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qymkq")
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_645iy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_645iy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os4xb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ykk2x")
+text = "Cancel"

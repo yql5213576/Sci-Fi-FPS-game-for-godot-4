@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d200xwcxfmnto"
+path="res://.godot/imported/30-06_load.wav-f083198641301b9626af8a0f2d007587.sample"
+
+[deps]
+
+source_file="res://assets/audios/Gun reload sounds/3/Gary Guns/30-06_load.wav"
+dest_files=["res://.godot/imported/30-06_load.wav-f083198641301b9626af8a0f2d007587.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

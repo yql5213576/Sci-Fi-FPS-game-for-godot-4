@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://sx5ikweobayc"]
+
+[ext_resource type="AudioStream" uid="uid://cbujt7v3u85pv" path="res://assets/audios/flash_audio.ogg" id="1_12orx"]
+[ext_resource type="Script" uid="uid://bu5red4ddwhii" path="res://assets/audios/flash_audio.gd" id="2_mld4v"]
+
+[node name="flash_audio" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_12orx")
+max_db = 0.0
+autoplay = true
+script = ExtResource("2_mld4v")
