@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfc6poih44jou"]
-
-[resource]
-resource_name = "led_light"
-cull_mode = 2
-albedo_color = Color(0.968307, 0.93329, 0.93329, 1)
-metallic = 1.0

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://xdxbuphywf31"]
-
-[ext_resource type="AudioStream" uid="uid://cowr2ye7es7o" path="res://assets/scenes/snow_basin/audio/splash(water-splashes)/splash2.wav" id="1_54bvl"]
-
-[node name="splash_audio" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_54bvl")
-autoplay = true

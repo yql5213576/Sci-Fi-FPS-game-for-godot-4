@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://rebgvnh4ksmx"]
-
-[resource]
-resource_name = "14_-_Default"
-cull_mode = 2
-albedo_color = Color(0.811515, 0.811515, 0.811515, 1)
-metallic = 1.0

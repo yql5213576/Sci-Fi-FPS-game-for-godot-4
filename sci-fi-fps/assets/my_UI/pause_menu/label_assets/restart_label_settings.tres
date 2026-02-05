@@ -1,7 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ba161fq8lfvnj"]
-
-[ext_resource type="FontFile" uid="uid://buki0neaxvsrn" path="res://assets/my_UI/fonts/阿里巴巴普惠体/Alibaba-PuHuiTi-Medium.ttf" id="1_wq15k"]
-
-[resource]
-font = ExtResource("1_wq15k")
-font_size = 35

@@ -1,9 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bpatmr0hoc50s"]
-
-[ext_resource type="FontFile" uid="uid://cegicmcnpfyb0" path="res://assets/my_UI/fonts/3/Zerove-4nKDB.ttf" id="1_3sl7f"]
-
-[resource]
-font = ExtResource("1_3sl7f")
-font_size = 50
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
